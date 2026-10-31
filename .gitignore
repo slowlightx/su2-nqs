@@ -34,6 +34,7 @@ data/reference_wavefunctions/
 !projects/clebsch_tree_nqs/references/exact_cache/dd27eec56bb056dedd4c37eced96c6e20841c7f4d0bfcd7be6a5bdb2e5b532c4.npz
 projects/clebsch_tree_nqs/references/exact_cache/*.lock
 projects/clebsch_tree_nqs/notebooks/
+projects/clebsch_tree_nqs/SU2_NQS_Status.pdf
 *.log
 *.err
 *.out

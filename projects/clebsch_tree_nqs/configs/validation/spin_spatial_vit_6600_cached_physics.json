@@ -1,0 +1,41 @@
+{
+  "task": "cached_spatial_vit_physics",
+  "parent": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/seed1",
+  "output": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/cached_physics",
+  "step": 6600,
+  "parent_registration_sha256": "c5323cec78ae2806094b3d4ef3053de9f7c0654687f023491f28b9097ed30dd3",
+  "checkpoint_sha256": "314a8d7cfd296775cf59a646ac7a2865ea73c91ebdc0500d31d2256e3ed476cb",
+  "params_sha256": "a678bff64df1976dfbd13d9d49c948eff14b59c71f52e69f89cf30f0b6f53065",
+  "frozen_source_count": 75,
+  "stream_sha256": {
+    "2032760303": "615b2f784e857eb6025b75f8954ebcbdaafe84a772e0eb712f392c8186cabae4",
+    "2032760304": "d8c86f2ac9a51aa0ca3f5ae26e3bab23483af0b611df749c7a788df19dc67853"
+  },
+  "snapshot_indices": [
+    0,
+    32,
+    64,
+    96
+  ],
+  "expected_chains": 128,
+  "expected_records": 512,
+  "region": {
+    "sites": [
+      14,
+      15,
+      20,
+      21
+    ],
+    "left": [
+      0,
+      1
+    ]
+  },
+  "query_batch": 64,
+  "timing_records": 16,
+  "compute_seconds": 720,
+  "bootstrap_seed": 2026100946,
+  "bootstrap_replicates": 2000,
+  "require_gpu": false,
+  "purpose": "Bounded local coherent readout of frozen step6600 on exactly the same cut/cache subset sizes as step5600. Reuse existing audit_cached_physics via a checksummed model-only portable loader; no new training, Born samples, H calls, twirl, or strict SU2 spectrum. Timeout means incomplete, not partial physical evidence."
+}

@@ -1,0 +1,169 @@
+{
+  "observed_utc": "2026-10-09T03:43:25Z",
+  "project": "Finite-chi reference calibration for the contracted ordinary Spatial-ViT plus SU2-readout physics main line.",
+  "archive_completed": {
+    "source": "/scratch/yx51/nqs_reference_dmrg/projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi4096_relax",
+    "snapshot": "/storage/hpc/work/an9/yx51/nqs_reference_dmrg/projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi4096_relax/snapshots/sweep0024_0b299b3f318d_complete",
+    "archive_utility": "projects.clebsch_tree_nqs.workflows.dmrg_archive",
+    "host_policy": "WORK-accessible login node; no new compute-node archive job",
+    "checkpoint_bytes": 698085648,
+    "checkpoint_sha256": "0b299b3f318d20b31304ecf3564e3ed9378ddd6eeb058693f6a481e19ab3f650",
+    "global_sweep": 24,
+    "full_optimizer_checkpoint": true,
+    "source_modified": false,
+    "prior_snapshots_preserved": true
+  },
+  "local_wavefunction": {
+    "directory": "data/reference_wavefunctions/dmrg/triangular_6x6_j2_0.125/chi4096_sweep24",
+    "full_checkpoint": "checkpoint.h5",
+    "verified_archive_files": 35,
+    "all_hashes_match": true,
+    "hdf_schema": 1,
+    "tenpy_version": "1.1.0",
+    "resume_data_sweeps": 24,
+    "initial_environments_present": true,
+    "mixer": false,
+    "download_from_immutable_WORK_snapshot": true,
+    "new_MPS_or_H_contractions": 0,
+    "large_wavefunction_directory_excluded_from_git": true
+  },
+  "submitted_probe": {
+    "job_id": 2067881,
+    "host": "nots",
+    "account": "commons",
+    "partition": "commons",
+    "observed_state": "PENDING",
+    "observed_reason": "Priority",
+    "start_time_known": false,
+    "later_scheduler_snapshot": {
+      "cluster_local_submit_time": "2026-10-08T22:42:59",
+      "cluster_local_estimated_start_time": "2026-10-11T16:30:46",
+      "state": "PENDING",
+      "requeue": 0,
+      "forecast_is_not_a_guarantee": true
+    },
+    "cpus": 32,
+    "memory_GiB": 256,
+    "scheduler_hours": 23,
+    "chi": 5120,
+    "mixer": false,
+    "initial_global_sweep": 24,
+    "target_global_sweep": 26,
+    "sweeps": 2,
+    "config": "projects/clebsch_tree_nqs/configs/remote/spin_tensor_network_chi5120_probe_nots.json",
+    "config_sha256": "1daa4c50480652fb94f67b6703efcc88dcda28d822c8b1ee4f5279aa6e7d2cea",
+    "parent_protocol_sha256": "5346ca32e03818877e3fa7581461853f010938f03855910bd0030fb69ac94fe3",
+    "scratch_input": "/scratch/yx51/nqs_reference_dmrg/inputs/0b299b3f318d20b31304ecf3564e3ed9378ddd6eeb058693f6a481e19ab3f650",
+    "scratch_output": "/scratch/yx51/nqs_reference_dmrg/projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi5120_probe",
+    "log_stdout": "/home/yx51/nqs_reference_dmrg/logs/dmrg-2067881.out",
+    "log_stderr": "/home/yx51/nqs_reference_dmrg/logs/dmrg-2067881.err",
+    "inherited_full_optimizer": true,
+    "unchanged_runtime_source_files_verified": 20,
+    "live_runtime_equal_frozen_parent": true,
+    "local_update_safety_guards": true,
+    "per_completed_sweep_atomic_checkpoint_and_raw_rdms": true,
+    "active_seconds_cap": 43200,
+    "memory_guard_GiB": 224,
+    "reserve_seconds": 900,
+    "optional_two_extra_sweeps_submitted": false,
+    "second_stage_policy": "Inspect energy, discarded weight and identical-region raw readout drifts after the first two sweeps; total authorized chi5120 work is at most four sweeps.",
+    "elapsed_forecast_first_two_hours": [
+      3,
+      5
+    ],
+    "elapsed_forecast_at_most_four_hours": [
+      6,
+      10
+    ],
+    "forecast_caveat": "Planning estimates, not guarantees; exclude queue and require actual throughput calibration.",
+    "final_archive_policy": "Run existing archiver on a WORK-accessible host after completed output is validated; do not repeat the failed compute-node WORK assumption."
+  },
+  "physics_analysis_preregistered": {
+    "config": "projects/clebsch_tree_nqs/configs/validation/spin_su2_chi5120_probe_analysis.json",
+    "planned_output": "projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/su2_protocol_v6",
+    "fixed_cuts": {
+      "compact4": [
+        14,
+        15,
+        20,
+        21
+      ],
+      "compact6": [
+        12,
+        13,
+        14,
+        18,
+        19,
+        20
+      ],
+      "winding6": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    "primary": "compact6 signed P_perp(qL=3,qR=3,qT=0) with doubled labels and registered ROW blocks",
+    "companion": "compact6 connected three-bridge cumulant Y; not identical to the signed raw six-body projector part",
+    "secondary": "winding6 and conditional elementary-triangle E2/A2 internal-resonance quality drifts",
+    "no_new_states_or_queries_in_saved_RDM_analysis": true,
+    "stage_results_not_yet_analyzed": true,
+    "phase_claim": false
+  },
+  "ordinary_vit_terminal_status": {
+    "query_host": "unicorn",
+    "latest_attempt": "SSH timeout under current NOTS VPN",
+    "terminal6600_audit_newly_verified": false,
+    "last_prior_verified_training_step": 6075,
+    "last_prior_verification_utc": "2026-10-09T02:29:00Z",
+    "no_new_GPU_jobs_submitted": true,
+    "rule": "Do not use a training mean or old NN readout as the frozen 6600 independent audit."
+  },
+  "physics_feasibility": {
+    "PRL_breakthrough_already_demonstrated": false,
+    "question": "Does quality-controlled SU2-resolved regional singlet organization distinguish competing low-energy states beyond the fixed two/four-spin scalar span?",
+    "operator_independence_scope": "Linear Hilbert-Schmidt independence in the full regional Hilbert space, not a no-go for nonlinear inference from conventional data or outside-region correlations.",
+    "q3_high_operator_range": 0.7013888888888893,
+    "existing5600_S2_point_estimate": 0.163361,
+    "existing5600_estimated_global_nonsinglet_shift_upper_bound_q3_high": 0.019096598379629643,
+    "bound_caveat": "Conservative full-state versus globally singlet-conditioned expectation bound using even-parity Sz0; this plug-in estimate is uncertain, not measured contamination, not a confidence certificate, and not a prohibition on legal regional-singlet readouts.",
+    "required_quality_control": "Compare both candidates' own refinements and whole-chain uncertainty; independent milestone audits are not paired. A unique finite-volume ground state may erase apparent family differences as all improve.",
+    "source_links": [
+      "https://arxiv.org/abs/1307.6592",
+      "https://arxiv.org/abs/1606.00334",
+      "https://journals.aps.org/prl/abstract/10.1103/zmnz-tkq2"
+    ]
+  },
+  "validation": {
+    "tenpy_storage_archive_continuation_tests": {
+      "passed": 18,
+      "seconds": 3.57
+    },
+    "nqs_focused_tests": {
+      "passed": 35,
+      "skipped": 11,
+      "seconds": 1.05
+    },
+    "full_suite_attempt": {
+      "passed": 632,
+      "skipped": 11,
+      "failed": 1,
+      "seconds": 258.66,
+      "fail_fast": true,
+      "failing_test": "tests/test_finite_schur_curvature_artifact.py::test_fixed_span_coefficients_geometry_and_new_full_H_replay",
+      "reason": "Pre-existing historical source-seal mismatch for unchanged dual_sampled_sr.py; no historical seal or source modified."
+    },
+    "new_notebook_section": {
+      "path": "projects/clebsch_tree_nqs/notebooks/spatial_vit_quality.ipynb",
+      "section_id": "dmrg-v5-quality-lines",
+      "schema_validated": true,
+      "new_section_executed": true,
+      "historical_cells_reexecuted": false,
+      "figure": "projects/clebsch_tree_nqs/figures/exploration/su2_protocol_chi4096_relax_quality.png",
+      "figure_visually_checked": true,
+      "article_notebook_changed": false
+    }
+  }
+}

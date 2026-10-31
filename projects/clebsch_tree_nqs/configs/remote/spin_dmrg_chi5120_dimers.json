@@ -1,0 +1,64 @@
+{
+  "n_sites": 36,
+  "dtype": "float64",
+  "chi_upper_bound": 5120,
+  "checkpoint": "/share/kim/yx789/nqs-reference-dmrg/inputs/chi5120_sweep26/checkpoint.h5",
+  "checkpoint_sha256": "b1f8abd6ecce2f9fde31be7b08d8444673e6fdc4612af79a3d4ab5e6a0f2b239",
+  "stop_on_failure": true,
+  "limits": {
+    "memory_gib": 88,
+    "wall_seconds": 7200,
+    "threads": 8
+  },
+  "output": "/share/kim/yx789/nqs-reference-dmrg/readouts/chi5120_sweep26_dimers_v1",
+  "regions": [
+    {
+      "name": "dimers",
+      "sites": [
+        0
+      ],
+      "observable": {
+        "kind": "dimer_correlations",
+        "bonds": [
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            14,
+            20
+          ],
+          [
+            24,
+            25
+          ],
+          [
+            30,
+            31
+          ]
+        ]
+      }
+    }
+  ],
+  "purpose": "Fixed verifiedMPS; global observer support declared separately from [0] supervisor anchor. No optimization or canonicalization. Raw H2 variance exact if complete, never approximate/fabricate on timeout. Process memory/wall caps and checkpoint fingerprints retained."
+}

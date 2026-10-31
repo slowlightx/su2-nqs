@@ -1,0 +1,12 @@
+{
+  "base_config": "projects/clebsch_tree_nqs/configs/remote/frozen_channels_20261016/parents_r2/tri_j005_500.json",
+  "output": "/home/yx789/nqs-wavefunctions/nqs/frozen_channels_20261016_j005/tri_j005_500",
+  "stage_wall_seconds": {
+    "replica": 360,
+    "ordinary": 480,
+    "escort": 900
+  },
+  "predeclared_before_new_readout": true,
+  "revision": "Ordered-side .05 quality pair; same frozen prefix18, six row probes, old independent Born caches. No state or channel reselection.",
+  "base_config_sha256": "2a71ebfa34b968291200b81c59bbb5ed2e30d4e9edea5204f082782976b87514"
+}

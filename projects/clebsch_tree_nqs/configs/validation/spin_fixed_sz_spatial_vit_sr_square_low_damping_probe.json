@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "fixed_sz_spatial_vit_matrix_free_sr_canary",
+  "status": "single_registered_followup_after_slow_square_canary",
+  "seed": 11,
+  "model": {
+    "patch_rows": 2,
+    "patch_columns": 2,
+    "mlp_ratio": 2,
+    "initialization_scale": 0.1,
+    "initial_distance_decay": 1.0
+  },
+  "arm": {
+    "arm_id": "spatial_vit_d10_l1",
+    "embedding_dim": 10,
+    "head_count": 2,
+    "depth": 1,
+    "mlp_ratio": 2,
+    "use_distance_envelope": true
+  },
+  "optimization": {
+    "steps": 30,
+    "learning_rate": 0.05,
+    "damping": 0.003,
+    "cg_tolerance": 0.00001,
+    "cg_max_iterations": 50,
+    "record_every": 5
+  },
+  "rescue_gates": {
+    "energy_error_per_site_below": 0.05,
+    "singlet_weight_above": 0.9,
+    "variance_per_site_below": 0.1
+  },
+  "cases": [
+    {
+      "case_id": "square_4x4_j2_0p5_spatial_vit_sr_seed11_low_damping",
+      "geometry": "square",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.5,
+      "projection": "translation",
+      "exact_energy_anchor": -8.457923351394845,
+      "anchor_provenance": "stored physical-M0 exact reference; runner performs no eigensolve"
+    }
+  ],
+  "analysis_contract": {
+    "trigger": "The registered damping=0.01 square canary decreased smoothly but failed the 30-step rescue gate.",
+    "question": "Does reducing only the Tikhonov damping to 0.003 remove metric over-regularization?",
+    "stopping_rule": "No additional local damping or learning-rate search after this probe.",
+    "claim_boundary": "Exploratory follow-up; it cannot replace a matched optimizer frontier."
+  }
+}

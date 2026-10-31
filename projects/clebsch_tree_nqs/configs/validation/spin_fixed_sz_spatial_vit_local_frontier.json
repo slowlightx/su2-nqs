@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "fixed_sz_factored_spatial_vit_local_frontier",
+  "status": "preregistered_validation_scale_frontier",
+  "model": {
+    "patch_rows": 2,
+    "patch_columns": 2,
+    "mlp_ratio": 2,
+    "initialization_scale": 0.1,
+    "initial_distance_decay": 1.0
+  },
+  "optimization": {
+    "steps": 300,
+    "learning_rate": 0.005,
+    "record_every": 30,
+    "seeds": [11, 12, 13],
+    "energy_error_per_site_targets": [0.05, 0.01, 0.005, 0.001]
+  },
+  "development_learning_rate_audit": {
+    "case": "square_4x4_j2_0p5_fixed_sz_spatial_vit",
+    "arm": "spatial_vit_d8_l1",
+    "seed": 7,
+    "steps": 150,
+    "candidates": [0.001, 0.003, 0.005, 0.01],
+    "energy_error_per_site": [
+      0.16699086630304288,
+      0.12640618686179073,
+      0.1198276537841696,
+      0.18334109410631544
+    ],
+    "selected": 0.005,
+    "claim_boundary": "development seed only; excluded from the three-seed comparison"
+  },
+  "arms": [
+    {
+      "arm_id": "flat_vit_d8_l1",
+      "embedding_dim": 8,
+      "head_count": 2,
+      "depth": 1,
+      "use_distance_envelope": false
+    },
+    {
+      "arm_id": "spatial_vit_d6_l1",
+      "embedding_dim": 6,
+      "head_count": 2,
+      "depth": 1,
+      "use_distance_envelope": true
+    },
+    {
+      "arm_id": "spatial_vit_d8_l1",
+      "embedding_dim": 8,
+      "head_count": 2,
+      "depth": 1,
+      "use_distance_envelope": true
+    },
+    {
+      "arm_id": "spatial_vit_d10_l1",
+      "embedding_dim": 10,
+      "head_count": 2,
+      "depth": 1,
+      "use_distance_envelope": true
+    },
+    {
+      "arm_id": "spatial_vit_d12_l1_saturation",
+      "embedding_dim": 12,
+      "head_count": 3,
+      "depth": 1,
+      "use_distance_envelope": true
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "square_4x4_j2_0p5_fixed_sz_spatial_vit",
+      "geometry": "square",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.5,
+      "projection": "translation",
+      "exact_energy_anchor": -8.457923351394845,
+      "anchor_provenance": "stored physical-M0 exact reference; runner performs no eigensolve"
+    },
+    {
+      "case_id": "triangular_4x4_j2_0p125_fixed_sz_spatial_vit",
+      "geometry": "triangular",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.125,
+      "projection": "translation",
+      "exact_energy_anchor": -8.553311087209,
+      "anchor_provenance": "stored physical-M0 exact reference; runner performs no eigensolve"
+    }
+  ],
+  "analysis_contract": {
+    "primary": "energy-error/parameter frontier across d=6,8,10; d=12 is a finite-sector saturation control",
+    "spatial_ablation": "paired d=8 learned-distance envelope versus gamma=0 flat factored attention",
+    "spin_diagnostic": "report S2, singlet weight, P0-projected energy, and fraction of raw energy error explained by spin projection",
+    "promotion_gate": "this local run may validate the baseline and SU2 headroom but cannot establish scaling; GPU promotion requires a sampled 6x6 matched-work block"
+  }
+}

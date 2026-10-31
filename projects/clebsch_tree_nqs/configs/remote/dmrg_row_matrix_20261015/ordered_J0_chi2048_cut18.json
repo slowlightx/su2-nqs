@@ -1,0 +1,20 @@
+{
+  "checkpoint": "/home/yx789/nqs-wavefunctions/dmrg/work/tri_j0_ordered_control_20261014/warm/chi2048.h5",
+  "checkpoint_sha256": "2d174cafca55e2280c7fc67076842eb7f227facbf8dbaaf929bb384fccb803d9",
+  "n_sites": 36,
+  "chi_upper_bound": 2048,
+  "cut": 18,
+  "columns": 6,
+  "threads": 8,
+  "wall_seconds": 1700,
+  "memory_gib": 64,
+  "tolerance": 1e-9,
+  "psi_hdf_group": "psi",
+  "legacy_replay": {
+    "exact_old_row1_replay_value": 0.22883063584387814,
+    "exact_old_full18_replay_value": 4.106703918609878
+  },
+  "old_worker_result_sha256": "6053e33266d48cc06d621579f27f6e7fff3d83215a3056f87620804073f34b81",
+  "physical_order": "row-major physical sites; same prefix18 and physical PBC as J2=.125",
+  "geometry": "same physical prefix18 and three oriented winding row kappa_z sums as frozen NQS C/M"
+}

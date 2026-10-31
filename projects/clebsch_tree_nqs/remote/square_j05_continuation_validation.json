@@ -1,0 +1,29 @@
+{
+  "config": "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261012/square_j05_continue1000.json",
+  "config_sha256": "5c11c823c3e47eeb9965c21cb8430a7a72a3c51671a341e31b567e01ed6ac470",
+  "registration_sha256": "ace9628d490055d4e7ec7399a678a305b7b6d02fef755236c19acdc69bb6197e",
+  "parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/square_j05_repair_v6_single_gpu/seed1",
+    "completed_steps": 500,
+    "additional_steps": 500,
+    "from_registered_milestone": true,
+    "time_budget_extension_seconds": 36000,
+    "checkpoint_path": "quality/step00500.pkl",
+    "checkpoint_sha256": "22738cd56c00dc85a92fc8804cb9f4ccca7af27fa2c0614ad61c5762beafaabd",
+    "registration_sha256": "d1b867328b5c185807285e7fa8c088abe3bd10777fe2f3be74ad3380ee5343cf",
+    "progress_sha256": "2b40f9b14898da1ffbc8215cbc2492dff1a8e9bf792948b7216b676ec706d600",
+    "audit_sha256": "501d88ae7368db1711fc9196b74f8b54f50554c856c68310478881604a213126"
+  },
+  "inherited_steps": 500,
+  "inherited_H_calls": 2048000,
+  "inherited_training_seconds": 32847.7729865642,
+  "fresh_audit_seeds": [
+    2026102252,
+    2026102253
+  ],
+  "all_model_H_SR_sampling_unchanged": true,
+  "params_optimizer_sampler_RNG_inherited": true,
+  "diagnostic_source_sha256": "d2b7edb322de5218e1cfa51ae2dea659d608faed54b37be952ea3cd98c7e80b9",
+  "diagnostic_is_development_not_final_validation": true,
+  "bounded_followup_not_a_certified_descent_or_variance_gate": true
+}

@@ -1,0 +1,40 @@
+{
+  "cpu_gate": {
+    "job": "185572",
+    "passed": 9,
+    "skipped": 1,
+    "test_seconds": 24.78,
+    "skip_reason": "single CPU device; independent explicit two-CPU test run separately"
+  },
+  "diagnostic_two_gpu": "185412",
+  "additional_zero_update_diagnostic": "185677",
+  "updated_pilot_dependencies": "afterok:185412:185677 (both pilots still pending; CPU185572 had already passed and left the scheduler active cache, so it is not re-added; original submission commands below retained)",
+  "initial_GPU_pilots": [
+    {
+      "case": "tri_j0",
+      "config": "projects/clebsch_tree_nqs/configs/remote/repair_20261011_v6_single_gpu/tri_j0.json",
+      "pilot_job": "185590",
+      "resume22_job": "185592",
+      "pilot_command": "cd /home/yx789/nqs-repair-single-20261011 && NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/repair_20261011_v6_single_gpu/tri_j0.json NQS_PREFLIGHT_ENDPOINT=20 NQS_INITIAL_ENERGY_CEILING=-.45 NQS_INITIAL_VARIANCE_CEILING=1.0 NQS_BOUNDED_PILOT_SCREEN=1 /usr/local/slurm/current/bin/sbatch --parsable --job-name=v6-tri_j0-pilot --dependency=afterok:185572:185412 --kill-on-invalid-dep=yes --gres=gpu:nvidia_a100_80gb_pcie:1 --cpus-per-task=8 --mem=64G --time=01:00:00 --signal=B:USR1@60 projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch preflight",
+      "resume_command": "cd /home/yx789/nqs-repair-single-20261011 && NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/repair_20261011_v6_single_gpu/tri_j0.json NQS_UNTIL_STEP=22 NQS_SESSION_SECONDS=1500 /usr/local/slurm/current/bin/sbatch --parsable --job-name=v6-tri_j0-resume22 --dependency=afterok:185590 --kill-on-invalid-dep=yes --gres=gpu:nvidia_a100_80gb_pcie:1 --cpus-per-task=8 --mem=64G --time=00:30:00 --signal=B:USR1@60 projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch production"
+    },
+    {
+      "case": "square_j05",
+      "config": "projects/clebsch_tree_nqs/configs/remote/repair_20261011_v6_single_gpu/square_j05.json",
+      "pilot_job": "185594",
+      "resume22_job": "185595",
+      "pilot_command": "cd /home/yx789/nqs-repair-single-20261011 && NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/repair_20261011_v6_single_gpu/square_j05.json NQS_PREFLIGHT_ENDPOINT=20 NQS_INITIAL_ENERGY_CEILING=-.48 NQS_INITIAL_VARIANCE_CEILING=1.0 NQS_BOUNDED_PILOT_SCREEN=1 /usr/local/slurm/current/bin/sbatch --parsable --job-name=v6-square_j05-pilot --dependency=afterok:185572:185412 --kill-on-invalid-dep=yes --gres=gpu:nvidia_a100_80gb_pcie:1 --cpus-per-task=8 --mem=64G --time=01:00:00 --signal=B:USR1@60 projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch preflight",
+      "resume_command": "cd /home/yx789/nqs-repair-single-20261011 && NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/repair_20261011_v6_single_gpu/square_j05.json NQS_UNTIL_STEP=22 NQS_SESSION_SECONDS=1500 /usr/local/slurm/current/bin/sbatch --parsable --job-name=v6-square_j05-resume22 --dependency=afterok:185594 --kill-on-invalid-dep=yes --gres=gpu:nvidia_a100_80gb_pcie:1 --cpus-per-task=8 --mem=64G --time=00:30:00 --signal=B:USR1@60 projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch production"
+    }
+  ],
+  "not_submitted": [
+    "tri_j005",
+    "tri_j01",
+    "tri_j0175",
+    "square_j0",
+    "all 1000-step continuations"
+  ],
+  "purpose": "Only 20 steps and a separate-process two-step resume per representative case. Unchanged physical model and parent parameters. No automatic long training.",
+  "maximum_requested_A100_hours": 3,
+  "changed_sources_manifest": "single_gpu_repair_sync_20261011.json"
+}

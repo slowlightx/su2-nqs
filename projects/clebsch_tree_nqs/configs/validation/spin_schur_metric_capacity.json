@@ -1,0 +1,21 @@
+{
+  "task":"route1_physical_metric_retraction_joint_selection",
+  "output":"projects/clebsch_tree_nqs/results/spin_schur_metric_capacity_v1",
+  "base_config":"projects/clebsch_tree_nqs/configs/validation/spin_finite_schur_optimize.json",
+  "carrier_source":"projects/clebsch_tree_nqs/results/spin_finite_schur_reanchor_v1",
+  "known_source":"projects/clebsch_tree_nqs/results/spin_schur_capacity_v1",
+  "widths":[2,4],"maximum_q":4,"sweeps":2,"basis_columns":2,
+  "H_centers_per_block":16,"H_microbatch":4,"linear_H_chunk":16,
+  "metric_cutoff":0.000001,"metric_damping":0.1,"retraction_metric_cutoff":1e-12,
+  "step_fractions":[1,0.5,0.25,0.125,0.0625,0.03125,0.015625,0.0078125,0.00390625],
+  "max_actual_candidates":2,"maximum_truncation_fs_fraction":0.5,
+  "maximum_step_fs":0.01,"maximum_parent_fs":0.03,"minimum_ess_fraction":0.6,
+  "control_energy_tolerance":0.00002,"maximum_variance_ratio":1.25,
+  "audit_seeds":[2026100631,2026100632],"bootstrap_seed":2026100633,
+  "audit":{"chains":32,"records":4,"burn_proposals_per_chain":2048,
+           "decorrelation_proposals_per_record":128,"bootstrap_replicates":1024},
+  "wall_limit_seconds_per_process":2400,"peak_rss_limit_gib":8,
+  "protocol":"Only route1, same N36 triangular6x6,J2=.125, C2 carrier, q<=4, chi2/4, 432 A1 images and216 total-H bonds. Fresh restart at exact SAME C2 and frozen reference, not continuing the old failed trajectory. Known192 amplitude and32 H rows are reused, no old audit used to optimize. Whiten each joined-q matrix with exact unprojected subtree/environment Grams, block SVD and declared1e-12 pseudoinverse. Full projected/additive physical-state FS is independently checked after retraction; this tree metric is NOT claimed A1/FS optimal. Same two block search columns; retain their full H products and complete two-coherence finite-Q energy/variance slopes. Joint four-objective minimax coefficients use those EXISTING columns only, alongside energy-Ritz control. No new head, parameter capacity, neural network or operator.",
+  "budget":"14 attempts per width. At most2 existing linear full-H columns x32 known centers and TWO actual retracted full-H candidates x32 per attempt. At most18 amplitude-only step probes, prediction uses exact UNCOMPRESSED full-H linear combination solely to rank, never to accept retracted states. Exact actual H gate must reduce FIT energy, protect control energy, and NOT increase variance on EITHER current block, while keeping original1.25C2 envelope. Nonlinear/FS/truncation failures are reported, not hidden as no capacity. Checkpoint all attempts, fixed last endpoints, no best-iteration selection. New future256 records and full-H compare C2, old2,new2,old4,new4, paired common chains. No post-audit fitting, ED/GPU/remote work or route2/3 development.",
+  "decision":"A two-chain-SE C2-relative energy decrease with nonworse variance supports a route1 bounded gain, not neural/literature novelty. Otherwise retain C2 and do not extend these directions blindly. Nonstationarity and small search space prohibit a capacity-exhaustion claim or automatic architecture switch. Old sources, checkpoints, plots and audit data remain immutable. Candidate H and width costs are different from the previous experiment and explicitly reported, not matched efficiency claims."
+}

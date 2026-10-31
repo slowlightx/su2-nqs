@@ -1,0 +1,376 @@
+{
+  "observed_utc": "2026-10-07 17:05:24 UTC",
+  "host": "unicorn",
+  "account": "kim",
+  "partition": "kim",
+  "remote_workspace": "/home/yx789/nqs-vit-quality",
+  "environment": {
+    "python": ".conda-netket/bin/python",
+    "python_version": "3.14.7",
+    "netket": "3.22.3",
+    "jax": "0.11.1",
+    "isolated": true,
+    "old_nqs_environment_modified": false
+  },
+  "required_synced_files": 77,
+  "runtime_source_files_verified": 73,
+  "runtime_sources": {
+    "projects/clebsch_tree_nqs/__init__.py": "6d921791363c77a1acbb18158458dc1110dafcdeb019096f099bda774bcdfeb3",
+    "projects/clebsch_tree_nqs/workflows/__init__.py": "b3dce89e7e53420fbdbb391d23c0a9fe35d7218a10bb4e4e656df912b7e64316",
+    "projects/clebsch_tree_nqs/workflows/common.py": "6027ea94277fdb54702f3cd179bd63880d42032f8e3ee04f473220f9bd8e9cf1",
+    "projects/clebsch_tree_nqs/workflows/spin.py": "eb56433e6be457b78e1864d83d39312dabc166cb57d0e7f678b77591b2f73bb5",
+    "projects/clebsch_tree_nqs/workflows/spin_full_vit_budget.py": "5ac78f98fbcecfa96c35bbd11c38495668f45ed1b1f6f7e0041829c2d8067a4e",
+    "projects/clebsch_tree_nqs/workflows/spin_full_vit_pilot.py": "b3478baae55dd20417578e5ed2b61b37a1d502898d248ea29521ea40e36b4a32",
+    "projects/clebsch_tree_nqs/workflows/spin_spatial_vit.py": "bb371b4c5923ab0b3d7884d7a7de3724ff2a570c389ae390f5542c734fec5ee8",
+    "projects/clebsch_tree_nqs/workflows/spin_spatial_vit_netket.py": "14ddf47aab481bdbcbdf2457d71299f34205fc071540e0871926d3f1b1cdcd72",
+    "projects/clebsch_tree_nqs/workflows/spin_spatial_vit_quality.py": "1ff288433b67b5cdcf53691b74d57237dc1f798d64ded08ac3326a07a07b3fcc",
+    "su2_nqs/__init__.py": "42390edcf9041cf5b4eed8ecb28724fd54493359043e9767fe6457fe3401f571",
+    "su2_nqs/benchmarks/__init__.py": "ea63419f9a2101a1c4697e651aac1fe1b6abf9d27087e3d03f2a03b0ee3aa1cc",
+    "su2_nqs/benchmarks/clebsch_tree_exact.py": "4eea18c56aab27f9fc7b34b2e2e844d2d5be0481c9b0aacc1ad1db48b3b3defd",
+    "su2_nqs/benchmarks/fixed_sz_spatial_vit.py": "b1bbe01e6f4e461b9795c5bacdf025f6f962726dfc2cfc5ce4f0ed2e20ed95ab",
+    "su2_nqs/benchmarks/krylov_anchored_full_vit.py": "9430780d6a016480d080828d64806b0e576075e7602a60f9bec80954caeacd03",
+    "su2_nqs/benchmarks/regional_su2_readout.py": "4d459de6ffa0c0ceb9df3819b8f6cb56bb5f731d27820364cd47092f5a83847b",
+    "su2_nqs/benchmarks/singlet_physics_readout.py": "51fbe72aab3070c3c967ebfa28207f6d6fb4047a102bac5492ef5c027d41bf2b",
+    "su2_nqs/benchmarks/spatial_vit_physics.py": "b789c81fefce6d2555126fa8f27ee4538b5a602938af58e92dd1143a79bc9a14",
+    "su2_nqs/benchmarks/spatial_vit_sampling.py": "7706979a18f5cb9eaeb6193a32c33de7e842bcaf977af206fb4664ea308282aa",
+    "su2_nqs/benchmarks/spin_operator_information.py": "c330387f97f27825eb9a38839ad1f99bd010fdace73c82fc8f18dd211da72db7",
+    "su2_nqs/benchmarks/spin_partition_readout.py": "55e2e10dc70f3a4a427ce5281c9caec1ff0e0208c1b1ec8ad8c412a9e494d1d7",
+    "su2_nqs/benchmarks/spin_sector.py": "6f03a4d46196a3e990b86f05bc830e52d483df8af28e0dcf6dc84787265edb0a",
+    "su2_nqs/benchmarks/su2_entanglement_spectrum.py": "87c51eaa02dd62f5a5b1528c4f9e9a7a2deb89064645811548e506be86c41564",
+    "su2_nqs/benchmarks/tensor_network_readout.py": "7760cd9a2fccffae4052db695e70a9c5519c5a702a5becff42dbe8428fbbc8ff",
+    "su2_nqs/frontier/__init__.py": "5072243c54584509161a4711eba9a153368ca08e50a23d160ad92689738a49ce",
+    "su2_nqs/frontier/artifacts.py": "dce5dec53f460a74d48e7e24de6861f91b9f54fee167baeceb6b8378db65390b",
+    "su2_nqs/frontier/energy_targets.py": "4bc3fe48a14ff9af862238be127b216c4195c2a87b19dcde1a44a680ce02a55d",
+    "su2_nqs/frontier/parameter_artifact.py": "7f1e1c70f2e8a9326945251bc1de8aad269b175974053c54e325877d3962c0d6",
+    "su2_nqs/frontier/provenance.py": "7ca5a8c7f08f9385d85381984b06da52fc452db797cc580c687b9869e8bdf80b",
+    "su2_nqs/frontier/records.py": "bd453368bd5665c42a4a737ac4129aade0ec317f524c9d4230fe0d3c03a25d06",
+    "su2_nqs/frontier/route_policy.py": "66d619c3c34a046dac0fa8a31ac138158f1f16798d8a19c9b12b604400602f8d",
+    "su2_nqs/lattices/__init__.py": "11c5369dbbdcd9809a54f4b46b082f4a91f998af9f7caa963b66f24cc3c04418",
+    "su2_nqs/lattices/geometry_tree.py": "4c2af16bee0593d5b4d58607ec997f6609552886bf876606f2577bb1b51267da",
+    "su2_nqs/lattices/j1j2.py": "5d26844aa79a9577a8ae0d58a839f7cfd5aae50bfa78f2179c3bcb7d2bf77a47",
+    "su2_nqs/lattices/spatial_symmetry.py": "50042b7363ff9a6e666c51290bf5f9ebeca31813432fcfa6f9840485bf7afb8e",
+    "su2_nqs/lattices/triangular_hnf.py": "baec28cf7488f694f8ff827408baf4a4161f5e4ad51d7e5b203f7293a1e693bb",
+    "su2_nqs/lattices/triangular_j1j2.py": "b06b59d4c71c54093b3818f132494a901d06f359a4b4fdc537cdc8ea2005faee",
+    "su2_nqs/models/__init__.py": "968f80c9d437cad4d3f4657b8962c1aaac4880457cf506faa6f6dcb168a21084",
+    "su2_nqs/models/_core.py": "3892a62fb1f6cb622d8201216574e6c531ef57dac8e537f848edc6c7047fbef9",
+    "su2_nqs/models/compact_tree_gru.py": "798b6094c5770b4935743b404e14e09ccb2a95817f02b96d63f122ed5b65354e",
+    "su2_nqs/models/fixed_sz_autoregressive_spatial_vit.py": "b1774e3a44e8164d4aaa5e0af7af1bf8c49e850fef0992400392a68c8fe459ff",
+    "su2_nqs/models/fixed_sz_spatial_vit.py": "2ce617fae12480097336578058d6ec06ece38425871a889c0e0c2a32b2ebf37a",
+    "su2_nqs/models/hubbard_abelian_tree.py": "5d225b5e21d119ab87bf75286b22013252e050cc728030ae920e40a58090cd3a",
+    "su2_nqs/models/hubbard_cg.py": "89be44b427825f8c4b7a1acd8549c4c7036ce106c26242872da6cc33fcf02caa",
+    "su2_nqs/models/literature_spatial_vit.py": "1990df721b5a22fc9a94e2eb7182272e65580796d11d880a6bb6f00a74fda70c",
+    "su2_nqs/models/many_cell_schur_vit.py": "000ba1830fdd3a6a903a3b0bfe5d30b508b7f52bdf37a19c5e49c17205115b86",
+    "su2_nqs/models/physical_tree.py": "0c83811083f8c7a4d58a86aafbd43f189a3705d8fcca06cc6398c70ee0a60468",
+    "su2_nqs/models/spin_clebsch_tree.py": "dbcdccba1acfd461bc87a4f326fd36ce1a0b7cd96fde00b712ac6911491c6019",
+    "su2_nqs/models/spin_control_tree.py": "ed75de669be7e65bb8c491e44f09c8d74fd982c7e2db090b711a58d10048ce57",
+    "su2_nqs/models/tree_gru.py": "33ae33099c221f70f28c8d93c9991d51c20992ae4f98eabe2da47d9315f421a1",
+    "su2_nqs/operators/__init__.py": "1de4a23b2b1cb7a7ec66bfc1b76a63ef6611cd818517bd9b2114e5e351d8d636",
+    "su2_nqs/operators/computational_graph_sparse.py": "3a529282e8f58bbe8dffbe5c0cc9351389f6a0bc88ed862c873fe80cfd07a3ef",
+    "su2_nqs/operators/sz_graph_sparse.py": "3ff19a6727e383cf5a1afaf7eb88bb6f0f51900c25c53ad7b478605095a7307b",
+    "su2_nqs/operators/sz_heisenberg.py": "3c47c75de8c2e4996d6724222b0fee7888741288e9b593af8759b993561f9710",
+    "su2_nqs/su2/__init__.py": "1d3800f78f2a00f865e9d2f2be4dfb3df3e6f59d37ab96e7c4f5992644240892",
+    "su2_nqs/su2/clebsch_gordan.py": "9b75cc779ca1db4e3a4d949723ff568af48e338a5ab081ba9fc0021c311e565e",
+    "su2_nqs/su2/fusion_tree.py": "6382feac148e7803b92201691557fe7765e669860da4597dc6f0fcc7cd4cc95a",
+    "su2_nqs/su2/hubbard_cg_irrep.py": "15f4319dc61ad07458f5fe717dfeea9ea2ced00ff5bc4984f027f571fbb33bcd",
+    "su2_nqs/su2/many_cell_schur.py": "dbcb5495785129ea8c8cfe8a6f3f643d787d8254663157d11a64cc8284f2ce64",
+    "su2_nqs/su2/quantum_numbers.py": "e596a7da6a79a7a5b2ebb2a6b9d97b82c78c604e3aaf49a8c21a15dd02f6cc64",
+    "su2_nqs/su2/recoupling.py": "d415e8a492fccaab2898ae3c1bf895a5c2dc822ce14c381f8575a62c7cf4e73d",
+    "su2_nqs/su2/sz_basis.py": "5e5276d537187647b5dbf8df465daeb343dd875806ebcb6462ce2eecd5d4a467",
+    "su2_nqs/su2/tree_rotations.py": "a5c79ebbede6df9ae52250763423f81824895222bbb135c6b561804119a6d694",
+    "su2_nqs/su2/wigner6j.py": "6e622d416227d84b87a45c58370efb1210951e35cf9ac8c57fcf2fcc88734733",
+    "su2_nqs/vmc/__init__.py": "bcefde4f31f984737f712184a42cf9a074c625c6df0b3a07150a7e3f93e5e2ed",
+    "su2_nqs/vmc/adam.py": "18d1e08358c8d975652198acb183eb57844798ceb7457bf8da3af7ca0142066a",
+    "su2_nqs/vmc/bounded_exact.py": "96aaf69a7c62c8a6841ed96802873596b690683be5a06b54822da8f7160ca83c",
+    "su2_nqs/vmc/checkpoint.py": "c1921c7936b6c8fcb50f110f56dd1e9c8c6508e4052fe07a22cb1762d8f9fbc5",
+    "su2_nqs/vmc/dual_sampled_sr.py": "c8722559217c0ebb083151e4d6120ed56697e5a0186a8ab762b8c78c885c74b2",
+    "su2_nqs/vmc/gradients.py": "6e12ce410aaf823d68455edf6c897f26a5f591414eff2272831143dcde76b1b3",
+    "su2_nqs/vmc/local_energy.py": "319688b783fbd4edf73ee8fe99e113c99b5e365eb068ce003b5b935c63085364",
+    "su2_nqs/vmc/physical_exchange.py": "33240030d500a60a0689e1cac0751fa80f9343e0fdac955f72ee855397a8a82f",
+    "su2_nqs/vmc/regional_density.py": "0ca9b8e9aaa0684faa9080d464dbda3a58af3841d20d5525a2101af8ad528909",
+    "su2_nqs/vmc/sampler.py": "eb6acc0a4f920f7c06ae3883cc4a7c5c41a65857e086517900b02aafc222ef8b"
+  },
+  "source_configs_tests_launch_sha256": {
+    "projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_netket_n36.json": "55ffe7e4ff69c11a4d4464da70729af12b182aeae88018966b3e7eae5316f574",
+    "projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_netket_canary.json": "112c9298fc46428893a6a1fdc1d58ec6a3173e803676bbde25666ae60b93b594",
+    "projects/clebsch_tree_nqs/remote/spatial_vit_quality_a100.sbatch": "9e2e42b8e2ccfaed731c406bbaa8440ff04d90f2126aefe394ff34c92d3b99b0",
+    "tests/test_spatial_vit_netket.py": "3c67d07922570cc486a818d8b2ba257276d7683ef9d481048f90858af81b4145"
+  },
+  "previous_canary": {
+    "job_id": 49623,
+    "state": "FAILED",
+    "elapsed_seconds": 151,
+    "reason": "Stage replay used bitwise parameter-hash equality across GPU compilation/reduction orders. Numerical equality is now tested at unchanged 2e-12 tolerance with identical sampler RNG/configurations; hashes remain independently recorded."
+  },
+  "canary": {
+    "job_id": 49795,
+    "state": "COMPLETED",
+    "elapsed_seconds": 253,
+    "exit_code": "0:0",
+    "tests_passed": 4,
+    "test_seconds": 131.96,
+    "actual_n36_training_steps": 3,
+    "projection_schedule": [
+      "none",
+      "translation",
+      "gamma_a1"
+    ],
+    "parameter_count": 99904,
+    "samples_per_update": 32,
+    "full_H_calls": 96,
+    "checkpoint_restored_and_local_endpoint_sha_verified": true,
+    "local_results": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_quality_v1/canary",
+    "registration_sha256": "6f1d1c4952436cfb79ce8363a8f27650d01fc19b58b696db42b3d291e0f35c10",
+    "steps": [
+      {
+        "step": 1,
+        "stage": 0,
+        "projection": "none",
+        "images": 2,
+        "seconds_including_compile": 29.146315552992746,
+        "energy_before_update_per_site": -0.052413731058566754,
+        "imaginary_energy_before_update_per_site": -0.00768668506841214,
+        "variance_before_update_per_site": 0.6914871493218556,
+        "gpu_peak_bytes": 186702080,
+        "samples": 32,
+        "full_H_calls": 32
+      },
+      {
+        "step": 2,
+        "stage": 1,
+        "projection": "translation",
+        "images": 18,
+        "seconds_including_compile": 29.688868855009787,
+        "energy_before_update_per_site": 0.016904078211058167,
+        "imaginary_energy_before_update_per_site": 0.007212808713397452,
+        "variance_before_update_per_site": 0.7335360404624001,
+        "gpu_peak_bytes": 186702080,
+        "samples": 32,
+        "full_H_calls": 32
+      },
+      {
+        "step": 3,
+        "stage": 2,
+        "projection": "gamma_a1",
+        "images": 216,
+        "seconds_including_compile": 34.74409189692233,
+        "energy_before_update_per_site": -0.02970787303111903,
+        "imaginary_energy_before_update_per_site": 0.015794652718531314,
+        "variance_before_update_per_site": 0.728706499620583,
+        "gpu_peak_bytes": 1265528064,
+        "samples": 32,
+        "full_H_calls": 32
+      }
+    ]
+  },
+  "stages": [
+    {
+      "mode": "pilot",
+      "hours": "08:00:00",
+      "name": "vit-pilot200",
+      "depends_on": 49795,
+      "job_id": 49906,
+      "state_at_observation": "RUNNING",
+      "resources": {
+        "gpus": 1,
+        "type": "nvidia_a100_80gb_pcie",
+        "cpus": 8,
+        "host_memory_gib": 96
+      },
+      "success_dependency": "afterok:49795",
+      "kill_on_invalid_dependency": true,
+      "log": "logs/vit-49906.out"
+    },
+    {
+      "mode": "production",
+      "hours": "36:00:00",
+      "name": "vit-full5600",
+      "depends_on": 49906,
+      "job_id": 49934,
+      "state_at_observation": "PENDING (Dependency)",
+      "resources": {
+        "gpus": 1,
+        "type": "nvidia_a100_80gb_pcie",
+        "cpus": 8,
+        "host_memory_gib": 96
+      },
+      "success_dependency": "afterok:49906",
+      "kill_on_invalid_dependency": true,
+      "log": "logs/vit-49934.out"
+    },
+    {
+      "mode": "audit",
+      "hours": "24:00:00",
+      "name": "vit-frozen-audit",
+      "depends_on": 49934,
+      "job_id": 49940,
+      "state_at_observation": "PENDING (Dependency)",
+      "resources": {
+        "gpus": 1,
+        "type": "nvidia_a100_80gb_pcie",
+        "cpus": 8,
+        "host_memory_gib": 96
+      },
+      "success_dependency": "afterok:49934",
+      "kill_on_invalid_dependency": true,
+      "log": "logs/vit-49940.out"
+    }
+  ],
+  "pilot_observation": {
+    "completed_steps": 45,
+    "history": [
+      {
+        "step": 43,
+        "stage": 0,
+        "projection": "none",
+        "images": 2,
+        "seconds_including_compile": 10.705381553969346,
+        "energy_before_update_per_site": -0.04938608866781956,
+        "imaginary_energy_before_update_per_site": -0.001418134327260368,
+        "variance_before_update_per_site": 0.6293844827373545,
+        "gpu_peak_bytes": 2593092096,
+        "samples": 4096,
+        "full_H_calls": 4096
+      },
+      {
+        "step": 44,
+        "stage": 0,
+        "projection": "none",
+        "images": 2,
+        "seconds_including_compile": 10.724047637078911,
+        "energy_before_update_per_site": -0.05327481881370675,
+        "imaginary_energy_before_update_per_site": 0.00017934253220283365,
+        "variance_before_update_per_site": 0.47682252493220534,
+        "gpu_peak_bytes": 2593092096,
+        "samples": 4096,
+        "full_H_calls": 4096
+      },
+      {
+        "step": 45,
+        "stage": 0,
+        "projection": "none",
+        "images": 2,
+        "seconds_including_compile": 10.704808252980001,
+        "energy_before_update_per_site": -0.05662730156806709,
+        "imaginary_energy_before_update_per_site": 0.0001544866286397492,
+        "variance_before_update_per_site": 0.5508775972981707,
+        "gpu_peak_bytes": 2593092096,
+        "samples": 4096,
+        "full_H_calls": 4096
+      }
+    ],
+    "parameter_count": 99904,
+    "registration_sha256": "632b6d2165cab56625cb9372612287c39ce89200bb5c2297fda7511cf85f4b12",
+    "status": "running"
+  },
+  "training_protocol": {
+    "geometry": "triangular",
+    "rows": 6,
+    "columns": 6,
+    "boundary": "PBC",
+    "J1": 1,
+    "J2": 0.125,
+    "parameters": 99904,
+    "full_network": true,
+    "configuration_dependent": true,
+    "carrier": null,
+    "new_head": false,
+    "samples_per_update": 4096,
+    "target_total_steps": 5600,
+    "stages": [
+      {
+        "projection": "none",
+        "steps": 5000
+      },
+      {
+        "projection": "translation",
+        "steps": 500
+      },
+      {
+        "projection": "gamma_a1",
+        "steps": 100
+      }
+    ],
+    "pilot_steps_included_in_total": 200,
+    "total_active_training_seconds_cap": 129600,
+    "sr_convention": "(2 Re Cov + lambda I)d=2 Re force; delta=-eta d. NetKet shift=lambda/2, SGD rate=eta/2 with raw direction2d.",
+    "strict_su2": false,
+    "spin_inversion_even": true,
+    "fixed_doubled_magnetization": 0,
+    "complete_A1_during_final_stage_and_all_frozen_audits": true,
+    "complete_A1_during_raw_stage": false,
+    "quality_milestones": [
+      0,
+      200,
+      1000,
+      3000,
+      5000,
+      5500,
+      5600
+    ],
+    "independent_audit_seed_base": [
+      2026100743,
+      2026100744
+    ],
+    "audit_records_at_endpoint": 16384,
+    "audit_never_selects_terminal": true,
+    "large_ED_performed": false,
+    "accuracy_claimed": false,
+    "phase_claim": false
+  },
+  "production_gate": [
+    "Completed200-step GPU pilot and full checkpoint/config/parameter seals",
+    "Finite full-H moments; last20 mean training E lower than first20",
+    "Last20 mean variance below1.25 times first20; device peak below75GiB",
+    "Unchanged config/source and same trajectory/RNG; no restart"
+  ],
+  "checkpoint_policy": "Atomic complete-step parameters, sampler configurations/RNG, SGD/online SR state, stage/global counter and shared active time/work budget. Safe pauses retain state and exit2; dependencies block/cancel. Manual explicit unchanged-protocol resume, no auto retry.",
+  "local_physics": {
+    "result": "projects/clebsch_tree_nqs/results/spin_spatial_vit_quality_v2/saved_physics/results.json",
+    "new_training": 0,
+    "new_samples": 0,
+    "new_ED": 0,
+    "new_full_H_calls": 0,
+    "new_amplitude_queries": 0,
+    "frozen_steps": [
+      128,
+      256,
+      512,
+      768,
+      942
+    ],
+    "terminal_compact6_high_q3": {
+      "value": 0.01322865209437268,
+      "whole_chain_SE": 0.002759743028129875
+    },
+    "adjacent_high_q3_change_max_signal_over_independent_SE": 1.5368972154371887,
+    "strict_multiplicity_spectrum_reported": false,
+    "phase_claim": false
+  },
+  "validation": {
+    "ordered_math_model": 34,
+    "shared_quality": 12,
+    "cached_physics": 6,
+    "optional_backend_local": 4,
+    "optional_backend_gpu": 4,
+    "archived_decoder_group_original_cpu_flag": 11,
+    "full_suite_attempt": {
+      "passed": 719,
+      "skipped": 4,
+      "failed_before_interrupt": 23,
+      "runtime_flag_failures_resolved_by_original_cpu_flag": 10,
+      "remaining_known_old_source_hash_checks": 13,
+      "interrupted": true,
+      "historical_records_or_tests_resigned": false
+    },
+    "replay_tolerance": 2e-12,
+    "full_H_adapter_and_chunk_equivalence_tolerance": 2e-13,
+    "SR_independent_relative_residual_tolerance": 1e-9
+  },
+  "priority": [
+    "Credible complete N36 Spatial-ViT energy/variance and independent audit",
+    "Own-quality SU2/space-resolved physical readout stability; no new heads",
+    "Independent DMRG/reference and physically different candidates at matching H/BC/cuts",
+    "Ordered J2=0 then coupling/independent square checks",
+    "Larger capacity/regions/sizes only for scientifically stable states/readouts"
+  ]
+}

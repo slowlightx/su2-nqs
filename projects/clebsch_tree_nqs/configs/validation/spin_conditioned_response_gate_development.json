@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_conditioned_response_gate",
+  "phase": "development",
+  "scientific_question": "Can a configuration-dependent SU(2)-scalar response gate turn symmetry-labelled square-lattice resonance channels into a seed-robust variational improvement rather than a fixed subspace enlargement?",
+  "mechanism": {
+    "ground_sector": "Gamma-A1 singlet",
+    "reduced_inputs": "six causal local-Schur q,a and two-dimensional position tokens",
+    "triangular_certificate_channels": [
+      "E2_J1_nematic_return",
+      "A2_chirality_return"
+    ],
+    "square_training_channels": [
+      "B1_J1_nematic_return",
+      "B2_J2_nematic_return",
+      "A2_chirality_return"
+    ],
+    "conditioned_operator": "trace-centered Frobenius-normalized anticommutator of an A1-projected diagonal gate and a prevalidated response-return operator",
+    "common_physical_overlapping_operators": 8,
+    "matched_control": "a fixed orthogonal conjugation of every conditioned operator at every parameter point, preserving its spectrum, gate values, parameter count, and operator count"
+  },
+  "optimization": {
+    "seeds": [1311, 1312, 1313, 1314, 1315],
+    "steps": 1000,
+    "learning_rate": 0.01
+  },
+  "excluded_all_previous_seeds": [
+    0, 1, 2,
+    101, 102, 103,
+    211, 212, 213,
+    311, 312, 313,
+    411, 412, 413,
+    511, 512, 513,
+    521, 522, 523,
+    611, 612, 613,
+    711, 712, 713,
+    811, 812, 813,
+    911, 912, 913,
+    1011, 1012, 1013,
+    1111, 1112, 1113, 1114, 1115,
+    1211, 1212, 1213, 1214, 1215
+  ],
+  "promotion_rule": "On square N16 J2/J1=0.5, the conditioned labelled arm must improve fixed-labelled median and worst-seed energy error, improve baseline worst-seed error, win at least four of five paired seeds against the pointwise-isospectral scramble, beat that control in median variance and response-moment error, put every seed below 1e-5 total-energy error, and retain a median minimum channelwise gate standard deviation above 0.02. Triangular N12 remains an exact E2/A2 representation certificate only.",
+  "forbidden_actions": [
+    "change the gate, response channels, controls, seeds, steps, learning rate, or thresholds after seeing results",
+    "reuse any seed through 1215",
+    "allow the learned model to access magnetic indices",
+    "linearly mix a non-A1 response state into the A1 ground state",
+    "inspect individual development seeds before sealing the complete artifact",
+    "claim N36, QSL physics, or thermodynamic behavior from this exact-small development"
+  ]
+}

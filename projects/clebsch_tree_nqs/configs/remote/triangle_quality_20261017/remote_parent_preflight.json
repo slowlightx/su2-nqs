@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "arms": [
+    {
+      "case": "spatial_j0125_s4096",
+      "generated_config": "/home/yx789/nqs-triangle-quality-20261017/projects/clebsch_tree_nqs/configs/remote/triangle_quality_20261017/spatial_j0125_s4096.json",
+      "config_sha256": "aecacd7b030d93d495e7ebbc0a9daca334af4a04a06eca925c924f37979d6e87",
+      "params_sha256": "a6fdc961094d1f63f29fd9faab0f19ef9af50cf0d0426aa2f75217e15925a24f",
+      "parent_state_exact": true,
+      "samples": 4096,
+      "parameter_count": 99904
+    },
+    {
+      "case": "spatial_j0125_s6144",
+      "generated_config": "/home/yx789/nqs-triangle-quality-20261017/projects/clebsch_tree_nqs/configs/remote/triangle_quality_20261017/spatial_j0125_s6144.json",
+      "config_sha256": "107a1ee5a8cc31958621344f26b829dc3c88465d6ff3e5ea34b130e4f7ee1add",
+      "params_sha256": "a6fdc961094d1f63f29fd9faab0f19ef9af50cf0d0426aa2f75217e15925a24f",
+      "parent_state_exact": true,
+      "samples": 6144,
+      "parameter_count": 99904
+    },
+    {
+      "case": "spatial_j0_s4096",
+      "generated_config": "/home/yx789/nqs-triangle-quality-20261017/projects/clebsch_tree_nqs/configs/remote/triangle_quality_20261017/spatial_j0_s4096.json",
+      "config_sha256": "e6382196a004406993ac6b06acf63328640102b0d98a6a42123a6528a695a3e4",
+      "params_sha256": "16799c5d7595290a2dce1745bd966605990a5b9e3abf9c387a7b3e4f0abc6154",
+      "parent_state_exact": true,
+      "samples": 4096,
+      "parameter_count": 99904
+    },
+    {
+      "case": "spatial_j0_s6144",
+      "generated_config": "/home/yx789/nqs-triangle-quality-20261017/projects/clebsch_tree_nqs/configs/remote/triangle_quality_20261017/spatial_j0_s6144.json",
+      "config_sha256": "b004891ced0a6c101fa8825691a7add694505f592a927063aa514bc46c1862c8",
+      "params_sha256": "16799c5d7595290a2dce1745bd966605990a5b9e3abf9c387a7b3e4f0abc6154",
+      "parent_state_exact": true,
+      "samples": 6144,
+      "parameter_count": 99904
+    }
+  ],
+  "read_only_parents": true,
+  "preflight_only_time_margins_revision": true,
+  "actual_GPU_updates_not_yet_measured": true
+}

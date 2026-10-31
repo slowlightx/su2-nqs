@@ -1,0 +1,259 @@
+{
+  "task": "frozen_vector_chirality_quality_and_cut_test",
+  "regions": {
+    "prefix18": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "bump18": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "prefix12": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "momenta": {
+    "Gamma": [
+      0,
+      0
+    ],
+    "K": [
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "minus_K": [
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "M1": [
+      0.5,
+      0
+    ],
+    "M2": [
+      0,
+      0.5
+    ],
+    "M3": [
+      0.5,
+      0.5
+    ]
+  },
+  "query_batch": 32,
+  "wall_seconds": 2400,
+  "name": "tri_j0_750",
+  "parent": "/home/yx789/nqs-wavefunctions/nqs/tri_j0_repair_v6_continue_1000/seed1",
+  "step": 750,
+  "checkpoint_sha256": "287fc5436bd791202dc217e0d023a47f6213646f1141f1d938e83977ff05a839",
+  "streams": {
+    "stream2026858952.npz": "1b42763bf46572101783ffc4dbc7943acc91de98dc9a39249dcf1b46ffed17cb",
+    "stream2026858953.npz": "b1251d6752131072d1fa8490a6e58cf1f3cef0596997a18f0ad7b437c9490d8a"
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/chirality_cut_20261015/tri_j0_750",
+  "relative_replica_orbit": "complete_x_translations_times_spin_flip",
+  "cut_protocol": "prefix18 vs same-volume one-site boundary bump18 vs narrower prefix12; NOT symmetry-equivalent rotations. Identical row1 winding6 operator on all cuts. Additional full18-bond operator only on prefix18, never confused with six-bond sum.",
+  "chirality_channels": {
+    "prefix18": {
+      "row1_kappa_z": [
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          6
+        ]
+      ],
+      "full18_kappa_z": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          17,
+          12
+        ]
+      ]
+    },
+    "bump18": {
+      "row1_kappa_z": [
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          6
+        ]
+      ]
+    },
+    "prefix12": {
+      "row1_kappa_z": [
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          6
+        ]
+      ]
+    }
+  },
+  "stopping": "All64 chain pairs and128 snapshots, no adaptive extra sampling, no tail clipping; unresolved denominators and negative noisy estimates retained; all results not phase classification."
+}

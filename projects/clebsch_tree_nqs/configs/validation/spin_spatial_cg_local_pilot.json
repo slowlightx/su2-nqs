@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "support_aware_spatial_cg_local_pilot",
+  "status": "preregistered_local_architecture_kill_gate",
+  "oracle_seed": 20260916,
+  "oracle_tangent_count": 8,
+  "model": {
+    "feature_dim": 4,
+    "maximum_intermediate_q": 8,
+    "initialization_scale": 1.0
+  },
+  "optimization": {
+    "learning_rate": 0.005,
+    "record_every": 5,
+    "seeds": [11, 12, 13],
+    "energy_error_per_site_targets": [0.05, 0.01, 0.005, 0.001]
+  },
+  "arms": [
+    {"arm_id": "single_tree", "steps": 100},
+    {"arm_id": "spatial_cg", "steps": 100},
+    {"arm_id": "scrambled_spatial_cg", "steps": 100},
+    {"arm_id": "single_tree_work_control", "steps": 800}
+  ],
+  "cases": [
+    {
+      "case_id": "square_4x4_j2_0p5_spatial_cg",
+      "geometry": "square",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.5,
+      "projection": "translation",
+      "scramble_seed": 5101,
+      "exact_energy_anchor": -8.457923351394845,
+      "anchor_provenance": "stored physical-M0 exact reference; runner performs no eigensolve"
+    },
+    {
+      "case_id": "triangular_4x4_j2_0p125_spatial_cg",
+      "geometry": "triangular",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.125,
+      "projection": "translation",
+      "scramble_seed": 7125,
+      "exact_energy_anchor": -8.553311087209,
+      "anchor_provenance": "stored physical-M0 exact reference; runner performs no eigensolve"
+    }
+  ],
+  "promotion_gate": {
+    "capacity": "spatial_cg must improve energy and variance over the paired 100-step Morton single tree on both lattices",
+    "compute": "spatial_cg must beat the 800-step single-tree work control on at least one lattice",
+    "locality": "physical route bank must beat the descriptor-mismatched scrambled bank",
+    "coherence": "the optimized mixture must lie below every separately evaluated route component",
+    "scope": "4x4 triangular is not K-compatible and cannot support a 120-degree or QSL claim"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_four_cell_recoupling_variable_projection_audit",
+  "phase": "untouched_audit",
+  "frozen_development_artifact": "projects/clebsch_tree_nqs/results/spin_four_cell_recoupling_variable_projection_development_v1/results.json",
+  "frozen_development_result_sha256": "c1e877a3e3a4e6a93c9b7774efab5af0bdabeafa6ad6acfeaaa5468ca2fd12f0",
+  "architecture": {
+    "differentiable_rayleigh_ritz": true,
+    "train_backbone_only": true,
+    "physical_and_scrambled_operator_count": 8,
+    "report_one_lanczos": true
+  },
+  "optimization": {
+    "seeds": [1011, 1012, 1013],
+    "steps": 1000,
+    "learning_rate": 0.01
+  },
+  "excluded_all_previous_seeds": [
+    0, 1, 2,
+    101, 102, 103,
+    211, 212, 213,
+    311, 312, 313,
+    411, 412, 413,
+    511, 512, 513,
+    521, 522, 523,
+    611, 612, 613,
+    711, 712, 713,
+    811, 812, 813,
+    911, 912, 913
+  ],
+  "audit_rule": "Apply the frozen development gates without modification. Passing licenses only a sampled N36 canary implementation, not a production QSL claim.",
+  "forbidden_actions": [
+    "modify any frozen transitive source",
+    "change architecture, steps, learning rate, or gates",
+    "reuse any previous seed",
+    "inspect or tune individual audit seeds before the complete artifact is sealed",
+    "claim large-system scalability from this exact-small audit"
+  ]
+}

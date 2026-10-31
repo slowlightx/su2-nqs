@@ -1,0 +1,73 @@
+{
+  "purpose": "Zero-query partial spin rotation falsification, axis consistency and finite-region signal-to-noise; not QSL certification.",
+  "series_results": "projects/clebsch_tree_nqs/results/coupling_quality_review_20261012/latest_su2_series_v1/results.json",
+  "series_results_sha256": "53f8e0f071f9d7fbad011c3c9c8129fcde42428a6abeba7a1aaff5504c05da3c",
+  "series_arrays": "projects/clebsch_tree_nqs/results/coupling_quality_review_20261012/latest_su2_series_v1/readouts.npz",
+  "series_arrays_sha256": "7f605f535587e2c58062474fae5a53ac7c62b534ebcd90a383d0ce21190672b8",
+  "output": "projects/clebsch_tree_nqs/results/spin_rotation_disorder_20261012_v1",
+  "angle_points": 257,
+  "seconds_cap": 600,
+  "render_figure": true,
+  "jackknife_caches": [
+    {
+      "label": "triangular_0_250",
+      "path": "projects/clebsch_tree_nqs/results/coupling_quality_review_20261012/inputs/tri_j0/canonical_step00250/physics.npz",
+      "sha256": "8dea61e0fdf7a6398df750bdc257cb370807e3c689281696f6a2593e53d300fe"
+    },
+    {
+      "label": "triangular_0_500",
+      "path": "projects/clebsch_tree_nqs/results/coupling_quality_review_20261012/inputs/tri_j0/canonical_step00500/physics.npz",
+      "sha256": "bf846370780de911a4a58365f6b816e18916c0e6e919d01a9bce8ec3c006718e"
+    },
+    {
+      "label": "triangular_0.125_8600",
+      "path": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/tri_8600/regional/physics.npz",
+      "sha256": "43b42423ec8051df5d71b9a173d699243dff139a27238793c38d80ad3eeafa0d"
+    },
+    {
+      "label": "triangular_0.125_9600",
+      "path": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/tri_9600/regional/physics.npz",
+      "sha256": "ac380c08de505da64f23630f4db67a9267bc2984898aa93d18bc398cdc128454"
+    },
+    {
+      "label": "triangular_0.125_10600",
+      "path": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/tri_10600/regional/physics.npz",
+      "sha256": "bf78629b2e1549ee9ff50fb829fffbcaa9a5abd9ccc5c7a66ea6b2f3023e5662"
+    }
+  ],
+  "born_audits": [
+    {
+      "label": "tri125_d2e3_100",
+      "directory": "projects/clebsch_tree_nqs/results/frustrated_quality_review_20261012/midpoints/tri_j0125_s4096_d2e3",
+      "audit_sha256": "8a35f07efb90a0cb167683d4b6ced8ea71c9cd0a6d016a3cf30da6bef4cb16de"
+    },
+    {
+      "label": "tri125_d2e4_100",
+      "directory": "projects/clebsch_tree_nqs/results/frustrated_quality_review_20261012/midpoints/tri_j0125_s4096_d2e4",
+      "audit_sha256": "45a5248c698b5906ca89dbd04f7af0eff96241a9821e4d28813e2f2444f47a4b"
+    }
+  ],
+  "regions": [
+    {"name": "A4_2x2", "sites": [0,1,6,7], "row_column_shape": [2,2], "contractible": true},
+    {"name": "A6_2x3", "sites": [0,1,2,6,7,8], "row_column_shape": [2,3], "contractible": true},
+    {"name": "A8_2x4", "sites": [0,1,2,3,6,7,8,9], "row_column_shape": [2,4], "contractible": true},
+    {"name": "A12_3x4", "sites": [0,1,2,3,6,7,8,9,12,13,14,15], "row_column_shape": [3,4], "contractible": true},
+    {"name": "A16_4x4", "sites": [0,1,2,3,6,7,8,9,12,13,14,15,18,19,20,21], "row_column_shape": [4,4], "contractible": true}
+  ],
+  "control_arrays": "projects/clebsch_tree_nqs/results/spin_competing_state_readout_v1/readout.npz",
+  "control_arrays_sha256": "3f586a833f74456ed085bb745aca3e3049cb3faf42c5970f765b4c4e55aa8065",
+  "control_keys": [
+    {"label": "internal_product_dimers", "key": "dimer_internal_strip_6_rho"},
+    {"label": "four_crossing_product_dimers", "key": "dimer_four_crossing_strip_6_rho"},
+    {"label": "collective_two_sublattice_singlet", "key": "collective_two_sublattice_strip_6_rho"},
+    {"label": "collective_three_sublattice_singlet", "key": "collective_three_sublattice_strip_6_rho"}
+  ],
+  "decision_rules": [
+    "No finite Z curve, zero, q parity or x/z agreement alone identifies QSL.",
+    "Only even regions are used for pi feasibility: odd SU2 regions have forced pi zeros.",
+    "Retain signed/complex values and whole-chain covariance; no absolute-value floor or log/cusp fit.",
+    "Direct diagonal Born FCS does not measure phase information or multiplicity coherence.",
+    "Different region shapes on one 6x6 torus are not a thermodynamic boundary limit.",
+    "Any later gapped-Z2 interpretation requires independently justified SET and effective-boundary assumptions."
+  ]
+}

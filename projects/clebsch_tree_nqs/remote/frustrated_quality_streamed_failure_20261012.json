@@ -1,0 +1,28 @@
+{
+  "status": "failed_before_installed_update",
+  "job_id": 231533,
+  "job_name": "fq2v2-pilot",
+  "workdir": "/home/yx789/nqs-frustrated-quality-20261012",
+  "start_submit_utc": "2026-10-12T22:09:30.264862+00:00",
+  "elapsed_seconds": 400,
+  "exit_code": "1:0",
+  "ntk_on_the_fly": true,
+  "allocation_request_gib": 185.07,
+  "jit_executable": "jit_srt_onthefly",
+  "hlo_estimate_after_rematerialization_gib": 148.79,
+  "descendants_cancelled": [
+    231534,
+    231535
+  ],
+  "gpu_preflight_tests": {
+    "passed": 16,
+    "skipped": 0
+  },
+  "checkpoint_completed_steps": 0,
+  "old_checkpoint_unchanged": true,
+  "attempted_training_full_H_calls": 8192,
+  "completed_H_estimation_not_certified": true,
+  "long_training_released": false,
+  "field_reoptimization_released": false,
+  "decision": "Defer 8192 condition after both bounded implementation probes failed. Continue the successful unchanged-model 4096 conditions; no repeated automatic retries or model changes. NTK on_the_fly is not a matrix-free memory guarantee; neither lowering precision nor invoking the known-broken multi-GPU shard protocol is authorized as a fix."
+}

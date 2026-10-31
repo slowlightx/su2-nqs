@@ -1,0 +1,17 @@
+{
+  "training_directory": "/home/yx789/nqs-wavefunctions/nqs/benchmark_guided_20261017/square/direct_SR4096",
+  "output": "/home/yx789/nqs-wavefunctions/nqs/benchmark_guided_20261017/square/direct_SR4096/audit_step450",
+  "endpoint_step": 450,
+  "require_gpu": true,
+  "streams": 2,
+  "chains_per_stream": 32,
+  "snapshots_per_stream": 64,
+  "burn_proposals": 4096,
+  "proposals_between_snapshots": 256,
+  "audit_seeds": [
+    2026103011,
+    2026103012
+  ],
+  "bootstrap_seed": 2026103013,
+  "H_sample_chunk": 32
+}

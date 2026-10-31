@@ -1,0 +1,79 @@
+{
+  "status": "bounded_streamed_pilot_submitted",
+  "failed_parent_pilot": 231077,
+  "failed_before_installed_update": true,
+  "failed_attempted_full_H_calls": 8192,
+  "failed_attempt_completed_H_calls_not_certified": true,
+  "old_failed_run_not_resumed": true,
+  "only_runtime_NTK_implementation_changed": true,
+  "config_sha256": "f6c3fcefc90a0226d568fbbf94b4de654654da5eda107f480a11e0eaff71d82f",
+  "registration_sha256": "da2d0e5a94b2e5bf79de4e3a284e87156eed5b645bc92c6b10b13ef2f6fc500d",
+  "jobs": {
+    "fq2v2-pilot": {
+      "job_id": 231533,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq2v2-pilot",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s8192_d2e3_streamed_v2.json,NQS_PREFLIGHT_ENDPOINT=2,NQS_INITIAL_ENERGY_CEILING=-0.47,NQS_INITIAL_VARIANCE_CEILING=0.1,NQS_BOUNDED_PILOT_SCREEN=1",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ],
+      "submitted_at_utc": "2026-10-12T22:09:30.264862+00:00"
+    },
+    "fq2v2-resume": {
+      "job_id": 231534,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq2v2-resume",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--dependency=afterok:231533",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s8192_d2e3_streamed_v2.json,NQS_UNTIL_STEP=4,NQS_SESSION_SECONDS=3600",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ],
+      "submitted_at_utc": "2026-10-12T22:09:30.567193+00:00"
+    },
+    "fq2v2-replay": {
+      "job_id": 231535,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq2v2-replay",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--dependency=afterok:231534",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s8192_d2e3_streamed_v2.json,NQS_PROBE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s8192_d2e3_streamed_v2_20261012/seed1/quality/step00002.pkl,NQS_COMPARE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s8192_d2e3_streamed_v2_20261012/seed1/quality/step00004.pkl,NQS_PROBE_OUTPUT=/home/yx789/nqs-wavefunctions/readouts/tri_j0125_s8192_d2e3_streamed_v2_replay_20261012.json,NQS_PROBE_STEPS=2,NQS_PROBE_SECONDS=3600",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "jump-probe"
+      ],
+      "submitted_at_utc": "2026-10-12T22:09:30.887215+00:00"
+    }
+  },
+  "long_training_released": false,
+  "field_reoptimization_released": false
+}

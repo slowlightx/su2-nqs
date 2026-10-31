@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "exact_spin_physics_interpretation",
+  "p1_case": {
+    "case_id": "triangular_4x4_j2_0p075_physics_interpretation",
+    "geometry": "triangular",
+    "rows": 4,
+    "columns": 4,
+    "j2_over_j1": 0.075,
+    "exact_energy_anchor": -8.535019890644346,
+    "anchor_provenance": "one-time local fixed-M0 eigsh; residual 2.33e-13"
+  },
+  "model": {
+    "base_feature_dim": 4,
+    "matched_feature_dim": 6,
+    "maximum_intermediate_q": 8,
+    "initialization_scale": 1.0,
+    "embedding_dim": 12,
+    "head_count": 3,
+    "depth": 1,
+    "mlp_ratio": 2,
+    "modulation_rank": 2,
+    "modulation_scale": 0.15
+  },
+  "optimization": {
+    "warmup_steps": 100,
+    "comparison_steps": 120,
+    "learning_rate": 0.005,
+    "route_learning_rate": 0.003,
+    "record_every": 10,
+    "seeds": [31, 32, 33],
+    "training_projections": ["translation", "gamma_a1"]
+  },
+  "spectroscopy": {
+    "supercell_hnf": [[6, 4], [0, 2]],
+    "j2_values": [0.05, 0.075, 0.1, 0.125, 0.15],
+    "x_plus_frozen_coefficient_calibration_j2": 0.125,
+    "x_plus_frozen_coefficients": [0.995836786770, 0.091154232575]
+  },
+  "exact_reference": {
+    "cache_directory": "references/exact_cache",
+    "recompute_if_missing": true
+  }
+}

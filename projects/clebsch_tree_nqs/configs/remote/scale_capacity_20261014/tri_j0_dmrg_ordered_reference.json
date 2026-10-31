@@ -1,0 +1,59 @@
+{
+  "output": "/home/yx789/nqs-wavefunctions/dmrg/work/tri_j0_ordered_control_20261014",
+  "rows": 6,
+  "columns": 6,
+  "j2": 0,
+  "boundary": "PBC both physical directions; row-major physical ordering, finite virtual MPS",
+  "initializations": [
+    "warm"
+  ],
+  "initial_checkpoints": {
+    "warm": "/share/kim/yx789/nqs-reference-dmrg/inputs/chi5120_sweep26/checkpoint.h5"
+  },
+  "initial_checkpoint_sha256": {
+    "warm": "b1f8abd6ecce2f9fde31be7b08d8444673e6fdc4612af79a3d4ab5e6a0f2b239"
+  },
+  "stages": [
+    {
+      "chi": 2048,
+      "sweeps": 2
+    },
+    {
+      "chi": 4096,
+      "sweeps": 4
+    }
+  ],
+  "seconds_per_arm": 36000,
+  "safe_local_update_guard": true,
+  "reserve_seconds": 7200,
+  "memory_cap_gib": 220,
+  "mixer": false,
+  "regions": {
+    "compact4": [
+      14,
+      15,
+      20,
+      21
+    ],
+    "compact6": [
+      12,
+      13,
+      14,
+      18,
+      19,
+      20
+    ],
+    "winding6": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ]
+  },
+  "readout_tolerance": 1e-9,
+  "new_ED": false,
+  "new_neural_training": false,
+  "decision": "Actual ordered-coupling acquisition, not an analytic magnetic control. New Hamiltonian J2=0; only immutable MPS inherited from .125. New optimizer, not same-H continuation. Fixed2 chi2048 +4 chi4096 sweeps,10h scientific cap plus2h Slurm reserve. Retain both quality endpoints, physical row-major torus and prefix18 partition for later same-cut Schmidt covariance/spatial rotor readout. Energy, truncation, SU2 defects and quality dependence must be checked before treating it as a trusted ordered parent. This is not a bulk-order or QSL proof."
+}

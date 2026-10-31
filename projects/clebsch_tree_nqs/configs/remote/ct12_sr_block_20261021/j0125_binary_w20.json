@@ -1,0 +1,72 @@
+{
+  "task": "native_N144_parameter_block_SR_repair",
+  "training_release": true,
+  "model": {
+    "length": 12,
+    "multiplicity_cap": 20,
+    "maximum_q": 10
+  },
+  "j2_over_j1": 0.125,
+  "arm": "binary_truncated",
+  "binary_rank": 8,
+  "projection_chunk": 4,
+  "action_chunk": 4,
+  "tolerance": 2e-11,
+  "require_gpu": true,
+  "parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/ct12_resume_20261020/j0125_binary",
+    "model": {
+      "length": 12,
+      "multiplicity_cap": 16,
+      "maximum_q": 10
+    },
+    "arm": "binary_truncated",
+    "j2_over_j1": 0.125,
+    "global_optimizer_steps": 10,
+    "params_sha256": "ccd78899ccbc0aacc1be8c7a126385f82b1d4a33495b169b77149b11c0312c5f",
+    "registration_sha256": "45ae0a521ec97eab6b2a939eccb6f97ef23fc7771909a2ec3d1d49b692d52468",
+    "results_sha256": "4ede08a09cd9af2991a80749cbe3d9ca64784760f8603bf67486dbe80a89fc00",
+    "checkpoint_sha256": "b9e230e9a8f8f0ced8c49cb9d616e30f8ab7607e195b30f59c8c4e7bf953ec4b",
+    "audit_sha256": "18c9c5780d873eee53aa7a8fddee1b4bcd68b1e81dee77d69c2114179d27f78d",
+    "raw_samples_sha256": "1ce04e2834daf3c30c073ef192a20c2c8cede3f7be7969268310ac94907c87cf"
+  },
+  "training": {
+    "steps": 8,
+    "chains": 8,
+    "records_per_chain": 32,
+    "initial_burn_proposals": 1440,
+    "refresh_proposals": 288,
+    "proposals_between": 144
+  },
+  "pilot_steps": 2,
+  "audit": {
+    "chains": 32,
+    "records_per_chain": 16,
+    "burn_proposals": 2880,
+    "proposals_between": 144,
+    "seed": 2610211252
+  },
+  "sampler": {
+    "bond_proposal_probability": 0.75,
+    "lazy_probability": 0.05
+  },
+  "sr": {
+    "damping": 0.1,
+    "step_size": 0.03,
+    "fisher_trust_radius": 0.01,
+    "maximum_overlap_distance": 0.01,
+    "minimum_ess_fraction": 0.98,
+    "backtracking_steps": 8,
+    "score_chunk_size": 2,
+    "parameter_chunk_size": 8192
+  },
+  "phase_seconds": {
+    "pilot": 28800,
+    "replay": 14400,
+    "train": 90000
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/ct12_sr_block_20261021/j0125_binary_w20",
+  "interpretation": "Execution-only SR repair: same native global10 parent, exact16->20 inclusion, unchanged256 full-H records, real+imag score metric/factor2, damping, trust, CG,1728A1 images and all bonds. Parameter-column block8192 prevents full centered/normalized score copies. Original raw score remains O(NP). Kernel-memory test then actual two-step pilot and process-isolated replay precede6more steps and untouched512 audit. No energy/scaling success assumed.",
+  "release_profile": "audited_parent_continuation_v2",
+  "expansion_seed": 2610211202
+}

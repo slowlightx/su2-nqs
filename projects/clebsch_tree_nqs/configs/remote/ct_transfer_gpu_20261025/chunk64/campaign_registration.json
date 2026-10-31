@@ -1,0 +1,30 @@
+{
+  "registered_utc": "2026-10-25 16:24:56 UTC",
+  "scope": "Batching-only follow-up to actual slow chunk4 A100 cost pilot; physical endpoints, original chains and RNG unchanged",
+  "sampler_projection_chunk": 64,
+  "H_projection_chunk": 64,
+  "H_batch_amendment_before_any_variant_run": "Completed v1 measured 5.416s per H center: even zero sampling cost would exceed the fixed audit wall cap. Batch all H coherent images in groups of64 too, retaining every connection and old CPU4 exact oracle. No state, samples, thresholds or budget changes.",
+  "support_proposals": 10240,
+  "support_segments": 80,
+  "chains": 8,
+  "gate_window_records": 512,
+  "diagnostic_only_windows": [
+    16,
+    64
+  ],
+  "audit_records_per_chain": 32,
+  "audit_burn": 128,
+  "audit_between": 128,
+  "audit_seed": 2610258300,
+  "audit_H_centers": 516,
+  "extra_GPU_cost_H_centers": 4,
+  "CPU_H_queries": 0,
+  "requested_GPU_hours_upper_bound": 2.75,
+  "maximum_simultaneous_GPUs": 1,
+  "overall_kernel_boundary_cap_seconds": 9300,
+  "stage_caps": "support<=5400 and audit<=3600, capped further by measured remaining allocation",
+  "no_training_or_attention_fit": true,
+  "no_adaptive_budget_extension": true,
+  "submission_condition": "v1 job619835 COMPLETED in448 Slurm seconds, below900; actual v1 plus newly reserved2.75h is below3 GPU-hours.",
+  "runtime_release": "CPU replay and actual same128proposal throughput -> fixed10240 support -> prospective fixed512 gate -> fresh audit"
+}

@@ -1,0 +1,82 @@
+{
+  "task": "native_triangle_sameH_stable_width_continuation_v2",
+  "case": "j0125_ternary_joint",
+  "stage": "w24",
+  "model": {
+    "length": 6,
+    "multiplicity_cap": 24,
+    "maximum_q": 10
+  },
+  "arity": "ternary_joint",
+  "binary_rank": 8,
+  "j2_over_j1": 0.125,
+  "parent": {
+    "kind": "continuation",
+    "model": {
+      "length": 6,
+      "multiplicity_cap": 20,
+      "maximum_q": 10
+    },
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/ct6_width_20261020/j0125_ternary_joint/w20",
+    "plan_path": "projects/clebsch_tree_nqs/configs/remote/ct6_width_20261020/j0125_ternary_joint_w20.json",
+    "expected_identity": {
+      "case": "j0125_ternary_joint",
+      "stage": "w20",
+      "arity": "ternary_joint",
+      "model": {
+        "length": 6,
+        "multiplicity_cap": 20,
+        "maximum_q": 10
+      },
+      "j2_over_j1": 0.125,
+      "binary_rank": 8
+    },
+    "absolute_completed_steps": 284
+  },
+  "pilot_steps": 2,
+  "training": {
+    "steps": 16,
+    "samples": 2048,
+    "chains": 64,
+    "refresh_proposals": 36,
+    "spacing_proposals": 36
+  },
+  "calibration": {
+    "samples": 512,
+    "chains": 64,
+    "initial_burn_proposals": 1440,
+    "refresh_proposals": 144,
+    "spacing_proposals": 36
+  },
+  "audit": {
+    "samples": 16384,
+    "chains": 128,
+    "refresh_proposals": 1440,
+    "spacing_proposals": 36
+  },
+  "seeds": {
+    "calibration": 2610207231,
+    "audit": 2610207232,
+    "expansion": 2610207233
+  },
+  "learning_rate": 0.0001,
+  "damping": 0.05,
+  "maximum_fs_sine": 0.005,
+  "minimum_ess_fraction": 0.98,
+  "halvings": 12,
+  "new_feature_scale": 0.2,
+  "projection_chunk": 4,
+  "action_chunk": 4,
+  "score_chunk": 2,
+  "tolerance": 2e-11,
+  "require_gpu": true,
+  "budget": {
+    "pilot_seconds": 3600,
+    "replay_seconds": 3600,
+    "train_seconds": 14400,
+    "maximum_peak_device_bytes": 75161927680
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/ct6_width_20261020/j0125_ternary_joint/w24",
+  "interpretation": "Branch-local serial18->20 live expansion preserving physical amplitudes, full H, chains and RNG; explicit fresh-dimension Adam reset only. Stable dual-force SR+Adam, same2048-record/step and independent512-record FS guard; two accepted pilot updates and exact-discrete/2e-11-relative independent replay before fixed16-update terminal16384-record audit. No all-branches barrier; no attention; qmax10, rank8 unchanged. Width24 is preregistered but NOT currently released; review width20 audit, quality drift, live new-channel tangent and actual cost first. Lack of significance in a single seed is not proof of width convergence.",
+  "sr_solver": "dual_force"
+}

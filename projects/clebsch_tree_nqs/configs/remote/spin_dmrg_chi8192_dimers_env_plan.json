@@ -1,0 +1,71 @@
+{
+  "n_sites": 36,
+  "dtype": "float64",
+  "chi_upper_bound": 8192,
+  "stop_on_failure": true,
+  "limits": {
+    "memory_gib": 88,
+    "wall_seconds": 7200,
+    "threads": 8
+  },
+  "output": "/share/kim/yx789/nqs-reference-dmrg/readouts/chi8192_sweep28_dimers_env_v2",
+  "regions": [
+    {
+      "name": "dimers",
+      "sites": [
+        0
+      ],
+      "observable": {
+        "kind": "dimer_correlations",
+        "bonds": [
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            14,
+            20
+          ],
+          [
+            24,
+            25
+          ],
+          [
+            30,
+            31
+          ]
+        ]
+      }
+    }
+  ],
+  "purpose": "Actual normalized finite-MPS left/right environments, not an exact-canonical-form assumption. Frozen checkpoint retained; no canonicalization, optimization, symmetry repair or physical state change. Supersedes v1 global spin/dimer readouts after 1.6e-4 cached-RDM closure defect; exact full environment one-bond closure 3.89e-16. Same allocation and finite guards.",
+  "completed_parent": {
+    "directory": "/share/kim/yx789/nqs-reference-dmrg/archives/chi8192_from5120_v1",
+    "sweep": 28,
+    "chi": 8192,
+    "rows": 6,
+    "columns": 6,
+    "j2": 0.125
+  },
+  "materialized_config": "/share/kim/yx789/nqs-reference-dmrg/readouts/configs/chi8192_dimers_env_v2.json"
+}

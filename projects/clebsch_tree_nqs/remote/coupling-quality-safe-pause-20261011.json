@@ -1,0 +1,14 @@
+{
+  "206901": {
+    "state": "RUNNING",
+    "action": "requested safe checkpoint boundary stop, not hard cancellation"
+  },
+  "206904": {
+    "state": "RUNNING",
+    "action": "requested safe checkpoint boundary stop, not hard cancellation"
+  },
+  "206902": {
+    "controller_not_active": true,
+    "message": "slurm_load_jobs error: Invalid job id specified"
+  }
+}

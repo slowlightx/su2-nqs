@@ -1,0 +1,173 @@
+{
+  "task": "CT12_production32_v1",
+  "execution_authorized": true,
+  "authorization_note": "User2026-10-28 explicitly authorizes one J2=.125 CT12 production segment: unchanged support and1024 training records,32 updates,4096 new terminal full-H audit, at most16 B200h. Independent from earlier6B200h software/pilot stage. Start only after exact passed B200 acceptance; no automatic next allocation.",
+  "kind": "ct12",
+  "device": "B200",
+  "j2": 0.125,
+  "model": {
+    "length": 12,
+    "multiplicity_cap": 20,
+    "maximum_q": 10
+  },
+  "parent_directory": "/home/yx789/nqs-wavefunctions/nqs/ct_bounded_followup_20261028/ct12_j0125/run01",
+  "parent_registration_sha256": "2f15d882fce99bf82766cb802ee683898723c0d0836b6a88ee44594c53ade846",
+  "parent_audit_sha256": "03b3c585e069eb7bab8eb5d5de67f90f24b80f5c1d5a172befff19ddb96e26f7",
+  "parent_checkpoint_sha256": "a5cf60b42ca379428b18bc3f1bac42bf1ba10a63f2e2c747d09651d968c67137",
+  "parent_policy": "immutable independently audited completed endpoint",
+  "damping": 0.5,
+  "learning_rate": 0.03,
+  "epsilon": 0.125,
+  "steps": 32,
+  "fit_records": 1024,
+  "calibration_records": 1024,
+  "calibration_split": 512,
+  "audit_records": 4096,
+  "audit_groups": 64,
+  "interim_records": 0,
+  "interim_groups": 0,
+  "projection_chunk": 16,
+  "action_chunk": 4,
+  "score_chunk": 1,
+  "H_chunk": 8,
+  "target_FS": 0.003,
+  "maximum_FS": 0.003,
+  "wall_cap_seconds": 57600,
+  "maximum_peak_device_bytes": 146028888064,
+  "automatic_next_allocation": false,
+  "no_requeue": true,
+  "seeds": {
+    "preflight": 2810283001,
+    "interim": 2810283002,
+    "interim_statistics": 2810283003,
+    "audit": 2810283004,
+    "audit_statistics": 2810283005
+  },
+  "physical_state": "unchanged strict-SU2 singlet tree, complete coherent Gamma-A1, all physical H bonds; no new head, gate, width or qmax",
+  "preemption_policy": "no-requeue bounded pilot; preserve last atomic committed parameters/optimizer/RNG; future re-entry requires a new explicit submission, not automatic duplicate allocation",
+  "active_profile": [
+    {
+      "0": 16,
+      "2": 16,
+      "4": 16,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 12,
+      "2": 14,
+      "4": 12,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 1
+    }
+  ],
+  "active_real_parameters": 1495080,
+  "parent_format": "CT_bounded_followup_v1",
+  "software_acceptance": {
+    "directory": "/home/yx789/nqs-b200-validation-compat-20261028",
+    "plan_path": "/home/yx789/nqs-b200-validation-compat-20261028/configs/remote/b200_forward_compat_20261028/plan.json",
+    "plan_sha256": "d8a28d837abe006d293b5be9913efcc40c0219623c4e29c8d1abb980010fc195",
+    "source_manifest_sha256": "bc04671f33431ec3670fef02b7ce5730e34410ccd5b4d324308a36ebdaff2446"
+  }
+}

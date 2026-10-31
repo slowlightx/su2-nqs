@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-17",
+  "finite_size_caveat": "Published targets are comparable only when cluster, boundary conditions, Hamiltonian normalization, symmetry sector, and raw-versus-postprocessed status match.",
+  "roth_szabo_macdonald_2023": {
+    "citation": "C. Roth, A. Szabo, and A. H. MacDonald, High-accuracy variational Monte Carlo for frustrated magnets with deep neural networks, arXiv:2211.07749",
+    "url": "https://arxiv.org/abs/2211.07749",
+    "method": "space-group GCNN; not exact SU(2)",
+    "targets": [
+      {"n_sites": 36, "j2_over_j1": 0.0, "method": "raw_GCNN", "energy_per_site": -0.560313, "uncertainty": 0.000003, "reference_energy_per_site": -0.5603734, "spin_squared": 0.0022},
+      {"n_sites": 36, "j2_over_j1": 0.125, "method": "raw_GCNN", "energy_per_site": -0.515386, "uncertainty": 0.000009, "reference_energy_per_site": -0.515564, "spin_squared": 0.0067},
+      {"n_sites": 108, "j2_over_j1": 0.125, "method": "raw_GCNN", "energy_per_site": -0.51175, "uncertainty": 0.00007, "reference_energy_per_site": -0.51297, "spin_squared": 0.208},
+      {"n_sites": 108, "j2_over_j1": 0.125, "method": "GCNN_plus_Lanczos", "energy_per_site": -0.51268, "uncertainty": 0.00009, "reference_energy_per_site": -0.51297, "spin_squared": null},
+      {"n_sites": 144, "j2_over_j1": 0.125, "method": "raw_GCNN", "energy_per_site": -0.51101, "uncertainty": 0.00006, "reference_energy_per_site": -0.51275, "reference_kind": "authors' finite-size interpolation, NOT ED", "spin_squared": null},
+      {"n_sites": 144, "j2_over_j1": 0.125, "method": "GCNN_plus_Lanczos", "energy_per_site": -0.51218, "uncertainty": 0.00009, "reference_energy_per_site": -0.51275, "reference_kind": "authors' finite-size interpolation, NOT ED", "spin_squared": null}
+    ]
+  },
+  "viteritti_rende_sachdev_carleo_2026": {
+    "url": "https://arxiv.org/html/2602.02665",
+    "source": "Table 1; J2=0 triangular periodic lattices",
+    "raw_targets": [
+      {"L": 18, "energy_per_site": -0.551703, "uncertainty": 0.000001},
+      {"L": 24, "energy_per_site": -0.551602, "uncertainty": 0.000001},
+      {"L": 30, "energy_per_site": -0.551528, "uncertainty": 0.000001},
+      {"L": 42, "energy_per_site": -0.551429, "uncertainty": 0.000001}
+    ],
+    "L12_is_tabulated": false,
+    "L12_descriptive_raw_fit": {
+      "ansatz": "e(L)=e_inf+a/L^3",
+      "fit_L_min": [18, 24, 30],
+      "predicted_energy_per_site": [-0.5523646397645123, -0.5530649193825091, -0.5538060785550464],
+      "warning": "Backward extrapolation outside all source sizes, NOT interpolation, certified target, SOTA measurement or confidence interval. Window spread and model residuals dominate the tabulated statistical SE."
+    },
+    "capacity_context": "Paper d72/h12/depth8 about450k parameters; our ongoing same-model N144 run100288 real parameters. Capacity differences alone do not diagnose optimization saturation."
+  },
+  "rende_et_al_2026": {
+    "citation": "R. Rende et al., Scaling Laws for Neural-Network Quantum States, arXiv:2606.02794",
+    "url": "https://arxiv.org/abs/2606.02794",
+    "metric": "V-score versus forward-pass compute proxy",
+    "triangular_scaling_exponents": [
+      {"j2_over_j1": 0.0, "alpha": 0.54, "uncertainty": 0.01},
+      {"j2_over_j1": 0.125, "alpha": 0.40, "uncertainty": 0.01}
+    ],
+    "warning": "Their compute proxy is not a complete Hpsi/orbit wall-time ledger and their seed selection differs from the all-seed median protocol used here."
+  },
+  "phase_context": {
+    "citation": "A. Wietek, S. Capponi, and A. M. Lauchli, Phys. Rev. X 14, 021010 (2024)",
+    "url": "https://journals.aps.org/prx/abstract/10.1103/PhysRevX.14.021010",
+    "finite_size_paramagnetic_window_approx": [0.09, 0.14],
+    "warning": "The window is finite-size physical context, not a thermodynamic phase boundary to be inferred from the local 4x4 scan."
+  },
+  "cluster_policy": {
+    "triangular_4x4": "clean J1/J2 torus with all M points but no K; algorithm and stripe-response calibration only",
+    "triangular_3x6": "K-compatible but J2 periodic-image aliasing and only one M orientation; shape control only",
+    "triangular_6x6": "first planned production geometry with full K/M star and no shell aliasing"
+  }
+}

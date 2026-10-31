@@ -1,0 +1,196 @@
+{
+  "date": "2026-10-14",
+  "ordinary_vit": {
+    "workspace": "/home/yx789/nqs-spatial-scale-opt-20261014",
+    "model_unchanged": true,
+    "parameters": 100288,
+    "geometry": "triangular",
+    "size": [
+      12,
+      12
+    ],
+    "points": [
+      0,
+      0.125
+    ],
+    "parent_endpoint": 700,
+    "wait_for_parent_frozen_audit": true,
+    "conditions": {
+      "steps": 100,
+      "samples_per_step": 2048,
+      "sr_damping": 0.002,
+      "step_size": 0.005,
+      "old_full_A1_step_size": 0.00125,
+      "forward_chunk": 32,
+      "backward_chunk": 8,
+      "FS_sine_cap": 0.05,
+      "ESS_fraction_min": 0.95
+    },
+    "untouched_audit": {
+      "streams": 2,
+      "chains_per_stream": 32,
+      "records_per_stream": 2048
+    },
+    "jobs": [
+      {
+        "case": "tri_j0",
+        "parent_aggregate_job": 269055,
+        "train_job": 269504,
+        "audit_array_job": 269505,
+        "aggregate_job": 269506,
+        "training_gpu_hour_cap": 18,
+        "audit_gpu_hour_cap": 4,
+        "steps": 100
+      },
+      {
+        "case": "tri_j0125",
+        "parent_aggregate_job": 269051,
+        "train_job": 269507,
+        "audit_array_job": 269508,
+        "aggregate_job": 269509,
+        "training_gpu_hour_cap": 18,
+        "audit_gpu_hour_cap": 4,
+        "steps": 100
+      }
+    ],
+    "allocation_GPU_hour_cap": 44,
+    "allocation_is_not_billed_time": true,
+    "checkpoint_and_parent_weight_seals_required": true,
+    "active_parent_writers_unchanged": true
+  },
+  "clebsch_tree_reproduction": {
+    "not_AGP_hybrid": true,
+    "not_native_reduced_AR_ViT": true,
+    "physical_spin_inputs": true,
+    "exact_S0_and_coherent_A1": true,
+    "small_calibration": {
+      "size": [
+        4,
+        4
+      ],
+      "geometry": "square",
+      "j2_over_j1": 0.5,
+      "parameters": 2506,
+      "original_exact_energy_per_site": -0.5281638568012089,
+      "reset_exact_energy_per_site": -0.5286200451170725,
+      "original_relative_ED_error": 0.0008632902276535749,
+      "reset_relative_ED_error": 3.1089448031053154e-7,
+      "reset_variance_per_site": 8.120152478313276e-7,
+      "total_physical_updates_both": 1000,
+      "new_ED": false,
+      "full_expectations_not_paper_MCMC": true,
+      "same_gradient_first_proposal_FS": {
+        "inherited": 0.0004397287136462316,
+        "reset": 0.0140516500287101,
+        "extra_training": false
+      }
+    },
+    "square8_cost": {
+      "job_id": 269569,
+      "workspace": "/home/yx789/nqs-clebsch-tree-reproduction-20261014",
+      "parameter_count": 227958,
+      "GPU_hour_cap": 1,
+      "optimized_energy_claim": false,
+      "paper_target_per_site": -0.4985703125,
+      "paper_target_SE": 0.000065625,
+      "training_not_released_until_actual_cost": true,
+      "status": "COMPLETED",
+      "elapsed_seconds": 67,
+      "maximum_Splus_relative": 2.8501056028917236e-15,
+      "maximum_A1_relative": 5.674177088089538e-16,
+      "H_relative": 1.336520869661255e-15,
+      "gradient_fd_error": 1.2903123014496032e-10,
+      "warm_two_center_H_seconds": 1.0419007509481162,
+      "local_results": "projects/clebsch_tree_nqs/results/vieijra_nys_reproduction_20261014/square8_cost"
+    },
+    "square8_actual_training_pilot": {
+      "job_id": 269891,
+      "workspace": "/home/yx789/nqs-clebsch-tree-training-20261014",
+      "status": "COMPLETED",
+      "samples_per_step": 256,
+      "authorized_steps": 2,
+      "GPU_hour_cap": 1,
+      "elapsed_seconds": 371,
+      "completed_steps": 2,
+      "checkpoint_sha256": "db3d9ca7285ab95cf0d241463c05ffb9b5ef38a4088f3dd5982de9da95faeafa",
+      "step2_training_energy_per_site": -0.14669172715490808,
+      "step2_training_variance_per_site": 0.4800829340393067,
+      "step2_sampling_seconds": 53.26719159819186,
+      "step2_full_H_seconds": 78.72238623071462,
+      "step2_gradient_update_seconds": 19.633479319512844,
+      "training_statistics_are_not_independent_audit": true,
+      "registered1000_steps_not_released": true,
+      "physical_parent_is_same_passed_cost_checkpoint": true,
+      "source_workspace_not_hotpatched": true,
+      "local_future_H_jit_wrapper_validated_but_not_applied_to_completed_original_job": true
+    },
+    "square8_exact_projection_fold": {
+      "job_id": 270681,
+      "status": "COMPLETED",
+      "parent_checkpoint_sha256": "db3d9ca7285ab95cf0d241463c05ffb9b5ef38a4088f3dd5982de9da95faeafa",
+      "full_group_images": 512,
+      "folded_evaluation_images": 256,
+      "maximum_amplitude_relative_error": 5.374267147306207e-16,
+      "maximum_H_relative_error": 6.524972930764641e-16,
+      "maximum_gradient_relative_error": 1.6025294875808783e-15,
+      "old_two_center_H_seconds": [1.0522537538781762, 1.066196452826261],
+      "folded_two_center_H_seconds": [0.5269685154780746, 0.5265663312748075],
+      "no_new_training": true,
+      "no_variational_claim": true,
+      "local_results": "projects/clebsch_tree_nqs/results/vieijra_nys_reproduction_20261014/square8_projection_replay"
+    },
+    "square8_folded_continuation": {
+      "training_job_id": 270980,
+      "audit_job_id": 271018,
+      "authorized_endpoint_step": 20,
+      "training_allocation_GPU_hour_cap": 2,
+      "audit_allocation_GPU_hour_cap": 2,
+      "audit_samples": 1024,
+      "audit_independent_streams": 2,
+      "same_parameters_and_projected_physical_state": true,
+      "training_status_as_last_checked": "COMPLETED_STEP20_SAFE_PAUSE",
+      "checkpoint_sha256": "a890a0f813f44016a6c4e36e17a2953c1a055eed7d7d71244f80185e9c0de37c",
+      "last_five_training_energy_mean_per_site": -0.16041912885123405,
+      "last_five_training_variance_mean_per_site": 0.4484174096787331,
+      "mean_folded_update_seconds_after_step2": 74.8985287548405,
+      "audit_status_as_last_checked": "RUNNING",
+      "registered1000_steps_not_released": true
+    }
+  },
+  "validation": {
+    "exact_core": {
+      "passed": 34,
+      "seconds": 11.13
+    },
+    "focused_model_workflow_plan_quality": {
+      "passed": 38,
+      "skipped_optional_netket": 8
+    },
+    "sampled_projected_cost_small": {
+      "passed": 1
+    },
+    "maximum_N16_Splus_norm": 1.661207445825886e-15,
+    "maximum_N16_A1_error": 1.1102230246251565e-16,
+    "full_suite": {
+      "status": "completed",
+      "passed": 3354,
+      "failed": 96,
+      "skipped": 73,
+      "seconds": 1719.34,
+      "log": "/private/tmp/nqs_literature_ct_full_tests_20261014.log",
+      "failure_set_identical_to_previous96": true,
+      "new_failures": [],
+      "historical_artifacts_not_resigned_or_weakened": true
+    },
+    "new_SR_Adam_and_training_resume": {
+      "passed": 2,
+      "parameters_optimizer_sampler_and_rng_replay": true
+    }
+  },
+  "interpretation": {
+    "SU2_not_extra_generic_expressivity": true,
+    "accuracy_reproduction_is_validation_not_PRL_novelty": true,
+    "specific_spin_sector_or_cost_or_validated_physical_mechanism_required": true,
+    "direct_fusion_production_frozen": true
+  }
+}

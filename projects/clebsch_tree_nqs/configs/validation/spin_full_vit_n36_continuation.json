@@ -1,0 +1,35 @@
+{
+  "task": "spin_full_vit_n36_continuation",
+  "additional_steps": 1000,
+  "parent_step": 64,
+  "chains": 32,
+  "proposals_per_update": 36,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 1.0,
+  "parent_directory": "projects/clebsch_tree_nqs/results/spin_full_vit_n36_pilot_v1",
+  "parents": {
+    "triangular": {
+      "checkpoint_sha256": "5a91d7fe910f47a22cab234af8b70b61f38a918020acd27c9e57e13b65f093bd",
+      "result_sha256": "d6f434f7e9404b9eb0989ff57eb7729e1ed677a0c400610211fc7af237cf5bb2"
+    },
+    "square": {
+      "checkpoint_sha256": "0f2c9746d6c078dc45705857a297bbf9fa150adeb5c8a050681fb5d4728336cf",
+      "result_sha256": "bbe17187787967c0393623412fac5b20b4e9c1f923283145c0b977363296868f"
+    }
+  },
+  "audit": {
+    "burn_proposals": 2304,
+    "proposals_between_snapshots": 72,
+    "snapshots": 32,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 2026093050,
+    "seeds": {
+      "triangular": {"parent": [2026093001, 2026093002, 2026093003], "terminal": [2026093011, 2026093012, 2026093013]},
+      "square": {"parent": [2026093021, 2026093022, 2026093023], "terminal": [2026093031, 2026093032, 2026093033]}
+    }
+  },
+  "protocol": "Resume full small ViT, manual Adam moments, training chains and PRNG exactly. Fixed 1000 additional updates, no early stopping or audit-based checkpoint selection. No change of learning rate, model or training sample count. Audits run only after training; fresh independent streams separately remeasure parent and terminal state. Each state uses 3 x 32 chains x 32 snapshots = 3072 records. Audit seeds never enter training. No remote jobs, ED, OF extension or production release.",
+  "inference": "Terminal-minus-parent differences are UNPAIRED. Report chain-block bootstrap intervals, chain-mean SE, independent-stream agreement, split-chain energy Rhat, half-run drift, imaginary mean and variance-tail contributions. These diagnostics do not certify mixing. Do not interpret random-high-energy initial variance as a ground-state target. No automated claim of a frontier/SU2 win.",
+  "budget": "1000 updates per lattice; CPU planning estimate 9 min triangular + 5 min square, plus independent audits, compilation and checkpoint I/O. Finite-value or integrity failure halts with last valid checkpoint; it does not license a parameter change or an automatic longer run.",
+  "order": ["triangular", "square"]
+}

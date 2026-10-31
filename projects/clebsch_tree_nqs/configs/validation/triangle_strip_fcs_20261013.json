@@ -1,0 +1,163 @@
+{
+  "output": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_v1",
+  "cut": 18,
+  "fixed_metrics": [
+    "variance_sz",
+    "fourth_cumulant_sz",
+    "magnetic_number_entropy_nats",
+    "pi_rotation_real"
+  ],
+  "seconds_cap": 300,
+  "inputs": [
+    {
+      "label": "ViT_J0.0_step500",
+      "j2": 0.0,
+      "step": 500,
+      "registration": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/parent_registrations/nqs-wavefunctions/nqs/tri_j0_repair_v6_single_gpu/seed1/registration.json",
+      "registration_file_sha256": "b59ae0902741f3450cfb0582136303e777569c261242ab6b1c0eccb4c7d41b3c",
+      "audit_report": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step500/results.json",
+      "audit_file_sha256": "f706b16628bf4cb613d9561ed43cea0a413c190acb2564daec223f0fa155e707",
+      "energy_per_site": -0.5583024855391725,
+      "streams": [
+        {
+          "arrays": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step500/stream2026606102.npz",
+          "manifest": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step500/stream2026606102.json",
+          "arrays_sha256": "8fb90b131e025a1cc78b5886234141f3ffa745d12ade1c2735528a597ad79d06",
+          "manifest_sha256": "a2f68538e4a91b687cc956409fa5503adb4259180e80057f56ae4a37e00f9553"
+        },
+        {
+          "arrays": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step500/stream2026606103.npz",
+          "manifest": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step500/stream2026606103.json",
+          "arrays_sha256": "981e6c8e90bc63ea395deaae723339c5e6137551c40ea298661375cd2839fe62",
+          "manifest_sha256": "7e1ead4092bfdfeb6fe1e5887b52f4d352e82cd840343cc2042606dc35051e1c"
+        }
+      ]
+    },
+    {
+      "label": "ViT_J0.0_step750",
+      "j2": 0.0,
+      "step": 750,
+      "registration": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/parent_registrations/nqs-wavefunctions/nqs/tri_j0_repair_v6_continue_1000/seed1/registration.json",
+      "registration_file_sha256": "23fcc2f3ea01c86708085c3052babe5c7aa79dcfe1b51bd33a4b3dc3df0cf936",
+      "audit_report": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step750/results.json",
+      "audit_file_sha256": "d2ec5379f02dbe9fffb3688ea183e54a3c6d7c1fd9ffb9f11916f01979dc6512",
+      "energy_per_site": -0.5592174781159436,
+      "streams": [
+        {
+          "arrays": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step750/stream2026858952.npz",
+          "manifest": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step750/stream2026858952.json",
+          "arrays_sha256": "1b42763bf46572101783ffc4dbc7943acc91de98dc9a39249dcf1b46ffed17cb",
+          "manifest_sha256": "34d20e6246cbf93600c5695ba2879760120f5bce58d5137d6a338a226c92cd92"
+        },
+        {
+          "arrays": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step750/stream2026858953.npz",
+          "manifest": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step750/stream2026858953.json",
+          "arrays_sha256": "b1251d6752131072d1fa8490a6e58cf1f3cef0596997a18f0ad7b437c9490d8a",
+          "manifest_sha256": "1d46c733535488c92730d6bf85e21eb469ba12c1fc1d10e167c1bca04722631f"
+        }
+      ]
+    },
+    {
+      "label": "ViT_J0.0_step1000",
+      "j2": 0.0,
+      "step": 1000,
+      "registration": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/parent_registrations/nqs-wavefunctions/nqs/tri_j0_repair_v6_continue_1000/seed1/registration.json",
+      "registration_file_sha256": "23fcc2f3ea01c86708085c3052babe5c7aa79dcfe1b51bd33a4b3dc3df0cf936",
+      "audit_report": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step1000/results.json",
+      "audit_file_sha256": "0b91be84de110dfb415ac5e23ba6f25dbbd5dc8f03649da0ce4c300b5039d3d5",
+      "energy_per_site": -0.5596827559736554,
+      "streams": [
+        {
+          "arrays": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step1000/stream2027111202.npz",
+          "manifest": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step1000/stream2027111202.json",
+          "arrays_sha256": "ae19ead970a2d06a6d0d11ac9c29bef29e5931d6b454ff593e6aa4eb01341bd9",
+          "manifest_sha256": "41e6f5f29dfb0f66e298f99357602a442c822dd86fc28086e353ad9d752fc3d1"
+        },
+        {
+          "arrays": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step1000/stream2027111203.npz",
+          "manifest": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step1000/stream2027111203.json",
+          "arrays_sha256": "eed48830b1e60469c1146572b33b3861401b660adb78a569274fcfdc8111e87d",
+          "manifest_sha256": "8e797c567084f248909f6d30e3abd52d53813ea8db53b2a1d2d2b0c779042f90"
+        }
+      ]
+    },
+    {
+      "label": "ViT_J0.125_step8600",
+      "j2": 0.125,
+      "step": 8600,
+      "registration": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/parent_registrations/spin_spatial_vit_gpu_continuation_8600_v1/seed1/registration.json",
+      "registration_file_sha256": "a0a7714e1f3aefc813975746c78e607527915434f383b81e03cb14d563d9c5fb",
+      "audit_report": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0125_step8600/energy.json",
+      "audit_file_sha256": "1ed0b50ec37b35a812b59084f3b78568acdd5438fbbce84cc3ee378ee0425bec",
+      "energy_per_site": -0.5141217694742968,
+      "streams": [
+        {
+          "arrays": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0125_step8600/stream2034778411.npz",
+          "manifest": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0125_step8600/stream2034778411.json",
+          "arrays_sha256": "b320ece3019887203beb2d9e42148bcc50abf54e476b769ea943042efb237b78",
+          "manifest_sha256": "84fcc94176318f1531a9ff201873987718a40cfe8c4857307c12b9f3bc4c9b50"
+        },
+        {
+          "arrays": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0125_step8600/stream2034778412.npz",
+          "manifest": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0125_step8600/stream2034778412.json",
+          "arrays_sha256": "5de25398ceae61cb2acb9b33253ae4c97c5cba0a46511563f27772c60fd82c09",
+          "manifest_sha256": "909f2f73a276d4a68266d7e73b974246c529d931e1f7449b76ee6da3c402f518"
+        }
+      ]
+    },
+    {
+      "label": "ViT_J0.125_step9600",
+      "j2": 0.125,
+      "step": 9600,
+      "registration": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/parent_registrations/spin_spatial_vit_gpu_continuation_9600_v1/seed1/registration.json",
+      "registration_file_sha256": "a1b75bc610a1b588098db0d96e0ebce1c0f5255938b0f930b20f98540d2ccc7d",
+      "audit_report": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/tri_9600/energy.json",
+      "audit_file_sha256": "afbbad422855842ebbcd721464bfa8a659aafb8c406b3ffae75676b18146019b",
+      "energy_per_site": -0.5141461105325251,
+      "streams": [
+        {
+          "arrays": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/tri_9600/stream2035787421.npz",
+          "manifest": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/tri_9600/stream2035787421.json",
+          "arrays_sha256": "3dd6f2c9c4e05260f559050cf0e4a1c2ba644ec57a9fb386c695d0efa657c231",
+          "manifest_sha256": "7299c9b95c9d397ad0942f9912812390d7220de1815a39734fa578531d7260c2"
+        },
+        {
+          "arrays": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/tri_9600/stream2035787422.npz",
+          "manifest": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/tri_9600/stream2035787422.json",
+          "arrays_sha256": "6582c16dc6f237f828b18812e005c633921f51e88b69b6d472899ec1258e8870",
+          "manifest_sha256": "a74f8feebafe89d64a24f586f3a87ad08b6fb0c19bfd3d5ca22d2b0bff356ffa"
+        }
+      ]
+    },
+    {
+      "label": "ViT_J0.125_step10600",
+      "j2": 0.125,
+      "step": 10600,
+      "registration": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_10600_v1/seed1/registration.json",
+      "registration_file_sha256": "248376edefca1d2cc880bd492d4051b27aaac53bb1bce434a97466092c6d82f1",
+      "audit_report": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_10600_v1/seed1/audits/step10600/energy.json",
+      "audit_file_sha256": "b2d74cce56e0d679d1873608a1705e2729a9d2d9365ce6a98b24f86e90aba49f",
+      "energy_per_site": -0.5142924721830333,
+      "streams": [
+        {
+          "arrays": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_10600_v1/seed1/audits/step10600/stream2036796431.npz",
+          "manifest": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_10600_v1/seed1/audits/step10600/stream2036796431.json",
+          "arrays_sha256": "a4cac347f79181c7ac7612c252692c52dd38489667361acba07e58c116dc71c4",
+          "manifest_sha256": "b2722f5494d57475b8176902266305490c7b90558df91558acc5f9d4668c4f61"
+        },
+        {
+          "arrays": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_10600_v1/seed1/audits/step10600/stream2036796432.npz",
+          "manifest": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_10600_v1/seed1/audits/step10600/stream2036796432.json",
+          "arrays_sha256": "ffd2016a11903454d81e159f49bba475ef05f7b113746c8456d3cc8bb7c93e06",
+          "manifest_sha256": "e45a1d83f8e5e63be7a960f707a441aa64176de0da572fbcd167ef549bf90fec"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Firstthreecomplete rows,6x6torus,two physicalboundaries;m=2Sz notq=2S.",
+    "Retrospective;inputs/cut/metrics frozenbefore numerics.",
+    "No newstates/H/amplitudes/samples.",
+    "FourfixednormalBonferroni contrasts plusownlatequalityranges;notbias/mixing certificates."
+  ]
+}

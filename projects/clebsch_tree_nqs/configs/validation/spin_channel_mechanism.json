@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "task": "spin_channel_mechanism",
+  "preregistered_before_run": true,
+  "source": {
+    "result": "projects/clebsch_tree_nqs/results/spin_carrier_cell_scalar_circuit_v1/results.json",
+    "result_sha256": "c8f47c4ce05d49a207d5bb108f893eb23ac69f7cb12bd03e92b8d48dabe15d4f",
+    "bundle": "projects/clebsch_tree_nqs/results/spin_carrier_cell_scalar_circuit_v1/states.npz",
+    "bundle_sha256": "c9d1fee5f53112c97f721b5b6ccad005f021fab143467401ea8a9ff46d1f9264"
+  },
+  "couplings": [0.0, 0.125, 0.175],
+  "scramble_seeds": [2026092701, 2026092702, 2026092703, 2026092704, 2026092705],
+  "krylov_anchor_rank": 3,
+  "maximum_allowed_rank": 11,
+  "arms": ["q_transfer", "q_preserving_exchange", "multiplicity_dimer", "unsplit_exchange", "q_transfer_plus_multiplicity", "q_preserving_plus_multiplicity", "split_exchange", "all_channels"],
+  "relative_rank_tolerance": 1e-10,
+  "remote_training_on_pass": false,
+  "hypothesis": "Distinguish local-q transfer from pure multiplicity dimer rearrangement before spatial averaging; never infer local-q conservation after A1 projection.",
+  "controls": "Every arm contains the entire K2 subspace, is compared to same-rank Krylov from the original pi carrier and to five rotations fixing the entire K2 subspace. No neural training, seed selection or post-result operator selection.",
+  "cost_boundary": "Count pair-exchange oracle actions in bank construction and exact projected-H matvecs; this dense N16 oracle cannot demonstrate sampled/GPU efficiency."
+}

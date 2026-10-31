@@ -1,0 +1,184 @@
+{
+  "task": "same_frozen_sampler_GPU_chunk64_10240_then_H_bridge",
+  "model": {
+    "length": 12,
+    "multiplicity_cap": 20,
+    "maximum_q": 10
+  },
+  "j2_over_j1": 0.125,
+  "bond_ledger_path": "projects/clebsch_tree_nqs/results/ct_conditional_nested_initialization_20261023/H_bridge_bond_ledger.json",
+  "bond_ledger_sha256": "13144e727d31486c00ada53a9036aa1281c6b43c7cfbc7374703050a383fa6ae",
+  "control_checkpoint": "projects/clebsch_tree_nqs/results/ct_conditional_nested_initialization_20261023/step2/old8_joint/initialized_bank.pkl",
+  "candidate_checkpoint": "projects/clebsch_tree_nqs/results/ct_conditional_nested_initialization_20261023/step2/nested10_joint/initialized_bank.pkl",
+  "control_sha256": "cb25900482af1b9fd6d43f8ce14536d9cc9a91effff66a69ea8afb15aedc2434",
+  "candidate_sha256": "fc9c665903e41eb3a492b0c6cc817350aee463499d8780d2aa0770f66ab0af7e",
+  "active_top_widths": [
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 10,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 1
+    }
+  ],
+  "initial_samples_path": "projects/clebsch_tree_nqs/results/ct_conditional_nested_initialization_20261023/support_stage_2048/support_prefix.npz",
+  "initial_samples_sha256": "769c68ea99984193d4d13e09d216b27c814662b6b411867dd0d3dc695c83bb16",
+  "initial_states_key": "terminal_states",
+  "initial_psi_key": "terminal_psi",
+  "chains": 8,
+  "segments": 80,
+  "segment_burn": 8,
+  "segment_records": 8,
+  "segment_between": 15,
+  "maximum_registered_proposals": 10240,
+  "seconds_cap": 5400,
+  "seed": 2610248200,
+  "cost_only_seeds": [
+    2610248201,
+    2610248202
+  ],
+  "previous_support_proposals": 2048,
+  "fixed_total_support_proposals": 12288,
+  "previous_mechanism_probe_proposals_not_in_this_total": 32,
+  "coverage_gate": {
+    "window_records": 512,
+    "maximum_split_rhat": 1.1,
+    "maximum_drift_standard_errors": 2,
+    "minimum_effective_fraction": 0.25,
+    "maximum_chain_fraction": 0.35
+  },
+  "continuation_authorized_before_new_records": true,
+  "immutable_frozen_endpoints": true,
+  "all_chains_retained": true,
+  "no_probability_or_energy_selection": true,
+  "fixed_endpoint_no_early_success_selection": true,
+  "actual_H_queries": 0,
+  "no_energy_or_variance_estimate": true,
+  "no_automatic_H_release": false,
+  "no_further_automatic_extension": true,
+  "no_claim_of_equilibrium": true,
+  "time_budget_scope": "Support stage <=5400 seconds checked between kernels, further capped by measured remaining allocation; fixed128-proposal segments. Fresh H audit separately <=3600 seconds. Not a hard-real-time cancellation guarantee.",
+  "CPU_serialization": "Only the two-proposal replay oracle runs locally.",
+  "scope": "Fixed eight frozen chains; preserve the saved RNG and the original128-proposal segmentation.",
+  "initial_rng_key": [
+    386564603,
+    3392830427
+  ],
+  "execution_profile": "registered_single_gpu",
+  "cost_seconds_cap": 1200,
+  "cpu_reference_only": false,
+  "gate_reason": "The predeclared final512 records span8192 single exchanges, rather than testing only a short final window.",
+  "cpu_reference_path": "projects/clebsch_tree_nqs/results/ct_transfer_gpu_audit_20261025/cpu_reference/short_reference.npz",
+  "cpu_reference_sha256": "a7fc82095e1ee28f9ce8cb58e0078c28187dddfe79bdf8928271a167464f9ab2",
+  "sampler_projection_chunk": 64,
+  "H_projection_chunk": 64,
+  "implementation_only_change": "Batch64 spatial images instead of4 for sampler and H bridge; all1728 coherent images, full864 physical bonds and original MH proposals/state/RNG unchanged. Old chunk4 CPU oracles remain frozen."
+}

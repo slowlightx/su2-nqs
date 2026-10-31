@@ -1,0 +1,105 @@
+{
+  "checkpoint": "/home/yx789/nqs-wavefunctions/dmrg/archives/chi8192_relax_v2/snapshots/sweep0030_3c751cbab44f_complete/checkpoint.h5",
+  "checkpoint_sha256": "3c751cbab44f624a34183dac22a94edaaeafa5657be2594bfcc59a6376fe7896",
+  "n_sites": 36,
+  "chi_upper_bound": 8192,
+  "cut": 18,
+  "threads": 8,
+  "wall_seconds": 900,
+  "memory_gib": 128,
+  "tolerance": 1e-9,
+  "psi_hdf_group": "psi",
+  "leading_levels": 16,
+  "measured_charges": [
+    0,
+    2
+  ],
+  "spin_groups": {},
+  "physical_order": "row-major sites, supplied physical torus graph; no MPS snake remapping",
+  "geometry": "triangular 6x6 PBC; prefix consists of three balanced six-site rows",
+  "angle_count": 81,
+  "renyi2": false,
+  "transition_sites": [],
+  "columns": 6,
+  "spin_momenta": {},
+  "chirality_groups": {
+    "kappa_row0": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        0
+      ]
+    ],
+    "kappa_row1": [
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        11,
+        6
+      ]
+    ],
+    "kappa_row2": [
+      [
+        12,
+        13
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        14,
+        15
+      ],
+      [
+        15,
+        16
+      ],
+      [
+        16,
+        17
+      ],
+      [
+        17,
+        12
+      ]
+    ]
+  }
+}

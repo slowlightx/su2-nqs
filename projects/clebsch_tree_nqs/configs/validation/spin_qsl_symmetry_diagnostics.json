@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_qsl_symmetry_diagnostics",
+  "geometry": "triangular_4x4_periodic",
+  "j2_over_j1": 0.125,
+  "optimization": {
+    "jastrow_seeds": [0, 1, 2],
+    "vit_seeds": [0, 1, 2],
+    "operator_seeds": [0, 1, 2],
+    "vit_steps": 160,
+    "operator_steps": 160
+  },
+  "physics_contract": {
+    "primary": ["energy_per_site", "variance_per_site"],
+    "corroborating_channels": [
+      "E2_bond_resonance",
+      "A2_uniform_chirality",
+      "120_K_star_form_factor",
+      "stripe_M_star_structure_factor",
+      "M_star_dimer_response"
+    ],
+    "qsl_identification_from_4x4": false,
+    "promotion_rule": "The SU2 arm must beat optimized pair-Jastrow plus two-Lanczos in energy and improve the median preregistered symmetry-observable error."
+  }
+}

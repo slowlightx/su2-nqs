@@ -1,0 +1,33 @@
+{
+  "checkpoint": "/home/yx789/nqs-wavefunctions/dmrg/archives/chi10240_from8192_v1/snapshots/sweep0032_80e0671ccfa6_complete/checkpoint.h5",
+  "checkpoint_sha256": "80e0671ccfa69159ecbd800ff7749087cc6b704b4e1593c03a01269cef2839a3",
+  "n_sites": 36,
+  "chi_upper_bound": 10240,
+  "cut": 18,
+  "threads": 8,
+  "wall_seconds": 2400,
+  "memory_gib": 192,
+  "tolerance": 1e-9,
+  "psi_hdf_group": "psi",
+  "leading_levels": 16,
+  "measured_charges": [
+    0,
+    2,
+    4,
+    6
+  ],
+  "spin_groups": {},
+  "physical_order": "row-major sites, supplied physical torus graph; no MPS snake remapping",
+  "geometry": "triangular6x6 PBC prefix18; frozen S0/S1 fit predicts S2/S3 spin and cut-stabilizer spatial families; no phase claim",
+  "angle_count": 81,
+  "renyi2": false,
+  "transition_sites": [],
+  "columns": 6,
+  "spin_momenta": {},
+  "chirality_groups": {},
+  "chirality_z_response": false,
+  "spatial_strip_columns": 6,
+  "spatial_levels": 16,
+  "total_spin_ladder": true,
+  "rotor_protocol": "Ground-singlet anchor and first three physically spin1, spatial-labelled branches determine inverse inertias. No S2/S3 refitting. Compare all observed multiplets/spatial projector weights, retain ambiguous vectors and quality drift. Higher-family scan is separately labelled exploratory."
+}

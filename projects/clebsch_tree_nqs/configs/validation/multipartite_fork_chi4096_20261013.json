@@ -1,0 +1,12 @@
+{
+  "checkpoint": "data/reference_wavefunctions/dmrg/triangular_6x6_j2_0.125/chi4096_sweep24/checkpoint.h5",
+  "checkpoint_sha256": "0b299b3f318d20b31304ecf3564e3ed9378ddd6eeb058693f6a481e19ab3f650",
+  "n_sites": 36,
+  "chi_upper_bound": 4096,
+  "dtype": "float64",
+  "limits": {"memory_gib": 12, "wall_seconds": 600, "threads": 2},
+  "regions": [{"name": "fork4", "sites": [14,20,15,7], "dense_estimate_override": true}],
+  "stop_on_failure": true,
+  "output": "projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v2/fork_chi4096_v1",
+  "purpose": "Same geometry lower-chi quality check after successful chi5120 acquisition. No optimization or H calls. J1 fork, chorded by J2. Frozen12GiB/600s bounds on the 48GiB local machine."
+}

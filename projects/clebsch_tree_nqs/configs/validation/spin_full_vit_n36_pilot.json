@@ -1,0 +1,20 @@
+{
+  "task": "spin_full_vit_n36_pilot",
+  "preregistered_before_run": true,
+  "primary_arm": "d16_l2",
+  "seed": 2026092931,
+  "chains": 32,
+  "maximum_steps": 64,
+  "maximum_training_seconds": 180,
+  "proposals_per_update": 36,
+  "initial_proposals": 576,
+  "audit_proposals": 1152,
+  "audit_batches": 8,
+  "learning_rate": 0.0003,
+  "gradient_clip_norm": 1.0,
+  "initialization": "fresh registered random initialization, same model scale as N16; not transferred weights or distilled ED/carrier",
+  "projection": "exact Gamma-A1, quotient only exact patch translations",
+  "budget": "At most 180 training seconds or 64 steps per geometry; one compiled step may overrun. Compilation and initial/final 256-sample untouched-chain audits are additional and reported. No remote job or production allocation.",
+  "meaning": "Throughput and initial optimization feasibility only. 32 chains and eight audit snapshots do not establish mixing or competitive variational energy. Audit does not select checkpoints; use the terminal training state. Chain-mean SE is descriptive, not certified convergence.",
+  "order": ["triangular", "square"]
+}

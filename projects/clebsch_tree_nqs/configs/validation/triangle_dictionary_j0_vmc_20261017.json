@@ -1,0 +1,41 @@
+{
+  "task": "bounded_local_N36_J0_static_dictionary_VMC_with_same_D_controls",
+  "model": {"length": 6, "multiplicity_cap": 16, "maximum_q": 10},
+  "j2_over_j1": 0,
+  "source": {
+    "checkpoint": "projects/clebsch_tree_nqs/results/triangle_capacity_20261017/remote_snapshot/j0/ternary_joint/checkpoint.pkl",
+    "checkpoint_sha256": "83053658a2ea079d798a3bfdc112da26492779b011d5f284fb9961f21ba0af7c",
+    "params_sha256": "5baa0e74333b6bbc7eaa8fd7a64948080604b1c837d8b32332c8abd9f39e1afe",
+    "registration_sha256": "a17d33b388a5a9d8af8dd48f7a59d655f09c7cb3b20e6c5ec1551d96af80ab93",
+    "audit_sha256": "6ca1a776d089a2634f3e0998cad39ac6086a9b02c4cbe5f10e0e69045db210d0"
+  },
+  "generator": {"dictionary_rank": 16, "embedding_dim": 8, "heads": 2, "depth": 1, "local_symmetry": "free_joint"},
+  "projection_chunk": 4,
+  "action_chunk": 2,
+  "training": {
+    "steps": 8,
+    "chains": 8,
+    "records_per_chain": 8,
+    "initial_burn_proposals": 720,
+    "refresh_proposals": 36,
+    "proposals_between": 36
+  },
+  "audit": {"chains": 16, "records_per_chain": 16, "burn_proposals": 720, "proposals_between": 36},
+  "sampler": {"bond_proposal_probability": 0.75, "lazy_probability": 0.05},
+  "sr": {
+    "damping": 0.1,
+    "step_size": 0.03,
+    "fisher_trust_radius": 0.005,
+    "maximum_overlap_distance": 0.005,
+    "minimum_ess_fraction": 0.8,
+    "backtracking_steps": 8,
+    "score_chunk_size": 4
+  },
+  "generator_seed": 2026101801,
+  "training_seed": 2026101802,
+  "audit_seed": 2026101803,
+  "hard_seconds_cap": 3600,
+  "tolerance": 2e-11,
+  "output": "projects/clebsch_tree_nqs/results/triangle_dictionary_j0_vmc_20261017",
+  "interpretation": "Prospective local fixed-endpoint energy training, not tensor reconstruction. All three same-D representations start at the SAME unmodified optimized40-step J0 joint ClebschTree physical bank; no new ED, architecture/head or charge/magnetic convention. The d8 two-head one-block static encoder is small, but its fully trainable full-rank dictionaries retain approximately353k parameters: no parameter compression or extra same-D expressivity is claimed. Full432-image coherent A1 and all108 nonzero J1 bonds are kept. Fresh native MH64 records/step, complete local energies, complete original-parameter ridge SR, sampled physical-distance/ESS caps, fixed8 committed attempts per arm. All256-record endpoint audits use disjoint RNG from training and one another and cannot select checkpoints or training settings. Separate parent audit is also256 records. Independent chain errors are not paired errors or proof of equilibration. Two additional replay transitions per arm are computed but never committed; the final state remains fixed at8 updates. No long GPU training or ordinary Spatial-ViT modification. Exploratory comparison only: coarse statistics and one training seed cannot establish superiority."
+}

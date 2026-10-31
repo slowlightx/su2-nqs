@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_g1_regularized_operator",
+  "phase": "development",
+  "seed": 202609201,
+  "j2_over_j1": 0.125,
+  "crossfit_folds": 8,
+  "sampling": {
+    "chain_count": 64,
+    "burn_sweeps": 40,
+    "measurement_blocks": 8,
+    "decorrelation_sweeps": 8,
+    "amplitude_batch_size": 4096
+  },
+  "kernel": {
+    "terminal_capacity": 655360,
+    "entry_capacity": 5000000
+  }
+}

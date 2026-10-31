@@ -1,0 +1,11 @@
+{
+  "projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_netket_continuation_7600_n36.json": "330e30b18f689fa0b6ef5584ff565e6a7438b5f4ad966b020b94161da1456e86",
+  "projects/clebsch_tree_nqs/configs/remote/triangle6_cost_recovery_20261020/campaign.json": "f92fa23d23839f5d2668aa5c8dbc4b43094032db35ee6204680f943eb5b06e04",
+  "projects/clebsch_tree_nqs/configs/remote/triangle6_accuracy_20261019/j0.json": "f779c5b7180b88daafa445066145e53c97ceaf65e24bcd754e6cbb5140a843f0",
+  "projects/clebsch_tree_nqs/configs/remote/triangle6_cost_recovery_20261020/j0.json": "57868b00481796337023bd58231969cf2ea4a1b1688449173ec6c735110378f1",
+  "projects/clebsch_tree_nqs/configs/remote/triangle6_accuracy_20261019/j0125.json": "1d47cca6ea931c9d15a12eb902a6dca1616279a21709184a909a41614c84b966",
+  "projects/clebsch_tree_nqs/configs/remote/triangle6_cost_recovery_20261020/j0125.json": "c42d1e601b31f472afcee9a961994849b1b0f06beca409bb9e60291c1e537807",
+  "projects/clebsch_tree_nqs/results/spin_full_vit_optimization_v1/triangular/ridge_sr/checkpoint.pkl": "a98f678d7b03a434fd70ec9b7db386031012edfc6e620ae1b20e7b693e5d98dd",
+  "projects/clebsch_tree_nqs/results/spin_full_vit_optimization_v1/triangular/results.json": "ed7c898875bcc837b2f463ba14da6428a148e0e24d1a8008fc279631ba40e914",
+  "projects/clebsch_tree_nqs/results/spin_full_vit_optimization_v1/triangular/ridge_sr/training.json": "dd096f47bb4a3b47662ff58cdeb260309437a95a32672310250adbe85fd3695c"
+}

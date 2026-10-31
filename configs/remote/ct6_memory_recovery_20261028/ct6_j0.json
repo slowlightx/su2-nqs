@@ -1,0 +1,62 @@
+{
+  "task": "CT_bounded_followup_v1",
+  "execution_authorized": true,
+  "authorization_note": "User request on 2026-10-27 EDT explicitly authorizes short queued CT12 B200 trials and analyzed CT6 optimization followups. This isolated stage has a new ceiling of24 A100-hours plus6 B200-hours; it does not overwrite or retrospectively enlarge the old240-hour campaign.",
+  "kind": "ct6",
+  "device": "A100",
+  "j2": 0,
+  "model": {
+    "length": 6,
+    "multiplicity_cap": 28,
+    "maximum_q": 10
+  },
+  "parent_directory": "/home/yx789/nqs-wavefunctions/nqs/ct6_importance_j0_20261027/j0",
+  "parent_registration_sha256": "0b3799b15649f0fbccf62834422b6ed0fc23f208cc51b1cf8fd5bfe4045bee18",
+  "parent_audit_sha256": "3312fe051e25e8366619d492771704b5167dc2cf6a282f88588d8faeff93a575",
+  "parent_checkpoint_sha256": "1621ff97df5bed776be94593ffc34cb4b536483682b2d071ca5fd18d4ea9c9a2",
+  "parent_policy": "immutable independently audited completed endpoint",
+  "damping": 0.05,
+  "learning_rate": 0.03,
+  "epsilon": 0.125,
+  "steps": 8,
+  "fit_records": 5120,
+  "calibration_records": 4096,
+  "calibration_split": 2048,
+  "audit_records": 8192,
+  "audit_groups": 128,
+  "interim_records": 2048,
+  "interim_groups": 128,
+  "projection_chunk": 4,
+  "action_chunk": 4,
+  "score_chunk": 2,
+  "H_chunk": 4,
+  "target_FS": 0.001,
+  "maximum_FS": 0.005,
+  "wall_cap_seconds": 43200,
+  "maximum_peak_device_bytes": 75161927680,
+  "automatic_next_allocation": false,
+  "no_requeue": true,
+  "seeds": {
+    "preflight": 2810281001,
+    "interim": 2810281002,
+    "interim_statistics": 2810281003,
+    "audit": 2810281004,
+    "audit_statistics": 2810281005
+  },
+  "physical_state": "unchanged strict-SU2 singlet tree, complete coherent Gamma-A1, all physical H bonds; no new head, gate, width or qmax",
+  "preemption_policy": "no-requeue bounded pilot; preserve last atomic committed parameters/optimizer/RNG; future re-entry requires a new explicit submission, not automatic duplicate allocation",
+  "arity": "ternary_joint",
+  "binary_rank": 8,
+  "allocator_preflight": true,
+  "allocation_recovery": "Original707005 failed before native SR update. Same scientific panels/state/RNG, contiguous90-percent pool; retain70GiB live ceiling. Supersede only pending707006, not running694146 or queuedB200. J0 recovery11.5h plus failed.268889h and J.12512h remains below24 A100h stage ceiling.",
+  "first_fit_cache": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/ct_bounded_followup_20261028/ct6_j0/run01/step1",
+    "sealed_files": {
+      "fit_products.npz": "206e21c1ee76d5f201b4b2122ad9586a018ae66cec490c7651bbdb9cc0fed3fd",
+      "fit_draw.npz": "41fee5feebb8def9b992f9e74a594c2612f11697002387c0baf1715370b228d4",
+      "fit_draw.json": "d35211845713dd447616352a66773633627af9915cabac9365870d257976a59a",
+      "streams_frozen.json": "78c78b9ba76c8017f45dc145552fa51d2e77a3f36f9dc21f63b49e29f4810628",
+      "transition.json": "b8a70c8a963ef503c3476abe95fee64ebda8fe594e4bcd9477dc1ef20e87f009"
+    }
+  }
+}

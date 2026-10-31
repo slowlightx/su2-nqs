@@ -1,0 +1,71 @@
+{
+  "task": "native_N144_same_width_global18_continuation",
+  "training_release": true,
+  "model": {
+    "length": 12,
+    "multiplicity_cap": 20,
+    "maximum_q": 10
+  },
+  "j2_over_j1": 0,
+  "arm": "ternary_joint",
+  "binary_rank": 8,
+  "projection_chunk": 4,
+  "action_chunk": 4,
+  "tolerance": 2e-11,
+  "require_gpu": true,
+  "parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/ct12_sr_block_20261021/j0_joint_w20",
+    "model": {
+      "length": 12,
+      "multiplicity_cap": 20,
+      "maximum_q": 10
+    },
+    "arm": "ternary_joint",
+    "j2_over_j1": 0,
+    "global_optimizer_steps": 18,
+    "params_sha256": "cdd6ebc568b95e0c69341bf59516f9535c26b6c33cfb8e801216bda165b82a17",
+    "registration_sha256": "257f39bc0d6a17d986810005da7965c53a895288ed356fddfc1dfc5e38d103b1",
+    "results_sha256": "2d197228c87ed4df264ae940dd31c0d655408c4cd7c8c0b876d5937416136de6",
+    "checkpoint_sha256": "2ed373544be0d029fc788c3cfcf539a34488a88a6da3e70722386233437c3039",
+    "audit_sha256": "e2b9718c2221a337def705742526e9f2ac15a84db578a23f37f813318ce27768",
+    "raw_samples_sha256": "809fdd559f1661ce789bb3a10d8e35dd66a15a78b0c49c06b0908aff99814bcd"
+  },
+  "training": {
+    "steps": 8,
+    "chains": 8,
+    "records_per_chain": 32,
+    "initial_burn_proposals": 1440,
+    "refresh_proposals": 288,
+    "proposals_between": 144
+  },
+  "pilot_steps": 2,
+  "audit": {
+    "chains": 32,
+    "records_per_chain": 16,
+    "burn_proposals": 2880,
+    "proposals_between": 144,
+    "seed": 2610221201
+  },
+  "sampler": {
+    "bond_proposal_probability": 0.75,
+    "lazy_probability": 0.05
+  },
+  "sr": {
+    "damping": 0.1,
+    "step_size": 0.03,
+    "fisher_trust_radius": 0.01,
+    "maximum_overlap_distance": 0.01,
+    "minimum_ess_fraction": 0.98,
+    "backtracking_steps": 8,
+    "score_chunk_size": 2,
+    "parameter_chunk_size": 8192
+  },
+  "phase_seconds": {
+    "pilot": 18000,
+    "replay": 7200,
+    "train": 57600
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/ct12_relaunch_20261022v2/j0_joint_w20",
+  "interpretation": "Template is NOT submission-ready until main agent seals all five current global18 parent files, params hash, source manifest and explicitly enables training_release. Same width20/rank8/global18 parent; full parameter, stateless-SR optimizer (including diagnostics), sampler and RNG preserved. Complete1728-image coherentA1 and all weightedH bonds unchanged.256 training records/step, blockSR8192. Two committed pilot updates, one uncommitted replay fixture and process-isolated replay precede six remaining updates, then untouched512-record audit. No width expansion, no cold start, no architecture, energy or convergence success assumed.",
+  "release_profile": "audited_same_width_global18_v3"
+}

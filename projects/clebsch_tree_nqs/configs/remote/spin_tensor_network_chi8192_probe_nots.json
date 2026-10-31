@@ -1,0 +1,46 @@
+{
+  "initial_checkpoint_sha256": "b1f8abd6ecce2f9fde31be7b08d8444673e6fdc4612af79a3d4ab5e6a0f2b239",
+  "parent_protocol_sha256": "3ca7bd86353fa1e485b951e41586b0813649cb58cd5dae7faaa6f9c16e75dec0",
+  "inherit_optimizer": true,
+  "mixer": false,
+  "save_each_sweep_rdms": true,
+  "rows": 6,
+  "columns": 6,
+  "j2": 0.125,
+  "chi": 8192,
+  "sweeps": 1,
+  "tenpy_version": "1.1.0",
+  "chunk_seconds": 79200,
+  "reserve_seconds": 1800,
+  "initial_sweep_seconds_bound": 61200,
+  "total_seconds_cap": 79200,
+  "memory_cap_gib": 448,
+  "regions": {
+    "compact4": [
+      14,
+      15,
+      20,
+      21
+    ],
+    "compact6": [
+      12,
+      13,
+      14,
+      18,
+      19,
+      20
+    ],
+    "winding6": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ]
+  },
+  "protocol": "User-authorized chi8192 capacity probe from complete verified chi5120 sweep26. One mixer-OFF growth sweep, global26 to27, retaining full optimizer/environments and same triangular6x6 torus J2=.125 and original three RDM cuts. NOT a converged reference claim: inspect energy, latest discarded weight and raw regional drift before adding relaxation sweeps.32 CPUs,512GiB requested,448GiB local-update guard,23h scheduler,22h active cap,30min exit reserve. Forecast ~13-17h including uncertainty, excluding queue, from measured chi5120 cost with cubic chi scaling; memory ~394GiB before reserve from quadratic scaling. Scratch-only state I/O, durable verified WORK archive afterward. Atomic checkpoints and inherited signal/memory guards remain unchanged; no new ansatz, ED or variance claim. Separate geometry readout will not alter this optimizer registration.",
+  "output": "/scratch/yx51/nqs_reference_dmrg/projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi8192_probe",
+  "parent_output": "/scratch/yx51/nqs_reference_dmrg/inputs/b1f8abd6ecce2f9fde31be7b08d8444673e6fdc4612af79a3d4ab5e6a0f2b239",
+  "initial_checkpoint": "/scratch/yx51/nqs_reference_dmrg/inputs/b1f8abd6ecce2f9fde31be7b08d8444673e6fdc4612af79a3d4ab5e6a0f2b239/checkpoint.h5"
+}

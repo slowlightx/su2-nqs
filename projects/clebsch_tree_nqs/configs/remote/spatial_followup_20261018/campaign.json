@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-18",
+  "workspace": "/home/yx789/nqs-spatial-followup-20261018",
+  "read_only_runtime_workspace": "/home/yx789/nqs-triangle-quality-20261017",
+  "runtime_policy": "Reuse the sealed, already GPU-tested original producer source through PYTHONPATH. Copy only the new nonnumerical dispatcher/plans. Do not overwrite source files, parent configurations, logs, checkpoints, optimizers or arrays of any existing producer.",
+  "cases": {
+    "j0_continue": {"mode":"full_state_continuation","parent_step":500,"pilot_step":502,"replay_step":504,"terminal_step":1000,"additional_updates":500,"pilot_minutes":30,"replay_minutes":30,"train_minutes":630,"train_session_seconds":36900,"audit_minutes_each":45,"audit_streams":2,"aggregate_minutes":15,"aggregate_GPUs":0,"requested_GPU_minutes":780},
+    "j0125_rate005": {"mode":"parameter_repair","parent_step":500,"pilot_step":2,"replay_step":4,"terminal_step":200,"additional_updates":200,"pilot_minutes":30,"replay_minutes":30,"train_minutes":390,"train_session_seconds":22500,"audit_minutes_each":45,"audit_streams":2,"aggregate_minutes":15,"aggregate_GPUs":0,"requested_GPU_minutes":540},
+    "j0125_rate00125": {"mode":"parameter_repair","parent_step":500,"pilot_step":2,"replay_step":4,"terminal_step":200,"additional_updates":200,"pilot_minutes":30,"replay_minutes":30,"train_minutes":390,"train_session_seconds":22500,"audit_minutes_each":45,"audit_streams":2,"aggregate_minutes":15,"aggregate_GPUs":0,"requested_GPU_minutes":540}
+  },
+  "allocation": {"partition":"kim","account":"kim","GPUs_per_training_or_audit_task":1,"GPU_type":"nvidia_a100_80gb_pcie","CPU_per_GPU_task":4,"GiB_per_GPU_task":64,"nice":10000,"maximum_total_requested_A100_hours":31,"root_authorized_ceiling_A100_hours":36,"anticipated_actual_A100_hours":[22,24],"pilot_and_process_resume_allocations_counted_separately":true,"CPU_aggregators_not_GPU_jobs":true},
+  "new_training_full_H_calls": {"j0_continue":2048000,"j0125_rate005":819200,"j0125_rate00125":819200,"total":3686400},
+  "new_terminal_audit_full_H_calls": {"per_case":32768,"total":98304},
+  "protocol": "Fixed endpoints, all weights train, exact same backbone and completecoherentA1. Parameters are not selected by training minimum or audit outcome. Pilot/resume steps are included in fixed update endpoints but NOT free in Slurm GPU-hours. Two fresh audit streams per terminal. No blind6144/8192 explicitSR retry, no model expansion, no12x12 new training allocation in this campaign, no automatic extension.",
+  "physics": "Ordinary fixedSz0/parity/spatialA1 SpatialViT is not exactSU2. Preserve all old quality-sequence endpoints and raw tails. Different audited means for unchanged H do not themselves establish different physical phases."
+}

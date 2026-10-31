@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_schur_sector_matched_frontier",
+  "sector_head_training": {
+    "system": "triangular_N12_full_D6_J2_0.125",
+    "heads": ["A1", "E2", "A2", "S1_K", "S1_M"],
+    "shared_backbone": true,
+    "magnetic_indices_visible_to_network": false,
+    "seeds": [0, 1, 2],
+    "steps": 800,
+    "learning_rate": 0.01
+  },
+  "matched_frontier": {
+    "cases": ["triangular_n12_j2_0125", "square_n16_j2_05"],
+    "seeds": [0, 1, 2],
+    "steps": 1000,
+    "same_full_H_calls_for_neural_arms": true,
+    "controls": [
+      "fixed_sz_A1_spatial_vit",
+      "symmetry_unaware_fixed_sz_vit",
+      "optimized_physical_jastrow_two_lanczos"
+    ],
+    "parameter_counts_are_capacity_matched_not_identical": true,
+    "exact_ground_state_usage": "untouched_final_audit_only"
+  },
+  "promotion_contract": {
+    "triangular_6x6_default": "blocked",
+    "release_condition": "SU2 median energy and variance beat every registered local control on both cases and every SU2 seed is below 1e-5 total error",
+    "released_work": "prepare sampled N36 canary only; no QSL observable production"
+  }
+}

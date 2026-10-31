@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_n36_physical_three_arm",
+  "seed": 20260923,
+  "reference": {
+    "basin_config": "projects/clebsch_tree_nqs/configs/validation/spin_su2_route_vit_n36_basin_gate_global.json",
+    "checkpoint_directory": "projects/clebsch_tree_nqs/results/spin_su2_route_vit_n36_basin_gate_global_v1/checkpoints"
+  },
+  "sampling": {
+    "replicates": 2,
+    "training_count": 12,
+    "audit_count": 24,
+    "burn_sweeps": 120,
+    "decorrelation_sweeps": 8
+  },
+  "model": {
+    "patch_rows": 2,
+    "patch_columns": 2,
+    "embedding_dim": 8,
+    "head_count": 2,
+    "depth": 1,
+    "mlp_ratio": 2,
+    "initialization_scale": 0.06,
+    "modulation_scale": 0.12,
+    "translation_orbit_chunk_size": 6
+  },
+  "distillation": {
+    "steps": 12,
+    "learning_rate": 0.04
+  },
+  "training": {
+    "steps": 2,
+    "learning_rate": 0.035
+  },
+  "gates": {
+    "importance_ess_fraction_minimum": 0.20
+  }
+}

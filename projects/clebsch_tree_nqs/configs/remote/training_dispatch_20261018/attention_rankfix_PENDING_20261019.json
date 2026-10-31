@@ -1,0 +1,19 @@
+{
+  "status": "NOT_SUBMITTED_APPROVAL_SERVICE_AT_CAPACITY",
+  "new_numeric_workspace": "/home/yx789/nqs-attention-rankfix-20261019",
+  "sources_list": "clebsch_sync_files.txt",
+  "changed_numeric_module": "su2_nqs/models/triangular_clebsch_dictionary_attention.py",
+  "never_started_jobs_to_recheck_before_replacing": [383620, 383621, 383627, 383628],
+  "leave_unchanged": "All running mainlines, N36 attention jobs383618/383619 and383625/383626, freeCT12 gate/trial jobs",
+  "replacements": [
+    {"case": "attention_L12_j0_rankfix", "train_afterok": 383619, "train_minutes": 240, "replay_minutes": 30},
+    {"case": "attention_L12_j0125_rankfix", "train_afterok": 383626, "train_minutes": 240, "replay_minutes": 30}
+  ],
+  "geometry_harmonics": 3,
+  "attention_embedding_dim": 32,
+  "rank_control": "Both linear and attention must reproduce all16 independent local node tensors at the same physical initial state. Original d8 attention and harmonic2 linear readout fail this necessary condition. No CG, full-H, A1, width, sample or math-oracle tolerance change.",
+  "GPU_type": "gpu:nvidia_a100_80gb_pcie:1",
+  "maximum_replacement_A100_hours": 9,
+  "net_budget_increase_if_all_four_old_jobs_still_pending": 0,
+  "before_submission": "Only cancel the four exact old jobs if all are still PENDING and unstarted. Do not overwrite a running numerical workspace. Verify upstream N36 replay has not failed, sync new immutable source/configs and save actual returned jobIDs. No task has been cancelled/replaced by this preparation."
+}

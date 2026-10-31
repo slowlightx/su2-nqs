@@ -1,0 +1,70 @@
+{
+  "task": "frozen_two_replica_spin_response",
+  "regions": {
+    "compact6": [
+      0,
+      1,
+      2,
+      6,
+      7,
+      8
+    ],
+    "prefix18": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ]
+  },
+  "momenta": {
+    "Gamma": [
+      0,
+      0
+    ],
+    "K": [
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "minus_K": [
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "M1": [
+      0.5,
+      0
+    ],
+    "M2": [
+      0,
+      0.5
+    ],
+    "M3": [
+      0.5,
+      0.5
+    ]
+  },
+  "query_batch": 32,
+  "wall_seconds": 1500,
+  "name": "tri_j0125",
+  "parent": "/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s4096_d2e3_conditions_20261012/seed1",
+  "step": 200,
+  "checkpoint_sha256": "76cbb7ec2d7c10d908dd9c7c3d154305754272062e724a668faa073176ff7701",
+  "streams": {
+    "stream2026305102.npz": "8c26298152781b122e5ee29f9224dc84fce648709bc1df7a71d413ae52a3fece",
+    "stream2026305103.npz": "859d5c94c3f72c20c485a7180cc6469b440aba33fa1cba2fa1d60148f1d8ad7d"
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/replica_response_20261015/tri_j0125"
+}

@@ -1,0 +1,526 @@
+{
+  "status": "bounded_pilots_submitted",
+  "remote_code_directory": "/home/yx789/nqs-frustrated-quality-20261012",
+  "entries": [
+    {
+      "name": "tri_j0125_s4096_d2e4",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e4.json",
+      "kind": "optimization_conditions",
+      "pilot": 2,
+      "resume": 4,
+      "terminal": 200,
+      "audits": [
+        100,
+        200
+      ],
+      "output": "/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s4096_d2e4_conditions_20261012/seed1",
+      "samples_per_update": 4096,
+      "maximum_training_seconds": 20000
+    },
+    {
+      "name": "tri_j0125_s4096_d2e3",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e3.json",
+      "kind": "optimization_conditions",
+      "pilot": 2,
+      "resume": 4,
+      "terminal": 200,
+      "audits": [
+        100,
+        200
+      ],
+      "output": "/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s4096_d2e3_conditions_20261012/seed1",
+      "samples_per_update": 4096,
+      "maximum_training_seconds": 20000
+    },
+    {
+      "name": "tri_j0125_s8192_d2e3",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s8192_d2e3.json",
+      "kind": "optimization_conditions",
+      "pilot": 2,
+      "resume": 4,
+      "terminal": 200,
+      "audits": [
+        100,
+        200
+      ],
+      "output": "/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s8192_d2e3_conditions_20261012/seed1",
+      "samples_per_update": 8192,
+      "maximum_training_seconds": 40000
+    },
+    {
+      "name": "tri_j01_continue1000",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j01_continue1000.json",
+      "kind": "exact_protocol_continuation",
+      "pilot": 502,
+      "resume": 504,
+      "terminal": 1000,
+      "audits": [
+        750,
+        1000
+      ],
+      "output": "/home/yx789/nqs-wavefunctions/nqs/tri_j01_continue1000_20261012/seed1",
+      "samples_per_update": 4096,
+      "maximum_training_seconds": 90000
+    },
+    {
+      "name": "tri_j0175_continue1000",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0175_continue1000.json",
+      "kind": "exact_protocol_continuation",
+      "pilot": 502,
+      "resume": 504,
+      "terminal": 1000,
+      "audits": [
+        750,
+        1000
+      ],
+      "output": "/home/yx789/nqs-wavefunctions/nqs/tri_j0175_continue1000_20261012/seed1",
+      "samples_per_update": 4096,
+      "maximum_training_seconds": 90000
+    },
+    {
+      "name": "square_j05_continue1250",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/square_j05_continue1250.json",
+      "kind": "exact_protocol_continuation",
+      "pilot": 1002,
+      "resume": 1004,
+      "terminal": 1250,
+      "audits": [
+        1125,
+        1250
+      ],
+      "output": "/home/yx789/nqs-wavefunctions/nqs/square_j05_continue1250_20261012/seed1",
+      "samples_per_update": 4096,
+      "maximum_training_seconds": 103500
+    }
+  ],
+  "jobs": {
+    "fq0-pilot": {
+      "job_id": 231071,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq0-pilot",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e4.json,NQS_PREFLIGHT_ENDPOINT=2,NQS_INITIAL_ENERGY_CEILING=-0.47,NQS_INITIAL_VARIANCE_CEILING=0.1,NQS_BOUNDED_PILOT_SCREEN=1",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ],
+      "afterok": [],
+      "submitted_at_utc": "2026-10-12T21:54:16.714478+00:00"
+    },
+    "fq0-resume": {
+      "job_id": 231072,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq0-resume",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--dependency=afterok:231071",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e4.json,NQS_UNTIL_STEP=4,NQS_SESSION_SECONDS=3600",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ],
+      "afterok": [
+        231071
+      ],
+      "submitted_at_utc": "2026-10-12T21:54:17.388840+00:00"
+    },
+    "fq0-replay": {
+      "job_id": 231073,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq0-replay",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--dependency=afterok:231072",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e4.json,NQS_PROBE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s4096_d2e4_conditions_20261012/seed1/quality/step00002.pkl,NQS_COMPARE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s4096_d2e4_conditions_20261012/seed1/quality/step00004.pkl,NQS_PROBE_OUTPUT=/home/yx789/nqs-wavefunctions/readouts/tri_j0125_s4096_d2e4_replay_20261012.json,NQS_PROBE_STEPS=2,NQS_PROBE_SECONDS=3600",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "jump-probe"
+      ],
+      "afterok": [
+        231072
+      ],
+      "submitted_at_utc": "2026-10-12T21:54:17.618288+00:00"
+    },
+    "fq1-pilot": {
+      "job_id": 231074,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq1-pilot",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e3.json,NQS_PREFLIGHT_ENDPOINT=2,NQS_INITIAL_ENERGY_CEILING=-0.47,NQS_INITIAL_VARIANCE_CEILING=0.1,NQS_BOUNDED_PILOT_SCREEN=1",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ],
+      "afterok": [],
+      "submitted_at_utc": "2026-10-12T21:54:17.716784+00:00"
+    },
+    "fq1-resume": {
+      "job_id": 231075,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq1-resume",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--dependency=afterok:231074",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e3.json,NQS_UNTIL_STEP=4,NQS_SESSION_SECONDS=3600",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ],
+      "afterok": [
+        231074
+      ],
+      "submitted_at_utc": "2026-10-12T21:54:17.820013+00:00"
+    },
+    "fq1-replay": {
+      "job_id": 231076,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq1-replay",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--dependency=afterok:231075",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e3.json,NQS_PROBE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s4096_d2e3_conditions_20261012/seed1/quality/step00002.pkl,NQS_COMPARE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s4096_d2e3_conditions_20261012/seed1/quality/step00004.pkl,NQS_PROBE_OUTPUT=/home/yx789/nqs-wavefunctions/readouts/tri_j0125_s4096_d2e3_replay_20261012.json,NQS_PROBE_STEPS=2,NQS_PROBE_SECONDS=3600",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "jump-probe"
+      ],
+      "afterok": [
+        231075
+      ],
+      "submitted_at_utc": "2026-10-12T21:54:17.924066+00:00"
+    },
+    "fq2-pilot": {
+      "job_id": 231077,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq2-pilot",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s8192_d2e3.json,NQS_PREFLIGHT_ENDPOINT=2,NQS_INITIAL_ENERGY_CEILING=-0.47,NQS_INITIAL_VARIANCE_CEILING=0.1,NQS_BOUNDED_PILOT_SCREEN=1",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ],
+      "afterok": [],
+      "submitted_at_utc": "2026-10-12T21:54:18.030364+00:00"
+    },
+    "fq2-resume": {
+      "job_id": 231078,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq2-resume",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--dependency=afterok:231077",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s8192_d2e3.json,NQS_UNTIL_STEP=4,NQS_SESSION_SECONDS=3600",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ],
+      "afterok": [
+        231077
+      ],
+      "submitted_at_utc": "2026-10-12T21:54:18.138371+00:00"
+    },
+    "fq2-replay": {
+      "job_id": 231079,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq2-replay",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--dependency=afterok:231078",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s8192_d2e3.json,NQS_PROBE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s8192_d2e3_conditions_20261012/seed1/quality/step00002.pkl,NQS_COMPARE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s8192_d2e3_conditions_20261012/seed1/quality/step00004.pkl,NQS_PROBE_OUTPUT=/home/yx789/nqs-wavefunctions/readouts/tri_j0125_s8192_d2e3_replay_20261012.json,NQS_PROBE_STEPS=2,NQS_PROBE_SECONDS=3600",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "jump-probe"
+      ],
+      "afterok": [
+        231078
+      ],
+      "submitted_at_utc": "2026-10-12T21:54:18.236027+00:00"
+    },
+    "fq3-pilot": {
+      "job_id": 231080,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq3-pilot",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j01_continue1000.json,NQS_PREFLIGHT_ENDPOINT=502",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ],
+      "afterok": [],
+      "submitted_at_utc": "2026-10-12T21:54:18.337994+00:00"
+    },
+    "fq3-resume": {
+      "job_id": 231081,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq3-resume",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--dependency=afterok:231080",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j01_continue1000.json,NQS_UNTIL_STEP=504,NQS_SESSION_SECONDS=3600",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ],
+      "afterok": [
+        231080
+      ],
+      "submitted_at_utc": "2026-10-12T21:54:18.442791+00:00"
+    },
+    "fq3-replay": {
+      "job_id": 231082,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq3-replay",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--dependency=afterok:231081",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j01_continue1000.json,NQS_PROBE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/tri_j01_continue1000_20261012/seed1/quality/step00502.pkl,NQS_COMPARE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/tri_j01_continue1000_20261012/seed1/quality/step00504.pkl,NQS_PROBE_OUTPUT=/home/yx789/nqs-wavefunctions/readouts/tri_j01_continue1000_replay_20261012.json,NQS_PROBE_STEPS=2,NQS_PROBE_SECONDS=3600",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "jump-probe"
+      ],
+      "afterok": [
+        231081
+      ],
+      "submitted_at_utc": "2026-10-12T21:54:18.548838+00:00"
+    },
+    "fq4-pilot": {
+      "job_id": 231083,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq4-pilot",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0175_continue1000.json,NQS_PREFLIGHT_ENDPOINT=502",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ],
+      "afterok": [],
+      "submitted_at_utc": "2026-10-12T21:54:18.665771+00:00"
+    },
+    "fq4-resume": {
+      "job_id": 231084,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq4-resume",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--dependency=afterok:231083",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0175_continue1000.json,NQS_UNTIL_STEP=504,NQS_SESSION_SECONDS=3600",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ],
+      "afterok": [
+        231083
+      ],
+      "submitted_at_utc": "2026-10-12T21:54:18.769768+00:00"
+    },
+    "fq4-replay": {
+      "job_id": 231085,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq4-replay",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--dependency=afterok:231084",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0175_continue1000.json,NQS_PROBE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/tri_j0175_continue1000_20261012/seed1/quality/step00502.pkl,NQS_COMPARE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/tri_j0175_continue1000_20261012/seed1/quality/step00504.pkl,NQS_PROBE_OUTPUT=/home/yx789/nqs-wavefunctions/readouts/tri_j0175_continue1000_replay_20261012.json,NQS_PROBE_STEPS=2,NQS_PROBE_SECONDS=3600",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "jump-probe"
+      ],
+      "afterok": [
+        231084
+      ],
+      "submitted_at_utc": "2026-10-12T21:54:18.877069+00:00"
+    },
+    "fq5-pilot": {
+      "job_id": 231086,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq5-pilot",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/square_j05_continue1250.json,NQS_PREFLIGHT_ENDPOINT=1002",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ],
+      "afterok": [],
+      "submitted_at_utc": "2026-10-12T21:54:18.981587+00:00"
+    },
+    "fq5-resume": {
+      "job_id": 231087,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq5-resume",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--dependency=afterok:231086",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/square_j05_continue1250.json,NQS_UNTIL_STEP=1004,NQS_SESSION_SECONDS=3600",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ],
+      "afterok": [
+        231086
+      ],
+      "submitted_at_utc": "2026-10-12T21:54:19.101950+00:00"
+    },
+    "fq5-replay": {
+      "job_id": 231088,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-frustrated-quality-20261012",
+        "--job-name=fq5-replay",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=128G",
+        "--time=01:15:00",
+        "--dependency=afterok:231087",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/square_j05_continue1250.json,NQS_PROBE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/square_j05_continue1250_20261012/seed1/quality/step01002.pkl,NQS_COMPARE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/square_j05_continue1250_20261012/seed1/quality/step01004.pkl,NQS_PROBE_OUTPUT=/home/yx789/nqs-wavefunctions/readouts/square_j05_continue1250_replay_20261012.json,NQS_PROBE_STEPS=2,NQS_PROBE_SECONDS=3600",
+        "/home/yx789/nqs-frustrated-quality-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "jump-probe"
+      ],
+      "afterok": [
+        231087
+      ],
+      "submitted_at_utc": "2026-10-12T21:54:19.211896+00:00"
+    }
+  },
+  "long_training_released": false,
+  "field_reoptimization_released": false
+}

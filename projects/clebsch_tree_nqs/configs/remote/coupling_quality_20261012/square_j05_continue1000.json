@@ -1,0 +1,186 @@
+{
+  "audit": {
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 2026102254,
+    "burn_proposals": 2880,
+    "chains": 64,
+    "proposals_between_snapshots": 144,
+    "query_batch": 16,
+    "seeds": [
+      2026102252,
+      2026102253
+    ],
+    "snapshots": 128
+  },
+  "backend": "netket_ntk",
+  "coordinate_convention": "physical120",
+  "execution_gate": {
+    "initial_pilot_selected": true,
+    "isolated_resume_endpoint": 22,
+    "long_training_automatically_released": false,
+    "pilot_endpoint": 20,
+    "registered_total_steps": 1000,
+    "single_gpu_throughput_must_be_remeasured": true
+  },
+  "initialization_seed": 2026101650,
+  "interpretation": {
+    "new_head": false,
+    "precision_or_phase_claim": false,
+    "protocol": "Complete unchanged Spatial-ViT backbone. New registered repair from immutable weights; optimizer/RNG/work counters reset, old states preserved. Pure symmetric all-pair proposals (including null moves), explicit parent sampler installation and replicated GPU parameters. Full A1 from step0; conservative SR and sampled nonlinear FS/ESS bound. Bound is on training samples, not an equilibrium or held-out certificate. 20 production steps form the gated pilot, not extra uncounted training. Only after pilot passes may it continue to fixed1000 and fresh audit. V6 explicitly requires one GPU after a production-size fixed-state cross-kernel diagnosis. Fresh registered RNG and output; unchanged parent weights, backbone, complete A1, global samples, SR and total work cap. Only tri_j0 and square_j05 are first authorized for steps0\u201320 followed by an isolated-process continuation to22. Long training has no automatic dependency release.",
+    "strict_su2": false
+  },
+  "j2_over_j1": 0.5,
+  "maximum_audit_seconds_per_checkpoint": 10800,
+  "maximum_total_audit_seconds": 21600,
+  "maximum_training_seconds": 81000,
+  "model": {
+    "columns": 6,
+    "depth": 4,
+    "embedding_dim": 60,
+    "geometry": "square",
+    "head_count": 10,
+    "initial_distance_decay": 3,
+    "initialization_scale": 1,
+    "layer_norm_epsilon": 1e-06,
+    "mlp_ratio": 4,
+    "patch_columns": 2,
+    "patch_rows": 2,
+    "pooling": "authors",
+    "rows": 6,
+    "target_m2": 0,
+    "use_distance_envelope": true
+  },
+  "model_family": "literature",
+  "momenta": {
+    "Gamma": [
+      0,
+      0
+    ],
+    "Neel": [
+      0.5,
+      0.5
+    ],
+    "stripe_x": [
+      0.5,
+      0
+    ],
+    "stripe_y": [
+      0,
+      0.5
+    ]
+  },
+  "netket": {
+    "chunk_size": 16,
+    "chunk_size_bwd": 4,
+    "exchange_kernel": "uniform_all_pairs",
+    "expected_device_count": 1,
+    "initialization": "parent_configurations",
+    "momentum": null,
+    "on_the_fly": false,
+    "replicate_initial_params": true,
+    "sampled_trust": {
+      "halvings": 6,
+      "maximum_fs_sine": 0.02,
+      "minimum_ess_fraction": 0.95
+    },
+    "version": "3.22.3"
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/square_j05_repair_v6_continue_1000/seed1",
+  "preregistered_before_training": true,
+  "quality_milestones": [
+    0,
+    500,
+    502,
+    504,
+    750,
+    1000
+  ],
+  "regions": {
+    "compact4": {
+      "left": [
+        0,
+        1
+      ],
+      "sites": [
+        0,
+        1,
+        6,
+        7
+      ]
+    },
+    "compact6": {
+      "left": [
+        0,
+        1,
+        2
+      ],
+      "sites": [
+        0,
+        1,
+        2,
+        6,
+        7,
+        8
+      ]
+    },
+    "winding6": {
+      "left": [
+        0,
+        1,
+        2
+      ],
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  "repair_parameters_from": {
+    "checkpoint_path": "quality/step05500.pkl",
+    "checkpoint_sha256": "369d39deb403b50d6f8308b6c760312c7bd73f35f482f72bb0e703d883600a41",
+    "completed_steps": 5500,
+    "directory": "/home/yx789/nqs-wavefunctions/inputs/square_j05_step05500",
+    "params_sha256": "ce22c38e17c9226e012713639943e3f60359d71d820b83e7c7fd9882f39bc688",
+    "registration_sha256": "a871b709f040028fb6114c0ac27dd73ddbce1163e641d5b1efcf390dfa3ebf72"
+  },
+  "require_gpu": true,
+  "sampling": {
+    "burn_proposals": 3600,
+    "chains": 128,
+    "proposals_between_snapshots": 72,
+    "snapshots_per_update": 32
+  },
+  "spin_inversion_even": true,
+  "sr": {
+    "damping": 0.001,
+    "step_size": 0.00125
+  },
+  "stages": [
+    {
+      "projection": "gamma_a1",
+      "steps": 500
+    },
+    {
+      "projection": "gamma_a1",
+      "steps": 500
+    }
+  ],
+  "task": "spin_spatial_vit_quality",
+  "training_seed": 2026101651,
+  "netket_continue_from": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/square_j05_repair_v6_single_gpu/seed1",
+    "completed_steps": 500,
+    "additional_steps": 500,
+    "from_registered_milestone": true,
+    "time_budget_extension_seconds": 36000,
+    "checkpoint_path": "quality/step00500.pkl",
+    "checkpoint_sha256": "22738cd56c00dc85a92fc8804cb9f4ccca7af27fa2c0614ad61c5762beafaabd",
+    "registration_sha256": "d1b867328b5c185807285e7fa8c088abe3bd10777fe2f3be74ad3380ee5343cf",
+    "progress_sha256": "2b40f9b14898da1ffbc8215cbc2492dff1a8e9bf792948b7216b676ec706d600",
+    "audit_sha256": "501d88ae7368db1711fc9196b74f8b54f50554c856c68310478881604a213126"
+  }
+}

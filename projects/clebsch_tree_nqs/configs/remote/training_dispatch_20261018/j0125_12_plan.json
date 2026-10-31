@@ -1,0 +1,52 @@
+{
+  "mode": "full_state_continuation",
+  "parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/benchmark_guided_20261017/spatial/j0125/seed1",
+    "completed_steps": 32,
+    "audit_file": "energy.json",
+    "registration_sha256": "38201f362edb160e91142153e4939557d0234bc5be69a7c12eedfe80f13a853f"
+  },
+  "continuation": {
+    "additional_steps": 64,
+    "time_budget_extension_seconds": 36000
+  },
+  "child_overrides": {
+    "output": "/home/yx789/nqs-wavefunctions/nqs/training_dispatch_20261018/j0125_12/seed1",
+    "stages": [
+      {
+        "projection": "gamma_a1",
+        "steps": 32
+      },
+      {
+        "projection": "gamma_a1",
+        "steps": 64
+      }
+    ],
+    "quality_milestones": [
+      0,
+      2,
+      16,
+      32,
+      34,
+      36,
+      64,
+      96
+    ],
+    "maximum_training_seconds": 72000,
+    "audit": {
+      "seeds": [
+        2026131810,
+        2026131811
+      ],
+      "chains": 32,
+      "snapshots": 128,
+      "proposals_between_snapshots": 576,
+      "burn_proposals": 11520,
+      "query_batch": 2,
+      "bootstrap_seed": 2026131812,
+      "bootstrap_replicates": 2000
+    }
+  },
+  "generated_config": "/home/yx789/nqs-training-dispatch-20261018/projects/clebsch_tree_nqs/configs/remote/training_dispatch_20261018/j0125_12.json",
+  "rationale": "Same architecture, Hamiltonian, global 4096 records and complete optimizer/sampler/RNG continuation. Fixed64 new updates, isolated +2/+4 reload boundary and untouched terminal8192-record audit. No energy-based endpoint selection. Preserve validated one GPU for J0 and two GPUs for J.125; count all allocated GPU-hours."
+}

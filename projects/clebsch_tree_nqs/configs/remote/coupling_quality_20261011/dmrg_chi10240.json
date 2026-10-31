@@ -1,0 +1,47 @@
+{
+  "archive_root": "/home/yx789/nqs-wavefunctions/dmrg/archives",
+  "chi": 10240,
+  "chunk_seconds": 169200,
+  "columns": 6,
+  "inherit_optimizer": true,
+  "initial_checkpoint": "/home/yx789/nqs-wavefunctions/dmrg/archives/chi8192_relax_v2/snapshots/sweep0030_3c751cbab44f_complete/checkpoint.h5",
+  "initial_checkpoint_sha256": "3c751cbab44f624a34183dac22a94edaaeafa5657be2594bfcc59a6376fe7896",
+  "initial_sweep_seconds_bound": 36000,
+  "j2": 0.125,
+  "memory_cap_gib": 640,
+  "mixer": false,
+  "output": "/home/yx789/nqs-wavefunctions/dmrg/work/chi10240_from8192_v1",
+  "parent_output": "/home/yx789/nqs-wavefunctions/dmrg/archives/chi8192_relax_v2/snapshots/sweep0030_3c751cbab44f_complete",
+  "parent_protocol_sha256": "b45ac70135b950e80db539bbb40a6c08f9d769c746de3db04963ed15ea366d1a",
+  "protocol": "Bounded chi10240 mixerOFF exactly two additional sweeps31-32 from immutable completed chi8192/30 with full optimizer/environment inheritance. No automatic further growth. Same physical 6x6 triangular torus,J2=.125 and compact4/compact6/winding6 raw boundary RDMs. Last chi8192 relaxation drift ~5e-7/site and RDM~5e-5, but chi5120->8192 RDM drift .0103/.0168 and discardedweight~1.1e-4 motivate finite-chi check.32CPU704GiB,640GiB process guard,48h allocation47h active/2h reserve. Measured8192 peak378.6GiB and3.64h/sweep extrapolate~592GiB and7.1h/sweep; growth/measurement uncertainty retained. Immutable HOME input/work/archive user-authorized; safe rollback to completed boundary, no intermediate-sweep claim.",
+  "regions": {
+    "compact4": [
+      14,
+      15,
+      20,
+      21
+    ],
+    "compact6": [
+      12,
+      13,
+      14,
+      18,
+      19,
+      20
+    ],
+    "winding6": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ]
+  },
+  "reserve_seconds": 7200,
+  "rows": 6,
+  "save_each_sweep_rdms": true,
+  "sweeps": 2,
+  "tenpy_version": "1.1.0",
+  "total_seconds_cap": 169200
+}

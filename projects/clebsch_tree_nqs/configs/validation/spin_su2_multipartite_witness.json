@@ -1,0 +1,22 @@
+{
+  "mode": "multipartite_witness",
+  "output": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/multipartite_witness_v1",
+  "reference_protocol": "projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/su2_protocol_v6",
+  "reference_problem": "triangular_n36",
+  "reference_family": "dimer_reference",
+  "reference_endpoint": "chi5120_sweep0026",
+  "candidates": [
+    "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_recovery_v6/analysis/six_site_readout",
+    "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/six_site_readout"
+  ],
+  "regions": {
+    "compact6": {"sites": [12,13,14,18,19,20], "parties": [[0,3],[1,4],[2,5]]},
+    "winding6": {"sites": [12,13,14,15,16,17], "parties": [[0,1],[2,3],[4,5]]},
+    "open5": {"sites": [12,13,14,15,16], "parties": [[0,1],[2],[3,4]]}
+  },
+  "trainers": ["reference", "ViT6600_stream0"],
+  "operator_spans": ["full", "low_order_and_spin_weights"],
+  "solver_options": {"eps_abs": 0.000002, "eps_rel": 0.000002, "max_iters": 10000, "time_limit_secs": 60.0},
+  "wall_seconds_cap": 1200,
+  "protocol": "Predeclared12 bounded TR-even SU2-invariant fully-decomposable witness fits; original RDMs are not twirled/repaired. Reference or ViT6600 first64wholechains trains each witness, then freeze and linearly evaluate disjoint chains and fixed reference quality nodes. Coarse three-party GME is not six-spin GME, QSL or topology. Open5 comes from tracing winding6, is a different-size geometric control, and its real invariant space is already saturated by the low-order span. Inspect both own-family quality drifts and numerical witness repair. No reoptimization using audit scores or selection of best fit/head. Preserve all auxiliary Q matrices. No neural training, new samples, ED, or H calls. Full-minus-restricted feasible bounds are not a certified optimum gap. Independent dimer and classical-product controls mandatory; separate exact tests cover all-cuts-NPT biseparable mixture and coherent-versus-incoherent singlet resonance. Existing audit caches were analyzed for other observables; held-out means disjoint from THIS fit, not a never-inspected experimental dataset."
+}

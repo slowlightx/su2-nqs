@@ -1,0 +1,42 @@
+{
+  "jobs": [
+    {
+      "phase": "square_cost",
+      "boundary": 0,
+      "job_id": "382866",
+      "GPUs": 1,
+      "allocation_minutes": 45
+    },
+    {
+      "phase": "square_j0_train",
+      "boundary": 2,
+      "job_id": "382868",
+      "GPUs": 1,
+      "allocation_minutes": 25
+    },
+    {
+      "phase": "square_j0_train",
+      "boundary": 4,
+      "job_id": "382870",
+      "GPUs": 1,
+      "allocation_minutes": 25
+    },
+    {
+      "phase": "square_j0_train",
+      "boundary": 32,
+      "job_id": "382872",
+      "GPUs": 1,
+      "allocation_minutes": 240
+    },
+    {
+      "phase": "square_audit",
+      "boundary": 32,
+      "job_id": "382874",
+      "GPUs": 1,
+      "allocation_minutes": 60
+    }
+  ],
+  "allocated_GPU_hours_cap": 6.583333333333333,
+  "parameter_only_cross_H_warm_start": true,
+  "not_a_same_H_continuation": true
+}

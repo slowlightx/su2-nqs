@@ -1,0 +1,29 @@
+{
+  "chi_upper_bound": 8192,
+  "completed_parent": {
+    "chi": 8192,
+    "columns": 6,
+    "directory": "/home/yx789/nqs-wavefunctions/dmrg/archives/chi8192_relax_v2/latest",
+    "j2": 0.125,
+    "rows": 6,
+    "sweep": 30
+  },
+  "dtype": "float64",
+  "limits": {
+    "memory_gib": 480,
+    "threads": 16,
+    "wall_seconds": 5400
+  },
+  "materialized_config": "/home/yx789/nqs-wavefunctions/dmrg/readouts/configs/chi8192_sweep30_hexagon6_env_v1.json",
+  "n_sites": 36,
+  "output": "/home/yx789/nqs-wavefunctions/dmrg/readouts/chi8192_sweep30_hexagon6_env_v1",
+  "purpose": "Fixed same-geometry quality pair for the already completed sweep28 contractible hexagon. Reuse the tested raw-RDM contraction, without optimization or SU2 repair. Only start after successful sweep30 and complete checkpoint/archive validation; do not read a mutable running parent. Predetermined ring operator/readout, not a newly selected channel. Ninety-minute/480GiB process cap; measured sweep28 peak 312GiB and 23min motivate the allocation, not a guarantee.",
+  "regions": [
+    {
+      "dense_estimate_override": true,
+      "name": "local_hexagon6",
+      "sites": [20, 21, 15, 8, 7, 13]
+    }
+  ],
+  "stop_on_failure": true
+}

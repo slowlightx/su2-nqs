@@ -1,0 +1,43 @@
+{
+  "task": "two_line_CT6_fixed_parent_reliable_update_20261026",
+  "workspace": "/home/yx789/nqs-ct6-reliable-update-20261026",
+  "output": "/home/yx789/nqs-wavefunctions/nqs/ct6_reliable_update_20261026",
+  "campaign_path": "/home/yx789/nqs-ct6-reliable-update-20261026/projects/clebsch_tree_nqs/configs/remote/ct6_reliable_update_20261026/campaign.json",
+  "runner": "/home/yx789/nqs-ct6-reliable-update-20261026/projects/clebsch_tree_nqs/configs/remote/ct6_reliable_update_20261026/run.sbatch",
+  "created_utc": "2026-10-26T01:17:27+00:00",
+  "deadline_utc": "2026-10-28T20:44:00+00:00",
+  "node": "kim-compute-05",
+  "cases": [
+    {
+      "case": "j0_reliable32",
+      "config": "/home/yx789/nqs-ct6-reliable-update-20261026/projects/clebsch_tree_nqs/configs/remote/ct6_reliable_update_20261026/j0.json",
+      "coupling": "j0",
+      "phase_minutes": {
+        "pilot": 240,
+        "replay": 120,
+        "train": 900
+      }
+    },
+    {
+      "case": "j0125_reliable32",
+      "config": "/home/yx789/nqs-ct6-reliable-update-20261026/projects/clebsch_tree_nqs/configs/remote/ct6_reliable_update_20261026/j0125.json",
+      "coupling": "j0125",
+      "phase_minutes": {
+        "pilot": 240,
+        "replay": 120,
+        "train": 1020
+      }
+    }
+  ],
+  "production_steps": 32,
+  "production_width": 28,
+  "maximum_simultaneous_CT6_GPUs": 2,
+  "new_requested_A100_hours": 44,
+  "previous_conservatively_reserved_A100_hours": 167.01277777777779,
+  "aggregate_reserved_A100_hours": 211.01277777777779,
+  "CT6_total_budget_A100_hours": 240,
+  "automatic_production_submission": true,
+  "automatic_additional_block": false,
+  "policy": "Two one-shot gate->independent replay->32-step conditional chains. Never use legacy submit_chain/advance. Preserve parent endpoints; only a passing full-H JVP slope/sampledFS and actual cost/memory gate may release32 steps. Terminal audits included in15/17-hour training allocation. CPU verification0GPU. All stages enforce original absolute deadline; no budget reset, extra audit/retry or alternative directions.",
+  "source_parent_campaign": "projects/clebsch_tree_nqs/configs/remote/ct6_wide_production_20261023/campaign.json"
+}

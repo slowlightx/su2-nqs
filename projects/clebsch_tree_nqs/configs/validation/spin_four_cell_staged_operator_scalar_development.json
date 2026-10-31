@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_four_cell_staged_operator_scalar",
+  "phase": "development",
+  "excluded_previous_seeds": [0, 1, 2, 101, 102, 103, 211, 212, 213, 311, 312, 313, 411, 412, 413, 511, 512, 513, 521, 522, 523],
+  "optimization": {
+    "seeds": [611, 612, 613],
+    "warmup_steps": 500,
+    "branch_steps": 500,
+    "learning_rate": 0.01
+  },
+  "mechanism_contract": {
+    "shared_warmup": "one identical SU2 Schur-ViT backbone per seed before branching",
+    "operator_words": ["J1", "J2", "J1^2", "J2^2", "{J1,J2}/2"],
+    "falsifier": "isospectral coefficient-basis conjugation with equal operator actions",
+    "cost_boundary": "raw has lower internal work; primary causal comparison is physical versus scrambled"
+  },
+  "development_gate": {
+    "triangular": "physical error below 1e-10",
+    "square": "physical improves raw median/worst, beats scrambled median and every paired seed, and all physical errors are below 1e-5",
+    "passing_scope": "licenses one untouched exact-small audit only"
+  }
+}

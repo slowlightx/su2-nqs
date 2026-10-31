@@ -1,0 +1,59 @@
+{
+  "checkpoint": "/home/yx789/nqs-wavefunctions/dmrg/work/tri_j0_ordered_control_20261014/warm/chi4096.h5",
+  "checkpoint_sha256": "c6df7f10940ca84b532746aea2746cad7299f57173ff55e8311ead7e570f6350",
+  "n_sites": 36,
+  "chi_upper_bound": 4096,
+  "cut": 12,
+  "threads": 8,
+  "wall_seconds": 1200,
+  "memory_gib": 192,
+  "tolerance": 1e-09,
+  "psi_hdf_group": "psi",
+  "leading_levels": 8,
+  "measured_charges": [
+    0,
+    2
+  ],
+  "spin_groups": {},
+  "physical_order": "row-major physical sites; same prefix18 and physical PBC as J2=.125",
+  "geometry": "triangular6x6 PBC prefix12; same fixed physical row1 winding6 operator",
+  "angle_count": 81,
+  "renyi2": false,
+  "transition_sites": [],
+  "columns": 6,
+  "spin_momenta": {
+    "K": [
+      0.3333333333333333,
+      0.3333333333333333
+    ]
+  },
+  "chirality_groups": {
+    "row1_kappa_z": [
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        11,
+        6
+      ]
+    ]
+  },
+  "chirality_z_response": true
+}

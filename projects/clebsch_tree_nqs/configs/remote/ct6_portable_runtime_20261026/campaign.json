@@ -1,0 +1,38 @@
+{
+  "task": "portable_CT6_J0125_fixed_fixture_replay_then_unchanged32",
+  "workspace": "/home/yx789/nqs-ct6-portable-runtime-20261026",
+  "output": "/home/yx789/nqs-wavefunctions/nqs/ct6_portable_runtime_20261026",
+  "scientific_output": "/home/yx789/nqs-wavefunctions/nqs/ct6_regularized_update_20261026/j0125",
+  "deadline_utc": "2026-10-28T20:44:00+00:00",
+  "scheduler_policy": {
+    "partition": "kim",
+    "GPU_type": "nvidia_a100_80gb_pcie",
+    "GPUs": 1,
+    "CPUs": 4,
+    "host_memory_GiB": 96,
+    "hostname_constraint": null,
+    "any_compatible_Kim_node": true
+  },
+  "superseded_pending_job_id": "661244",
+  "retained_running_j0_job_id": "661243",
+  "previous_conservatively_reserved_A100_hours": 169.45833333333334,
+  "previous_v8_actual_A100_hours": 3.8866666666666667,
+  "retained_running_j0_A100_hours": 17,
+  "replaced_unspent_j0125_A100_hours": 19,
+  "replacement_portable_j0125_A100_hours": 21,
+  "aggregate_reserved_A100_hours": 211.345,
+  "CT6_total_budget_A100_hours": 240,
+  "maximum_simultaneous_CT6_GPUs": 2,
+  "replay_minutes": 120,
+  "train_minutes": 1140,
+  "total_minutes": 1260,
+  "deployment_files": {
+    "projects/clebsch_tree_nqs/workflows/triangle_ct6_portable_runtime.py": "e86e5eb227379a866a266c658c26b0d64d9341631ea5be62c869e921cd1e6a14",
+    "projects/clebsch_tree_nqs/workflows/triangle_ct6_validation_repair.py": "f1255e7dc36a59195669993f87d25253a5251d3ff7bda86723b409bb5c07af39",
+    "tests/test_ct6_portable_runtime.py": "eba92e22f0d6fe3e4898302c9dbfea1b5dc346ec2c67bc4711febdd64192377c",
+    "projects/clebsch_tree_nqs/configs/remote/ct6_portable_runtime_20261026/run.sbatch": "f2a3a08ab51912a324c9f634b5bd5b40207757a0513c56a4c16097b88e752711",
+    "projects/clebsch_tree_nqs/configs/remote/ct6_portable_runtime_20261026/j0125_portable.json": "031f15b56caed65c56e0766ac641f8abb16ec92494b4ef10c845bc6e9e41927e",
+    "inputs/j0125_frozen_checkpoint.pkl": "b15cbb6173deef0a8e9d69b0ed3ffbcb8d24b4eb28f68fb9bc9312805374bb90"
+  },
+  "policy": "No hostname constraints in this or future portable job submissions; hardware/memory requirements remain. Preserve running J0 and original scientific registrations. One allocation replays the sealed original state/RNG fixture then performs the original32 updates and fixed independent audit without a new direction draw. Replace only held pending661244; no automatic retry, tuning, architecture changes, or extra optimizer line."
+}

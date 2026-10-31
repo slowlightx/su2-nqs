@@ -1,0 +1,24 @@
+{
+  "task": "spatial_vit_literature_alignment",
+  "output": "projects/clebsch_tree_nqs/results/spin_spatial_vit_literature_alignment_v1",
+  "j2_over_j1": 0.125,
+  "initialization_seed": 2026100711,
+  "timing_seed": 2026100712,
+  "timing_records": 4,
+  "timing_proposals": 4,
+  "timing_repeats": 3,
+  "timing_projections": ["none", "gamma_a1"],
+  "model": {
+    "geometry": "triangular", "rows": 6, "columns": 6,
+    "patch_rows": 3, "patch_columns": 3, "mlp_ratio": 4,
+    "target_m2": 0, "initialization_scale": 1.0,
+    "initial_distance_decay": 3.0, "use_distance_envelope": true,
+    "pooling": "authors", "layer_norm_epsilon": 0.000001
+  },
+  "capacities": [
+    {"name": "d32_l4", "model": {"embedding_dim": 32, "head_count": 4, "depth": 4}},
+    {"name": "d48_l4", "model": {"embedding_dim": 48, "head_count": 8, "depth": 4}},
+    {"name": "d72_l8", "model": {"embedding_dim": 72, "head_count": 12, "depth": 8}}
+  ],
+  "interpretation": "Measured physical-amplitude/full-H/reverse-gradient/proposal cost only. Four random configurations do not estimate energy, precision, MC equilibrium or a complete SR update. Pooling control uses identical parameter arrays, with a different initial physical state. Author-equivalent architecture is not a claim to reproduce 2026 training."
+}

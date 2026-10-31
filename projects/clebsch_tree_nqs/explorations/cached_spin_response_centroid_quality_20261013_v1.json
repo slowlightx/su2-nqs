@@ -1,0 +1,1289 @@
+{
+  "scope": "same longitudinal response first moments at fixed saved quality endpoints; no phase or gap assignment",
+  "source_config": "projects/clebsch_tree_nqs/configs/validation/triangle_symmetry_contrast_20261013.json",
+  "source_config_sha256": "1ee796ac2fc6e9c0f8c5a38c8d2792782cdf950375eb048a0104c1aa4fd3ab19",
+  "script_sha256": "5386427f2dc69a72f9294fa060eadf774440e2ad31df41cfad3316ab0d7c40ef",
+  "fixed_channels": [
+    "K",
+    "M_star"
+  ],
+  "rows": [
+    {
+      "N": 36,
+      "j2": 0,
+      "parent_step": 500,
+      "params_sha256": "f7db5123773fc24c47aa968c04eb00bb0369fe4af971e117ff9b8104be0ee009",
+      "checkpoint_sha256": "73273a901a91c933ca45448ff80f9edb85a5739018e82438ab1dab6688a8d6a8",
+      "source_streams": [
+        {
+          "path": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step500/stream2026606102.npz",
+          "sha256": "8fb90b131e025a1cc78b5886234141f3ffa745d12ade1c2735528a597ad79d06"
+        },
+        {
+          "path": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step500/stream2026606103.npz",
+          "sha256": "981e6c8e90bc63ea395deaae723339c5e6137551c40ea298661375cd2839fe62"
+        }
+      ],
+      "regional_coherent_npz": {
+        "path": "projects/clebsch_tree_nqs/results/coupling_quality_review_20261012/inputs/tri_j0/canonical_step00500/physics.npz",
+        "sha256": "bf846370780de911a4a58365f6b816e18916c0e6e919d01a9bce8ec3c006718e"
+      },
+      "local_shell_bonds": {
+        "1.0": [
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            12,
+            19
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            13,
+            20
+          ],
+          [
+            14,
+            20
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            20
+          ]
+        ],
+        "0.125": []
+      },
+      "local_transverse_orbit_means": [
+        -0.12399574687722359,
+        0
+      ],
+      "paired_whole_chains": 128,
+      "Born_records": 16384,
+      "conditional_RDM_records": 512,
+      "same_params_and_chain_pairing_verified": true,
+      "physical_full_A1_used_for_spatial_bond_orbits_only": true,
+      "strict_SU2": false,
+      "strict_triplet_label": false,
+      "exact_ground_state_gap_upper_bound": false,
+      "response_residual_available": false,
+      "H_variance_interval_certificate_available": false,
+      "mixing_certified": false,
+      "new_amplitude_queries": 0,
+      "new_H_calls": 0,
+      "new_sampling": 0,
+      "N4_complex_parent_and_momentum_identity_max_error": 8.326672684688674e-17,
+      "estimates": {
+        "K": {
+          "momentum_fractional": [
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "shell_geometric_factors": [
+            4.499999999999997,
+            0
+          ],
+          "quantities": {
+            "norm_squared": {
+              "value": 0.9635416666666661,
+              "paired_whole_chain_JK_SE": 0.008231098221228672
+            },
+            "diagonal_A_variance": {
+              "value": 0.45343441433376863,
+              "paired_whole_chain_JK_SE": 0.005232972334479725
+            },
+            "longitudinal_double_commutator": {
+              "value": 0.5579808609475059,
+              "paired_whole_chain_JK_SE": 0.006047708868086157
+            },
+            "static_f_over_norm": {
+              "value": 0.5790936502806551,
+              "paired_whole_chain_JK_SE": 0.008159512366842474
+            },
+            "parent_covariance_correction_over_norm": {
+              "value": -0.11608851584131345,
+              "paired_whole_chain_JK_SE": 0.00233191644126345
+            },
+            "response_centroid_minus_parent": {
+              "value": 0.46300513443934166,
+              "paired_whole_chain_JK_SE": 0.008542292637465015
+            },
+            "response_centroid_total": {
+              "value": -19.635884344970854,
+              "paired_whole_chain_JK_SE": 0.009712424361232107
+            },
+            "parent_energy_imaginary": {
+              "value": -0.0020830826471105873,
+              "paired_whole_chain_JK_SE": 0.0018787075345853275
+            },
+            "parent_covariance_imaginary_over_norm": {
+              "value": 0.0016134413317241674,
+              "paired_whole_chain_JK_SE": 0.0012010411745242589
+            }
+          },
+          "denominator_exceeds_10_chain_SE": true,
+          "scope": "symmetrized +/-K first moment; exact physical-space inversion makes branches equal"
+        },
+        "M_star": {
+          "scope": "norm-weighted direct-sum average of all three M responses; not three independent modes",
+          "quantities": {
+            "norm_squared": {
+              "value": 0.3288709852430555,
+              "paired_whole_chain_JK_SE": 0.0023041563141379504
+            },
+            "diagonal_A_variance": {
+              "value": 0.19939324572498435,
+              "paired_whole_chain_JK_SE": 0.003849327053431645
+            },
+            "longitudinal_double_commutator": {
+              "value": 0.4959829875088935,
+              "paired_whole_chain_JK_SE": 0.005375741216076607
+            },
+            "static_f_over_norm": {
+              "value": 1.5081384791131152,
+              "paired_whole_chain_JK_SE": 0.01976803180726251
+            },
+            "parent_covariance_correction_over_norm": {
+              "value": 0.09167866125177083,
+              "paired_whole_chain_JK_SE": 0.0025378351368601127
+            },
+            "response_centroid_minus_parent": {
+              "value": 1.599817140364886,
+              "paired_whole_chain_JK_SE": 0.019848029548452138
+            },
+            "response_centroid_total": {
+              "value": -18.49907233904531,
+              "paired_whole_chain_JK_SE": 0.019469156693826723
+            },
+            "parent_energy_imaginary": {
+              "value": -0.002083082647110587,
+              "paired_whole_chain_JK_SE": 0.0018787075345853277
+            },
+            "parent_covariance_imaginary_over_norm": {
+              "value": 0.0026151635837304904,
+              "paired_whole_chain_JK_SE": 0.001313535752654493
+            }
+          }
+        }
+      },
+      "observed_tail_sensitivity": {
+        "definition": "top ceil(1% records) ranked by |E_loc-mean(E_loc)|^2; descriptive, no trimming",
+        "record_count": 164,
+        "sampled_energy_variance_share": 0.46146662398605287,
+        "covariance_summands": {
+          "K": {
+            "squared_summand_tail_share": 0.3392965416392599,
+            "signed_tail_contribution_to_covariance": -0.0016035849396367873,
+            "total_covariance": -0.1118561220345829
+          },
+          "M_star": {
+            "squared_summand_tail_share": 0.27761790571347683,
+            "signed_tail_contribution_to_covariance": -0.0003621869277512654,
+            "total_covariance": 0.030150451651635962
+          }
+        }
+      },
+      "limitations": [
+        "first-response centroids, not spectral thresholds or lowest eigenvalues",
+        "unknown E_parent-E0",
+        "whole-chain SE does not certify unseen tails or equilibrium bias",
+        "nonlinear ratio plug-in finite-chain bias is not removed",
+        "three M results are symmetry-equivalent true-state quantities, not independent channels",
+        "S_z is diagonal: its response vanishes at every parent node, unlike a generic dimer response"
+      ],
+      "elapsed_seconds": 0.06074804090894759
+    },
+    {
+      "N": 36,
+      "j2": 0,
+      "parent_step": 750,
+      "params_sha256": "4ff2d2dad1b794d69e741e3cac9da344b9ccc1545d2aa34a31ab6079c781f653",
+      "checkpoint_sha256": "287fc5436bd791202dc217e0d023a47f6213646f1141f1d938e83977ff05a839",
+      "source_streams": [
+        {
+          "path": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step750/stream2026858952.npz",
+          "sha256": "1b42763bf46572101783ffc4dbc7943acc91de98dc9a39249dcf1b46ffed17cb"
+        },
+        {
+          "path": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step750/stream2026858953.npz",
+          "sha256": "b1251d6752131072d1fa8490a6e58cf1f3cef0596997a18f0ad7b437c9490d8a"
+        }
+      ],
+      "regional_coherent_npz": {
+        "path": "projects/clebsch_tree_nqs/results/coupling_quality_review_20261012/latest_inputs/readouts/tri_j0_continue_step00750_regional/physics.npz",
+        "sha256": "51f07a99f3da03ff15e806d9d8ec344d35c94b01e0d04600986576b179a158dd"
+      },
+      "local_shell_bonds": {
+        "1.0": [
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            12,
+            19
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            13,
+            20
+          ],
+          [
+            14,
+            20
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            20
+          ]
+        ],
+        "0.125": []
+      },
+      "local_transverse_orbit_means": [
+        -0.1253003900231851,
+        0
+      ],
+      "paired_whole_chains": 128,
+      "Born_records": 16384,
+      "conditional_RDM_records": 512,
+      "same_params_and_chain_pairing_verified": true,
+      "physical_full_A1_used_for_spatial_bond_orbits_only": true,
+      "strict_SU2": false,
+      "strict_triplet_label": false,
+      "exact_ground_state_gap_upper_bound": false,
+      "response_residual_available": false,
+      "H_variance_interval_certificate_available": false,
+      "mixing_certified": false,
+      "new_amplitude_queries": 0,
+      "new_H_calls": 0,
+      "new_sampling": 0,
+      "N4_complex_parent_and_momentum_identity_max_error": 8.326672684688674e-17,
+      "estimates": {
+        "K": {
+          "momentum_fractional": [
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "shell_geometric_factors": [
+            4.499999999999997,
+            0
+          ],
+          "quantities": {
+            "norm_squared": {
+              "value": 1.0159047444661458,
+              "paired_whole_chain_JK_SE": 0.008323888744449627
+            },
+            "diagonal_A_variance": {
+              "value": 0.47650069782199966,
+              "paired_whole_chain_JK_SE": 0.00474026172123596
+            },
+            "longitudinal_double_commutator": {
+              "value": 0.5638517551043326,
+              "paired_whole_chain_JK_SE": 0.005180982922084201
+            },
+            "static_f_over_norm": {
+              "value": 0.5550242364510608,
+              "paired_whole_chain_JK_SE": 0.006808144476027899
+            },
+            "parent_covariance_correction_over_norm": {
+              "value": -0.07275376815392484,
+              "paired_whole_chain_JK_SE": 0.001981787280764459
+            },
+            "response_centroid_minus_parent": {
+              "value": 0.482270468297136,
+              "paired_whole_chain_JK_SE": 0.007054830203952448
+            },
+            "response_centroid_total": {
+              "value": -19.649558743876838,
+              "paired_whole_chain_JK_SE": 0.008088763137594936
+            },
+            "parent_energy_imaginary": {
+              "value": -0.001685347739150945,
+              "paired_whole_chain_JK_SE": 0.001480613567556092
+            },
+            "parent_covariance_imaginary_over_norm": {
+              "value": 0.001031497331188309,
+              "paired_whole_chain_JK_SE": 0.0009811498722388748
+            }
+          },
+          "denominator_exceeds_10_chain_SE": true,
+          "scope": "symmetrized +/-K first moment; exact physical-space inversion makes branches equal"
+        },
+        "M_star": {
+          "scope": "norm-weighted direct-sum average of all three M responses; not three independent modes",
+          "quantities": {
+            "norm_squared": {
+              "value": 0.31529857494212976,
+              "paired_whole_chain_JK_SE": 0.0023251314667636553
+            },
+            "diagonal_A_variance": {
+              "value": 0.19053595103272347,
+              "paired_whole_chain_JK_SE": 0.003470137546290883
+            },
+            "longitudinal_double_commutator": {
+              "value": 0.5012015600927395,
+              "paired_whole_chain_JK_SE": 0.0046053181529637
+            },
+            "static_f_over_norm": {
+              "value": 1.5896093415098074,
+              "paired_whole_chain_JK_SE": 0.019469045545283486
+            },
+            "parent_covariance_correction_over_norm": {
+              "value": 0.057139773679315116,
+              "paired_whole_chain_JK_SE": 0.0022932975126688637
+            },
+            "response_centroid_minus_parent": {
+              "value": 1.6467491151891225,
+              "paired_whole_chain_JK_SE": 0.01930259308712477
+            },
+            "response_centroid_total": {
+              "value": -18.485080096984852,
+              "paired_whole_chain_JK_SE": 0.018757732104358105
+            },
+            "parent_energy_imaginary": {
+              "value": -0.0016853477391509451,
+              "paired_whole_chain_JK_SE": 0.0014806135675560917
+            },
+            "parent_covariance_imaginary_over_norm": {
+              "value": 0.0013663966656391423,
+              "paired_whole_chain_JK_SE": 0.001146958318728685
+            }
+          }
+        }
+      },
+      "observed_tail_sensitivity": {
+        "definition": "top ceil(1% records) ranked by |E_loc-mean(E_loc)|^2; descriptive, no trimming",
+        "record_count": 164,
+        "sampled_energy_variance_share": 0.4590347117082211,
+        "covariance_summands": {
+          "K": {
+            "squared_summand_tail_share": 0.4179935441463536,
+            "signed_tail_contribution_to_covariance": -0.001434441822156911,
+            "total_covariance": -0.07391089824537692
+          },
+          "M_star": {
+            "squared_summand_tail_share": 0.41087559416083724,
+            "signed_tail_contribution_to_covariance": 0.000007683377067964283,
+            "total_covariance": 0.01801608921359527
+          }
+        }
+      },
+      "limitations": [
+        "first-response centroids, not spectral thresholds or lowest eigenvalues",
+        "unknown E_parent-E0",
+        "whole-chain SE does not certify unseen tails or equilibrium bias",
+        "nonlinear ratio plug-in finite-chain bias is not removed",
+        "three M results are symmetry-equivalent true-state quantities, not independent channels",
+        "S_z is diagonal: its response vanishes at every parent node, unlike a generic dimer response"
+      ],
+      "elapsed_seconds": 0.05551729188300669
+    },
+    {
+      "N": 36,
+      "j2": 0,
+      "parent_step": 1000,
+      "params_sha256": "16799c5d7595290a2dce1745bd966605990a5b9e3abf9c387a7b3e4f0abc6154",
+      "checkpoint_sha256": "1d10e2c73610c10321d6780b0822ac83f74b7bbd5f686cb4ee65549b3413bfff",
+      "source_streams": [
+        {
+          "path": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step1000/stream2027111202.npz",
+          "sha256": "ae19ead970a2d06a6d0d11ac9c29bef29e5931d6b454ff593e6aa4eb01341bd9"
+        },
+        {
+          "path": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0_step1000/stream2027111203.npz",
+          "sha256": "eed48830b1e60469c1146572b33b3861401b660adb78a569274fcfdc8111e87d"
+        }
+      ],
+      "regional_coherent_npz": {
+        "path": "projects/clebsch_tree_nqs/results/coupling_quality_review_20261012/latest_inputs/readouts/tri_j0_continue_step01000_regional/physics.npz",
+        "sha256": "5b4129e38e1ef4e6b32db98adffa067d86be66e14a9bb59ae126715aade4d5e4"
+      },
+      "local_shell_bonds": {
+        "1.0": [
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            12,
+            19
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            13,
+            20
+          ],
+          [
+            14,
+            20
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            20
+          ]
+        ],
+        "0.125": []
+      },
+      "local_transverse_orbit_means": [
+        -0.12328090454632187,
+        0
+      ],
+      "paired_whole_chains": 128,
+      "Born_records": 16384,
+      "conditional_RDM_records": 512,
+      "same_params_and_chain_pairing_verified": true,
+      "physical_full_A1_used_for_spatial_bond_orbits_only": true,
+      "strict_SU2": false,
+      "strict_triplet_label": false,
+      "exact_ground_state_gap_upper_bound": false,
+      "response_residual_available": false,
+      "H_variance_interval_certificate_available": false,
+      "mixing_certified": false,
+      "new_amplitude_queries": 0,
+      "new_H_calls": 0,
+      "new_sampling": 0,
+      "N4_complex_parent_and_momentum_identity_max_error": 8.326672684688674e-17,
+      "estimates": {
+        "K": {
+          "momentum_fractional": [
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "shell_geometric_factors": [
+            4.499999999999997,
+            0
+          ],
+          "quantities": {
+            "norm_squared": {
+              "value": 1.0441335042317705,
+              "paired_whole_chain_JK_SE": 0.007619164831789373
+            },
+            "diagonal_A_variance": {
+              "value": 0.48110268614254936,
+              "paired_whole_chain_JK_SE": 0.0043804958140812415
+            },
+            "longitudinal_double_commutator": {
+              "value": 0.5547640704584481,
+              "paired_whole_chain_JK_SE": 0.006102007745148926
+            },
+            "static_f_over_norm": {
+              "value": 0.5313152659214975,
+              "paired_whole_chain_JK_SE": 0.007023541667372516
+            },
+            "parent_covariance_correction_over_norm": {
+              "value": -0.045638304833950386,
+              "paired_whole_chain_JK_SE": 0.0015319523344557294
+            },
+            "response_centroid_minus_parent": {
+              "value": 0.48567696108754704,
+              "paired_whole_chain_JK_SE": 0.0072030996403116675
+            },
+            "response_centroid_total": {
+              "value": -19.66290225396406,
+              "paired_whole_chain_JK_SE": 0.007538956817381482
+            },
+            "parent_energy_imaginary": {
+              "value": 0.003135743743979685,
+              "paired_whole_chain_JK_SE": 0.001413582934768123
+            },
+            "parent_covariance_imaginary_over_norm": {
+              "value": -0.0010682668948766613,
+              "paired_whole_chain_JK_SE": 0.0009789962674964683
+            }
+          },
+          "denominator_exceeds_10_chain_SE": true,
+          "scope": "symmetrized +/-K first moment; exact physical-space inversion makes branches equal"
+        },
+        "M_star": {
+          "scope": "norm-weighted direct-sum average of all three M responses; not three independent modes",
+          "quantities": {
+            "norm_squared": {
+              "value": 0.3074182581018517,
+              "paired_whole_chain_JK_SE": 0.002197646051404632
+            },
+            "diagonal_A_variance": {
+              "value": 0.17868034110311315,
+              "paired_whole_chain_JK_SE": 0.003160777526889125
+            },
+            "longitudinal_double_commutator": {
+              "value": 0.49312361818528666,
+              "paired_whole_chain_JK_SE": 0.0054240068845768175
+            },
+            "static_f_over_norm": {
+              "value": 1.6040804512720528,
+              "paired_whole_chain_JK_SE": 0.02161518796498601
+            },
+            "parent_covariance_correction_over_norm": {
+              "value": 0.036079032531554985,
+              "paired_whole_chain_JK_SE": 0.0016871906618210557
+            },
+            "response_centroid_minus_parent": {
+              "value": 1.640159483803608,
+              "paired_whole_chain_JK_SE": 0.0217455944195897
+            },
+            "response_centroid_total": {
+              "value": -18.508419731247997,
+              "paired_whole_chain_JK_SE": 0.021652212601707157
+            },
+            "parent_energy_imaginary": {
+              "value": 0.003135743743979685,
+              "paired_whole_chain_JK_SE": 0.001413582934768123
+            },
+            "parent_covariance_imaginary_over_norm": {
+              "value": -0.0003285469417399447,
+              "paired_whole_chain_JK_SE": 0.001040459930158136
+            }
+          }
+        }
+      },
+      "observed_tail_sensitivity": {
+        "definition": "top ceil(1% records) ranked by |E_loc-mean(E_loc)|^2; descriptive, no trimming",
+        "record_count": 164,
+        "sampled_energy_variance_share": 0.4833638332577523,
+        "covariance_summands": {
+          "K": {
+            "squared_summand_tail_share": 0.5079920152651349,
+            "signed_tail_contribution_to_covariance": -0.0012181458922244353,
+            "total_covariance": -0.04765248315347751
+          },
+          "M_star": {
+            "squared_summand_tail_share": 0.36844010450950615,
+            "signed_tail_contribution_to_covariance": 0.0005445315494079068,
+            "total_covariance": 0.011091353334849053
+          }
+        }
+      },
+      "limitations": [
+        "first-response centroids, not spectral thresholds or lowest eigenvalues",
+        "unknown E_parent-E0",
+        "whole-chain SE does not certify unseen tails or equilibrium bias",
+        "nonlinear ratio plug-in finite-chain bias is not removed",
+        "three M results are symmetry-equivalent true-state quantities, not independent channels",
+        "S_z is diagonal: its response vanishes at every parent node, unlike a generic dimer response"
+      ],
+      "elapsed_seconds": 0.05660070804879069
+    },
+    {
+      "N": 36,
+      "j2": 0.125,
+      "parent_step": 8600,
+      "params_sha256": "4fe5a7def40f539285e1801e0c7539ea23c9526df9fe6fd71c42a4b028da6a1b",
+      "checkpoint_sha256": "23e3d95c5e771bf1cd14a54bf27e8f9263ac7c994794149117a9d9431f6c8074",
+      "source_streams": [
+        {
+          "path": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0125_step8600/stream2034778411.npz",
+          "sha256": "b320ece3019887203beb2d9e42148bcc50abf54e476b769ea943042efb237b78"
+        },
+        {
+          "path": "projects/clebsch_tree_nqs/results/triangle_strip_fcs_20261013_inputs/tri_j0125_step8600/stream2034778412.npz",
+          "sha256": "5de25398ceae61cb2acb9b33253ae4c97c5cba0a46511563f27772c60fd82c09"
+        }
+      ],
+      "regional_coherent_npz": {
+        "path": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/tri_8600/regional/physics.npz",
+        "sha256": "43b42423ec8051df5d71b9a173d699243dff139a27238793c38d80ad3eeafa0d"
+      },
+      "local_shell_bonds": {
+        "1.0": [
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            12,
+            19
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            13,
+            20
+          ],
+          [
+            14,
+            20
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            20
+          ]
+        ],
+        "0.125": [
+          [
+            12,
+            20
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            19
+          ]
+        ]
+      },
+      "local_transverse_orbit_means": [
+        -0.12001541587895415,
+        0.06030176902227933
+      ],
+      "paired_whole_chains": 128,
+      "Born_records": 16384,
+      "conditional_RDM_records": 512,
+      "same_params_and_chain_pairing_verified": true,
+      "physical_full_A1_used_for_spatial_bond_orbits_only": true,
+      "strict_SU2": false,
+      "strict_triplet_label": false,
+      "exact_ground_state_gap_upper_bound": false,
+      "response_residual_available": false,
+      "H_variance_interval_certificate_available": false,
+      "mixing_certified": false,
+      "new_amplitude_queries": 0,
+      "new_H_calls": 0,
+      "new_sampling": 0,
+      "N4_complex_parent_and_momentum_identity_max_error": 8.326672684688674e-17,
+      "estimates": {
+        "K": {
+          "momentum_fractional": [
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "shell_geometric_factors": [
+            4.499999999999997,
+            1.721553737418977e-31
+          ],
+          "quantities": {
+            "norm_squared": {
+              "value": 0.7438456217447914,
+              "paired_whole_chain_JK_SE": 0.0067635719621766425
+            },
+            "diagonal_A_variance": {
+              "value": 0.3420777377775973,
+              "paired_whole_chain_JK_SE": 0.004917958440218776
+            },
+            "longitudinal_double_commutator": {
+              "value": 0.5400693714552933,
+              "paired_whole_chain_JK_SE": 0.006051702155652004
+            },
+            "static_f_over_norm": {
+              "value": 0.726050346560469,
+              "paired_whole_chain_JK_SE": 0.010398378034630737
+            },
+            "parent_covariance_correction_over_norm": {
+              "value": -0.00791932477043541,
+              "paired_whole_chain_JK_SE": 0.002158701262949951
+            },
+            "response_centroid_minus_parent": {
+              "value": 0.7181310217900335,
+              "paired_whole_chain_JK_SE": 0.010813002013786223
+            },
+            "response_centroid_total": {
+              "value": -17.79025267928465,
+              "paired_whole_chain_JK_SE": 0.010191207283287125
+            },
+            "parent_energy_imaginary": {
+              "value": -0.0005474927252990466,
+              "paired_whole_chain_JK_SE": 0.0021503858172730313
+            },
+            "parent_covariance_imaginary_over_norm": {
+              "value": 0.0011636906187214675,
+              "paired_whole_chain_JK_SE": 0.0014010082834688634
+            }
+          },
+          "denominator_exceeds_10_chain_SE": true,
+          "scope": "symmetrized +/-K first moment; exact physical-space inversion makes branches equal"
+        },
+        "M_star": {
+          "scope": "norm-weighted direct-sum average of all three M responses; not three independent modes",
+          "quantities": {
+            "norm_squared": {
+              "value": 0.3987675419560187,
+              "paired_whole_chain_JK_SE": 0.00291865770799341
+            },
+            "diagonal_A_variance": {
+              "value": 0.2917619801148139,
+              "paired_whole_chain_JK_SE": 0.005645746983623885
+            },
+            "longitudinal_double_commutator": {
+              "value": 0.4499107790046762,
+              "paired_whole_chain_JK_SE": 0.0046651485008799
+            },
+            "static_f_over_norm": {
+              "value": 1.128253259525065,
+              "paired_whole_chain_JK_SE": 0.014458291534066558
+            },
+            "parent_covariance_correction_over_norm": {
+              "value": 0.0006261151335319703,
+              "paired_whole_chain_JK_SE": 0.0024127295979041704
+            },
+            "response_centroid_minus_parent": {
+              "value": 1.1288793746585968,
+              "paired_whole_chain_JK_SE": 0.014839369093421166
+            },
+            "response_centroid_total": {
+              "value": -17.379504326416086,
+              "paired_whole_chain_JK_SE": 0.014780369596555152
+            },
+            "parent_energy_imaginary": {
+              "value": -0.0005474927252990463,
+              "paired_whole_chain_JK_SE": 0.0021503858172730317
+            },
+            "parent_covariance_imaginary_over_norm": {
+              "value": 0.00012846442231158168,
+              "paired_whole_chain_JK_SE": 0.0014115321879235381
+            }
+          }
+        }
+      },
+      "observed_tail_sensitivity": {
+        "definition": "top ceil(1% records) ranked by |E_loc-mean(E_loc)|^2; descriptive, no trimming",
+        "record_count": 164,
+        "sampled_energy_variance_share": 0.648241383434748,
+        "covariance_summands": {
+          "K": {
+            "squared_summand_tail_share": 0.6555666437688474,
+            "signed_tail_contribution_to_covariance": -0.002671579279099267,
+            "total_covariance": -0.005890755057658691
+          },
+          "M_star": {
+            "squared_summand_tail_share": 0.633128247973072,
+            "signed_tail_contribution_to_covariance": 0.0007402714481393992,
+            "total_covariance": 0.0002496743927776935
+          }
+        }
+      },
+      "limitations": [
+        "first-response centroids, not spectral thresholds or lowest eigenvalues",
+        "unknown E_parent-E0",
+        "whole-chain SE does not certify unseen tails or equilibrium bias",
+        "nonlinear ratio plug-in finite-chain bias is not removed",
+        "three M results are symmetry-equivalent true-state quantities, not independent channels",
+        "S_z is diagonal: its response vanishes at every parent node, unlike a generic dimer response"
+      ],
+      "elapsed_seconds": 0.05864125001244247
+    },
+    {
+      "N": 36,
+      "j2": 0.125,
+      "parent_step": 9600,
+      "params_sha256": "0938f2ed498a054d3b7c71ce04305bcfaafb8137dcf88b6ccde88ce1b537ddd9",
+      "checkpoint_sha256": "691f94513ef2c045a7ffdf0a638b2af62acb6d638b304b64f042a192adf11a2f",
+      "source_streams": [
+        {
+          "path": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/tri_9600/stream2035787421.npz",
+          "sha256": "3dd6f2c9c4e05260f559050cf0e4a1c2ba644ec57a9fb386c695d0efa657c231"
+        },
+        {
+          "path": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/tri_9600/stream2035787422.npz",
+          "sha256": "6582c16dc6f237f828b18812e005c633921f51e88b69b6d472899ec1258e8870"
+        }
+      ],
+      "regional_coherent_npz": {
+        "path": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/tri_9600/regional/physics.npz",
+        "sha256": "ac380c08de505da64f23630f4db67a9267bc2984898aa93d18bc398cdc128454"
+      },
+      "local_shell_bonds": {
+        "1.0": [
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            12,
+            19
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            13,
+            20
+          ],
+          [
+            14,
+            20
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            20
+          ]
+        ],
+        "0.125": [
+          [
+            12,
+            20
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            19
+          ]
+        ]
+      },
+      "local_transverse_orbit_means": [
+        -0.12261546334997557,
+        0.0639248054476937
+      ],
+      "paired_whole_chains": 128,
+      "Born_records": 16384,
+      "conditional_RDM_records": 512,
+      "same_params_and_chain_pairing_verified": true,
+      "physical_full_A1_used_for_spatial_bond_orbits_only": true,
+      "strict_SU2": false,
+      "strict_triplet_label": false,
+      "exact_ground_state_gap_upper_bound": false,
+      "response_residual_available": false,
+      "H_variance_interval_certificate_available": false,
+      "mixing_certified": false,
+      "new_amplitude_queries": 0,
+      "new_H_calls": 0,
+      "new_sampling": 0,
+      "N4_complex_parent_and_momentum_identity_max_error": 8.326672684688674e-17,
+      "estimates": {
+        "K": {
+          "momentum_fractional": [
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "shell_geometric_factors": [
+            4.499999999999997,
+            1.721553737418977e-31
+          ],
+          "quantities": {
+            "norm_squared": {
+              "value": 0.7428131103515627,
+              "paired_whole_chain_JK_SE": 0.007018245985663878
+            },
+            "diagonal_A_variance": {
+              "value": 0.34944455426496734,
+              "paired_whole_chain_JK_SE": 0.005335945760697057
+            },
+            "longitudinal_double_commutator": {
+              "value": 0.5517695850748897,
+              "paired_whole_chain_JK_SE": 0.005881029414179349
+            },
+            "static_f_over_norm": {
+              "value": 0.7428107788966529,
+              "paired_whole_chain_JK_SE": 0.010798666043403696
+            },
+            "parent_covariance_correction_over_norm": {
+              "value": -0.008194514389488233,
+              "paired_whole_chain_JK_SE": 0.0022055703898530474
+            },
+            "response_centroid_minus_parent": {
+              "value": 0.7346162645071647,
+              "paired_whole_chain_JK_SE": 0.01107738207910965
+            },
+            "response_centroid_total": {
+              "value": -17.774643714663735,
+              "paired_whole_chain_JK_SE": 0.010741882399484664
+            },
+            "parent_energy_imaginary": {
+              "value": 0.00003125377942666914,
+              "paired_whole_chain_JK_SE": 0.0023443108748321738
+            },
+            "parent_covariance_imaginary_over_norm": {
+              "value": 0.0003493111001883142,
+              "paired_whole_chain_JK_SE": 0.0016641700951337901
+            }
+          },
+          "denominator_exceeds_10_chain_SE": true,
+          "scope": "symmetrized +/-K first moment; exact physical-space inversion makes branches equal"
+        },
+        "M_star": {
+          "scope": "norm-weighted direct-sum average of all three M responses; not three independent modes",
+          "quantities": {
+            "norm_squared": {
+              "value": 0.40505642361111127,
+              "paired_whole_chain_JK_SE": 0.002723451630768956
+            },
+            "diagonal_A_variance": {
+              "value": 0.29605299160804294,
+              "paired_whole_chain_JK_SE": 0.005599526612747293
+            },
+            "longitudinal_double_commutator": {
+              "value": 0.45849945067605463,
+              "paired_whole_chain_JK_SE": 0.004653743976130359
+            },
+            "static_f_over_norm": {
+              "value": 1.1319397100001387,
+              "paired_whole_chain_JK_SE": 0.013009462486142123
+            },
+            "parent_covariance_correction_over_norm": {
+              "value": 0.00032885741390125393,
+              "paired_whole_chain_JK_SE": 0.0022967703592082396
+            },
+            "response_centroid_minus_parent": {
+              "value": 1.13226856741404,
+              "paired_whole_chain_JK_SE": 0.013185362103332435
+            },
+            "response_centroid_total": {
+              "value": -17.37699141175686,
+              "paired_whole_chain_JK_SE": 0.013234789691717902
+            },
+            "parent_energy_imaginary": {
+              "value": 0.00003125377942666914,
+              "paired_whole_chain_JK_SE": 0.0023443108748321738
+            },
+            "parent_covariance_imaginary_over_norm": {
+              "value": -0.002328687425777174,
+              "paired_whole_chain_JK_SE": 0.0013477263446997388
+            }
+          }
+        }
+      },
+      "observed_tail_sensitivity": {
+        "definition": "top ceil(1% records) ranked by |E_loc-mean(E_loc)|^2; descriptive, no trimming",
+        "record_count": 164,
+        "sampled_energy_variance_share": 0.6474257351974629,
+        "covariance_summands": {
+          "K": {
+            "squared_summand_tail_share": 0.7073210124267528,
+            "signed_tail_contribution_to_covariance": -0.004412744718833668,
+            "total_covariance": -0.006086992721473994
+          },
+          "M_star": {
+            "squared_summand_tail_share": 0.6472083917569277,
+            "signed_tail_contribution_to_covariance": -0.00002513677059873084,
+            "total_covariance": 0.00013320580795662132
+          }
+        }
+      },
+      "limitations": [
+        "first-response centroids, not spectral thresholds or lowest eigenvalues",
+        "unknown E_parent-E0",
+        "whole-chain SE does not certify unseen tails or equilibrium bias",
+        "nonlinear ratio plug-in finite-chain bias is not removed",
+        "three M results are symmetry-equivalent true-state quantities, not independent channels",
+        "S_z is diagonal: its response vanishes at every parent node, unlike a generic dimer response"
+      ],
+      "elapsed_seconds": 0.056722375098615885
+    },
+    {
+      "N": 36,
+      "j2": 0.125,
+      "parent_step": 10600,
+      "params_sha256": "d9f33a213474bf707a59367cb44e109e7dca5b114c22cb31c3f09497379faaa7",
+      "checkpoint_sha256": "f735527c0393ffa20214d739dd735aad5a903b0667f06d1c6ade7ff18ff65e52",
+      "source_streams": [
+        {
+          "path": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_10600_v1/seed1/audits/step10600/stream2036796431.npz",
+          "sha256": "a4cac347f79181c7ac7612c252692c52dd38489667361acba07e58c116dc71c4"
+        },
+        {
+          "path": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_10600_v1/seed1/audits/step10600/stream2036796432.npz",
+          "sha256": "ffd2016a11903454d81e159f49bba475ef05f7b113746c8456d3cc8bb7c93e06"
+        }
+      ],
+      "regional_coherent_npz": {
+        "path": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/tri_10600/regional/physics.npz",
+        "sha256": "bf78629b2e1549ee9ff50fb829fffbcaa9a5abd9ccc5c7a66ea6b2f3023e5662"
+      },
+      "local_shell_bonds": {
+        "1.0": [
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            12,
+            19
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            13,
+            20
+          ],
+          [
+            14,
+            20
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            20
+          ]
+        ],
+        "0.125": [
+          [
+            12,
+            20
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            19
+          ]
+        ]
+      },
+      "local_transverse_orbit_means": [
+        -0.12227091542076612,
+        0.060527680112101453
+      ],
+      "paired_whole_chains": 128,
+      "Born_records": 16384,
+      "conditional_RDM_records": 512,
+      "same_params_and_chain_pairing_verified": true,
+      "physical_full_A1_used_for_spatial_bond_orbits_only": true,
+      "strict_SU2": false,
+      "strict_triplet_label": false,
+      "exact_ground_state_gap_upper_bound": false,
+      "response_residual_available": false,
+      "H_variance_interval_certificate_available": false,
+      "mixing_certified": false,
+      "new_amplitude_queries": 0,
+      "new_H_calls": 0,
+      "new_sampling": 0,
+      "N4_complex_parent_and_momentum_identity_max_error": 8.326672684688674e-17,
+      "estimates": {
+        "K": {
+          "momentum_fractional": [
+            0.3333333333333333,
+            0.3333333333333333
+          ],
+          "shell_geometric_factors": [
+            4.499999999999997,
+            1.721553737418977e-31
+          ],
+          "quantities": {
+            "norm_squared": {
+              "value": 0.7478993733723954,
+              "paired_whole_chain_JK_SE": 0.00707758160840759
+            },
+            "diagonal_A_variance": {
+              "value": 0.3494375395433357,
+              "paired_whole_chain_JK_SE": 0.004872529156621298
+            },
+            "longitudinal_double_commutator": {
+              "value": 0.5502191193934473,
+              "paired_whole_chain_JK_SE": 0.00616424190551005
+            },
+            "static_f_over_norm": {
+              "value": 0.7356860280714277,
+              "paired_whole_chain_JK_SE": 0.010363683793248
+            },
+            "parent_covariance_correction_over_norm": {
+              "value": -0.005960462578598792,
+              "paired_whole_chain_JK_SE": 0.0019436531538252085
+            },
+            "response_centroid_minus_parent": {
+              "value": 0.7297255654928289,
+              "paired_whole_chain_JK_SE": 0.010285730786033741
+            },
+            "response_centroid_total": {
+              "value": -17.784803433096382,
+              "paired_whole_chain_JK_SE": 0.010334534227067994
+            },
+            "parent_energy_imaginary": {
+              "value": 0.0004262554808094533,
+              "paired_whole_chain_JK_SE": 0.002030386280690133
+            },
+            "parent_covariance_imaginary_over_norm": {
+              "value": -0.0003670941183736653,
+              "paired_whole_chain_JK_SE": 0.0013164523987548064
+            }
+          },
+          "denominator_exceeds_10_chain_SE": true,
+          "scope": "symmetrized +/-K first moment; exact physical-space inversion makes branches equal"
+        },
+        "M_star": {
+          "scope": "norm-weighted direct-sum average of all three M responses; not three independent modes",
+          "quantities": {
+            "norm_squared": {
+              "value": 0.40420645254629656,
+              "paired_whole_chain_JK_SE": 0.0028902767129172753
+            },
+            "diagonal_A_variance": {
+              "value": 0.3013453539179837,
+              "paired_whole_chain_JK_SE": 0.005540704417343512
+            },
+            "longitudinal_double_commutator": {
+              "value": 0.458819821627013,
+              "paired_whole_chain_JK_SE": 0.0049630933319139035
+            },
+            "static_f_over_norm": {
+              "value": 1.1351125612584356,
+              "paired_whole_chain_JK_SE": 0.014734509239060362
+            },
+            "parent_covariance_correction_over_norm": {
+              "value": -0.001844247412811227,
+              "paired_whole_chain_JK_SE": 0.0020858213612828884
+            },
+            "response_centroid_minus_parent": {
+              "value": 1.1332683138456243,
+              "paired_whole_chain_JK_SE": 0.015030910653597714
+            },
+            "response_centroid_total": {
+              "value": -17.381260684743587,
+              "paired_whole_chain_JK_SE": 0.015029606857189562
+            },
+            "parent_energy_imaginary": {
+              "value": 0.0004262554808094533,
+              "paired_whole_chain_JK_SE": 0.002030386280690133
+            },
+            "parent_covariance_imaginary_over_norm": {
+              "value": -0.0008456208493075181,
+              "paired_whole_chain_JK_SE": 0.0014152336586784656
+            }
+          }
+        }
+      },
+      "observed_tail_sensitivity": {
+        "definition": "top ceil(1% records) ranked by |E_loc-mean(E_loc)|^2; descriptive, no trimming",
+        "record_count": 164,
+        "sampled_energy_variance_share": 0.6271166244780351,
+        "covariance_summands": {
+          "K": {
+            "squared_summand_tail_share": 0.6351185660733567,
+            "signed_tail_contribution_to_covariance": -0.003111364970950578,
+            "total_covariance": -0.004457826227544286
+          },
+          "M_star": {
+            "squared_summand_tail_share": 0.5630490876468867,
+            "signed_tail_contribution_to_covariance": -0.0004898658281819609,
+            "total_covariance": -0.0007454567043585011
+          }
+        }
+      },
+      "limitations": [
+        "first-response centroids, not spectral thresholds or lowest eigenvalues",
+        "unknown E_parent-E0",
+        "whole-chain SE does not certify unseen tails or equilibrium bias",
+        "nonlinear ratio plug-in finite-chain bias is not removed",
+        "three M results are symmetry-equivalent true-state quantities, not independent channels",
+        "S_z is diagonal: its response vanishes at every parent node, unlike a generic dimer response"
+      ],
+      "elapsed_seconds": 0.05662933294661343
+    }
+  ],
+  "latest_cross_J_contrasts": {
+    "K": {
+      "latest_cross_J_difference": 0.2440486044052818,
+      "independent_whole_chain_SE": 0.012557105647043843,
+      "own_late_endpoint_ranges": [
+        0.022671826648205384,
+        0.016485242717131143
+      ],
+      "descriptive_threshold": 0.06730260021344409,
+      "exceeds_descriptive_threshold": true
+    },
+    "M_star": {
+      "latest_cross_J_difference": -0.5068911699579837,
+      "independent_whole_chain_SE": 0.02643480947042607,
+      "own_late_endpoint_ranges": [
+        0.0469319748242365,
+        0.004388939187027541
+      ],
+      "descriptive_threshold": 0.11057196806199411,
+      "exceeds_descriptive_threshold": true
+    }
+  },
+  "gate": {
+    "normal_multiplier": 2.241402727604947,
+    "family_size": 2,
+    "alpha": 0.05,
+    "retrospective_descriptive": true,
+    "quality_ranges_are_bias_bounds": false,
+    "normal_SE_is_interval_certificate": false,
+    "cross_J_is_same_H_competition": false
+  },
+  "new_amplitude_queries": 0,
+  "new_H_calls": 0,
+  "new_sampling": 0,
+  "strict_SU2": false,
+  "strict_triplet_label": false,
+  "gap_claim": false,
+  "QSL_specific": false
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 2,
+  "domain": "spin",
+  "status": "preregistered_square_raw_parameter_brackets",
+  "model": {
+    "feature_dim": 4,
+    "maximum_intermediate_q": 8,
+    "initialization_scale": 1.0
+  },
+  "parameter_bracket_maximum_width": 24,
+  "optimization": {
+    "steps": 200,
+    "learning_rate": 0.005,
+    "record_every": 10,
+    "seeds": [11, 12, 13],
+    "energy_error_per_site_targets": [0.05, 0.02, 0.01, 0.001]
+  },
+  "arms": [
+    {"arm_id": "m0_unconstrained_D8_lower_P", "backbone": "unconstrained", "projection": "none", "model": {"feature_dim": 8}},
+    {"arm_id": "m0_unconstrained_D9_upper_P", "backbone": "unconstrained", "projection": "none", "model": {"feature_dim": 9}},
+    {"arm_id": "u1_D3_lower_P", "backbone": "u1", "projection": "none", "model": {"feature_dim": 3}},
+    {"arm_id": "u1_D4_upper_P", "backbone": "u1", "projection": "none", "model": {"feature_dim": 4}},
+    {"arm_id": "su2_D4_target_P", "backbone": "su2", "projection": "none", "model": {"feature_dim": 4}}
+  ],
+  "cases": [
+    {
+      "case_id": "square_4x4_j2_0p5_m0_parameter_brackets",
+      "geometry": "square",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.5,
+      "support": "fixed_m0",
+      "exact_energy_anchor": -8.457923351394845,
+      "anchor_provenance": "stored physical-M0 exact reference; no eigensolve in runner",
+      "arm_ids": ["m0_unconstrained_D8_lower_P", "m0_unconstrained_D9_upper_P", "u1_D3_lower_P", "u1_D4_upper_P", "su2_D4_target_P"]
+    }
+  ],
+  "claim_boundary": "Raw-P brackets were selected solely from compiled parameter counts before observing these energies. They are secondary to the equal-width ladder and are not compute-matched."
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 2,
+  "domain": "spin",
+  "task": "exact_born_sampled_estimator_preflight",
+  "status": "local_oracle_preflight_only",
+  "model": {
+    "feature_dim": 2,
+    "maximum_intermediate_q": 4,
+    "initialization_scale": 1.0
+  },
+  "model_seeds": [11],
+  "sampling": {
+    "sample_counts": [32, 128, 512, 2048, 8192],
+    "replicates": 16,
+    "seed": 20260916
+  },
+  "arms": [
+    {"arm_id": "u1_none", "backbone": "u1", "projection": "none"},
+    {"arm_id": "u1_translation", "backbone": "u1", "projection": "translation"},
+    {"arm_id": "su2_none", "backbone": "su2", "projection": "none"},
+    {"arm_id": "su2_translation", "backbone": "su2", "projection": "translation"}
+  ],
+  "cases": [
+    {
+      "case_id": "square_2x4_j2_0p5_exact_born_preflight",
+      "geometry": "square",
+      "rows": 2,
+      "columns": 4,
+      "j2_over_j1": 0.5,
+      "support": "fixed_m0",
+      "exact_energy_anchor": -6.000000000000001,
+      "anchor_provenance": "stored 2x4 fixed-M2=0 exact reference; no eigensolve in runner",
+      "arm_ids": ["u1_none", "u1_translation", "su2_none", "su2_translation"]
+    }
+  ],
+  "claim_boundary": "I.i.d. exact-Born oracle validation only. This tests sampled energy and gradient estimators, not MCMC mixing, scalable training, or a physics advantage."
+}

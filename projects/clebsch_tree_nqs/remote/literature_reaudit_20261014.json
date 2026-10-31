@@ -1,0 +1,180 @@
+{
+  "date": "2026-10-14",
+  "timezone": "America/New_York",
+  "papers": {
+    "clebsch_tree": "https://arxiv.org/html/2104.14869",
+    "spatial_attention": "https://arxiv.org/html/2602.02665",
+    "public_vit_reference": "https://netket.readthedocs.io/en/latest/tutorials/ViT-wave-function.html"
+  },
+  "code_discovery": {
+    "original_CT_release_found": false,
+    "claim": "No directly attributable original CT training repository was found in paper links, public repository searches or the identified author's public NetKet fork; this is not proof no code exists.",
+    "queries": [
+      "ClebschTree",
+      "2104.14869",
+      "2602.02665",
+      "Vieijra",
+      "Jannes Nys",
+      "clebsch-gordan netket"
+    ],
+    "author_public_repo": "https://github.com/jwnys/netket",
+    "master_tree_clebsch_su2_paths": []
+  },
+  "model_audit": {
+    "distance_envelope_present": true,
+    "per_head_per_layer_gamma": true,
+    "initial_gamma": 3,
+    "triangular_metric": "120-degree shortest torus Euclidean physical-site distance",
+    "full_A1_present": true,
+    "triangular_full_group": 1728,
+    "raw_patch_translation_group": 16,
+    "coherent_A1_queries_with_spin_flip": 216,
+    "ordinary_vit_strict_SU2": false,
+    "spin_flip_even_in_all_stages": true,
+    "staggered_field_expectation_in_current_family": "identically zero because spin flip reverses it; full translation also forbids it",
+    "CT_reachable_width_rule_matches_paper_section_II_1": true,
+    "CT_parameters": 227958,
+    "CT_doubled_q_cutoff": 8
+  },
+  "budget_comparison": {
+    "paper": {
+      "layers": 8,
+      "embedding": 72,
+      "heads": 12,
+      "parameters_approx": 450000,
+      "samples_per_step": 16384,
+      "stages": [
+        5000,
+        500,
+        100
+      ],
+      "optimizer": "SR with SPRING"
+    },
+    "ours": {
+      "layers": 4,
+      "embedding": 48,
+      "heads": 8,
+      "parameters": 100288,
+      "samples_per_step": 2048,
+      "stages": [
+        500,
+        100,
+        100
+      ],
+      "optimizer": "momentum-free SR with sampled FS/ESS trust restriction"
+    },
+    "first_raw_training_center_ratio": 80
+  },
+  "measured_cost_seconds_per_update": {
+    "tri_j0": {
+      "none": 24.682134971488267,
+      "translation": 43.52721354900859,
+      "gamma_a1": 410.18544467096217
+    },
+    "tri_j0125": {
+      "none": 30.725001752958633,
+      "translation": 63.63725513895042,
+      "gamma_a1": 494.84851962397806
+    }
+  },
+  "transfer_diagnostic": {
+    "description": "Read-only4 balanced6x6 configurations tiled into12x12, existing frozen parent weights; no MCMC or target energy estimate",
+    "old_rule": "normalized periodic bilinear alpha interpolation stretches displacement scale",
+    "new_optional_rule": "folded_spatial_kernel preserves residue-folded alpha times normalized exponential envelope",
+    "tri_j0": {
+      "first_layer_kernel_relative_defect_old": 0.016318348044128652,
+      "maximum_kernel_relative_defect_new": 2.0971707439856275e-16,
+      "max_tiled_log_amplitude_difference_old": 2.9436496268891545,
+      "max_tiled_log_amplitude_difference_new": 0.0000018658656198242714
+    },
+    "tri_j0125": {
+      "first_layer_kernel_relative_defect_old": 0.01842564825415414,
+      "maximum_kernel_relative_defect_new": 3.4039079985357026e-16,
+      "max_tiled_log_amplitude_difference_old": 3.5687047337741147,
+      "max_tiled_log_amplitude_difference_new": 7.643065535664828e-7
+    },
+    "caveat": "Finite-epsilon global LayerNorm explains the remaining tiled-input mismatch. Tiled-input identity does not establish a tensor-product target state or competitive target energy. No replacement of active runs."
+  },
+  "gauge_aligned_transfer_recheck": {
+    "description": "Independent fixed four-state CPU recheck; numpy default_rng seed2026101402, each row a permutation of18 zeros and18 ones, target2x2 tiling; no new training, sampling or H calls.",
+    "seed": 2026101402,
+    "invariant_metric": "max_s | exp([logpsi_target(s)-logpsi_source(s)]-[logpsi_target(s0)-logpsi_source(s0)]) - 1 |; removes global normalization/phase",
+    "tri_j0": {
+      "checkpoint": "/home/yx789/nqs-wavefunctions/nqs/tri_j0_repair_v6_continue_1000/seed1/quality/step01000.pkl",
+      "checkpoint_sha256": "1d10e2c73610c10321d6780b0822ac83f74b7bbd5f686cb4ee65549b3413bfff",
+      "old_gauge_aligned_ratio_defect": 1.8409446797669946,
+      "new_gauge_aligned_ratio_defect": 2.2270927625149643e-6,
+      "maximum_new_kernel_relative_defect": 3.6128864782660483e-16
+    },
+    "tri_j0125": {
+      "checkpoint": "/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s4096_d2e3_conditions_20261012/seed1/quality/step00200.pkl",
+      "checkpoint_sha256": "76cbb7ec2d7c10d908dd9c7c3d154305754272062e724a668faa073176ff7701",
+      "old_gauge_aligned_ratio_defect": 2.1200843820563837,
+      "new_gauge_aligned_ratio_defect": 1.5649187071352746e-6,
+      "maximum_new_kernel_relative_defect": 2.6761608760151803e-16
+    },
+    "interpretation": "The old repeated-input discrepancy is not merely a global scale or phase. This remains a four-configuration initialization test, not target-state fidelity, energy or extrapolation evidence."
+  },
+  "pilot_status_at_20261015_0120_UTC": {
+    "tri_j0": {
+      "preflight_job": 277944,
+      "state": "COMPLETED",
+      "elapsed_seconds": 516,
+      "gpu_replay_tests": "16 passed; maximum GPU/CPU parameter and amplitude replay error0",
+      "completed_pilot_steps": 2,
+      "second_step_seconds": 28.372525826096535,
+      "peak_gpu_bytes": 19788528128,
+      "actual_fs_sines": [0.030492693690048405, 0.020560501470987112],
+      "checkpoint_resume_job": 277945,
+      "resume_state": "RUNNING"
+    },
+    "tri_j0125": {
+      "preflight_job": 277948,
+      "state": "COMPLETED",
+      "elapsed_seconds": 408,
+      "gpu_replay_tests": "16 passed; maximum GPU/CPU parameter and amplitude replay error0",
+      "completed_pilot_steps": 2,
+      "second_step_seconds": 37.89724100707099,
+      "peak_gpu_bytes": 19788595712,
+      "actual_fs_sines": [0.023679874802421397, 0.024196000270858938],
+      "checkpoint_resume_job": 277949,
+      "resume_state": "RUNNING",
+      "observed_resumed_step": 5
+    },
+    "warm_step_extrapolation_hours_500": "4-7, excluding queue, audits, restarts and compilation; only initial4096-center steps measured",
+    "independent_new_terminal_energy_available": false
+  },
+  "new_raw_training": {
+    "workspace": "/home/yx789/nqs-spatial-paper-audit-20261014",
+    "same_model": true,
+    "immutable_source_steps": 500,
+    "additional_raw_steps": 500,
+    "samples_per_step": 4096,
+    "training_full_H_calls_per_case": 2048000,
+    "fresh_full_A1_audits_per_case": 4096,
+    "maximum_allocated_A100_hours_both_cases": 34,
+    "estimated_training_hours_each": "7-10 based on measured raw timing; subject to actual4096-sample calibration",
+    "tri_j0": {
+      "preflight": 277944,
+      "training": 277945,
+      "audit_array": 277946,
+      "aggregate": 277947
+    },
+    "tri_j0125": {
+      "preflight": 277948,
+      "training": 277949,
+      "audit_array": 277950,
+      "aggregate": 277951
+    },
+    "automatic_training_beyond_raw500": false,
+    "existing_full_A1_writers_untouched": true,
+    "last_observed_production_steps": {"tri_j0": 10, "tri_j0125": 11},
+    "last_observed_production_state": "both RUNNING beyond restored two-step checkpoints"
+  },
+  "unresolved": {
+    "SPRING_support_and_optimizer_state_restore": "not implemented or claimed",
+    "distance_unit_in_authors_paper_specific_code": "source not available to verify patch-vs-site convention; current site convention documented, gamma sensitivity remains a controlled test",
+    "CT_initial_uniform_range_and_standardization_granularity": "paper incompletely specifies these choices",
+    "CT_energy_accuracy": "square8 still early/cold; square4 relative energy error3.11e-7 does not prove square8 convergence"
+  }
+}

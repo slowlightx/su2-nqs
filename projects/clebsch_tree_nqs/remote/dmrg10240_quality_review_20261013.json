@@ -1,0 +1,81 @@
+{
+  "date_utc": "2026-10-13",
+  "job_id": 207283,
+  "status": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed": "14:18:55",
+  "completed_global_sweeps": 32,
+  "chi": 10240,
+  "mixer": false,
+  "cpus": 32,
+  "requested_memory_gib": 704,
+  "peak_process_rss_gib": 577.9547538757324,
+  "checkpoint_bytes": 3205484368,
+  "checkpoint_sha256": "80e0671ccfa69159ecbd800ff7749087cc6b704b4e1593c03a01269cef2839a3",
+  "archive": "/home/yx789/nqs-wavefunctions/dmrg/archives/chi10240_from8192_v1/snapshots/sweep0032_80e0671ccfa6_complete",
+  "energy_per_site": {
+    "sweep30_chi8192": -0.51508700273065,
+    "sweep31_chi10240": -0.515246288004459,
+    "sweep32_chi10240": -0.5152498958883492
+  },
+  "last_delta_energy_per_site": -0.0000036078838902,
+  "last_discarded_weight": 0.0000852461537,
+  "H_variance_available": false,
+  "global_spin_quality_from_actual_full_C": {
+    "formula_even_N": "p(S>0)<=N*S(Gamma)/2; conditional on numeric contraction accuracy",
+    "total_S2_8192_30": 0.000006634459321142039,
+    "total_S2_10240_32": 0.000003039195960341523,
+    "nonS0_weight_bound_8192_30": 0.0000033172296605710194,
+    "nonS0_weight_bound_10240_32": 0.0000015195979801707615,
+    "independent_Gamma_replay_error_upper_bound": 0.000000000000000014,
+    "actual_finite_LP_RP_and_transverse_terms": true,
+    "interval_certified": false,
+    "strict_SU2": false,
+    "response_triplet_certified": false,
+    "QSL_specific": false
+  },
+  "raw_RDM_trace_distance_sweep31_to32": {
+    "compact4": 0.000138581259,
+    "compact6": 0.000179584296,
+    "winding6": 0.000276339585
+  },
+  "raw_RDM_trace_distance_8192_30_to10240_32": {
+    "compact4": 0.00303651587,
+    "compact6": 0.00347690734,
+    "winding6": 0.00538156272
+  },
+  "recommendation": {
+    "same_chi_sweeps": 2,
+    "target_global_sweeps": [
+      33,
+      34
+    ],
+    "mixer": false,
+    "cpus": 32,
+    "memory_gib": 704,
+    "wall_hours": 24,
+    "estimated_stage_hours": [
+      13,
+      18
+    ],
+    "queue_excluded": true,
+    "submitted": false,
+    "config": "configs/remote/dmrg_chi10240_relax33_34_20261013.json"
+  },
+  "operational_references": {
+    "delta_e_per_site": 0.000001,
+    "raw_RDM_trace_distance": 0.0001,
+    "target_observable_drift": "Must be below the intended physical contrast precision; operational sensitivity, not certified bias bound."
+  },
+  "larger_chi": {
+    "chi12288_estimated_RSS_gib": 832.25,
+    "ordinary_Kim_CPU_node_memory_gib": 754.3945,
+    "automatic_growth": false
+  },
+  "caveats": [
+    "No eigenstate/gap/fidelity/finite-chi certificate.",
+    "Full optimizer/environment parent is preserved.",
+    "Canonical diagnostics refer to measured canonicalized copy, not raw archived tensor Schmidt values.",
+    "Current node occupancy can delay start; no immediate-resource promise."
+  ]
+}

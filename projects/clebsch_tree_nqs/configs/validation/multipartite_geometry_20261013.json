@@ -1,0 +1,31 @@
+{
+  "output": "projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v1",
+  "source_config": "projects/clebsch_tree_nqs/configs/validation/spin_screening_information_20261013.json",
+  "source_config_sha256": "AUTO_RECORD_BEFORE_EXECUTION",
+  "seconds_cap": 3600,
+  "solver_seconds": 20,
+  "six_individual_solver_seconds": 30,
+  "family_alpha": 0.05,
+  "primary_family_size": 176,
+  "training_endpoints": ["triangular_0_500", "triangular_0.125_8600"],
+  "training_chains": "0..63; only 64..127 audit those same endpoints; all chains at later endpoints",
+  "statistical_scope": "Frozen retrospective design, not previously uninspected data. All trained witnesses retained. 176 = 11 partitions x 2 trainers x 4 channel operations x 2 contrasts. Normal Bonferroni sensitivity plus own empirical quality ranges, not rigorous mixing/bias bounds.",
+  "cases": [
+    {"name":"open3", "parent":"winding6", "keep":[0,1,2], "parties":[[0],[1],[2]]},
+    {"name":"triangle3", "parent":"compact6", "keep":[0,1,4], "parties":[[0],[1],[2]]},
+    {"name":"open4", "parent":"winding6", "keep":[0,1,2,3], "parties":[[0],[1],[2],[3]]},
+    {"name":"rhombus4", "parent":"compact6", "keep":[0,1,3,4], "parties":[[0],[1],[2],[3]]},
+    {"name":"open5", "parent":"winding6", "keep":[0,1,2,3,4], "parties":[[0],[1],[2],[3],[4]]},
+    {"name":"compact6_coarse", "parent":"compact6", "keep":[0,1,2,3,4,5], "parties":[[0,3],[1,4],[2,5]]},
+    {"name":"hexagon6_coarse", "parent":"local_hexagon6", "keep":[0,1,2,3,4,5], "parties":[[0,1],[2,3],[4,5]]},
+    {"name":"winding6_coarse", "parent":"winding6", "keep":[0,1,2,3,4,5], "parties":[[0,1],[2,3],[4,5]]},
+    {"name":"compact6_individual", "parent":"compact6", "keep":[0,1,2,3,4,5], "parties":[[0],[1],[2],[3],[4],[5]]},
+    {"name":"hexagon6_individual", "parent":"local_hexagon6", "keep":[0,1,2,3,4,5], "parties":[[0],[1],[2],[3],[4],[5]]},
+    {"name":"winding6_individual", "parent":"winding6", "keep":[0,1,2,3,4,5], "parties":[[0],[1],[2],[3],[4],[5]]}
+  ],
+  "moment_test_cases": ["compact6_coarse", "hexagon6_coarse", "winding6_coarse", "compact6_individual", "hexagon6_individual", "winding6_individual"],
+  "moment_test_parent": "DMRG_10240_32",
+  "biseparable_iterations": 25,
+  "biseparable_moment_tolerance": 1e-7,
+  "notes": "GME of declared parties, no universal QSL label. Local channels retain charge flags. Maximum entropy uses only declared scalar pair/two-bond/p(q) constraints. A PPT mixture is not a biseparable certificate. Full single-spin fits are bounded lower-bound searches, zero is inconclusive. No new quantum states, training, MPS contractions, or amplitude/H queries."
+}

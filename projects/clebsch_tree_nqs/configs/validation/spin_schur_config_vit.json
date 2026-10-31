@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_schur_config_vit",
+  "architecture": {
+    "basis": "complete_local_Schur_multiplicity_configurations",
+    "embedding_dim": 8,
+    "head_count": 2,
+    "depth": 1,
+    "magnetic_indices_visible_to_vit": false,
+    "space_group_projection": "exact_Reynolds_when_ground_sector_is_Gamma_A1"
+  },
+  "optimization": {
+    "seeds": [0, 1],
+    "steps": 1000,
+    "learning_rate": 0.01
+  },
+  "cases": [
+    "triangular_n6_j2_0125",
+    "square_n8_j2_05"
+  ],
+  "claim_boundary": {
+    "purpose": "exact_small_architecture_and_trainability_gate",
+    "variational_win": false,
+    "reason": "the complete singlet spaces have only dimensions 5 and 14",
+    "next_required_test": "four_or_more_cells_with_sampled_reduced_labels_and_matched_work_fixed_Sz_ViT"
+  }
+}

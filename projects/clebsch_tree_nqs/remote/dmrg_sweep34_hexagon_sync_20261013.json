@@ -1,0 +1,24 @@
+{
+  "files_sha256": {
+    "projects/clebsch_tree_nqs/__init__.py": "6d921791363c77a1acbb18158458dc1110dafcdeb019096f099bda774bcdfeb3",
+    "projects/clebsch_tree_nqs/workflows/__init__.py": "b3dce89e7e53420fbdbb391d23c0a9fe35d7218a10bb4e4e656df912b7e64316",
+    "projects/clebsch_tree_nqs/workflows/dmrg_archive.py": "d73320b0760fc6183dffa06a8bf433e1a1d6cd32389cc92e6dd6c09e4b849c74",
+    "projects/clebsch_tree_nqs/workflows/dmrg_region_probe.py": "ae3367476e2462eb22d64e1f408be1af122db3f15e2a331ef8451975d6892f8f",
+    "su2_nqs/__init__.py": "42390edcf9041cf5b4eed8ecb28724fd54493359043e9767fe6457fe3401f571",
+    "su2_nqs/benchmarks/__init__.py": "ea63419f9a2101a1c4697e651aac1fe1b6abf9d27087e3d03f2a03b0ee3aa1cc",
+    "su2_nqs/benchmarks/regional_su2_readout.py": "4d459de6ffa0c0ceb9df3819b8f6cb56bb5f731d27820364cd47092f5a83847b",
+    "su2_nqs/benchmarks/su2_entanglement_spectrum.py": "87c51eaa02dd62f5a5b1528c4f9e9a7a2deb89064645811548e506be86c41564",
+    "su2_nqs/benchmarks/tensor_network_observables.py": "3e0aa825c3e407eacab373a73d153cdbd7cc2df06005cd25b5ada4b9ebbc38d6",
+    "su2_nqs/benchmarks/tensor_network_readout.py": "7760cd9a2fccffae4052db695e70a9c5519c5a702a5becff42dbe8428fbbc8ff",
+    "su2_nqs/su2/__init__.py": "1d3800f78f2a00f865e9d2f2be4dfb3df3e6f59d37ab96e7c4f5992644240892",
+    "su2_nqs/su2/clebsch_gordan.py": "9b75cc779ca1db4e3a4d949723ff568af48e338a5ab081ba9fc0021c311e565e",
+    "su2_nqs/su2/fusion_tree.py": "6382feac148e7803b92201691557fe7765e669860da4597dc6f0fcc7cd4cc95a",
+    "su2_nqs/su2/quantum_numbers.py": "e596a7da6a79a7a5b2ebb2a6b9d97b82c78c604e3aaf49a8c21a15dd02f6cc64",
+    "su2_nqs/su2/recoupling.py": "d415e8a492fccaab2898ae3c1bf895a5c2dc822ce14c381f8575a62c7cf4e73d",
+    "su2_nqs/su2/wigner6j.py": "6e622d416227d84b87a45c58370efb1210951e35cf9ac8c57fcf2fcc88734733",
+    "su2_nqs/frontier/provenance.py": "7ca5a8c7f08f9385d85381984b06da52fc452db797cc580c687b9869e8bdf80b",
+    "projects/clebsch_tree_nqs/configs/remote/dmrg_chi10240_sweep34_hexagon6_20261013.json": "b9b35d25713ec0cd5549fdff32efccc259eab08d2200cf311371404b790a0aae",
+    "tests/test_dmrg_region_probe.py": "1af49db2fcd5c1b818e2a2fe23c89504c8104b678d7ea193eb06f1299c60ab44"
+  },
+  "bytes": 124255
+}

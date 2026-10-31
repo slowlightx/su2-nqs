@@ -1,0 +1,38 @@
+{
+  "parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/vieijra_nys_reproduction_20261014/square8_folded_continue",
+    "source_workspace": "/home/yx789/nqs-clebsch-tree-training-fold-20261014",
+    "registration_sha256": "212ae39e4522a25f9e7d1724cd8efb496af9b28b89940121f5e82f7f26ca72b9",
+    "checkpoint_sha256": "a890a0f813f44016a6c4e36e17a2953c1a055eed7d7d71244f80185e9c0de37c",
+    "step": 20
+  },
+  "maximum_training_session_seconds": 900,
+  "require_gpu": true,
+  "arms": {
+    "radius005": {
+      "maximum_FS_sine": 0.05,
+      "training_output": "/home/yx789/nqs-wavefunctions/nqs/vieijra_nys_reproduction_20261014/square8_radius005_step21",
+      "audit_output": "/home/yx789/nqs-wavefunctions/nqs/vieijra_nys_reproduction_20261014/square8_radius005_audit_step21",
+      "generated_training_config": "projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/square8_radius005_generated.json",
+      "generated_audit_config": "projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/square8_radius005_audit_generated.json"
+    },
+    "radius020": {
+      "maximum_FS_sine": 0.2,
+      "training_output": "/home/yx789/nqs-wavefunctions/nqs/vieijra_nys_reproduction_20261014/square8_radius020_step21",
+      "audit_output": "/home/yx789/nqs-wavefunctions/nqs/vieijra_nys_reproduction_20261014/square8_radius020_audit_step21",
+      "generated_training_config": "projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/square8_radius020_generated.json",
+      "generated_audit_config": "projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/square8_radius020_audit_generated.json"
+    }
+  },
+  "audit": {
+    "streams": 2,
+    "chains_per_stream": 16,
+    "snapshots_per_stream": 32,
+    "burn_proposals": 1024,
+    "proposals_between_snapshots": 256,
+    "audit_seeds": [2026101511, 2026101512],
+    "bootstrap_seed": 2026101513,
+    "H_sample_chunk": 32
+  },
+  "comparison_output": "/home/yx789/nqs-wavefunctions/nqs/vieijra_nys_reproduction_20261014/square8_radius_comparison/comparison.json"
+}

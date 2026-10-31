@@ -1,0 +1,221 @@
+{
+  "observed_local_date": "2026-10-09",
+  "task": "completed_frozen_ordinary_spatial_vit_review",
+  "model": {
+    "geometry": "triangular",
+    "rows": 6,
+    "columns": 6,
+    "boundary": "PBC/PBC",
+    "J1": 1,
+    "J2": 0.125,
+    "parameter_count": 99904,
+    "strict_SU2": false,
+    "full_A1": true,
+    "fixed_Sz0": true,
+    "spin_inversion_even": true
+  },
+  "new_training": 0,
+  "new_samples": 0,
+  "new_H_calls": 0,
+  "sync": {
+    "files": 89,
+    "bytes": 18316330,
+    "all_size_and_sha256_checks_passed": true,
+    "manifest": "remote/spatial_vit_6600_sync_manifest_20261009.json",
+    "remote_root": "/share/kim/yx789/nqs-vit-quality/results/spin_spatial_vit_gpu_continuation_6600_v1/seed1"
+  },
+  "verification": {
+    "all_75_frozen_source_hashes_passed": true,
+    "numeric_audit_and_bootstrap_replay_max_error": 0,
+    "full_optimizer_parameters_sampler_RNG_retained": true,
+    "registration_sha256": "c5323cec78ae2806094b3d4ef3053de9f7c0654687f023491f28b9097ed30dd3",
+    "checkpoint_sha256": "314a8d7cfd296775cf59a646ac7a2865ea73c91ebdc0500d31d2256e3ed476cb",
+    "params_sha256": "a678bff64df1976dfbd13d9d49c948eff14b59c71f52e69f89cf30f0b6f53065"
+  },
+  "frozen_audits": {
+    "5600": {
+      "energy_per_site": -0.5123734319413841,
+      "energy_imaginary_per_site": -0.00007252097804434431,
+      "chain_mean_standard_error": 0.00011021204653504994,
+      "variance_per_site": 0.01011784362796022,
+      "variance_chain_standard_error": 0.002324125832744459,
+      "energy_chain_bootstrap_95": [
+        -0.5126019001432494,
+        -0.5121703387236818
+      ],
+      "variance_chain_bootstrap_95": [
+        0.007036983310727863,
+        0.015185519473076977
+      ],
+      "stream_energies_per_site": [
+        -0.512290640020823,
+        -0.5124562238619451
+      ],
+      "stream_variances_per_site": [
+        0.012478883653731362,
+        0.00775603804052993
+      ],
+      "split_chain_energy_rhat": 1.0003216980493599,
+      "energy_lag1_descriptive": -0.016172032726813064,
+      "second_minus_first_half_per_site": 0.00019983365872851733,
+      "half_drift_chain_standard_error": 0.00023180846911808706,
+      "top_one_percent_variance_share": 0.6257113554564089,
+      "samples": 16384,
+      "independent_chains": 128,
+      "mixing_certified": false
+    },
+    "6600": {
+      "energy_per_site": -0.5137223555521806,
+      "energy_imaginary_per_site": 0.00009443937210282686,
+      "chain_mean_standard_error": 0.00010570961012921301,
+      "variance_per_site": 0.008421920670032843,
+      "variance_chain_standard_error": 0.0007019902778274012,
+      "energy_chain_bootstrap_95": [
+        -0.5139321961567653,
+        -0.5135126147792639
+      ],
+      "variance_chain_bootstrap_95": [
+        0.0071420305277822,
+        0.009963805735545287
+      ],
+      "stream_energies_per_site": [
+        -0.5135493258707806,
+        -0.5138953852335807
+      ],
+      "stream_variances_per_site": [
+        0.0064976981897776915,
+        0.010343166210299336
+      ],
+      "split_chain_energy_rhat": 0.9996763950905228,
+      "energy_lag1_descriptive": -0.011505345465774279,
+      "second_minus_first_half_per_site": -0.0001756953224727002,
+      "half_drift_chain_standard_error": 0.00018688227979247917,
+      "top_one_percent_variance_share": 0.6304457244638341,
+      "samples": 16384,
+      "independent_chains": 128,
+      "mixing_certified": false
+    }
+  },
+  "independent_differences": {
+    "energy": {
+      "per_site": -0.0013489236107965263,
+      "combined_whole_chain_SE": 0.00015271285759592813,
+      "z_score": -8.833071635433095,
+      "paired": false
+    },
+    "variance": {
+      "per_site": -0.001695922957927377,
+      "combined_whole_chain_SE": 0.002427828502302895,
+      "z_score": -0.6985349073539274,
+      "paired": false
+    }
+  },
+  "references": {
+    "primary_source": "https://arxiv.org/html/2211.07749#S4.T3",
+    "same_torus_ED_per_site": -0.515564,
+    "same_torus_GCNN_per_site": -0.515386,
+    "above_ED_per_site": 0.0018416444478194238,
+    "above_GCNN_per_site": 0.0016636444478194123,
+    "chi4096_sweep24_DMRG_per_site": -0.5141479278426795,
+    "above_finite_chi_DMRG_per_site": 0.0004255722904988879,
+    "not_matched_cost_comparison": true
+  },
+  "cost": {
+    "extra_training_steps": 1000,
+    "extra_training_full_H_calls": 4096000,
+    "fresh_audit_full_H_calls": 16384,
+    "new_active_training_seconds": 31795.244354378316,
+    "new_active_training_A100_GPU_hours": 17.664024641321287,
+    "gpus": 2,
+    "last_step_peak_bytes_per_device": [
+      9857631744,
+      9827678208
+    ]
+  },
+  "limitations": [
+    "Independent milestone errors, not paired.",
+    "Whole-chain SE does not bound burn-in or rare-tail bias.",
+    "Variance improvement not statistically resolved.",
+    "Ordinary fixed-Sz/parity/A1 ViT is not exact SU2.",
+    "No converged precision, variational architecture win, or competing-phase claim."
+  ],
+  "inputs_sha256": {
+    "results/spin_spatial_vit_gpu_continuation_6600_v1/seed1/registration.json": "2b7282717b3282148b311faf55f8a339ffc7cda9ecf7223cef6d6b81b9af091e",
+    "results/spin_spatial_vit_gpu_continuation_6600_v1/seed1/training.json": "98d4eb748ff7ebbf0ab5acbf22ebca5aa53e3829582927725f96748865b3f7aa",
+    "results/spin_spatial_vit_gpu_continuation_6600_v1/seed1/audits/step06600/energy.json": "b0942191d391145f24c94c3e734d425b49cc3a6f00a1e08973b53a24283d4f5f",
+    "results/spin_spatial_vit_gpu_recovery_v6/seed1/audits/step05600/energy.json": "0fe70ed556ca467f91a9e39c22cfd39690fed0ee0a1c59031f85178dbdf7f811",
+    "results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/portable_parameters/model.json": "e5aab5f05788ea177acf0eba0a5e48f9b46408a643ac497e038c017afe005fc8",
+    "results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/portable_parameters/model.npz": "e5904f9e53cafe37d7fa0674748a60f950556a5867f9f250e77b1db42c834eaf",
+    "results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/portable_parameters/metadata.json": "8bcc3d27d6ecdb9976640c17bbf21d4e444dfc9dfcebd28c785579715c272146"
+  },
+  "completed_jobs": {
+    "117357": {
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "08:50:37",
+      "gpus": 2
+    },
+    "117359": {
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:27",
+      "gpus": 0
+    },
+    "117358_0": {
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:02:49",
+      "gpus": 1
+    },
+    "117358_1": {
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:02:46",
+      "gpus": 1
+    }
+  },
+  "focused_tests": {
+    "passed": 41,
+    "seconds": 53.49
+  },
+  "local_physical_readout": {
+    "seconds": 282.4525210841093,
+    "records": 512,
+    "whole_chains": 128,
+    "new_H_calls": 0,
+    "new_training": 0,
+    "new_samples": 0,
+    "independent_two_record_scalar_replay_error": 6.007238334282788e-15,
+    "region_sites": [
+      14,
+      15,
+      20,
+      21
+    ],
+    "total_spin_squared": {
+      "value": 0.08049749639015384,
+      "whole_chain_SE": 0.025364182767513854
+    },
+    "scalar_K": {
+      "value": 2.31885806133419,
+      "whole_chain_SE": 0.04640512124467926
+    },
+    "scalar_Mstar": {
+      "value": 1.1567635380099146,
+      "whole_chain_SE": 0.021915100427918124
+    },
+    "strict_spectrum_reported": false,
+    "same_cut_analysis": "results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/same_cut_quality.json",
+    "interpretation": "K correlations change significantly with this family's quality. Compact4 invariant-operator discrepancy to finite-chi DMRG is not resolved after chain-noise correction; no phase contrast."
+  },
+  "exploration_notebook": "notebooks/spatial_vit_quality.ipynb",
+  "executed_analysis_cell_source_sha256": {
+    "ordinary6600-energy-review": "f035248db85f8160697572d6c82f25d4af0f5f8f1c179c67ed621ddf3ad3bce5",
+    "ordinary6600-cached-physics": "6f0620b026d7fa1c33dcf833a1e2222340227d0ba1afa0efac573dc261c1ebd3",
+    "ordinary6600-physics-quality": "18733ccb1ee0b9ee756a28963d3388767e56e86d167e4b6f30c69fee573f6169"
+  },
+  "figures": [
+    "figures/exploration/spatial_vit_5600_6600_quality.pdf",
+    "figures/exploration/spatial_vit_5600_6600_physics.pdf"
+  ]
+}

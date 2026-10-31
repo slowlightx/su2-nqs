@@ -1,0 +1,18 @@
+{
+  "workspace": "/home/yx789/nqs-repair-single-20261011",
+  "base_workspace": "/home/yx789/nqs-jump-20261011",
+  "base_policy": "minimal previously deployed repair source and fixtures; preserve all running/sealed source workspaces",
+  "changed_or_new_files": {
+    "projects/clebsch_tree_nqs/workflows/spin_spatial_vit_netket.py": "ebd08039e9f74ee996d3c73e33ffd8ff1756e3c12c700189a0ad065a8ef5fb83",
+    "projects/clebsch_tree_nqs/workflows/spin_spatial_vit_quality.py": "cc7e8ed065cdfc4d0a2021e7e79bdaca7893aab526a72a809070cf9cc0a448f8",
+    "projects/clebsch_tree_nqs/workflows/spin_spatial_vit_jump_probe.py": "5f8335e313a31746960ed58c3c63bc8eeb266bc3a471b8c9df2ada5925699276",
+    "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch": "7cbb1837ac296956927355cae4e4ca104694bd4c145a62d9f15d8b686b12b1a3",
+    "tests/test_spatial_vit_jump_probe.py": "9aa9d67493f734f5c6437e23618ad321f22239045635c6bea9fdedb484344291",
+    "projects/clebsch_tree_nqs/configs/remote/repair_20261011_v6_single_gpu/square_j0.json": "5d17f6e547ff9c4fa7671d66f156b2ad59152b59fcc70d0061769c4753e4999c",
+    "projects/clebsch_tree_nqs/configs/remote/repair_20261011_v6_single_gpu/square_j05.json": "7a8f16d91de6c19dfb7e7b35fe3883560102c14d9d19c37842a23eed719f061f",
+    "projects/clebsch_tree_nqs/configs/remote/repair_20261011_v6_single_gpu/tri_j0.json": "d2bfc6a56b47e552824cf62a95ab1cd1ef0ad8bab6a14ee6bc78f876d3c69f81",
+    "projects/clebsch_tree_nqs/configs/remote/repair_20261011_v6_single_gpu/tri_j005.json": "510eb61e1a77b6ee6feb4cdf2360eb2d8894d0c9b172658e01f873fe44272a7f",
+    "projects/clebsch_tree_nqs/configs/remote/repair_20261011_v6_single_gpu/tri_j01.json": "023081f313ae87dd25954bc6e6a1fc97d1114b59b9c35a6ef1f2ea23e7e268b5",
+    "projects/clebsch_tree_nqs/configs/remote/repair_20261011_v6_single_gpu/tri_j0175.json": "c051ea6d4b16112f326921910281fc05f73e7ebc8c7234331510bf0656e006c9"
+  }
+}

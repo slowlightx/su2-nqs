@@ -1,0 +1,67 @@
+{
+  "created_utc": "2026-10-18T00:21:08.095181+00:00",
+  "workspace": "/home/yx789/nqs-triangle-couplings-20261017",
+  "old_failed_array": 360454,
+  "old_launcher_preserved_remotely": true,
+  "new_runner_sha256": "9edd061775af95f5612584f778e542a74945cab4562185961be4d45c7eda1d21",
+  "unchanged_scientific_campaign_sha256": "b00079346e818c8a85b9cbdcfceebfbd50819f56bf0a3faa207042484c956c48",
+  "requested_replacement_GPU_hours": 8.8,
+  "original_ceiling_GPU_hours": 9,
+  "old_failures_total_seconds_below": 48,
+  "no_long_training_children_submitted": true,
+  "jobs": {
+    "transition_pilots_first": {
+      "job_id": "365958",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--nodes=1",
+        "--ntasks=1",
+        "--cpus-per-task=4",
+        "--mem=64G",
+        "--time=44",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--nice=1000",
+        "--no-requeue",
+        "--kill-on-invalid-dep=yes",
+        "--signal=B:USR1@120",
+        "--output=logs/coupling_cuda_%A_%a.out",
+        "--error=logs/coupling_cuda_%A_%a.err",
+        "--export=ALL,NQS_PHASE=pilot",
+        "--array=2-5%1",
+        "--job-name=tri-coupling-CUDA-transition_pilots_first",
+        "projects/clebsch_tree_nqs/configs/remote/triangle_couplings_20261017/run_cuda.sbatch"
+      ]
+    },
+    "remaining_pilots_after_success": {
+      "job_id": "365959",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--nodes=1",
+        "--ntasks=1",
+        "--cpus-per-task=4",
+        "--mem=64G",
+        "--time=44",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--nice=1000",
+        "--no-requeue",
+        "--kill-on-invalid-dep=yes",
+        "--signal=B:USR1@120",
+        "--output=logs/coupling_cuda_%A_%a.out",
+        "--error=logs/coupling_cuda_%A_%a.err",
+        "--export=ALL,NQS_PHASE=pilot",
+        "--array=0-1,6-11%1",
+        "--job-name=tri-coupling-CUDA-remaining_pilots_after_success",
+        "--dependency=afterok:365958",
+        "projects/clebsch_tree_nqs/configs/remote/triangle_couplings_20261017/run_cuda.sbatch"
+      ]
+    }
+  }
+}

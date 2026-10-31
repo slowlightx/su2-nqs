@@ -1,0 +1,51 @@
+{
+  "task": "bounded_triangle_arity_continuation_and_H_transfer",
+  "model": {
+    "length": 6,
+    "multiplicity_cap": 16,
+    "maximum_q": 10
+  },
+  "cost_parent": "/home/yx789/nqs-wavefunctions/nqs/triangle_decoder_20261015/cost",
+  "cost_checkpoint_sha256": {
+    "binary_free": "277c33183dd391b804738c3e25a157b7d8d848f8f0901f1b42b242f80ac509b7",
+    "ternary_free": "8b734c7e55bb0dcd0e27d73325b4a48a4006ccd56e76aee8cc7e8fae0319b63b",
+    "ternary_c3": "52e3c1c321123c00a5810bde4437b6de0618ede2d24b30b8a134307b52f13472"
+  },
+  "arity_comparison": {
+    "binary_rank": 8,
+    "maximum_parameter_mismatch_fraction": 0.01,
+    "maximum_local_parameter_mismatch_fraction": 0.01
+  },
+  "projection_chunk": 4,
+  "additional_steps": 40,
+  "samples": 128,
+  "chains": 32,
+  "burn_proposals": 720,
+  "spacing_proposals": 36,
+  "damping": 0.05,
+  "learning_rate": 0.0001,
+  "maximum_FS_sine": 0.025,
+  "training_seed": 2026101631,
+  "initial_audit_seed": 2026101632,
+  "audit_samples": 1024,
+  "initial_audit_samples": 512,
+  "audit_chains": 32,
+  "audit_burn_proposals": 720,
+  "audit_spacing_proposals": 36,
+  "require_gpu": true,
+  "arm": "ternary_joint",
+  "j2_over_j1": 0.125,
+  "steps": 60,
+  "endpoint_protocol": "same_H_full_state_continuation",
+  "arity_endpoint_parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/triangle_arity_rank8_20261016/ternary_joint",
+    "registration_sha256": "46c059e4727022608a8bb03d039f32eea75ce24d910f379bc67d15db1d176a1e",
+    "checkpoint_sha256": "2ace4fe1fa9cb6dfb150046b6f1d03cd2f581e69781a09b9d0a7a70fec19074b",
+    "params_sha256": "694155ed808d9e49988077d81e01bfc5c74732c6c0e2c0e82b6d7626bc554ff6",
+    "completed_steps": 20,
+    "audit_sha256": "e25814a82634e6127df0bf78d42b78aa7e8c5983151710376854f07e7db69b28"
+  },
+  "terminal_audit_seed": 2026101644,
+  "output": "/home/yx789/nqs-wavefunctions/nqs/triangle_arity_followup_20261016/j0125/ternary_joint",
+  "interpretation": "Separate finite-width triangular ClebschTree; no ViT/attention, no new tensor/head. Same certified cover and upper widths, exact S=0 and coherent full A1, rank8 binary versus unrestricted true joint ternary. Each arm has 40 NEW attempted SR-Adam updates/128 samples, identical FS cap and audit work; actual FS trajectory and timings reported, not assumed equal. J=.125 restores each own full step20 state; J=0 uses the SAME stronger step20 binary physical state in both representations and resets optimizer/RNG/chains. Coupling trajectories therefore do NOT have identical initial states. Independent terminal audits use different untouched seeds. No arity advantage inferred from a single short seed."
+}

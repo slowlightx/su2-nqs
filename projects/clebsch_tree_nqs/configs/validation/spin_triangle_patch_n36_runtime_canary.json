@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "triangle_patch_n36_runtime_canary",
+  "claim_boundary": "Non-ED local runtime/gradient readiness only; screened configurations are not Born samples, and no optimized energy, convergence, efficiency, phase, QSL, scaling, or PRL advantage is claimed.",
+  "model": {
+    "family": "strict_triangle_patch_clebsch_tree",
+    "local_carrier": "complete_three_spin_schur",
+    "feature_dim": 2,
+    "maximum_intermediate_q": 10,
+    "expected_real_parameter_count": 1252,
+    "initialization_scale": 0.6,
+    "lattice_projection": "none"
+  },
+  "cases": [
+    {
+      "case_id": "square_6x6_j2_0p5",
+      "geometry": "square",
+      "rows": 6,
+      "columns": 6,
+      "j2_over_j1": 0.5,
+      "periodic": true,
+      "support": "fixed_m0",
+      "ed": false,
+      "seed": 314159
+    },
+    {
+      "case_id": "triangular_6x6_j2_0p125",
+      "geometry": "triangular",
+      "rows": 6,
+      "columns": 6,
+      "j2_over_j1": 0.125,
+      "periodic": true,
+      "support": "fixed_m0",
+      "ed": false,
+      "seed": 271828
+    }
+  ],
+  "runtime": {
+    "candidate_pool_size": 32,
+    "cutoff_stress_pool_size": 2048,
+    "cutoff_stress_q_values": [4, 6, 8, 10],
+    "cutoff_stress_seed": 8675309,
+    "forward_batch_size": 4,
+    "hpsi_batch_size": 2,
+    "warm_repeats": 1,
+    "minimum_center_magnitude": 1e-300,
+    "minimum_relative_center_magnitude": 1e-8,
+    "compile_with_jit": true,
+    "padded_width_policy": "bond_count_plus_one",
+    "translation_projected_hpsi_probe": true,
+    "translation_orbit_chunk_size": 6,
+    "translation_rematerialize_orbit": false,
+    "perform_parameter_update": false
+  }
+}

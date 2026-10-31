@@ -1,0 +1,118 @@
+{
+  "jobs": [
+    {
+      "name": "att_L6_j0",
+      "phase": "attention",
+      "job_id": "383588",
+      "GPUs": 1,
+      "allocation_minutes": 180,
+      "dependency": null
+    },
+    {
+      "name": "att_L6_j0_replay",
+      "phase": "attention",
+      "job_id": "383589",
+      "GPUs": 1,
+      "allocation_minutes": 30,
+      "dependency": "383588"
+    },
+    {
+      "name": "att_L12_j0",
+      "phase": "attention",
+      "job_id": "383590",
+      "GPUs": 1,
+      "allocation_minutes": 240,
+      "dependency": "383589"
+    },
+    {
+      "name": "att_L12_j0_replay",
+      "phase": "attention",
+      "job_id": "383591",
+      "GPUs": 1,
+      "allocation_minutes": 30,
+      "dependency": "383590"
+    },
+    {
+      "name": "ct12_j0_gate",
+      "phase": "n144_gate",
+      "job_id": "383592",
+      "GPUs": 1,
+      "allocation_minutes": 90,
+      "dependency": null
+    },
+    {
+      "name": "ct12_j0_account",
+      "phase": "n144_account",
+      "job_id": "383593",
+      "GPUs": 0,
+      "allocation_minutes": 5,
+      "dependency": "383592"
+    },
+    {
+      "name": "ct12_j0_train2",
+      "phase": "n144_train",
+      "job_id": "383594",
+      "GPUs": 1,
+      "allocation_minutes": 240,
+      "dependency": "383593"
+    },
+    {
+      "name": "att_L6_j0125",
+      "phase": "attention",
+      "job_id": "383595",
+      "GPUs": 1,
+      "allocation_minutes": 180,
+      "dependency": null
+    },
+    {
+      "name": "att_L6_j0125_replay",
+      "phase": "attention",
+      "job_id": "383596",
+      "GPUs": 1,
+      "allocation_minutes": 30,
+      "dependency": "383595"
+    },
+    {
+      "name": "att_L12_j0125",
+      "phase": "attention",
+      "job_id": "383597",
+      "GPUs": 1,
+      "allocation_minutes": 240,
+      "dependency": "383596"
+    },
+    {
+      "name": "att_L12_j0125_replay",
+      "phase": "attention",
+      "job_id": "383598",
+      "GPUs": 1,
+      "allocation_minutes": 30,
+      "dependency": "383597"
+    },
+    {
+      "name": "ct12_j0125_gate",
+      "phase": "n144_gate",
+      "job_id": "383599",
+      "GPUs": 1,
+      "allocation_minutes": 90,
+      "dependency": null
+    },
+    {
+      "name": "ct12_j0125_account",
+      "phase": "n144_account",
+      "job_id": "383600",
+      "GPUs": 0,
+      "allocation_minutes": 5,
+      "dependency": "383599"
+    },
+    {
+      "name": "ct12_j0125_train2",
+      "phase": "n144_train",
+      "job_id": "383601",
+      "GPUs": 1,
+      "allocation_minutes": 240,
+      "dependency": "383600"
+    }
+  ],
+  "allocated_GPU_hours_cap": 27,
+  "note": "N144 energy pilots release only if measured forecast fits4h and new native gate passes. Static dictionary N144 tests serialize after their own N36 completed replay, not an energy-win threshold. No old failed output or live numerical workspace is edited."
+}

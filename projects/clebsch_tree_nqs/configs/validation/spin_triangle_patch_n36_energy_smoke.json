@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "triangle_patch_n36_energy_smoke",
+  "claim_boundary": "Ten-update single-seed Adam plumbing and early-energy-slope smoke only; no converged energy, efficiency, phase, QSL, scaling, or PRL win is claimed. A failure does not kill the ansatz; production comparison requires matrix-free SR.",
+  "model": {
+    "family": "strict_triangle_patch_clebsch_tree",
+    "feature_dim": 2,
+    "maximum_intermediate_q": 10,
+    "parameter_count": 1252,
+    "initialization_scale": 0.6,
+    "route_gate_scale": 0.05
+  },
+  "projection": {
+    "kind": "translation_k0",
+    "group_order": 36,
+    "orbit_chunk_size": 6,
+    "rematerialize_orbit": true,
+    "applied_from_update": 0
+  },
+  "cases": [
+    {
+      "case_id": "square_6x6_j2_0p5",
+      "geometry": "square",
+      "rows": 6,
+      "columns": 6,
+      "j2_over_j1": 0.5,
+      "periodic": true,
+      "ed": false,
+      "model_seed": 314159,
+      "sampler_seed": 1701,
+      "exact_energy_per_site": -0.503810,
+      "raw_literature_method": "RBM+PP",
+      "raw_literature_energy_per_site": -0.503765
+    },
+    {
+      "case_id": "triangular_6x6_j2_0p125",
+      "geometry": "triangular",
+      "rows": 6,
+      "columns": 6,
+      "j2_over_j1": 0.125,
+      "periodic": true,
+      "ed": false,
+      "model_seed": 271828,
+      "sampler_seed": 1702,
+      "exact_energy_per_site": -0.515564,
+      "raw_literature_method": "space-group GCNN",
+      "raw_literature_energy_per_site": -0.515386
+    }
+  ],
+  "sampler": {
+    "chains": 16,
+    "initial_burn_proposals_per_chain": 288,
+    "proposals_between_updates": 72,
+    "bond_proposal_probability": 0.8
+  },
+  "optimizer": {
+    "name": "adam",
+    "updates": 10,
+    "learning_rate": 0.001,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "epsilon": 1e-8,
+    "maximum_relative_update_norm": 0.05,
+    "training_microbatch_size": 2,
+    "checkpoint_every": 5
+  },
+  "audit": {
+    "updates": [0, 5, 10],
+    "seed": 90917,
+    "burn_proposals_per_chain": 72,
+    "snapshots": 2,
+    "proposals_between_snapshots": 36,
+    "full_h_microbatch_size": 2
+  }
+}

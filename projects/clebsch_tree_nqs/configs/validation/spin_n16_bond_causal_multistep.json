@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_n16_bond_causal_multistep",
+  "preregistered_before_run": true,
+  "source_preflight": "spin_scale_first_three_arm_preflight.json",
+  "source_initialization_result": "../../results/spin_scale_first_aligned_carrier_exact_distillation_v1/results.json",
+  "source_tangent_result": "../../results/spin_n16_bond_causal_tangent_v1/results.json",
+  "controls": {
+    "head_seeds": [2026092571, 2026092579, 2026092591],
+    "scramble_seeds": [2026092593, 2026092609, 2026092617],
+    "untouched_audit_seeds": [2026092621, 2026092633, 2026092649],
+    "local_embedding_dim": 8,
+    "local_hidden_dim": 32,
+    "steps": 6,
+    "learning_rate": 0.25,
+    "damping": 0.001,
+    "relative_rank_cutoff": 0.000001,
+    "backtracking_steps": 8,
+    "maximum_step_fubini_study_distance": 0.025,
+    "maximum_total_fubini_study_distance": 0.1,
+    "audit_batch_size": 256,
+    "audit_sample_count": 4096
+  },
+  "gates": {
+    "minimum_median_physical_energy_gain_per_site": 0.0015,
+    "minimum_median_paired_advantage_per_site": 0.0001,
+    "minimum_positive_paired_replicates": 2,
+    "maximum_physical_variance_change_per_site": 0.0,
+    "minimum_accepted_steps": 3,
+    "maximum_untouched_energy_z_score": 4.0
+  },
+  "claim_boundary": "Preregistered finite-training N=16 gate. Passing permits only a bounded N36 sampled canary, not GPU production."
+}

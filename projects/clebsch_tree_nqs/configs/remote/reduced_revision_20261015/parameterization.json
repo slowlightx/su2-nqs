@@ -1,0 +1,16 @@
+{
+  "stage": "parameterization",
+  "checkpoint": "projects/clebsch_tree_nqs/results/ground_state_structure_20261014/architecture/joint_teacher_initialization_v1/same_Born_configuration_phase_jitter_step0400.pkl",
+  "checkpoint_sha256": "b316e523ccdd74917522d1d20f71431046a7779dc55fc8df1e4e6f46e6cb749b",
+  "teacher": "projects/clebsch_tree_nqs/results/spin_many_cell_matrix_free_v1/states.npz",
+  "teacher_sha256": "4cfebd468e9d5811d66de7a09d44d26cbe72f5b85a72f9f2763f74144bc04553",
+  "padding_gate": "projects/clebsch_tree_nqs/results/reduced_revision_20261015/padding_bucketed/results.json",
+  "padding_gate_sha256": "592039ac58ab89d80301ec908562818ce03dc3ecac6da30de719fcbfe00aab50",
+  "model_settings": {"lx":4,"ly":4,"embedding_dim":16,"head_count":2,"depth":4,"direct_phase_initialization_scale":0.1},
+  "steps": 200,
+  "learning_rate": 0.003,
+  "seed": 2026101561,
+  "require_gpu": true,
+  "output": "projects/clebsch_tree_nqs/results/reduced_revision_20261015/parameterization",
+  "protocol": "Serial after measured2.31x full-H gate. Reuse best saved signed-teacher backbone, no new ED or random backbone. Legacy continues unchanged. Aligned-joint reuses backbone/phase parameters, replaces incompatible conditional-score vector; not a state-preserving ablation. Joint KL-plus-complex-fidelity on SAME1430 known coefficients, fixed200 steps/arm. Root rank, history geometry, shared phase-backbone gradients, normalization and SU2 checked independently. No N16 energy-tail target or N36 accuracy claim. Save full optimizer/parameters/RNG; replay next update exactly."
+}

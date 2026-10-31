@@ -1,0 +1,74 @@
+{
+  "schema_version": 2,
+  "domain": "spin",
+  "status": "three_seed_exact_support_validation",
+  "model": {
+    "feature_dim": 4,
+    "maximum_intermediate_q": 8,
+    "initialization_scale": 1.0
+  },
+  "parameter_bracket_maximum_width": 24,
+  "optimization": {
+    "steps": 200,
+    "learning_rate": 0.005,
+    "record_every": 10,
+    "seeds": [11, 12, 13],
+    "energy_error_per_site_targets": [0.01, 0.001, 0.0001, 0.00001]
+  },
+  "arms": [
+    {"arm_id": "m0_unconstrained_none", "backbone": "unconstrained", "projection": "none"},
+    {"arm_id": "u1_none", "backbone": "u1", "projection": "none"},
+    {"arm_id": "u1_translation", "backbone": "u1", "projection": "translation"},
+    {"arm_id": "u1_gamma_a1", "backbone": "u1", "projection": "gamma_a1"},
+    {"arm_id": "su2_none", "backbone": "su2", "projection": "none"},
+    {"arm_id": "su2_translation", "backbone": "su2", "projection": "translation"},
+    {"arm_id": "su2_gamma_a1", "backbone": "su2", "projection": "gamma_a1"}
+  ],
+  "cases": [
+    {
+      "case_id": "square_4x4_j2_0p5_m0",
+      "geometry": "square",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.5,
+      "support": "fixed_m0",
+      "exact_energy_anchor": -8.457923351394845,
+      "anchor_provenance": "stored physical-M0 exact reference; no eigensolve in runner",
+      "arm_ids": ["m0_unconstrained_none", "u1_none", "u1_translation", "u1_gamma_a1", "su2_none", "su2_translation", "su2_gamma_a1"]
+    },
+    {
+      "case_id": "triangular_4x4_j2_0p1_m0",
+      "geometry": "triangular",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.1,
+      "support": "fixed_m0",
+      "exact_energy_anchor": -8.540935044598,
+      "anchor_provenance": "stored physical-M0 exact reference; no eigensolve in runner",
+      "arm_ids": ["u1_none", "u1_gamma_a1", "su2_none", "su2_gamma_a1"]
+    },
+    {
+      "case_id": "triangular_4x4_j2_0p125_m0",
+      "geometry": "triangular",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.125,
+      "support": "fixed_m0",
+      "exact_energy_anchor": -8.553311087209,
+      "anchor_provenance": "stored physical-M0 exact reference; no eigensolve in runner",
+      "arm_ids": ["m0_unconstrained_none", "u1_none", "u1_translation", "u1_gamma_a1", "su2_none", "su2_translation", "su2_gamma_a1"]
+    },
+    {
+      "case_id": "triangular_4x4_j2_0p15_m0",
+      "geometry": "triangular",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.15,
+      "support": "fixed_m0",
+      "exact_energy_anchor": -8.572142592278,
+      "anchor_provenance": "stored physical-M0 exact reference; no eigensolve in runner",
+      "arm_ids": ["u1_none", "u1_gamma_a1", "su2_none", "su2_gamma_a1"]
+    }
+  ],
+  "claim_boundary": "Three paired seeds establish a finite-graph exact-support 2x2 spin-SU2 by lattice-projection ablation in addition to the cumulative ladder. The 4x4 triangular scan is a crossover diagnostic only because the torus is not K-compatible."
+}

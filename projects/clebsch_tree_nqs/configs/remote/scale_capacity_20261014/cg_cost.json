@@ -1,0 +1,28 @@
+{
+  "task": "finite_schur_literature_capacity_cost",
+  "output": "projects/clebsch_tree_nqs/results/cg_capacity_20261014/cost",
+  "probe_file": "projects/clebsch_tree_nqs/results/spin_full_vit_constraint_v1/ratio_preflight.npz",
+  "cases": [
+    {
+      "geometry": "triangular",
+      "j2_over_j1": 0.125
+    }
+  ],
+  "rows": 6,
+  "columns": 6,
+  "maximum_q": 8,
+  "multiplicity_width": 16,
+  "embedding_dim": 32,
+  "depth": 2,
+  "seed": 2026101470,
+  "batches": [
+    1,
+    2
+  ],
+  "projection_chunk": 4,
+  "H_chunk": 8,
+  "timing_repeats": 2,
+  "wall_limit_seconds_per_process": 2400,
+  "peak_rss_limit_gib": 100,
+  "initialization": "Complex neural reduced tensor bank, same-bank independent free control. Complete local Schur and q<=8 (jmax4), uniform multiplicity16. Comparable maximum capacity to Vieijra-Nys PRB104045123, not exact reproduction: their refined high-j multiplicity8; ours16, local four-spin front end and untied nodes. Full coherent A1. Costs include full-H and gradients."
+}

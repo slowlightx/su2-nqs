@@ -1,0 +1,42 @@
+{
+  "task": "spin_full_vit_seed_replication_and_frozen_diagnosis",
+  "prior_directory": "projects/clebsch_tree_nqs/results/spin_full_vit_optimization_v1",
+  "prior_registration_sha256": "4c52e8b2556b5c39695f0ae42082c4363350fc1735342b562c9936547acdf66d",
+  "triangular": {
+    "training_seeds": [2026100201, 2026100202],
+    "arms": ["adam", "ridge_sr"],
+    "steps": 128,
+    "chains": 64,
+    "initial_burn_proposals": 2304,
+    "proposals_per_update": 36,
+    "maximum_training_seconds_per_arm": 600,
+    "audit": {
+      "chains": 16, "snapshots": 32, "burn_proposals": 4608,
+      "proposals_between_snapshots": 72,
+      "bootstrap_replicates": 4000, "bootstrap_seed": 2026100299,
+      "seeds": {
+        "2026100201": {"adam": [2026100211,2026100212,2026100213], "ridge_sr": [2026100221,2026100222,2026100223]},
+        "2026100202": {"adam": [2026100231,2026100232,2026100233], "ridge_sr": [2026100241,2026100242,2026100243]}
+      }
+    }
+  },
+  "square": {
+    "parameter_states": ["parent", "ridge_sr"],
+    "seeds": [2026100251,2026100252],
+    "kernels": ["ordinary", "tempered"],
+    "cohorts": ["uniform", "low_energy_start", "high_energy_start"],
+    "chains_per_cohort": 8,
+    "blocks": 24,
+    "ordinary_proposals_per_block": 384,
+    "tempered_proposals_per_block": 64,
+    "swap_every": 8,
+    "betas": [0.0,0.1,0.25,0.5,0.75,1.0],
+    "last_blocks_for_comparison": 8,
+    "maximum_seconds_per_job": 240,
+    "start_rule": "From prior square SR audits in registered stream/chain order: first 8 chains with mean E/N<-0.4 and first 8 with mean E/N>0, use their last configurations. These deliberately biased starts are diagnostics, not Born samples. Add 8 new uniform fixed-Sz states per seed. Same cold starts for both kernels and parameter states.",
+    "sampling_interpretation": "Compare cold beta=1 cohorts only, retain time trajectories and all chains. Each block matches 384x24 proposal amplitude evaluations (PT:64x6x24); PT refresh and swap overhead are separately counted. Cohort agreement is necessary not sufficient for equilibrium. With persistent disagreement, report energy as unresolved; do not average biased cohorts into a production energy.",
+    "diagnostic_reference": "Evaluate identical saved starts under both frozen parameter states and independently replay 6 fixed full-H ratios by vectorized explicit exchanged configurations. No parameter interpolation, optimizer update, new ED or candidate search."
+  },
+  "scope": "Same 4032-parameter fixed-Sz exact-lattice-A1 architecture. Triangular replication varies training sampling randomness at the SAME inherited step-1064 checkpoint, not independent weight initialization. Original optimizer policies unchanged. Audits have 48 chains/1536 records per endpoint (half previous count); do not pretend identical audit precision. Two new seeds x energy/variance form four primary tests, with 98.75% Bonferroni intervals. No pooling away a failed seed. Square parameters remain byte-identical throughout; this is a frozen sampler intervention, not more training.",
+  "budget": "Triangular: 4x8192 training +4x1536 audit +2x64 warm=39040 full-H calls. Square: 2 states x2 seeds x2 kernels x25 snapshots x24 chains=4800 calls; plus 2x24 fixed-start calls and 2x6 independent explicit replays=60. Total planned full-H centers=43900. Square each job has 221184 proposal amplitude evaluations plus refreshes; no adaptive extension. Local CPU only, estimated 30-40 minutes plus validation."
+}

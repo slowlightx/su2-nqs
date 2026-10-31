@@ -1,0 +1,617 @@
+{
+  "before_du": "3193278464\t/home/yx51/nqs_reference_dmrg",
+  "after_du": "42999808\t/home/yx51/nqs_reference_dmrg",
+  "migrations": [
+    {
+      "observed_utc": "2026-10-08T17:02:25.484913+00:00",
+      "source": "/home/yx51/nqs_reference_dmrg/projects/clebsch_tree_nqs/results/spin_tensor_network_chi1024_probe_v1",
+      "destination": "/storage/hpc/work/an9/yx51/nqs_reference_dmrg/retained_inputs/projects/clebsch_tree_nqs/results/spin_tensor_network_chi1024_probe_v1",
+      "files": {
+        "dimer/chi1024.h5": {
+          "bytes": 59726576,
+          "sha256": "e754b6ad7c1e0a4ed2880b50160328d41aa488d50d11a43eabd4b6e8647a5aa2"
+        }
+      },
+      "bytes_removed_from_home": 59726576,
+      "scientific_files_modified": false,
+      "new_training": 0,
+      "new_H_calls": 0,
+      "old_path_is_compatibility_symlink": true
+    },
+    {
+      "observed_utc": "2026-10-08T17:02:38.555599+00:00",
+      "source": "/home/yx51/nqs_reference_dmrg/projects/clebsch_tree_nqs/results/spin_tensor_network_chi2048_nots_v1",
+      "destination": "/storage/hpc/work/an9/yx51/nqs_reference_dmrg/retained_inputs/projects/clebsch_tree_nqs/results/spin_tensor_network_chi2048_nots_v1",
+      "files": {
+        "checkpoint.h5": {
+          "bytes": 211809888,
+          "sha256": "f6a3d6b699a40ad40394281676427367910c8f8f8588eb2da044d2fce9bef6f2"
+        },
+        "chi2048.h5": {
+          "bytes": 211809888,
+          "sha256": "f6a3d6b699a40ad40394281676427367910c8f8f8588eb2da044d2fce9bef6f2"
+        },
+        "chunk_status.json": {
+          "bytes": 379,
+          "sha256": "b04aa8d38f29c0459e1ac121b5d821183df3be321dbc0a32b85b9a76a550893f"
+        },
+        "progress.json": {
+          "bytes": 258,
+          "sha256": "5b8738b691b5b8d202df5e4b3c3673d8673f669ede2237e62513e5646cacf3c4"
+        },
+        "rdms.npz": {
+          "bytes": 14757,
+          "sha256": "7a81bbb64a55d75fed77ba3c2e05f2c10a525e6cc1f5db0ee3e33230473b652b"
+        },
+        "registration.json": {
+          "bytes": 13332,
+          "sha256": "4e409e1eca86ddefc1767366d42d390e1ab7ea6ef58f89c510a9b02b0bdff254"
+        },
+        "results.json": {
+          "bytes": 18148,
+          "sha256": "966808263c353626e41eb7dee73fe4ce5e91967c2bcd143ce1ccd34b5c4e90b3"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/__init__.py": {
+          "bytes": 60,
+          "sha256": "6d921791363c77a1acbb18158458dc1110dafcdeb019096f099bda774bcdfeb3"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/workflows/__init__.py": {
+          "bytes": 72,
+          "sha256": "b3dce89e7e53420fbdbb391d23c0a9fe35d7218a10bb4e4e656df912b7e64316"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/workflows/dmrg_continuation.py": {
+          "bytes": 18549,
+          "sha256": "cef9f30bcf11737f9e4b33d0031dc79a02b56055edafdc4bbbb31a69ad832782"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/workflows/spin_tensor_network_reference.py": {
+          "bytes": 9502,
+          "sha256": "9a70bed6102479bf77bbf7b69ce4e4c01b5d80f090f63438d17e03e7ea10c76f"
+        },
+        "source_snapshots/su2_nqs/__init__.py": {
+          "bytes": 901,
+          "sha256": "42390edcf9041cf5b4eed8ecb28724fd54493359043e9767fe6457fe3401f571"
+        },
+        "source_snapshots/su2_nqs/benchmarks/__init__.py": {
+          "bytes": 2444,
+          "sha256": "ea63419f9a2101a1c4697e651aac1fe1b6abf9d27087e3d03f2a03b0ee3aa1cc"
+        },
+        "source_snapshots/su2_nqs/benchmarks/readout_quality.py": {
+          "bytes": 6475,
+          "sha256": "9f6106c29555bd0a6199f5ca8eb59950088549668b283f46820f4278045f8d76"
+        },
+        "source_snapshots/su2_nqs/benchmarks/regional_su2_readout.py": {
+          "bytes": 9518,
+          "sha256": "4d459de6ffa0c0ceb9df3819b8f6cb56bb5f731d27820364cd47092f5a83847b"
+        },
+        "source_snapshots/su2_nqs/benchmarks/su2_entanglement_spectrum.py": {
+          "bytes": 11783,
+          "sha256": "87c51eaa02dd62f5a5b1528c4f9e9a7a2deb89064645811548e506be86c41564"
+        },
+        "source_snapshots/su2_nqs/benchmarks/tensor_network_observables.py": {
+          "bytes": 5095,
+          "sha256": "a6803b9217e269145a5bfce7d496d1157b56e82055e93770fe29a9751a9b1659"
+        },
+        "source_snapshots/su2_nqs/benchmarks/tensor_network_readout.py": {
+          "bytes": 5853,
+          "sha256": "7760cd9a2fccffae4052db695e70a9c5519c5a702a5becff42dbe8428fbbc8ff"
+        },
+        "source_snapshots/su2_nqs/frontier/provenance.py": {
+          "bytes": 5209,
+          "sha256": "7ca5a8c7f08f9385d85381984b06da52fc452db797cc580c687b9869e8bdf80b"
+        },
+        "source_snapshots/su2_nqs/lattices/__init__.py": {
+          "bytes": 831,
+          "sha256": "11c5369dbbdcd9809a54f4b46b082f4a91f998af9f7caa963b66f24cc3c04418"
+        },
+        "source_snapshots/su2_nqs/lattices/triangular_j1j2.py": {
+          "bytes": 2292,
+          "sha256": "b06b59d4c71c54093b3818f132494a901d06f359a4b4fdc537cdc8ea2005faee"
+        },
+        "source_snapshots/su2_nqs/su2/__init__.py": {
+          "bytes": 3961,
+          "sha256": "1d3800f78f2a00f865e9d2f2be4dfb3df3e6f59d37ab96e7c4f5992644240892"
+        },
+        "source_snapshots/su2_nqs/su2/clebsch_gordan.py": {
+          "bytes": 3743,
+          "sha256": "9b75cc779ca1db4e3a4d949723ff568af48e338a5ab081ba9fc0021c311e565e"
+        },
+        "source_snapshots/su2_nqs/su2/fusion_tree.py": {
+          "bytes": 6316,
+          "sha256": "6382feac148e7803b92201691557fe7765e669860da4597dc6f0fcc7cd4cc95a"
+        },
+        "source_snapshots/su2_nqs/su2/quantum_numbers.py": {
+          "bytes": 1801,
+          "sha256": "e596a7da6a79a7a5b2ebb2a6b9d97b82c78c604e3aaf49a8c21a15dd02f6cc64"
+        },
+        "source_snapshots/su2_nqs/su2/recoupling.py": {
+          "bytes": 3797,
+          "sha256": "d415e8a492fccaab2898ae3c1bf895a5c2dc822ce14c381f8575a62c7cf4e73d"
+        },
+        "source_snapshots/su2_nqs/su2/wigner6j.py": {
+          "bytes": 3793,
+          "sha256": "6e622d416227d84b87a45c58370efb1210951e35cf9ac8c57fcf2fcc88734733"
+        }
+      },
+      "bytes_removed_from_home": 423768645,
+      "scientific_files_modified": false,
+      "new_training": 0,
+      "new_H_calls": 0,
+      "old_path_is_compatibility_symlink": true
+    },
+    {
+      "observed_utc": "2026-10-08T17:02:45.651543+00:00",
+      "source": "/home/yx51/nqs_reference_dmrg/projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi2048_relax",
+      "destination": "/storage/hpc/work/an9/yx51/nqs_reference_dmrg/retained_inputs/projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi2048_relax",
+      "files": {
+        "checkpoint.h5": {
+          "bytes": 212435680,
+          "sha256": "f638b258de90ce47fb5beb835bb260fc48461e0ec4172b9e5cd018307cf3d6ca"
+        },
+        "chi2048.h5": {
+          "bytes": 212435680,
+          "sha256": "f638b258de90ce47fb5beb835bb260fc48461e0ec4172b9e5cd018307cf3d6ca"
+        },
+        "chunk_status.json": {
+          "bytes": 464,
+          "sha256": "beb117996a85399a3c167a1dbf98d1fcf4d51fbb0445e8d95ec8c490ba8b6abd"
+        },
+        "progress.json": {
+          "bytes": 342,
+          "sha256": "3972fa76023aaa4bdeb9ea8189d2254cc90e27c504600315f6114751cc7a19ed"
+        },
+        "rdms.npz": {
+          "bytes": 14735,
+          "sha256": "6539b639160566cf395a472bae51356488404ca1296f3168796bffe85288a82c"
+        },
+        "registration.json": {
+          "bytes": 13997,
+          "sha256": "0144e7137733ffaf894a98f67224af41d751f8a1c1ac774363efde8ecb95694b"
+        },
+        "results.json": {
+          "bytes": 19002,
+          "sha256": "bd5b95c59a8cf61f756be1a0ca37a4b210f8a597d4117f336032e2975e9762f4"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/__init__.py": {
+          "bytes": 60,
+          "sha256": "6d921791363c77a1acbb18158458dc1110dafcdeb019096f099bda774bcdfeb3"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/workflows/__init__.py": {
+          "bytes": 72,
+          "sha256": "b3dce89e7e53420fbdbb391d23c0a9fe35d7218a10bb4e4e656df912b7e64316"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/workflows/dmrg_continuation.py": {
+          "bytes": 26180,
+          "sha256": "00915edcf165fe7902b1783de7cd7802af42d27e0bc506b3930bb08a07929de5"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/workflows/spin_tensor_network_reference.py": {
+          "bytes": 9502,
+          "sha256": "9a70bed6102479bf77bbf7b69ce4e4c01b5d80f090f63438d17e03e7ea10c76f"
+        },
+        "source_snapshots/su2_nqs/__init__.py": {
+          "bytes": 901,
+          "sha256": "42390edcf9041cf5b4eed8ecb28724fd54493359043e9767fe6457fe3401f571"
+        },
+        "source_snapshots/su2_nqs/benchmarks/__init__.py": {
+          "bytes": 2444,
+          "sha256": "ea63419f9a2101a1c4697e651aac1fe1b6abf9d27087e3d03f2a03b0ee3aa1cc"
+        },
+        "source_snapshots/su2_nqs/benchmarks/readout_quality.py": {
+          "bytes": 6475,
+          "sha256": "9f6106c29555bd0a6199f5ca8eb59950088549668b283f46820f4278045f8d76"
+        },
+        "source_snapshots/su2_nqs/benchmarks/regional_su2_readout.py": {
+          "bytes": 9518,
+          "sha256": "4d459de6ffa0c0ceb9df3819b8f6cb56bb5f731d27820364cd47092f5a83847b"
+        },
+        "source_snapshots/su2_nqs/benchmarks/su2_entanglement_spectrum.py": {
+          "bytes": 11783,
+          "sha256": "87c51eaa02dd62f5a5b1528c4f9e9a7a2deb89064645811548e506be86c41564"
+        },
+        "source_snapshots/su2_nqs/benchmarks/tensor_network_observables.py": {
+          "bytes": 5095,
+          "sha256": "a6803b9217e269145a5bfce7d496d1157b56e82055e93770fe29a9751a9b1659"
+        },
+        "source_snapshots/su2_nqs/benchmarks/tensor_network_readout.py": {
+          "bytes": 5853,
+          "sha256": "7760cd9a2fccffae4052db695e70a9c5519c5a702a5becff42dbe8428fbbc8ff"
+        },
+        "source_snapshots/su2_nqs/frontier/provenance.py": {
+          "bytes": 5209,
+          "sha256": "7ca5a8c7f08f9385d85381984b06da52fc452db797cc580c687b9869e8bdf80b"
+        },
+        "source_snapshots/su2_nqs/lattices/__init__.py": {
+          "bytes": 831,
+          "sha256": "11c5369dbbdcd9809a54f4b46b082f4a91f998af9f7caa963b66f24cc3c04418"
+        },
+        "source_snapshots/su2_nqs/lattices/triangular_j1j2.py": {
+          "bytes": 2292,
+          "sha256": "b06b59d4c71c54093b3818f132494a901d06f359a4b4fdc537cdc8ea2005faee"
+        },
+        "source_snapshots/su2_nqs/su2/__init__.py": {
+          "bytes": 3961,
+          "sha256": "1d3800f78f2a00f865e9d2f2be4dfb3df3e6f59d37ab96e7c4f5992644240892"
+        },
+        "source_snapshots/su2_nqs/su2/clebsch_gordan.py": {
+          "bytes": 3743,
+          "sha256": "9b75cc779ca1db4e3a4d949723ff568af48e338a5ab081ba9fc0021c311e565e"
+        },
+        "source_snapshots/su2_nqs/su2/fusion_tree.py": {
+          "bytes": 6316,
+          "sha256": "6382feac148e7803b92201691557fe7765e669860da4597dc6f0fcc7cd4cc95a"
+        },
+        "source_snapshots/su2_nqs/su2/quantum_numbers.py": {
+          "bytes": 1801,
+          "sha256": "e596a7da6a79a7a5b2ebb2a6b9d97b82c78c604e3aaf49a8c21a15dd02f6cc64"
+        },
+        "source_snapshots/su2_nqs/su2/recoupling.py": {
+          "bytes": 3797,
+          "sha256": "d415e8a492fccaab2898ae3c1bf895a5c2dc822ce14c381f8575a62c7cf4e73d"
+        },
+        "source_snapshots/su2_nqs/su2/wigner6j.py": {
+          "bytes": 3793,
+          "sha256": "6e622d416227d84b87a45c58370efb1210951e35cf9ac8c57fcf2fcc88734733"
+        },
+        "sweep_readouts/sweep0009.json": {
+          "bytes": 2152,
+          "sha256": "2468d44d732495129831ab9b08150eea976c0eb461625c9f520ee71bc4e12ba1"
+        },
+        "sweep_readouts/sweep0009.npz": {
+          "bytes": 14721,
+          "sha256": "2db8e55fdc0686d25739ce4088bd8fd7bf392617fa4a008053538471807e0b6f"
+        },
+        "sweep_readouts/sweep0010.json": {
+          "bytes": 2159,
+          "sha256": "4636f1031132a61249ec3d513eb31c1fb6839f652d4a277f0fe4e6c3793de3fc"
+        },
+        "sweep_readouts/sweep0010.npz": {
+          "bytes": 14735,
+          "sha256": "6539b639160566cf395a472bae51356488404ca1296f3168796bffe85288a82c"
+        },
+        "transition.json": {
+          "bytes": 633,
+          "sha256": "188896abb479d05324447060e531f903f3dd2a1cc0b205496c05b00e475830be"
+        }
+      },
+      "bytes_removed_from_home": 425063926,
+      "scientific_files_modified": false,
+      "new_training": 0,
+      "new_H_calls": 0,
+      "old_path_is_compatibility_symlink": true
+    },
+    {
+      "observed_utc": "2026-10-08T17:02:58.935729+00:00",
+      "source": "/home/yx51/nqs_reference_dmrg/projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi3072",
+      "destination": "/storage/hpc/work/an9/yx51/nqs_reference_dmrg/retained_inputs/projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi3072",
+      "files": {
+        "checkpoint.h5": {
+          "bytes": 423088288,
+          "sha256": "fffb391edff5ddec3aa336919bdc3eadc83c73f8fbbff9457aba1190cf9ea0f4"
+        },
+        "chi3072.h5": {
+          "bytes": 423088288,
+          "sha256": "fffb391edff5ddec3aa336919bdc3eadc83c73f8fbbff9457aba1190cf9ea0f4"
+        },
+        "chunk_status.json": {
+          "bytes": 465,
+          "sha256": "fd5ea597c083502561a8926271f9917c496535fbc1f857852f7110a44e475efb"
+        },
+        "progress.json": {
+          "bytes": 342,
+          "sha256": "ee9e84976fb6e8c19978d27e1c82a95f58113066881b0329ba690c7c37e05800"
+        },
+        "rdms.npz": {
+          "bytes": 14740,
+          "sha256": "df6994339887d67ed37d47c4023a8419fa5e6b0264dd5a208f3fe290bdfe716b"
+        },
+        "registration.json": {
+          "bytes": 14063,
+          "sha256": "61b38857e5e506f51735e850969e1d852d8fc69ce4b5f86b122553d79fe0367a"
+        },
+        "results.json": {
+          "bytes": 19069,
+          "sha256": "3a6294eb1ae2889fdb5346eefb15c14125675d20de25183a554f5bf75a90a851"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/__init__.py": {
+          "bytes": 60,
+          "sha256": "6d921791363c77a1acbb18158458dc1110dafcdeb019096f099bda774bcdfeb3"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/workflows/__init__.py": {
+          "bytes": 72,
+          "sha256": "b3dce89e7e53420fbdbb391d23c0a9fe35d7218a10bb4e4e656df912b7e64316"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/workflows/dmrg_continuation.py": {
+          "bytes": 26180,
+          "sha256": "00915edcf165fe7902b1783de7cd7802af42d27e0bc506b3930bb08a07929de5"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/workflows/spin_tensor_network_reference.py": {
+          "bytes": 9502,
+          "sha256": "9a70bed6102479bf77bbf7b69ce4e4c01b5d80f090f63438d17e03e7ea10c76f"
+        },
+        "source_snapshots/su2_nqs/__init__.py": {
+          "bytes": 901,
+          "sha256": "42390edcf9041cf5b4eed8ecb28724fd54493359043e9767fe6457fe3401f571"
+        },
+        "source_snapshots/su2_nqs/benchmarks/__init__.py": {
+          "bytes": 2444,
+          "sha256": "ea63419f9a2101a1c4697e651aac1fe1b6abf9d27087e3d03f2a03b0ee3aa1cc"
+        },
+        "source_snapshots/su2_nqs/benchmarks/readout_quality.py": {
+          "bytes": 6475,
+          "sha256": "9f6106c29555bd0a6199f5ca8eb59950088549668b283f46820f4278045f8d76"
+        },
+        "source_snapshots/su2_nqs/benchmarks/regional_su2_readout.py": {
+          "bytes": 9518,
+          "sha256": "4d459de6ffa0c0ceb9df3819b8f6cb56bb5f731d27820364cd47092f5a83847b"
+        },
+        "source_snapshots/su2_nqs/benchmarks/su2_entanglement_spectrum.py": {
+          "bytes": 11783,
+          "sha256": "87c51eaa02dd62f5a5b1528c4f9e9a7a2deb89064645811548e506be86c41564"
+        },
+        "source_snapshots/su2_nqs/benchmarks/tensor_network_observables.py": {
+          "bytes": 5095,
+          "sha256": "a6803b9217e269145a5bfce7d496d1157b56e82055e93770fe29a9751a9b1659"
+        },
+        "source_snapshots/su2_nqs/benchmarks/tensor_network_readout.py": {
+          "bytes": 5853,
+          "sha256": "7760cd9a2fccffae4052db695e70a9c5519c5a702a5becff42dbe8428fbbc8ff"
+        },
+        "source_snapshots/su2_nqs/frontier/provenance.py": {
+          "bytes": 5209,
+          "sha256": "7ca5a8c7f08f9385d85381984b06da52fc452db797cc580c687b9869e8bdf80b"
+        },
+        "source_snapshots/su2_nqs/lattices/__init__.py": {
+          "bytes": 831,
+          "sha256": "11c5369dbbdcd9809a54f4b46b082f4a91f998af9f7caa963b66f24cc3c04418"
+        },
+        "source_snapshots/su2_nqs/lattices/triangular_j1j2.py": {
+          "bytes": 2292,
+          "sha256": "b06b59d4c71c54093b3818f132494a901d06f359a4b4fdc537cdc8ea2005faee"
+        },
+        "source_snapshots/su2_nqs/su2/__init__.py": {
+          "bytes": 3961,
+          "sha256": "1d3800f78f2a00f865e9d2f2be4dfb3df3e6f59d37ab96e7c4f5992644240892"
+        },
+        "source_snapshots/su2_nqs/su2/clebsch_gordan.py": {
+          "bytes": 3743,
+          "sha256": "9b75cc779ca1db4e3a4d949723ff568af48e338a5ab081ba9fc0021c311e565e"
+        },
+        "source_snapshots/su2_nqs/su2/fusion_tree.py": {
+          "bytes": 6316,
+          "sha256": "6382feac148e7803b92201691557fe7765e669860da4597dc6f0fcc7cd4cc95a"
+        },
+        "source_snapshots/su2_nqs/su2/quantum_numbers.py": {
+          "bytes": 1801,
+          "sha256": "e596a7da6a79a7a5b2ebb2a6b9d97b82c78c604e3aaf49a8c21a15dd02f6cc64"
+        },
+        "source_snapshots/su2_nqs/su2/recoupling.py": {
+          "bytes": 3797,
+          "sha256": "d415e8a492fccaab2898ae3c1bf895a5c2dc822ce14c381f8575a62c7cf4e73d"
+        },
+        "source_snapshots/su2_nqs/su2/wigner6j.py": {
+          "bytes": 3793,
+          "sha256": "6e622d416227d84b87a45c58370efb1210951e35cf9ac8c57fcf2fcc88734733"
+        },
+        "sweep_readouts/sweep0011.json": {
+          "bytes": 2161,
+          "sha256": "65fc855266820dad1aa39a2de2a16eb16ac790158b21707481677a4c82bdd1aa"
+        },
+        "sweep_readouts/sweep0011.npz": {
+          "bytes": 14676,
+          "sha256": "ccf09c37f3b0078ecb083ebc1302513da080b8dbad25122872d454286b9e450a"
+        },
+        "sweep_readouts/sweep0012.json": {
+          "bytes": 2140,
+          "sha256": "b394c3dd0748c1100c5b81164026b850a44f8ff662a00a293a79439471b843fb"
+        },
+        "sweep_readouts/sweep0012.npz": {
+          "bytes": 14682,
+          "sha256": "b5be965a29c6e6011e271e3932bf8aac1559475a588a546a78d6d2b01bcbe182"
+        },
+        "sweep_readouts/sweep0013.json": {
+          "bytes": 2144,
+          "sha256": "e709981b9d28a4444a62bba0e79a5d244a5202d2b17dbe58e8c570d8169de065"
+        },
+        "sweep_readouts/sweep0013.npz": {
+          "bytes": 14721,
+          "sha256": "34d71a3741c40586de6bebdbd3ce6f50a47bfdfabc2a0870505362b00fbdbea7"
+        },
+        "sweep_readouts/sweep0014.json": {
+          "bytes": 2162,
+          "sha256": "de23e72239218c834d754221f1f499f36cccf42d9484266b550d8adbb2834d6a"
+        },
+        "sweep_readouts/sweep0014.npz": {
+          "bytes": 14732,
+          "sha256": "e1bb5c6c4a247eb3652c7443025b54c86eaa1d404953d654dd48456d35f7a0d7"
+        },
+        "sweep_readouts/sweep0015.json": {
+          "bytes": 2166,
+          "sha256": "64d2bf67f3228fed8bae53262659a974d00084a0c3057ed3ffdf45e08bf8d88b"
+        },
+        "sweep_readouts/sweep0015.npz": {
+          "bytes": 14733,
+          "sha256": "5e433c684c6c6948deb7d68617511c5d040a7c236b0af0372c20c57ebc2220a3"
+        },
+        "sweep_readouts/sweep0016.json": {
+          "bytes": 2162,
+          "sha256": "13d13dc1a10823a232a246631f0c76b4e8f139aa7788583f1d42fe8da9f53ce1"
+        },
+        "sweep_readouts/sweep0016.npz": {
+          "bytes": 14740,
+          "sha256": "df6994339887d67ed37d47c4023a8419fa5e6b0264dd5a208f3fe290bdfe716b"
+        },
+        "transition.json": {
+          "bytes": 634,
+          "sha256": "85283e8227d8867ef37e41e39026b64452f46dc4a10fd5145f78e2e5d7be50fd"
+        }
+      },
+      "bytes_removed_from_home": 846436734,
+      "scientific_files_modified": false,
+      "new_training": 0,
+      "new_H_calls": 0,
+      "old_path_is_compatibility_symlink": true
+    },
+    {
+      "observed_utc": "2026-10-08T17:03:20.476145+00:00",
+      "source": "/home/yx51/nqs_reference_dmrg/projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi4096",
+      "destination": "/storage/hpc/work/an9/yx51/nqs_reference_dmrg/retained_inputs/projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi4096",
+      "files": {
+        "checkpoint.h5": {
+          "bytes": 697281264,
+          "sha256": "f3ef8a4e782321d06ec1e15b34e9c716a0c9498c04266aeba6c1f137dab044ec"
+        },
+        "chi4096.h5": {
+          "bytes": 697281264,
+          "sha256": "f3ef8a4e782321d06ec1e15b34e9c716a0c9498c04266aeba6c1f137dab044ec"
+        },
+        "chunk_status.json": {
+          "bytes": 465,
+          "sha256": "ddf76b58ffc3e86a3eaed91e332ff87da2388dcd6930225b1e8b2cabe9760b04"
+        },
+        "progress.json": {
+          "bytes": 342,
+          "sha256": "811c536c43d8dfd40c83d5140128a735ed24e59df826edada8b0bc06fcbb5a55"
+        },
+        "rdms.npz": {
+          "bytes": 14682,
+          "sha256": "09c2194c407646fdf0bc60b3b288a23ab66121c21962d264d4f517c269caac89"
+        },
+        "registration.json": {
+          "bytes": 14498,
+          "sha256": "35e53502e10723436bc5c9b3f57e3a6a2b16373e3a327c22ce6deb9f80b443d3"
+        },
+        "results.json": {
+          "bytes": 19511,
+          "sha256": "7743fc6e1c3c90177ea5d695f6aa51e91339512a9683056375eb20ad26431c29"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/__init__.py": {
+          "bytes": 60,
+          "sha256": "6d921791363c77a1acbb18158458dc1110dafcdeb019096f099bda774bcdfeb3"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/workflows/__init__.py": {
+          "bytes": 72,
+          "sha256": "b3dce89e7e53420fbdbb391d23c0a9fe35d7218a10bb4e4e656df912b7e64316"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/workflows/dmrg_continuation.py": {
+          "bytes": 26180,
+          "sha256": "00915edcf165fe7902b1783de7cd7802af42d27e0bc506b3930bb08a07929de5"
+        },
+        "source_snapshots/projects/clebsch_tree_nqs/workflows/spin_tensor_network_reference.py": {
+          "bytes": 9502,
+          "sha256": "9a70bed6102479bf77bbf7b69ce4e4c01b5d80f090f63438d17e03e7ea10c76f"
+        },
+        "source_snapshots/su2_nqs/__init__.py": {
+          "bytes": 901,
+          "sha256": "42390edcf9041cf5b4eed8ecb28724fd54493359043e9767fe6457fe3401f571"
+        },
+        "source_snapshots/su2_nqs/benchmarks/__init__.py": {
+          "bytes": 2444,
+          "sha256": "ea63419f9a2101a1c4697e651aac1fe1b6abf9d27087e3d03f2a03b0ee3aa1cc"
+        },
+        "source_snapshots/su2_nqs/benchmarks/readout_quality.py": {
+          "bytes": 6475,
+          "sha256": "9f6106c29555bd0a6199f5ca8eb59950088549668b283f46820f4278045f8d76"
+        },
+        "source_snapshots/su2_nqs/benchmarks/regional_su2_readout.py": {
+          "bytes": 9518,
+          "sha256": "4d459de6ffa0c0ceb9df3819b8f6cb56bb5f731d27820364cd47092f5a83847b"
+        },
+        "source_snapshots/su2_nqs/benchmarks/su2_entanglement_spectrum.py": {
+          "bytes": 11783,
+          "sha256": "87c51eaa02dd62f5a5b1528c4f9e9a7a2deb89064645811548e506be86c41564"
+        },
+        "source_snapshots/su2_nqs/benchmarks/tensor_network_observables.py": {
+          "bytes": 5095,
+          "sha256": "a6803b9217e269145a5bfce7d496d1157b56e82055e93770fe29a9751a9b1659"
+        },
+        "source_snapshots/su2_nqs/benchmarks/tensor_network_readout.py": {
+          "bytes": 5853,
+          "sha256": "7760cd9a2fccffae4052db695e70a9c5519c5a702a5becff42dbe8428fbbc8ff"
+        },
+        "source_snapshots/su2_nqs/frontier/provenance.py": {
+          "bytes": 5209,
+          "sha256": "7ca5a8c7f08f9385d85381984b06da52fc452db797cc580c687b9869e8bdf80b"
+        },
+        "source_snapshots/su2_nqs/lattices/__init__.py": {
+          "bytes": 831,
+          "sha256": "11c5369dbbdcd9809a54f4b46b082f4a91f998af9f7caa963b66f24cc3c04418"
+        },
+        "source_snapshots/su2_nqs/lattices/triangular_j1j2.py": {
+          "bytes": 2292,
+          "sha256": "b06b59d4c71c54093b3818f132494a901d06f359a4b4fdc537cdc8ea2005faee"
+        },
+        "source_snapshots/su2_nqs/su2/__init__.py": {
+          "bytes": 3961,
+          "sha256": "1d3800f78f2a00f865e9d2f2be4dfb3df3e6f59d37ab96e7c4f5992644240892"
+        },
+        "source_snapshots/su2_nqs/su2/clebsch_gordan.py": {
+          "bytes": 3743,
+          "sha256": "9b75cc779ca1db4e3a4d949723ff568af48e338a5ab081ba9fc0021c311e565e"
+        },
+        "source_snapshots/su2_nqs/su2/fusion_tree.py": {
+          "bytes": 6316,
+          "sha256": "6382feac148e7803b92201691557fe7765e669860da4597dc6f0fcc7cd4cc95a"
+        },
+        "source_snapshots/su2_nqs/su2/quantum_numbers.py": {
+          "bytes": 1801,
+          "sha256": "e596a7da6a79a7a5b2ebb2a6b9d97b82c78c604e3aaf49a8c21a15dd02f6cc64"
+        },
+        "source_snapshots/su2_nqs/su2/recoupling.py": {
+          "bytes": 3797,
+          "sha256": "d415e8a492fccaab2898ae3c1bf895a5c2dc822ce14c381f8575a62c7cf4e73d"
+        },
+        "source_snapshots/su2_nqs/su2/wigner6j.py": {
+          "bytes": 3793,
+          "sha256": "6e622d416227d84b87a45c58370efb1210951e35cf9ac8c57fcf2fcc88734733"
+        },
+        "sweep_readouts/sweep0017.json": {
+          "bytes": 2160,
+          "sha256": "117bc11f436e553c04acededd551e71773189a916e7d187a9e4cda38a1a36c78"
+        },
+        "sweep_readouts/sweep0017.npz": {
+          "bytes": 14653,
+          "sha256": "bfdd484d62fd56c18d3356725a152bbe6940b7c7ea20d478692013d495685ff3"
+        },
+        "sweep_readouts/sweep0018.json": {
+          "bytes": 2160,
+          "sha256": "366a45f5da19df80f9c26f9f0bd7a5daf13c40829e391701a0127f25f1a1100c"
+        },
+        "sweep_readouts/sweep0018.npz": {
+          "bytes": 14636,
+          "sha256": "ca8808c02b56858afa3b7b3317271975c2248b5ec4da5f030307c762b4204083"
+        },
+        "sweep_readouts/sweep0019.json": {
+          "bytes": 2159,
+          "sha256": "f95d2d011caad10b7e8f96c31b41bd2d913b7e5c7802daf2fce3b358d1d46a36"
+        },
+        "sweep_readouts/sweep0019.npz": {
+          "bytes": 14664,
+          "sha256": "3220145b93a4f27c159de84d009658f5d1a384d5364efce9adc20c2d69878373"
+        },
+        "sweep_readouts/sweep0020.json": {
+          "bytes": 2164,
+          "sha256": "d236493811deb9e0863fb16c35bad9f01dd1bb9441f193d362fbc4fccdb50c56"
+        },
+        "sweep_readouts/sweep0020.npz": {
+          "bytes": 14682,
+          "sha256": "09c2194c407646fdf0bc60b3b288a23ab66121c21962d264d4f517c269caac89"
+        },
+        "transition.json": {
+          "bytes": 633,
+          "sha256": "b68c1cf287c7ca87da0252b3a0874f8a4f3cb1e8bb00374dc5f605cd167ba9f3"
+        }
+      },
+      "bytes_removed_from_home": 1394789563,
+      "scientific_files_modified": false,
+      "new_training": 0,
+      "new_H_calls": 0,
+      "old_path_is_compatibility_symlink": true
+    }
+  ],
+  "bytes_removed_from_home": 3149785444,
+  "runtime_sources_unchanged": 20,
+  "active_output_unchanged": "/scratch/yx51/nqs_reference_dmrg/projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi4096_relax",
+  "active_config_sha256": "681c7f68a3958d95d7f9140727587aa0dd0aa05ed8f28afb6cdaf9b29980b88f",
+  "running_job": 2056200,
+  "post_job_archiver": 2061813,
+  "new_training_jobs": 0
+}

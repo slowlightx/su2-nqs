@@ -1,0 +1,52 @@
+{
+  "task": "spin_pair_n36_continue",
+  "n_sites": 36,
+  "j2_over_j1": 0.125,
+  "parent_source": "projects/clebsch_tree_nqs/results/spin_pair_n36_fit_v1",
+  "output": "projects/clebsch_tree_nqs/results/spin_pair_n36_unlocked_v1",
+  "force_estimator": "hermitian_center",
+  "secant_curvature_step": true,
+  "initial_pair_noise": {
+    "seed": 202610090901,
+    "calibration_seed": 202610090902,
+    "relative_norm": 0.1,
+    "maximum_sine_FS": 0.01
+  },
+  "step_cap": 32,
+  "training_wall_seconds": 2700,
+  "total_wall_seconds": 5400,
+  "training_seed": 202610090000,
+  "geometry_seed": 202610091000,
+  "audit_seeds": [202610092000, 202610093000],
+  "frozen_controls": {
+    "finite_quadrature_control": {
+      "path": "projects/clebsch_tree_nqs/results/spin_pair_n36_continue_v1/interrupted_endpoint.pkl",
+      "sha256": "1bbd179eee3f35456fe23b7419e9954e1d68a15ced9dd1d8bd5277c7b2d2ede0"
+    },
+    "locked_hermitian_control": {
+      "path": "projects/clebsch_tree_nqs/results/spin_pair_n36_hermitian_v1/interrupted_endpoint.pkl",
+      "sha256": "956e1f47c3beb7eb42aa36a500ec4416435ee4bc4fef813dae70b7895d31cf04"
+    }
+  },
+  "chains": 16,
+  "burn_sweeps": 1024,
+  "audit_burn_sweeps": 2048,
+  "decorrelation_sweeps": 36,
+  "training_blocks": 64,
+  "geometry_blocks": 8,
+  "audit_blocks": 64,
+  "positive_floor": 2.0,
+  "relative_damping": 0.005,
+  "absolute_damping": 0.000001,
+  "step_size_total_energy": 0.15,
+  "maximum_sine_FS": 0.025,
+  "maximum_variance_ratio": 1.25,
+  "line_search_cap": 5,
+  "tile_size": 8,
+  "H_batch_size": 8,
+  "regions": {
+    "compact6": {"sites": [12, 13, 14, 18, 19, 20], "left": [0, 1, 2]},
+    "winding6": {"sites": [12, 13, 14, 15, 16, 17], "left": [0, 2, 4]}
+  },
+  "scientific_scope": "ONE unchanged full 630-entry real symmetric pairing family, strict singlet and complete432-image A1 projection. One fresh generic primitive seed unlocks higher-order directions; initializer calibrated by amplitudes only, no energy seed search. Last completed SR step frozen before two fresh audits. Earlier interrupted states are controls, never silently discarded. No new head, ED, remote job, or phase claim. 2700-second training cap may overrun by one completed iteration."
+}

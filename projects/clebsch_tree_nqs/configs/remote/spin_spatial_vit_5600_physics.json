@@ -1,0 +1,25 @@
+{
+  "task": "cached_spatial_vit_physics",
+  "parent": "/share/kim/yx789/nqs-vit-quality/results/spin_spatial_vit_gpu_recovery_v6/seed1",
+  "output": "/share/kim/yx789/nqs-vit-quality/results/spin_spatial_vit_5600_physics_v1",
+  "step": 5600,
+  "parent_registration_sha256": "ae32f716afd413475fa8b1c1d67f5c3b46c43cfd47fb89dfde1ef741d0c5b589",
+  "checkpoint_sha256": "d7d0700a9fcdee2fc4caac14e936d0ca3e59f57a98e5a39e3ad58ca1e3561449",
+  "params_sha256": "4336e48aedee5451654de2e366ec8ee796f948d5d6ff3080e06247489a37f116",
+  "frozen_source_count": 73,
+  "stream_sha256": {
+    "2031751143": "9ca3e4d608a3243bd8ba34bc730199690518a5a9d0c2eff9efdcf45de4c5c570",
+    "2031751144": "d343b03d18c37218adc191e45df66249188f903ee6d6a7dc41104a66295b182c"
+  },
+  "snapshot_indices": [0, 32, 64, 96],
+  "expected_chains": 128,
+  "expected_records": 512,
+  "region": {"sites": [14, 15, 20, 21], "left": [0, 1]},
+  "query_batch": 64,
+  "timing_records": 16,
+  "compute_seconds": 720,
+  "bootstrap_seed": 2026100846,
+  "bootstrap_replicates": 2000,
+  "require_gpu": true,
+  "purpose": "One bounded frozen ordinary-ViT endpoint physics audit; exact same physical amplitudes. No new training, sampling, H calls, six-site escalation, or strict SU2 spectrum. Fixed cached whole-chain subset and compact4 cut directly matching DMRG."
+}

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "su2-nqs"
+version = "0.1.0"
+description = "Neural quantum states in exact SU(2) fusion spaces"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "jax>=0.4.30",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+train = ["optax>=0.2.3"]
+fnqs = ["scipy>=1.11", "matplotlib>=3.8"]
+offline = ["sympy>=1.12"]
+analysis = ["scipy>=1.11", "cvxpy>=1.7", "scs>=3.2"]
+test = ["pytest>=8", "sympy>=1.12", "nbformat>=5", "matplotlib>=3.8"]
+
+[tool.setuptools.packages.find]
+include = ["su2_nqs*", "fnqs*"]
+exclude = ["fnqs.tests*", "fnqs.results*", "fnqs.configs*", "fnqs.__pycache__*"]
+
+[tool.setuptools.package-data]
+fnqs = ["configs/*.json"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests", "projects/clebsch_tree_nqs/tests", "fnqs/tests"]

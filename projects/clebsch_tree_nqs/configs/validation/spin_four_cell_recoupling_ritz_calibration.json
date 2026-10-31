@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_four_cell_recoupling_ritz",
+  "phase": "development_calibration",
+  "scientific_question": "Does the physical overlapping-recoupling tangent subspace have a genuine variational advantage when low-dimensional coefficients are solved exactly, and is any gain larger than standard one-Lanczos?",
+  "comparison": {
+    "shared_frozen_backbone": true,
+    "physical_and_scrambled_operator_count": 8,
+    "scramble_inside_gamma_a1": true,
+    "report_one_lanczos": true
+  },
+  "optimization": {
+    "seeds": [811, 812, 813],
+    "warmup_steps": 500,
+    "learning_rate": 0.01
+  },
+  "excluded_previous_seeds": [
+    0, 1, 2,
+    101, 102, 103,
+    211, 212, 213,
+    311, 312, 313,
+    411, 412, 413,
+    511, 512, 513,
+    521, 522, 523,
+    611, 612, 613,
+    711, 712, 713
+  ],
+  "decision_rule": "The physical eight-operator Ritz span must beat the matched in-A1 isospectral scramble in median energy, median variance, and every paired square seed, while every physical square error is below 1e-5. The one-Lanczos result is mandatory context and this calibration alone cannot authorize an audit or N36.",
+  "forbidden_actions": [
+    "jointly tune Ritz coefficients with the backbone",
+    "reuse a previous seed",
+    "omit the one-Lanczos comparison",
+    "call this an untouched audit",
+    "start N36 from this calibration alone"
+  ]
+}

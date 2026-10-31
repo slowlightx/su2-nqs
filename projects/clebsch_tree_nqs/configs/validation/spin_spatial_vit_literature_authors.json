@@ -1,0 +1,158 @@
+{
+  "task": "spin_spatial_vit_quality",
+  "preregistered_before_training": true,
+  "output": "projects/clebsch_tree_nqs/results/spin_spatial_vit_literature_alignment_v1/authors",
+  "j2_over_j1": 0.125,
+  "initialization_seed": 2026100711,
+  "training_seed": 2026100721,
+  "model": {
+    "geometry": "triangular",
+    "rows": 6,
+    "columns": 6,
+    "patch_rows": 3,
+    "patch_columns": 3,
+    "embedding_dim": 32,
+    "head_count": 4,
+    "depth": 4,
+    "mlp_ratio": 4,
+    "target_m2": 0,
+    "initialization_scale": 1,
+    "initial_distance_decay": 3,
+    "use_distance_envelope": true,
+    "pooling": "authors",
+    "layer_norm_epsilon": 0.000001
+  },
+  "stages": [
+    {
+      "projection": "none",
+      "steps": 24
+    },
+    {
+      "projection": "translation",
+      "steps": 4
+    },
+    {
+      "projection": "gamma_a1",
+      "steps": 4
+    }
+  ],
+  "quality_milestones": [
+    0,
+    24,
+    28,
+    32
+  ],
+  "maximum_training_seconds": 86400,
+  "maximum_audit_seconds_per_checkpoint": 7200,
+  "sampling": {
+    "chains": 16,
+    "snapshots_per_update": 8,
+    "proposals_between_snapshots": 36,
+    "burn_proposals": 720
+  },
+  "sr": {
+    "damping": 0.0002,
+    "step_size": 0.005,
+    "fisher_trust_radius": 0.1,
+    "maximum_overlap_distance": 0.08,
+    "minimum_ess_fraction": 0.8,
+    "backtracking_steps": 6,
+    "score_chunk_size": 4,
+    "linear_solver": "svd"
+  },
+  "audit": {
+    "seeds": [
+      2026100731,
+      2026100732
+    ],
+    "chains": 16,
+    "snapshots": 8,
+    "proposals_between_snapshots": 144,
+    "burn_proposals": 1440,
+    "query_batch": 8,
+    "bootstrap_seed": 2026100733,
+    "bootstrap_replicates": 1000
+  },
+  "momenta": {
+    "Gamma": [
+      0,
+      0
+    ],
+    "K": [
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "minus_K": [
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "M1": [
+      0.5,
+      0
+    ],
+    "M2": [
+      0,
+      0.5
+    ],
+    "M3": [
+      0.5,
+      0.5
+    ]
+  },
+  "regions": {
+    "compact4": {
+      "sites": [
+        0,
+        1,
+        6,
+        7
+      ],
+      "left": [
+        0,
+        1
+      ]
+    },
+    "compact6": {
+      "sites": [
+        0,
+        1,
+        2,
+        6,
+        7,
+        8
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ]
+    },
+    "winding6": {
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "interpretation": {
+    "implementation_and_update_pilot_not_competitive_precision_reproduction": true,
+    "strict_su2": false,
+    "phase_or_variational_win_claim": false,
+    "matched_pooling_only_control": true,
+    "identical_initial_parameter_arrays_not_identical_physical_states": true,
+    "reference_architecture": "https://netket.readthedocs.io/en/latest/tutorials/ViT-wave-function.html",
+    "optimizer": "2*Cov convention: damping .0002 equals .0001 diagonal shift with Cov convention. Same damped SR and trust guards in both arms; not SPRING."
+  },
+  "model_family": "literature",
+  "coordinate_convention": "physical120",
+  "spin_inversion_even": true
+}

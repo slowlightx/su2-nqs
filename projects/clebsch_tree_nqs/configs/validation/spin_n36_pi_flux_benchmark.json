@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_n36_projected_pi_flux_benchmark",
+  "seed": 20260921,
+  "amplitude_microbatch_size": 64,
+  "sampler": {
+    "replicates": 3,
+    "chain_count": 64,
+    "burn_sweeps": 200,
+    "measurement_blocks": 32,
+    "decorrelation_sweeps": 10,
+    "local_energy_batch_size": 32
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "task": "spin_pair_n36_continue",
+  "n_sites": 36,
+  "j2_over_j1": 0.0,
+  "parent_source": "projects/clebsch_tree_nqs/results/spin_pair_n36_fit_v1",
+  "starting_checkpoint": {
+    "path": "projects/clebsch_tree_nqs/results/spin_pair_n36_unlocked_v1/endpoint.pkl",
+    "sha256": "c48d761ab98bea431e7edd8c886fcae79d01384d4531532e5e6c6e7bc6f61046"
+  },
+  "output": "projects/clebsch_tree_nqs/results/spin_pair_n36_j0_v1",
+  "force_estimator": "hermitian_center",
+  "secant_curvature_step": true,
+  "step_cap": 18,
+  "milestone_steps": [6, 12],
+  "training_wall_seconds": 2700,
+  "total_wall_seconds": 5400,
+  "training_seed": 202610170000,
+  "geometry_seed": 202610171000,
+  "audit_seeds": [202610172000, 202610173000],
+  "chains": 16,
+  "burn_sweeps": 1024,
+  "audit_burn_sweeps": 2048,
+  "decorrelation_sweeps": 36,
+  "training_blocks": 64,
+  "geometry_blocks": 8,
+  "audit_blocks": 64,
+  "positive_floor": 2.0,
+  "relative_damping": 0.005,
+  "absolute_damping": 0.000001,
+  "step_size_total_energy": 0.15,
+  "maximum_sine_FS": 0.025,
+  "maximum_variance_ratio": 1.25,
+  "line_search_cap": 5,
+  "tile_size": 8,
+  "H_batch_size": 8,
+  "structure_factor_readout": true,
+  "regions": {
+    "compact4": {"sites": [12, 13, 18, 19], "left": [0, 1]},
+    "compact6": {"sites": [12, 13, 14, 18, 19, 20], "left": [0, 1, 2]},
+    "winding6": {"sites": [12, 13, 14, 15, 16, 17], "left": [0, 2, 4]}
+  },
+  "scientific_scope": "ONE unchanged 630-entry real symmetric singlet AGP family and all432 physical A1 images. Independent J2=0 Hamiltonian training from ONE sealed J2=.125 warm start; this is cross-coupling transfer, not an independent initialization or phase claim. No new head, ED, remote job, or large-model training. Fixed last completed step after 18 steps/2700s, may overrun by one complete iteration. Two fresh 1024-record audits compare initial/final on same J0 H. Complete K+-/threeM structure factors use the exact-singlet 3SzSz identity and report finite-size proxy only, not thermodynamic magnetization. Raw compact4/compact6/winding6 RDMs, no fabricated strict entanglement spectrum."
+}

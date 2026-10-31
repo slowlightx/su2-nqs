@@ -1,0 +1,14 @@
+projects/clebsch_tree_nqs/run.py
+projects/clebsch_tree_nqs/workflows/spin_n36_su2_scalar_dressing.py
+projects/clebsch_tree_nqs/configs/remote/spin_n36_su2_scalar_dressing_pilot.json
+projects/clebsch_tree_nqs/configs/remote/spin_n36_su2_scalar_dressing_regularized.json
+projects/clebsch_tree_nqs/configs/validation/spin_n36_su2_scalar_dressing_preflight.json
+projects/clebsch_tree_nqs/remote/su2_scalar_dressing_a100.sbatch
+projects/clebsch_tree_nqs/remote/su2_scalar_dressing_sync_manifest.txt
+su2_nqs/models/resonating_su2_scalar_dressing.py
+su2_nqs/vmc/direct_amplitude_ground_force.py
+su2_nqs/vmc/regularized_resonating_ground.py
+tests/test_resonating_su2_scalar_dressing.py
+tests/test_direct_amplitude_ground_force.py
+tests/test_regularized_resonating_ground.py
+tests/test_spin_n36_su2_scalar_dressing.py

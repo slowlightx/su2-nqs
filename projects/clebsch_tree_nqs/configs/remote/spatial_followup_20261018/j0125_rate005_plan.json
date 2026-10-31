@@ -1,0 +1,44 @@
+{
+  "mode": "parameter_repair",
+  "parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/triangle_quality_20261017/spatial_j0125_s4096/seed1",
+    "completed_steps": 500,
+    "audit_file": "energy.json",
+    "registration_sha256": "74f3d42b2f856238206434f4951f4128d4de1f471dc9021f0a010caa109929c6"
+  },
+  "child_overrides": {
+    "output": "/home/yx789/nqs-wavefunctions/nqs/spatial_followup_20261018/j0125_rate005/seed1",
+    "initialization_seed": 2026121800,
+    "training_seed": 2026121801,
+    "stages": [{"projection": "gamma_a1", "steps": 200}],
+    "quality_milestones": [0, 2, 4, 100, 200],
+    "maximum_training_seconds": 27000,
+    "sr": {"damping": 0.002, "step_size": 0.005},
+    "audit": {
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 2026121813,
+      "burn_proposals": 2880,
+      "chains": 64,
+      "proposals_between_snapshots": 144,
+      "query_batch": 16,
+      "seeds": [2026121811, 2026121812],
+      "snapshots": 256
+    },
+    "quality_reference": {
+      "parent_step": 500,
+      "parent_energy_per_site": -0.5143065391855463,
+      "published_GCNN_energy_per_site": -0.515386,
+      "published_GCNN_source": "https://arxiv.org/html/2211.07749#S4.T3",
+      "acceptance": "Frozen200 endpoint and independent32768-record audit; retained200-step historical parent remains a quality-series point, not an audit-selected winner."
+    },
+    "interpretation": {
+      "protocol": "Same latest frozen500 physical weights and ALL128 parent configurations in BOTH rate arms, common fresh initialization/training seeds; reset momentum-free optimizer, sampler RNG and work counters in BOTH arms. Same complete99904-real-parameter network,4096 records/update, damping.002 and coherentA1/parity. ONLY SR step_size .005 versus .00125 differs between numerical training protocols. First2 then isolated resume4, included in fixed200 attempts. Audit streams independently seeded per arm and never select weights, rate, stopping step or an automatic extension. Original500 and earlier200 endpoints remain unchanged. This is a bounded learning-rate condition control, not a stationary-capacity claim, matched-physical-distance claim, or exactSU2 ansatz.",
+      "strict_su2": false,
+      "new_head": false,
+      "enlarged_parameter_count": false,
+      "capacity_saturation_not_established": true
+    }
+  },
+  "generated_config": "/home/yx789/nqs-spatial-followup-20261018/projects/clebsch_tree_nqs/configs/remote/spatial_followup_20261018/j0125_rate005.json",
+  "rationale": "The previous500 updates show a flat energy trajectory; lower damping was already tested and gave poorer tails. Compare rate annealing to its same-parent normal-rate control rather than repeat a lower-damping or6144-OOM experiment. Both fixed200 endpoints and all outcomes will be retained."
+}

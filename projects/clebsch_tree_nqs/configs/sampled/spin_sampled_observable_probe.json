@@ -1,0 +1,45 @@
+{
+  "schema_version": 2,
+  "domain": "spin",
+  "task": "sampled_full_spin_observable_probe",
+  "inputs": [
+    {
+      "case_id": "square_6x6_j2_0p5_full_spin_probe",
+      "runtime_result": "projects/clebsch_tree_nqs/results/spin_square_6x6_runtime_smoke_v2/results.json",
+      "expected_runtime_case_id": "square_6x6_j2_0p5_translation_runtime_smoke",
+      "geometry": "square",
+      "coordinate_convention": "row_major_cartesian_column_row",
+      "modes": [
+        {"name": "q0", "wavevector": [0.0, 0.0]},
+        {"name": "neel", "wavevector": [3.141592653589793, 3.141592653589793]},
+        {"name": "stripe_x", "wavevector": [3.141592653589793, 0.0]},
+        {"name": "stripe_y", "wavevector": [0.0, 3.141592653589793]}
+      ]
+    },
+    {
+      "case_id": "triangular_6x6_j2_0p125_full_spin_probe",
+      "runtime_result": "projects/clebsch_tree_nqs/results/spin_triangular_6x6_runtime_smoke_v2/results.json",
+      "expected_runtime_case_id": "triangular_6x6_j2_0p125_translation_runtime_smoke",
+      "geometry": "triangular",
+      "coordinate_convention": "row_major_triangular_phase_row_column",
+      "modes": [
+        {"name": "q0", "wavevector": [0.0, 0.0]},
+        {"name": "k", "wavevector": [2.0943951023931953, 2.0943951023931953]},
+        {"name": "m1", "wavevector": [3.141592653589793, 0.0]},
+        {"name": "m2", "wavevector": [0.0, 3.141592653589793]},
+        {"name": "m3", "wavevector": [3.141592653589793, 3.141592653589793]}
+      ]
+    }
+  ],
+  "probe": {
+    "seed": 20260917,
+    "continuation_sweeps": 8,
+    "checkpoint_every_sweeps": 1,
+    "observable_batch_size": 4,
+    "minimum_local_samples": 128,
+    "block_length_sweeps": 2,
+    "cached_amplitude_tolerance": 1e-10,
+    "su2_q0_local_tolerance": 1e-10
+  },
+  "claim_boundary": "Random-initialization full-spin observable aggregation and cost readiness only. Autocorrelated continuation samples do not establish energy accuracy, optimization efficiency, magnetic order, or a phase."
+}

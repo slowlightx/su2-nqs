@@ -1,0 +1,11 @@
+{
+  "geometry": "square", "rows": 8, "columns": 8, "j2_over_j1": 0.5,
+  "multiplicity_cap": 16, "high_spin_cap": 8, "maximum_q": 8,
+  "projection_chunk": 8, "require_gpu": true,
+  "seed": 2026101480, "calibration_seed": 2026101481, "sampling_seed": 2026101482,
+  "output": "/home/yx789/nqs-wavefunctions/nqs/vieijra_nys_reproduction_20261014/square8_cost",
+  "literature_target_energy_total": -31.90850, "literature_target_total_standard_error": 0.00420,
+  "literature_source": "https://arxiv.org/html/2104.14869",
+  "training_steps": 0,
+  "interpretation": "Original physical-input ClebschTree cost gate, independently trainable real layer-shared reduced W, reachability-limited widths, refined tau(q<=4)=16/tau(q>4)=8, complete A1. No AGP or generated tensor bank. Not yet a competitive square8 or triangular result."
+}

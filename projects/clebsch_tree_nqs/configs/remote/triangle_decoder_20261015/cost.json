@@ -1,0 +1,13 @@
+{
+  "task": "same_cover_binary_ternary_C3_full_H_cost",
+  "model": {"length": 6, "multiplicity_cap": 16, "maximum_q": 10},
+  "j2_over_j1": 0.125,
+  "projection_chunk": 4,
+  "seed": 2026101590,
+  "calibration_seed": 2026101591,
+  "sampling_seed": 2026101592,
+  "warm_repeats": 2,
+  "maximum_seconds": 3300,
+  "require_gpu": true,
+  "output": "/home/yx789/nqs-wavefunctions/nqs/triangle_decoder_20261015/cost"
+}

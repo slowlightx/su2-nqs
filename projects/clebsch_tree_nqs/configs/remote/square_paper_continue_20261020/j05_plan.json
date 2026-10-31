@@ -1,0 +1,42 @@
+{
+  "task": "paper_capacity_square_CT_optimizer_reentry",
+  "j2_over_j1": 0.5,
+  "parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/benchmark_guided_20261017/square/direct_SR4096",
+    "completed_steps": 450,
+    "checkpoint_sha256": "f9b1d5cb83bba181309955e0ae61a97a1aec135f4b55a0665aa40cef49c7417e",
+    "registration_sha256": "f29d0e0338f870850f8f34c42ba33443369cd794c9455c5fc559596c8c75891d",
+    "params_sha256": "0f43a33c3bbb41c5315097b19ce4978df14991816277cf58dee398e3919d8129",
+    "optimizer_sha256": "865c21c8b9bb6689c5b035e1d85ff6a55b12110205e676a6323814a56210694b",
+    "sampler_rng_sha256": "914363814034dcf27b1b848abedb6b46d0809798d174f5b21d7a78aabe564eb5"
+  },
+  "additional_updates": 128,
+  "training_config": "projects/clebsch_tree_nqs/configs/remote/square_paper_continue_20261020/j05_train.json",
+  "training_config_sha256": "b7deaaf737c6ab60a190b663211f92df1ad45bac997f67384c1e308568232109",
+  "phase_seconds": {
+    "pilot": 3600,
+    "resume": 3600,
+    "train": 50400,
+    "audit": 3600
+  },
+  "maximum_peak_device_bytes": 75161927680,
+  "parent_measured_4096_step_seconds": 400,
+  "audit": {
+    "training_directory": "/home/yx789/nqs-wavefunctions/nqs/square_paper_continue_20261020/j05",
+    "output": "/home/yx789/nqs-wavefunctions/nqs/square_paper_continue_20261020/j05/audit_terminal",
+    "endpoint_step": 578,
+    "require_gpu": true,
+    "streams": 2,
+    "chains_per_stream": 32,
+    "snapshots_per_stream": 128,
+    "burn_proposals": 2560,
+    "proposals_between_snapshots": 128,
+    "audit_seeds": [
+      2610207010,
+      2610207011
+    ],
+    "bootstrap_seed": 2610207012,
+    "H_sample_chunk": 32
+  },
+  "paper_contract": "projects/clebsch_tree_nqs/configs/remote/square_paper_continue_20261020/paper_contract.json"
+}

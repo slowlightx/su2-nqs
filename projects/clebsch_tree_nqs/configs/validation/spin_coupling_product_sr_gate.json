@@ -1,0 +1,47 @@
+{
+  "task": "spin_coupling_product_sr_gate",
+  "source": "projects/clebsch_tree_nqs/results/spin_coupling_transfer_v1",
+  "output": "projects/clebsch_tree_nqs/results/spin_coupling_product_sr_gate_v4",
+  "parents": [
+    "square_d16_l2_s2026092901",
+    "square_d16_l2_s2026092902"
+  ],
+  "training_couplings": [0.2, 0.5, 0.8],
+  "held_out_couplings": [0.35, 0.65],
+  "all_couplings": [0.2, 0.35, 0.5, 0.65, 0.8],
+  "optimization": {
+    "steps": 48,
+    "initial_learning_rate": 1.0,
+    "initial_damping": 0.001,
+    "maximum_mean_fs_infidelity": 0.000004,
+    "maximum_state_fs_infidelity": 0.00001,
+    "cg_tolerance": 1e-7,
+    "cg_max_iterations": 48,
+    "linear_solver": "dual_dense",
+    "maximum_linear_relative_residual": 1e-8,
+    "maximum_backtracks": 14,
+    "record_every": 1
+  },
+  "probe": {
+    "target_fs": 0.001,
+    "maximum_normalized_parameter_step": 0.01,
+    "bisection_steps": 18
+  },
+  "gate": {
+    "maximum_final_unit_natural_slope_per_site": 0.002,
+    "maximum_natural_slope_fraction_of_initial": 0.1,
+    "systematic_probe_drop_per_site": -0.000005,
+    "maximum_systematic_probe_count": 1,
+    "minimum_mean_probe_delta_per_site": -0.000002,
+    "held_energy_worsening_tolerance": 1e-8,
+    "held_variance_worsening_tolerance": 0.000001,
+    "multiplicity_trace_distance_worsening_tolerance": 0.0001,
+    "multiplicity_probability_tv_worsening_tolerance": 0.0001,
+    "maximum_held_hf_defect_fraction": 0.75,
+    "maximum_positive_curvature_fraction": 0.75,
+    "positive_curvature_absolute_tolerance": 0.02
+  },
+  "wall_seconds_cap": 1200,
+  "n36_policy": "N36 remains closed unless both N16 parents pass every registered gate. Even then, the dense N<=16 VAP projector is not a valid N36 implementation; only an equivalent sampled SU2 state definition may be preflighted.",
+  "scope": "No new head, width, depth, carrier, Hamiltonian, ED, or samples. Same shared affine coupling input and exact-small SU2 VAP. Product-FS SR removes the uniform coupling-bias gauge and optimizes only the three registered training couplings. Held points are read once after the endpoint is sealed."
+}

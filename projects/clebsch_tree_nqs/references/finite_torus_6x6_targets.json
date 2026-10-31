@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-09-17",
+  "hamiltonian": "H = J1 sum_NN S_i.S_j + J2 sum_NNN S_i.S_j, J1=1",
+  "comparison_policy": {
+    "primary": "Compare only the same periodic graph and raw variational energies at equal Hamiltonian normalization.",
+    "extrapolations": "Zero-variance and truncation extrapolations are context, not raw variational upper bounds.",
+    "lower_bounds": "Certified SDP lower bounds are not wavefunction energies.",
+    "efficiency": "Report error versus wall time, samples, updates, parameters, precision, and hardware; parameter count alone is not an efficiency result."
+  },
+  "square_6x6_pbc": {
+    "j2_over_j1": 0.5,
+    "exact_energy_per_site": -0.503810,
+    "exact_total_energy": -18.137160,
+    "exact_source": {
+      "citation": "J. Wang et al., Phys. Rev. X 14, 031006 (2024), Appendix G Table XI",
+      "url": "https://journals.aps.org/prx/abstract/10.1103/PhysRevX.14.031006"
+    },
+    "raw_variational_targets": [
+      {
+        "method": "deep ResNet plus MinSR",
+        "energy_per_site": null,
+        "uncertainty": null,
+        "citation": "A. Chen and M. Heyl, Nature Physics 20, 1476-1481 (2024), Extended Data Fig. 2",
+        "url": "https://www.nature.com/articles/s41567-024-02566-1",
+        "reported_result": "The direct frustrated 6x6 comparison is reported at BF16 precision in Extended Data Fig. 2 and described as approaching machine precision; the article text does not tabulate a raw energy for this point.",
+        "architecture_context": "The displayed 6x6 benchmark uses a deep ResNet/MinSR calculation on modern GPU/TPU hardware; a 64-layer ResNet1 example has 146320 parameters.",
+        "comparison_warning": "Use the exact energy as the accuracy target and compare measured work/hardware separately; do not invent a raw value from a plotted relative error."
+      },
+      {
+        "method": "RBM+PP",
+        "energy_per_site": -0.503765,
+        "uncertainty": 0.000001,
+        "citation": "Y. Nomura and M. Imada, Phys. Rev. X 11, 031034 (2021)",
+        "url": "https://journals.aps.org/prx/abstract/10.1103/PhysRevX.11.031034"
+      },
+      {
+        "method": "finite DMRG, 8192 SU(2) states",
+        "energy_per_site": -0.503805,
+        "uncertainty": null,
+        "citation": "S.-S. Gong et al., Phys. Rev. Lett. 113, 027201 (2014), Supplement Table I",
+        "url": "https://arxiv.org/abs/1311.5962"
+      },
+      {
+        "method": "raw PEPS D=6",
+        "energy_per_site": -0.4947,
+        "uncertainty": 0.0004,
+        "citation": "Phys. Rev. B 109, 235133 (2024)",
+        "url": "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.109.235133",
+        "warning": "The published finite-torus state uses tensors initialized and optimized in the thermodynamic limit; this is not an apples-to-apples laptop optimization cost."
+      }
+    ],
+    "non_raw_context": [
+      {
+        "method": "PEPS D=6 plus GFMC",
+        "energy_per_site": -0.5033,
+        "uncertainty": 0.0004,
+        "kind": "postprocessed"
+      },
+      {
+        "method": "DMRG truncation extrapolation",
+        "energy_per_site": -0.503808,
+        "uncertainty": 0.000001,
+        "kind": "extrapolated"
+      }
+    ],
+    "raw_accuracy_gate": {
+      "method": "qualitative exact-energy ceiling from deep ResNet plus MinSR; no numeric raw energy is tabulated",
+      "absolute_error_per_site": null,
+      "relative_error": null,
+      "warning": "Do not encode the plotted BF16-precision statement as an exact zero-error numeric target.",
+      "secondary_numeric_raw_gate": {
+        "method": "RBM+PP",
+        "absolute_error_per_site": 0.000045,
+        "relative_error": 0.0000893
+      }
+    }
+  },
+  "triangular_6x6_torus": {
+    "j2_over_j1": 0.125,
+    "exact_energy_per_site": -0.515564,
+    "exact_total_energy": -18.560304,
+    "geometry_warning": "Match primitive wrapping vectors, bond multiplicities, bond orientations, twists, and the J2 shell; equal N alone does not identify the same triangular torus.",
+    "recent_infinite_system_context": {
+      "citation": "L. Ma, W.-L. Tu, D. Poilblanc, and J.-Y. Chen, arXiv:2606.31021 (2026)",
+      "url": "https://arxiv.org/abs/2606.31021",
+      "result": "Symmetry-constrained iPEPS finds the magnetic-order collapse near J2/J1 about 0.08; a fully symmetric Z2 RVB PEPS at D=3 already has a reasonably good variational energy, while optimizing generic Z2 PEPS through D=7 condenses spinons and confines visons, favoring a gapless or critical interpretation.",
+      "comparison_warning": "This is thermodynamic-limit physics context, not a same-torus 6x6 energy target."
+    },
+    "exact_source": {
+      "citation": "Y. Iqbal et al., Phys. Rev. B 93, 144411 (2016), Tables III-IV",
+      "url": "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.93.144411"
+    },
+    "raw_variational_targets": [
+      {
+        "method": "deep ResNet plus MinSR",
+        "energy_per_site": null,
+        "uncertainty": null,
+        "citation": "A. Chen and M. Heyl, Nature Physics 20, 1476-1481 (2024), triangular QSL calculation",
+        "url": "https://www.nature.com/articles/s41567-024-02566-1",
+        "reported_result": "The work studies the 6x6 triangular torus and larger systems, but its highlighted gap analysis uses a Lanczos step and zero-variance extrapolation; those values are not raw variational energy targets.",
+        "physical_input": "A 120-degree-order sign structure and lattice/spin-inversion projection are supplied explicitly; exact total-spin SU(2) is not built into the network."
+      },
+      {
+        "method": "space-group GCNN",
+        "energy_per_site": -0.515386,
+        "uncertainty": 0.000009,
+        "spin_squared": 0.0067,
+        "citation": "C. Roth, A. Szabo, and A. H. MacDonald, Phys. Rev. B 108, 054410 (2023)",
+        "url": "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.108.054410"
+      },
+      {
+        "method": "DSL plus two Lanczos steps",
+        "energy_per_site": -0.512503,
+        "uncertainty": 0.000003,
+        "citation": "Y. Iqbal et al., Phys. Rev. B 93, 144411 (2016)",
+        "url": "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.93.144411"
+      }
+    ],
+    "non_raw_context": [
+      {
+        "method": "DSL zero-variance extrapolation",
+        "energy_per_site": -0.51548,
+        "uncertainty": 0.00008,
+        "kind": "extrapolated"
+      }
+    ],
+    "raw_accuracy_gate": {
+      "method": "space-group GCNN",
+      "absolute_error_per_site": 0.000178,
+      "relative_error": 0.000345
+    }
+  }
+}

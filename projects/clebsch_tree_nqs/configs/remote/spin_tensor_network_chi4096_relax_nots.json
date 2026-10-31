@@ -1,0 +1,28 @@
+{
+  "output": "projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi4096_relax",
+  "initial_checkpoint": "projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi4096/checkpoint.h5",
+  "initial_checkpoint_sha256": "f3ef8a4e782321d06ec1e15b34e9c716a0c9498c04266aeba6c1f137dab044ec",
+  "parent_output": "projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi4096",
+  "parent_config": "projects/clebsch_tree_nqs/configs/remote/spin_tensor_network_chi4096_nots.json",
+  "parent_protocol_sha256": "1b8e051929377f4babb460fbe510fd1b40e67ca1c789aeca066cbe88e164a230",
+  "inherit_optimizer": true,
+  "mixer": false,
+  "save_each_sweep_rdms": true,
+  "rows": 6,
+  "columns": 6,
+  "j2": 0.125,
+  "chi": 4096,
+  "sweeps": 4,
+  "tenpy_version": "1.1.0",
+  "chunk_seconds": 79200,
+  "reserve_seconds": 900,
+  "initial_sweep_seconds_bound": 18000,
+  "total_seconds_cap": 79200,
+  "memory_cap_gib": 170,
+  "regions": {
+    "compact4": [14, 15, 20, 21],
+    "compact6": [12, 13, 14, 18, 19, 20],
+    "winding6": [12, 13, 14, 15, 16, 17]
+  },
+  "protocol": "User-authorized same-chi relaxation: four additional mixer-OFF chi4096 sweeps, global20 to24, from the sealed completed job2053230 checkpoint. Reuse unchanged Hamiltonian, physical 6x6 triangular torus at J2=0.125, ordered cuts, optimizer, environments and adaptive tolerances. One commons submission with32 Slurm CPUs,192GiB and23-hour scheduler cap; measured planning estimate4-9hours excluding queue. Fresh output preserves the completed parent. New authorized stage has a22-hour cumulative manual-resume cap,900s reserve and170GiB process cap; parent wall ledger remains preserved separately, including discarded partial work. Atomic full-engine checkpoint after each completed sweep, local-update signal/deadline rollback, raw un-twirled RDMs per sweep. No automatic resubmission, chi increase or GPU release. Fixed-budget completion does not certify convergence; compare energy and regional own-quality drift. No new ED, H2 approximation, symmetry repair or phase claim."
+}

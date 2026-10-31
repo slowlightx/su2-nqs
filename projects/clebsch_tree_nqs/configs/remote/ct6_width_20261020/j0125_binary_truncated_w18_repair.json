@@ -1,0 +1,90 @@
+{
+  "task": "native_triangle_sameH_stable_width_continuation_v2",
+  "case": "j0125_binary_truncated",
+  "stage": "w18_repair",
+  "model": {
+    "length": 6,
+    "multiplicity_cap": 18,
+    "maximum_q": 10
+  },
+  "arity": "binary_truncated",
+  "binary_rank": 8,
+  "j2_over_j1": 0.125,
+  "parent": {
+    "kind": "checkpoint_replay_rebase",
+    "model": {
+      "length": 6,
+      "multiplicity_cap": 18,
+      "maximum_q": 10
+    },
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/continuation_20261019/ct6/j0125_binary_truncated/w18",
+    "plan_path": "projects/clebsch_tree_nqs/configs/remote/continuation_20261019/ct6/j0125_binary_truncated_w18.json",
+    "expected_identity": {
+      "case": "j0125_binary_truncated",
+      "stage": "w18",
+      "arity": "binary_truncated",
+      "model": {
+        "length": 6,
+        "multiplicity_cap": 18,
+        "maximum_q": 10
+      },
+      "j2_over_j1": 0.125,
+      "binary_rank": 8
+    },
+    "absolute_completed_steps": 254,
+    "sealed_files": {
+      "registration.json": "fdd5c3311ae898af04281800546631f77560d200a692cebe7f03429ce60869f2",
+      "pilot.json": "5154e927d8e07e7d73feb5f302a4e31c25573d4a7bd588725423dde8cd97afd9",
+      "process_replay.json": "e731775f878a59d0182ded45ac2a044df61921b2f6dc0bfef4317173befb68a0",
+      "preflight.json": "afc8c40e0cc47d0072cf6547d9ec995b4fbeab55414160e48c86f041ec331c3d",
+      "checkpoint.pkl": "8ba6151988c3613d6218c6b89a72d01f0f94aa37cdc641e4c9a36a95e4479c3f",
+      "next_transition_fixture.pkl": "e5ef25697e80296463826d3ef5a9162ea5e442b5853796e844bcf8c5dcf5f6b8"
+    }
+  },
+  "pilot_steps": 2,
+  "training": {
+    "steps": 14,
+    "samples": 2048,
+    "chains": 64,
+    "refresh_proposals": 36,
+    "spacing_proposals": 36
+  },
+  "calibration": {
+    "samples": 512,
+    "chains": 64,
+    "initial_burn_proposals": 1440,
+    "refresh_proposals": 144,
+    "spacing_proposals": 36
+  },
+  "audit": {
+    "samples": 16384,
+    "chains": 128,
+    "refresh_proposals": 1440,
+    "spacing_proposals": 36
+  },
+  "seeds": {
+    "calibration": 2610207001,
+    "audit": 2610207002,
+    "expansion": 2610207003
+  },
+  "learning_rate": 0.0001,
+  "damping": 0.05,
+  "maximum_fs_sine": 0.005,
+  "minimum_ess_fraction": 0.98,
+  "halvings": 12,
+  "new_feature_scale": 0.2,
+  "projection_chunk": 4,
+  "action_chunk": 4,
+  "score_chunk": 2,
+  "tolerance": 2e-11,
+  "require_gpu": true,
+  "budget": {
+    "pilot_seconds": 3600,
+    "replay_seconds": 3600,
+    "train_seconds": 14400,
+    "maximum_peak_device_bytes": 75161927680
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/ct6_width_20261020/j0125_binary_truncated/w18_repair",
+  "interpretation": "Preserve the original failed replay, all 2 committed width18 updates, parameters, Adam moments, chains and RNG. New immutable registration uses algebraically equivalent stable dual-force ridge arithmetic; requires fresh unchanged-tolerance independent-process replay. Finish exactly the missing14 updates, audit at lifetime268. Never relabel the old replay as passed.",
+  "sr_solver": "dual_force"
+}

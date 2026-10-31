@@ -1,0 +1,68 @@
+{
+  "task": "spin_agp_seven_point",
+  "output": "projects/clebsch_tree_nqs/results/spin_agp_seven_point_20261012_v2",
+  "parents": {
+    "triangular_j0": {
+      "path": "projects/clebsch_tree_nqs/results/spin_pair_n36_j0_v1/endpoint.pkl",
+      "sha256": "818e579e0b75c74bad0351d7ad4be502f48375655b95e7e932401816e0f305d4",
+      "source_completion": "projects/clebsch_tree_nqs/results/spin_pair_n36_j0_v1/completion.json",
+      "source_completion_sha256": "6c842b188fe813587852b2e4a12e62bf8e08d179f5ac03a53e7efd11b1d3a15c",
+      "source_registration": "projects/clebsch_tree_nqs/results/spin_pair_n36_j0_v1/registration.json",
+      "source_registration_sha256": "df4f5d9ab6a6ef6f0d33236bcf90216d393025eb46f71c3e81c738e4315d58d8",
+      "source_lattice": "triangular",
+      "source_j2_over_j1": 0.0,
+      "sealed_parent_energy_per_site": -0.5582284698228519,
+      "sealed_parent_variance_per_site": 0.006169763003201587
+    },
+    "triangular_j0125": {
+      "path": "projects/clebsch_tree_nqs/results/spin_pair_n36_unlocked_v1/endpoint.pkl",
+      "sha256": "c48d761ab98bea431e7edd8c886fcae79d01384d4531532e5e6c6e7bc6f61046",
+      "source_completion": "projects/clebsch_tree_nqs/results/spin_pair_n36_unlocked_v1/completion.json",
+      "source_completion_sha256": "ca48fa9fdd02bd4c28be98c7f9892db97715c83508d52ccee9e3de0c57b20e86",
+      "source_registration": "projects/clebsch_tree_nqs/results/spin_pair_n36_unlocked_v1/registration.json",
+      "source_registration_sha256": "290b8806f9272bce654025aa54bbbdc833dd296aae774cf1bd7fbf6e8bec0c81",
+      "source_lattice": "triangular",
+      "source_j2_over_j1": 0.125,
+      "sealed_parent_energy_per_site": -0.5140116820156898,
+      "sealed_parent_variance_per_site": 0.003116852463222035
+    }
+  },
+  "cases": [
+    {"name": "triangular_6x6_j2_0", "lattice": "triangular", "j2_over_j1": 0.0, "parent": "triangular_j0", "seed": 202610120000},
+    {"name": "triangular_6x6_j2_0p05", "lattice": "triangular", "j2_over_j1": 0.05, "parent": "triangular_j0", "seed": 202610121000},
+    {"name": "triangular_6x6_j2_0p075", "lattice": "triangular", "j2_over_j1": 0.075, "parent": "triangular_j0125", "seed": 202610122000},
+    {"name": "triangular_6x6_j2_0p125", "lattice": "triangular", "j2_over_j1": 0.125, "parent": "triangular_j0125", "seed": 202610123000},
+    {"name": "triangular_6x6_j2_0p175", "lattice": "triangular", "j2_over_j1": 0.175, "parent": "triangular_j0125", "seed": 202610124000},
+    {"name": "square_6x6_j2_0", "lattice": "square", "j2_over_j1": 0.0, "parent": "triangular_j0", "seed": 202610125000},
+    {"name": "square_6x6_j2_0p5", "lattice": "square", "j2_over_j1": 0.5, "parent": "triangular_j0125", "seed": 202610126000}
+  ],
+  "budget": {
+    "step_cap": 12,
+    "milestones": [0, 6, 12],
+    "training_wall_seconds": 2400,
+    "total_wall_seconds": 3600,
+    "chains": 16,
+    "burn_sweeps": 512,
+    "audit_burn_sweeps": 1024,
+    "decorrelation_sweeps": 36,
+    "training_blocks": 32,
+    "geometry_blocks": 8,
+    "audit_blocks": 64,
+    "geometry_seed_offset": 100,
+    "audit_seed_offsets": [200, 300],
+    "positive_floor": 0.1,
+    "relative_damping": 0.005,
+    "absolute_damping": 0.000001,
+    "step_size_total_energy": 0.15,
+    "maximum_sine_FS": 0.025,
+    "maximum_variance_ratio": 1.25,
+    "line_search_cap": 4,
+    "tile_size": 8,
+    "H_batch_size": 8
+  },
+  "regions": {
+    "compact4": {"sites": [12, 13, 18, 19], "left": [0, 1]},
+    "compact6": {"sites": [12, 13, 14, 18, 19, 20], "left": [0, 1, 2]}
+  },
+  "scientific_scope": "Seven fixed 6x6 PBC Hamiltonians, J1=1. One unchanged 630-entry real symmetric projected singlet AGP family, complete triangle432/square288 physical Gamma.A1 maps. Each case starts once from nearest saved triangular parent with optimizer reset; square is explicitly cross-lattice warm start. Last completed finite12-step endpoint and fixed0/6/12 quality milestones, two independent1024-record audits. Energies and residual variance are finite-sample direct importance ratios. No ED, ViT/NQS claim, new fusion model or mean-field-to-QSL inference. Coherent sampled RDMs only; p(q)/scalar channels legal, no strict multiplicity spectra or SU2 twirl. Actual GPU replay/sampling/H/Jacobian gate precedes submission of finite training."
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "strict_schur_spatial_exact_gate",
+  "status": "preregistered_coefficient_space_gate",
+  "plans": [
+    {
+      "name": "square_n4",
+      "n_sites": 4,
+      "rank": 2,
+      "cells": "one complete four-spin square plaquette"
+    },
+    {
+      "name": "triangular_n6",
+      "n_sites": 6,
+      "rank": 5,
+      "cells": "two disjoint complete three-spin triangles"
+    },
+    {
+      "name": "square_n8",
+      "n_sites": 8,
+      "rank": 14,
+      "cells": "two disjoint complete four-spin plaquettes"
+    }
+  ],
+  "permanent_gates": {
+    "coefficient_basis_gram_error_below": 5e-12,
+    "state_spin_squared_residual_below": 5e-12,
+    "tangent_spin_squared_residual_below": 2e-10,
+    "global_rotation_residual_below": 2e-10,
+    "physical_leg_multi_affinity_defect_below": 5e-12,
+    "translation_projection_closure_below": 5e-12,
+    "generator_nesting_error_below": 1e-14,
+    "jvp_finite_difference_relative_error_below": 2e-8
+  },
+  "next_gate": {
+    "geometry": "square",
+    "rows": 4,
+    "columns": 4,
+    "j2_over_j1": 0.5,
+    "patches": "four complete 2x2 plaquette carriers",
+    "reduced_width": 4,
+    "estimated_unshared_reduced_parameters": 619,
+    "comparison_parameter_band": [650, 900],
+    "required_controls": [
+      "same-topology U1 support ledger",
+      "SU2 nonspatial nested arm",
+      "SU2 physical spatial generator",
+      "SU2 scrambled geometry generator"
+    ],
+    "claim_boundary": "Implement forward/JVP/Hpsi smoke before any multi-seed energy campaign."
+  }
+}

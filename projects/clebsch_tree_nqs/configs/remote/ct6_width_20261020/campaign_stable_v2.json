@@ -1,0 +1,19 @@
+{
+  "campaign": "ct6_width_20261020_stable_v2",
+  "workspace": "/home/yx789/nqs-ct6-width-repair-20261020-v2",
+  "max_requested_A100_hours": 54,
+  "main_chain_hours": 30,
+  "matched_same_width_control_hours": 24,
+  "conditional_width24_released": false,
+  "conditional_width24_max_hours": 24,
+  "old_attempt": {
+    "workspace": "/home/yx789/nqs-ct6-width-repair-20261020",
+    "tests_job": "436111",
+    "outcome": "1 legacy woodbury_gradient NumPy oracle failed on CPU by2.06779038e-15 against unchanged2e-15;45passed1skipped;15 GPU jobs cancelled without running",
+    "same_node_diagnostic_job": "436157",
+    "same_node_result": "Frozen old source e100... and new default give identical failing value; new dual_force passes SAME full strict oracle without tolerance changes. CPU gate explicitly binds registered dual_force for all numerical tests; keeps oracles unchanged."
+  },
+  "release": "No duplicate active jobs; branch-local2 accepted pilot updates -> independent replay at same2e-11 -> fixed16 updates (repair14) and fresh16384-record audit.",
+  "controls": "Four same-width18 controls start at the SAME audited parent as width20; same physical parameters, sampler/RNG, explicit Adam reset matching new-dimension reset, same full-H/sample/step/physical-step and audit budgets. Compare increased capacity against extra optimization, not against an earlier untrained endpoint.",
+  "unreleased": "Width24 remains preregistered, not submitted. Release only after width20 and width18-control audit and cost/variance/live-channel review. A single statistically unresolved pair never proves width convergence."
+}

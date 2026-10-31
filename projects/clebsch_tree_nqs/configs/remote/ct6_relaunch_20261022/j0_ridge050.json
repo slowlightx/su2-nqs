@@ -1,0 +1,106 @@
+{
+  "task": "native_triangle_calibrated_direct_SR_v5",
+  "case": "j0_ternary_joint",
+  "stage": "j0_ridge050_restart16",
+  "model": {
+    "length": 6,
+    "multiplicity_cap": 20,
+    "maximum_q": 10
+  },
+  "arity": "ternary_joint",
+  "binary_rank": 8,
+  "j2_over_j1": 0,
+  "parent": {
+    "kind": "continuation",
+    "model": {
+      "length": 6,
+      "multiplicity_cap": 20,
+      "maximum_q": 10
+    },
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/ct6_continue_20261021/j0_ternary_joint/w20_continue32",
+    "plan_path": "projects/clebsch_tree_nqs/configs/remote/ct6_continue_20261021/j0_ternary_joint_w20_continue32.json",
+    "expected_identity": {
+      "case": "j0_ternary_joint",
+      "stage": "w20_continue32",
+      "arity": "ternary_joint",
+      "model": {
+        "length": 6,
+        "multiplicity_cap": 20,
+        "maximum_q": 10
+      },
+      "j2_over_j1": 0,
+      "binary_rank": 8
+    },
+    "absolute_completed_steps": 296,
+    "sealed_files": {
+      "registration.json": "3b90376e7f61b66e8f9c57fc75530d15a4ed11db06a402a1ecfa7b1be851d555",
+      "results.json": "25729f5a00d0b5038fceb04581d768850842bdf6243f9764aecbb951fffed73d",
+      "terminal_audit.json": "6d21f5a17bd1f22fcfd1cd29db9492f8768d7341fc83727bab65377b0964ae4d",
+      "checkpoint.pkl": "512a8eb7689d4777de77491b0442931d8e5c097974bcce6d28f81af4c6791f0f",
+      "process_replay.json": "45a16b767b1a20b86cff1aa12cb7bcf3d621307b3d93e68abdc0c145f16e3974"
+    }
+  },
+  "pilot_steps": 2,
+  "training": {
+    "steps": 16,
+    "samples": 4096,
+    "chains": 64,
+    "refresh_proposals": 36,
+    "spacing_proposals": 36
+  },
+  "calibration": {
+    "samples": 512,
+    "chains": 64,
+    "initial_burn_proposals": 1440,
+    "refresh_proposals": 144,
+    "spacing_proposals": 36,
+    "target_fs_sine": 0.001,
+    "relative_tolerance": 0.02,
+    "max_factor": 2,
+    "bracket_steps": 8,
+    "bisection_steps": 12,
+    "minimum_ess_fraction": 0.98
+  },
+  "audit": {
+    "samples": 32768,
+    "chains": 256,
+    "refresh_proposals": 1440,
+    "spacing_proposals": 36
+  },
+  "seeds": {
+    "calibration": 2610226001,
+    "expansion": 2610226002,
+    "audit": 2610226013
+  },
+  "learning_rate": 0.03,
+  "damping": 0.5,
+  "maximum_fs_sine": 0.005,
+  "minimum_ess_fraction": 0.98,
+  "halvings": 12,
+  "new_feature_scale": 0.2,
+  "projection_chunk": 4,
+  "action_chunk": 4,
+  "score_chunk": 2,
+  "tolerance": 2e-11,
+  "require_gpu": true,
+  "budget": {
+    "pilot_seconds": 10800,
+    "replay_seconds": 3600,
+    "train_seconds": 28800,
+    "maximum_peak_device_bytes": 75161927680
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/ct6_relaunch_20261022/j0/ridge050",
+  "interpretation": "Fixed16 same-parent w20 full-network direct-SR attempts, full432 coherent A1/full H unchanged. Compare damping .05 vs .5 at target empirical FS=.001 on32 fitting chains; other32 independent chains only veto/shrink under original .005/ESS.98 limits. Match is empirical, not global. Explicitly reset old Adam moments in BOTH arms, inherit original training/calibration chains and RNG. No widening/head/carrier. Screen audits are consumed for development release, not final win claims. All original checkpoints retained. RESTART v2 after preserving earlier zero-update KeyError; genericreset provenance fixed and actual reset=True first-start regression passes. This plan releases only16 updates, no automatic3x64 or adaptive continuation; root revisits audit/memory/physicaldistance before further work.",
+  "sr_solver": "dual_force",
+  "continuation_profile": "inherit_full_optimizer_sampler_rng",
+  "runtime_contract": {
+    "policy": "pin_first_pilot_numerical_runtime",
+    "node": "kim-compute-05"
+  },
+  "optimization_control": "matched_empirical_FS_direct_SR",
+  "sr_use_adam": false,
+  "sr_tangent_fs_radius": 0.003,
+  "parameter_chunk_size": 8192,
+  "reset_optimizer": true,
+  "campaign_deadline_utc": "2026-10-28T20:44:00+00:00"
+}

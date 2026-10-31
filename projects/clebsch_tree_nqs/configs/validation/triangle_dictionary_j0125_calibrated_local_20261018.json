@@ -1,0 +1,31 @@
+{
+  "task": "isolated_N36_J0125_full_rank_dictionary_VMC_with_independent_physical_step_calibration",
+  "model": {"length": 6, "multiplicity_cap": 16, "maximum_q": 10},
+  "j2_over_j1": 0.125,
+  "source": {
+    "checkpoint": "projects/clebsch_tree_nqs/results/triangle_capacity_20261017/remote_snapshot/j0125/ternary_joint/checkpoint.pkl",
+    "checkpoint_sha256": "6dd2cf3813eb9b319abfe2716839c1e2f9972b63100d348543900404571487b5",
+    "params_sha256": "137e0ffc27aac42e653ce3fe210b756ea84243f70bf434d2d01e51f78547fb6c",
+    "registration_sha256": "f7133aa410352c3d08edfca764e56546fc2d88cef598f337396617225f40bdc6",
+    "audit_sha256": "28f82dbfa29f561f28e5841c89da6ada23c6b66503bb23e822583c53e80abb79"
+  },
+  "generator": {"dictionary_rank": 16, "embedding_dim": 8, "heads": 2, "depth": 1, "local_symmetry": "free_joint"},
+  "projection_chunk": 4,
+  "action_chunk": 2,
+  "training": {"steps": 4, "chains": 8, "records_per_chain": 8, "initial_burn_proposals": 720, "refresh_proposals": 36, "proposals_between": 36},
+  "calibration": {
+    "chains": 8, "records_per_chain": 8, "initial_burn_proposals": 720, "refresh_proposals": 36, "proposals_between": 36,
+    "target_fs_sine": 0.0035, "relative_tolerance": 0.02, "max_factor": 4.0,
+    "bracket_steps": 8, "bisection_steps": 14, "minimum_ess_fraction": 0.8, "maximum_training_fs_sine": 0.007
+  },
+  "audit": {"chains": 16, "records_per_chain": 16, "burn_proposals": 720, "proposals_between": 36},
+  "sampler": {"bond_proposal_probability": 0.75, "lazy_probability": 0.05},
+  "sr": {"damping": 0.1, "step_size": 0.03, "fisher_trust_radius": 0.005, "maximum_overlap_distance": 0.005, "minimum_ess_fraction": 0.8, "backtracking_steps": 8, "score_chunk_size": 4},
+  "seeds": [
+    {"generator_seed": 2026101831, "training_seed": 2026101832, "calibration_seed": 2026101833, "audit_seed": 2026101840}
+  ],
+  "hard_seconds_cap": 3600,
+  "tolerance": 2e-11,
+  "output": "projects/clebsch_tree_nqs/results/triangle_dictionary_campaign_20261018/j0125_local",
+  "interpretation": "Fixed4-step LOCAL integration/development endpoint, not a competitive optimization or convergence claim. First stop at2 without audits, then restore parameters/SR counter and BOTH independent training/calibration chains and RNG to the unchanged4-step endpoint. Full-rank free/linear/attention arms begin at the SAME audited joint40 parent. All216 weighted bonds and432 coherent A1 images remain. Match each accepted empirical calibration FS to .0035 within2%, using amplitude-only independent chains and no candidate H; reject unmatchable/unsafe directions. Final256-record audits are independent of training and calibration. One physical initialization and one stochastic repetition do not measure basin success rates. The previous J0 experiment is historical/context, not a matched calibrated J0 control. No mainline runtime, task, checkpoint, optimizer or head changes. Do not release stages2/3 based on this short run alone."
+}

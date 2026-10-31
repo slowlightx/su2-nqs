@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_e2_resonance_carrier_audit",
+  "state_bundle": "projects/clebsch_tree_nqs/results/spin_physics_interpretation_v1/states.npz",
+  "case": {
+    "case_id": "triangular_4x4_j2_0p075_e2_resonance",
+    "geometry": "triangular",
+    "rows": 4,
+    "columns": 4,
+    "j2_over_j1": 0.075,
+    "exact_energy_anchor": -8.535019890644346,
+    "anchor_provenance": "sealed cached N16 exact reference; no new diagonalization"
+  },
+  "seeds": [31, 32, 33],
+  "projections": ["translation", "gamma_a1"]
+}

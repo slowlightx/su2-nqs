@@ -1,0 +1,23 @@
+{
+  "mode": "cached_candidate_reference",
+  "output": "projects/clebsch_tree_nqs/results/spin_spatial_vit_5600_physics_v1/reference_quality_comparison_v1",
+  "candidate": "projects/clebsch_tree_nqs/results/spin_spatial_vit_5600_physics_v1",
+  "candidate_parent": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_recovery_v6/seed1",
+  "params_sha256": "4336e48aedee5451654de2e366ec8ee796f948d5d6ff3080e06247489a37f116",
+  "step": 5600,
+  "cut": "compact4",
+  "reference_protocol": "projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/su2_protocol_v4",
+  "reference_problem": "triangular_n36",
+  "reference_family": "dimer_reference",
+  "reference_states": ["chi3072_sweep0016", "chi4096_sweep0017", "chi4096_sweep0018", "chi4096_sweep0019", "chi4096_sweep0020"],
+  "problem": {
+    "geometry": "triangular",
+    "rows": 6,
+    "columns": 6,
+    "j2": 0.125,
+    "boundary": "PBC_both_physical",
+    "regions": {"compact4": [14, 15, 20, 21]},
+    "left_sites": {"compact4": [0, 1]}
+  },
+  "purpose": "Zero-query same-cut quality calibration of the true 99904-parameter step5600 ordinary Spatial-ViT. Whole-chain quadratic U-statistics retain negative estimates. Only deterministic DMRG quality sensitivity and legal invariant operators are compared; no new samples/H queries, fake strict spectrum, or competing-phase claim."
+}

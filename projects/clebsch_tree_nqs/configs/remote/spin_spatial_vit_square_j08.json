@@ -1,0 +1,166 @@
+{
+  "task": "spin_spatial_vit_quality",
+  "preregistered_before_training": true,
+  "backend": "netket_ntk",
+  "require_gpu": true,
+  "model_family": "literature",
+  "coordinate_convention": "physical120",
+  "spin_inversion_even": true,
+  "output": "/share/kim/yx789/nqs-vit-quality/results/spin_spatial_vit_square_j08_v2/seed1",
+  "j2_over_j1": 0.8,
+  "initialization_seed": 2026101210,
+  "training_seed": 2026101211,
+  "model": {
+    "geometry": "square",
+    "rows": 6,
+    "columns": 6,
+    "patch_rows": 2,
+    "patch_columns": 2,
+    "embedding_dim": 60,
+    "head_count": 10,
+    "depth": 4,
+    "mlp_ratio": 4,
+    "target_m2": 0,
+    "initialization_scale": 1,
+    "initial_distance_decay": 3,
+    "use_distance_envelope": true,
+    "pooling": "authors",
+    "layer_norm_epsilon": 1e-06
+  },
+  "stages": [
+    {
+      "projection": "none",
+      "steps": 5000
+    },
+    {
+      "projection": "translation",
+      "steps": 500
+    },
+    {
+      "projection": "gamma_a1",
+      "steps": 1500
+    }
+  ],
+  "quality_milestones": [
+    0,
+    200,
+    1000,
+    3000,
+    5000,
+    5500,
+    5750,
+    6000,
+    6250,
+    6500,
+    6750,
+    7000
+  ],
+  "maximum_training_seconds": 100800,
+  "maximum_audit_seconds_per_checkpoint": 43200,
+  "maximum_total_audit_seconds": 86400,
+  "sampling": {
+    "chains": 128,
+    "snapshots_per_update": 32,
+    "proposals_between_snapshots": 36,
+    "burn_proposals": 720
+  },
+  "sr": {
+    "damping": 0.0002,
+    "step_size": 0.005
+  },
+  "netket": {
+    "version": "3.22.3",
+    "on_the_fly": false,
+    "chunk_size": 16,
+    "chunk_size_bwd": 4,
+    "momentum": null,
+    "initialization": "balanced_spin_half"
+  },
+  "audit": {
+    "seeds": [
+      2026101212,
+      2026101213
+    ],
+    "chains": 64,
+    "snapshots": 128,
+    "proposals_between_snapshots": 144,
+    "burn_proposals": 2880,
+    "query_batch": 16,
+    "bootstrap_seed": 2026101214,
+    "bootstrap_replicates": 2000
+  },
+  "momenta": {
+    "Gamma": [
+      0,
+      0
+    ],
+    "Neel": [
+      0.5,
+      0.5
+    ],
+    "stripe_x": [
+      0.5,
+      0
+    ],
+    "stripe_y": [
+      0,
+      0.5
+    ]
+  },
+  "regions": {
+    "compact4": {
+      "sites": [
+        0,
+        1,
+        6,
+        7
+      ],
+      "left": [
+        0,
+        1
+      ]
+    },
+    "compact6": {
+      "sites": [
+        0,
+        1,
+        2,
+        6,
+        7,
+        8
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ]
+    },
+    "winding6": {
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "interpretation": {
+    "protocol": "Independent square ordered-side control, same155020-parameter architecture and fixed7000-step staged optimization as J2=.5; all frozen audits full A1, not strictSU2. Fresh initialization, no transfer across geometries, no ED. Fixed starting28h active budget may require later authorized continuation; no automatic extension or phase claim.",
+    "strict_su2": false,
+    "new_head": false,
+    "precision_or_phase_claim": false
+  },
+  "initialization_revision": {
+    "reason": "Native pinned-NetKet zero-step N36 sampler contained0 outside spin-half support; guard rejected before any H action/update. Use exact uniform balanced permutations at generation, not repair.",
+    "failed_original_preflight": 155129,
+    "physical_model_SR_budget_and_seeds_unchanged": true,
+    "failed_original_output_preserved": "/share/kim/yx789/nqs-vit-quality/results/spin_spatial_vit_square_j08_v1/seed1"
+  }
+}

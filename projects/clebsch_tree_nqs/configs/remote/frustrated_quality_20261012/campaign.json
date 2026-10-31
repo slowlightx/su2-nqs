@@ -1,0 +1,220 @@
+{
+  "status": "preregistered_not_submitted",
+  "date": "2026-10-12",
+  "primary_question": "Can unchanged full-A1 Spatial-ViT quality be stabilized before Hamiltonian resonance-field reoptimization?",
+  "remote_code_directory": "/home/yx789/nqs-frustrated-quality-20261012",
+  "data_root": "/home/yx789/nqs-wavefunctions",
+  "entries": [
+    {
+      "name": "tri_j0125_s4096_d2e4",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e4.json",
+      "kind": "optimization_conditions",
+      "pilot": 2,
+      "resume": 4,
+      "terminal": 200,
+      "audits": [
+        100,
+        200
+      ],
+      "output": "/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s4096_d2e4_conditions_20261012/seed1",
+      "samples_per_update": 4096,
+      "maximum_training_seconds": 20000
+    },
+    {
+      "name": "tri_j0125_s4096_d2e3",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e3.json",
+      "kind": "optimization_conditions",
+      "pilot": 2,
+      "resume": 4,
+      "terminal": 200,
+      "audits": [
+        100,
+        200
+      ],
+      "output": "/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s4096_d2e3_conditions_20261012/seed1",
+      "samples_per_update": 4096,
+      "maximum_training_seconds": 20000
+    },
+    {
+      "name": "tri_j0125_s8192_d2e3",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s8192_d2e3.json",
+      "kind": "optimization_conditions",
+      "pilot": 2,
+      "resume": 4,
+      "terminal": 200,
+      "audits": [
+        100,
+        200
+      ],
+      "output": "/home/yx789/nqs-wavefunctions/nqs/tri_j0125_s8192_d2e3_conditions_20261012/seed1",
+      "samples_per_update": 8192,
+      "maximum_training_seconds": 40000
+    },
+    {
+      "name": "tri_j01_continue1000",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j01_continue1000.json",
+      "kind": "exact_protocol_continuation",
+      "pilot": 502,
+      "resume": 504,
+      "terminal": 1000,
+      "audits": [
+        750,
+        1000
+      ],
+      "output": "/home/yx789/nqs-wavefunctions/nqs/tri_j01_continue1000_20261012/seed1",
+      "samples_per_update": 4096,
+      "maximum_training_seconds": 90000
+    },
+    {
+      "name": "tri_j0175_continue1000",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0175_continue1000.json",
+      "kind": "exact_protocol_continuation",
+      "pilot": 502,
+      "resume": 504,
+      "terminal": 1000,
+      "audits": [
+        750,
+        1000
+      ],
+      "output": "/home/yx789/nqs-wavefunctions/nqs/tri_j0175_continue1000_20261012/seed1",
+      "samples_per_update": 4096,
+      "maximum_training_seconds": 90000
+    },
+    {
+      "name": "square_j05_continue1250",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/square_j05_continue1250.json",
+      "kind": "exact_protocol_continuation",
+      "pilot": 1002,
+      "resume": 1004,
+      "terminal": 1250,
+      "audits": [
+        1125,
+        1250
+      ],
+      "output": "/home/yx789/nqs-wavefunctions/nqs/square_j05_continue1250_20261012/seed1",
+      "samples_per_update": 4096,
+      "maximum_training_seconds": 103500
+    }
+  ],
+  "readouts": [
+    {
+      "name": "tri_j0125_s4096_d2e4_step00100_regional",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e4_step00100_regional.json",
+      "case": "tri_j0125_s4096_d2e4",
+      "step": 100,
+      "output": "/home/yx789/nqs-wavefunctions/readouts/tri_j0125_s4096_d2e4_step00100_regional_20261012"
+    },
+    {
+      "name": "tri_j0125_s4096_d2e4_step00200_regional",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e4_step00200_regional.json",
+      "case": "tri_j0125_s4096_d2e4",
+      "step": 200,
+      "output": "/home/yx789/nqs-wavefunctions/readouts/tri_j0125_s4096_d2e4_step00200_regional_20261012"
+    },
+    {
+      "name": "tri_j0125_s4096_d2e3_step00100_regional",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e3_step00100_regional.json",
+      "case": "tri_j0125_s4096_d2e3",
+      "step": 100,
+      "output": "/home/yx789/nqs-wavefunctions/readouts/tri_j0125_s4096_d2e3_step00100_regional_20261012"
+    },
+    {
+      "name": "tri_j0125_s4096_d2e3_step00200_regional",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e3_step00200_regional.json",
+      "case": "tri_j0125_s4096_d2e3",
+      "step": 200,
+      "output": "/home/yx789/nqs-wavefunctions/readouts/tri_j0125_s4096_d2e3_step00200_regional_20261012"
+    },
+    {
+      "name": "tri_j0125_s8192_d2e3_step00100_regional",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s8192_d2e3_step00100_regional.json",
+      "case": "tri_j0125_s8192_d2e3",
+      "step": 100,
+      "output": "/home/yx789/nqs-wavefunctions/readouts/tri_j0125_s8192_d2e3_step00100_regional_20261012"
+    },
+    {
+      "name": "tri_j0125_s8192_d2e3_step00200_regional",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s8192_d2e3_step00200_regional.json",
+      "case": "tri_j0125_s8192_d2e3",
+      "step": 200,
+      "output": "/home/yx789/nqs-wavefunctions/readouts/tri_j0125_s8192_d2e3_step00200_regional_20261012"
+    },
+    {
+      "name": "tri_j01_continue1000_step00750_regional",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j01_continue1000_step00750_regional.json",
+      "case": "tri_j01_continue1000",
+      "step": 750,
+      "output": "/home/yx789/nqs-wavefunctions/readouts/tri_j01_continue1000_step00750_regional_20261012"
+    },
+    {
+      "name": "tri_j01_continue1000_step01000_regional",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j01_continue1000_step01000_regional.json",
+      "case": "tri_j01_continue1000",
+      "step": 1000,
+      "output": "/home/yx789/nqs-wavefunctions/readouts/tri_j01_continue1000_step01000_regional_20261012"
+    },
+    {
+      "name": "tri_j0175_continue1000_step00750_regional",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0175_continue1000_step00750_regional.json",
+      "case": "tri_j0175_continue1000",
+      "step": 750,
+      "output": "/home/yx789/nqs-wavefunctions/readouts/tri_j0175_continue1000_step00750_regional_20261012"
+    },
+    {
+      "name": "tri_j0175_continue1000_step01000_regional",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0175_continue1000_step01000_regional.json",
+      "case": "tri_j0175_continue1000",
+      "step": 1000,
+      "output": "/home/yx789/nqs-wavefunctions/readouts/tri_j0175_continue1000_step01000_regional_20261012"
+    },
+    {
+      "name": "square_j05_continue1250_step01125_regional",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/square_j05_continue1250_step01125_regional.json",
+      "case": "square_j05_continue1250",
+      "step": 1125,
+      "output": "/home/yx789/nqs-wavefunctions/readouts/square_j05_continue1250_step01125_regional_20261012"
+    },
+    {
+      "name": "square_j05_continue1250_step01250_regional",
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/square_j05_continue1250_step01250_regional.json",
+      "case": "square_j05_continue1250",
+      "step": 1250,
+      "output": "/home/yx789/nqs-wavefunctions/readouts/square_j05_continue1250_step01250_regional_20261012"
+    }
+  ],
+  "field_reoptimization_released": false,
+  "head_or_backbone_changes": false,
+  "preflight_and_real_process_replay_required": true,
+  "ordered_j0_new_training": false,
+  "tri_j005_deferred": true,
+  "quality_gate": {
+    "last_two_new_audits_required": true,
+    "energy_and_variance_do_not_deteriorate_beyond_two_unpaired_chain_SE": true,
+    "quality_drift_reported_with_last_three_existing_endpoints": true,
+    "tail_chain_and_stream_diagnostics_required": true,
+    "large_variance_top1_fraction_is_warning_not_excused_by_Rhat": true,
+    "regional_compact6_hexagon6_winding6_drift_required": true,
+    "no_condition_selected_based_on_untouched_audit_for_automatic_extension": true,
+    "no_field_automatic_dependency_release": true,
+    "variance_or_stationarity_not_certified_by_training_loss": true
+  },
+  "future_resonance_protocol": {
+    "operator": "Frozen singlet-centered Hermitian contractible six-site cycle; full translation/point-group orbit average.",
+    "hamiltonian": "H(h)=H0-h sum_x R_x",
+    "nominal_fields": [
+      -0.002,
+      -0.001,
+      0,
+      0.001,
+      0.002
+    ],
+    "fields_not_launched": true,
+    "field_spacing_requires_signal_cost_calibration": true,
+    "all_fields_same_backbone": true,
+    "plus_minus_share_frozen_zero_field_parent": true,
+    "reoptimized_response_not_equal_time_filter": true,
+    "report_hellmann_feynman_and_even_curvature_with_independent_uncertainty": true,
+    "subtract_physical_identity_offset_consistently": true,
+    "new_H_operator_exact_validation_required_before_any_training": true
+  }
+}

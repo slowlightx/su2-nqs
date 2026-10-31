@@ -1,0 +1,103 @@
+{
+  "observed_utc": "2026-10-10",
+  "local_date": "2026-10-09",
+  "partition": "kim",
+  "MaxTime": "UNLIMITED",
+  "queue_latency_not_zero": true,
+  "hardware": {
+    "cpu_nodes": 5,
+    "cpu_node_cpus": 40,
+    "cpu_node_memory_MiB": 772500,
+    "high_memory_gpu_node_memory_MiB": 2063900,
+    "a100_nodes": 3,
+    "a100_gpus_total": 6,
+    "a100_memory_GB_each": 80
+  },
+  "dmrg": {
+    "parent_path": "data/reference_wavefunctions/dmrg/triangular_6x6_j2_0.125/chi5120_sweep26",
+    "checkpoint_bytes": 1004640480,
+    "checkpoint_sha256": "b1f8abd6ecce2f9fde31be7b08d8444673e6fdc4612af79a3d4ab5e6a0f2b239",
+    "verified_remote_archive_files": 31,
+    "job_id": "152796",
+    "chi": 8192,
+    "sweeps": 2,
+    "mixer": false,
+    "CPUs": 32,
+    "memory_GiB": 512,
+    "time_cap_hours": 48,
+    "observed_state": "RUNNING",
+    "node": "kim-cpu-05",
+    "NOTS_job_cancelled": false,
+    "duplicate_growth_explicitly_authorized": true,
+    "work": "/share/kim/yx789/nqs-reference-dmrg/work/chi8192_from5120_v1",
+    "archive": "/share/kim/yx789/nqs-reference-dmrg/archives/chi8192_from5120_v1",
+    "chi_counts": "U1 Schmidt states, NOT SU2 multiplets"
+  },
+  "forecasts": {
+    "method": "chi5120 measured154.0217GiB RSS and3.149358hours/sweep, memory ~chi^2, time~chi^3; cross-hardware uncertainty; excludes queue and readouts",
+    "estimates": [
+      {
+        "chi": 8192,
+        "peak_RSS_GiB": 394.2955520000001,
+        "hours_per_sweep": 12.899770368000002
+      },
+      {
+        "chi": 10240,
+        "peak_RSS_GiB": 616.0868,
+        "hours_per_sweep": 25.194864
+      },
+      {
+        "chi": 12288,
+        "peak_RSS_GiB": 887.164992,
+        "hours_per_sweep": 43.53672499199999
+      }
+    ],
+    "triangular_3000steps_A100_GPU_hours": [
+      54,
+      60
+    ],
+    "square_n36_accuracy_not_promised": true
+  },
+  "validation": {
+    "local_vit_tests_passed": 35,
+    "local_vit_optional_skips": 6,
+    "schedule_additional_array_forwarding_test_passed": true,
+    "dmrg_tests_local_passed": 11,
+    "dmrg_tests_Kim_passed": 11,
+    "full_suite_passed_before_preexisting_failure": 636,
+    "full_suite_skipped": 15,
+    "full_suite_existing_failure": "tests/test_finite_schur_curvature_artifact.py frozen dual_sampled_sr source hash mismatch",
+    "seals_weakened": false
+  },
+  "benchmarks": [
+    {
+      "geometry": "square",
+      "L": 6,
+      "J2": 0.5,
+      "PBC": "both",
+      "energy_per_site": -0.50381,
+      "method": "published ED reference",
+      "source": "https://arxiv.org/html/1903.06713"
+    },
+    {
+      "geometry": "square",
+      "L": 6,
+      "J2": 0.5,
+      "PBC": "both",
+      "energy_per_site": -0.503805,
+      "method": "published DMRG;8192SU2multiplets~32000U1states",
+      "source": "https://arxiv.org/html/1903.06713"
+    },
+    {
+      "geometry": "square",
+      "L": 20,
+      "J2": 0.5,
+      "PBC": "both",
+      "energy_per_site": -0.496732,
+      "SE": 0.000001,
+      "method": "2026 Spatial-ViT full point group",
+      "direct_N36_comparator": false,
+      "source": "https://arxiv.org/html/2602.02665v1#S4"
+    }
+  ]
+}

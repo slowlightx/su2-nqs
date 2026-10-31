@@ -1,0 +1,166 @@
+{
+  "task": "CT_bounded_followup_v1",
+  "execution_authorized": true,
+  "authorization_note": "User request on 2026-10-27 EDT explicitly authorizes short queued CT12 B200 trials and analyzed CT6 optimization followups. This isolated stage has a new ceiling of24 A100-hours plus6 B200-hours; it does not overwrite or retrospectively enlarge the old240-hour campaign.",
+  "kind": "ct12",
+  "device": "B200",
+  "j2": 0,
+  "model": {
+    "length": 12,
+    "multiplicity_cap": 20,
+    "maximum_q": 10
+  },
+  "parent_directory": "/home/yx789/nqs-wavefunctions/nqs/ct12_active_j0_pilot_20261027/run01",
+  "parent_registration_sha256": "881ada01368ca8dc04c82a28567c65facef6aebe0c6fbee0dcaf009de85a3e94",
+  "parent_audit_sha256": "8aacce58156624b5b763963df420834ab8e5102c03d32b538b113e5eb29bae42",
+  "parent_checkpoint_sha256": "66b5a236c9299d79fc542b8d7ebd12ee5d26ea8e7955d8c50d2c507741e8af5e",
+  "parent_policy": "immutable independently audited completed endpoint",
+  "damping": 0.5,
+  "learning_rate": 0.03,
+  "epsilon": 0.125,
+  "steps": 4,
+  "fit_records": 1024,
+  "calibration_records": 1024,
+  "calibration_split": 512,
+  "audit_records": 1024,
+  "audit_groups": 16,
+  "interim_records": 0,
+  "interim_groups": 0,
+  "projection_chunk": 16,
+  "action_chunk": 4,
+  "score_chunk": 1,
+  "H_chunk": 8,
+  "target_FS": 0.003,
+  "maximum_FS": 0.003,
+  "wall_cap_seconds": 10800,
+  "maximum_peak_device_bytes": 146028888064,
+  "automatic_next_allocation": false,
+  "no_requeue": true,
+  "seeds": {
+    "preflight": 2810281201,
+    "interim": 2810281202,
+    "interim_statistics": 2810281203,
+    "audit": 2810281204,
+    "audit_statistics": 2810281205
+  },
+  "physical_state": "unchanged strict-SU2 singlet tree, complete coherent Gamma-A1, all physical H bonds; no new head, gate, width or qmax",
+  "preemption_policy": "no-requeue bounded pilot; preserve last atomic committed parameters/optimizer/RNG; future re-entry requires a new explicit submission, not automatic duplicate allocation",
+  "active_profile": [
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 1
+    }
+  ],
+  "active_real_parameters": 1375056
+}

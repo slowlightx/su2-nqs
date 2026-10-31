@@ -1,0 +1,14 @@
+{
+  "stage": "coherent_a1",
+  "parent": "projects/clebsch_tree_nqs/results/reduced_revision_20261015/migration/initializer.pkl",
+  "parent_sha256": "406fd0b16c756de2b5da83cdab7e17ea3ba137422fe0621534f81504dfa028ef",
+  "conversion": "projects/clebsch_tree_nqs/results/reduced_revision_20261015/parameterization/conversion.npz",
+  "conversion_sha256": "2ef2723d8e31acb078cc6792197e26f207e61121d1762d4ca23426f2413d31e7",
+  "steps": 2,
+  "learning_rate": 0.0001,
+  "audit_samples": 512,
+  "seed": 2026101573,
+  "require_gpu": true,
+  "output": "projects/clebsch_tree_nqs/results/reduced_revision_20261015/coherent_a1",
+  "protocol": "After the completed stage2 migration, test exact-small VAP gradients and true coherent A1 Born sampling for TWO updates only, with optimizer/parameter/RNG restoration and fresh512 categorical draws. Complete reused N16 CG data, no ED or accuracy-tail optimization. The migration did not reach its .95 fidelity criterion, so no variational or fair-production comparison follows. Full N36 A1 remains unavailable; exhaustive physical orbit factor is explicitly capped."
+}

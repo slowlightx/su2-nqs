@@ -1,0 +1,388 @@
+{
+  "submitted_UTC": "2026-10-10T03:18:10.024361+00:00",
+  "workspace": "/home/yx789/nqs-quality-20261010",
+  "host": "unicorn",
+  "partition": "kim",
+  "plan_sha256": "dd81e80342c43899c3f6e456899274a7de6f8cdeb4af56fc39bd8a3119cf4a7d",
+  "jobs": [
+    {
+      "name": "vit-tri-pre",
+      "job_id": "152779",
+      "dependency_afterok": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=vit-tri-pre",
+        "--export=ALL,NQS_PLAN=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_7600_three_stage_plan.json,NQS_PLAN_SHA256=dd81e80342c43899c3f6e456899274a7de6f8cdeb4af56fc39bd8a3119cf4a7d,NQS_STAGE=0,NQS_PREFLIGHT_ENDPOINT=7601",
+        "--time=00:30:00",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_schedule_a100.sbatch",
+        "preflight"
+      ]
+    },
+    {
+      "name": "vit-tri-8600",
+      "job_id": "152780",
+      "dependency_afterok": "152779",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=vit-tri-8600",
+        "--dependency=afterok:152779",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_PLAN=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_7600_three_stage_plan.json,NQS_PLAN_SHA256=dd81e80342c43899c3f6e456899274a7de6f8cdeb4af56fc39bd8a3119cf4a7d,NQS_STAGE=0",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_schedule_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "name": "audit-tri-8600",
+      "job_id": "152781",
+      "dependency_afterok": "152780",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=audit-tri-8600",
+        "--dependency=afterok:152780",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_PLAN=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_7600_three_stage_plan.json,NQS_PLAN_SHA256=dd81e80342c43899c3f6e456899274a7de6f8cdeb4af56fc39bd8a3119cf4a7d,NQS_STAGE=0",
+        "--array=0-1",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--time=01:00:00",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_schedule_a100.sbatch",
+        "energy-stream"
+      ]
+    },
+    {
+      "name": "agg-tri-8600",
+      "job_id": "152782",
+      "dependency_afterok": "152781",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=agg-tri-8600",
+        "--dependency=afterok:152781",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_PLAN=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_7600_three_stage_plan.json,NQS_PLAN_SHA256=dd81e80342c43899c3f6e456899274a7de6f8cdeb4af56fc39bd8a3119cf4a7d,NQS_STAGE=0",
+        "--gres=none",
+        "--constraint=cpu",
+        "--cpus-per-task=2",
+        "--mem=8G",
+        "--time=00:20:00",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_schedule_a100.sbatch",
+        "aggregate"
+      ]
+    },
+    {
+      "name": "vit-tri-9600",
+      "job_id": "152783",
+      "dependency_afterok": "152780",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=vit-tri-9600",
+        "--dependency=afterok:152780",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_PLAN=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_7600_three_stage_plan.json,NQS_PLAN_SHA256=dd81e80342c43899c3f6e456899274a7de6f8cdeb4af56fc39bd8a3119cf4a7d,NQS_STAGE=1",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_schedule_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "name": "audit-tri-9600",
+      "job_id": "152784",
+      "dependency_afterok": "152783",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=audit-tri-9600",
+        "--dependency=afterok:152783",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_PLAN=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_7600_three_stage_plan.json,NQS_PLAN_SHA256=dd81e80342c43899c3f6e456899274a7de6f8cdeb4af56fc39bd8a3119cf4a7d,NQS_STAGE=1",
+        "--array=0-1",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--time=01:00:00",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_schedule_a100.sbatch",
+        "energy-stream"
+      ]
+    },
+    {
+      "name": "agg-tri-9600",
+      "job_id": "152785",
+      "dependency_afterok": "152784",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=agg-tri-9600",
+        "--dependency=afterok:152784",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_PLAN=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_7600_three_stage_plan.json,NQS_PLAN_SHA256=dd81e80342c43899c3f6e456899274a7de6f8cdeb4af56fc39bd8a3119cf4a7d,NQS_STAGE=1",
+        "--gres=none",
+        "--constraint=cpu",
+        "--cpus-per-task=2",
+        "--mem=8G",
+        "--time=00:20:00",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_schedule_a100.sbatch",
+        "aggregate"
+      ]
+    },
+    {
+      "name": "vit-tri-10600",
+      "job_id": "152786",
+      "dependency_afterok": "152783",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=vit-tri-10600",
+        "--dependency=afterok:152783",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_PLAN=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_7600_three_stage_plan.json,NQS_PLAN_SHA256=dd81e80342c43899c3f6e456899274a7de6f8cdeb4af56fc39bd8a3119cf4a7d,NQS_STAGE=2",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_schedule_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "name": "audit-tri-10600",
+      "job_id": "152787",
+      "dependency_afterok": "152786",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=audit-tri-10600",
+        "--dependency=afterok:152786",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_PLAN=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_7600_three_stage_plan.json,NQS_PLAN_SHA256=dd81e80342c43899c3f6e456899274a7de6f8cdeb4af56fc39bd8a3119cf4a7d,NQS_STAGE=2",
+        "--array=0-1",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--time=01:00:00",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_schedule_a100.sbatch",
+        "energy-stream"
+      ]
+    },
+    {
+      "name": "agg-tri-10600",
+      "job_id": "152789",
+      "dependency_afterok": "152787",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=agg-tri-10600",
+        "--dependency=afterok:152787",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_PLAN=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_7600_three_stage_plan.json,NQS_PLAN_SHA256=dd81e80342c43899c3f6e456899274a7de6f8cdeb4af56fc39bd8a3119cf4a7d,NQS_STAGE=2",
+        "--gres=none",
+        "--constraint=cpu",
+        "--cpus-per-task=2",
+        "--mem=8G",
+        "--time=00:20:00",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_schedule_a100.sbatch",
+        "aggregate"
+      ]
+    },
+    {
+      "name": "vit-sq36-pre",
+      "job_id": "152790",
+      "dependency_afterok": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=vit-sq36-pre",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_n36.json,NQS_PREFLIGHT_ENDPOINT=200",
+        "--time=02:00:00",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ]
+    },
+    {
+      "name": "vit-sq36-5500",
+      "job_id": "152791",
+      "dependency_afterok": "152790",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=vit-sq36-5500",
+        "--dependency=afterok:152790",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_n36.json,NQS_UNTIL_STEP=5500,NQS_SESSION_SECONDS=40500",
+        "--time=12:00:00",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "name": "vit-sq36-7000",
+      "job_id": "152792",
+      "dependency_afterok": "152791",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=vit-sq36-7000",
+        "--dependency=afterok:152791",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_n36.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "name": "audit-sq36-7000",
+      "job_id": "152793",
+      "dependency_afterok": "152792",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=audit-sq36-7000",
+        "--dependency=afterok:152792",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_n36.json",
+        "--array=0-1",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--time=02:00:00",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "energy-stream"
+      ]
+    },
+    {
+      "name": "agg-sq36-7000",
+      "job_id": "152794",
+      "dependency_afterok": "152793",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=agg-sq36-7000",
+        "--dependency=afterok:152793",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_n36.json",
+        "--gres=none",
+        "--constraint=cpu",
+        "--cpus-per-task=2",
+        "--mem=8G",
+        "--time=00:20:00",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "aggregate"
+      ]
+    },
+    {
+      "name": "vit-sq64-cost",
+      "job_id": "152795",
+      "dependency_afterok": "152790",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=vit-sq64-cost",
+        "--dependency=afterok:152790",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_n64_cost.json,NQS_PREFLIGHT_ENDPOINT=3",
+        "--time=02:00:00",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ]
+    },
+    {
+      "name": "dmrg-chi8192",
+      "job_id": "152796",
+      "dependency_afterok": null,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--job-name=dmrg-chi8192",
+        "projects/clebsch_tree_nqs/remote/dmrg_kim.sbatch",
+        "projects/clebsch_tree_nqs/configs/remote/spin_tensor_network_chi8192_kim.json"
+      ]
+    }
+  ],
+  "strict_SU2": false,
+  "prior_checkpoints_preserved": true,
+  "NOTS_job_untouched": true,
+  "DMRG_duplicate_growth_explicitly_authorized": true,
+  "all_requested_submissions_complete": true,
+  "square_queue_budget_correction": {
+    "reason": "Historical raw5000steps already took14.89h on older runtime: replace queued12h warmup with24h allocation, without changing registered28h cumulative cap, architecture, checkpoint or steps. No running job cancelled.",
+    "cancelled_pending_jobs": [
+      "152791",
+      "152792",
+      "152793",
+      "152794"
+    ],
+    "replacement_jobs": [
+      {
+        "name": "vit-sq36-5500",
+        "job_id": "153276",
+        "dependency_afterok": "152790",
+        "command": [
+          "sbatch",
+          "--parsable",
+          "--job-name=vit-sq36-5500",
+          "--dependency=afterok:152790",
+          "--kill-on-invalid-dep=yes",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_n36.json,NQS_UNTIL_STEP=5500,NQS_SESSION_SECONDS=83700",
+          "--time=24:00:00",
+          "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "production"
+        ]
+      },
+      {
+        "name": "vit-sq36-7000",
+        "job_id": "153277",
+        "dependency_afterok": "153276",
+        "command": [
+          "sbatch",
+          "--parsable",
+          "--job-name=vit-sq36-7000",
+          "--dependency=afterok:153276",
+          "--kill-on-invalid-dep=yes",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_n36.json",
+          "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "production"
+        ]
+      },
+      {
+        "name": "audit-sq36-7000",
+        "job_id": "153278",
+        "dependency_afterok": "153277",
+        "command": [
+          "sbatch",
+          "--parsable",
+          "--job-name=audit-sq36-7000",
+          "--dependency=afterok:153277",
+          "--kill-on-invalid-dep=yes",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_n36.json",
+          "--array=0-1",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--cpus-per-task=8",
+          "--mem=64G",
+          "--time=02:00:00",
+          "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "energy-stream"
+        ]
+      },
+      {
+        "name": "agg-sq36-7000",
+        "job_id": "153281",
+        "dependency_afterok": "153278",
+        "command": [
+          "sbatch",
+          "--parsable",
+          "--job-name=agg-sq36-7000",
+          "--dependency=afterok:153278",
+          "--kill-on-invalid-dep=yes",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_n36.json",
+          "--gres=none",
+          "--constraint=cpu",
+          "--cpus-per-task=2",
+          "--mem=8G",
+          "--time=00:20:00",
+          "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "aggregate"
+        ]
+      }
+    ]
+  }
+}

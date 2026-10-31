@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-13",
+  "display_timezone": "America/New_York",
+  "job_id": 250739,
+  "status_at_first_query": "PENDING",
+  "status_at_last_query": "RUNNING",
+  "last_query_utc": "2026-10-13 18:24:03 UTC",
+  "node_at_last_query": "kim-cpu-03",
+  "reason": "Priority",
+  "submitted": true,
+  "user_authorized": true,
+  "workspace": "/home/yx789/nqs-symmetry-physics-20261013",
+  "config": "projects/clebsch_tree_nqs/configs/remote/dmrg_chi10240_relax33_34_20261013.json",
+  "source_manifest": "projects/clebsch_tree_nqs/remote/dmrg10240_relax_sync_20261013.json",
+  "parent_checkpoint_sha256": "80e0671ccfa69159ecbd800ff7749087cc6b704b4e1593c03a01269cef2839a3",
+  "parent_protocol_sha256": "a16e7196496b2876e94c3497532f4bb8e93c31e940006fa8a2b25104ee3a9a95",
+  "parent_result_sha256": "a8288436689430b3485cb226eac91d8c14a8b3cf472c8fd5b2a25f5cf1b1fc5f",
+  "parent_registration_sha256": "223fae553dbf6b19dd7d48deb04bcb429dcd78a97dc4010cb701dd28e16c7a19",
+  "physical": {
+    "geometry": "triangular6x6 physical torus; row-major open virtual MPS",
+    "j2": 0.125,
+    "chi": 10240,
+    "mixer": false,
+    "target_global_sweeps": [
+      33,
+      34
+    ],
+    "full_optimizer_and_environments_inherited": true
+  },
+  "resources": {
+    "cpus": 32,
+    "memory_gib": 704,
+    "process_guard_gib": 640,
+    "wall_hours": 24,
+    "estimated_compute_hours": [
+      13,
+      18
+    ],
+    "queue_excluded": true,
+    "no_requeue": true
+  },
+  "checks": {
+    "source_files": 26,
+    "source_bytes": 146646,
+    "hashes_verified": true,
+    "parent_graph_and_regions_verified": true,
+    "new_output_absent_before_submission": true,
+    "remote_checkpoint_tests_passed": 11,
+    "remote_test_seconds": 21.83,
+    "local_tests_passed": 2,
+    "local_tests_skipped_optional_dependencies": 9
+  },
+  "output": "/home/yx789/nqs-wavefunctions/dmrg/work/chi10240_relax33_34_v1",
+  "archive_root": "/home/yx789/nqs-wavefunctions/dmrg/archives",
+  "automatic_chi_growth": false,
+  "notes": [
+    "Original PREPARED wording in configuration is preserved as provenance; this separate receipt records explicit authorization and submission.",
+    "Initial ad-hoc preflight passed tuple bonds instead of the production list-of-lists and rejected them. Corrected preflight used exactly production representation and passed; no scientific source or H was changed.",
+    "Slurm startup estimate is provisional, not a guaranteed queue time; job currently pending Priority.",
+    "Completed-boundary atomic full checkpoint, timeout rollback, raw RDMs and immutable archive retained."
+  ]
+}

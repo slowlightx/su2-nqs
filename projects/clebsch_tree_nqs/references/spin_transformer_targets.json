@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-09-16",
+  "comparison_policy": "Raw variational energies are primary. Zero-variance extrapolations are context and must never be plotted as if they were raw ansatz energies.",
+  "spatial_attention_2026": {
+    "citation": "L. L. Viteritti, R. Rende, S. Sachdev, and G. Carleo, Approaching the Thermodynamic Limit with Neural-Network Quantum States, arXiv:2602.02665v1",
+    "url": "https://arxiv.org/abs/2602.02665",
+    "architecture": {
+      "attention_heads": 12,
+      "layers": 8,
+      "embedding_dimension": 72,
+      "parameter_count_approx": 450000,
+      "vmc_samples_per_step": 16384,
+      "optimizer": "SR with SPRING",
+      "training_stages": [5000, 500, 100]
+    },
+    "triangular_j2_0_raw_energy_per_site": [
+      {"linear_size": 18, "energy": -0.551703, "uncertainty": 0.000001},
+      {"linear_size": 24, "energy": -0.551602, "uncertainty": 0.000001},
+      {"linear_size": 30, "energy": -0.551528, "uncertainty": 0.000001},
+      {"linear_size": 42, "energy": -0.551429, "uncertainty": 0.000001}
+    ],
+    "triangular_thermodynamic_context": {
+      "zero_variance_energy_per_site": -0.55168,
+      "zero_variance_uncertainty": 0.00002,
+      "magnetization": 0.148,
+      "magnetization_uncertainty": 0.001
+    },
+    "square_20x20_j2_0p5": {
+      "raw_no_projection_energy_per_site": -0.496375,
+      "raw_translation_energy_per_site": -0.496698,
+      "raw_full_c4v_energy_per_site": -0.496732,
+      "raw_uncertainty": 0.000001,
+      "zero_variance_energy_per_site": -0.49684,
+      "zero_variance_uncertainty": 0.00001,
+      "fully_symmetric_v_score_approx": 0.0019
+    }
+  },
+  "vit_1d_2023": {
+    "citation": "L. L. Viteritti, R. Rende, and F. Becca, Phys. Rev. Lett. 130, 236401 (2023)",
+    "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.130.236401",
+    "scope": "one-dimensional J1-J2 chain; architecture precedent, not a two-dimensional energy target"
+  },
+  "vit_2d_2025": {
+    "citation": "L. L. Viteritti et al., Phys. Rev. B 111, 134411 (2025)",
+    "url": "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.134411",
+    "scope": "Shastry-Sutherland model; two-dimensional representation-learning and sector-gap precedent, not a graph-matched J1-J2 target"
+  }
+}

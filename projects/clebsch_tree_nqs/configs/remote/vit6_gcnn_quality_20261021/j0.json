@@ -1,0 +1,182 @@
+{
+  "audit": {
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 2610219643,
+    "burn_proposals": 7200,
+    "chains": 128,
+    "proposals_between_snapshots": 144,
+    "query_batch": 8,
+    "seeds": [
+      2610219641,
+      2610219642
+    ],
+    "snapshots": 256
+  },
+  "backend": "netket_ntk",
+  "coordinate_convention": "physical120",
+  "initialization_seed": 2610219600,
+  "interpretation": {
+    "protocol": "Same-H fixed600 parent, exact state-preserving MLP8->16 capacity174400->323392. Unchanged spatial envelope/patching4layers/Sz0/parity/fullA1.8192 samples per full-network update,2A100 native data sharding; ridge .002->.001, same physical .005 step and FS<=.005/ESS>=.98 safeguard. Optimizer/RNG/work counters reset explicitly,128parent configurations retained.300 fixed updates with2/4/8 process checks then measured-time-gated150/300. Fresh untouched65536-record final audit; no new head, carrier or SU2 claim. Cannot attribute a gain uniquely to capacity because samples/damping also change; goal is absolute variational quality near RothGCNN.",
+    "strict_su2": false,
+    "new_head": false,
+    "enlarged_parameter_count": true,
+    "architecture_win_claimed": false,
+    "optimizer_and_RNG_are_reset_explicitly": true
+  },
+  "j2_over_j1": 0,
+  "maximum_audit_seconds_per_checkpoint": 7200,
+  "maximum_total_audit_seconds": 14400,
+  "maximum_training_seconds": 115000,
+  "model": {
+    "columns": 6,
+    "depth": 4,
+    "embedding_dim": 48,
+    "geometry": "triangular",
+    "head_count": 8,
+    "initial_distance_decay": 3,
+    "initialization_scale": 1,
+    "layer_norm_epsilon": 1e-06,
+    "mlp_ratio": 16,
+    "patch_columns": 3,
+    "patch_rows": 3,
+    "pooling": "authors",
+    "rows": 6,
+    "target_m2": 0,
+    "use_distance_envelope": true
+  },
+  "model_family": "literature",
+  "momenta": {
+    "Gamma": [
+      0,
+      0
+    ],
+    "K": [
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "M1": [
+      0.5,
+      0
+    ],
+    "M2": [
+      0,
+      0.5
+    ],
+    "M3": [
+      0.5,
+      0.5
+    ],
+    "minus_K": [
+      -0.3333333333333333,
+      -0.3333333333333333
+    ]
+  },
+  "netket": {
+    "chunk_size": 8,
+    "chunk_size_bwd": 1,
+    "exchange_kernel": "uniform_all_pairs",
+    "expected_device_count": 2,
+    "initialization": "parent_configurations",
+    "momentum": null,
+    "on_the_fly": false,
+    "replicate_initial_params": true,
+    "sampled_trust": {
+      "halvings": 6,
+      "maximum_fs_sine": 0.02,
+      "minimum_ess_fraction": 0.95
+    },
+    "version": "3.22.3"
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/vit6_gcnn_quality_20261021/j0",
+  "preregistered_before_training": true,
+  "quality_milestones": [
+    0,
+    2,
+    4,
+    8,
+    100,
+    150,
+    300
+  ],
+  "regions": {
+    "compact4": {
+      "left": [
+        0,
+        1
+      ],
+      "sites": [
+        0,
+        1,
+        6,
+        7
+      ]
+    },
+    "compact6": {
+      "left": [
+        0,
+        1,
+        2
+      ],
+      "sites": [
+        0,
+        1,
+        2,
+        6,
+        7,
+        8
+      ]
+    },
+    "winding6": {
+      "left": [
+        0,
+        1,
+        2
+      ],
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  "require_gpu": true,
+  "sampling": {
+    "burn_proposals": 3600,
+    "chains": 128,
+    "proposals_between_snapshots": 72,
+    "snapshots_per_update": 64
+  },
+  "spin_inversion_even": true,
+  "sr": {
+    "damping": 0.001,
+    "step_size": 0.005
+  },
+  "stages": [
+    {
+      "projection": "gamma_a1",
+      "steps": 300
+    }
+  ],
+  "task": "spin_spatial_vit_quality",
+  "training_seed": 2610219601,
+  "quality_reference": {
+    "published_GCNN_energy_per_site": -0.560313,
+    "published_GCNN_SE": 3e-06,
+    "published_GCNN_source": "https://arxiv.org/html/2211.07749#S4.T3",
+    "reference_ED_energy_per_site": -0.5603734,
+    "goal_energy_above_same_torus_GCNN_per_site": 0.0001,
+    "goal_is_not_a_guaranteed_outcome": true
+  },
+  "capacity_expansion": "state_preserving_mlp_depth",
+  "repair_parameters_from": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/triangle6_cost_recovery_20261020/j0/seed1",
+    "completed_steps": 600,
+    "checkpoint_path": "quality/step00600.pkl",
+    "checkpoint_sha256": "21e9d220cade0af9bfefe1f01f681df30fa7a8192e516c4d872158aa5b7f390c",
+    "registration_sha256": "2210c6088e6703eb45cee3d8494e33e6fe74a0f9015164e247d1ebc4640987ae",
+    "params_sha256": "08ec62bb414a86ea92d27b2bc90cc40c90e7b83a3db932a24a6f8a0cb8bcb3b9"
+  }
+}

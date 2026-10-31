@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_n16_krylov_anchored_full_vit",
+  "preregistered_before_run": true,
+  "geometry": "triangular_4x4_periodic",
+  "j2_over_j1": 0.125,
+  "arms": [
+    "krylov_anchored_exact_su2_a1_full_vit",
+    "krylov_anchored_fixed_sz_a1_full_vit",
+    "degree_four_krylov",
+    "spatial_scrambled_exact_su2_a1_full_vit"
+  ],
+  "source": {
+    "result": "projects/clebsch_tree_nqs/results/spin_carrier_cell_scalar_circuit_v1/results.json",
+    "result_sha256": "c8f47c4ce05d49a207d5bb108f893eb23ac69f7cb12bd03e92b8d48dabe15d4f",
+    "bundle": "projects/clebsch_tree_nqs/results/spin_carrier_cell_scalar_circuit_v1/states.npz",
+    "bundle_sha256": "c9d1fee5f53112c97f721b5b6ccad005f021fab143467401ea8a9ff46d1f9264"
+  },
+  "architecture": {
+    "embedding_dim": 16,
+    "head_count": 4,
+    "depth": 2,
+    "mlp_ratio": 2,
+    "phase_scale": 0.25,
+    "initialization_scale": 0.15,
+    "use_distance_envelope": false,
+    "representation": "complete_configuration_dependent_balanced_schur_multiplicity_space"
+  },
+  "optimization": {
+    "seeds": [2026092801, 2026092802, 2026092803],
+    "steps": 240,
+    "learning_rate": 0.003,
+    "initial_residual_scale": 0.02,
+    "all_backbone_parameters_trainable": true,
+    "same_steps_and_full_h_calls_for_neural_arms": true
+  },
+  "scramble_seed": 2026092811,
+  "gates": {
+    "minimum_strict_improvement_per_site": 1e-10,
+    "promotion_rule": "median exact-SU2 full-ViT energy and variance must both beat degree-four Krylov"
+  },
+  "claim_boundary": "Exact N=16 state-manifold and optimization gate. Because the exact S=0,Gamma-A1 space has dimension only 14, passing licenses a sampled additive-carrier preflight but is not itself evidence of scalable energy, efficiency, QSL, or thermodynamic advantage."
+}

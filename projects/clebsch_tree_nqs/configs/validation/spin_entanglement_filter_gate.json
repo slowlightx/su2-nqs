@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_entanglement_filter_gate",
+  "geometry": "triangular_4x4_periodic",
+  "purpose": "fail_closed_physics_mechanism_gate",
+  "state_bundle": "projects/clebsch_tree_nqs/results/spin_carrier_cell_scalar_circuit_v1/states.npz",
+  "state_bundle_sha256": "c9d1fee5f53112c97f721b5b6ccad005f021fab143467401ea8a9ff46d1f9264",
+  "couplings": [0.0, 0.125],
+  "subsystem": [0, 1, 4, 5, 8, 9, 12, 13],
+  "paired_seeds": [20261001, 20261002, 20261003, 20261004, 20261005],
+  "initialization_scale": 0.001,
+  "parameter_bound": 1.0,
+  "maximum_iterations": 100,
+  "oracle_relative_cutoff": 1e-12,
+  "boundary_q_tv_ceiling": 0.002,
+  "scalable_filter_implementation_available": false,
+  "matched_control": "One common random permutation of the eight subsystem sites conjugates all three generators; SU(2), individual spectra, generator algebra, parameter count, initialization, optimizer, and full-H objective calls are matched.",
+  "gate_order": [
+    "oracle and three-parameter physical filter improve energy, variance, trace distance, and q-resolved Schmidt spectrum while retaining accurate q weights",
+    "fresh paired seeds beat two-Lanczos and the isospectral site-scrambled control at both couplings",
+    "only then authorize a scalable triangular 6x6 implementation"
+  ],
+  "claim_boundary": "The exact-target Schmidt transport is an oracle ceiling. The trainable three-parameter filter uses no target RDM, but half-system exponentiation is not itself a scalable NQS architecture."
+}

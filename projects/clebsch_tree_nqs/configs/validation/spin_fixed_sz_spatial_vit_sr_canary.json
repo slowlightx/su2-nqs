@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "fixed_sz_spatial_vit_matrix_free_sr_canary",
+  "status": "preregistered_optimizer_diagnosis",
+  "seed": 11,
+  "model": {
+    "patch_rows": 2,
+    "patch_columns": 2,
+    "mlp_ratio": 2,
+    "initialization_scale": 0.1,
+    "initial_distance_decay": 1.0
+  },
+  "arm": {
+    "arm_id": "spatial_vit_d10_l1",
+    "embedding_dim": 10,
+    "head_count": 2,
+    "depth": 1,
+    "mlp_ratio": 2,
+    "use_distance_envelope": true
+  },
+  "optimization": {
+    "steps": 30,
+    "learning_rate": 0.05,
+    "damping": 0.01,
+    "cg_tolerance": 0.00001,
+    "cg_max_iterations": 50,
+    "record_every": 5
+  },
+  "rescue_gates": {
+    "energy_error_per_site_below": 0.05,
+    "singlet_weight_above": 0.9,
+    "variance_per_site_below": 0.1
+  },
+  "cases": [
+    {
+      "case_id": "square_4x4_j2_0p5_spatial_vit_sr_seed11",
+      "geometry": "square",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.5,
+      "projection": "translation",
+      "exact_energy_anchor": -8.457923351394845,
+      "anchor_provenance": "stored physical-M0 exact reference; runner performs no eigensolve"
+    },
+    {
+      "case_id": "triangular_4x4_j2_0p125_spatial_vit_sr_seed11",
+      "geometry": "triangular",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.125,
+      "projection": "translation",
+      "exact_energy_anchor": -8.553311087209,
+      "anchor_provenance": "stored physical-M0 exact reference; runner performs no eigensolve"
+    }
+  ],
+  "analysis_contract": {
+    "question": "Can matrix-free pure-state SR rescue the same d10 seed-11 Spatial-ViT initialization that collapses under exact-support Adam?",
+    "basic_rescue": "all three registered physical gates pass",
+    "strong_rescue": "energy error per site reaches the stable Adam band near 0.025",
+    "claim_boundary": "This exact-support optimizer diagnosis is not a sampled-VMC or wall-time efficiency result."
+  }
+}

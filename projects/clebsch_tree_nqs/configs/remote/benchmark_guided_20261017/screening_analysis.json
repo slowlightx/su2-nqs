@@ -1,0 +1,70 @@
+{
+  "output": "projects/clebsch_tree_nqs/results/benchmark_guided_20261017/screening_available.json",
+  "inputs": [
+    {
+      "label": "j0_750",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/tri_j0_continue_step00750_regional"
+    },
+    {
+      "label": "j0_1000",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/tri_j0_continue_step01000_regional"
+    },
+    {
+      "label": "j005_250",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/tri_j005_v6_step00250_regional"
+    },
+    {
+      "label": "j005_500",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/tri_j005_v6_step00500_regional"
+    },
+    {
+      "label": "j01_750",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/tri_j01_continue1000_step00750_regional_20261012_cap1800_v2"
+    },
+    {
+      "label": "j01_1000",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/tri_j01_continue1000_step01000_regional_20261012_cap1800_v2"
+    },
+    {
+      "label": "j0125_100",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/tri_j0125_s4096_d2e3_step00100_regional_20261012_cap1800_v2"
+    },
+    {
+      "label": "j0125_200",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/tri_j0125_s4096_d2e3_step00200_regional_20261012_cap1800_v2"
+    },
+    {
+      "label": "j0175_750",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/tri_j0175_continue1000_step00750_regional_20261012_cap1800_v2"
+    },
+    {
+      "label": "j0175_1000",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/tri_j0175_continue1000_step01000_regional_20261012_cap1800_v2"
+    },
+    {
+      "label": "j0_latest_uniform",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/benchmark_guided_20261017/j0"
+    },
+    {
+      "label": "j005_latest_uniform",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/benchmark_guided_20261017/j005"
+    },
+    {
+      "label": "j0075_latest_uniform",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/benchmark_guided_20261017/j0075"
+    },
+    {
+      "label": "j01_latest_uniform",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/benchmark_guided_20261017/j01"
+    },
+    {
+      "label": "j0125_latest_uniform",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/benchmark_guided_20261017/j0125"
+    },
+    {
+      "label": "j0175_latest_uniform",
+      "directory": "/home/yx789/nqs-wavefunctions/readouts/benchmark_guided_20261017/j0175"
+    }
+  ],
+  "selection": "All declared quality endpoints; missing latest caches remain explicitly missing. Same cuts and operators; no energy or signal selection."
+}

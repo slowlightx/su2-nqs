@@ -1,0 +1,14 @@
+{
+  "model": {"hidden_dim": 8, "size_scale": 64.0},
+  "sizes": [4, 6, 8],
+  "train_fields": [0.8, 1.0, 1.2],
+  "test_fields": [0.9, 1.1],
+  "seeds": [17],
+  "steps": 300,
+  "learning_rate": 0.003,
+  "mode": "exact",
+  "optimizer": "adam",
+  "sr_shift": 0.001,
+  "samples_per_task": 128,
+  "audit_samples": 1024
+}

@@ -1,0 +1,290 @@
+{
+  "task": "frozen_intermediate_C_C2_M_same_parent",
+  "regions": {
+    "prefix18": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ]
+  },
+  "momenta": {},
+  "query_batch": 32,
+  "wall_seconds": 360,
+  "name": "tri_j01_750",
+  "parent": "/home/yx789/nqs-wavefunctions/nqs/tri_j01_continue1000_20261012/seed1",
+  "step": 750,
+  "checkpoint_sha256": "de376f5c94eab857e07133fb77fffd4781c97f8876c6e32df807fb814d69635e",
+  "streams": {
+    "stream2026860952.npz": "13a9b8e0358f5c9661dc32a8f44dc21839491b47e8a47da2efb70caa74008ce3",
+    "stream2026860953.npz": "59e59f522915005721c788961cb8632eb0b69453160033e0ee8bb11b884e1da3"
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/frozen_channels_20261016/tri_j01_750/replica",
+  "relative_replica_orbit": "complete_x_translations_times_spin_flip",
+  "cut_protocol": "Fixed rows0,1,2 prefix18. Certified mirror (r,c)->(2-r,c-r+1) mod6. Same-width oriented six-bond row operators.",
+  "chirality_channels": {
+    "prefix18": {
+      "row0_kappa_z": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "row1_kappa_z": [
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          6
+        ]
+      ],
+      "row2_kappa_z": [
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          17,
+          12
+        ]
+      ],
+      "row0_plus_row1_kappa_z": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          6
+        ]
+      ],
+      "row0_plus_row2_kappa_z": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          17,
+          12
+        ]
+      ],
+      "row1_plus_row2_kappa_z": [
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          17,
+          12
+        ]
+      ]
+    }
+  },
+  "stopping": "Complete two saved independent streams; unchanged prefix18 and six row probes; no new Born/training/H; retain both quality endpoints.",
+  "frozen_input_fingerprints": {
+    "parent_registration": "1ce3f73469b60e0945e5f4e8d5895a08d5d565085603645e5bb3637210a7704e",
+    "parent_registration_file_sha256": "b9c26d688be97a41aec0ed6cf3726ad7f365d212ca3891a5de2e6f103406ebb7",
+    "energy_audit_file_sha256": "6d615c36704f4227106888b0889a1a0cd1fabb7a3cef904e4d1510400ad264cb",
+    "energy_audit_result_sha256": "0521d2e005759103d6bad2622b940c7dd4dcb837191c3cac5b0d3e8e0a1f9319",
+    "checkpoint_sha256": "de376f5c94eab857e07133fb77fffd4781c97f8876c6e32df807fb814d69635e",
+    "old_reader_source_sha256": "99fc1d730c3d8921d60e14f33ec07f9f312b1b6c20150d58549988ca5bcd26f1"
+  },
+  "frozen_probe_order": [
+    "row0_kappa_z",
+    "row1_kappa_z",
+    "row2_kappa_z",
+    "row0_plus_row1_kappa_z",
+    "row0_plus_row2_kappa_z",
+    "row1_plus_row2_kappa_z"
+  ],
+  "matrix_reconstruction": "Mii=R(ki); Re Mij=(R(ki+kj)-R(ki)-R(kj))/2. Common-chain and common-purity covariance retained.",
+  "center_chunk": 64
+}

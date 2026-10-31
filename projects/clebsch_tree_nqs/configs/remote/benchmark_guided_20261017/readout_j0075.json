@@ -1,0 +1,125 @@
+{
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 2026103102,
+  "compute_seconds": 1800,
+  "materialized_config": "/home/yx789/nqs-wavefunctions/readouts/benchmark_guided_20261017/configs/j0075.json",
+  "output": "/home/yx789/nqs-wavefunctions/readouts/benchmark_guided_20261017/j0075",
+  "parent": "/home/yx789/nqs-wavefunctions/nqs/coupling_window_recovery_20261017/tri_j0075_100/seed1",
+  "problem": {
+    "boundary": "PBC_both_physical",
+    "columns": 6,
+    "compact_triangular_2x3": [
+      "compact6"
+    ],
+    "cyclic_regions": [
+      "winding6"
+    ],
+    "geometry": "triangular",
+    "j2": 0.075,
+    "left_sites": {
+      "compact6": [
+        0,
+        1,
+        2
+      ],
+      "local_hexagon6": [
+        0,
+        1,
+        2
+      ],
+      "winding6": [
+        0,
+        1,
+        2
+      ]
+    },
+    "regions": {
+      "compact6": [
+        12,
+        13,
+        14,
+        18,
+        19,
+        20
+      ],
+      "local_hexagon6": [
+        20,
+        21,
+        15,
+        8,
+        7,
+        13
+      ],
+      "winding6": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    "rows": 6
+  },
+  "purpose": "Same3+3 compact6/local_hexagon6/winding6 cuts;512 cached Born records, no new samples/H/training. Sector weights and singlet-screening multiplicity invariant operators, not strictSU2 ES/QSL classification.",
+  "query_batch": 64,
+  "regions": {
+    "compact6": {
+      "compact_triangular_2x3": true,
+      "left": [
+        0,
+        1,
+        2
+      ],
+      "sites": [
+        12,
+        13,
+        14,
+        18,
+        19,
+        20
+      ]
+    },
+    "local_hexagon6": {
+      "left": [
+        0,
+        1,
+        2
+      ],
+      "sites": [
+        20,
+        21,
+        15,
+        8,
+        7,
+        13
+      ]
+    },
+    "winding6": {
+      "cyclic": true,
+      "left": [
+        0,
+        1,
+        2
+      ],
+      "sites": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    }
+  },
+  "require_gpu": true,
+  "snapshot_indices": [
+    0,
+    32,
+    64,
+    96
+  ],
+  "step": 100,
+  "timing_records": 16,
+  "allow_registered_milestone": false
+}

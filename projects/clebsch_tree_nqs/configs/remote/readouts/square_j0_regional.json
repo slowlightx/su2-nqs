@@ -1,0 +1,93 @@
+{
+  "parent": "/share/kim/yx789/nqs-vit-quality/results/spin_spatial_vit_square_j0_v2/seed1",
+  "step": 7000,
+  "output": "/share/kim/yx789/nqs-physics-readouts/square_j0_v2/regional",
+  "materialized_config": "/share/kim/yx789/nqs-physics-readouts/configs/square_j0_v2_regional.json",
+  "snapshot_indices": [
+    0,
+    32,
+    64,
+    96
+  ],
+  "query_batch": 64,
+  "timing_records": 16,
+  "compute_seconds": 1800,
+  "bootstrap_seed": 2026101250,
+  "bootstrap_replicates": 2000,
+  "require_gpu": false,
+  "problem": {
+    "geometry": "square",
+    "rows": 6,
+    "columns": 6,
+    "j2": 0.0,
+    "boundary": "PBC_both_physical",
+    "regions": {
+      "compact6": [
+        12,
+        13,
+        14,
+        18,
+        19,
+        20
+      ],
+      "winding6": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    "left_sites": {
+      "compact6": [
+        0,
+        1,
+        2
+      ],
+      "winding6": [
+        0,
+        1,
+        2
+      ]
+    },
+    "compact_triangular_2x3": [],
+    "cyclic_regions": [
+      "winding6"
+    ]
+  },
+  "purpose": "Fixed geometry/ALL weights/full A1 on sealed endpoint independent audit chains; no new samples,H,training,ES repair or phase claim. Future hashes filled only after completion, never energy-based choices.",
+  "regions": {
+    "compact6": {
+      "sites": [
+        12,
+        13,
+        14,
+        18,
+        19,
+        20
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ]
+    },
+    "winding6": {
+      "sites": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ],
+      "cyclic": true
+    }
+  }
+}

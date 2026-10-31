@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_n16_full_vit_sr_reachability",
+  "development_only": true,
+  "source_gate": {
+    "result": "projects/clebsch_tree_nqs/results/spin_n16_krylov_anchored_full_vit_v1/results.json",
+    "result_sha256": "6d4810b4a80b179b2dbfd7abaf51287a5ae2573b8617806da1ffcaaedf7b67ea"
+  },
+  "optimization": {
+    "seed": 2026092802,
+    "adam": {
+      "steps": 240,
+      "learning_rate": 0.003
+    },
+    "sr": {
+      "steps": 32,
+      "learning_rate": 0.05,
+      "damping": 0.001,
+      "cg_tolerance": 1e-7,
+      "cg_max_iterations": 64
+    }
+  }
+}

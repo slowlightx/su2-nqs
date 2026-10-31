@@ -1,0 +1,36 @@
+{
+  "chi_upper_bound": 10240,
+  "completed_parent": {
+    "chi": 10240,
+    "columns": 6,
+    "directory": "/home/yx789/nqs-wavefunctions/dmrg/archives/chi10240_relax33_34_v1/latest",
+    "j2": 0.125,
+    "rows": 6,
+    "sweep": 34
+  },
+  "dtype": "float64",
+  "limits": {
+    "memory_gib": 640,
+    "threads": 16,
+    "wall_seconds": 7200
+  },
+  "materialized_config": "/home/yx789/nqs-wavefunctions/dmrg/readouts/configs/chi10240_sweep34_hexagon6_env_v1.json",
+  "n_sites": 36,
+  "output": "/home/yx789/nqs-wavefunctions/dmrg/readouts/chi10240_sweep34_hexagon6_env_v1",
+  "purpose": "Frozen future sweep34 after complete and verified archive only; identical contractible hexagon and actual finite physical environments as sweep32. One bounded quality-drift readout, no optimization/SU2 repair/phase label. Prior same-chi cost1901s/479.2GiB; cap2h640GiB.",
+  "regions": [
+    {
+      "dense_estimate_override": true,
+      "name": "local_hexagon6",
+      "sites": [
+        20,
+        21,
+        15,
+        8,
+        7,
+        13
+      ]
+    }
+  ],
+  "stop_on_failure": true
+}

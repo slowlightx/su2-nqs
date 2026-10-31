@@ -1,0 +1,13 @@
+{
+  "files": {
+    "projects/clebsch_tree_nqs/configs/remote/frozen_readout_20261013/j0_s750_distance_quality.json": "c56724b7180ffad2dda25d83f0be450bbd6bf251b8480e6004e4df40687a8189",
+    "projects/clebsch_tree_nqs/configs/remote/frozen_readout_20261013/j0125_s100_distance_quality.json": "68ddb55ab086f35c30cd0120144c1f4e22e1974678929fdd51ca9839974bbca8",
+    "projects/clebsch_tree_nqs/configs/remote/frozen_readout_20261013/j0125_s200_distance_quality.json": "3240a02219424cdd800d987edf5fd68f8a1e745a221e08d18dbb15abe64fdd99",
+    "projects/clebsch_tree_nqs/configs/remote/frozen_readout_20261013/j0_s1000_distance_quality.json": "60f90ef00c1857236d44043057054275eb8b7a288e87280cc6984ce630a686b1"
+  },
+  "base_manifest_sha256": "8b73af852238915c33721a0b3e9c1a5295e312220b108544703ea3a1b88ff6e2",
+  "workspace": "/home/yx789/nqs-frozen-readout-20261013",
+  "reason": "Local transfer resolved; add one shorter separation, match full cache and compare both quality endpoints. Existing operators unchanged.",
+  "jobs": 4,
+  "requested_GPU_hours_max": 2
+}

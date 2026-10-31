@@ -1,0 +1,63 @@
+{
+  "task": "spin_spatial_vit_quality",
+  "preregistered_before_training": true,
+  "backend": "netket_ntk",
+  "require_gpu": true,
+  "model_family": "literature",
+  "coordinate_convention": "physical120",
+  "spin_inversion_even": true,
+  "output": "/share/kim/yx789/nqs-vit-quality/results/spin_spatial_vit_gpu_recovery_v6/seed1",
+  "j2_over_j1": 0.125,
+  "initialization_seed": 2026100741,
+  "training_seed": 2026100742,
+  "model": {
+    "geometry": "triangular", "rows": 6, "columns": 6,
+    "patch_rows": 3, "patch_columns": 3,
+    "embedding_dim": 48, "head_count": 8, "depth": 4, "mlp_ratio": 4,
+    "target_m2": 0, "initialization_scale": 1,
+    "initial_distance_decay": 3, "use_distance_envelope": true,
+    "pooling": "authors", "layer_norm_epsilon": 0.000001
+  },
+  "stages": [
+    {"projection": "none", "steps": 5000},
+    {"projection": "translation", "steps": 500},
+    {"projection": "gamma_a1", "steps": 100}
+  ],
+  "quality_milestones": [0, 200, 1000, 3000, 5000, 5500, 5600],
+  "maximum_training_seconds": 129600,
+  "maximum_audit_seconds_per_checkpoint": 43200,
+  "maximum_total_audit_seconds": 86400,
+  "sampling": {"chains": 128, "snapshots_per_update": 32, "proposals_between_snapshots": 36, "burn_proposals": 720},
+  "sr": {"damping": 0.0002, "step_size": 0.005},
+  "netket": {"version": "3.22.3", "on_the_fly": false, "chunk_size": 16, "chunk_size_bwd": 4, "momentum": null},
+  "netket_resume_from": {
+    "directory": "/share/kim/yx789/nqs-vit-quality/archives/spin_spatial_vit_gpu_quality_v1/seed1",
+    "completed_steps": 5500,
+    "checkpoint_sha256": "308de29aa8870e370222ef55714bb2102906bacc27c8cfcb8f6a0c94873b309a",
+    "registration_sha256": "632b6d2165cab56625cb9372612287c39ce89200bb5c2297fda7511cf85f4b12",
+    "progress_sha256": "84180594cc6784ed172731b6b3269590ef61ef56d61ae173486e81d844073728"
+  },
+  "audit": {
+    "seeds": [2026100743, 2026100744], "chains": 64, "snapshots": 128,
+    "proposals_between_snapshots": 144, "burn_proposals": 2880, "query_batch": 16,
+    "bootstrap_seed": 2026100745, "bootstrap_replicates": 2000
+  },
+  "momenta": {"Gamma": [0,0], "K": [0.3333333333333333,0.3333333333333333],
+    "minus_K": [-0.3333333333333333,-0.3333333333333333],
+    "M1": [0.5,0], "M2": [0,0.5], "M3": [0.5,0.5]},
+  "regions": {
+    "compact4": {"sites": [0,1,6,7], "left": [0,1]},
+    "compact6": {"sites": [0,1,2,6,7,8], "left": [0,1,2]},
+    "winding6": {"sites": [0,1,2,3,4,5], "left": [0,1,2]}
+  },
+  "interpretation": {
+    "protocol": "ONE all-network 99904-parameter author-aligned Spatial-ViT. First200 updates are a resumable throughput/convergence pilot of THIS5600-step trajectory, not a new random restart. Full NTK-SR via pinned optional NetKet; same physical S-dot-S units, diag_shift=damping/2 and SGD rate=step_size/2 preserve the repository SR update convention, no Marshall transformation, no momentum. Fixed staged projections; A1 exact only in final stage and frozen PAV audits. Independent audits never select parameters or stage schedule. CPU and old SU2 budgets do not apply.",
+    "strict_su2": false,
+    "new_head": false,
+    "competitive_goal_gap_per_site": 0.0005,
+    "refined_goal_gap_per_site": 0.0002,
+    "finite_ED_reference_per_site": -0.515564,
+    "finite_GCNN_reference_per_site": -0.515386,
+    "precision_or_phase_claim": false
+  }
+}

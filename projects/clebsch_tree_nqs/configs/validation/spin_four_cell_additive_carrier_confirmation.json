@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_four_cell_additive_carrier_confirmation",
+  "development_artifact": "results/spin_four_cell_additive_carrier_v1/results.json",
+  "triangular_numerical_floor": 1e-10,
+  "optimization": {
+    "fresh_seeds": [101, 102, 103],
+    "steps": 1000,
+    "same_full_H_calls": true
+  },
+  "confirmation_contract": {
+    "triangular": "physical additive arm must be numerically noninferior because the no-carrier development arm saturated exact precision",
+    "square": "physical arm must beat no-carrier median and worst seed, beat scrambled median, and keep every total-energy error below 1e-5",
+    "passing_scope": "licenses implementation of an N36 sampled canary, not production physics observables"
+  }
+}

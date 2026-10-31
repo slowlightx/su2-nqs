@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "two_cluster_virtual_processes",
+  "claim_boundary": "Exact six-site/N=12 mechanism diagnostics plus a non-ED periodic 6x6 bond-ledger audit of translated fixed-orientation 2x3 interfaces; no N=36 state or ED, rotated 3x2 covering, thermodynamic, phase, scaling, or variational-energy advantage is claimed.",
+  "open_perturbation": {
+    "rows": 2,
+    "columns": 6,
+    "periodic": false,
+    "cluster_shape": [2, 3],
+    "unperturbed_hamiltonian": "H_C1_plus_H_C2",
+    "perturbation": "all_J1_J2_bonds_crossing_the_vertical_cluster_cut",
+    "reported_cluster_spin_labels": "doubled_q"
+  },
+  "periodic_resonance": {
+    "rows": 2,
+    "columns": 6,
+    "periodic": true,
+    "translation_orbit": "all_distinct_row_and_column_translations",
+    "also_report": "column_only_three_covering_orbit",
+    "parallel_edge_convention": "combine_wrapped_images_by_summing_couplings"
+  },
+  "full_coupling_carrier_test": {
+    "boundary_scale_lambda": 1.0,
+    "parent_state": "cluster_ground_singlet_product",
+    "triplet_pair_basis": "total_singlet_coupling_of_left_and_right_q2_multiplets",
+    "rank_k_subspace": "all_k_squared_products_of_leading_left_and_right_carriers",
+    "carrier_orderings": [
+      "lowest_triplet_energy",
+      "raw_boundary_response_schmidt",
+      "resolvent_dressed_correction_schmidt",
+      "complete_q2_pair_space"
+    ]
+  },
+  "support_orientation_audit": {
+    "rows": 6,
+    "columns": 6,
+    "periodic": true,
+    "cluster_shape": [2, 3],
+    "translation_group_order": 36,
+    "distinct_fixed_orientation_tilings": 6,
+    "interface_families": [
+      "direction_resolved",
+      "physical_pair_total"
+    ],
+    "response": "resolvent_dressed_q2_left_right_singular_modes",
+    "shared_bank": "occurrence_weighted_left_right_union",
+    "excluded_coverings": "rotated_or_reflected_3x2"
+  },
+  "cases": [
+    {
+      "case_id": "square_2x6_j2_0p5",
+      "geometry": "square",
+      "j2_over_j1": 0.5
+    },
+    {
+      "case_id": "triangular_2x6_j2_0p125",
+      "geometry": "triangular",
+      "j2_over_j1": 0.125
+    }
+  ]
+}

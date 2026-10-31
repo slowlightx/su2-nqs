@@ -1,0 +1,30 @@
+{
+  "registered_at_utc": "2026-10-11 02:59:10 UTC",
+  "supersedes_unstarted_jobs": [185677, 185590, 185592, 185594, 185595],
+  "prior_diagnostic_failure": {"job": 185412, "cause": "Single-device oracle conflicted with the NetKet global mesh; no physical comparison completed.", "failed_workspace_preserved": true},
+  "corrected_probe_sha256": "7c627b05ee75782bbb8a661d88b613762ee715173f8b640ac2a37c0f35b6cab3",
+  "corrected_probe_tests_sha256": "bba540dc0cbc1420598e59b07a72ffc899669cd47c902e95b5db8cffe6c621e5",
+  "two_CPU_pinned_NetKet_gate": {"job": 185852, "passed": 11, "test_seconds": 35.27, "status": "COMPLETED"},
+  "diagnostic_workspace": "/home/yx789/nqs-jump-v2-20261011",
+  "diagnostics": [
+    {"job": 185932, "case": "square_j05", "gpus": 2, "steps": 2, "time_limit_minutes": 30,
+     "checkpoint": "/home/yx789/nqs-wavefunctions/nqs/square_j05_repair_v5/seed1/quality/step00020.pkl",
+     "output": "/home/yx789/nqs-wavefunctions/diagnostics/jump_20261011/square_j05_update_2gpu_v2.json"},
+    {"job": 185936, "case": "tri_j0", "gpus": 2, "steps": 0, "time_limit_minutes": 15,
+     "dependency": "afterok:185932", "parent": "unchanged verified 7600 parameters from v5 configuration",
+     "output": "/home/yx789/nqs-wavefunctions/diagnostics/jump_20261011/tri_j0_initial_2gpu_v2.json"}
+  ],
+  "repair_workspace": "/home/yx789/nqs-repair-single-20261011",
+  "repair_launcher_sha256": "69c26580d0af4c500b2f5ccdf0f8b565f28e02f157c709de66eb9440c9c52a66",
+  "launcher_correction": "Bounded screen reads expected_device_count (default 2), not a hardcoded 2; one GPU retains 128 chains.",
+  "single_GPU_pilots": [
+    {"case": "tri_j0", "pilot20": 185941, "resume22": 185945, "initial_energy_ceiling": -0.45},
+    {"case": "square_j05", "pilot20": 185942, "resume22": 185946, "initial_energy_ceiling": -0.48}
+  ],
+  "pilot_dependency": "afterok:185932:185936",
+  "pilot_resources": {"gpus": 1, "cpus": 8, "memory_GiB": 64, "pilot_minutes": 60, "resume_minutes": 30},
+  "maximum_requested_repair_A100_hours": 3,
+  "maximum_requested_diagnostic_A100_hours": 1.5,
+  "long_training_released": false,
+  "caution": "Oracle calls/synchronization may mask the uninstrumented failure. Completion is not an independent accuracy audit. Physical ansatz, parent parameters, global samples and SR settings unchanged."
+}

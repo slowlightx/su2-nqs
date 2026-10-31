@@ -1,0 +1,72 @@
+{
+  "task": "CT6_full_W_strict_sector_bounded_pilot_v1",
+  "profile": "gpu",
+  "j2": 0.0,
+  "sector": {
+    "label": "q0_X",
+    "target_q": 0,
+    "target_m2": 0,
+    "momentum": [
+      [
+        -1,
+        6
+      ],
+      [
+        -1,
+        6
+      ]
+    ],
+    "little_group_character": "all_plus_one"
+  },
+  "model": {
+    "length": 6,
+    "multiplicity_cap": 28,
+    "maximum_q": 10
+  },
+  "arity": "ternary_joint",
+  "binary_rank": 8,
+  "parent": {
+    "directory": "/home/yx789/nqs-ct6-sector-excitation-pilot-20261028/projects/clebsch_tree_nqs/results/ct_status_20261028/verified_next_parents/ct6_j0",
+    "global_step": 466,
+    "parameter_sha256": "5fe4b4dfe1887718b5ba3754964eff3cfcb9d2bc895b8e30a034a74d9e8f10f5",
+    "checkpoint_sha256": "1a23bca37d780d39dce9c7f0cdc567d3317a16e63eb13cd02a6d57b25abea2cd",
+    "audit_sha256": "1e9bc8ae5cf3b8b56100bdaea5da01b7a9902b254c102af0a636375fd1d07781"
+  },
+  "initialization_seed": 2610288011,
+  "initialization_attempts": 4,
+  "initialization_norm_threshold": 1e-24,
+  "master_seed": 2610289011,
+  "steps": 1,
+  "fit_records": 64,
+  "calibration_records": 64,
+  "audit_records": 512,
+  "audit_groups": 32,
+  "guard_H_JVP_records": 4,
+  "projection_chunk": 4,
+  "action_chunk": 1,
+  "score_chunk": 1,
+  "H_chunk": 1,
+  "damping": 0.5,
+  "learning_rate": 0.03,
+  "target_FS": 0.001,
+  "maximum_FS": 0.005,
+  "tangent_FS_radius": 0.003,
+  "epsilon": 0.125,
+  "parameter_chunk_size": 8192,
+  "fractions": [
+    1.0,
+    0.5,
+    0.25,
+    0.125,
+    0.0
+  ],
+  "wall_cap_seconds": 3600,
+  "audit_reserve_fraction": 0.35,
+  "maximum_jacobian_bytes": 8589934592,
+  "exact_invariants_passed": false,
+  "execution_authorized": false,
+  "automatic_continuation": false,
+  "no_job_submission": true,
+  "all_nonroot_W_and_target_root_trainable": true,
+  "sampler_is_frozen_ground_parent": true
+}

@@ -1,0 +1,55 @@
+{
+  "task": "spin_spatial_vit_quality",
+  "preregistered_before_training": true,
+  "output": "projects/clebsch_tree_nqs/results/spin_spatial_vit_quality_v1",
+  "j2_over_j1": 0.125,
+  "initialization_seed": 202610081,
+  "training_seed": 202610082,
+  "model": {
+    "geometry": "triangular", "rows": 6, "columns": 6,
+    "patch_rows": 3, "patch_columns": 3,
+    "embedding_dim": 24, "head_count": 3, "depth": 2, "mlp_ratio": 2,
+    "target_m2": 0, "initialization_scale": 0.2,
+    "initial_distance_decay": 3.0, "use_distance_envelope": true
+  },
+  "stages": [
+    {"projection": "none", "steps": 256},
+    {"projection": "translation", "steps": 32},
+    {"projection": "gamma_a1", "steps": 32}
+  ],
+  "quality_milestones": [0, 64, 128, 256, 288, 320],
+  "maximum_training_seconds": 3600,
+  "maximum_audit_seconds_per_checkpoint": 1200,
+  "sampling": {
+    "chains": 16, "snapshots_per_update": 8,
+    "proposals_between_snapshots": 36, "burn_proposals": 720
+  },
+  "sr": {
+    "damping": 0.01, "step_size": 0.05,
+    "fisher_trust_radius": 0.15, "maximum_overlap_distance": 0.10,
+    "minimum_ess_fraction": 0.8, "backtracking_steps": 6, "score_chunk_size": 4
+  },
+  "audit": {
+    "seeds": [202610101, 202610102], "chains": 8, "snapshots": 8,
+    "proposals_between_snapshots": 144, "burn_proposals": 1440,
+    "query_batch": 8, "bootstrap_seed": 202610110, "bootstrap_replicates": 1000
+  },
+  "momenta": {
+    "Gamma": [0, 0], "K": [0.3333333333333333, 0.3333333333333333],
+    "minus_K": [-0.3333333333333333, -0.3333333333333333],
+    "M1": [0.5, 0], "M2": [0, 0.5], "M3": [0.5, 0.5]
+  },
+  "regions": {
+    "compact4": {"sites": [0, 1, 6, 7], "left": [0, 1]},
+    "compact6": {"sites": [0, 1, 2, 6, 7, 8], "left": [0, 1, 2]},
+    "winding6": {"sites": [0, 1, 2, 3, 4, 5], "left": [0, 1, 2]}
+  },
+  "interpretation": {
+    "cpu_calibration_not_literature_production": true,
+    "strict_su2": false,
+    "phase_or_variational_win_claim": false,
+    "dmrg_is_independent_calibration_not_training_prerequisite": true,
+    "published_method_reference": "https://arxiv.org/html/2602.02665v1#S5.SS2",
+    "notes": "One full neural family; no carrier/head. Budgets reduced for bounded CPU calibration, not a reproduction of published accuracy. No energy, spin order or RDM clipping."
+  }
+}

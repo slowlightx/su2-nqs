@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "physical_sampled_optimizer_scan_v2_metric_correction_selector",
+  "scan_family_id": "spin_6x6_center_only_lr_scan_seed11",
+  "claim_boundary": "secondary single-seed preregistration-field sensitivity only; the sealed literal v1 no-Adam-promotion decision remains immutable and primary; no training authorization, converged-energy, efficiency, magnetic-order, phase, QSL, or physics-win claim",
+  "expected_cases": {
+    "square_6x6_j2_0p5": "square",
+    "triangular_6x6_j2_0p125": "triangular"
+  },
+  "expected_arms": {
+    "u1": "u1_D4_translation",
+    "su2": "su2_D4_translation"
+  },
+  "literal_primary_selector": {
+    "config_path": "projects/clebsch_tree_nqs/configs/sampled/spin_6x6_center_only_lr_selector.json",
+    "result_path": "projects/clebsch_tree_nqs/results/spin_6x6_center_only_lr_selector_v1/results.json"
+  },
+  "input_candidates": [
+    {
+      "candidate_id": "lr_1e-3",
+      "learning_rate": 0.001,
+      "config_path": "projects/clebsch_tree_nqs/configs/sampled/spin_6x6_center_only_lr_1e3.json",
+      "result_path": "projects/clebsch_tree_nqs/results/spin_6x6_center_only_lr_1e3_v2/results.json"
+    },
+    {
+      "candidate_id": "lr_2e-3",
+      "learning_rate": 0.002,
+      "config_path": "projects/clebsch_tree_nqs/configs/sampled/spin_6x6_center_only_lr_2e3.json",
+      "result_path": "projects/clebsch_tree_nqs/results/spin_6x6_center_only_lr_2e3_v2/results.json"
+    },
+    {
+      "candidate_id": "lr_5e-3",
+      "learning_rate": 0.005,
+      "config_path": "projects/clebsch_tree_nqs/configs/sampled/spin_6x6_center_only_lr_5e3.json",
+      "result_path": "projects/clebsch_tree_nqs/results/spin_6x6_center_only_lr_5e3_v2/results.json"
+    }
+  ],
+  "semantic_correction": {
+    "classification": "preregistration_field_semantic_correction",
+    "primary_literal_decision_immutable": true,
+    "secondary_sensitivity_only": true,
+    "old_field": "last10_accepted_move_fraction_median_minimum",
+    "new_field": "last10_conditional_move_acceptance_median_minimum",
+    "threshold_unchanged": 0.15,
+    "all_other_selection_policy_fields_unchanged": true,
+    "old_primary_expected_action_each_geometry": "no_adam_promotion"
+  },
+  "selection_policy": {
+    "endpoint_updates": [0, 50],
+    "required_energy_lowering_per_site": 0.03,
+    "minimum_energy_lowering_combined_mcse": 3.0,
+    "maximum_variance_worsening_combined_mcse": 2.0,
+    "geometry_common_lr": true,
+    "candidate_gap_tie_combined_mcse": 2.0,
+    "tie_choose_smaller_lr": true,
+    "arm_specific_optimum_diagnostic_only": true,
+    "endpoint_uncertainty": {
+      "primary": "same_arm_same_chain_lineage_paired_difference_se",
+      "retain_independent_endpoint_hypot_diagnostic": true
+    },
+    "stability_gates": {
+      "last10_conditional_move_acceptance_median_minimum": 0.15,
+      "relative_update_quantile": 0.99,
+      "relative_update_quantile_maximum": 0.02
+    },
+    "geometry_selection": {
+      "score": "equal_weight_mean_u1_su2_signed_energy_lowering_per_site",
+      "arm_weights": {"u1": 0.5, "su2": 0.5},
+      "z_scores_averaged": false,
+      "wall_time_used": false,
+      "candidate_requires_both_arms_pass": [
+        "energy_endpoint_gate",
+        "variance_endpoint_gate",
+        "stability_gate"
+      ],
+      "raw_best": "highest_geometry_score_among_eligible_candidates",
+      "tie_reference": "raw_best_candidate",
+      "same_arm_cross_lr_uncertainty": "paired_E50_chain_mean_difference_se",
+      "cross_arm_uncertainty_combination": "worst_case_sum_upper_bound",
+      "geometry_score_difference_mcse_formula": "0.5*(se_u1+se_su2)",
+      "tie_threshold_combined_mcse": 2.0,
+      "tie_choose_smaller_lr": true
+    },
+    "continuation_if_no_eligible_candidate": {
+      "maximum_uses": 1,
+      "resume_selected_step50_checkpoint": true,
+      "from_update": 50,
+      "to_update": 100,
+      "pool_requires_both_arms_stability_gate": true,
+      "pool_requires_both_arms_variance_endpoint_gate": true,
+      "pool_minimum_each_arm_energy_lowering_paired_mcse": -2.0,
+      "pool_geometry_score_must_be_strictly_positive": true,
+      "selection_rule_reused_without_change": true,
+      "only_selected_candidate_continues": true,
+      "learning_rate_locked": true,
+      "run_other_candidates": false,
+      "promotion_0_to_100_each_arm": {
+        "minimum_energy_lowering_per_site": 0.05,
+        "minimum_energy_lowering_paired_mcse": 5.0,
+        "minimum_variance_fractional_decrease": 0.25,
+        "minimum_variance_decrease_paired_mcse": 3.0
+      },
+      "failure_action": "transition_to_matrix_free_physical_sr"
+    },
+    "heldout_policy": {
+      "common_learning_rate_fixed_per_geometry": true,
+      "chains": 64,
+      "updates": 200,
+      "initial_seeds": [23, 47],
+      "measurement_updates": [0, 100, 200],
+      "full_spin_structure_factor_deferred_until_heldout": true,
+      "full_spin_structure_factor_updates": [0, 100, 200],
+      "each_seed_each_arm_safety_gates": {
+        "minimum_energy_lowering_per_site": 0.05,
+        "minimum_energy_lowering_paired_mcse": 5.0,
+        "minimum_variance_fractional_decrease": 0.25,
+        "minimum_variance_decrease_paired_mcse": 3.0
+      },
+      "efficiency_claim_requires_both_arms_all_initial_seeds": true,
+      "additional_confirmation_seed_if_pass": 89,
+      "efficiency_claim_requires_confirmation_seed": true,
+      "confirmation_seed_must_pass_each_arm_safety_gates": true,
+      "time_to_target": {
+        "metric": "first_registered_work_reaching_absolute_energy_per_site_target",
+        "absolute_energy_per_site_targets": {
+          "square_6x6_j2_0p5": null,
+          "triangular_6x6_j2_0p125": null
+        },
+        "must_be_frozen_from_convention_and_graph_matched_published_reference_before_heldout_run": true,
+        "forbid_square_8x8_target_for_square_6x6": true,
+        "heldout_config_forbidden_until_targets_are_nonnull": true
+      }
+    }
+  },
+  "secondary_sampler_audit": {
+    "candidate_eligibility_rule": false,
+    "diagnostic_only": true,
+    "last10_nontrivial_proposal_fraction_median_minimum": 0.4,
+    "last10_chain_snapshot_move_fraction_median_minimum": 0.8,
+    "require_all_history_zero_amplitude_chain_fraction_equal_zero": true,
+    "accepted_move_fraction_reported_but_not_gated": true,
+    "does_not_establish_trained_state_ess_or_autocorrelation": true
+  },
+  "parent_binding_contract": {
+    "schema": "metric_correction_step50_parent_binding_v1",
+    "purpose": "new_identity_extension_input_only",
+    "training_authorized_by_this_selector": false,
+    "parent_step": 50,
+    "parent_artifacts_and_checkpoint_series_immutable": true,
+    "new_run_identity_and_checkpoint_series_required": true,
+    "required_fields": [
+      "result_file_sha256",
+      "config_sha256",
+      "source_manifest_sha256",
+      "runtime_identity_sha256",
+      "trial_payload_sha256",
+      "checkpoint_generation_sha256",
+      "checkpoint_run_identity_sha256",
+      "params_sha256",
+      "optimizer_state_sha256",
+      "chain_states_sha256",
+      "sampling_key_sha256"
+    ]
+  }
+}

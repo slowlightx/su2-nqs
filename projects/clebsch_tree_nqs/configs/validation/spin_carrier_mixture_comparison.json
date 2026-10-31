@@ -1,0 +1,31 @@
+{
+  "output": "projects/clebsch_tree_nqs/results/spin_schur_control_training_v1/mixture_comparison",
+  "parent": "projects/clebsch_tree_nqs/results/spin_schur_control_training_v1/n36",
+  "parent_config": "projects/clebsch_tree_nqs/configs/validation/spin_schur_control_training.json",
+  "n_sites": 36,
+  "basis_names": ["carrier", "reference_scaled", "raw_diagonal", "raw_control"],
+  "arm_names": ["carrier", "old_mixture", "network_diagonal", "network_control", "raw_diagonal", "raw_control"],
+  "subspaces": {
+    "old_mixture": [0, 1],
+    "network_diagonal": [0, 1, 2],
+    "network_control": [0, 1, 3]
+  },
+  "primary_contrast": "network_control-minus-old_mixture",
+  "secondary_contrast": "network_diagonal-minus-old_mixture",
+  "relative_rank_tolerance": 1e-10,
+  "maximum_condition_number": 100000000.0,
+  "audit_seed": 2026100901,
+  "bootstrap_seed": 2026100902,
+  "audit_blocks": 8,
+  "bootstrap_replicates": 4000,
+  "H_microbatch": 2,
+  "maximum_residual_H_attempted_centers": 386,
+  "maximum_carrier_H_attempted_centers": 256,
+  "fit_wall_seconds": 120,
+  "audit_wall_seconds": 1200,
+  "peak_rss_limit_gib": 8,
+  "protocol": "No architecture change, no backbone retraining and no size increase. The previously viewed128-chain-record audit is now development data. Fit full complex unconstrained global Ritz coefficients in three fixed nested subspaces; preserve raw empirical transition matrices. No rank truncation, ridge, audit-dependent coefficient/arm selection or best-of reporting. Leave-one-whole-chain refits diagnose sensitivity only. Failure of a primary fit stops this registration.",
+  "interpretation": "The added directions are two existing six-step full-network endpoints, not a newly converged complete neural manifold. Exact sampled-subspace optimization is not a certified Hilbert-space variational optimum. Finite-Q fitting hermitizes the energy matrix only to define a real Rayleigh objective; untouched audit retains raw complex energy and node-safe H2.",
+  "audit": "Seal all coefficients, checkpoints, protocol and fit outputs before drawing new16 independent chains of8 records. Reuse the parent defensive exchange-bridge sampler, carrier normalization and settings unchanged; only seed is new. Compute reference, diagonal and control residual H actions once each, plus shared cheap HC from the proposal. All six fixed endpoints use exactly the same four physical basis columns and whole-chain paired uncertainty. Never refit coefficients inside audit or audit bootstrap. No production or N64 release, regardless of outcome.",
+  "cost": "384 unique residual full-H centers and128 cheap shared carrier-H centers. A hard386 attempted residual-center cap allows at most one interrupted two-center batch replay; a hard256 attempted cheap-carrier-center cap allows one interrupted deterministic draw replay without adding any configurations. Resume preserves sample identity, bank identity, sealed coefficients and cumulative wall budget, including setup and conservatively charged interrupted batches. No extra independent sampling or audit-dependent candidate selection is authorized. Expected6–8 CPU minutes, hard cap1200s and8GiB. No GPU claim."
+}

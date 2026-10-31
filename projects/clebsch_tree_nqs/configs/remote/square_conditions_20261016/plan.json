@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "created": "2026-10-16",
+  "status": "preregistered_before_new_training",
+  "parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/vieijra_nys_reproduction_20261014/square8_orbit_dag",
+    "checkpoint_sha256": "a6945a48f1386faf3b240fca39ec34d97c2326be123caaf2bde032a2cd3eed12",
+    "registration_sha256": "81386a72a447891adf07d10832db1538fc43e41fa1fbb347fadebd5a9bb6dcd4",
+    "step": 250,
+    "active_seconds": 88773.58515373245,
+    "source_workspace": "/home/yx789/nqs-clebsch-tree-orbit-dag-20261015"
+  },
+  "updates_per_arm": 24,
+  "samples_per_update": 1024,
+  "session_seconds_per_half": 3300,
+  "maximum_requested_GPU_hours_initial_pair": 5,
+  "maximum_wall_seconds_per_arm": 9000,
+  "inherited_scientific_GPU_hours": 24.659329209370124,
+  "scientific_cumulative_GPU_hours_cap": 48,
+  "prior_frozen_audit": {
+    "energy_per_site": -0.4266757884682453,
+    "energy_chain_SE": 0.000985561905325347,
+    "variance_per_site": 0.09742031449398561,
+    "variance_chain_SE": 0.009696373327654727
+  },
+  "arms": {
+    "adam_reset": {
+      "training_config": "projects/clebsch_tree_nqs/configs/remote/square_conditions_20261016/adam_reset_train.json",
+      "audit_config": "projects/clebsch_tree_nqs/configs/remote/square_conditions_20261016/adam_reset_audit.json",
+      "midpoint_step": 262,
+      "endpoint_step": 274,
+      "training_config_sha256": "ba275ef5da88de66108b646f07b0d40e0182e94132d933ba83ffc392fc225896",
+      "audit_config_sha256": "325bf675226e31b83d7bfd2fd91d97aaa2485487ba07d5a4e1146eb47e97f839"
+    },
+    "sr_reentry": {
+      "training_config": "projects/clebsch_tree_nqs/configs/remote/square_conditions_20261016/sr_reentry_train.json",
+      "audit_config": "projects/clebsch_tree_nqs/configs/remote/square_conditions_20261016/sr_reentry_audit.json",
+      "midpoint_step": 262,
+      "endpoint_step": 274,
+      "training_config_sha256": "b665a0819e0d769576186f3175ea2f3b2ac0140edfc283a90f7979671d7a310b",
+      "audit_config_sha256": "2aceaef82ab1f7e489182628680c436f439eff72841ade7f80f376d43ffdf52e"
+    }
+  },
+  "matched": [
+    "exact same frozen physical parameters",
+    "same architecture227958 real parameters/full coherent Gamma-A1/exactS0",
+    "same new24 updates1024samples each and full-H calls",
+    "same initial chains/RNG and sampling protocol",
+    "same FS sine<=.05 and ESS>=.95",
+    "explicit reset of Adam moments in BOTH arms"
+  ],
+  "differences": {
+    "adam_reset": "clipped ordinary energy gradient; Adam eta.001 beta(.9,.999), global gradient cap.001",
+    "sr_reentry": "SR ridge.01 followed by Adam eta.005 beta(.9,.999), no ordinary-gradient clipping in the SR stage"
+  },
+  "interpretation": "A comparison of two optimizer recipes, NOT a single-factor or assumed equal-actual-FS-distance comparison. Record actual FS path lengths, acceptance and SR residual. Parent quality remains the shared starting point, not a new initialization trial.",
+  "audit": "Each endpoint gets two fresh streams with16chains/stream and32snapshots:1024 independent-audit records, whole-chain uncertainty, full unmodified H and legacy-vs-DAG actual-endpoint replay.",
+  "continuation_rule": "No automatic longer release. Report both fixed endpoints. A selected recipe must lower independent energy beyond two combined chain SE and not worsen variance beyond its combined uncertainty before requesting more necessary training. Keep paper target -.4985703125 and intermediate -.48 unchanged.",
+  "failed_runtime_policy": "Any source mismatch, nonfinite H-ratio/gradient, failed replay, failed checkpoint or SR residual stops that arm with its last valid checkpoint. Do not silently alter batch size/model or weaken a seal.",
+  "cost_estimate": "Adam1024 approximately95s/update from measured377.84s/4096;24updates~38min. SR explicit1024x227958 float64 scores1.87GB before autodiff temporaries; actual throughput must be measured. Budget2.5A100h/arm includes compile,24updates and independent audit; no promise of crossing-.48 in24updates."
+}

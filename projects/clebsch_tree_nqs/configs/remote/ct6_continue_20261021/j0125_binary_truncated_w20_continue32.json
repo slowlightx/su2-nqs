@@ -1,0 +1,94 @@
+{
+  "task": "native_triangle_same_width_continuation_v3",
+  "case": "j0125_binary_truncated",
+  "stage": "w20_continue32",
+  "model": {
+    "length": 6,
+    "multiplicity_cap": 20,
+    "maximum_q": 10
+  },
+  "arity": "binary_truncated",
+  "binary_rank": 8,
+  "j2_over_j1": 0.125,
+  "parent": {
+    "kind": "continuation",
+    "model": {
+      "length": 6,
+      "multiplicity_cap": 20,
+      "maximum_q": 10
+    },
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/ct6_width_20261020/j0125_binary_truncated/w20",
+    "plan_path": "projects/clebsch_tree_nqs/configs/remote/ct6_width_20261020/j0125_binary_truncated_w20.json",
+    "expected_identity": {
+      "case": "j0125_binary_truncated",
+      "stage": "w20",
+      "arity": "binary_truncated",
+      "model": {
+        "length": 6,
+        "multiplicity_cap": 20,
+        "maximum_q": 10
+      },
+      "j2_over_j1": 0.125,
+      "binary_rank": 8
+    },
+    "absolute_completed_steps": 284,
+    "sealed_files": {
+      "registration.json": "af7da7dc74f412d75e1f1aeec785cc0551830d8b9b245387545525711224c393",
+      "results.json": "b6dde779a471e2f80c5bf15b68dfa2875f7a5bb3e132f98a1c1ef3fedb682ad7",
+      "terminal_audit.json": "c4be1b88f91a352c9763f86ae7441cdcc783042fbc1789a6551baf634f08518f",
+      "checkpoint.pkl": "c0347b47c8c46ddb8bca622ce86728165f77cdb8724c11890c9284dd99474d80",
+      "process_replay.json": "8196fd2144d4510c47afe0b1bad005b063d470de3fce079e2622b26505e858c0"
+    }
+  },
+  "pilot_steps": 2,
+  "training": {
+    "steps": 32,
+    "samples": 2048,
+    "chains": 64,
+    "refresh_proposals": 36,
+    "spacing_proposals": 36
+  },
+  "calibration": {
+    "samples": 512,
+    "chains": 64,
+    "initial_burn_proposals": 1440,
+    "refresh_proposals": 144,
+    "spacing_proposals": 36
+  },
+  "audit": {
+    "samples": 16384,
+    "chains": 128,
+    "refresh_proposals": 1440,
+    "spacing_proposals": 36
+  },
+  "seeds": {
+    "calibration": 2610218121,
+    "audit": 2610218122,
+    "expansion": 2610218123
+  },
+  "learning_rate": 0.0001,
+  "damping": 0.05,
+  "maximum_fs_sine": 0.005,
+  "minimum_ess_fraction": 0.98,
+  "halvings": 12,
+  "new_feature_scale": 0.2,
+  "projection_chunk": 4,
+  "action_chunk": 4,
+  "score_chunk": 2,
+  "tolerance": 2e-11,
+  "require_gpu": true,
+  "budget": {
+    "pilot_seconds": 2700,
+    "replay_seconds": 1800,
+    "train_seconds": 18000,
+    "maximum_peak_device_bytes": 75161927680
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/ct6_continue_20261021/j0125_binary_truncated/w20_continue32",
+  "interpretation": "Fixed32 additional full-network updates at width20; inherit complete SR+Adam moments, both RNG/chains, and same Hamiltonian. Two committed pilot updates then process-isolated numerical replay on the pinned node precede remaining30updates and fresh16384-record/128-chain audit. No checkpoint chosen by current audit energy. Width18 records retained; width24 unreleased.",
+  "sr_solver": "dual_force",
+  "continuation_profile": "inherit_full_optimizer_sampler_rng",
+  "runtime_contract": {
+    "policy": "pin_first_pilot_numerical_runtime",
+    "node": "kim-compute-05"
+  }
+}

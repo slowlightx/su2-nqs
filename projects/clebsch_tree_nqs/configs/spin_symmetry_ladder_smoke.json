@@ -1,0 +1,51 @@
+{
+  "schema_version": 2,
+  "domain": "spin",
+  "status": "local_one_seed_route_smoke",
+  "model": {
+    "feature_dim": 2,
+    "maximum_intermediate_q": 4,
+    "initialization_scale": 1.0
+  },
+  "parameter_bracket_maximum_width": 16,
+  "optimization": {
+    "steps": 40,
+    "learning_rate": 0.01,
+    "record_every": 5,
+    "seeds": [11],
+    "energy_error_per_site_targets": [0.05, 0.01, 0.001, 0.0001]
+  },
+  "arms": [
+    {"arm_id": "m0_unconstrained_none", "backbone": "unconstrained", "projection": "none"},
+    {"arm_id": "u1_none", "backbone": "u1", "projection": "none"},
+    {"arm_id": "su2_none", "backbone": "su2", "projection": "none"},
+    {"arm_id": "su2_translation", "backbone": "su2", "projection": "translation"},
+    {"arm_id": "su2_gamma_a1", "backbone": "su2", "projection": "gamma_a1"},
+    {"arm_id": "true_full_none", "backbone": "unconstrained", "projection": "none"}
+  ],
+  "cases": [
+    {
+      "case_id": "square_4x4_j2_0p5_m0",
+      "geometry": "square",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.5,
+      "support": "fixed_m0",
+      "exact_energy_anchor": -8.457923351394845,
+      "anchor_provenance": "stored physical-M0 exact reference; no eigensolve in runner",
+      "arm_ids": ["m0_unconstrained_none", "u1_none", "su2_none", "su2_translation", "su2_gamma_a1"]
+    },
+    {
+      "case_id": "triangular_4x4_j2_0p125_m0",
+      "geometry": "triangular",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.125,
+      "support": "fixed_m0",
+      "exact_energy_anchor": -8.553311087209,
+      "anchor_provenance": "stored physical-M0 exact reference; no eigensolve in runner",
+      "arm_ids": ["m0_unconstrained_none", "u1_none", "su2_none", "su2_translation", "su2_gamma_a1"]
+    }
+  ],
+  "claim_boundary": "One-seed route smoke. Equal width is not equal raw parameter count. Triangular 4x4 is not K-compatible and cannot support a 120-degree/QSL/phase-boundary claim."
+}

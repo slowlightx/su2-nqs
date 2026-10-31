@@ -1,0 +1,9 @@
+{
+  "base_config": "projects/clebsch_tree_nqs/configs/remote/ordinary_chirality_20261015/tri_j0125_100.json",
+  "task": "frozen_same_operator_Renyi_matched_control_A100_retry",
+  "ordinary_reference": "/home/yx789/nqs-wavefunctions/nqs/ordinary_row_matrix_20261015/tri_j0125_100",
+  "ordinary_registration_file_sha256": "0518850b8bacc0a47b12adfe8ccb5acb76ed15d996dee48dac7f4ec7237eb422",
+  "output": "/home/yx789/nqs-wavefunctions/nqs/schmidt_covariance_20261015/r1_a100/tri_j0125_100",
+  "center_chunk": 64,
+  "wall_seconds": 1200
+}

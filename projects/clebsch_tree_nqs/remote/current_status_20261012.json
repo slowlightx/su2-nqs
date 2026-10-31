@@ -1,0 +1,139 @@
+{
+  "utc": "2026-10-12T04:16:08.186573+00:00",
+  "nqs": {
+    "tri_j0": {
+      "steps": 500,
+      "status": "paused_session_budget",
+      "cumulative_training_seconds": null,
+      "last_training_statistics": {
+        "energy_before_update_per_site": -0.5584151939239036,
+        "variance_before_update_per_site": 0.005958117794496916,
+        "seconds": null,
+        "update_accepted": true
+      }
+    },
+    "tri_j005": {
+      "steps": 194,
+      "status": "running",
+      "cumulative_training_seconds": null,
+      "last_training_statistics": {
+        "energy_before_update_per_site": -0.5368484394987745,
+        "variance_before_update_per_site": 0.01450921360936215,
+        "seconds": null,
+        "update_accepted": true
+      }
+    },
+    "tri_j01": {
+      "steps": 235,
+      "status": "running",
+      "cumulative_training_seconds": null,
+      "last_training_statistics": {
+        "energy_before_update_per_site": -0.5211583237209568,
+        "variance_before_update_per_site": 0.005692174942329502,
+        "seconds": null,
+        "update_accepted": true
+      }
+    },
+    "tri_j0175": {
+      "steps": 233,
+      "status": "running",
+      "cumulative_training_seconds": null,
+      "last_training_statistics": {
+        "energy_before_update_per_site": -0.5015890160268324,
+        "variance_before_update_per_site": 0.00857719767287118,
+        "seconds": null,
+        "update_accepted": true
+      }
+    },
+    "square_j0": {
+      "steps": 286,
+      "status": "running",
+      "cumulative_training_seconds": null,
+      "last_training_statistics": {
+        "energy_before_update_per_site": -0.6788485090648944,
+        "variance_before_update_per_site": 6.764624934355963e-05,
+        "seconds": null,
+        "update_accepted": true
+      }
+    },
+    "square_j05": {
+      "steps": 500,
+      "status": "paused_session_budget",
+      "cumulative_training_seconds": null,
+      "last_training_statistics": {
+        "energy_before_update_per_site": -0.502907361049444,
+        "variance_before_update_per_site": 0.0038424625089365626,
+        "seconds": null,
+        "update_accepted": true
+      }
+    },
+    "tri_j0_continued": {
+      "completed_steps": 505,
+      "status": "running",
+      "cumulative_training_seconds": null
+    }
+  },
+  "dmrg": {
+    "files": [
+      "registration.json",
+      "source_snapshots",
+      "checkpoint.h5",
+      "transition.json"
+    ]
+  },
+  "replay": {
+    "tri_j0": {
+      "status": "passed",
+      "config_sha256": "cad55f2373014d705fdb69680a2afeb3c08bdbff6d9ed945c106baa41595f63e",
+      "start_checkpoint_sha256": "8b395b442994438c2c8d7589d3df72b3d765b7a881857f3cd08564d13f6401e7",
+      "expected_checkpoint_sha256": "8d83ab36394293c623b23a0fe7b6b30d127115472154639d9dc6e36dfd70936a",
+      "start_step": 502,
+      "completed_step": 504,
+      "maximum_absolute_errors": {
+        "parameters": 3.0916935678249047e-13,
+        "sampler_and_RNG": 1.2873258015133615e-11,
+        "optimizer": 1.665102900005877e-08
+      },
+      "actual_production_updates": [
+        {
+          "energy": -20.08483030720683,
+          "imaginary": 0.0025419565912812485,
+          "variance": 0.3643644711490079,
+          "error_of_mean": 0.00991406529742887,
+          "sample_sharding": "NamedSharding(mesh=Mesh('S': 1, axis_types=(Auto,)), spec=P(), memory_kind=device)",
+          "unique_local_sample_partitions": 1,
+          "sampled_fs_sine": 0.0007458277929820481,
+          "reweighting_ess_fraction": 0.9999980760157341,
+          "update_scale": 1.0,
+          "trust_evaluations": 1,
+          "update_accepted": true
+        },
+        {
+          "energy": -20.097854337791944,
+          "imaginary": -0.00149247390179724,
+          "variance": 0.2586186938090584,
+          "error_of_mean": 0.008143172386325885,
+          "sample_sharding": "NamedSharding(mesh=Mesh('S': 1, axis_types=(Auto,)), spec=P(), memory_kind=device)",
+          "unique_local_sample_partitions": 1,
+          "sampled_fs_sine": 0.0006252583090296724,
+          "reweighting_ess_fraction": 0.9999988357471865,
+          "update_scale": 1.0,
+          "trust_evaluations": 1,
+          "update_accepted": true
+        }
+      ],
+      "full_H_calls": 8192,
+      "exact_configurations": true,
+      "exact_RNG": true,
+      "physical_log_ratio_centered_RMS": 1.7893611506955973e-12,
+      "optimizer_relative_max_error": 4.670504065329438e-11,
+      "bitwise_auxiliary_v1_passed": false,
+      "replay_validation": "v2: exact configurations/RNG; parameters1e-9, floating sampler auxiliaries1e-7, elementwise mixed-relative optimizer1e-8, centered physical log-ratio RMS1e-7. Original v1 failure records retained.",
+      "seconds": 252.48967352393083,
+      "production": false,
+      "source_sha256": "094d0cf8c76c3d5031c2d4527e09dad52516cf01dc0756af538fdd29fcd96aea"
+    }
+  },
+  "guard_logs": {},
+  "queue": "             JOBID                                NAME       STATE         TIME NODELIST(REASON)\n            215508           milestone-safe-noop-check     PENDING         0:00 (Resources)\n            215511          tri_j0175-safe-complete500     PENDING         0:00 (Dependency)\n            215510            tri_j01-safe-complete500     PENDING         0:00 (Dependency)\n            215509           tri_j005-safe-complete500     PENDING         0:00 (Dependency)\n            215499             square05-cont-audit1000     PENDING         0:00 (Dependency)\n            215498              square05-cont-audit750     PENDING         0:00 (Dependency)\n            215497             square05-cont-train1000     PENDING         0:00 (Dependency)\n            215496         square05-cont-replay502-504     PENDING         0:00 (Dependency)\n            215495             square05-cont-resume504     PENDING         0:00 (Dependency)\n            215230                 tri0-cont-audit1000     PENDING         0:00 (Dependency)\n            215229                  tri0-cont-audit750     PENDING         0:00 (Dependency)\n            207277                  square_j0-audit250     PENDING         0:00 (Dependency)\n            207273                  tri_j0175-audit250     PENDING         0:00 (Dependency)\n            207270                    tri_j01-audit250     PENDING         0:00 (Dependency)\n            207267                   tri_j005-audit250     PENDING         0:00 (Dependency)\n            207263                  square_j0-audit500     PENDING         0:00 (Dependency)\n            207258                   tri_j005-audit500     PENDING         0:00 (Dependency)\n            207253                  tri_j0175-audit500     PENDING         0:00 (Dependency)\n            207247                    tri_j01-audit500     PENDING         0:00 (Dependency)\n            207284                  dmrg10240-hexagon6     PENDING         0:00 (Dependency)\n            207287                    dmrg10240-dimers     PENDING         0:00 (Dependency)\n            207286                      dmrg10240-spin     PENDING         0:00 (Dependency)\n        942173_[0]                   nbnpo_IglobalCorr     PENDING         0:00 (Dependency)\n        942171_[0]                         nbnpo_Icorr     PENDING         0:00 (Dependency)\n            215526      square05-cont-regional750-1000     PENDING         0:00 (Dependency)\n            215280          tri0-cont-regional750-1000     PENDING         0:00 (Dependency)\n            215279          square_j0-readout500-cpu24     PENDING         0:00 (Dependency)\n            215278          square_j0-readout250-cpu24     PENDING         0:00 (Dependency)\n            215277          tri_j0175-readout500-cpu24     PENDING         0:00 (Dependency)\n            215276          tri_j0175-readout250-cpu24     PENDING         0:00 (Dependency)\n            215275            tri_j01-readout500-cpu24     PENDING         0:00 (Dependency)\n            215274            tri_j01-readout250-cpu24     PENDING         0:00 (Dependency)\n            215273           tri_j005-readout500-cpu24     PENDING         0:00 (Dependency)\n            215272           tri_j005-readout250-cpu24     PENDING         0:00 (Dependency)\n          942172_0                       nbnpo_Iglobal     RUNNING   8-02:25:11 kim-cpu-01\n          942170_0                       nbnpo_Ianneal     RUNNING   8-02:25:16 kim-cpu-04\n            207262                  square_j0-train500     RUNNING      4:03:30 kim-compute-05\n            207257                   tri_j005-train500     RUNNING      4:06:47 kim-compute-04\n            207252                  tri_j0175-train500     RUNNING      5:00:38 kim-compute-03\n            207246                    tri_j01-train500     RUNNING      5:00:44 kim-compute-03\n            207283            dmrg-chi10240-two-sweeps     RUNNING      4:59:54 kim-cpu-03\n            215494              square05-cont-pilot502     RUNNING         2:32 kim-compute-05\n            215228                 tri0-cont-train1000     RUNNING         3:33 kim-compute-04\n"
+}

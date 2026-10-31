@@ -1,0 +1,11 @@
+{
+  "base_config": "projects/clebsch_tree_nqs/configs/remote/frozen_channels_20261016/parents/tri_j01_750.json",
+  "base_config_sha256": "d366542c1661ad4831ba1d81d713214d7d7334af249acf54c3f9bad74a9850d8",
+  "output": "/home/yx789/nqs-wavefunctions/nqs/frozen_channels_20261016/tri_j01_750",
+  "stage_wall_seconds": {
+    "replica": 360,
+    "ordinary": 480,
+    "escort": 900
+  },
+  "predeclared_before_new_readout": true
+}

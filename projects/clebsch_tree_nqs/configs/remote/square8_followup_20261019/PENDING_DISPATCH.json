@@ -1,0 +1,27 @@
+{
+  "status": "NOT_SUBMITTED_APPROVAL_SERVICE_AT_CAPACITY",
+  "remote_workspace": "/home/yx789/nqs-square8-followup-20261019",
+  "configs": ["j0.json", "j05.json"],
+  "numerical_entrypoints": [
+    "projects/clebsch_tree_nqs/workflows/spin_spatial_vit_netket.py",
+    "projects/clebsch_tree_nqs/workflows/spin_spatial_vit_quality.py"
+  ],
+  "steps_including_pilot_and_replay": 128,
+  "samples_per_step": 4096,
+  "GPU_type": "gpu:nvidia_a100_80gb_pcie:1",
+  "partition": "kim",
+  "account": "kim",
+  "CPU_cores": 4,
+  "memory_GiB": 64,
+  "job_sequence_per_case": [
+    {"phase": "pilot", "minutes": 45, "GPUs": 1},
+    {"phase": "replay", "minutes": 45, "GPUs": 1, "dependency": "afterok:pilot"},
+    {"phase": "train", "minutes": 510, "GPUs": 1, "dependency": "afterok:replay"},
+    {"phase": "audit", "minutes": 90, "GPUs": 1, "array": "0-1%1", "dependency": "afterok:train"},
+    {"phase": "aggregate", "minutes": 10, "GPUs": 0, "dependency": "afterok:audit"}
+  ],
+  "maximum_new_A100_hours_both_cases": 26,
+  "release": "Actual first4 steps must have finite physical moments, bounded FS/ESS, validated oneGPU samples, peak below70GiB and a measured within8h active-training forecast. This is a bounded initialization/optimization baseline, not an automatic SOTA production release.",
+  "before_submission": "Recheck live queue for duplicates and source/checkpoint hashes; sync only transitive runtime source, configs and dispatcher; retain all existing square6 checkpoints. Record actual returned jobIDs and allocation ceilings. Do not fabricate a receipt from this plan.",
+  "approval_blocker": "Automatic approval review failed: Selected model is at capacity. No new remote command was executed for this dispatch."
+}

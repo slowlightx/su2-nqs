@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_scale_first_initialization_pilot",
+  "source_audit": "../validation/spin_scale_first_initialization_audit.json",
+  "controls": {
+    "total_steps": 64,
+    "sample_count": 32,
+    "seed": 2026092431,
+    "damping": 0.1,
+    "cg_tolerance": 1e-6,
+    "cg_max_iterations": 64,
+    "step_size": 0.01,
+    "maximum_relative_parameter_step": 0.001,
+    "minimum_variance": 0.0
+  },
+  "convergence_gate": {
+    "block_size": 8,
+    "initial_and_final_block_count": 2,
+    "minimum_negative_energy_block_fraction": 0.5,
+    "minimum_negative_variance_block_fraction": 0.5,
+    "maximum_sr_relative_residual": 1e-5,
+    "maximum_gpu_peak_memory_mib": 20000.0,
+    "require_negative_energy_block_slope": true,
+    "require_negative_variance_block_slope": true,
+    "require_final_energy_below_initial": true,
+    "require_final_variance_below_initial": true,
+    "require_every_system_and_arm": true
+  },
+  "claim_boundary": "One development seed only. Passing licenses the registered three-seed production budget but is not itself a variational-win claim."
+}

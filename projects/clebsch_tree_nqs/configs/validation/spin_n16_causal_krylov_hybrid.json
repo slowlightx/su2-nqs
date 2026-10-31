@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_n16_causal_krylov_hybrid",
+  "preregistered_before_run": true,
+  "source_preflight": "spin_scale_first_three_arm_preflight.json",
+  "source_initialization_result": "../../results/spin_scale_first_aligned_carrier_exact_distillation_v1/results.json",
+  "source_krylov_causal_result": "../../results/spin_n16_krylov_causal_oracle_v1/results.json",
+  "controls": {
+    "audit_batch_size": 256
+  },
+  "comparison": {
+    "shared_columns_through_h3": true,
+    "physical_extra_column": "trained_two_lanczos_causal_state",
+    "control_extra_column": "h4_psi",
+    "require_equal_numerical_rank": true
+  },
+  "claim_boundary": "Exact rank-five complementarity gate. Passing permits sampled additive-channel design, not N36 training."
+}

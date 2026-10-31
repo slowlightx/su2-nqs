@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_symmetry_response_operator",
+  "phase": "development",
+  "scientific_question": "Do preregistered point-group response-return loops remove the seed dependence of the overlapping-Schur A1 variational space?",
+  "mechanism": {
+    "ground_sector": "Gamma-A1 singlet",
+    "triangular_certificate_channels": [
+      "E2_J1_nematic_return",
+      "A2_chirality_return"
+    ],
+    "square_training_channels": [
+      "B1_J1_nematic_return",
+      "B2_J2_nematic_return",
+      "A2_chirality_return"
+    ],
+    "scalar_return": "sum_mu O_Gamma,mu^dagger O_Gamma,mu",
+    "common_physical_overlapping_operators": 8,
+    "matched_control": "one fixed orthogonal conjugation of each response-return operator inside the identical A1 space"
+  },
+  "optimization": {
+    "seeds": [1111, 1112, 1113, 1114, 1115],
+    "steps": 1000,
+    "learning_rate": 0.01
+  },
+  "excluded_previous_seeds": [
+    0, 1, 2,
+    101, 102, 103,
+    211, 212, 213,
+    311, 312, 313,
+    411, 412, 413,
+    511, 512, 513,
+    521, 522, 523,
+    611, 612, 613,
+    711, 712, 713,
+    811, 812, 813,
+    911, 912, 913,
+    1011, 1012, 1013
+  ],
+  "promotion_rule": "On square N16 J2/J1=0.5, the all-labelled bank must improve every paired baseline seed, reduce worst-seed error and seed range, beat the dimension- and spectrum-matched scrambled response bank for every paired seed and median variance, improve median response-moment error, and put every seed below 1e-5 total-energy error. Triangular N12 supplies an exact E2/A2 representation certificate only.",
+  "forbidden_actions": [
+    "change channels, seeds, steps, learning rate, or gates after seeing results",
+    "reuse the failed 1011-1013 audit seeds",
+    "linearly mix E2, B1, B2, or A2 states into an A1 ground state",
+    "call the N12 triangular certificate a QSL variational benchmark",
+    "license N36 before a separate untouched audit"
+  ]
+}

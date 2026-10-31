@@ -1,0 +1,232 @@
+{
+  "task": "spin_spatial_vit_quality",
+  "preregistered_before_training": true,
+  "backend": "netket_ntk",
+  "require_gpu": true,
+  "model_family": "literature",
+  "coordinate_convention": "physical120",
+  "spin_inversion_even": true,
+  "output": "/share/kim/yx789/nqs-vit-quality/results/spin_spatial_vit_gpu_continuation_10600_v1/seed1",
+  "j2_over_j1": 0.125,
+  "initialization_seed": 2026100741,
+  "training_seed": 2026100742,
+  "model": {
+    "geometry": "triangular",
+    "rows": 6,
+    "columns": 6,
+    "patch_rows": 3,
+    "patch_columns": 3,
+    "embedding_dim": 48,
+    "head_count": 8,
+    "depth": 4,
+    "mlp_ratio": 4,
+    "target_m2": 0,
+    "initialization_scale": 1,
+    "initial_distance_decay": 3,
+    "use_distance_envelope": true,
+    "pooling": "authors",
+    "layer_norm_epsilon": 0.000001
+  },
+  "stages": [
+    {
+      "projection": "none",
+      "steps": 5000
+    },
+    {
+      "projection": "translation",
+      "steps": 500
+    },
+    {
+      "projection": "gamma_a1",
+      "steps": 100
+    },
+    {
+      "projection": "gamma_a1",
+      "steps": 1000
+    },
+    {
+      "projection": "gamma_a1",
+      "steps": 1000
+    },
+    {
+      "projection": "gamma_a1",
+      "steps": 1000
+    },
+    {
+      "projection": "gamma_a1",
+      "steps": 1000
+    },
+    {
+      "projection": "gamma_a1",
+      "steps": 1000
+    }
+  ],
+  "quality_milestones": [
+    0,
+    200,
+    1000,
+    3000,
+    5000,
+    5500,
+    5600,
+    5850,
+    6100,
+    6350,
+    6600,
+    6850,
+    7100,
+    7350,
+    7600,
+    7850,
+    8100,
+    8350,
+    8600,
+    8850,
+    9100,
+    9350,
+    9600,
+    9850,
+    10100,
+    10350,
+    10600
+  ],
+  "maximum_training_seconds": 302400,
+  "maximum_audit_seconds_per_checkpoint": 43200,
+  "maximum_total_audit_seconds": 86400,
+  "sampling": {
+    "chains": 128,
+    "snapshots_per_update": 32,
+    "proposals_between_snapshots": 36,
+    "burn_proposals": 720
+  },
+  "sr": {
+    "damping": 0.0002,
+    "step_size": 0.005
+  },
+  "netket": {
+    "version": "3.22.3",
+    "on_the_fly": false,
+    "chunk_size": 16,
+    "chunk_size_bwd": 4,
+    "momentum": null,
+    "expected_device_count": 1,
+    "initialization": "balanced_spin_half",
+    "exchange_kernel": "uniform_all_pairs"
+  },
+  "audit": {
+    "seeds": [
+      2026101031,
+      2026101032
+    ],
+    "chains": 64,
+    "snapshots": 128,
+    "proposals_between_snapshots": 144,
+    "burn_proposals": 2880,
+    "query_batch": 16,
+    "bootstrap_seed": 2026101033,
+    "bootstrap_replicates": 2000
+  },
+  "momenta": {
+    "Gamma": [
+      0,
+      0
+    ],
+    "K": [
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "minus_K": [
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "M1": [
+      0.5,
+      0
+    ],
+    "M2": [
+      0,
+      0.5
+    ],
+    "M3": [
+      0.5,
+      0.5
+    ]
+  },
+  "regions": {
+    "compact4": {
+      "sites": [
+        0,
+        1,
+        6,
+        7
+      ],
+      "left": [
+        0,
+        1
+      ]
+    },
+    "compact6": {
+      "sites": [
+        0,
+        1,
+        2,
+        6,
+        7,
+        8
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ]
+    },
+    "winding6": {
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "interpretation": {
+    "protocol": "ONE all-network 99904-parameter author-aligned Spatial-ViT. First200 updates are a resumable throughput/convergence pilot of THIS5600-step trajectory, not a new random restart. Full NTK-SR via pinned optional NetKet; same physical S-dot-S units, diag_shift=damping/2 and SGD rate=step_size/2 preserve the repository SR update convention, no Marshall transformation, no momentum. Fixed staged projections; A1 exact only in final stage and frozen PAV audits. Independent audits never select parameters or stage schedule. CPU and old SU2 budgets do not apply.",
+    "strict_su2": false,
+    "new_head": false,
+    "competitive_goal_gap_per_site": 0.0005,
+    "refined_goal_gap_per_site": 0.0002,
+    "finite_ED_reference_per_site": -0.515564,
+    "finite_GCNN_reference_per_site": -0.515386,
+    "precision_or_phase_claim": false
+  },
+  "netket_continue_from": {
+    "directory": "/share/kim/yx789/nqs-vit-quality/results/spin_spatial_vit_gpu_continuation_9600_v1/seed1",
+    "completed_steps": 9600,
+    "checkpoint_path": "quality/step09600.pkl",
+    "checkpoint_sha256": "691f94513ef2c045a7ffdf0a638b2af62acb6d638b304b64f042a192adf11a2f",
+    "registration_sha256": "f5bf3873fc79e4fd5148b874d4838bf928ed726516673779fee66e376db9ef76",
+    "progress_sha256": "b4f2a853b29fa91d5fa8543f2236c747c2eaa660dfcc56d09982312228e74153",
+    "additional_steps": 1000,
+    "time_budget_extension_seconds": 43200
+  },
+  "diagnostic": {
+    "frozen_parent_step": 10600,
+    "optimizer_conditions": [
+      0.1,
+      1,
+      10
+    ],
+    "target_FS_sine": 0.005,
+    "maximum_seconds": 2700,
+    "independent_audit_reused_as_development": true,
+    "new_head": false,
+    "automatic_continuation": false
+  }
+}

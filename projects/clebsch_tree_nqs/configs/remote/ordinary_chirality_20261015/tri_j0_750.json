@@ -1,0 +1,319 @@
+{
+  "task": "frozen_node_safe_ordinary_chirality_covariance",
+  "regions": {
+    "prefix18": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ]
+  },
+  "momenta": {
+    "Gamma": [
+      0,
+      0
+    ],
+    "K": [
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "minus_K": [
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "M1": [
+      0.5,
+      0
+    ],
+    "M2": [
+      0,
+      0.5
+    ],
+    "M3": [
+      0.5,
+      0.5
+    ]
+  },
+  "query_batch": 32,
+  "wall_seconds": 1650,
+  "name": "tri_j0_750",
+  "parent": "/home/yx789/nqs-wavefunctions/nqs/tri_j0_repair_v6_continue_1000/seed1",
+  "step": 750,
+  "checkpoint_sha256": "287fc5436bd791202dc217e0d023a47f6213646f1141f1d938e83977ff05a839",
+  "streams": {
+    "stream2026858952.npz": "1b42763bf46572101783ffc4dbc7943acc91de98dc9a39249dcf1b46ffed17cb",
+    "stream2026858953.npz": "b1251d6752131072d1fa8490a6e58cf1f3cef0596997a18f0ad7b437c9490d8a"
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/ordinary_row_matrix_20261015/tri_j0_750",
+  "relative_replica_orbit": "complete_x_translations_times_spin_flip",
+  "cut_protocol": "Fixed rows0,1,2 prefix18. Certified mirror (r,c)->(2-r,c-r+1) mod6. Same-width oriented six-bond row operators.",
+  "chirality_channels": {
+    "prefix18": {
+      "row0_kappa_z": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "row1_kappa_z": [
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          6
+        ]
+      ],
+      "row2_kappa_z": [
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          17,
+          12
+        ]
+      ],
+      "row0_plus_row1_kappa_z": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          6
+        ]
+      ],
+      "row0_plus_row2_kappa_z": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          17,
+          12
+        ]
+      ],
+      "row1_plus_row2_kappa_z": [
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          17,
+          12
+        ]
+      ]
+    }
+  },
+  "stopping": "Same complete independent saved streams; no new Born sampling, training or H. Direct symmetrized operator products retain intermediate nodes. Wall cap1650s. No PSD/mirror repair; paired chain deletion covariance.",
+  "frozen_input_fingerprints": {
+    "parent_registration": "bff5df57648f62b4dd4d3f788842b2e3c6c694198cdf38849c67126b94b9120b",
+    "parent_registration_file_sha256": "23fcc2f3ea01c86708085c3052babe5c7aa79dcfe1b51bd33a4b3dc3df0cf936",
+    "energy_audit_file_sha256": "d2ec5379f02dbe9fffb3688ea183e54a3c6d7c1fd9ffb9f11916f01979dc6512",
+    "energy_audit_result_sha256": "b388f441ed51af4aba9b728ae21f51a3b558d8edda226ea89fd8ddc463931863",
+    "checkpoint_sha256": "287fc5436bd791202dc217e0d023a47f6213646f1141f1d938e83977ff05a839",
+    "old_reader_source_sha256": "99fc1d730c3d8921d60e14f33ec07f9f312b1b6c20150d58549988ca5bcd26f1",
+    "wall_seconds": 143.58201518491842
+  },
+  "frozen_probe_order": [
+    "row0_kappa_z",
+    "row1_kappa_z",
+    "row2_kappa_z",
+    "row0_plus_row1_kappa_z",
+    "row0_plus_row2_kappa_z",
+    "row1_plus_row2_kappa_z"
+  ],
+  "matrix_reconstruction": "Mii=R(ki); Re Mij=(R(ki+kj)-R(ki)-R(kj))/2. Common-chain and common-purity covariance retained.",
+  "reference_readout_output": "/home/yx789/nqs-wavefunctions/nqs/chirality_cut_20261015/tri_j0_750",
+  "replica_reference": "/home/yx789/nqs-wavefunctions/nqs/row_matrix_20261015/tri_j0_750",
+  "replica_registration_file_sha256": "aedc636cab45744a4a74a8db96d6a8f0ff958d6e4e3589c07622ca574432e8f2",
+  "center_chunk": 64
+}

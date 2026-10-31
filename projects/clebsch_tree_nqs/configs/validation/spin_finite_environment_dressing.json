@@ -1,0 +1,41 @@
+{
+  "task": "spin_finite_environment_dressing",
+  "preregistered_before_run": true,
+  "source": {
+    "result": "projects/clebsch_tree_nqs/results/spin_carrier_cell_scalar_circuit_v1/results.json",
+    "result_sha256": "c8f47c4ce05d49a207d5bb108f893eb23ac69f7cb12bd03e92b8d48dabe15d4f",
+    "bundle": "projects/clebsch_tree_nqs/results/spin_carrier_cell_scalar_circuit_v1/states.npz",
+    "bundle_sha256": "c9d1fee5f53112c97f721b5b6ccad005f021fab143467401ea8a9ff46d1f9264"
+  },
+  "environment_reference": {
+    "directory": "projects/clebsch_tree_nqs/results/spin_exchange_environment_v1",
+    "result_sha256": "10e2b5cc087b2be440fa38203534f5e889f098847a75dd7f920fca6768a0669b"
+  },
+  "linear_size": 6,
+  "j2_over_j1": 0.125,
+  "carrier": "analytic zero-Lanczos pi/0-flux, exact S=0 Gamma-A1",
+  "direction": "full 432-element average of complete collective exchange times disjoint dimer environment",
+  "cells": [[0,1,6,7],[2,3,8,9],[12,13,18,19],[14,15,20,21]],
+  "epsilon_grid": [-1.0,-0.5,-0.25,0.0,0.25,0.5,1.0],
+  "primary_epsilon": 0.5,
+  "interpretation": "All finite steps are frozen before new samples; primary +0.5 is declared using prior exploratory information, not a new blind hypothesis. Both signs and all magnitudes reported, no best-step selection or training.",
+  "calibration_seed": 2026092740,
+  "calibration_uniform_count": 128,
+  "proposal_floor_fraction": 0.1,
+  "validation_seed": 2026092760,
+  "n16_validation_amplitudes": 24,
+  "replicate_seeds": [2026092771,2026092772,2026092773,2026092774],
+  "chain_count": 16,
+  "measurement_blocks": 2,
+  "burn_exchange_steps_per_chain": 4096,
+  "decorrelation_exchange_steps": 128,
+  "amplitude_batch_size": 256,
+  "swap_chunk_size": 4096,
+  "condition_limit": 1000000000.0,
+  "bootstrap_chain_replicates": 400,
+  "bootstrap_seed": 2026092779,
+  "wall_limit_seconds": 1800,
+  "optimization_steps": 0,
+  "remote_training_on_pass": false,
+  "stopping_rule": "Exact amplitude/H-action and source-replay gates precede fresh streams. Full A1 and full H are deterministic, not stochastically truncated. Fail closed on numerical mismatch; checkpoint each completed stream. A resolved paired signal on this zero-Lanczos carrier is not a win over Krylov or ViT."
+}

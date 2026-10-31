@@ -1,0 +1,9 @@
+{
+  "primary_directory": "projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v2",
+  "output": "projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v2/local_channel_followup",
+  "seconds_cap": 1200,
+  "maximum_entropy_endpoints": ["triangular_0_1000", "triangular_0.125_10600"],
+  "constructive_refinement_cases": ["hexagon6_coarse", "winding6_coarse"],
+  "constructive_iterations": 150,
+  "purpose": "Reoptimize fixed compact6 witness after local-q measurement, propagate paired full-refit whole-chain MaxEnt errors, and refine two coarse-party constructive moment matches. This is a declared bounded numerical follow-up to primary results, no new state/head/readout search."
+}

@@ -1,0 +1,84 @@
+{
+  "task": "CT12_w28_GPU_cost_replay_preflight_v1",
+  "execution_authorized": true,
+  "submission_requires_root_final_confirmation": true,
+  "length": 12,
+  "j2": 0.125,
+  "target_q": 0,
+  "target_m2": 0,
+  "maximum_q": 10,
+  "multiplicity_cap": 28,
+  "active_real_parameters": 20748160,
+  "complete_A1_images": 1728,
+  "physical_H_bonds": 864,
+  "rows": 4,
+  "row_indices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "maximum_updates": 0,
+  "scientific_fit_records_consumed": 0,
+  "scientific_RNG_consumed": false,
+  "wall_cap_seconds": 14400,
+  "maximum_peak_device_bytes": 75161927680,
+  "nodelist": null,
+  "full_dense_Jacobian_allowed": false,
+  "required_phases": [
+    "amplitude",
+    "full_H",
+    "derivatives",
+    "fisher"
+  ],
+  "phase_caps_seconds": {
+    "amplitude": 1800,
+    "full_H": 3600,
+    "derivatives": 3600,
+    "fisher": 3600,
+    "H_JVP": 2400,
+    "full_H_four": 1800
+  },
+  "projection_chunk": 16,
+  "replay_tolerance": 2e-11,
+  "derivative_tolerance": 2e-10,
+  "optional_full_H_four": false,
+  "optional_H_JVP": true,
+  "save_reserve_seconds": 180,
+  "minimum_phase_launch_seconds": 300,
+  "inputs": {
+    "parent": {
+      "path": "projects/clebsch_tree_nqs/results/ct12_w28_reentry_20261030/diagnosis/global45_checkpoint.pkl",
+      "sha256": "751aed76fe1de0862240f4b99b4523aac89f21d47773ae9262be47018a631d8f",
+      "bytes": 35909019
+    },
+    "expanded": {
+      "path": "projects/clebsch_tree_nqs/results/ct12_live_w28_20261030/projected_JVP_v2/expanded_checkpoint.pkl",
+      "sha256": "c657c97756d832d7587df3b30494ba4e7780905869bff65c3c29211ce6140c1b",
+      "bytes": 497979744
+    },
+    "rows": {
+      "path": "projects/clebsch_tree_nqs/results/ct12_live_w28_20261030/projected_JVP_v2/actual_amplitude_checks.npz",
+      "sha256": "73887f2076c08f92a511f78e7c75f5261cf61d55a91abd5e05c320977f9da8ef",
+      "bytes": 1031
+    },
+    "parent_registration": {
+      "path": "projects/clebsch_tree_nqs/results/remote_status_20261030_morning/ct12_j0125_retry/registration.json",
+      "sha256": "d92f389707ffee7cd537d8afdca500e4767bcf5969865b90e9e9771abb0e316a",
+      "bytes": 25533
+    },
+    "CPU_inclusion": {
+      "path": "projects/clebsch_tree_nqs/results/ct12_live_w28_20261030/projected_JVP_v2/results.json",
+      "sha256": "c65baef0090ce1a37fe36319882df6e915baec603b1396439e2565f2b83d7ae1",
+      "bytes": 30873
+    }
+  },
+  "strict_S0_and_full_A1_unchanged": true,
+  "no_energy_or_gradient_fit_or_population_Fisher_claim": true,
+  "mathematical_Fisher_Q": "constant positive Q over four frozen diagnostic rows; not population sampling",
+  "peak_guard_is_postcall_not_a_physical_hard_limit": true,
+  "allocator_fraction_requested": 0.85,
+  "actual_allocator_peak_required": true,
+  "stop_on_OOM_without_automatic_width_or_statistics_fallback": true,
+  "original_profile_replay_is_cost_control_not_new_training": true
+}

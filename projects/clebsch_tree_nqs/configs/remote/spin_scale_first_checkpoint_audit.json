@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_scale_first_checkpoint_audit",
+  "source_convergence": "spin_scale_first_single_seed_convergence_cg256.json",
+  "controls": {
+    "checkpoint_steps": [0, 16, 32, 48, 64],
+    "audit_seeds": [2026092591, 2026092592, 2026092593, 2026092594],
+    "sample_count": 512,
+    "device_microbatch_size": 16
+  },
+  "claim_boundary": "Read-only held-out audit of a development trajectory. No optimization is performed, production seeds remain untouched, and the result can diagnose checkpoint energy/variance trends but cannot establish a variational or scaling win."
+}

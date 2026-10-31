@@ -1,0 +1,34 @@
+{
+  "task": "N144_same_cost_state_cached_H_native_sampling_and_full_SR_gate",
+  "j2_over_j1": 0.0,
+  "require_gpu": true,
+  "projection_chunk": 4,
+  "action_chunk": 4,
+  "H_batches": [4, 16],
+  "oracle_rows": 2,
+  "tolerance": 2e-11,
+  "sampling": {"chains": 8, "records_per_chain": 4, "burn_proposals": 720, "proposals_between": 144},
+  "sampler": {"bond_proposal_probability": 0.75, "lazy_probability": 0.05},
+  "replay_proposals": 2,
+  "initialization_seed": 2026101881,
+  "sampling_seed": 2026101882,
+  "seconds_cap": 5100,
+  "sr": {
+    "damping": 0.1,
+    "step_size": 0.03,
+    "fisher_trust_radius": 0.005,
+    "maximum_overlap_distance": 0.005,
+    "minimum_ess_fraction": 0.8,
+    "backtracking_steps": 8,
+    "score_chunk_size": 2
+  },
+  "cost_parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/triangle_scale_cost_20261017/j0125_N144",
+    "checkpoint_sha256": "cf69600c5f3961e7471b8d3d03086a2724d8dda077482cdbb231692481b57563",
+    "results_sha256": "126913d56a2351669f77084c23ef1d78866ba647e573a4b9325d72ea21b4de5e",
+    "registration_sha256": "8e5dca9b855d165251e5332cbd34f770acba637ba1b9bd8ef874a77423ab921f"
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/triangle_n144_native_20261018/j0_gate",
+  "allocation": {"A100_GPUs": 1, "CPU_cores": 4, "memory_GiB": 64, "wall_minutes": 90, "GPU_hour_ceiling": 1.5},
+  "interpretation": "Execution-only gate of the same immutable N144 cost checkpoint used at J.125: changing H does not make it a trained J0 state. Exact S0, cap16, qmax10, both arities and all1728 A1 images/432J1 bonds are preserved. Balanced configurations initialize chains only; 8-chain MH with bond/global moves produces the actual32 record pool. Two native rows use the old physical-amplitude Sz-connectivity oracle. Full-H batch4/16, all32 full-H rows and full-original-parameter SR in BOTH arities are measured. SR candidates are never committed, no variance tails clipped, no competitive energy/equilibrium claim. Save and independently replay params/sampler/RNG. A later two-step energy-training job must use a fresh source from the latest audited6x6 J0 parent and needs a new measured budget; this cost file cannot release it automatically. Internal time cap85min, Slurm90min; native-kernel hard kills are recorded by an afterany accounting job."
+}

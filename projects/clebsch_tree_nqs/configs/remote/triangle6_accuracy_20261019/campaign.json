@@ -1,0 +1,77 @@
+{
+  "task": "triangular6_sameH_capacity_accuracy",
+  "remote_workspace": "/home/yx789/nqs-triangle6-accuracy-20261019",
+  "maximum_new_requested_A100_GPU_hours": 82,
+  "j2_points": [
+    0,
+    0.125
+  ],
+  "parameters": {
+    "parent": 99904,
+    "target": 174400,
+    "change": "MLP ratio4->8; embedding48/depth4/head8/patch3x3 unchanged"
+  },
+  "training": {
+    "steps": 600,
+    "records_per_step": 4096,
+    "chains": 128,
+    "training_full_H_centers_per_case": 2457600,
+    "total_training_full_H_centers": 4915200,
+    "maximum_active_training_seconds_each": 120000,
+    "checkpoint_milestones": [
+      0,
+      2,
+      4,
+      100,
+      300,
+      600
+    ]
+  },
+  "audits": {
+    "streams": 2,
+    "records_per_stream": 32768,
+    "independent_chains_total": 256,
+    "total_records_per_case": 65536,
+    "all_fresh_and_untouched": true
+  },
+  "resources": {
+    "partition": "kim",
+    "account": "kim",
+    "constraint": "a100",
+    "gres": "gpu:nvidia_a100_80gb_pcie:1",
+    "cpus": 4,
+    "mem": "64G",
+    "nice": 20000
+  },
+  "phases": {
+    "pilot": {
+      "minutes": 60,
+      "boundary": 2
+    },
+    "restart": {
+      "minutes": 60,
+      "boundary": 4
+    },
+    "train1": {
+      "minutes": 1080,
+      "boundary": 300
+    },
+    "train2": {
+      "minutes": 1080,
+      "boundary": 600
+    },
+    "audit": {
+      "minutes": 90,
+      "array": "0-1"
+    },
+    "aggregate": {
+      "minutes": 30,
+      "gpus": 0
+    }
+  },
+  "release": "Before training, parent identity and full-A1/full-H inclusion; before train1,4 accepted updates, physical FS/ESS guard, <70GiB GPU peak, source/checkpoint/optimizer/RNG identity and throughput forecast within120000s active budget. Complete fixed600 endpoint required before audit. No automatic budget enlargement or duplicate CT6 submission.",
+  "CT6": "Existing16->18->20 campaign already running/queued; reuse, do not duplicate or overwrite.",
+  "literature_targets_source": "https://arxiv.org/html/2211.07749#S4.T3",
+  "scientific_hypothesis": "Compare errors relative to same finite-torus benchmarks. Similar SU2-vs-ViT energies atJ.125 alone do not establish QSL preference; present CT ED errors are about1.3e-3/site at both couplings.",
+  "requested_GPU_hours_are_allocation_ceiling_not_measured_consumption": true
+}

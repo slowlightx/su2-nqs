@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_flux_loop_interference_confirmation",
+  "phase": "confirmation",
+  "cases": [
+    "triangular_n16_j2_0.125",
+    "square_n16_j2_0.5"
+  ],
+  "physical_extension": "full_A1_opposite_edge_singlet_projector_dimer_resonance",
+  "scramble_seeds": [
+    2026092601,
+    2026092602,
+    2026092603,
+    2026092604,
+    2026092605,
+    2026092606,
+    2026092607,
+    2026092608,
+    2026092609,
+    2026092610,
+    2026092611,
+    2026092612,
+    2026092613,
+    2026092614,
+    2026092615,
+    2026092616
+  ],
+  "excluded_development_seeds": [
+    20260924,
+    2026092501,
+    2026092502,
+    2026092503
+  ],
+  "controls": {
+    "same_exact_sector": true,
+    "same_column_count": true,
+    "same_variational_rank": true,
+    "dimension_matched_hamiltonian_krylov": true,
+    "full_hamiltonian_energy_and_variance": true
+  },
+  "claim_boundary": {
+    "n12_is_saturation_control_only": true,
+    "mechanism_gate_does_not_imply_variational_frontier": true,
+    "n36_gpu_production_requires_dimension_matched_krylov_win": true
+  }
+}

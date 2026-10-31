@@ -1,0 +1,9 @@
+{
+  "base_config": "projects/clebsch_tree_nqs/configs/remote/ordinary_chirality_20261015/tri_j0_750.json",
+  "task": "runtime_only_swap_replay_diagnostic",
+  "ordinary_reference": "/home/yx789/nqs-wavefunctions/nqs/ordinary_row_matrix_20261015/tri_j0_750",
+  "ordinary_registration_file_sha256": "fddf2f6927261ada0e87178b6d98de51fd1a92bf301deac7bc5823f25c31e5c1",
+  "output": "/home/yx789/nqs-wavefunctions/nqs/schmidt_covariance_20261015/swap_probe_v100",
+  "center_chunk": 64,
+  "wall_seconds": 540
+}

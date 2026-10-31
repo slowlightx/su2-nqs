@@ -1,0 +1,104 @@
+{
+  "task": "cached_spatial_vit_physics",
+  "parent": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/seed1",
+  "output": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/six_site_readout",
+  "step": 6600,
+  "parent_registration_sha256": "c5323cec78ae2806094b3d4ef3053de9f7c0654687f023491f28b9097ed30dd3",
+  "checkpoint_sha256": "314a8d7cfd296775cf59a646ac7a2865ea73c91ebdc0500d31d2256e3ed476cb",
+  "params_sha256": "a678bff64df1976dfbd13d9d49c948eff14b59c71f52e69f89cf30f0b6f53065",
+  "frozen_source_count": 75,
+  "stream_sha256": {
+    "2032760303": "615b2f784e857eb6025b75f8954ebcbdaafe84a772e0eb712f392c8186cabae4",
+    "2032760304": "d8c86f2ac9a51aa0ca3f5ae26e3bab23483af0b611df749c7a788df19dc67853"
+  },
+  "frozen_parameter_artifact": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/portable_parameters/model.json",
+  "snapshot_indices": [
+    0,
+    32,
+    64,
+    96
+  ],
+  "expected_chains": 128,
+  "expected_records": 512,
+  "query_batch": 64,
+  "compute_seconds": 1200,
+  "require_gpu": false,
+  "problem": {
+    "geometry": "triangular",
+    "rows": 6,
+    "columns": 6,
+    "j2": 0.125,
+    "boundary": "PBC_both_physical",
+    "regions": {
+      "compact6": [
+        12,
+        13,
+        14,
+        18,
+        19,
+        20
+      ],
+      "winding6": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    "left_sites": {
+      "compact6": [
+        0,
+        1,
+        2
+      ],
+      "winding6": [
+        0,
+        1,
+        2
+      ]
+    },
+    "compact_triangular_2x3": [
+      "compact6"
+    ],
+    "cyclic_regions": [
+      "winding6"
+    ]
+  },
+  "regions": {
+    "compact6": {
+      "sites": [
+        12,
+        13,
+        14,
+        18,
+        19,
+        20
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ],
+      "compact_triangular_2x3": true
+    },
+    "winding6": {
+      "sites": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ],
+      "cyclic": true
+    }
+  },
+  "purpose": "Same predeclared six-site protocol on ALL frozen weights and prior independent Born chains. No new state, H calls, Born samples, optimization or RDM repair; independent endpoint errors, not paired milestones. No strict entanglement spectrum or phase claim."
+}

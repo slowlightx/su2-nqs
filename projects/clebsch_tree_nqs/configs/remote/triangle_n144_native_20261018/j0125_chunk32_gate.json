@@ -1,0 +1,63 @@
+{
+  "task": "N144_same_state_chunk32_native_full_H_SR_execution_gate",
+  "j2_over_j1": 0.125,
+  "require_gpu": true,
+  "projection_chunk": 32,
+  "action_chunk": 4,
+  "H_batches": [
+    4,
+    16
+  ],
+  "oracle_rows": 2,
+  "tolerance": 2e-11,
+  "sampling": {
+    "chains": 8,
+    "records_per_chain": 4,
+    "burn_proposals": 720,
+    "proposals_between": 144
+  },
+  "sampler": {
+    "bond_proposal_probability": 0.75,
+    "lazy_probability": 0.05
+  },
+  "replay_proposals": 2,
+  "initialization_seed": 2026101891,
+  "sampling_seed": 2026101892,
+  "seconds_cap": 1500,
+  "sr": {
+    "damping": 0.1,
+    "step_size": 0.03,
+    "fisher_trust_radius": 0.005,
+    "maximum_overlap_distance": 0.005,
+    "minimum_ess_fraction": 0.8,
+    "backtracking_steps": 8,
+    "score_chunk_size": 2
+  },
+  "cost_parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/triangle_scale_cost_20261017/j0125_N144",
+    "checkpoint_sha256": "cf69600c5f3961e7471b8d3d03086a2724d8dda077482cdbb231692481b57563",
+    "results_sha256": "126913d56a2351669f77084c23ef1d78866ba647e573a4b9325d72ea21b4de5e",
+    "registration_sha256": "8e5dca9b855d165251e5332cbd34f770acba637ba1b9bd8ef874a77423ab921f"
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/triangle_n144_native_20261018/j0125_chunk32_gate",
+  "allocation": {
+    "A100_GPUs": 1,
+    "CPU_cores": 4,
+    "memory_GiB": 64,
+    "wall_minutes": 30,
+    "GPU_hour_ceiling": 0.5
+  },
+  "interpretation": "Pure execution comparison against frozen chunk4 gate, same immutable old N144 cost state and the same actual8-chain/32-record sampling definition and seeds. Complete1728-image coherent A1, all864 H bonds, independent2-row legacy oracle, batch4/16 cold+warm H, full32-center H and full-network SR in both arities remain mandatory. Only projection batch is32; no state, tensor width, bond/image truncation or sampling reduction. Zero committed optimization updates; sampler-only replay is NOT trained-optimizer recovery. This30min gate may be censored before completion; never infer physics or training feasibility from partial timing. No automatic training release.",
+  "execution_comparison": {
+    "reference_config": "projects/clebsch_tree_nqs/configs/remote/triangle_n144_native_20261018/j0125_gate.json",
+    "changed_only": [
+      "projection_chunk",
+      "seconds_cap",
+      "output",
+      "allocation"
+    ],
+    "same_sampling_and_initialization_seeds": true,
+    "physical_ansatz_unchanged": true,
+    "fully_censored_if_work_not_complete": true
+  }
+}

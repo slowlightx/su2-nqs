@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_resonating_neural_pfaffian",
+  "preregistered_after_single_basin_failures": true,
+  "geometry": "triangular_4x4_periodic",
+  "j2_over_j1": 0.125,
+  "sealed_sources": {
+    "direct": {
+      "result": "projects/clebsch_tree_nqs/results/spin_neural_backflow_pfaffian_v1/results.json",
+      "result_sha256": "d83fa45319520a90f000a4241f6794657b4af1fd99556bcb711517e80f13a903",
+      "bundle": "projects/clebsch_tree_nqs/results/spin_neural_backflow_pfaffian_v1/states.npz",
+      "bundle_sha256": "6229d27c35e3ef8bdf70d234a6e7305b5c9ca1168b67f903a6333ed608f5cd08"
+    },
+    "residual": {
+      "result": "projects/clebsch_tree_nqs/results/spin_residual_neural_backflow_v1/results.json",
+      "result_sha256": "ffdc580833e4d02ad9f70a3007f527faca06c7d074f6a03934a3728952ef2422",
+      "bundle": "projects/clebsch_tree_nqs/results/spin_residual_neural_backflow_v1/states.npz",
+      "bundle_sha256": "5bb9cf05652a8eba21ced8b8c2272728a868d3805d33d11d2d3a8fd6b346e410"
+    },
+    "a1_oracle": {
+      "result": "projects/clebsch_tree_nqs/results/spin_carrier_cell_scalar_circuit_v1/results.json",
+      "result_sha256": "c8f47c4ce05d49a207d5bb108f893eb23ac69f7cb12bd03e92b8d48dabe15d4f",
+      "bundle": "projects/clebsch_tree_nqs/results/spin_carrier_cell_scalar_circuit_v1/states.npz",
+      "bundle_sha256": "c9d1fee5f53112c97f721b5b6ccad005f021fab143467401ea8a9ff46d1f9264"
+    }
+  },
+  "banks": {
+    "direct_only": ["anchor", "compact_direct", "extended_direct"],
+    "residual_only": ["anchor", "compact_residual", "extended_residual"],
+    "combined": ["anchor", "compact_direct", "extended_direct", "compact_residual", "extended_residual"]
+  },
+  "controls": {
+    "scrambled_bank_uses_identical_column_count": true,
+    "krylov_dimension_equals_observed_physical_rank": true
+  },
+  "gates": {
+    "minimum_resolved_energy_gain_per_site": 1e-10,
+    "n36_requires_combined_energy_and_variance_win": true
+  },
+  "claim_boundary": {
+    "repeat_ed": false,
+    "exact_ground_role": "post_fit_audit_only",
+    "n36_closed_unless_variational_win": true,
+    "gpu_production_allowed": false
+  }
+}

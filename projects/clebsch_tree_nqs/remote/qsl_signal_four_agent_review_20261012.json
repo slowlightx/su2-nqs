@@ -1,0 +1,71 @@
+{
+  "date_local": "2026-10-12",
+  "user_requested_protocol": "Three independent complete proposals, then cross-discussion, then a fourth independent red-team review and existing-triangular-data validation.",
+  "independent_stage": [
+    {"agent": "/root/qsl_su2_independent_a", "focus": "Local-singlet false positives; gapped SET versus gapless spectrum evidence"},
+    {"agent": "/root/qsl_su2_independent_b", "focus": "Finite regional RDM and nonlocal partial-rotation feasibility; numerical controls"},
+    {"agent": "/root/su2_vit_architecture_review", "focus": "Independent symmetry/anyon distinction, source provenance and exact magnetic/dimer counterexamples"}
+  ],
+  "independent_proposals_completed_before_peer_discussion": true,
+  "cross_discussion": "All three received the peer proposals and compared theoretical assumptions, sampling provenance and false-positive controls. This is a synthesis, not a verbatim transcript.",
+  "red_team": {
+    "agent": "/root/agp_full_benchmark",
+    "consensus_and_primary_literature_reviewed": true,
+    "extra_limits": [
+      "Odd invariant physical regions have forced pi zeros.",
+      "Transfer-sector degeneracy alone does not imply a nonzero finite-height cusp without regularity assumptions.",
+      "Born-estimator relative precision can cost exponentially in boundary length.",
+      "The 2026 partial-rotation fractionalization indicator is published prior art, not a new observable.",
+      "Full low-energy-manifold transition RDMs must include off-diagonal data and magnetic sectors; hand-picked S0/A1 states can hide order."
+    ],
+    "implementation_findings": [
+      "Axis/scalar maximum compared only z; fixed to compare x and z, with a positive physical off-diagonal counterexample test.",
+      "Complex angle accepted as a rotation; fixed to require nonempty finite real angles, with regression tests."
+    ],
+    "final_independent_replay": {
+      "input_seals_passed": 19,
+      "source_seals_passed": 19,
+      "Born_all_angle_curves_and_SE_max_difference": 0,
+      "RDM_independent_rotation_and_S2_character_max_difference": 1.44e-15,
+      "RDM_record_count": 48,
+      "RDM_records_with_SE": 15,
+      "Born_record_count": 10,
+      "QSL_claim": false
+    }
+  },
+  "decision": "Measure signed complex partial spin rotation with quality/chain uncertainty; do not infer QSL from local weights, parity, finite zeros, log curvature, or two-axis agreement.",
+  "literature": [
+    "https://arxiv.org/html/2606.12132v2",
+    "https://arxiv.org/abs/1606.00334",
+    "https://arxiv.org/abs/1905.09837",
+    "https://arxiv.org/abs/2602.14892",
+    "https://arxiv.org/abs/2606.31021",
+    "https://arxiv.org/abs/2604.24868",
+    "https://arxiv.org/abs/2106.01380",
+    "https://arxiv.org/abs/2311.05690"
+  ],
+  "validation": {
+    "config": "projects/clebsch_tree_nqs/configs/validation/spin_rotation_disorder_20261012.json",
+    "result": "projects/clebsch_tree_nqs/results/spin_rotation_disorder_20261012_v1/results.json",
+    "focused_tests_passed": 21,
+    "new_samples": 0,
+    "new_H_calls": 0,
+    "new_training": 0,
+    "QSL_claim": false
+  },
+  "current_GPU_jobs_are_separate_preapproved_depth_tests": [239822,239830],
+  "bounded_secondary_precision_followup": {
+    "result": "projects/clebsch_tree_nqs/results/spin_rotation_disorder_20261012_v2/results.json",
+    "nature": "Adaptive secondary analysis motivated by v1; registered before this execution, not a wholly prospective study.",
+    "fourth_agent_raw_parity_replay_max_error": 4.44e-16,
+    "paired_SE_max_error": 3.47e-18,
+    "old_shared_arrays_identical": 289,
+    "all_input_source_seals_passed": 41,
+    "same_original_chains": 128,
+    "empirical_SE_reduction_range": [4.36747,5.57094],
+    "focused_tests": 25,
+    "broader_focused_tests": 49,
+    "QSL_claim": false
+  },
+  "extra_GPU_jobs_submitted_for_this_physics_review": 0
+}

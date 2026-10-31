@@ -1,0 +1,60 @@
+{
+  "status": "pilots_submitted_not_completed",
+  "created": "2026-10-17T16:41:53.883601+00:00",
+  "job_array_id": "360454",
+  "command": [
+    "/usr/local/slurm/current/bin/sbatch",
+    "--parsable",
+    "--partition=kim",
+    "--nodes=1",
+    "--ntasks=1",
+    "--cpus-per-task=4",
+    "--mem=64G",
+    "--time=45",
+    "--constraint=a100",
+    "--gres=gpu:nvidia_a100_80gb_pcie:1",
+    "--nice=1000",
+    "--array=0-11%1",
+    "--no-requeue",
+    "--job-name=tri-coupling-2step",
+    "--output=logs/coupling_%A_%a.out",
+    "--error=logs/coupling_%A_%a.err",
+    "--export=ALL,NQS_PHASE=pilot",
+    "--signal=B:USR1@120",
+    "projects/clebsch_tree_nqs/configs/remote/triangle_couplings_20261017/run.sbatch"
+  ],
+  "requested_GPU_hours_ceiling": 9.0,
+  "concurrency": 1,
+  "dependency_readouts": [
+    {
+      "job_id": "357751",
+      "current_state": "completed_or_aged_out"
+    },
+    {
+      "job_id": "357752",
+      "current_state": "completed_or_aged_out"
+    },
+    {
+      "job_id": "357753",
+      "current_state": "completed_or_aged_out"
+    },
+    {
+      "job_id": "357754",
+      "current_state": "completed_or_aged_out"
+    },
+    {
+      "job_id": "357755",
+      "current_state": "completed_or_aged_out"
+    },
+    {
+      "job_id": "357758",
+      "current_state": "completed_or_aged_out"
+    }
+  ],
+  "active_afterany_dependencies": [],
+  "source_manifest_sha256": "7f1769ba5cbffef647c14ed2e9c5ae108af41df8b7a530529006a777b92a53ea",
+  "campaign_sha256": "b00079346e818c8a85b9cbdcfceebfbd50819f56bf0a3faa207042484c956c48",
+  "run_script_sha256": "4498cb3951f2bb1269c6b43d1ae5fabd459e33ec308191f126cca43690ff43e6",
+  "no_long_training_children_submitted": true,
+  "no_automatic_retry": true
+}

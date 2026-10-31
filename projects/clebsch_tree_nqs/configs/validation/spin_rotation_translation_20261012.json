@@ -1,0 +1,29 @@
+{
+  "base_config": "projects/clebsch_tree_nqs/configs/validation/spin_rotation_disorder_20261012.json",
+  "base_config_sha256": "8f66ba0fa383b427cef86e9ebc293d177f04649c95e7cc70c007512ab5f626e3",
+  "output": "projects/clebsch_tree_nqs/results/spin_rotation_disorder_20261012_v2",
+  "purpose": "Bounded zero-query symmetry average on the SAME frozen full-A1/spin-inversion-even Born records; preserve direct estimator v1. Not a QSL or thermodynamic-cusp test.",
+  "translation_average": true,
+  "seconds_cap": 600,
+  "physical_configs": {
+    "tri125_d2e3_100": {
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e3.json",
+      "sha256": "4bbded80f392c76ac4cdc5df459938768789e6a121a9a2c35607e2493400e848"
+    },
+    "tri125_d2e4_100": {
+      "path": "projects/clebsch_tree_nqs/configs/remote/frustrated_quality_20261012/tri_j0125_s4096_d2e4.json",
+      "sha256": "d5bc43d7b85d2e56ea1038e01dd99f705601fb5059e886d687ea6d802ab7fd6b"
+    }
+  },
+  "fixed_protocol": {
+    "images_per_old_record": 36,
+    "images_correlated": true,
+    "unchanged_independent_chain_count": 128,
+    "pool_image_records_as_independent": false,
+    "paired_direct_minus_average_check": true,
+    "complex_signed_curves_kept": true,
+    "zero_unresolved_rule": "descriptive 3SE; not simultaneous or mixing-certified",
+    "logarithm_or_cusp_fit": false,
+    "new_wavefunction_queries": 0
+  }
+}

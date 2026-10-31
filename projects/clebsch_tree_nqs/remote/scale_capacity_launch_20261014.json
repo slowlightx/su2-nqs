@@ -1,0 +1,886 @@
+{
+  "date": "2026-10-14",
+  "status": "remote_bounded_training_submitted_not_competitive_states_certified",
+  "followup_20261014": {
+    "ordinary_vit_step500_independent_full_A1_audits": {
+      "tri_j0": {"energy_per_site": -0.5309781613599013, "energy_se": 0.00024219062960361567, "variance_per_site": 0.03737775725317452, "variance_se": 0.001419431424354284},
+      "tri_j0125": {"energy_per_site": -0.42445377362381786, "energy_se": 0.0003603143932984847, "variance_per_site": 0.11297729415324145, "variance_se": 0.006681302398195992},
+      "records_each": 2048,
+      "independent_chains_each": 32,
+      "competitive_quality_claimed": false,
+      "aggregate_signal_only_failure": {"failed_jobs": [259976,259982], "reason": "SIGUSR1 warning900s exceeded600s allocation", "fixed_jobs": [267038,267039], "new_samples": 0}
+    },
+    "ordinary_vit_continuation": {
+      "original_stage600_jobs": [267120,267127],
+      "tri_j0125_safe_pause_at598_not_numerical_failure": true,
+      "tri_j0125_finish600": 268893,
+      "full_A1_running_original_writers": {"tri_j0":267128,"tri_j0125":268894},
+      "full_A1_measured_seconds_per_update": 418.4691832899116,
+      "estimated_100_step_A100_hours": 11.624,
+      "completion_sentinels": [
+        {"case":"tri_j0125","job_id":269048,"dependency":"afterany:268894","time_cap_hours":10,"protocol":"complete-milestone700; only sealed safe pause or already complete, no numerical-failure bypass"},
+        {"case":"tri_j0","job_id":269052,"dependency":"afterany:267128","time_cap_hours":10,"protocol":"same completion guard"}
+      ],
+      "final_audits": {"tri_j0125":[269049,269050],"tri_j0":[269053,269054]},
+      "final_aggregate": {"tri_j0125":269051,"tri_j0":269055},
+      "cancelled_unstarted_superseded_dependencies": [267121,267122,267123,267125,268895,268896,268897,267129,267130,267131],
+      "no_current_writer_stopped": true,
+      "registered_total_updates_unchanged":700,
+      "new_lattice_sizes_or_couplings":false
+    },
+    "old_CG_fixed100_paired_audit": {
+      "job_id":260914,"status":"COMPLETED",
+      "network_minus_carrier": {"energy_per_site":0.00023770543586554282,"energy_paired_se":0.0001275671572889242,"variance_per_site":0.0035657176059452744,"variance_paired_se":0.001030539872428973},
+      "free_minus_carrier": {"energy_per_site":0.0001545334991196591,"energy_paired_se":0.00008030257144939988,"variance_per_site":0.0029498210814201302,"variance_paired_se":0.0008460186576015766},
+      "energy_win":false,"variance_worsened":true,"no_more_same_trajectory_requested":true
+    },
+    "raw_capacity_diagnosis": {
+      "path":"projects/clebsch_tree_nqs/results/cg_capacity_20261014/raw_capacity_diagnosis.json",
+      "conditional_multiplicity_participation_generated_initial_and100_near1":true,
+      "independent_W_typical_participation_8_to10":true,
+      "maximum_raw_edge_norm_discrepancy":2.220446049250313e-16,
+      "raw_only_not_projected_or_additive_entanglement":true,
+      "not_an_expressivity_ceiling_or_a_variational_win":true
+    },
+    "new_CG_common_W0_development": {
+      "remote_workspace":"/home/yx789/nqs-cg-conditioning-20261014",
+      "neural_bank":"W0 + G(theta) - G(theta0); same trainable CNN/attention, fixed reduced offset, no new head or magnetic dependence",
+      "same_W0_and_same_AGP_physical_start_for_free_control":true,
+      "initializer_calibration_rows":1000,"doubled_q_max":8,"multiplicity_width":16,
+      "training_steps":16,"samples_per_step":512,"fresh_audit_records":512,
+      "SR_damping":0.01,"stateless_SR_not_paper_SR_Adam":true,
+      "jobs":{"cost_and_GPU_math_tests":268860,"prepare":268861,"network":268862,"free":268863,"paired_audit":268864},
+      "status_at_last_check":"PENDING; training requires cost/test gate success",
+      "GPU_hour_cap":5.25,
+      "cancelled_unstarted_drafts":[267245,267269,267353,267354,267355,267356],
+      "old100_sources_and_audit_unchanged":true,
+      "new_variational_win_claimed":false
+    },
+    "validation": {
+      "exact_core_passed":34,
+      "final_offset_full_H_capacity_environment_passed":19,
+      "quality_and_decoder_passed":37,"local_netket_optional_skipped":8,
+      "full_suite_before_final_offset":{"passed":3344,"failed":96,"skipped":73,"seconds":1353.95,"previous82_failures_remain":true,"additional14_archived_source_guard_cases":true},
+      "historical_seals_resigned":false,
+      "portable_full_A1_model_container_replay_error":0.0
+    }
+  },
+  "ordinary_vit": {
+    "geometry": "triangular",
+    "size": [
+      12,
+      12
+    ],
+    "couplings": [
+      0.125,
+      0
+    ],
+    "parameters": 100288,
+    "complete_group_order": 1728,
+    "coherent_evaluation_images_including_spin_flip": 216,
+    "strict_su2": false,
+    "direct_transfer_jobs": [
+      {
+        "name": "tri_j0125-144-pilot",
+        "job_id": 259610,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-20261014",
+          "--job-name=tri_j0125-144-pilot",
+          "--time=01:15:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0125_12x12.json,NQS_PREFLIGHT_ENDPOINT=2",
+          "/home/yx789/nqs-spatial-scale-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "preflight"
+        ],
+        "dependencies": []
+      },
+      {
+        "name": "tri_j0125-144-resume4",
+        "job_id": 259611,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-20261014",
+          "--job-name=tri_j0125-144-resume4",
+          "--time=00:45:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259610",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0125_12x12.json,NQS_UNTIL_STEP=4,NQS_SESSION_SECONDS=1800",
+          "/home/yx789/nqs-spatial-scale-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "production"
+        ],
+        "dependencies": [
+          259610
+        ]
+      },
+      {
+        "name": "tri_j0125-144-to100",
+        "job_id": 259612,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-20261014",
+          "--job-name=tri_j0125-144-to100",
+          "--time=06:00:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259611",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0125_12x12.json,NQS_UNTIL_STEP=100,NQS_SESSION_SECONDS=20700",
+          "/home/yx789/nqs-spatial-scale-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "production"
+        ],
+        "dependencies": [
+          259611
+        ]
+      },
+      {
+        "name": "tri_j0125-144-audit0",
+        "job_id": 259613,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-20261014",
+          "--job-name=tri_j0125-144-audit0",
+          "--time=01:00:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259612",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0125_12x12.json,NQS_AUDIT_STEP=100",
+          "/home/yx789/nqs-spatial-scale-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "energy-stream",
+          "0"
+        ],
+        "dependencies": [
+          259612
+        ]
+      },
+      {
+        "name": "tri_j0125-144-audit1",
+        "job_id": 259614,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-20261014",
+          "--job-name=tri_j0125-144-audit1",
+          "--time=01:00:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259612",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0125_12x12.json,NQS_AUDIT_STEP=100",
+          "/home/yx789/nqs-spatial-scale-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "energy-stream",
+          "1"
+        ],
+        "dependencies": [
+          259612
+        ]
+      },
+      {
+        "name": "tri_j0125-144-aggregate",
+        "job_id": 259615,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-20261014",
+          "--job-name=tri_j0125-144-aggregate",
+          "--time=00:10:00",
+          "--cpus-per-task=2",
+          "--mem=8G",
+          "--gres=none",
+          "--constraint=cpu",
+          "--dependency=afterok:259613:259614",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0125_12x12.json,NQS_AUDIT_STEP=100",
+          "/home/yx789/nqs-spatial-scale-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "aggregate"
+        ],
+        "dependencies": [
+          259613,
+          259614
+        ]
+      },
+      {
+        "name": "tri_j0-144-pilot",
+        "job_id": 259616,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-20261014",
+          "--job-name=tri_j0-144-pilot",
+          "--time=01:15:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0_12x12.json,NQS_PREFLIGHT_ENDPOINT=2",
+          "/home/yx789/nqs-spatial-scale-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "preflight"
+        ],
+        "dependencies": []
+      },
+      {
+        "name": "tri_j0-144-resume4",
+        "job_id": 259617,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-20261014",
+          "--job-name=tri_j0-144-resume4",
+          "--time=00:45:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259616",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0_12x12.json,NQS_UNTIL_STEP=4,NQS_SESSION_SECONDS=1800",
+          "/home/yx789/nqs-spatial-scale-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "production"
+        ],
+        "dependencies": [
+          259616
+        ]
+      },
+      {
+        "name": "tri_j0-144-to100",
+        "job_id": 259618,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-20261014",
+          "--job-name=tri_j0-144-to100",
+          "--time=06:00:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259617",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0_12x12.json,NQS_UNTIL_STEP=100,NQS_SESSION_SECONDS=20700",
+          "/home/yx789/nqs-spatial-scale-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "production"
+        ],
+        "dependencies": [
+          259617
+        ]
+      },
+      {
+        "name": "tri_j0-144-audit0",
+        "job_id": 259619,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-20261014",
+          "--job-name=tri_j0-144-audit0",
+          "--time=01:00:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259618",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0_12x12.json,NQS_AUDIT_STEP=100",
+          "/home/yx789/nqs-spatial-scale-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "energy-stream",
+          "0"
+        ],
+        "dependencies": [
+          259618
+        ]
+      },
+      {
+        "name": "tri_j0-144-audit1",
+        "job_id": 259621,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-20261014",
+          "--job-name=tri_j0-144-audit1",
+          "--time=01:00:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259618",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0_12x12.json,NQS_AUDIT_STEP=100",
+          "/home/yx789/nqs-spatial-scale-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "energy-stream",
+          "1"
+        ],
+        "dependencies": [
+          259618
+        ]
+      },
+      {
+        "name": "tri_j0-144-aggregate",
+        "job_id": 259623,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-20261014",
+          "--job-name=tri_j0-144-aggregate",
+          "--time=00:10:00",
+          "--cpus-per-task=2",
+          "--mem=8G",
+          "--gres=none",
+          "--constraint=cpu",
+          "--dependency=afterok:259619:259621",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0_12x12.json,NQS_AUDIT_STEP=100",
+          "/home/yx789/nqs-spatial-scale-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "aggregate"
+        ],
+        "dependencies": [
+          259619,
+          259621
+        ]
+      }
+    ],
+    "cancelled_pending_jobs": [
+      259621,
+      259619,
+      259618,
+      259614,
+      259613,
+      259612,
+      259611,
+      259623,
+      259615
+    ],
+    "preserved_running_resume4": 259617,
+    "initial_training_observations": {
+      "tri_j0125": {
+        "energy_per_site": 0.4450153978896252,
+        "variance_per_site": 1.3233447784215526,
+        "first_update_seconds": 555.1835418483242,
+        "gpu_peak_bytes": 7045978880
+      },
+      "tri_j0": {
+        "energy_per_site": 0.4299946297091782,
+        "variance_per_site": 1.1476915946006707,
+        "first_update_seconds": 423.2491282930132,
+        "gpu_peak_bytes": 7045886208
+      }
+    },
+    "direct_size_transfer_preserved_quality": false,
+    "staged_replacement_jobs": [
+      {
+        "name": "tri_j0125-staged-p2",
+        "job_id": 259971,
+        "dependencies": []
+      },
+      {
+        "name": "tri_j0125-staged-r4",
+        "job_id": 259972,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-staged-20261014",
+          "--job-name=tri_j0125-staged-r4",
+          "--time=00:45:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259971",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0125_12x12_staged.json,NQS_UNTIL_STEP=4,NQS_SESSION_SECONDS=2400",
+          "/home/yx789/nqs-spatial-scale-staged-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "production"
+        ],
+        "dependencies": [
+          259971
+        ]
+      },
+      {
+        "name": "tri_j0125-staged-to500",
+        "job_id": 259973,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-staged-20261014",
+          "--job-name=tri_j0125-staged-to500",
+          "--time=06:00:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259972",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0125_12x12_staged.json,NQS_UNTIL_STEP=500,NQS_SESSION_SECONDS=20700",
+          "/home/yx789/nqs-spatial-scale-staged-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "production"
+        ],
+        "dependencies": [
+          259972
+        ]
+      },
+      {
+        "name": "tri_j0125-staged-a0",
+        "job_id": 259974,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-staged-20261014",
+          "--job-name=tri_j0125-staged-a0",
+          "--time=01:00:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259973",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0125_12x12_staged.json,NQS_AUDIT_STEP=500",
+          "/home/yx789/nqs-spatial-scale-staged-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "energy-stream",
+          "0"
+        ],
+        "dependencies": [
+          259973
+        ]
+      },
+      {
+        "name": "tri_j0125-staged-a1",
+        "job_id": 259975,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-staged-20261014",
+          "--job-name=tri_j0125-staged-a1",
+          "--time=01:00:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259973",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0125_12x12_staged.json,NQS_AUDIT_STEP=500",
+          "/home/yx789/nqs-spatial-scale-staged-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "energy-stream",
+          "1"
+        ],
+        "dependencies": [
+          259973
+        ]
+      },
+      {
+        "name": "tri_j0125-staged-aggregate",
+        "job_id": 259976,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-staged-20261014",
+          "--job-name=tri_j0125-staged-aggregate",
+          "--time=00:10:00",
+          "--cpus-per-task=2",
+          "--mem=8G",
+          "--gres=none",
+          "--constraint=cpu",
+          "--dependency=afterok:259974:259975",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0125_12x12_staged.json,NQS_AUDIT_STEP=500",
+          "/home/yx789/nqs-spatial-scale-staged-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "aggregate"
+        ],
+        "dependencies": [
+          259974,
+          259975
+        ]
+      },
+      {
+        "name": "tri_j0-staged-p2",
+        "job_id": 259977,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-staged-20261014",
+          "--job-name=tri_j0-staged-p2",
+          "--time=00:45:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0_12x12_staged.json,NQS_UNTIL_STEP=2,NQS_SESSION_SECONDS=2400",
+          "/home/yx789/nqs-spatial-scale-staged-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "production"
+        ],
+        "dependencies": []
+      },
+      {
+        "name": "tri_j0-staged-r4",
+        "job_id": 259978,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-staged-20261014",
+          "--job-name=tri_j0-staged-r4",
+          "--time=00:45:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259977",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0_12x12_staged.json,NQS_UNTIL_STEP=4,NQS_SESSION_SECONDS=2400",
+          "/home/yx789/nqs-spatial-scale-staged-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "production"
+        ],
+        "dependencies": [
+          259977
+        ]
+      },
+      {
+        "name": "tri_j0-staged-to500",
+        "job_id": 259979,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-staged-20261014",
+          "--job-name=tri_j0-staged-to500",
+          "--time=06:00:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259978",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0_12x12_staged.json,NQS_UNTIL_STEP=500,NQS_SESSION_SECONDS=20700",
+          "/home/yx789/nqs-spatial-scale-staged-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "production"
+        ],
+        "dependencies": [
+          259978
+        ]
+      },
+      {
+        "name": "tri_j0-staged-a0",
+        "job_id": 259980,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-staged-20261014",
+          "--job-name=tri_j0-staged-a0",
+          "--time=01:00:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259979",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0_12x12_staged.json,NQS_AUDIT_STEP=500",
+          "/home/yx789/nqs-spatial-scale-staged-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "energy-stream",
+          "0"
+        ],
+        "dependencies": [
+          259979
+        ]
+      },
+      {
+        "name": "tri_j0-staged-a1",
+        "job_id": 259981,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-staged-20261014",
+          "--job-name=tri_j0-staged-a1",
+          "--time=01:00:00",
+          "--cpus-per-task=8",
+          "--mem=128G",
+          "--constraint=a100",
+          "--gres=gpu:nvidia_a100_80gb_pcie:1",
+          "--dependency=afterok:259979",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0_12x12_staged.json,NQS_AUDIT_STEP=500",
+          "/home/yx789/nqs-spatial-scale-staged-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "energy-stream",
+          "1"
+        ],
+        "dependencies": [
+          259979
+        ]
+      },
+      {
+        "name": "tri_j0-staged-aggregate",
+        "job_id": 259982,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-spatial-scale-staged-20261014",
+          "--job-name=tri_j0-staged-aggregate",
+          "--time=00:10:00",
+          "--cpus-per-task=2",
+          "--mem=8G",
+          "--gres=none",
+          "--constraint=cpu",
+          "--dependency=afterok:259980:259981",
+          "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/tri_j0_12x12_staged.json,NQS_AUDIT_STEP=500",
+          "/home/yx789/nqs-spatial-scale-staged-20261014/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+          "aggregate"
+        ],
+        "dependencies": [
+          259980,
+          259981
+        ]
+      }
+    ],
+    "staged_schedule": [
+      [
+        "none",
+        500
+      ],
+      [
+        "translation",
+        100
+      ],
+      [
+        "gamma_a1",
+        100
+      ]
+    ],
+    "released_endpoint": 500,
+    "training_snapshot_utc": "2026-10-14 07:40 UTC",
+    "staged_training_observations_not_independent_audits": {
+      "tri_j0125": {"step": 180, "energy_per_site": -0.2404847728590207, "variance_per_site": 0.3540782565471064, "warm_step_seconds": 30.711191060952842},
+      "tri_j0": {"step": 240, "energy_per_site": -0.39219212937710857, "variance_per_site": 0.2540110671551218, "warm_step_seconds": 24.334199471399188},
+      "gpu_peak_gib": 9.25,
+      "competitive_states_certified": false
+    },
+    "audits_use_full_A1": true,
+    "no_automatic_release_to700": true
+  },
+  "cg_decoder": {
+    "jobs": [
+      {
+        "name": "cg-q8chi16-cost",
+        "job_id": 259547,
+        "status": "COMPLETED"
+      },
+      {
+        "name": "cg16-prepare-v1",
+        "job_id": 259553,
+        "status": "FAILED",
+        "reason": "bytewise regenerated bank mismatch; no trained state produced"
+      },
+      {
+        "name": "cg16-prepare-v2",
+        "job_id": 259654,
+        "status": "COMPLETED"
+      },
+      {
+        "name": "cg16-network-pilot2-v2",
+        "job_id": 259677,
+        "dependencies": []
+      },
+      {
+        "name": "cg16-network-resume4-v2",
+        "job_id": 259690,
+        "dependencies": [
+          259677
+        ]
+      },
+      {
+        "name": "cg16-free-pilot2-v2",
+        "job_id": 259691,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-cg-capacity-20261014-v2",
+          "--job-name=cg16-free-pilot2-v2",
+          "--time=01:00:00",
+          "/home/yx789/nqs-cg-capacity-20261014-v2/projects/clebsch_tree_nqs/remote/schur_capacity_a100.sbatch",
+          "train",
+          "free",
+          "2"
+        ],
+        "dependencies": []
+      },
+      {
+        "name": "cg16-free-resume4-v2",
+        "job_id": 259692,
+        "command": [
+          "/usr/local/slurm/current/bin/sbatch",
+          "--parsable",
+          "--partition=kim",
+          "--account=kim",
+          "--chdir=/home/yx789/nqs-cg-capacity-20261014-v2",
+          "--job-name=cg16-free-resume4-v2",
+          "--time=01:00:00",
+          "--dependency=afterok:259691",
+          "/home/yx789/nqs-cg-capacity-20261014-v2/projects/clebsch_tree_nqs/remote/schur_capacity_a100.sbatch",
+          "train",
+          "free",
+          "4"
+        ],
+        "dependencies": [
+          259691
+        ]
+      }
+    ],
+    "geometry": "triangular",
+    "size": [
+      6,
+      6
+    ],
+    "coupling": 0.125,
+    "maximum_doubled_q": 8,
+    "multiplicity_width": 16,
+    "residual_virtual_dimension": 400,
+    "neural_parameters": 25156,
+    "free_real_parameters": 1146624,
+    "strict_su2": true,
+    "complete_A1": true,
+    "carrier": "immutable optimized projected singlet AGP; not NQS",
+    "additive_state_not_claimed_to_have_total_virtual_D400": true,
+    "maximum_released_steps_per_arm": 100,
+    "registered_total_steps": 100,
+    "release_to100": true,
+    "four_step_resumption_completed_both_arms": true,
+    "warm_complete_update_seconds_128_centers": 280,
+    "long_job_segments": [50, 100],
+    "long_jobs": [
+      {"name": "cg16-network-to50", "job_id": 260442, "status_at_last_check": "RUNNING", "time_cap_hours": 5},
+      {"name": "cg16-free-to50", "job_id": 260446, "status": "FAILED", "elapsed_seconds": 7, "reason": "registered Linux kernel6.8.0-142 differs from node03 kernel6.8.0-138; no update executed"},
+      {"name": "cg16-network-to100", "job_id": 260445, "status": "CANCELLED_BEFORE_START", "replacement": 260910},
+      {"name": "cg16-free-to100", "job_id": 260447, "status": "CANCELLED_BEFORE_START", "replacement": 260912},
+      {"name": "cg16-fixed-paired-audit", "job_id": 260448, "status": "CANCELLED_BEFORE_START", "replacement": 260914},
+      {"name": "cg16-network-to100-pin", "job_id": 260910, "dependencies": [260442], "node": "kim-compute-04", "time_cap_hours": 5},
+      {"name": "cg16-free-to50-pin", "job_id": 260911, "dependencies": [], "node": "kim-compute-04", "time_cap_hours": 5},
+      {"name": "cg16-free-to100-pin", "job_id": 260912, "dependencies": [260911], "node": "kim-compute-04", "time_cap_hours": 5},
+      {"name": "cg16-paired-audit-pin", "job_id": 260914, "dependencies": [260910,260912], "node": "kim-compute-04", "time_cap_hours": 2}
+    ],
+    "runtime_guard_preserved_not_resigned": true,
+    "neural_progress_snapshot": {"completed_steps": 14, "step13_energy_per_site": -0.506205535891283, "step13_variance_per_site": 0.15045139512965844, "step14_energy_per_site": -0.514551939575587, "step14_variance_per_site": 0.002448617357735646, "independent_win_claimed": false},
+    "first_two_training_moments": {
+      "network": [
+        [
+          -0.5146905202953291,
+          0.0023068367533679145
+        ],
+        [
+          -0.5146110384018032,
+          0.0008258947858010863
+        ]
+      ],
+      "free": [
+        [
+          -0.5146905202953291,
+          0.00230683675336795
+        ],
+        [
+          -0.5148020231638158,
+          0.0010544714628175538
+        ]
+      ]
+    },
+    "independent_audit_pending": false,
+    "cost_result": "projects/clebsch_tree_nqs/results/cg_capacity_20261014/cost/triangular/results.json"
+  },
+  "actual_ordered_reference": {
+    "job_id": 259695,
+    "coupling": 0,
+    "size": [
+      6,
+      6
+    ],
+    "physical_bc": "torus PBC; row-major physical ordering",
+    "input": "immutable .125 chi5120 MPS, new-H optimizer reset",
+    "chi_stages": [
+      [
+        2048,
+        2
+      ],
+      [
+        4096,
+        4
+      ]
+    ],
+    "cpus": 32,
+    "memory_gib": 256,
+    "time_hours": 12,
+    "cut_to_compare": 18,
+    "status_at_last_check": "COMPLETED; refinement and strict-spectrum eligibility still required",
+    "quality_not_certified": true
+  },
+  "deferred": {
+    "triangular_other_couplings": true,
+    "square_larger_J0_J05": true,
+    "large_ED": false
+  },
+  "resources": {
+    "gpu_requested_upper_bound_hours_including_failed_and_cancelled_chain_surviving_jobs": 98.25,
+    "includes_failed_5h_free_request_actual_elapsed7s": true,
+    "cpu_reference_allocation_upper_bound_core_hours": 384,
+    "these_are_caps_not_measured_consumption": true
+  },
+  "validation": {
+    "exact_core": 34,
+    "focused_transfer_decoder": 32,
+    "spatial_group_and_capacity": 35,
+    "tenpy_optional_local": 6,
+    "gpu_netket_replay_tests_each_pilot": 16,
+    "gpu_replay_max_parameter_and_relative_amplitude_error": 0,
+    "cached_screening_lande_control_and_workflow_tests_passed": 5,
+    "final_focused_transfer_group_decoder_quality_screening_optimize_passed": 67,
+    "final_focused_seconds": 39.69,
+    "largest_lande_vs_independent_CG_discrepancy_bound": 3e-13,
+    "full_suite": {
+      "passed": 3353,
+      "failed": 82,
+      "skipped": 72,
+      "seconds": 1365.08,
+      "log": "/private/tmp/nqs_scale_capacity_full_tests_20261014.log",
+      "baseline_failures": 31,
+      "added_failures_predominantly_legacy_current_source_hash_guards": true,
+      "historical_seals_not_rewritten": true
+    }
+  }
+}

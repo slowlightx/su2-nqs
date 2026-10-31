@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_schur_spatial_scaling_preflight",
+  "preregistered_before_run": true,
+  "seed": 2026092407,
+  "architecture": {
+    "tree": "balanced_many_cell",
+    "local_cell": "complete_2x2_Schur",
+    "exact_su2": true,
+    "magnetic_indices_visible_to_vit": false,
+    "spatial_distance_envelope": "positive_learned_periodic",
+    "embedding_dim": 32,
+    "head_count": 4,
+    "depth": 2,
+    "mlp_ratio": 2
+  },
+  "systems": [
+    {
+      "geometry": "triangular",
+      "linear_size": 4,
+      "j2_over_j1": 0.125,
+      "sample_count": 32,
+      "connectivity_sample_count": 8
+    },
+    {
+      "geometry": "triangular",
+      "linear_size": 6,
+      "j2_over_j1": 0.125,
+      "sample_count": 16,
+      "connectivity_sample_count": 4
+    },
+    {
+      "geometry": "triangular",
+      "linear_size": 8,
+      "j2_over_j1": 0.125,
+      "sample_count": 8,
+      "connectivity_sample_count": 2
+    },
+    {
+      "geometry": "square",
+      "linear_size": 4,
+      "j2_over_j1": 0.5,
+      "sample_count": 32,
+      "connectivity_sample_count": 8
+    },
+    {
+      "geometry": "square",
+      "linear_size": 6,
+      "j2_over_j1": 0.5,
+      "sample_count": 16,
+      "connectivity_sample_count": 4
+    },
+    {
+      "geometry": "square",
+      "linear_size": 8,
+      "j2_over_j1": 0.5,
+      "sample_count": 8,
+      "connectivity_sample_count": 2
+    }
+  ],
+  "timing_repeats": 3,
+  "gates": {
+    "minimum_n64_width_reduction": 10.0
+  },
+  "claim_boundary": "Local representation/cost preflight only; no trained energy or GPU scaling claim."
+}

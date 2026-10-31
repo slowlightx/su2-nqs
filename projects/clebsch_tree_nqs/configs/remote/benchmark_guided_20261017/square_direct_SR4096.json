@@ -1,0 +1,85 @@
+{
+  "geometry": "square",
+  "rows": 8,
+  "columns": 8,
+  "j2_over_j1": 0.5,
+  "multiplicity_cap": 16,
+  "high_spin_cap": 8,
+  "maximum_q": 8,
+  "projection_chunk": 8,
+  "require_gpu": true,
+  "seed": 2026101480,
+  "calibration_seed": 2026101481,
+  "sampling_seed": 2026101482,
+  "output": "/home/yx789/nqs-wavefunctions/nqs/benchmark_guided_20261017/square/direct_SR4096",
+  "literature_target_energy_total": -31.9085,
+  "literature_target_total_standard_error": 0.0042,
+  "literature_source": "https://arxiv.org/html/2104.14869",
+  "training_steps": 0,
+  "interpretation": "Same-model directSR322->450,4096samples/update, exactS0/fullA1, full state/optimizer/RNG/chains retained. Original cumulative48h scientific cap unchanged. Published energy is only a benchmark, never loss or endpoint selector.",
+  "cost_parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/vieijra_nys_reproduction_20261014/square8_cost",
+    "checkpoint_sha256": "b9baeeda6f82de82d64b90a96141505b54c771a793379bc3fede7d889040f2a7",
+    "registration_sha256": "2d6dc0a40b4890ae8b3c48bcba10d391e98d4316881632b8856b3c755eb6fc25"
+  },
+  "training_seed": 2026101490,
+  "steps": 1000,
+  "sr_warm_steps": 1000,
+  "warm_samples": 4096,
+  "adam_samples": 4096,
+  "chains": 16,
+  "burn_proposals": 640,
+  "proposals_between_snapshots": 128,
+  "sr_damping": 0.01,
+  "warm_lr": 0.05,
+  "adam_lr": 0.001,
+  "maximum_FS_sine": 0.05,
+  "score_chunk": 1,
+  "H_sample_chunk": 32,
+  "reset_moments_at_phase_switch": true,
+  "milestones": [
+    0,
+    1,
+    2,
+    20,
+    100,
+    250,
+    500,
+    1000
+  ],
+  "maximum_training_seconds": 172800,
+  "fold_root_swap": true,
+  "execution": {
+    "projection_chunk": 64,
+    "score_chunk": 4,
+    "H_sample_chunk": 32,
+    "kernel": "orbit_dag"
+  },
+  "training_resume_from": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/square_continuation_20261017/direct_SR",
+    "registration_sha256": "920d2b8ec1b2f3b711400d3d72a656c18cc8e5b7c3f8548cee85d5c4c35ab039",
+    "checkpoint_sha256": "4762ac4843a6e2fd573bd82ad4987672347e4afdc0edbb6d4548e84823106c27",
+    "source_workspace": "/home/yx789/nqs-square-ct-continuation-20261017",
+    "same_projected_physical_state_proved": true,
+    "reset_optimizer_moments": false,
+    "optimizer_condition_change": {
+      "warm_samples": {
+        "from_value": 1024,
+        "to_value": 4096
+      },
+      "adam_samples": {
+        "from_value": 1024,
+        "to_value": 4096
+      }
+    }
+  },
+  "release": {
+    "authorized_endpoint": 450,
+    "authorized_new_updates": 128,
+    "scientific_cumulative_GPU_hours_cap": 48,
+    "automatic_long_release": false,
+    "reason": "DirectSR improves while Adam stagnates in independent48-step comparison. More parameters not established as necessary; raise samples1024->4096 at fixed paper capacity16/high-spin8/qmax8."
+  },
+  "sr_use_adam": false,
+  "sr_tangent_fs_radius": 0.02
+}

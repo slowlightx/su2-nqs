@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_n36_coherent_frame_support",
+  "source_exact_n16_gate": "../../results/spin_coherent_plaquette_frame_gate_v1/results.json",
+  "controls": {
+    "sample_seeds": [2026092521, 2026092522, 2026092523, 2026092524],
+    "sample_count_per_seed": 512
+  },
+  "gates": {
+    "minimum_importance_effective_sample_fraction": 0.1,
+    "maximum_zero_target_fraction": 0.25,
+    "minimum_mean_intercell_casimir": 0.25,
+    "minimum_paired_casimir_z_score": 2.0
+  },
+  "remote_training_on_pass": false,
+  "claim_boundary": "This is a local support witness, not an energy or q-probability measurement. A positive non-root block Casimir proves nonzero inter-cell q support because S_A^2 vanishes only in q=0. Passing licenses one bounded untouched-energy canary using sampled finite Fubini-Study/KL radii; it does not license remote production."
+}

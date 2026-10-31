@@ -1,0 +1,62 @@
+{
+  "observed_utc": "2026-10-10T02:37:33Z",
+  "physics": {"lattice": "triangular", "rows": 6, "columns": 6, "boundaries": "PBC/PBC", "J1": 1, "J2": 0.125},
+  "completed": {
+    "job_id": 2067881, "state": "COMPLETED", "exit_code": "0:0",
+    "chi": 5120, "mixer": false, "sweeps": [25, 26],
+    "energy_per_site": [-0.5145238392599352, -0.5145360655301436],
+    "previous_chi4096_sweep24_energy_per_site": -0.5141479278426795,
+    "last_sweep_energy_improvement_per_site": 0.00001222627020836,
+    "last_sweep_max_discarded_weight": 0.00017121366936383045,
+    "canonical_norm_error": 4.41155e-15,
+    "scheduler_elapsed": "06:28:26", "cpus": 32, "requested_memory_GiB": 256,
+    "process_peak_RSS_GiB": 154.02171325683594, "scheduler_MaxRSS_K": 162735100,
+    "last_sweep_optimization_seconds": 11337.6894,
+    "readout_seconds": 719.823,
+    "converged_in_bond_dimension": false, "variance_measured": false,
+    "same_region_trace_distance_4096_24_to_5120_26": {"compact4": 0.00468294607, "compact6": 0.00695238692, "winding6": 0.01040726144},
+    "same_region_trace_distance_5120_25_to_26": {"compact4": 0.00030051433, "compact6": 0.00063468440, "winding6": 0.00092223638},
+    "quality_interpretation": "Energy and raw regional RDMs improve but retain material bond-dimension dependence. No exact-reference, strict regional SU2-spectrum, or phase claim."
+  },
+  "verified_archive": {
+    "WORK_snapshot": "/storage/hpc/work/an9/yx51/nqs_reference_dmrg/projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi5120_probe/snapshots/sweep0026_b1f8abd6ecce_complete",
+    "remote_receipt": "/storage/hpc/work/an9/yx51/nqs_reference_dmrg/archive_receipts/chi5120_complete_20261010.json",
+    "local_directory": "data/reference_wavefunctions/dmrg/triangular_6x6_j2_0.125/chi5120_sweep26",
+    "checkpoint_bytes": 1004640480,
+    "checkpoint_sha256": "b1f8abd6ecce2f9fde31be7b08d8444673e6fdc4612af79a3d4ab5e6a0f2b239",
+    "archive_verified_files": 31, "all_hashes_match": true,
+    "full_bundle_bytes": 1004839028,
+    "physical_wavefunction_in_HOME": false,
+    "input_and_old_archives_preserved": true
+  },
+  "submitted_8192_probe": {
+    "job_id": 2075279, "observed_state": "RUNNING", "observed_elapsed": "00:11:02", "node": "bc11u27n3",
+    "partition": "commons", "cpus": 32, "memory_GiB": 512, "scheduler_hours": 23,
+    "chi": 8192, "mixer": false, "sweeps": 1, "global_sweep_target": 27,
+    "active_seconds_cap": 79200, "reserve_seconds": 1800, "memory_guard_GiB": 448,
+    "full_optimizer_and_environment_resume": true,
+    "config": "projects/clebsch_tree_nqs/configs/remote/spin_tensor_network_chi8192_probe_nots.json",
+    "config_sha256": "e05ed3ac23cde85c961280c20670249b08ae0c10fc22f8968a26170c137128bb",
+    "scratch_output": "/scratch/yx51/nqs_reference_dmrg/projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi8192_probe",
+    "forecast_hours_excluding_queue": [13, 17], "forecast_memory_GiB_before_margin": 394.3,
+    "automatic_extra_sweeps": false,
+    "next_decision": "Inspect the capacity-growth sweep before authorizing further same-chi relaxation; one growth sweep is not convergence."
+  },
+  "submitted_fixed_parent_geometry": {
+    "job_id": 2075322, "observed_state": "PENDING", "observed_reason": "QOSMaxMemoryPerUser",
+    "cpus": 32, "memory_GiB": 512, "scheduler_hours": 4,
+    "per_parent_wall_seconds": 5400, "per_parent_memory_GiB": 480,
+    "parents": ["chi4096_sweep24", "chi5120_sweep26"],
+    "sites": [20, 21, 15, 8, 7, 13],
+    "geometry": "contractible J1-shell hexagon with six J2 chords in the full Hamiltonian",
+    "config_paths": ["projects/clebsch_tree_nqs/configs/remote/spin_dmrg_chi4096_hexagon6_probe.json", "projects/clebsch_tree_nqs/configs/remote/spin_dmrg_chi5120_hexagon6_probe.json"],
+    "workflow_sha256": "09016d87497b469a35edab0d9e222a90104ba095c20a44a9f084ff685b71c6e7",
+    "new_optimization": false, "checkpoint_mutation": false,
+    "hard_limits_and_atomic_raw_RDMs": true,
+    "guard": "Raw trace/positivity/canonical-form diagnostics must pass; never normalize or twirl an invalid RDM to enable interpretation.",
+    "seven_and_eight_site_jobs_submitted": false
+  },
+  "saved_RDM_protocol": "projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/su2_protocol_v6",
+  "ordinary_ViT_latest_remote_status_checked_this_turn": false,
+  "VPN_note": "NOTS work safely submitted. User reminded to switch to Kim for the latest ordinary-ViT endpoint; no GPU job changed."
+}

@@ -1,0 +1,15 @@
+su2_nqs/benchmarks/schmidt_covariance.py
+projects/clebsch_tree_nqs/workflows/spin_schmidt_covariance.py
+projects/clebsch_tree_nqs/configs/remote/schmidt_covariance_20261015/tri_j0_750.json
+projects/clebsch_tree_nqs/configs/remote/schmidt_covariance_20261015/tri_j0_1000.json
+projects/clebsch_tree_nqs/configs/remote/schmidt_covariance_20261015/tri_j0125_100.json
+projects/clebsch_tree_nqs/configs/remote/schmidt_covariance_20261015/tri_j0125_200.json
+projects/clebsch_tree_nqs/remote/schmidt_covariance_a100.sbatch
+projects/clebsch_tree_nqs/remote/schmidt_covariance_v100.sbatch
+projects/clebsch_tree_nqs/remote/schmidt_swap_probe_v100.sbatch
+projects/clebsch_tree_nqs/configs/remote/schmidt_covariance_20261015/swap_probe_v100.json
+projects/clebsch_tree_nqs/configs/remote/schmidt_covariance_20261015/swap_probe_a100.json
+projects/clebsch_tree_nqs/configs/remote/schmidt_covariance_20261015/r1_a100/tri_j0_750.json
+projects/clebsch_tree_nqs/configs/remote/schmidt_covariance_20261015/r1_a100/tri_j0_1000.json
+projects/clebsch_tree_nqs/configs/remote/schmidt_covariance_20261015/r1_a100/tri_j0125_100.json
+projects/clebsch_tree_nqs/configs/remote/schmidt_covariance_20261015/r1_a100/tri_j0125_200.json

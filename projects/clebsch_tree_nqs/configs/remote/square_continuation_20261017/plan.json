@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "created": "2026-10-17",
+  "status": "preregistered_before_training",
+  "parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/square_optimizer_conditions_20261016/adam_reset",
+    "checkpoint_sha256": "362b864916c4046f4a23e2d584be2f2211a855443581cd294a8be02751435708",
+    "registration_sha256": "6ec97a1e5c8ea7617baa0018cc4013683327685968694fd54e26ae95584f566e",
+    "source_workspace": "/home/yx789/nqs-square-ct-conditions-20261016",
+    "step": 274,
+    "active_seconds": 91082.04967811797
+  },
+  "require_import_moment_reset": false,
+  "initial_optimizer_step": 24,
+  "updates_per_arm": 48,
+  "samples_per_update": 1024,
+  "session_seconds_per_half": 3000,
+  "maximum_requested_GPU_hours_initial_pair": 4,
+  "maximum_wall_seconds_per_arm": 7200,
+  "arms": {
+    "adam_continuation": {
+      "training_config": "projects/clebsch_tree_nqs/configs/remote/square_continuation_20261017/adam_continuation_train.json",
+      "audit_config": "projects/clebsch_tree_nqs/configs/remote/square_continuation_20261017/adam_continuation_audit.json",
+      "midpoint_step": 298,
+      "endpoint_step": 322,
+      "training_config_sha256": "355f92c169974c4e4f5ecc781500ae25dde10df435955636a3c92a53842b5d68",
+      "audit_config_sha256": "e8d9a57935fa8cd5a44851df44d759e1de5c0c89ef39d4c4bef6221a867e5180"
+    },
+    "direct_SR": {
+      "training_config": "projects/clebsch_tree_nqs/configs/remote/square_continuation_20261017/direct_SR_train.json",
+      "audit_config": "projects/clebsch_tree_nqs/configs/remote/square_continuation_20261017/direct_SR_audit.json",
+      "midpoint_step": 298,
+      "endpoint_step": 322,
+      "training_config_sha256": "57d62f357f6fce741603921e31a6c42b119b5d18eb80f310ebc3e57a05f5c6cc",
+      "audit_config_sha256": "08a921b3de4a828cef53add8ea8d04e4541d62c1421ddd03c9e3739c9db7f77d"
+    }
+  },
+  "scientific_cumulative_GPU_hours_cap": 48,
+  "inherited_scientific_GPU_hours": 26.01454962732076,
+  "additional_session_budget": {
+    "failed_diagnosis_requested_hours": 0.5,
+    "failed_diagnosis_actual_hours": 0.075,
+    "repaired_diagnosis_requested_hours": 0.5,
+    "training_pair_requested_hours": 4,
+    "total_requested_hours": 5,
+    "overall_authorized_hours": 6
+  },
+  "pre_release_direction_evidence": {
+    "path": "/home/yx789/nqs-wavefunctions/nqs/square_optimizer_conditions_20261017/direction_probe/results.json",
+    "sha256": "97cfa0251e0a42dd6fb4a48482f28199337d6d4aa69224cd1ff08c9c3836d6d9",
+    "negative_held_directions": [
+      "direct_SR",
+      "clipped_Adam"
+    ],
+    "maximum_held_FS_sine": 0.025
+  },
+  "prior_frozen_audit": {
+    "energy_per_site": -0.4293376415926914,
+    "energy_chain_SE": 0.0011592730574408244,
+    "variance_per_site": 0.08225801496700338,
+    "variance_chain_SE": 0.008197974753231654
+  },
+  "matched": [
+    "same retained stronger Adam274 physical parameters/optimizer arrays/chains/RNG",
+    "same architecture227958 real parameters,exactS0/full coherentA1",
+    "48 attemptedupdates,1024samples/update,49152 full-H training calls",
+    "same complete-H and exchange sampler",
+    "same finiteFS cap.05 and ESS floor.95",
+    "separate predetermined2048-record terminal audits"
+  ],
+  "differences": {
+    "adam_continuation": "Continue clipped-gradient Adam(.001) with its saved moments, no restart.",
+    "direct_SR": "Plain uniform-ridge.01 SR (no post-SR coordinate Adam), maximum learning scale.05,tangentFS cap.02. Existing Adam arrays are retained solely for recovery and DO NOT enter the direction. No claim this is the paper optimizer."
+  },
+  "interpretation": "Pointwise negative held slopes and better physical-distance transfer motivate a bounded trial, not a proof of an actual variational win. Two folds still have uncertainty; actual distances differ and finite-state energy/variance can change nonlinearly. Report both independent endpoints rather than selecting a best training mean. Actual p250 SR-to-Adam fit slopes are negative: the toy uphill counterexample is NOT an established explanation of its24-step degradation.",
+  "automatic_long_training": false,
+  "targets": {
+    "intermediate_energy_per_site": -0.48,
+    "paper_CT_energy_per_site": -0.4985703125
+  },
+  "audit": "Freeze322 before a wholly new2-stream16-chain64-snapshot full-H audit2048records, preserving chain uncertainty; previous parameter/optimizer checkpoints and rejected SR-to-Adam trajectory remain intact.",
+  "failed_runtime_policy": "Nonfinite H/score, source mismatch, failed exactreplay or checkpoint/optimizer mismatch stops with last valid checkpoint. Rejected physical steps count as attempts, not committed optimizer steps; no audit or endpoint is fabricated."
+}

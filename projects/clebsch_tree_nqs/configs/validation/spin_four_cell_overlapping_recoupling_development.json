@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_four_cell_overlapping_recoupling",
+  "phase": "development",
+  "scientific_question": "Do translated overlapping local-Schur views and exact recoupling provide a physical variational advantage over an isospectral locality-scrambled operator bank inside the identical SU2/Gamma-A1 space?",
+  "representation": {
+    "translated_overlapping_tilings": true,
+    "exact_gamma_a1_coordinates": true,
+    "scramble_inside_gamma_a1": true,
+    "operator_count": 8
+  },
+  "optimization": {
+    "seeds": [711, 712, 713],
+    "steps": 1000,
+    "learning_rate": 0.01,
+    "same_full_H_calls": true
+  },
+  "excluded_previous_seeds": [
+    0, 1, 2,
+    101, 102, 103,
+    211, 212, 213,
+    311, 312, 313,
+    411, 412, 413,
+    511, 512, 513,
+    521, 522, 523,
+    611, 612, 613
+  ],
+  "promotion_rule": "Both exact-small cases must pass their frozen gates. Square N16 requires lower median and worst energy than the raw arm, lower median energy and variance than the in-A1 isospectral scramble, a physical win for every paired seed, and every physical error below 1e-5. Only then may untouched audit seeds be created.",
+  "forbidden_actions": [
+    "reuse any excluded seed",
+    "change operator count, learning rate, steps, or gates after inspecting this run",
+    "scramble outside the common Gamma-A1 space",
+    "promote a favorable subset of seeds",
+    "start N36 before an untouched audit passes"
+  ]
+}

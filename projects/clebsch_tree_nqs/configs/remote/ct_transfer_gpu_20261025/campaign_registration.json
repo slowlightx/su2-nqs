@@ -1,0 +1,25 @@
+{
+  "registered_utc": "2026-10-25T16:16:04.364985+00:00",
+  "support_proposals": 10240,
+  "support_segments": 80,
+  "chains": 8,
+  "gate_window_records": 512,
+  "diagnostic_only_windows": [
+    16,
+    64
+  ],
+  "audit_records_per_chain": 32,
+  "audit_burn": 128,
+  "audit_between": 128,
+  "audit_seed": 2610258300,
+  "audit_H_centers": 516,
+  "extra_GPU_cost_H_centers": 4,
+  "CPU_H_queries": 0,
+  "requested_GPU_hours_upper_bound": 3.0,
+  "maximum_simultaneous_GPUs": 1,
+  "overall_kernel_boundary_cap_seconds": 10200.0,
+  "stage_caps": "support<=5400 and audit<=3600, further bounded by actual remaining allocation; never reduce the fixed record/proposal counts",
+  "no_training_or_attention_fit": true,
+  "no_adaptive_budget_extension": true,
+  "runtime_release": "Cost and replay -> all10240 proposals -> fixed512 stability gate -> fresh audit"
+}

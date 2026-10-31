@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_n36_multibody_frame_resonance",
+  "source_n36_support_gate": "../../results/spin_n36_coherent_frame_support_v1/results.json",
+  "controls": {
+    "development_seeds": {
+      "square_6x6_j2_0.5": 2026092561,
+      "triangular_6x6_j2_0.125": 2026092562
+    },
+    "untouched_audit_seeds": [2026092571, 2026092572, 2026092573, 2026092574],
+    "scramble_seeds": [2026092581, 2026092582, 2026092583, 2026092584],
+    "sample_count_per_seed": 512
+  },
+  "relative_overlap_cutoff": 1e-8,
+  "physical_trust": {
+    "maximum_fubini_study_distance": 0.03,
+    "maximum_symmetric_kl": 0.002
+  },
+  "gates": {
+    "minimum_energy_z_score": 2.0,
+    "maximum_variance_z_score": 2.0,
+    "minimum_incremental_energy_gain_per_site": 0.0,
+    "minimum_scramble_advantage_per_site": 0.0
+  },
+  "remote_training_on_pass": false,
+  "claim_boundary": "A pass establishes only that an exact-S0/Gamma-A1 collective local-singlet manifold supplies a reproducible N=36 sampled descent beyond the old pair-B1 channel and matched scrambled frames. It may license implementation of a shared multi-frame Schur-ViT and one bounded remote pilot; it is not a variational, scaling, QSL, or PRL claim."
+}

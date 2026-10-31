@@ -1,0 +1,27 @@
+{
+  "base_config": "projects/clebsch_tree_nqs/configs/remote/ordinary_chirality_20261015/tri_j0_1000.json",
+  "output": "/home/yx789/nqs-wavefunctions/nqs/scalar_structure_20261016/tri_j0_1000",
+  "snapshot_indices": [
+    0,
+    18,
+    36,
+    54,
+    72,
+    90,
+    108,
+    127
+  ],
+  "row_distances": [
+    1,
+    2,
+    3
+  ],
+  "query_batch": 32,
+  "center_chunk": 32,
+  "wall_seconds": 540,
+  "include_rotational_scalar_chirality": true,
+  "include_structure_factors": true,
+  "legacy_distance_reference": "/home/yx789/nqs-wavefunctions/nqs/frozen_distance_20261015/tri_j0_1000",
+  "legacy_raw_sha256": "60f70091c0f04abdac957d7346504d3482686b80e7732a23b3be68c56d2c446b",
+  "predeclared_before_new_readout": true
+}

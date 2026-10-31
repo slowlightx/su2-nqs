@@ -1,0 +1,99 @@
+{
+  "task": "native_triangle_GCNN_quality_v4",
+  "case": "j0125_binary_truncated",
+  "stage": "w24_direct_SR",
+  "model": {
+    "length": 6,
+    "multiplicity_cap": 24,
+    "maximum_q": 10
+  },
+  "arity": "binary_truncated",
+  "binary_rank": 8,
+  "j2_over_j1": 0.125,
+  "parent": {
+    "kind": "continuation",
+    "model": {
+      "length": 6,
+      "multiplicity_cap": 20,
+      "maximum_q": 10
+    },
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/ct6_continue_20261021/j0125_binary_truncated/w20_continue32",
+    "plan_path": "projects/clebsch_tree_nqs/configs/remote/ct6_continue_20261021/j0125_binary_truncated_w20_continue32.json",
+    "expected_identity": {
+      "case": "j0125_binary_truncated",
+      "stage": "w20_continue32",
+      "arity": "binary_truncated",
+      "model": {
+        "length": 6,
+        "multiplicity_cap": 20,
+        "maximum_q": 10
+      },
+      "j2_over_j1": 0.125,
+      "binary_rank": 8
+    },
+    "absolute_completed_steps": 316,
+    "sealed_files": {
+      "registration.json": "610bf1c7408eb4d8e9bd380c69ef0e3b0136a6211269649207e98254c4de782e",
+      "results.json": "c95e7947525ac22207797d4cbebb1d64f1d715455bfa5697836c916b28c342dd",
+      "terminal_audit.json": "657637561b6756e1fd5dc6a820a392a170a35644279a8f5c7c89f491eda564f5",
+      "checkpoint.pkl": "63166d94465c76ca4091f5095249fb9add424828822987a47e7567c2f2ac2b8a",
+      "process_replay.json": "547e325985cdd3e178adb1885e739bd7c2887928518df7b595b40a8f80bde4b9"
+    }
+  },
+  "pilot_steps": 2,
+  "training": {
+    "steps": 32,
+    "samples": 4096,
+    "chains": 64,
+    "refresh_proposals": 36,
+    "spacing_proposals": 36
+  },
+  "calibration": {
+    "samples": 512,
+    "chains": 64,
+    "initial_burn_proposals": 1440,
+    "refresh_proposals": 144,
+    "spacing_proposals": 36
+  },
+  "audit": {
+    "samples": 65536,
+    "chains": 256,
+    "refresh_proposals": 1440,
+    "spacing_proposals": 36
+  },
+  "seeds": {
+    "calibration": 2610219401,
+    "expansion": 2610219402,
+    "audit": 2610219434
+  },
+  "learning_rate": 0.03,
+  "damping": 0.05,
+  "maximum_fs_sine": 0.005,
+  "minimum_ess_fraction": 0.98,
+  "halvings": 12,
+  "new_feature_scale": 0.2,
+  "projection_chunk": 4,
+  "action_chunk": 4,
+  "score_chunk": 2,
+  "tolerance": 2e-11,
+  "require_gpu": true,
+  "budget": {
+    "pilot_seconds": 10800,
+    "replay_seconds": 3600,
+    "train_seconds": 72000,
+    "maximum_peak_device_bytes": 75161927680
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/ct6_gcnn_quality_v2_20261021/w24",
+  "interpretation": "Same frozen audited binary-w20 lifetime316 parent for both arms. Native exactS0/full432A1 unchanged; w24 is exact live inclusion. Both explicitly reset Adam moments and use direct ridgeSR (F=Cov,g=2Cov),physical tangent cap.003 and independent finite-step veto<=.005. Fixed32 new updates with4096 samples and fresh65536-record/256-chain audit. Block8192 changes memory, not metric. Primary target is RothGCNN E/N=-.515386(9), not a guaranteed result; do not infer capacity or SU2 superiority from unmatched work or a low stochastic mean.",
+  "sr_solver": "dual_force",
+  "continuation_profile": "inherit_full_optimizer_sampler_rng",
+  "runtime_contract": {
+    "policy": "pin_first_pilot_numerical_runtime",
+    "node": "kim-compute-05"
+  },
+  "optimization_control": "paired_capacity_reset_direct_SR",
+  "matched_wider_arm": "same_parent_w24_direct_SR",
+  "sr_use_adam": false,
+  "sr_tangent_fs_radius": 0.003,
+  "parameter_chunk_size": 8192
+}

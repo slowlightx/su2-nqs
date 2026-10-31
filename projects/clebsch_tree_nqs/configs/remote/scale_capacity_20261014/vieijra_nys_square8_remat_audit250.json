@@ -1,0 +1,18 @@
+{
+  "training_directory": "/home/yx789/nqs-wavefunctions/nqs/vieijra_nys_reproduction_20261014/square8_remat",
+  "output": "/home/yx789/nqs-wavefunctions/nqs/vieijra_nys_reproduction_20261014/square8_remat_audit250",
+  "endpoint_step": 250,
+  "quality_checkpoint": true,
+  "require_gpu": true,
+  "streams": 2,
+  "chains_per_stream": 16,
+  "snapshots_per_stream": 32,
+  "burn_proposals": 4096,
+  "proposals_between_snapshots": 256,
+  "audit_seeds": [
+    2026101551,
+    2026101552
+  ],
+  "bootstrap_seed": 2026101553,
+  "H_sample_chunk": 32
+}

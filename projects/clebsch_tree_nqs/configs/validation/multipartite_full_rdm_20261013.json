@@ -1,0 +1,14 @@
+{
+  "primary_directory":"projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v2",
+  "output":"projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v2/full_rdm_audit_v1",
+  "six_site_labels":["DMRG_8192_30","DMRG_10240_32","DMRG_10240_32_hexagon"],
+  "fork_directories":[
+    "projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v2/fork_chi4096_v1",
+    "projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v2/fork_chi5120_v2"
+  ],
+  "inflation":1.02,
+  "iterations":80,
+  "moment_tolerance":1e-9,
+  "seconds_cap":1200,
+  "purpose":"Close the full-RDM residual, including SU2 defects, rather than infer absence from zero witnesses or low-moment completions. Verify saved product atoms and Gurvits-Barnum residual ball. Six-site candidate averaging acts only on the constructed biseparable state. Raw parents unmodified; all failures inconclusive."
+}

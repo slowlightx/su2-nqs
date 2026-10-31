@@ -1,0 +1,50 @@
+{
+  "mode": "unified_quality_readout",
+  "output": "projects/clebsch_tree_nqs/results/spin_su2_unified_quality_v1",
+  "problem": {
+    "geometry": "triangular", "rows": 6, "columns": 6, "j2": 0.125,
+    "boundary": "PBC_both_physical",
+    "regions": {
+      "compact6": [12,13,14,18,19,20],
+      "local_hexagon6": [20,21,15,8,7,13],
+      "winding6": [12,13,14,15,16,17]
+    },
+    "left_sites": {"compact6": [0,1,2], "local_hexagon6": [0,1,2], "winding6": [0,1,2]},
+    "compact_triangular_2x3": ["compact6"], "cyclic_regions": ["winding6"]
+  },
+  "reference_protocol": "projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/su2_protocol_v6",
+  "reference_problem": "triangular_n36",
+  "reference_family": "dimer_reference",
+  "reference_refinements": ["chi4096_sweep0024", "chi5120_sweep0025"],
+  "candidates": [
+    {
+      "step": 5600,
+      "energy_audit": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_recovery_v6/seed1/audits/step05600/energy.json",
+      "region_caches": [
+        "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_recovery_v6/analysis/six_site_readout",
+        "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_recovery_v6/analysis/local_hexagon6_readout_v2"
+      ]
+    },
+    {
+      "step": 6600,
+      "energy_audit": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/seed1/audits/step06600/energy.json",
+      "region_caches": [
+        "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/six_site_readout",
+        "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/local_hexagon6_readout_v2"
+      ]
+    },
+    {
+      "step": 7600,
+      "energy_audit": "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_7600_v1/seed1/audits/step07600/energy.json",
+      "region_caches": ["projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_7600_v1/analysis/witness_regions_v1"]
+    }
+  ],
+  "primary_observables": {
+    "compact6": ["rows_p33_singlet", "rows_p33_high", "triangles_p33_singlet", "triangles_p33_high", "triangles_doublet_conditional_operator_purity", "triangle_conditional_E2_axis_average_connected", "triangle_conditional_A2_axis_correlation_connected"],
+    "local_hexagon6": ["rows_p33_singlet", "rows_p33_high", "rows_doublet_conditional_operator_purity"],
+    "winding6": ["rows_p33_singlet", "rows_p33_high", "rows_doublet_conditional_operator_purity", "connected_three_bridge_sum"]
+  },
+  "max_fit_iterations": 100,
+  "wall_seconds_cap": 1800,
+  "interpretation": "Exploratory cached-state analysis, not a preregistered untouched discovery. No new states, sampling, H or amplitudes. DMRG dimer_reference denotes its initialization only. Missing DMRG hexagon is not silently replaced. Three row sites and actual compact elementary triangles [0,3,4]|[1,2,5] are separate partitions. Regional q=0 channel spectra are not full entanglement spectra; coherence norms retain finite-sample positive bias. Descriptive quality screens do not certify finite-chi or sampling bias and are not simultaneous phase tests."
+}

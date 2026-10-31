@@ -1,0 +1,132 @@
+{
+  "geometry": "square",
+  "rows": 8,
+  "columns": 8,
+  "j2_over_j1": 0,
+  "multiplicity_cap": 16,
+  "high_spin_cap": 8,
+  "maximum_q": 8,
+  "projection_chunk": 8,
+  "require_gpu": true,
+  "seed": 2026131810,
+  "calibration_seed": 2026131811,
+  "sampling_seed": 2026131812,
+  "output": "/home/yx789/nqs-wavefunctions/nqs/square_paper_continue_20261020/j0",
+  "literature_target_energy_total": null,
+  "literature_target_total_standard_error": null,
+  "literature_source": "No verified finite-N literature number registered for this pilot; no invented target.",
+  "interpretation": "Same paper capacity227958, physical native optimized parameters/16 chains/RNG/historical work preserved. Explicit one-time moment reset for a NEW paper-like optimizer reentry:16 SR+Adam256 updates then112 clippedAdam4096. Not exact continuation of previous directSR, not author-identical warmup length, no cold start, no head/attention/width change. Independent8192-record terminal audit; previous audited32/450 retained.",
+  "training_seed": 2026131813,
+  "steps": 160,
+  "sr_warm_steps": 48,
+  "warm_samples": 256,
+  "adam_samples": 4096,
+  "chains": 16,
+  "burn_proposals": 640,
+  "proposals_between_snapshots": 128,
+  "sr_damping": 0.01,
+  "warm_lr": 0.005,
+  "adam_lr": 0.001,
+  "maximum_FS_sine": 0.05,
+  "score_chunk": 1,
+  "H_sample_chunk": 32,
+  "reset_moments_at_phase_switch": true,
+  "milestones": [
+    0,
+    32,
+    34,
+    36,
+    48,
+    64,
+    96,
+    160
+  ],
+  "maximum_training_seconds": 68400,
+  "fold_root_swap": true,
+  "execution": {
+    "projection_chunk": 64,
+    "score_chunk": 4,
+    "H_sample_chunk": 32,
+    "kernel": "orbit_dag"
+  },
+  "sr_use_adam": true,
+  "sr_tangent_fs_radius": null,
+  "release": {
+    "authorized_endpoint": 160,
+    "authorized_new_updates": 128,
+    "automatic_long_release": false,
+    "maximum_requested_A100_hours": 17,
+    "paper_capacity_same_as_parent": true,
+    "original_historical_work_preserved": true
+  },
+  "cost_parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/training_dispatch_20261018/square8_j0_cost",
+    "checkpoint_sha256": "7ab3378a278b5bc1cf6676afcf53a56e4322943e952ce47b36696d9a0c3ad32a",
+    "registration_sha256": "c5720d12be4c2925bb75c8dad414845c2afa0fe0861b4bbe40f07986903fd784"
+  },
+  "strict_nonzero_updates": true,
+  "training_resume_from": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/training_dispatch_20261018/square8_j0",
+    "checkpoint_sha256": "88ad76e424cb42a0a870bcfe721e15a56f4006368c1848a843efc6cf8e113002",
+    "registration_sha256": "e663028711b5d3d0ad9a19bda96aff4a045cabeaf3ebbd883ed1a6f0e9b64e7e",
+    "source_workspace": "/home/yx789/nqs-square-j0-20261018",
+    "same_projected_physical_state_proved": true,
+    "reset_optimizer_moments": true,
+    "optimizer_reset_reason": "Explicit paper-like optimizer recipe reentry after retained directSR parent; parameters, physical chains, RNG and historical work preserved.",
+    "optimizer_condition_change": {
+      "sr_warm_steps": {
+        "from_value": 32,
+        "to_value": 48
+      },
+      "warm_samples": {
+        "from_value": 4096,
+        "to_value": 256
+      },
+      "warm_lr": {
+        "from_value": 0.05,
+        "to_value": 0.005
+      },
+      "sr_use_adam": {
+        "from_value": false,
+        "to_value": true
+      },
+      "sr_tangent_fs_radius": {
+        "from_value": 0.02,
+        "to_value": null
+      },
+      "strict_nonzero_updates": {
+        "from_value": false,
+        "to_value": true
+      }
+    },
+    "endpoint_budget_change": {
+      "from_completed_steps": 32,
+      "additional_updates": 128,
+      "time_extension_seconds": 50400,
+      "registered_steps": {
+        "from_value": 32,
+        "to_value": 160
+      },
+      "registered_milestones": {
+        "from_value": [
+          0,
+          1,
+          2,
+          4,
+          16,
+          32
+        ],
+        "to_value": [
+          0,
+          32,
+          34,
+          36,
+          48,
+          64,
+          96,
+          160
+        ]
+      }
+    }
+  }
+}

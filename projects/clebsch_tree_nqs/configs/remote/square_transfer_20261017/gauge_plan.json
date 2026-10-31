@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "date": "2026-10-17",
+  "require_gpu": true,
+  "parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/square_continuation_20261017/direct_SR",
+    "registration_sha256": "920d2b8ec1b2f3b711400d3d72a656c18cc8e5b7c3f8548cee85d5c4c35ab039",
+    "checkpoint_sha256": "4762ac4843a6e2fd573bd82ad4987672347e4afdc0edbb6d4548e84823106c27",
+    "step": 322
+  },
+  "audit_directory": "/home/yx789/nqs-wavefunctions/nqs/square_continuation_20261017/direct_SR/audit_step322",
+  "audit_json_sha256": "28f29bea890ea9d48543549918837b5b111601cb0fb1dc271a27fdd094ac41a4",
+  "audit_raw_sha256": "62ebb48b6d5d0047330d537eb158062b846e8938a263e167008154c37edc8599",
+  "audit_source_workspace": "/home/yx789/nqs-square-ct-continuation-20261017",
+  "output": "/home/yx789/nqs-wavefunctions/nqs/square_gauge_control_20261017",
+  "H_replay_indices": [
+    0,
+    15,
+    1024,
+    2047
+  ],
+  "score_chunk": 4,
+  "amplitude_chunk": 8,
+  "sr_damping": 0.01,
+  "fit_tangent_FS_sine": 0.02,
+  "layer_balanced_SR": true,
+  "match_finite_FS": true,
+  "maximum_requested_A100_hours": 1,
+  "interpretation": "Fixed physical parent and all2048 already archived full-H records. Known audit becomes diagnostic; zero new Born streams and only4 H-center replay queries. Fit-chain-only positive activation standardization controls uniform ridge coordinates. Compare actual FS=.02 directions, held-chain slopes and paired balanced-minus-direct differences. No optimized state, no automatic training release. Invalid weak4->6 warmstart campaign is not submitted."
+}

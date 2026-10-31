@@ -1,0 +1,30 @@
+{
+  "type": "CT6_v8_hostname_portable_fixed_fixture_replay_v1",
+  "runtime_policy": "any_Kim_A10080GB_same_runtime_except_hostname_fixed_replay",
+  "launcher_sha256": "e86e5eb227379a866a266c658c26b0d64d9341631ea5be62c869e921cd1e6a14",
+  "plan_sha256": "043b7e1352d564ab45f96ce0b7946fdc8b65a2c8e14fa0a6920cbff26bf8930e",
+  "replay_budget_seconds": 7200,
+  "train_budget_seconds": 68400,
+  "original_repair_manifest": {
+    "repair_type": "CT6_v8_replay_gate_bounds_validation_only_v1",
+    "original_workflow_snapshot": "/home/yx789/nqs-ct6-regularized-update-20261026/projects/clebsch_tree_nqs/workflows/triangle_clebsch_continuation.py",
+    "original_workflow_sha256": "f4b01558d1fe637ec28152c9e6f6c6a95a49dfbb1877c9b76741213f0e1ae0cb",
+    "repaired_workflow_sha256": "af053deb351a16c5030e01a02cf22d41a9c27a74c15144f41ad2b8137a716440",
+    "launcher_sha256": "f1255e7dc36a59195669993f87d25253a5251d3ff7bda86723b409bb5c07af39",
+    "plan_sha256": "043b7e1352d564ab45f96ce0b7946fdc8b65a2c8e14fa0a6920cbff26bf8930e",
+    "registration_sha256": "afd7801df54ea61c54febd445d665cde22816b29876058d0cef5ecd511e29ee6",
+    "original_artifacts": {
+      "registration.json": "27673d6f307881db5e1ac7d9b64666daaef0f5a57cbd88b89bd36ea9ffbd9c94",
+      "checkpoint.pkl": "b15cbb6173deef0a8e9d69b0ed3ffbcb8d24b4eb28f68fb9bc9312805374bb90",
+      "pilot.json": "ea4e2f7aa1fdcea4b371101486001f2c962573a6620551c9fc1e062ca62594da",
+      "process_replay.json": "7b3507c56797f45369cee648844bd86b7656a083d61b8b1e1f60b911e244a616",
+      "direction_check.json": "2e7d812271abac2f23379743ffdbd2d48c46ab0cce80b8de7227601d7bf6d113",
+      "direction_check.npz": "872b98e2703a29e14e32bc9c611a7ff5160dc687c2e8675dbff0695cb6adbcd3",
+      "next_transition_fixture.pkl": "a03e60685f6d8b6bbc8ba7997ba018737daf0090d3b39420442612e801b39b7b",
+      "preflight.json": "4551aa1f4fd46808c7d6c3cec67ab09749d0edfb11ef5ec5bd74fe893ae0bbb8",
+      "sampler_branch.json": "b0975b7815af05a2da6053ff7398955474e68c761faba6fdf91ec5b3705512ae"
+    }
+  },
+  "original_repair_manifest_sha256": "46b2a22950f3cc426c8abffd1ec6d5a390dd0fea5d196ad7b22c8dddba5e7cf0",
+  "frozen_checkpoint_path": "/home/yx789/nqs-ct6-portable-runtime-20261026/inputs/j0125_frozen_checkpoint.pkl"
+}

@@ -1,0 +1,53 @@
+{
+  "observed_utc": "2026-10-06T16:13:51.066041+00:00",
+  "host": "nots",
+  "remote_workspace": "/home/yx51/nqs_reference_dmrg",
+  "synced_regular_files": 24,
+  "synced_bytes": 59835835,
+  "all_file_sha256_verified": true,
+  "environment": {
+    "isolated": ".venv-tenpy",
+    "python": "3.12.7",
+    "tenpy": "1.1.0",
+    "numpy": "1.26.4",
+    "h5py": "3.11.0",
+    "pytest": "8.4.2",
+    "existing_shared_tenpy_unchanged": "1.0.2"
+  },
+  "smoke": {
+    "job_id": 2024249,
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "tests_passed": 3,
+    "pytest_seconds": 2.75,
+    "slurm_seconds": 3,
+    "max_rss_kib": 208096,
+    "log": "logs/smoke-2024249.out"
+  },
+  "reference": {
+    "job_id": 2024252,
+    "state_at_observation": "RUNNING",
+    "partition": "commons",
+    "qos": "nots_commons",
+    "node": "bb5u20c1",
+    "allocated_cpus": 8,
+    "allocated_memory_gib": 96,
+    "time_limit_hours": 23,
+    "chi": 2048,
+    "fixed_sweeps": 8,
+    "total_elapsed_cap_seconds": 259200,
+    "config": "projects/clebsch_tree_nqs/configs/remote/spin_tensor_network_chi2048_nots.json",
+    "config_sha256": "6aed0b02da731869bf5aade0f8d3bb2c956bd97f7182827fa176ee2bac2566bd",
+    "workflow_sha256": "cef9f30bcf11737f9e4b33d0031dc79a02b56055edafdc4bbbb31a69ad832782",
+    "initial_checkpoint_sha256": "e754b6ad7c1e0a4ed2880b50160328d41aa488d50d11a43eabd4b6e8647a5aa2",
+    "initial_resumable_checkpoint_observed_bytes": 59761512,
+    "completed_sweeps_observed": 0,
+    "sweep_throughput_measured": false,
+    "finished_reference_available": false,
+    "variance_measured": false,
+    "phase_claim": false,
+    "gpu_jobs_submitted": 0,
+    "chi3072_released": false,
+    "log": "logs/dmrg-2024252.out"
+  }
+}

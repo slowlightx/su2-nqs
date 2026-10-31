@@ -1,0 +1,182 @@
+{
+  "task": "spin_spatial_vit_quality",
+  "preregistered_before_training": true,
+  "backend": "netket_ntk",
+  "require_gpu": true,
+  "model_family": "literature",
+  "coordinate_convention": "physical120",
+  "spin_inversion_even": true,
+  "output": "/home/yx789/nqs-wavefunctions/nqs/benchmark_guided_20261017/spatial/j0125/seed1",
+  "j2_over_j1": 0.125,
+  "initialization_seed": 2026102811,
+  "training_seed": 2026102801,
+  "model": {
+    "geometry": "triangular",
+    "rows": 12,
+    "columns": 12,
+    "patch_rows": 3,
+    "patch_columns": 3,
+    "embedding_dim": 48,
+    "head_count": 8,
+    "depth": 4,
+    "mlp_ratio": 4,
+    "target_m2": 0,
+    "initialization_scale": 1,
+    "initial_distance_decay": 3,
+    "use_distance_envelope": true,
+    "pooling": "authors",
+    "layer_norm_epsilon": 1e-06
+  },
+  "stages": [
+    {
+      "projection": "gamma_a1",
+      "steps": 32
+    }
+  ],
+  "quality_milestones": [
+    0,
+    2,
+    16,
+    32
+  ],
+  "maximum_training_seconds": 36000,
+  "maximum_audit_seconds_per_checkpoint": 7200,
+  "maximum_total_audit_seconds": 14400,
+  "sampling": {
+    "chains": 64,
+    "snapshots_per_update": 64,
+    "proposals_between_snapshots": 288,
+    "burn_proposals": 5760
+  },
+  "sr": {
+    "damping": 0.002,
+    "step_size": 0.005
+  },
+  "netket": {
+    "version": "3.22.3",
+    "on_the_fly": false,
+    "chunk_size": 32,
+    "chunk_size_bwd": 8,
+    "momentum": null,
+    "expected_device_count": 2,
+    "initialization": "parent_configurations",
+    "exchange_kernel": "uniform_all_pairs",
+    "replicate_initial_params": true,
+    "sampled_trust": {
+      "maximum_fs_sine": 0.025,
+      "minimum_ess_fraction": 0.95,
+      "halvings": 8
+    }
+  },
+  "audit": {
+    "seeds": [
+      2026102910,
+      2026102911
+    ],
+    "chains": 32,
+    "snapshots": 128,
+    "proposals_between_snapshots": 576,
+    "burn_proposals": 11520,
+    "query_batch": 2,
+    "bootstrap_seed": 2026102991,
+    "bootstrap_replicates": 2000
+  },
+  "momenta": {
+    "Gamma": [
+      0,
+      0
+    ],
+    "K": [
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "minus_K": [
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "M1": [
+      0.5,
+      0
+    ],
+    "M2": [
+      0,
+      0.5
+    ],
+    "M3": [
+      0.5,
+      0.5
+    ]
+  },
+  "regions": {
+    "compact4": {
+      "sites": [
+        0,
+        1,
+        12,
+        13
+      ],
+      "left": [
+        0,
+        1
+      ]
+    },
+    "compact6": {
+      "sites": [
+        0,
+        1,
+        2,
+        12,
+        13,
+        14
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ]
+    },
+    "hexagon6": {
+      "sites": [
+        1,
+        14,
+        26,
+        25,
+        12,
+        0
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "execution_gate": {
+    "authorized_initial_endpoint": 500,
+    "total_registered_steps": 700,
+    "automatic_release_beyond500": false,
+    "isolated_pilot_endpoint": 2,
+    "resume_endpoint": 4,
+    "actual_throughput_required": true,
+    "why_not_direct_full_A1": "Direct transfer full-A1 initial N144 training energies +.430(J0),+.445(.125), not competitive. Preserve original canary, do not spend100 tiny FS updates on it."
+  },
+  "interpretation": {
+    "strict_su2": false,
+    "new_head": false,
+    "protocol": "Same100288-parameter fullSpatialViT/coherentA1 from stable audited OWN parent, not noisy cross-H endpoint. New4096-sample2GPU condition: retain weights and ALL64 parent configurations; explicit fresh optimizer/RNG/work. Native2-way sample partition and <75GiB local memory required before32-step release. Fresh8192-record terminal audit. Not SOTA claim."
+  },
+  "budget_release": {
+    "registered_steps": 32,
+    "pilot_steps": 2,
+    "new_training_H_calls": 131072,
+    "automatic_larger_model": false
+  },
+  "repair_parameters_from": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/large_resume_20261016/tri_j0125_12x12/seed1",
+    "completed_steps": 124,
+    "checkpoint_path": "quality/step00124.pkl",
+    "checkpoint_sha256": "19ebca6d0b602592de94cc23f94998303b82a7940065d4d050d72e49f6b3545a",
+    "registration_sha256": "e77412186afddfd3b90d435c8991ba1f0a3ad4b71f930da7e285c03c78821cde",
+    "params_sha256": "09fd8272c1f42583f5c27bee0ab337841a4f4e46a7379749689ea1bf0f1c1987"
+  }
+}

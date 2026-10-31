@@ -1,0 +1,520 @@
+{
+  "submitted_at_utc": "2026-10-10T04:29:09Z",
+  "workspace": "/home/yx789/nqs-physics-initfix-20261010",
+  "manifest": "projects/clebsch_tree_nqs/remote/initialization_fix_sync_manifest_20261010.json",
+  "replaces_only_new_training_starts": true,
+  "failed_original_preflight": 155129,
+  "original_receipt_preserved": "/home/yx789/nqs-physics-20261010/logs/independent_launch_receipt_20261010.json",
+  "jobs": [
+    {
+      "label": "tri_j0-v2pre",
+      "id": 155413,
+      "dependency": null,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=tri_j0-v2pre",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0.json,NQS_PREFLIGHT_ENDPOINT=1",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ]
+    },
+    {
+      "label": "tri_j0-v2train",
+      "id": 155417,
+      "dependency": "155413",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=tri_j0-v2train",
+        "--kill-on-invalid-dep=yes",
+        "--time=13:00:00",
+        "--dependency=afterok:155413",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0.json,NQS_UNTIL_STEP=1000,NQS_SESSION_SECONDS=45000",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "label": "tri_j0-v2audit",
+      "id": 155418,
+      "dependency": "155417",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=tri_j0-v2audit",
+        "--kill-on-invalid-dep=yes",
+        "--array=0-1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--time=02:00:00",
+        "--dependency=afterok:155417",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "energy-stream"
+      ]
+    },
+    {
+      "label": "tri_j0-v2seal",
+      "id": 155419,
+      "dependency": "155418",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=tri_j0-v2seal",
+        "--kill-on-invalid-dep=yes",
+        "--constraint=cpu",
+        "--gres=none",
+        "--cpus-per-task=2",
+        "--mem=8G",
+        "--time=00:20:00",
+        "--dependency=afterok:155418",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "aggregate"
+      ]
+    },
+    {
+      "label": "read-tri_j0-v2",
+      "id": 155420,
+      "dependency": "155419",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=read-tri_j0-v2",
+        "--kill-on-invalid-dep=yes",
+        "--cpus-per-task=8",
+        "--mem=96G",
+        "--time=02:00:00",
+        "--dependency=afterok:155419",
+        "projects/clebsch_tree_nqs/remote/physics_readout_kim.sbatch",
+        "nqs",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/tri_j0_regional.json",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/tri_j0_magnetic.json"
+      ]
+    },
+    {
+      "label": "tri_j005-v2pre",
+      "id": 155421,
+      "dependency": null,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=tri_j005-v2pre",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j005.json,NQS_PREFLIGHT_ENDPOINT=1",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ]
+    },
+    {
+      "label": "tri_j005-v2train",
+      "id": 155422,
+      "dependency": "155421",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=tri_j005-v2train",
+        "--kill-on-invalid-dep=yes",
+        "--time=13:00:00",
+        "--dependency=afterok:155421",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j005.json,NQS_UNTIL_STEP=1000,NQS_SESSION_SECONDS=45000",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "label": "tri_j005-v2audit",
+      "id": 155423,
+      "dependency": "155422",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=tri_j005-v2audit",
+        "--kill-on-invalid-dep=yes",
+        "--array=0-1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--time=02:00:00",
+        "--dependency=afterok:155422",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j005.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "energy-stream"
+      ]
+    },
+    {
+      "label": "tri_j005-v2seal",
+      "id": 155424,
+      "dependency": "155423",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=tri_j005-v2seal",
+        "--kill-on-invalid-dep=yes",
+        "--constraint=cpu",
+        "--gres=none",
+        "--cpus-per-task=2",
+        "--mem=8G",
+        "--time=00:20:00",
+        "--dependency=afterok:155423",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j005.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "aggregate"
+      ]
+    },
+    {
+      "label": "read-tri_j005-v2",
+      "id": 155425,
+      "dependency": "155424",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=read-tri_j005-v2",
+        "--kill-on-invalid-dep=yes",
+        "--cpus-per-task=8",
+        "--mem=96G",
+        "--time=02:00:00",
+        "--dependency=afterok:155424",
+        "projects/clebsch_tree_nqs/remote/physics_readout_kim.sbatch",
+        "nqs",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/tri_j005_regional.json",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/tri_j005_magnetic.json"
+      ]
+    },
+    {
+      "label": "tri_j0175-v2pre",
+      "id": 155426,
+      "dependency": null,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=tri_j0175-v2pre",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0175.json,NQS_PREFLIGHT_ENDPOINT=1",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ]
+    },
+    {
+      "label": "tri_j0175-v2train",
+      "id": 155427,
+      "dependency": "155426",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=tri_j0175-v2train",
+        "--kill-on-invalid-dep=yes",
+        "--time=13:00:00",
+        "--dependency=afterok:155426",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0175.json,NQS_UNTIL_STEP=1000,NQS_SESSION_SECONDS=45000",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "label": "tri_j0175-v2audit",
+      "id": 155428,
+      "dependency": "155427",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=tri_j0175-v2audit",
+        "--kill-on-invalid-dep=yes",
+        "--array=0-1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--time=02:00:00",
+        "--dependency=afterok:155427",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0175.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "energy-stream"
+      ]
+    },
+    {
+      "label": "tri_j0175-v2seal",
+      "id": 155429,
+      "dependency": "155428",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=tri_j0175-v2seal",
+        "--kill-on-invalid-dep=yes",
+        "--constraint=cpu",
+        "--gres=none",
+        "--cpus-per-task=2",
+        "--mem=8G",
+        "--time=00:20:00",
+        "--dependency=afterok:155428",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0175.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "aggregate"
+      ]
+    },
+    {
+      "label": "read-tri_j0175-v2",
+      "id": 155430,
+      "dependency": "155429",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=read-tri_j0175-v2",
+        "--kill-on-invalid-dep=yes",
+        "--cpus-per-task=8",
+        "--mem=96G",
+        "--time=02:00:00",
+        "--dependency=afterok:155429",
+        "projects/clebsch_tree_nqs/remote/physics_readout_kim.sbatch",
+        "nqs",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/tri_j0175_regional.json",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/tri_j0175_magnetic.json"
+      ]
+    },
+    {
+      "label": "square_j0-v2pre",
+      "id": 155431,
+      "dependency": null,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=square_j0-v2pre",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_j0.json,NQS_PREFLIGHT_ENDPOINT=200",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ]
+    },
+    {
+      "label": "square_j0-v2train",
+      "id": 155432,
+      "dependency": "155431",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=square_j0-v2train",
+        "--kill-on-invalid-dep=yes",
+        "--time=24:00:00",
+        "--dependency=afterok:155431",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_j0.json,NQS_UNTIL_STEP=5500,NQS_SESSION_SECONDS=83700",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "label": "square_j0-v2A1",
+      "id": 155433,
+      "dependency": "155432",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=square_j0-v2A1",
+        "--kill-on-invalid-dep=yes",
+        "--time=16:00:00",
+        "--dependency=afterok:155432",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_j0.json,NQS_UNTIL_STEP=7000,NQS_SESSION_SECONDS=54900",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "label": "square_j0-v2audit",
+      "id": 155434,
+      "dependency": "155433",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=square_j0-v2audit",
+        "--kill-on-invalid-dep=yes",
+        "--array=0-1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--time=02:00:00",
+        "--dependency=afterok:155433",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_j0.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "energy-stream"
+      ]
+    },
+    {
+      "label": "square_j0-v2seal",
+      "id": 155435,
+      "dependency": "155434",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=square_j0-v2seal",
+        "--kill-on-invalid-dep=yes",
+        "--constraint=cpu",
+        "--gres=none",
+        "--cpus-per-task=2",
+        "--mem=8G",
+        "--time=00:20:00",
+        "--dependency=afterok:155434",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_j0.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "aggregate"
+      ]
+    },
+    {
+      "label": "read-square_j0-v2",
+      "id": 155436,
+      "dependency": "155435",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=read-square_j0-v2",
+        "--kill-on-invalid-dep=yes",
+        "--cpus-per-task=8",
+        "--mem=96G",
+        "--time=02:00:00",
+        "--dependency=afterok:155435",
+        "projects/clebsch_tree_nqs/remote/physics_readout_kim.sbatch",
+        "nqs",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/square_j0_regional.json",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/square_j0_magnetic.json"
+      ]
+    },
+    {
+      "label": "square_j08-v2pre",
+      "id": 155437,
+      "dependency": null,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=square_j08-v2pre",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_j08.json,NQS_PREFLIGHT_ENDPOINT=200",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ]
+    },
+    {
+      "label": "square_j08-v2train",
+      "id": 155438,
+      "dependency": "155437",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=square_j08-v2train",
+        "--kill-on-invalid-dep=yes",
+        "--time=24:00:00",
+        "--dependency=afterok:155437",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_j08.json,NQS_UNTIL_STEP=5500,NQS_SESSION_SECONDS=83700",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "label": "square_j08-v2A1",
+      "id": 155439,
+      "dependency": "155438",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=square_j08-v2A1",
+        "--kill-on-invalid-dep=yes",
+        "--time=16:00:00",
+        "--dependency=afterok:155438",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_j08.json,NQS_UNTIL_STEP=7000,NQS_SESSION_SECONDS=54900",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "label": "square_j08-v2audit",
+      "id": 155440,
+      "dependency": "155439",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=square_j08-v2audit",
+        "--kill-on-invalid-dep=yes",
+        "--array=0-1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--time=02:00:00",
+        "--dependency=afterok:155439",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_j08.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "energy-stream"
+      ]
+    },
+    {
+      "label": "square_j08-v2seal",
+      "id": 155441,
+      "dependency": "155440",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=square_j08-v2seal",
+        "--kill-on-invalid-dep=yes",
+        "--constraint=cpu",
+        "--gres=none",
+        "--cpus-per-task=2",
+        "--mem=8G",
+        "--time=00:20:00",
+        "--dependency=afterok:155440",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_square_j08.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "aggregate"
+      ]
+    },
+    {
+      "label": "read-square_j08-v2",
+      "id": 155442,
+      "dependency": "155441",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-initfix-20261010",
+        "--job-name=read-square_j08-v2",
+        "--kill-on-invalid-dep=yes",
+        "--cpus-per-task=8",
+        "--mem=96G",
+        "--time=02:00:00",
+        "--dependency=afterok:155441",
+        "projects/clebsch_tree_nqs/remote/physics_readout_kim.sbatch",
+        "nqs",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/square_j08_regional.json",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/square_j08_magnetic.json"
+      ]
+    }
+  ],
+  "submission_status": "complete"
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "citation": {
+    "authors": ["Vieijra, T.", "Nys, J."],
+    "title": "Many-body quantum states with exact conservation of non-Abelian and lattice symmetries through variational Monte Carlo",
+    "journal": "Physical Review B",
+    "volume": 104,
+    "article": "045123",
+    "year": 2021,
+    "doi": "10.1103/PhysRevB.104.045123",
+    "arxiv": "2104.14869"
+  },
+  "model": "square-lattice spin-1/2 J1-J2 Heisenberg model with PBC",
+  "protocol_facts": {
+    "physical_input": true,
+    "exact_spin_symmetry": "SU(2) Clebsch-Gordan tree",
+    "lattice_irrep": "k=(0,0), C4v A1",
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.999,
+    "gradient_clip_norm": 0.001,
+    "four_by_four_ablation": {
+      "samples_per_expectation_step": 4096,
+      "adam_learning_rate": 0.001,
+      "reported_updates": null
+    },
+    "table_I_production_updates": null,
+    "multiplicity_allocation_checked_20261022": {
+      "source": "https://arxiv.org/html/2104.14869v2#S4.SS2",
+      "empirical_scope": "8x8 J2/J1=0.5, complete SU2 and translation/reflection/rotation, Fig3",
+      "tau_is_more_influential_than_jmax_in_scan": true,
+      "production_tau_physical_j_le_2": 16,
+      "production_tau_physical_j_gt_2": 8,
+      "production_physical_j_max": 4,
+      "repository_doubled_q_max": 8,
+      "qualification": "Not universal: large intermediate spins still affect accuracy at high tau and are important near J2/J1=1. Virtual U1 charges in Hasik2009.02313 are not identical to physical region Sz or SU2 j."
+    },
+    "systematic_scan": {
+      "lattice": "8x8",
+      "j2_over_j1": 0.5,
+      "samples_per_expectation_step": 1024,
+      "adam_learning_rate": 0.005,
+      "reported_updates": 1000,
+      "saturation_hidden_dimension_tau": 16,
+      "saturation_physical_j_max": 4,
+      "repository_doubled_q_max": 8
+    }
+  },
+  "table_I_8x8_total_energies": [
+    {"method": "CNN", "j2_over_j1": 0.0, "energy": -43.09275, "uncertainty": 0.00050},
+    {"method": "RBM+symm", "j2_over_j1": 0.0, "energy": -43.10268, "uncertainty": 0.00003},
+    {"method": "ClebschTree", "j2_over_j1": 0.0, "energy": -43.09640, "uncertainty": 0.00320},
+    {"method": "CNN", "j2_over_j1": 0.45, "energy": -32.64850, "uncertainty": 0.00100},
+    {"method": "DMRG-SU2", "j2_over_j1": 0.45, "energy": -32.68736, "uncertainty": 0.0},
+    {"method": "Fermion-VMC", "j2_over_j1": 0.45, "energy": -32.59520, "uncertainty": 0.00064},
+    {"method": "Fermion-VMC(p=2)", "j2_over_j1": 0.45, "energy": -32.72000, "uncertainty": 0.00064},
+    {"method": "RBM+PP", "j2_over_j1": 0.45, "energy": -32.71149, "uncertainty": 0.00026},
+    {"method": "ClebschTree", "j2_over_j1": 0.45, "energy": -32.70150, "uncertainty": 0.00590},
+    {"method": "CNN", "j2_over_j1": 0.5, "energy": -31.76950, "uncertainty": 0.00125},
+    {"method": "DMRG-SU2", "j2_over_j1": 0.5, "energy": -31.88320, "uncertainty": 0.0},
+    {"method": "Fermion-VMC", "j2_over_j1": 0.5, "energy": -31.77984, "uncertainty": 0.00064},
+    {"method": "Fermion-VMC(p=2)", "j2_over_j1": 0.5, "energy": -31.92704, "uncertainty": 0.00064},
+    {"method": "RBM+PP", "j2_over_j1": 0.5, "energy": -31.90144, "uncertainty": 0.00038},
+    {"method": "RBM+symm", "j2_over_j1": 0.5, "energy": -31.91460, "uncertainty": 0.00015},
+    {"method": "ClebschTree", "j2_over_j1": 0.5, "energy": -31.90850, "uncertainty": 0.00420},
+    {"method": "CNN", "j2_over_j1": 0.55, "energy": -30.98850, "uncertainty": 0.00150},
+    {"method": "DMRG-SU2", "j2_over_j1": 0.55, "energy": -31.24224, "uncertainty": 0.0},
+    {"method": "Fermion-VMC", "j2_over_j1": 0.55, "energy": -31.03168, "uncertainty": 0.00064},
+    {"method": "Fermion-VMC(p=2)", "j2_over_j1": 0.55, "energy": -31.25824, "uncertainty": 0.00128},
+    {"method": "RBM+PP", "j2_over_j1": 0.55, "energy": -31.21984, "uncertainty": 0.00064},
+    {"method": "ClebschTree", "j2_over_j1": 0.55, "energy": -31.25440, "uncertainty": 0.00510},
+    {"method": "ClebschTree", "j2_over_j1": 1.0, "energy": -44.75400, "uncertainty": 0.01800}
+  ],
+  "transcription": {
+    "source": "authors' Table I and method/appendix text",
+    "checked_on": "2026-09-16",
+    "warning": "These are published 8x8 total energies, not exact anchors and not local-run outputs."
+  }
+}

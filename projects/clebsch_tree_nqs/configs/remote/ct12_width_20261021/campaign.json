@@ -1,0 +1,410 @@
+{
+  "status": "prepared_not_submitted",
+  "workspace": "/home/yx789/nqs-ct12-width-20261021",
+  "cases": [
+    {
+      "case": "j0_binary",
+      "config": "projects/clebsch_tree_nqs/configs/remote/ct12_width_20261021/j0_binary_w20.json",
+      "node": "kim-compute-05",
+      "parent_audit": {
+        "energy_per_site": -0.34843354977424146,
+        "imaginary_energy_per_site": 0.0,
+        "variance_per_site": 0.25138807293215826,
+        "energy_chain_se": 0.0021615914282891013,
+        "imaginary_chain_se": 0.0,
+        "snapshots": 16,
+        "chains": 32,
+        "samples": 512,
+        "equilibrium_certified": false,
+        "chain_block_standard_error_per_site": 0.0021615914282891013,
+        "approximate_95_interval_per_site": [
+          -0.3526702689736881,
+          -0.34419683057479483
+        ],
+        "variance_chain_block_standard_error": 0.03429324834442568,
+        "chain_energy_means_per_site": [
+          -0.3514902353078212,
+          -0.35623979694381436,
+          -0.355326899805763,
+          -0.3518917450077025,
+          -0.3275958374459953,
+          -0.351759636303988,
+          -0.3504717040650165,
+          -0.3343520607427557,
+          -0.3358530252002601,
+          -0.32830224610031744,
+          -0.3681567673667091,
+          -0.3541844626911763,
+          -0.353383233203975,
+          -0.3641641978630987,
+          -0.36138217902038305,
+          -0.3467691694910475,
+          -0.32062454846835314,
+          -0.35303692833448697,
+          -0.3516765544933181,
+          -0.35448153398957244,
+          -0.3341821485101377,
+          -0.3446553773446791,
+          -0.35397975097892165,
+          -0.33983943461236193,
+          -0.36003978815632687,
+          -0.3547854466694091,
+          -0.34976758369861805,
+          -0.3673522215122907,
+          -0.36064978646163637,
+          -0.3257546516549531,
+          -0.3402647147503138,
+          -0.34745992658052466
+        ],
+        "local_energy_range_per_site": [
+          -0.6465520533084608,
+          -0.08125766409384862
+        ],
+        "records_per_chain": 16,
+        "independent_chains": 32,
+        "sample_records": 512,
+        "unique_states": 512,
+        "pooled_lag_one_energy_correlation": 0.16160873768765846,
+        "unsplit_energy_Rhat": 1.0124522202389497,
+        "clipping": false,
+        "importance_reweighting": false,
+        "finite_burn_equilibrium_certified": false,
+        "unseen_tail_coverage_certified": false,
+        "variance_is_Born_local_energy_estimate": true,
+        "params_sha256": "bf89b9105d256d524d718a1cf93d751f33a2fffdcaea9b4ef6291b2eea6a7df1",
+        "checkpoint_sha256": "25dfdb0f211acb63f35a7c440287d42dcd7b16c27660e6ffe177d36243ebd2d4",
+        "seed": 2610201200,
+        "raw_samples_sha256": "6182ad4754a4e5697f36544713dfef647ff6e4833f3d626fa86ace8a75074462",
+        "untouched": true,
+        "fixed_endpoint": true
+      },
+      "requested_A100_hours": 38,
+      "model": {
+        "length": 12,
+        "multiplicity_cap": 20,
+        "maximum_q": 10
+      },
+      "training_centers": 256,
+      "new_steps": 8,
+      "target_global_steps": 18,
+      "phases": [
+        {
+          "phase": "pilot",
+          "minutes": 480
+        },
+        {
+          "phase": "replay",
+          "minutes": 240
+        },
+        {
+          "phase": "train",
+          "minutes": 1560
+        }
+      ]
+    },
+    {
+      "case": "j0_joint",
+      "config": "projects/clebsch_tree_nqs/configs/remote/ct12_width_20261021/j0_joint_w20.json",
+      "node": "kim-compute-05",
+      "parent_audit": {
+        "energy_per_site": -0.34935180927175086,
+        "imaginary_energy_per_site": 0.0,
+        "variance_per_site": 0.1753402141663935,
+        "energy_chain_se": 0.001763987207710194,
+        "imaginary_chain_se": 0.0,
+        "snapshots": 16,
+        "chains": 32,
+        "samples": 512,
+        "equilibrium_certified": false,
+        "chain_block_standard_error_per_site": 0.001763987207710194,
+        "approximate_95_interval_per_site": [
+          -0.35280922419886285,
+          -0.34589439434463887
+        ],
+        "variance_chain_block_standard_error": 0.013414288574908262,
+        "chain_energy_means_per_site": [
+          -0.3507299080882153,
+          -0.3612722156476661,
+          -0.3522249600195492,
+          -0.3504073632648889,
+          -0.32761611651606387,
+          -0.3465262125563209,
+          -0.3446746473677718,
+          -0.3572429891859897,
+          -0.34264918819778034,
+          -0.3566488648655981,
+          -0.3355663760774062,
+          -0.3424093599790084,
+          -0.345277440899538,
+          -0.361184420341642,
+          -0.35522561393105856,
+          -0.36037652313394425,
+          -0.3532810880940199,
+          -0.35036445598150395,
+          -0.361506388758309,
+          -0.3585177240190628,
+          -0.3359600995220935,
+          -0.3422876288756359,
+          -0.3250658178644549,
+          -0.36152424807355454,
+          -0.36632135104706154,
+          -0.3539639386683086,
+          -0.34638867032787163,
+          -0.35378038625007,
+          -0.3375907940948999,
+          -0.35106334049284404,
+          -0.34618231846442055,
+          -0.34542744608947573
+        ],
+        "local_energy_range_per_site": [
+          -0.445349753294612,
+          -0.20598632258804597
+        ],
+        "records_per_chain": 16,
+        "independent_chains": 32,
+        "sample_records": 512,
+        "unique_states": 512,
+        "pooled_lag_one_energy_correlation": 0.18114278364209563,
+        "unsplit_energy_Rhat": 1.010326744260686,
+        "clipping": false,
+        "importance_reweighting": false,
+        "finite_burn_equilibrium_certified": false,
+        "unseen_tail_coverage_certified": false,
+        "variance_is_Born_local_energy_estimate": true,
+        "params_sha256": "0bdca49d6c5ccb87996eca61b55e488751cdd2730070acd91b9921719bd7c607",
+        "checkpoint_sha256": "7eda4dae9e8af7a74ddd50d615f45dd9ea5729d653a7d542729fcbd29cf9f9de",
+        "seed": 2610201201,
+        "raw_samples_sha256": "31023360544d009547b583d71aedd6b8be4d2a3edb76ba13effce5725ac550a7",
+        "untouched": true,
+        "fixed_endpoint": true
+      },
+      "requested_A100_hours": 38,
+      "model": {
+        "length": 12,
+        "multiplicity_cap": 20,
+        "maximum_q": 10
+      },
+      "training_centers": 256,
+      "new_steps": 8,
+      "target_global_steps": 18,
+      "phases": [
+        {
+          "phase": "pilot",
+          "minutes": 480
+        },
+        {
+          "phase": "replay",
+          "minutes": 240
+        },
+        {
+          "phase": "train",
+          "minutes": 1560
+        }
+      ]
+    },
+    {
+      "case": "j0125_binary",
+      "config": "projects/clebsch_tree_nqs/configs/remote/ct12_width_20261021/j0125_binary_w20.json",
+      "node": "kim-compute-04",
+      "parent_audit": {
+        "energy_per_site": -0.33852091278929597,
+        "imaginary_energy_per_site": 0.0,
+        "variance_per_site": 0.16692161075612233,
+        "energy_chain_se": 0.002147514215857281,
+        "imaginary_chain_se": 0.0,
+        "snapshots": 16,
+        "chains": 32,
+        "samples": 512,
+        "equilibrium_certified": false,
+        "chain_block_standard_error_per_site": 0.002147514215857281,
+        "approximate_95_interval_per_site": [
+          -0.3427300406523762,
+          -0.3343117849262157
+        ],
+        "variance_chain_block_standard_error": 0.014378530321062016,
+        "chain_energy_means_per_site": [
+          -0.3390405534740491,
+          -0.3416287028590013,
+          -0.3344307695429685,
+          -0.355134442884968,
+          -0.30378629472163315,
+          -0.338658663020826,
+          -0.34008134477188845,
+          -0.3418901060848557,
+          -0.31358653503575235,
+          -0.3493191203390544,
+          -0.3356398450999055,
+          -0.3259121123219464,
+          -0.32196379078218335,
+          -0.33048661128689083,
+          -0.3601116268079192,
+          -0.3310665323180751,
+          -0.3323415774099938,
+          -0.3409172201445816,
+          -0.350613313113975,
+          -0.347334209246633,
+          -0.3493709958145669,
+          -0.3339182160961058,
+          -0.3371653304747709,
+          -0.34520467473644495,
+          -0.34254803911858456,
+          -0.3528424350202266,
+          -0.3310791746922412,
+          -0.3305744478779748,
+          -0.33247099852468637,
+          -0.3371782857279489,
+          -0.35667008018766155,
+          -0.34970315971915916
+        ],
+        "local_energy_range_per_site": [
+          -0.45317975863149595,
+          -0.18584767279272554
+        ],
+        "records_per_chain": 16,
+        "independent_chains": 32,
+        "sample_records": 512,
+        "unique_states": 512,
+        "pooled_lag_one_energy_correlation": 0.16924434100756647,
+        "unsplit_energy_Rhat": 1.0361695633706918,
+        "clipping": false,
+        "importance_reweighting": false,
+        "finite_burn_equilibrium_certified": false,
+        "unseen_tail_coverage_certified": false,
+        "variance_is_Born_local_energy_estimate": true,
+        "params_sha256": "ccd78899ccbc0aacc1be8c7a126385f82b1d4a33495b169b77149b11c0312c5f",
+        "checkpoint_sha256": "b9e230e9a8f8f0ced8c49cb9d616e30f8ab7607e195b30f59c8c4e7bf953ec4b",
+        "seed": 2610201210,
+        "raw_samples_sha256": "1ce04e2834daf3c30c073ef192a20c2c8cede3f7be7969268310ac94907c87cf",
+        "untouched": true,
+        "fixed_endpoint": true
+      },
+      "requested_A100_hours": 38,
+      "model": {
+        "length": 12,
+        "multiplicity_cap": 20,
+        "maximum_q": 10
+      },
+      "training_centers": 256,
+      "new_steps": 8,
+      "target_global_steps": 18,
+      "phases": [
+        {
+          "phase": "pilot",
+          "minutes": 480
+        },
+        {
+          "phase": "replay",
+          "minutes": 240
+        },
+        {
+          "phase": "train",
+          "minutes": 1560
+        }
+      ]
+    },
+    {
+      "case": "j0125_joint",
+      "config": "projects/clebsch_tree_nqs/configs/remote/ct12_width_20261021/j0125_joint_w20.json",
+      "node": "kim-compute-03",
+      "parent_audit": {
+        "energy_per_site": -0.3374098088524723,
+        "imaginary_energy_per_site": 0.0,
+        "variance_per_site": 0.19655936302048543,
+        "energy_chain_se": 0.0025313391483667686,
+        "imaginary_chain_se": 0.0,
+        "snapshots": 16,
+        "chains": 32,
+        "samples": 512,
+        "equilibrium_certified": false,
+        "chain_block_standard_error_per_site": 0.0025313391483667686,
+        "approximate_95_interval_per_site": [
+          -0.34237123358327115,
+          -0.33244838412167343
+        ],
+        "variance_chain_block_standard_error": 0.02084614157397546,
+        "chain_energy_means_per_site": [
+          -0.3402437347521188,
+          -0.337723120974286,
+          -0.3489283389770244,
+          -0.3426865100844416,
+          -0.33233771651988614,
+          -0.34518182592609875,
+          -0.3356232280683665,
+          -0.30789164255881746,
+          -0.3322294753497736,
+          -0.34636053580505827,
+          -0.348264150428263,
+          -0.3312345138119626,
+          -0.29808629425898775,
+          -0.34550436656996747,
+          -0.346622291675032,
+          -0.35356991619703254,
+          -0.34751879571935335,
+          -0.34992983798407157,
+          -0.3313429708980525,
+          -0.34064241227827385,
+          -0.34274844076558697,
+          -0.3523408796404557,
+          -0.3267794698537538,
+          -0.3359932516000686,
+          -0.34306549375770223,
+          -0.3240051218446023,
+          -0.35385294529958117,
+          -0.3264292100120198,
+          -0.30937288900448257,
+          -0.3220256061237745,
+          -0.3638852729852817,
+          -0.33469362355493504
+        ],
+        "local_energy_range_per_site": [
+          -0.5015858257820918,
+          -0.13241867974609048
+        ],
+        "records_per_chain": 16,
+        "independent_chains": 32,
+        "sample_records": 512,
+        "unique_states": 512,
+        "pooled_lag_one_energy_correlation": 0.025678769983008415,
+        "unsplit_energy_Rhat": 1.0499107230707034,
+        "clipping": false,
+        "importance_reweighting": false,
+        "finite_burn_equilibrium_certified": false,
+        "unseen_tail_coverage_certified": false,
+        "variance_is_Born_local_energy_estimate": true,
+        "params_sha256": "2cf700493f975501e6f9010d13260474ae0a0a1b701394c330352d5ec2b09d7c",
+        "checkpoint_sha256": "e7aff89df5083973bcab1f0df5f7f1038bab5861c3f7659d85271f33419eea6d",
+        "seed": 2610201211,
+        "raw_samples_sha256": "717bdf01efd0542e723e9ade55cf8d93c95fe14e6fd9620396278452888e8527",
+        "untouched": true,
+        "fixed_endpoint": true
+      },
+      "requested_A100_hours": 38,
+      "model": {
+        "length": 12,
+        "multiplicity_cap": 20,
+        "maximum_q": 10
+      },
+      "training_centers": 256,
+      "new_steps": 8,
+      "target_global_steps": 18,
+      "phases": [
+        {
+          "phase": "pilot",
+          "minutes": 480
+        },
+        {
+          "phase": "replay",
+          "minutes": 240
+        },
+        {
+          "phase": "train",
+          "minutes": 1560
+        }
+      ]
+    }
+  ],
+  "maximum_requested_A100_hours": 152,
+  "source_manifest_sha256": "2fba042284ecc4d032e94fa46f71dd736e15bfe0609165f25ad114b5badbdc66",
+  "release": "pilot2 commits + uncommitted third transition; independent replay; remaining6 updates and untouched512 audit conditional on measured cost/memory/replay",
+  "resources": "oneA10080GB,4CPU,128GiB each; no other running state/code modified"
+}

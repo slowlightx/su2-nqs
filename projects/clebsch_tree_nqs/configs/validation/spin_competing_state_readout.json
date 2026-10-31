@@ -1,0 +1,30 @@
+{
+  "task": "spin_competing_state_readout",
+  "output": "projects/clebsch_tree_nqs/results/spin_competing_state_readout_v1",
+  "n_sites": 16,
+  "regions": {"strip_2": [0, 1], "strip_4": [0, 1, 4, 5], "strip_6": [0, 1, 4, 5, 8, 9], "strip_8": [0, 1, 4, 5, 8, 9, 12, 13]},
+  "region_protocol": "Fixed width-two nested strips on the SAME 4x4 torus. Size 8 wraps one direction, changing the boundary topology. This is region dependence, NOT system-size scaling or an entanglement-rotor fit.",
+  "couplings": [0.0, 0.075, 0.125, 0.175],
+  "wall_seconds_cap": 600,
+  "tolerance": 1e-9,
+  "new_ed": false,
+  "new_training": false,
+  "new_samples": false,
+  "new_h_actions": "One physical H action per saved non-control state for quality diagnostics; no eigensolve.",
+  "previous_readout_config": "projects/clebsch_tree_nqs/configs/validation/spin_symmetry_readout.json",
+  "additional_source_files": {
+    "projects/clebsch_tree_nqs/results/spin_qsl_symmetry_diagnostics_v1/states.npz": "512cf84e0377263e823317f063e821e1cc9f1abb25220f0e8f9e692d3b9d306c",
+    "projects/clebsch_tree_nqs/results/spin_qsl_symmetry_diagnostics_v1/results.json": "246a7318b77a6e7d4c430555162b6867fe917ed08ac2affb30fb96769bee0359",
+    "projects/clebsch_tree_nqs/results/spin_full_vit_vap_v1/triangular_d16_l2_s2026092901_vap/states.npz": "3ffb979e32ce260d4a0aaed0d2bd51ea31f7989557191ce4b251c97ae751801c",
+    "projects/clebsch_tree_nqs/results/spin_full_vit_vap_v1/triangular_d16_l2_s2026092901_vap/results.json": "b39a7d39b817a6c69cd973986e35f9991a27982fd703cbbb7ed76c775a4b0b65",
+    "projects/clebsch_tree_nqs/results/spin_full_vit_vap_v1/triangular_d16_l2_s2026092902_vap/states.npz": "4b875f00206f2b7fda19d76f20d0c534adfd7f360ffbf0ca86f6af6e08252571",
+    "projects/clebsch_tree_nqs/results/spin_full_vit_vap_v1/triangular_d16_l2_s2026092902_vap/results.json": "27887a33caae097526900985adb002d27dd2d8b71e11dc947e1209f43169e668"
+  },
+  "primary_comparisons": "At j=.125 report every saved bare, K2, optimized-VMC/K2, Operator-ViT and full-VAP parent/terminal; no state selection from readouts. Report broken-SU2 fixed-Sz state as ineligible for Schur-factorized interpretation rather than projecting it.",
+  "next_stage_rule": "Local differences must survive strong-ansatz/refinement checks before size evolution. N16 lacks K and cannot reproduce the LE/HE competition of the PRL cylinders. No N36 training or remote production is authorized by calibration alone.",
+  "literature": {
+    "competing_states": "https://arxiv.org/abs/2602.14892",
+    "entanglement_tower_prior_art": "https://arxiv.org/abs/1307.6592",
+    "spatial_attention": "https://arxiv.org/abs/2602.02665"
+  }
+}

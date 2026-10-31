@@ -1,0 +1,68 @@
+{
+  "task": "native_N144_fixed_width_continuation",
+  "training_release": true,
+  "model": {
+    "length": 12,
+    "multiplicity_cap": 16,
+    "maximum_q": 10
+  },
+  "j2_over_j1": 0.125,
+  "arm": "binary_truncated",
+  "binary_rank": 8,
+  "projection_chunk": 4,
+  "action_chunk": 4,
+  "tolerance": 2e-11,
+  "require_gpu": true,
+  "parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/training_dispatch_20261018/ct12_j0125_train2",
+    "registration_sha256": "6e045f9ca99f44ce7494280d5bfed101482ffe568df7aa1cc7d138c92f9b24a9",
+    "results_sha256": "68d659c786d997e8b25eebcfe477efd585d7f6bef574d1788c60d7c2f2e6268d",
+    "checkpoint_sha256": "8c96e820c60bf6e0a5da58d86d358d309a006aeec2ed34127abcb106b6070255",
+    "params_sha256": "557cd1e7025dc595498a9608227ef04a008af7acc2f3d77dc990fbf740feedb1",
+    "audited_bank_sha256": "4c66fe0026fc3deaf1e8acc56ffd5ecaae53a6eaf177528bc5a060e1f0fd20dc"
+  },
+  "training": {
+    "steps": 8,
+    "chains": 8,
+    "records_per_chain": 16,
+    "initial_burn_proposals": 1440,
+    "refresh_proposals": 288,
+    "proposals_between": 144
+  },
+  "pilot_steps": 2,
+  "audit": {
+    "chains": 32,
+    "records_per_chain": 16,
+    "burn_proposals": 2880,
+    "proposals_between": 144,
+    "seed": 2610201210
+  },
+  "sampler": {
+    "bond_proposal_probability": 0.75,
+    "lazy_probability": 0.05
+  },
+  "sr": {
+    "damping": 0.1,
+    "step_size": 0.03,
+    "fisher_trust_radius": 0.01,
+    "maximum_overlap_distance": 0.01,
+    "minimum_ess_fraction": 0.98,
+    "backtracking_steps": 8,
+    "score_chunk_size": 2
+  },
+  "phase_seconds": {
+    "pilot": 10800,
+    "replay": 7200,
+    "train": 28800
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/ct12_resume_20261020/j0125_binary",
+  "interpretation": "Resume the four accepted native updates (two original + two saved pilot) without any physical, optimizer, sampler or RNG reset. Only registered remaining time changes; finish at original 8 new / 10 lifetime updates, fresh512-record audit. Strict process replay re-established under new immutable registration; no old failed gate is relabelled. Fixed width16/qmax10, complete coherent A1 and H, both arities, no attention. Maximum13 A100h per arm; next training length decided from quality and measured costs, not assumed competitive.",
+  "release_profile": "saved_pilot_budget_extension_v1",
+  "resume_from": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/continuation_20261019/ct12/j0125_binary",
+    "registration_sha256": "d54dd77fbabf27406c066695f4c752f720f0ffbcaf960c370eb9e85bda3f1f41",
+    "results_sha256": "8a1467b8373e7cf439d5af92dd1e1a7f692799b7ea94e7a60a70f620aa75ac50",
+    "checkpoint_sha256": "c3bf71d8fc9682742d8dc51340d6eb0c80f4e935cf6d11d7c2cb451d4ba94773",
+    "pilot_sha256": "55a3be1b8d195c4396306de880e70facd56a3745c21d153a83d154dfc0bb8b06"
+  }
+}

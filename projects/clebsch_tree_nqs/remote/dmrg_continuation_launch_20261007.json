@@ -1,0 +1,56 @@
+{
+  "observed_utc": "2026-10-07T16:26:10Z",
+  "host": "nots",
+  "remote_workspace": "/home/yx51/nqs_reference_dmrg",
+  "environment": {"python": ".venv-tenpy/bin/python", "tenpy": "1.1.0"},
+  "synced_regular_files": 5,
+  "transitive_runtime_files_sha256_verified": 20,
+  "workflow_sha256": "00915edcf165fe7902b1783de7cd7802af42d27e0bc506b3930bb08a07929de5",
+  "sbatch_sha256": "4f4b4b90c39f8fb67c3dd912907578478d5da189ac3218ca8878ac6ed55744aa",
+  "tests_sha256": "44be020662e247780cae904e0107676dace0a237840085c88c49480b0b0bc457",
+  "local_tests": {"passed": 5, "energy_rdm_replay_tolerance": 2e-12},
+  "full_suite": {
+    "passed": 626, "skipped_optional_tenpy": 4, "failed": 1,
+    "failure": "Pre-existing immutable artifact pins pre-repair dual_sampled_sr.py SHA; test_finite_schur_curvature_artifact.py. Historical artifact/test not re-signed."
+  },
+  "smoke": {"job_id": 2033367, "state": "COMPLETED", "exit_code": "0:0", "tests_passed": 5, "pytest_seconds": 5.70, "slurm_seconds": 7, "max_rss_kib": 217008, "log": "logs/dmrg-smoke-2033367.out"},
+  "parent": {
+    "job_id": 2024252,
+    "state": "COMPLETED",
+    "checkpoint_sha256": "f6a3d6b699a40ad40394281676427367910c8f8f8588eb2da044d2fce9bef6f2",
+    "protocol_sha256": "c28eeea19a0690620a0fc329b8594d7354db865c54c234a9ab8d8d6561df878c",
+    "energy_per_site": -0.5123123940583577,
+    "immutable": true
+  },
+  "stages": [
+    {
+      "job_id": 2033376, "state_at_observation": "RUNNING", "node": "bb3u17c1",
+      "chi": 2048, "additional_sweeps": 2, "mixer": false,
+      "requested_cpus": 8, "requested_memory_gib": 96, "requested_hours": 6,
+      "global_sweep_start": 8, "global_sweep_target": 10,
+      "runtime_transition_verified": true,
+      "protocol_sha256": "aae7b021b70e8fe1d758bdb88e6b93b29e9d1eb458e30a3a1829a70e7588a123",
+      "initial_recoverable_checkpoint_observed_size": "203MiB",
+      "dependency": "afterok:2033367 (already satisfied)",
+      "config": "projects/clebsch_tree_nqs/configs/remote/spin_tensor_network_chi2048_relax_nots.json",
+      "config_sha256": "ea71570bb20d28a13119613b63c2eed79a7a182ea825fc3fc390e2e9b1a78c07",
+      "output": "projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi2048_relax",
+      "log": "logs/dmrg-2033376.out"
+    },
+    {
+      "job_id": 2033377, "state_at_observation": "PENDING", "reason": "Dependency",
+      "chi": 3072, "additional_sweeps": 6, "mixer": false,
+      "requested_cpus": 8, "requested_memory_gib": 96, "requested_hours": 23,
+      "global_sweep_start": 10, "global_sweep_target": 16,
+      "dependency": "afterok:2033376",
+      "runtime_completed_parent_seal_required": true,
+      "config": "projects/clebsch_tree_nqs/configs/remote/spin_tensor_network_chi3072_nots.json",
+      "config_sha256": "42289d08308e24d879257523273e511030ac6843ff39e538ca67fee4a0ff3852",
+      "output": "projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/chi3072",
+      "log": "logs/dmrg-2033377.out"
+    }
+  ],
+  "checkpoint_policy": "Atomic completed-sweep full engine/environment/statistics checkpoints; partial sweep rollback; independent stage budget and retained global counters; raw RDMs every completed sweep; manual unchanged-config/source resume only; paused exit2 blocks/cancels dependent job.",
+  "new_ed": 0, "variance_measured": false, "phase_claim": false,
+  "automatic_resubmission": false, "gpu_jobs_submitted": 0
+}

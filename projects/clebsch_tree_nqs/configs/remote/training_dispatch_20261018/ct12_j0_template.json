@@ -1,0 +1,83 @@
+{
+  "task": "conditional_N144_two_attempt_native_energy_trial",
+  "main_agent_training_release": true,
+  "j2_over_j1": 0,
+  "model": {
+    "length": 12,
+    "multiplicity_cap": 16,
+    "maximum_q": 10
+  },
+  "binary_rank": 8,
+  "projection_chunk": 4,
+  "action_chunk": 4,
+  "tolerance": 2e-11,
+  "require_gpu": true,
+  "native_gate": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/training_dispatch_20261018/ct12_j0_gate",
+    "results_sha256": null,
+    "registration_sha256": null,
+    "process_replay_sha256": null,
+    "accounting_sha256": null
+  },
+  "parent": {
+    "checkpoint": "/home/yx789/nqs-wavefunctions/nqs/triangle6_recovery_20261018/j0/binary_truncated/parent104/checkpoint.pkl",
+    "checkpoint_sha256": "72777365b0355131724e424f12586b708c1ed13fdc15273b588b011ca23a207b",
+    "params_sha256": "0364ca8d2f6c33dac922da06c52897b7ae97f1f51c307d120d5c952ed7b38633",
+    "registration_sha256": "941f40da255b8827f467c85e4568bc3df28866936112423986f41db08df20845",
+    "audit_sha256": "bdbdee46853bd8ab5f07893d728579b26f75bf3677653009d55ffeb86c2cb9a9",
+    "model": {
+      "length": 6,
+      "multiplicity_cap": 16,
+      "maximum_q": 10
+    },
+    "arm": "binary_truncated",
+    "completed_steps": 104,
+    "source_audited_energy_per_site": -0.5570920983982067,
+    "source_audit_chain_SE": 0.00038002887299392756
+  },
+  "initialization_seed": 20261018860,
+  "seeds": {
+    "training": 20261018870,
+    "training_initialization": 20261018871,
+    "initial_audit": 20261018872,
+    "final_audits": {
+      "binary_truncated": 20261018873,
+      "ternary_joint": 20261018874
+    }
+  },
+  "training": {
+    "steps": 2,
+    "chains": 8,
+    "records_per_chain": 4,
+    "initial_burn_proposals": 1440,
+    "refresh_proposals": 144,
+    "proposals_between": 144
+  },
+  "sampler": {
+    "bond_proposal_probability": 0.75,
+    "lazy_probability": 0.05
+  },
+  "audit": {
+    "chains": 8,
+    "records_per_chain": 4,
+    "burn_proposals": 720,
+    "proposals_between": 144
+  },
+  "sr": {
+    "damping": 0.1,
+    "step_size": 0.03,
+    "fisher_trust_radius": 0.005,
+    "maximum_overlap_distance": 0.005,
+    "minimum_ess_fraction": 0.8,
+    "backtracking_steps": 8,
+    "score_chunk_size": 2
+  },
+  "budget": {
+    "maximum_A100_hours": 4,
+    "forecast_seconds": null,
+    "release_requires_completed_same_execution_native_gate": true
+  },
+  "seconds_cap": 13500,
+  "output": "/home/yx789/nqs-wavefunctions/nqs/training_dispatch_20261018/ct12_j0_train2",
+  "interpretation": "User-authorized bounded energy pilot only after the prospectively repaired same-execution gate, exact discrete replay and measured <=4h forecast. Both binary and joint start in an identical target bank copied from audited same-H N36 parent. Fresh32-record initial/final audits are engineering checks, not competitive energies or equilibrated physics evidence. Two attempts only; preserve CP/RNG/optimizer and complete next H/SR transition. All full H and sampler costs charged; no automatic production."
+}

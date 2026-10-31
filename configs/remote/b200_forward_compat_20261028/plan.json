@@ -1,0 +1,89 @@
+{
+  "task": "accelerator_runtime_validation_v1",
+  "wall_cap_seconds": 1800,
+  "warnings_visible": true,
+  "stress_repetitions": 4,
+  "gemm_seed": 2810289901,
+  "approved_distributions": {
+    "jax": "0.11.1",
+    "jaxlib": "0.11.1",
+    "jax-cuda13-plugin": "0.11.1",
+    "jax-cuda13-pjrt": "0.11.1",
+    "nvidia-cublas": "13.8.2.12",
+    "nvidia-cuda-runtime": "13.4.92",
+    "nvidia-cusolver": "12.3.5.3",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "approved_libraries": {
+    "libcublas.so.13": "c7983bdbcfc3628f9d964c6c82ca506f8f28bf29b8ab6dd9d27365a2b5a0cbca",
+    "libcublasLt.so.13": "d8d152ba3ce95fe54912894c2e8ced216f11a590bc4e61db65c20bcdb9af33be"
+  },
+  "cases": [
+    {
+      "tag": "j0",
+      "j2": 0,
+      "source_registration": {
+        "path": "projects/clebsch_tree_nqs/results/remote_status_20261027_2024/ct12_j0/registration.json",
+        "sha256": "881ada01368ca8dc04c82a28567c65facef6aebe0c6fbee0dcaf009de85a3e94"
+      },
+      "checkpoint": {
+        "path": "projects/clebsch_tree_nqs/results/remote_status_20261027_2024/ct12_j0/checkpoint.pkl",
+        "sha256": "66b5a236c9299d79fc542b8d7ebd12ee5d26ea8e7955d8c50d2c507741e8af5e"
+      },
+      "audit_report": {
+        "path": "projects/clebsch_tree_nqs/results/remote_status_20261027_2024/ct12_j0/audit_result.json",
+        "sha256": "8aacce58156624b5b763963df420834ab8e5102c03d32b538b113e5eb29bae42"
+      },
+      "audit_products": {
+        "path": "projects/clebsch_tree_nqs/results/remote_status_20261027_2024/ct12_j0/audit/untouched_products.npz",
+        "sha256": "97b95556a7d38ccb3cf63effc0391d70e0a9a2073b4999fdef7c7f9fc367eef8"
+      },
+      "parameter_sha256": "cbaf358d8c2688da16f942dd64a8b3091062f88e69c66f95fca5190fd7ab0be5",
+      "optimizer_sha256": "9f12f045ef9a90a2e766b11df8e26bf9d9efd71942b0e2449f3112829fb23a2b",
+      "rng_sha256": "556837033819d385c0fb54c427b057e5665ed97d39431e3ebee47fa4977298a2",
+      "jvp_seed": 2810289911
+    },
+    {
+      "tag": "j0125",
+      "j2": 0.125,
+      "source_registration": {
+        "path": "projects/clebsch_tree_nqs/results/remote_status_20261027_2024/ct12_j0125/registration.json",
+        "sha256": "e2b2b48aff3c054a797916a8dfff7f1086be9cf1dc19f12dd988f6b9616b31a5"
+      },
+      "checkpoint": {
+        "path": "projects/clebsch_tree_nqs/results/remote_status_20261027_2024/ct12_j0125/checkpoint.pkl",
+        "sha256": "84659a3456f637528d0a28383d052cb920574cf0360f145d52e232c7cbe7c562"
+      },
+      "audit_report": {
+        "path": "projects/clebsch_tree_nqs/results/remote_status_20261027_2024/ct12_j0125/audit_result.json",
+        "sha256": "bbc786796c3587c506ca4425e1e5a1a3b0d6a6a0ea55f227a40c82cc02e129fd"
+      },
+      "audit_products": {
+        "path": "projects/clebsch_tree_nqs/results/remote_status_20261027_2024/ct12_j0125/audit/untouched_products.npz",
+        "sha256": "e9cbbb6a4b7012d68b44c52df95300d517b0171b8bd54af4e8856c0db3bb2ce1"
+      },
+      "parameter_sha256": "e8d118f5916e6976cddc3c8461ad0a9671287049e7ed5e03cfb5d93b14eb7466",
+      "optimizer_sha256": "3a3eed0ee56a4f59a2fa624cea8558bb024e388b5ae8fa5e81d79c0c6c584b60",
+      "rng_sha256": "29f34fd880c0ab5e1a6bf978268382721fdcf2542dfe5239d276d4a4b836a4b4",
+      "jvp_seed": 2810289912
+    }
+  ],
+  "forward_compat": {
+    "package": "cuda-compat-13-4",
+    "version": "615.71.10-1ubuntu1",
+    "URL": "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-compat-13-4_615.71.10-1ubuntu1_amd64.deb",
+    "package_sha256": "f62ed0d30d8939bba3a7b55727e3fd70d657ae4973fa2875e775068a2c305f30",
+    "directory": "/home/yx789/nqs-b200-forward-compat-20261028/lib",
+    "libraries": {
+      "libcuda.so.615.71.10": "cbb5066afe62a76570d1d8100b94ad0d691327917bd51f3be917241855bba2a1",
+      "libcudadebugger.so.615.71.10": "6cfd96ab3baa6e7d707ec40ae08dd76aca9a6e3c40fc2404fb732c2221731307",
+      "libnvidia-gpucomp.so.615.71.10": "ee205dfb28ec21264aad6375f029d58ae977e080ecc0562e47d46bf31e0c3d82",
+      "libnvidia-nvvm.so.615.71.10": "7de9c3c16910cba7b307ad2c33a07ba3796f2623674c3f1199dedfd1e57fef4f",
+      "libnvidia-nvvm70.so.4": "64e62bd2f763c575418bb7d660e8715c57d49ef66640a2385896324238896acd",
+      "libnvidia-pkcs11-openssl3.so.615.71.10": "2e5dee7712b9f78b927dca10f12d48983acadd7fa5f7a43531cbd028da2208a1",
+      "libnvidia-ptxjitcompiler.so.615.71.10": "adade564fc808bd96d354d7f89dc25bba6642843c2460aca95d21bb754b34cd1",
+      "libnvidia-tileiras.so.615.71.10": "166e122f04f167f647b221436eec08e0b819fdb3702944532989ee2505bc8c3a"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "status": "prepared_not_submitted_by_vit_agent",
+  "remote_workspace": "/home/yx789/nqs-triangle-continuation-20261019",
+  "scheduler": {
+    "account": "kim",
+    "partition": "kim",
+    "constraint": "a100",
+    "gpu_type": "nvidia_a100_80gb_pcie",
+    "cpus_per_task": 4,
+    "memory_GiB": 64,
+    "nodes": 1,
+    "nice": 20000,
+    "signal": "B:USR1@180",
+    "kill_on_invalid_dep": true
+  },
+  "cases": {
+    "j0": {
+      "training_devices": 1,
+      "parent_energy_per_site_for_non_anomalous_pilot_guard": -0.5448155891030224,
+      "parent_audited_step": 164,
+      "new_experiment_counter_start": 0,
+      "pilot_endpoint": 2,
+      "restart_endpoint": 4,
+      "fixed_terminal_endpoint": 32,
+      "phase_minutes": {"pilot": 60, "restart": 60, "train": 480, "audit_each_of_two_streams": 45, "aggregate_CPU_only": 10},
+      "phase_session_seconds": {"pilot": 3300, "restart": 3300, "train": 28000},
+      "total_GPU_hour_allocation_cap": 11.5,
+      "expected_actual_GPU_hours": [6, 9],
+      "new_training_full_H_calls": 131072,
+      "terminal_audit_full_H_calls": 8192
+    },
+    "j0125": {
+      "training_devices": 2,
+      "parent_energy_per_site_for_non_anomalous_pilot_guard": -0.49161826058678887,
+      "parent_audited_step": 96,
+      "pilot_endpoint": 98,
+      "restart_endpoint": 100,
+      "fixed_terminal_endpoint": 160,
+      "phase_minutes": {"pilot": 60, "restart": 60, "train": 600, "audit_each_of_two_streams": 45, "aggregate_CPU_only": 10},
+      "phase_session_seconds": {"pilot": 3300, "restart": 3300, "train": 35000},
+      "total_GPU_hour_allocation_cap": 25.5,
+      "expected_actual_GPU_hours": [16, 19],
+      "new_training_full_H_calls": 262144,
+      "terminal_audit_full_H_calls": 8192
+    }
+  },
+  "combined_GPU_hour_allocation_cap": 37,
+  "audit_devices_each_stream": 1,
+  "audit_array": "0-1",
+  "dependencies": "within each case: pilot -> fresh-process restart -> gated terminal train -> two-stream terminal audit array -> CPU aggregate; use afterok and kill-on-invalid-dep=yes",
+  "restart_claim": "Independent process reconstructs saved full driver and actually trains two more steps; exact deterministic replay is covered by backend tests, not falsely claimed as an extra production recomputation.",
+  "previous_measured_sacct": {
+    "J0_train64_new_steps": {"JobID": 381841, "seconds": 34365, "devices": 1},
+    "J0125_train64_new_steps": {"JobID": 381851, "seconds": 27173, "devices": 2},
+    "J0_audit_streams_seconds": [793, 803],
+    "J0125_audit_streams_seconds": [1144, 1151]
+  },
+  "local_validation": {
+    "existing_backend_plan_quality_tests": {"passed": 36, "skipped_optional_netket": 8},
+    "new_plan_contract_tests": {"passed": 26},
+    "remote_read_only_parent_materialization": "both passed; all parent source snapshots and checkpoint/model seals validated",
+    "J0_imported_parameter_sha256": "6b70599252dd7a08aed1c41accf6113015e31e5a275c52fe7422496534bb5b4f",
+    "J0125_imported_parameter_sha256": "d1f2d6803fe536e7aec96025a53add01fc015efd037cb281324f3105e27f9faf",
+    "J0125_restored_optimizer_counter": 96,
+    "J0125_restored_sampler_shape": [64, 144],
+    "parameter_count_both": 100288,
+    "note": "The local Python lacks optional NetKet. Root should run the unchanged backend tests in Kim's pinned NetKet3.22.3 CPU environment after isolated sync; set JAX_PLATFORMS=cpu on login node. No GPU trial or training has been run by this agent."
+  }
+}

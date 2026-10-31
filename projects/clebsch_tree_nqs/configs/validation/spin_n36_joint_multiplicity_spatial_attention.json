@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_n36_multiplicity_spatial_attention",
+  "seed": 20260922,
+  "reference": {
+    "basin_config": "projects/clebsch_tree_nqs/configs/validation/spin_su2_route_vit_n36_basin_gate_global.json",
+    "checkpoint_directory": "projects/clebsch_tree_nqs/results/spin_su2_route_vit_n36_basin_gate_global_v1/checkpoints"
+  },
+  "common_sample": {
+    "replicates": 3,
+    "calibration_count": 32,
+    "training_count": 16,
+    "audit_count": 32,
+    "reference_dimer_probability": 0.80,
+    "exploratory_dimer_probability": 0.15
+  },
+  "model": {
+    "embedding_dim": 8,
+    "head_count": 2,
+    "modulation_scale": 0.12,
+    "initialization_scale": 0.12
+  },
+  "training": {
+    "steps": 4,
+    "learning_rate": 0.06,
+    "train_reduced_backbone": true,
+    "include_fixed_sz_control": false
+  },
+  "gates": {
+    "importance_ess_fraction_minimum": 0.20
+  }
+}

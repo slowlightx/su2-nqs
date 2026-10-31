@@ -1,0 +1,86 @@
+{
+  "observed_utc": "2026-10-09T19:42:01.042576+00:00",
+  "status": "running_not_audited",
+  "completed_steps": 6808,
+  "parent_step": 6600,
+  "target_step": 7600,
+  "registration_sha256": "ebd5dd74788e61c118c8b38537f2d8c22873a11f78222a785c358ccfe6b14651",
+  "extra_steps_all_full_A1": true,
+  "training_last50": {
+    "first_step": 6759,
+    "last_step": 6808,
+    "mean_E_per_site": -0.5139104119671687,
+    "mean_variance_per_site": 0.007515868633902813,
+    "median_seconds_per_step": 31.917620512540452
+  },
+  "latest": {
+    "step": 6808,
+    "stage": 4,
+    "projection": "gamma_a1",
+    "images": 216,
+    "seconds_including_compile": 31.930288576055318,
+    "energy_before_update_per_site": -0.5138466560461948,
+    "imaginary_energy_before_update_per_site": -0.000015907828360432774,
+    "variance_before_update_per_site": 0.005715888990483908,
+    "gpu_peak_bytes": 9857488384,
+    "local_gpu_peak_bytes": [
+      9857488384,
+      9826327296
+    ],
+    "device_count": 2,
+    "sample_sharding": "NamedSharding(mesh=Mesh('S': 2, axis_types=(Auto,)), spec=P('S',), memory_kind=device)",
+    "unique_local_sample_partitions": 2,
+    "samples": 4096,
+    "full_H_calls": 4096
+  },
+  "quality_files": [
+    "step06600.pkl"
+  ],
+  "terminal_audit_exists": false,
+  "jobs": {
+    "preflight": {
+      "id": 136672,
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:04:18"
+    },
+    "training": {
+      "id": 136673,
+      "state": "RUNNING"
+    },
+    "audit_array": {
+      "id": 136674,
+      "state": "PENDING",
+      "reason": "Dependency"
+    },
+    "aggregation": {
+      "id": 136675,
+      "state": "PENDING",
+      "reason": "Dependency"
+    }
+  },
+  "remaining_training_hours_estimate": 7.021876512758899,
+  "forecast_excludes_audit_and_queue": true,
+  "independent_terminal_energy_available": false,
+  "checkpoint_copied_or_modified": false,
+  "nots": {
+    "attempt": "ssh -o BatchMode=yes -o ConnectTimeout=12 nots",
+    "result": "Could not resolve hostname notsx.rice.edu",
+    "job_id": 2067881,
+    "current_job_status": "unknown",
+    "latest_verified_local_reference": {
+      "chi": 4096,
+      "sweep": 24,
+      "E_per_site": -0.5141479278426795
+    },
+    "chi5120_result_not_verified": true
+  },
+  "latest_available_independent_vit": {
+    "step": 6600,
+    "E_per_site": -0.5137223555521806,
+    "whole_chain_SE": 0.00010570961012921301,
+    "Var_per_site": 0.008421920670032843,
+    "Var_whole_chain_SE": 0.0007019902778274012
+  },
+  "interpretation": "Training last-50 values are correlated, changing-state optimization diagnostics, not an independent endpoint energy or uncertainty. No DMRG energy win established. Preserve the already registered 7600 endpoint and untouched audit."
+}

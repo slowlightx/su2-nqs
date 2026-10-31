@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_n36_su2_scalar_dressing",
+  "execution_tier": "local_contract_preflight",
+  "seed": 2026092201,
+  "sealed_development_result": "projects/clebsch_tree_nqs/results/remote_g1_regularized_development_613810/results.json",
+  "sealed_audit_result": "projects/clebsch_tree_nqs/results/remote_g1_regularized_untouched_audit_623322/results.json",
+  "model": {
+    "embedding_dim": 12,
+    "head_count": 3,
+    "component_count": 2,
+    "mlp_ratio": 2,
+    "residual_scale": 0.35,
+    "initialization_scale": 0.08,
+    "amplitude_microbatch_size": 128
+  },
+  "fixed_sz_model": {
+    "patch_rows": 2,
+    "patch_columns": 3,
+    "embedding_dim": 8,
+    "head_count": 2,
+    "depth": 1,
+    "mlp_ratio": 2,
+    "initialization_scale": 0.02,
+    "orbit_chunk_size": 12
+  },
+  "training": {
+    "matched_measurement_blocks": 1,
+    "su2_steps": 2,
+    "su2_learning_rate": 0.015,
+    "fixed_sz_steps": 7,
+    "fixed_sz_learning_rate": 0.01
+  },
+  "gates": {
+    "minimum_ess_fraction": 0.2,
+    "maximum_condition_number": 100000000.0,
+    "competitive_energy_tolerance_per_site": 0.0002
+  }
+}

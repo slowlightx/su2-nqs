@@ -1,0 +1,21 @@
+{
+  "checkpoint": "/home/yx789/nqs-wavefunctions/dmrg/archives/chi10240_from8192_v1/snapshots/sweep0032_80e0671ccfa6_complete/checkpoint.h5",
+  "checkpoint_sha256": "80e0671ccfa69159ecbd800ff7749087cc6b704b4e1593c03a01269cef2839a3",
+  "n_sites": 36,
+  "chi_upper_bound": 10240,
+  "cut": 18,
+  "threads": 16,
+  "wall_seconds": 1200,
+  "memory_gib": 48,
+  "tolerance": 1e-9,
+  "psi_hdf_group": "psi",
+  "leading_levels": 64,
+  "measured_charges": [0, 2, 4, 6],
+  "spin_groups": {
+    "boundary_row0": [0, 1, 2, 3, 4, 5],
+    "interior_row1": [6, 7, 8, 9, 10, 11],
+    "boundary_row2": [12, 13, 14, 15, 16, 17]
+  },
+  "physical_order": "row-major sites, supplied physical torus graph; no MPS snake remapping",
+  "geometry": "triangular 6x6 PBC; prefix consists of three balanced six-site rows"
+}

@@ -1,0 +1,59 @@
+{
+  "checkpoint": "/home/yx789/nqs-wavefunctions/dmrg/archives/chi10240_from8192_v1/snapshots/sweep0032_80e0671ccfa6_complete/checkpoint.h5",
+  "checkpoint_sha256": "80e0671ccfa69159ecbd800ff7749087cc6b704b4e1593c03a01269cef2839a3",
+  "n_sites": 36,
+  "chi_upper_bound": 10240,
+  "cut": 12,
+  "threads": 8,
+  "wall_seconds": 1200,
+  "memory_gib": 192,
+  "tolerance": 1e-09,
+  "psi_hdf_group": "psi",
+  "leading_levels": 8,
+  "measured_charges": [
+    0,
+    2
+  ],
+  "spin_groups": {},
+  "physical_order": "row-major sites, supplied physical torus graph; no MPS snake remapping",
+  "geometry": "triangular6x6 PBC prefix12; same fixed physical row1 winding6 operator",
+  "angle_count": 81,
+  "renyi2": false,
+  "transition_sites": [],
+  "columns": 6,
+  "spin_momenta": {
+    "K": [
+      0.3333333333333333,
+      0.3333333333333333
+    ]
+  },
+  "chirality_groups": {
+    "row1_kappa_z": [
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        11,
+        6
+      ]
+    ]
+  },
+  "chirality_z_response": true
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_n16_spectral_error_tomography",
+  "diagnostic_only": true,
+  "source_gate": {
+    "result": "projects/clebsch_tree_nqs/results/spin_n16_krylov_anchored_full_vit_v1/results.json",
+    "result_sha256": "6d4810b4a80b179b2dbfd7abaf51287a5ae2573b8617806da1ffcaaedf7b67ea"
+  },
+  "source_final": {
+    "result": "projects/clebsch_tree_nqs/results/spin_n16_full_vit_sr_continuation_v1/results.json",
+    "result_sha256": "ee829e894815c0e1be7f78fdb113f588b4806d05a235c165bf0fb2e9780febef",
+    "parameters": "projects/clebsch_tree_nqs/results/spin_n16_full_vit_sr_continuation_v1/sr_parameters.json"
+  },
+  "gates": {
+    "minimum_non_krylov_weight": 0.0001,
+    "energy_tolerance": 1e-12,
+    "variance_tolerance": 1e-12
+  }
+}

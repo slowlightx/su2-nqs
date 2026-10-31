@@ -1,0 +1,32 @@
+{
+  "task": "isolated_N36_J0125_common_reachable_FS_target_prospective_repair",
+  "model": {"length": 6, "multiplicity_cap": 16, "maximum_q": 10},
+  "j2_over_j1": 0.125,
+  "source": {
+    "checkpoint": "projects/clebsch_tree_nqs/results/triangle_capacity_20261017/remote_snapshot/j0125/ternary_joint/checkpoint.pkl",
+    "checkpoint_sha256": "6dd2cf3813eb9b319abfe2716839c1e2f9972b63100d348543900404571487b5",
+    "params_sha256": "137e0ffc27aac42e653ce3fe210b756ea84243f70bf434d2d01e51f78547fb6c",
+    "registration_sha256": "f7133aa410352c3d08edfca764e56546fc2d88cef598f337396617225f40bdc6",
+    "audit_sha256": "28f82dbfa29f561f28e5841c89da6ada23c6b66503bb23e822583c53e80abb79"
+  },
+  "generator": {"dictionary_rank": 16, "embedding_dim": 8, "heads": 2, "depth": 1, "local_symmetry": "free_joint"},
+  "projection_chunk": 4,
+  "action_chunk": 2,
+  "training": {"steps": 4, "chains": 8, "records_per_chain": 8, "initial_burn_proposals": 720, "refresh_proposals": 36, "proposals_between": 36},
+  "calibration": {
+    "chains": 8, "records_per_chain": 8, "initial_burn_proposals": 720, "refresh_proposals": 36, "proposals_between": 36,
+    "target_fs_sine": 0.001, "relative_tolerance": 0.02, "max_factor": 4.0,
+    "bracket_steps": 8, "bisection_steps": 14, "minimum_ess_fraction": 0.8, "maximum_training_fs_sine": 0.007
+  },
+  "audit": {"chains": 16, "records_per_chain": 16, "burn_proposals": 720, "proposals_between": 36},
+  "sampler": {"bond_proposal_probability": 0.75, "lazy_probability": 0.05},
+  "sr": {"damping": 0.1, "step_size": 0.03, "fisher_trust_radius": 0.005, "maximum_overlap_distance": 0.005, "minimum_ess_fraction": 0.8, "backtracking_steps": 8, "score_chunk_size": 4},
+  "seeds": [
+    {"generator_seed": 2026101931, "training_seed": 2026101932, "calibration_seed": 2026101933, "audit_seed": 2026101940}
+  ],
+  "hard_seconds_cap": 5400,
+  "tolerance": 2e-11,
+  "output": "projects/clebsch_tree_nqs/results/triangle_dictionary_campaign_20261018/j0125_local_v2",
+  "protocol_revision": "Preserve the original partial2 target.0035 probe unchanged. Its first two free/linear directions reached only .00236-.00242 on independent calibration records even at the factor4 limit, so no update was committed. Before any terminal audit, register ONE COMMON smaller target.001, retain the original model, trust guards, sampler and sample counts, and use completely fresh generator/training/calibration/audit seeds. This changes step scale, not the physical state manifold or per-arm hyperparameters. Do not choose smaller targets separately for each arm or keep tuning against energy.",
+  "interpretation": "Fixed4-step64-record development endpoint, not sufficient for a competitive energy or optimization-win claim. Partial2 then exact resume4 and independent-process replay. Same audited joint40 parent and complete216H/432A1 in all three arms. Final256-record audits use untouched chains. Rejected attempts consume the common H budget and stay visible. Multiple stochastic repetitions, a matched fresh J0 control, and later compression/width or size-transfer stages remain unreleased. Safe time stopping is at atomic step boundaries, not an OS hard-kill promise."
+}

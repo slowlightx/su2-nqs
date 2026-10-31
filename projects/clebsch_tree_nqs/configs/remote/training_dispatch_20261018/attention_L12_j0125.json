@@ -1,0 +1,94 @@
+{
+  "task": "bounded_static_ClebschTree_dictionary_comparison",
+  "model": {
+    "length": 12,
+    "multiplicity_cap": 16,
+    "maximum_q": 10
+  },
+  "j2_over_j1": 0.125,
+  "require_gpu": true,
+  "source": {
+    "checkpoint": "/home/yx789/nqs-wavefunctions/nqs/triangle_quality_20261017/clebsch_j0125_ternary_joint/stage0/checkpoint.pkl",
+    "checkpoint_sha256": "4b6ce9d255d17839418cd521fc90a04aacc448998c59f6c795f38614a9c536d3",
+    "params_sha256": "8f7f905d9868bf8069f6a12005a7a54b4172d32b2827241105093e86eef61182",
+    "registration_sha256": "403f71abe41eaeebe9555309e8104e272f62eab65f0210d6af20f9319ac985f8",
+    "audit_sha256": "0f7690e543168df0e0e1b4dcd1269302a86ace1d5ce4417ce28145b7a66a6a33",
+    "model": {
+      "length": 6,
+      "multiplicity_cap": 16,
+      "maximum_q": 10
+    },
+    "arm": "ternary_joint",
+    "mode": "size_initialization",
+    "binary_rank": 8,
+    "initialization_seed": 2026131901
+  },
+  "generator": {
+    "dictionary_rank": 16,
+    "embedding_dim": 8,
+    "heads": 2,
+    "depth": 1,
+    "local_symmetry": "free_joint"
+  },
+  "projection_chunk": 4,
+  "action_chunk": 4,
+  "training": {
+    "steps": 2,
+    "chains": 8,
+    "records_per_chain": 4,
+    "initial_burn_proposals": 1440,
+    "refresh_proposals": 144,
+    "proposals_between": 144
+  },
+  "calibration": {
+    "chains": 8,
+    "records_per_chain": 4,
+    "initial_burn_proposals": 1440,
+    "refresh_proposals": 144,
+    "proposals_between": 144,
+    "target_fs_sine": 0.005,
+    "relative_tolerance": 0.02,
+    "max_factor": 4,
+    "bracket_steps": 8,
+    "bisection_steps": 14,
+    "minimum_ess_fraction": 0.8,
+    "maximum_training_fs_sine": 0.035
+  },
+  "audit": {
+    "chains": 8,
+    "records_per_chain": 8,
+    "burn_proposals": 2880,
+    "proposals_between": 288
+  },
+  "sampler": {
+    "bond_proposal_probability": 0.75,
+    "lazy_probability": 0.05
+  },
+  "sr": {
+    "damping": 0.1,
+    "step_size": 0.03,
+    "fisher_trust_radius": 0.005,
+    "maximum_overlap_distance": 0.005,
+    "minimum_ess_fraction": 0.8,
+    "backtracking_steps": 8,
+    "score_chunk_size": 2
+  },
+  "seeds": [
+    {
+      "generator_seed": 2026132220,
+      "training_seed": 2026132221,
+      "calibration_seed": 2026132222,
+      "audit_seed": 2026132230
+    }
+  ],
+  "hard_seconds_cap": 13500,
+  "tolerance": 2e-11,
+  "output": "/home/yx789/nqs-wavefunctions/nqs/training_dispatch_20261018/attention_L12_j0125",
+  "interpretation": "Static geometry hypernetwork, not a configuration-dependent ordinary ViT. Full-rank free/linear/attention start at one identical cap16 bank, independent amplitude-only FS calibration to.005; new untouched endpoint audits. Same samples/steps/full H, but not assumed same directions or GPU-hours. Every new floating replay leaf is saved, discrete chain/RNG exact, finite floats relative tolerance<=2e-11; old failed runs remain failed and are not resigned. N144 is a serial cost/development gate after N36 replay, not competitive energy evidence or automatic long training.",
+  "allocation": {
+    "A100_GPUs": 1,
+    "wall_minutes": 240,
+    "GPU_hour_cap": 4
+  },
+  "failure_policy": "Preserve all checkpoints and actual leaf-level failure diagnostics; no threshold relaxation, sample clipping, amplitude flooring or automatic production release."
+}

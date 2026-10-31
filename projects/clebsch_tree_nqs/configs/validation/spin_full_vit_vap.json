@@ -1,0 +1,13 @@
+{
+  "task": "same_backbone_exact_singlet_variation_after_projection",
+  "parent_root": "projects/clebsch_tree_nqs/results/spin_full_vit_budget_v1",
+  "output": "projects/clebsch_tree_nqs/results/spin_full_vit_vap_v1",
+  "parents": ["triangular_d16_l2_s2026092901", "triangular_d16_l2_s2026092902", "square_d16_l2_s2026092901", "square_d16_l2_s2026092902"],
+  "optimization": {"steps": 256, "learning_rate": 0.001, "radius": 0.01, "max_backtracks": 12, "seconds_limit": 300.0, "record_every": 32},
+  "arms": ["raw", "vap"],
+  "optimizer": "Identical zero-moment Adam with descent restart, energy-monotone exact FS-sine cap; attempts including rejections count toward 256. No tuning, extensions or best-seed selection.",
+  "comparison": "VAP terminal vs frozen projected parent AND PAV of raw-continuation terminal. Report all four parents, E/N, variance/N, S2, projector weight, physical-cut local q distribution and entropy.",
+  "budget": "8 runs; <= 40 active CPU minutes plus compilation, preparation and independent exhaustive diagnostics. Each attempt may overrun the cap once; report actual work. No GPU/remote or Hamiltonian ED.",
+  "interpretation": "Exact full-support audit, no statistical held-out set or standard errors. Same backbone/parameters/initial parameters/attempt caps, not matched H work or equal initial physical states. Dense P0 is not a scalable N36 method. Do not claim a QSL phase or PRL win from N16.",
+  "frozen": ["direct_fusion_path", "fixed_OF", "new_response_heads", "N36_training", "remote_submission"]
+}

@@ -1,0 +1,35 @@
+{
+  "task": "finite_schur_conditioning_and_same_state_batch_cost",
+  "output": "projects/clebsch_tree_nqs/results/cg_deterministic_20261015/cost",
+  "probe_file": "projects/clebsch_tree_nqs/results/spin_full_vit_constraint_v1/ratio_preflight.npz",
+  "cases": [
+    {
+      "geometry": "triangular",
+      "j2_over_j1": 0.125
+    }
+  ],
+  "rows": 6,
+  "columns": 6,
+  "maximum_q": 8,
+  "multiplicity_width": 16,
+  "embedding_dim": 32,
+  "depth": 2,
+  "seed": 2026101470,
+  "batches": [
+    1,
+    2
+  ],
+  "projection_chunk": 32,
+  "H_chunk": 128,
+  "timing_repeats": 2,
+  "wall_limit_seconds_per_process": 2400,
+  "peak_rss_limit_gib": 100,
+  "initialization": "Independent uniform complex W with positive nodewise empirical activation scales, plus original generated-bank strong control. Same strict-S0/full-A1 raw contractions; no energy fitted during cost setup. Compare chunks8/32/128 on IDENTICAL parameters/states before releasing training. Canonical capacity readout belongs only to raw tree, not its projected/additive state.",
+  "compare_H_chunks": [
+    8,
+    32
+  ],
+  "initialization_calibration_rows": 1000,
+  "initialization_seed": 2026101440,
+  "execution_repair": "Replace repeated-total-q atomic scatter-add by fixed grouped reduction. Identical CG channels, full A1, SAME-W0 neural/free start, original exact bitwise replay gate unchanged. Old attempts and seals immutable."
+}

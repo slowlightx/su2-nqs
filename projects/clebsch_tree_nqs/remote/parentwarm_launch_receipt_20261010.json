@@ -1,0 +1,302 @@
+{
+  "submitted_at_utc": "2026-10-10T04:38:00Z",
+  "workspace": "/home/yx789/nqs-physics-parentwarm-20261010",
+  "manifest": "projects/clebsch_tree_nqs/remote/parentwarm_sync_manifest_20261010.json",
+  "replaces_only_triangular_new_starts": true,
+  "previous_bounded_preflight": 155413,
+  "all_parent_configurations_retained": true,
+  "parent_RNG_and_optimizer_NOT_inherited": true,
+  "coarse_initial_sampling_screen": {
+    "energy_per_site_ceiling": -0.45,
+    "variance_per_site_ceiling": 1,
+    "scope": "first pre-update training sample only; generous sanity gate, not audit or equilibration certification"
+  },
+  "jobs": [
+    {
+      "label": "tri_j0-v3pre",
+      "id": 155608,
+      "dependency": null,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=tri_j0-v3pre",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0.json,NQS_PREFLIGHT_ENDPOINT=1,NQS_INITIAL_ENERGY_CEILING=-0.45,NQS_INITIAL_VARIANCE_CEILING=1.0",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ]
+    },
+    {
+      "label": "tri_j0-v3train",
+      "id": 155609,
+      "dependency": "155608",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=tri_j0-v3train",
+        "--kill-on-invalid-dep=yes",
+        "--time=13:00:00",
+        "--dependency=afterok:155608",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0.json,NQS_UNTIL_STEP=1000,NQS_SESSION_SECONDS=45000",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "label": "tri_j0-v3audit",
+      "id": 155610,
+      "dependency": "155609",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=tri_j0-v3audit",
+        "--kill-on-invalid-dep=yes",
+        "--array=0-1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--time=02:00:00",
+        "--dependency=afterok:155609",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "energy-stream"
+      ]
+    },
+    {
+      "label": "tri_j0-v3seal",
+      "id": 155613,
+      "dependency": "155610",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=tri_j0-v3seal",
+        "--kill-on-invalid-dep=yes",
+        "--constraint=cpu",
+        "--gres=none",
+        "--cpus-per-task=2",
+        "--mem=8G",
+        "--time=00:20:00",
+        "--dependency=afterok:155610",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "aggregate"
+      ]
+    },
+    {
+      "label": "read-tri_j0-v3",
+      "id": 155614,
+      "dependency": "155613",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=read-tri_j0-v3",
+        "--kill-on-invalid-dep=yes",
+        "--cpus-per-task=8",
+        "--mem=96G",
+        "--time=02:00:00",
+        "--dependency=afterok:155613",
+        "projects/clebsch_tree_nqs/remote/physics_readout_kim.sbatch",
+        "nqs",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/tri_j0_regional.json",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/tri_j0_magnetic.json"
+      ]
+    },
+    {
+      "label": "tri_j005-v3pre",
+      "id": 155615,
+      "dependency": null,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=tri_j005-v3pre",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j005.json,NQS_PREFLIGHT_ENDPOINT=1,NQS_INITIAL_ENERGY_CEILING=-0.45,NQS_INITIAL_VARIANCE_CEILING=1.0",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ]
+    },
+    {
+      "label": "tri_j005-v3train",
+      "id": 155616,
+      "dependency": "155615",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=tri_j005-v3train",
+        "--kill-on-invalid-dep=yes",
+        "--time=13:00:00",
+        "--dependency=afterok:155615",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j005.json,NQS_UNTIL_STEP=1000,NQS_SESSION_SECONDS=45000",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "label": "tri_j005-v3audit",
+      "id": 155617,
+      "dependency": "155616",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=tri_j005-v3audit",
+        "--kill-on-invalid-dep=yes",
+        "--array=0-1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--time=02:00:00",
+        "--dependency=afterok:155616",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j005.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "energy-stream"
+      ]
+    },
+    {
+      "label": "tri_j005-v3seal",
+      "id": 155618,
+      "dependency": "155617",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=tri_j005-v3seal",
+        "--kill-on-invalid-dep=yes",
+        "--constraint=cpu",
+        "--gres=none",
+        "--cpus-per-task=2",
+        "--mem=8G",
+        "--time=00:20:00",
+        "--dependency=afterok:155617",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j005.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "aggregate"
+      ]
+    },
+    {
+      "label": "read-tri_j005-v3",
+      "id": 155619,
+      "dependency": "155618",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=read-tri_j005-v3",
+        "--kill-on-invalid-dep=yes",
+        "--cpus-per-task=8",
+        "--mem=96G",
+        "--time=02:00:00",
+        "--dependency=afterok:155618",
+        "projects/clebsch_tree_nqs/remote/physics_readout_kim.sbatch",
+        "nqs",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/tri_j005_regional.json",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/tri_j005_magnetic.json"
+      ]
+    },
+    {
+      "label": "tri_j0175-v3pre",
+      "id": 155620,
+      "dependency": null,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=tri_j0175-v3pre",
+        "--kill-on-invalid-dep=yes",
+        "--time=02:00:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0175.json,NQS_PREFLIGHT_ENDPOINT=1,NQS_INITIAL_ENERGY_CEILING=-0.45,NQS_INITIAL_VARIANCE_CEILING=1.0",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ]
+    },
+    {
+      "label": "tri_j0175-v3train",
+      "id": 155621,
+      "dependency": "155620",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=tri_j0175-v3train",
+        "--kill-on-invalid-dep=yes",
+        "--time=13:00:00",
+        "--dependency=afterok:155620",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0175.json,NQS_UNTIL_STEP=1000,NQS_SESSION_SECONDS=45000",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ]
+    },
+    {
+      "label": "tri_j0175-v3audit",
+      "id": 155622,
+      "dependency": "155621",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=tri_j0175-v3audit",
+        "--kill-on-invalid-dep=yes",
+        "--array=0-1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--time=02:00:00",
+        "--dependency=afterok:155621",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0175.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "energy-stream"
+      ]
+    },
+    {
+      "label": "tri_j0175-v3seal",
+      "id": 155623,
+      "dependency": "155622",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=tri_j0175-v3seal",
+        "--kill-on-invalid-dep=yes",
+        "--constraint=cpu",
+        "--gres=none",
+        "--cpus-per-task=2",
+        "--mem=8G",
+        "--time=00:20:00",
+        "--dependency=afterok:155622",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/spin_spatial_vit_tri_j0175.json",
+        "projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "aggregate"
+      ]
+    },
+    {
+      "label": "read-tri_j0175-v3",
+      "id": 155624,
+      "dependency": "155623",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-parentwarm-20261010",
+        "--job-name=read-tri_j0175-v3",
+        "--kill-on-invalid-dep=yes",
+        "--cpus-per-task=8",
+        "--mem=96G",
+        "--time=02:00:00",
+        "--dependency=afterok:155623",
+        "projects/clebsch_tree_nqs/remote/physics_readout_kim.sbatch",
+        "nqs",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/tri_j0175_regional.json",
+        "projects/clebsch_tree_nqs/configs/remote/readouts/tri_j0175_magnetic.json"
+      ]
+    }
+  ],
+  "submission_status": "complete"
+}

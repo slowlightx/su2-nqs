@@ -1,0 +1,17 @@
+{
+  "previous_count": 31,
+  "current_count": 31,
+  "new_failures": [],
+  "resolved_previous": [],
+  "full": {
+    "passed": 3231,
+    "skipped": 41,
+    "failed": 31,
+    "seconds": 1346.17
+  },
+  "latest_focused": {
+    "passed": 51,
+    "seconds": 6.96
+  },
+  "note": "Focused includes tests added after full-suite collection; no mathematical tolerance or historical artifact seal weakened."
+}

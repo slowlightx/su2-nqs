@@ -1,0 +1,41 @@
+{
+  "campaign_sha256": "76f8c13da93d59061790aac77b48fcb02ee66c7c81b352f7d61fdf9bfb67ef1d",
+  "config_sha256": {
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/dmrg_chi10240.json": "3a124b4c9ab427f0f2f8d3348869a213fd17023fa4a099928748602fdeb774b8",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/dmrg_chi10240_dimers.json": "322b4cf0387286ef89164f804c7b882770fb270f42762c95cd78e42c7b72d5b9",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/dmrg_chi10240_hexagon6.json": "3b530a54b7bc592e6e714f6a1fe4ce5528102500cf0641ef4c9b0b01c63af538",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/dmrg_chi10240_spin.json": "5b6a876d3931a4776881601d9eb1d0313d7580639341b89792eb11d7eb4bcfee",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/square_j05_step00250_magnetic.json": "ce098042ec063f54636169a3ea97edbceaeaf003e0aaa9340a80e134fd4e8772",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/square_j05_step00250_regional.json": "8e7cf3d46d3fb98e9093b81fc3686c422ab57f0c876d28cc82b64162a99b2d7a",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/square_j05_step00500_magnetic.json": "a7b6e2a8e5256fc9d874ee285a5402a8f71ea414f251cdf07ccd2141de0e6ea0",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/square_j05_step00500_regional.json": "17428756304c490ae36d67d68d129a5ce5042507344fe8daaf39b1a4f00d70a7",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/square_j0_step00250_magnetic.json": "36e76639c6e92850414476bcbc7d17338b08b0af344724541e2c4b0f9c0e2bcf",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/square_j0_step00250_regional.json": "616835d23018f74ed85a6909affb47fdaee20a3ee9b168d9af0b36ba5e66260e",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/square_j0_step00500_magnetic.json": "5bb6d216179db65ac4a9923ff3846bb32d7ac633c56fe9d9a48bfe5e81224277",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/square_j0_step00500_regional.json": "72539a26fc627eaa7f541ab686604de34cde08954be94231d6870f7a8c9ec7a5",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j005_step00250_magnetic.json": "53a01905b0acebf0394cda1998f24bd810530950bb07a504e6420b5b7218f882",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j005_step00250_regional.json": "979f74f3bd587cb452735487c00e4898525f116f8e2366c24c95bd9c893b33ad",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j005_step00500_magnetic.json": "9b24bb48aebc5fb3c109d8752b8f263b8b827e0b558284439263809ca4bfb8f7",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j005_step00500_regional.json": "5b1e6d2ad84a75ca99b139f01b32a7671b9f68c19531bc788e6a236ae2a6991e",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j0175_step00250_magnetic.json": "924e254eb9614652d949abc985342ddaac3b730823e4db14773752c99015414a",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j0175_step00250_regional.json": "3dc645a1fb400f80041e7c6e717a63f388e943ece092a02b808d6484729e4709",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j0175_step00500_magnetic.json": "520e4cae3543a8c70bc4f8a05e1b1efab14b4b71c72c031f2b616e93c480dc51",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j0175_step00500_regional.json": "50d3deb0de484dfd9e5106fa460fa618a24b645740227b96228bb6221e5d30a1",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j01_step00250_magnetic.json": "f8464b1a8233e00dba328ce1bd463bd4e09f83ecbcd496d1e52756af1a63befd",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j01_step00250_regional.json": "b2b34b154013d550106237caf62b7d50ff2b7818641ff331330ed2ed06e26fd3",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j01_step00500_magnetic.json": "73d5936919b5faf0cbdc63312a58e86dc974c4378083490e93233f83f5e887be",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j01_step00500_regional.json": "b7d63bbea5ba0633078f512b86f489b3698e4682fb698f8473d9e9e56a122f87",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j0_step00250_magnetic.json": "41785bb983ccef2836d3c9b7f07f6e747c75e5ba20624cf67842147dd8b2fdb6",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j0_step00250_regional.json": "a5017f83f079401ca6c1f12a4e6d13adb4e7adb45f4d91ddcdd8437590699406",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j0_step00500_magnetic.json": "2221c70d282ecd374e69ee98db397b0be7947f36a3f876aeff3e68e0946e001d",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261011/tri_j0_step00500_regional.json": "62d8f797a89abcf11af7074b79a1add56c093afb74eb82016afd66a2ce774a50"
+  },
+  "new_configuration_count": 28,
+  "parent": {
+    "checkpoint_sha256": "3c751cbab44f624a34183dac22a94edaaeafa5657be2594bfcc59a6376fe7896",
+    "protocol_sha256": "b45ac70135b950e80db539bbb40a6c08f9d769c746de3db04963ed15ea366d1a",
+    "registration_sha256": "a6bc4a066f0f1b4bbdaf886988d2cddf0195b5fe72b1d36fa030d686f91d9e42",
+    "result_sha256": "67644f967507e57d790b3161815b8ebd3bfd96048a2bdc02e8e46ae96dafc497"
+  },
+  "status": "validated"
+}

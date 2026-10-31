@@ -1,0 +1,35 @@
+{
+  "schema_version": 2,
+  "domain": "spin",
+  "status": "true_full_hilbert_one_seed_smoke",
+  "model": {
+    "feature_dim": 2,
+    "maximum_intermediate_q": 4,
+    "initialization_scale": 1.0
+  },
+  "parameter_bracket_maximum_width": 16,
+  "optimization": {
+    "steps": 40,
+    "learning_rate": 0.01,
+    "record_every": 5,
+    "seeds": [11],
+    "energy_error_per_site_targets": [0.2, 0.1, 0.05, 0.01]
+  },
+  "arms": [
+    {"arm_id": "true_full_none", "backbone": "unconstrained", "projection": "none"}
+  ],
+  "cases": [
+    {
+      "case_id": "square_4x4_j2_0p5_true_full",
+      "geometry": "square",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.5,
+      "support": "true_full",
+      "exact_energy_anchor": -8.457923351394845,
+      "anchor_provenance": "stored physical-M0 ground-energy reference; used only as scalar lower target",
+      "arm_ids": ["true_full_none"]
+    }
+  ],
+  "claim_boundary": "Genuinely unrestricted 2**16 calibration, one seed and equal width only. It measures sector-selection burden; it is not a scalable no-symmetry baseline."
+}

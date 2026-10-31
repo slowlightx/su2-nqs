@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-09",
+  "physical_problem": "triangular spin1/2 6x6 double-PBC J1=1,J2=.125",
+  "viT_steps": [
+    5600,
+    6600
+  ],
+  "dmrg_quality_nodes": 17,
+  "regions": {
+    "compact6": [
+      12,
+      13,
+      14,
+      18,
+      19,
+      20
+    ],
+    "winding6": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ]
+  },
+  "records_per_endpoint": 512,
+  "whole_chains_per_endpoint": 128,
+  "new_training": 0,
+  "new_samples": 0,
+  "new_H_calls": 0,
+  "new_MPS_contractions": 0,
+  "strict_spectrum_reported": false,
+  "phase_claim": false,
+  "primary_quality_and_uncertainty_screens_passed": {
+    "compact6": [],
+    "winding6": []
+  },
+  "independent_linear_projector_remainder_and_SE_replay_max_error": 1.1102230246251565e-16,
+  "required_tolerance": 2e-14,
+  "focused_tests": {
+    "passed": 57,
+    "seconds": 59.83
+  },
+  "new_paths_and_replay_tests": {
+    "passed": 3,
+    "seconds": 7.34
+  },
+  "full_suite_attempt": {
+    "passed": 632,
+    "skipped": 11,
+    "failed": 1,
+    "seconds": 309.15,
+    "pre_existing_failure": "tests/test_finite_schur_curvature_artifact.py::test_fixed_span_coefficients_geometry_and_new_full_H_replay",
+    "reason": "Historical dual_sampled_sr.py source seal895fd9\u2026 differs from unchanged currentc87225\u2026; historical seal not modified"
+  },
+  "inputs_sha256": {
+    "projects/clebsch_tree_nqs/configs/validation/spin_spatial_vit_5600_six_site_readout.json": "f231d7eb7a5f6c96396dbb1a14f14073381b8683388cb1e9d5d5534f03f0d61b",
+    "projects/clebsch_tree_nqs/configs/validation/spin_spatial_vit_6600_six_site_readout.json": "c57b486d6fb751b429f54c7700b91c8cfac713e2c4d40bbd6d734b6049175d59",
+    "projects/clebsch_tree_nqs/configs/validation/spin_spatial_vit_six_site_quality_comparison.json": "a8d85d12928b44f65f6973c3e537660302a98b1363ef4d12ea53b28b809385ac",
+    "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_recovery_v6/analysis/six_site_readout/registration.json": "ff5bcc5ffbc0ab642a435d4df424be6fbe4807e3b93c51c759b0db08f9648e62",
+    "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_recovery_v6/analysis/six_site_readout/results.json": "3ad68c2bce5377ba24820248007a7e342dd9cd2e2bc938a99296f181a81266a9",
+    "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_recovery_v6/analysis/six_site_readout/physics.npz": "fbcb9c4e36ccacf608c212fbb8db84d25d81bbdff2c9644ce24c53437a132ee4",
+    "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/six_site_readout/registration.json": "d094ed847b68b86d3fa1190bc44f60a4dc2683245b88edf22afa91be97f552f5",
+    "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/six_site_readout/results.json": "44d7ffa4c082c1f44ef490d8641b952f9fce2f98ca51d8c83ac12db85e4b8abb",
+    "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/six_site_readout/physics.npz": "4e714fc298a403824047727b465d9f864639fe070d402c8ecac094f6298d6430",
+    "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/six_site_quality_comparison/registration.json": "fe9683e6245631c171ec76c24b58a388a6fc2f36d02de2c6224c947766dcd451",
+    "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/six_site_quality_comparison/results.json": "97ded0e0424cf6b15d909043c6e4abce92609bb0e0b6ae2f81ab3c016fe6d246",
+    "projects/clebsch_tree_nqs/results/spin_spatial_vit_gpu_continuation_6600_v1/analysis/six_site_quality_comparison/completion.json": "7ba038e2edbc1a75bf363569f2fd3707f1f43ff96489b4d05cfa508c1ca0718d"
+  },
+  "figures_sha256": {
+    "projects/clebsch_tree_nqs/figures/exploration/spatial_vit_dmrg_six_site_quality.png": "ba0d85bc6f8a982be0e048f1e079d9d882703009cf8cde8e0380ac57c36a0b39",
+    "projects/clebsch_tree_nqs/figures/exploration/spatial_vit_dmrg_six_site_quality.pdf": "91d860ab5082b1f243afc5c8b2d74156af3fa2919be4f8d00d8600df312000d4",
+    "projects/clebsch_tree_nqs/figures/exploration/spatial_vit_dmrg_six_site_resonance.png": "75120bf78fab59727aee4d8f95822eb02ef3f835486926737bd4e4794c38ee51",
+    "projects/clebsch_tree_nqs/figures/exploration/spatial_vit_dmrg_six_site_resonance.pdf": "f53ba892bbe6f72e57f253b361957410597b5aef9ed87a9daf9b3100db730aae",
+    "projects/clebsch_tree_nqs/figures/exploration/spatial_vit_dmrg_six_site_multiplicity.png": "047cc0b697ff8672185d5c8e4c4735a9b99b57edb641509283b35be92c65bfc7",
+    "projects/clebsch_tree_nqs/figures/exploration/spatial_vit_dmrg_six_site_multiplicity.pdf": "f74e2b2b89f07d4a11dc2d04d84df0d792e79a385095407c2f7da6664e2c39b4"
+  },
+  "notebook_new_cells": [
+    "six-site-quality-scope",
+    "six-site-quality-replay",
+    "six-site-joint-quality",
+    "six-site-resonance-quality",
+    "six-site-multiplicity-coherence",
+    "six-site-quality-interpretation"
+  ],
+  "retained_historical_cells": 72,
+  "remote": "Kim SSH timed out; no job/state/status changed or new training submitted",
+  "physical_disposition": "Some raw scalar differences are resolved, but primary contrasts do not survive BOTH own-quality drifts plus uncertainty. NQS energy remains higher than SAME-torus DMRG4096/sweep24 by.000425572/site. No independent singlet-resonance or competing-phase claim.",
+  "notebook_sha256": "5bc62636363d92e8cb88f99c6bdf92cbcf7852104c5f15d44a8a15c04564201f"
+}

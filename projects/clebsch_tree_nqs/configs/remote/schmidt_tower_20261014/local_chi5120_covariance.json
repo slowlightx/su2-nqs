@@ -1,0 +1,13 @@
+{
+  "checkpoint": "data/reference_wavefunctions/dmrg/triangular_6x6_j2_0.125/chi5120_sweep26/checkpoint.h5",
+  "checkpoint_sha256": "b1f8abd6ecce2f9fde31be7b08d8444673e6fdc4612af79a3d4ab5e6a0f2b239",
+  "n_sites": 36,
+  "chi_upper_bound": 5120,
+  "cut": 18,
+  "threads": 2,
+  "wall_seconds": 600,
+  "memory_gib": 12,
+  "tolerance": 1e-9,
+  "leading_levels": 8,
+  "psi_hdf_group": "psi"
+}

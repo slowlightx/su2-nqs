@@ -1,0 +1,175 @@
+{
+  "created_utc": "2026-10-17T23:54:55.865662+00:00",
+  "pending_only": true,
+  "no_checkpoint_or_physical_state_removed": true,
+  "actions": [
+    {
+      "job_id": 268861,
+      "disposition": "retire, not resubmit: failed old cost/test chain superseded by completed deterministic replacement292376/292392/292397/292398/292401",
+      "controller_before": "JobId=268861 JobName=cg512-commonW0-prepare UserId=yx789(1858878) GroupId=pug-yx789(1859347) MCS_label=N/A Priority=13913 Nice=0 Account=kim QOS=normal WCKey=* JobState=PENDING Reason=DependencyNeverSatisfied Dependency=afterok:291794(failed) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=00:30:00 TimeMin=N/A SubmitTime=2026-10-14T15:04:55 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-14T15:04:55 Scheduler=Main Partition=kim AllocNode:Sid=en-cc-unicorn-login-01:1901477 ReqNodeList=kim-compute-05 ExcNodeList=(null) NodeList= NumNodes=1 NumCPUs=8 NumTasks=1 CPUs/Task=8 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=8,mem=64G,node=1,billing=8,gres/gpu=1,gres/gpu:nvidia_a100_80gb_pcie=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=8 MinMemoryNode=64G MinTmpDiskNode=0 Features=a100 DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/home/yx789/nqs-cg-conditioning-20261014/projects/clebsch_tree_nqs/remote/schur_capacity_a100.sbatch WorkDir=/home/yx789/nqs-cg-conditioning-20261014 StdErr=/home/yx789/nqs-cg-conditioning-20261014/logs/cg-capacity-268861.err StdIn=/dev/null StdOut=/home/yx789/nqs-cg-conditioning-20261014/logs/cg-capacity-268861.out TresPerNode=gres/gpu:nvidia_a100_80gb_pcie:1 TresPerTask=cpu=8 \n",
+      "action": "pending job cancelled",
+      "command": [
+        "/usr/local/slurm/current/bin/scancel",
+        "--state=PENDING",
+        "268861"
+      ],
+      "stderr": ""
+    },
+    {
+      "job_id": 268862,
+      "disposition": "retire, not resubmit: failed old cost/test chain superseded by completed deterministic replacement292376/292392/292397/292398/292401",
+      "controller_before": "JobId=268862 JobName=cg512-offset-neural16 UserId=yx789(1858878) GroupId=pug-yx789(1859347) MCS_label=N/A Priority=13930 Nice=0 Account=kim QOS=normal WCKey=* JobState=PENDING Reason=Dependency Dependency=afterok:268861(unfulfilled) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=01:30:00 TimeMin=N/A SubmitTime=2026-10-14T15:04:55 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-14T15:04:55 Scheduler=Main Partition=kim AllocNode:Sid=en-cc-unicorn-login-01:1901477 ReqNodeList=kim-compute-05 ExcNodeList=(null) NodeList= NumNodes=1 NumCPUs=8 NumTasks=1 CPUs/Task=8 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=8,mem=128G,node=1,billing=8,gres/gpu=1,gres/gpu:nvidia_a100_80gb_pcie=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=8 MinMemoryNode=128G MinTmpDiskNode=0 Features=a100 DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/home/yx789/nqs-cg-conditioning-20261014/projects/clebsch_tree_nqs/remote/schur_capacity_a100.sbatch WorkDir=/home/yx789/nqs-cg-conditioning-20261014 StdErr=/home/yx789/nqs-cg-conditioning-20261014/logs/cg-capacity-268862.err StdIn=/dev/null StdOut=/home/yx789/nqs-cg-conditioning-20261014/logs/cg-capacity-268862.out TresPerNode=gres/gpu:nvidia_a100_80gb_pcie:1 TresPerTask=cpu=8 \n",
+      "action": "pending job cancelled",
+      "command": [
+        "/usr/local/slurm/current/bin/scancel",
+        "--state=PENDING",
+        "268862"
+      ],
+      "stderr": ""
+    },
+    {
+      "job_id": 268863,
+      "disposition": "retire, not resubmit: failed old cost/test chain superseded by completed deterministic replacement292376/292392/292397/292398/292401",
+      "controller_before": "JobId=268863 JobName=cg512-commonW0-free16 UserId=yx789(1858878) GroupId=pug-yx789(1859347) MCS_label=N/A Priority=13930 Nice=0 Account=kim QOS=normal WCKey=* JobState=PENDING Reason=Dependency Dependency=afterok:268861(unfulfilled) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=01:30:00 TimeMin=N/A SubmitTime=2026-10-14T15:04:55 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-14T15:04:55 Scheduler=Main Partition=kim AllocNode:Sid=en-cc-unicorn-login-01:1901477 ReqNodeList=kim-compute-05 ExcNodeList=(null) NodeList= NumNodes=1 NumCPUs=8 NumTasks=1 CPUs/Task=8 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=8,mem=128G,node=1,billing=8,gres/gpu=1,gres/gpu:nvidia_a100_80gb_pcie=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=8 MinMemoryNode=128G MinTmpDiskNode=0 Features=a100 DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/home/yx789/nqs-cg-conditioning-20261014/projects/clebsch_tree_nqs/remote/schur_capacity_a100.sbatch WorkDir=/home/yx789/nqs-cg-conditioning-20261014 StdErr=/home/yx789/nqs-cg-conditioning-20261014/logs/cg-capacity-268863.err StdIn=/dev/null StdOut=/home/yx789/nqs-cg-conditioning-20261014/logs/cg-capacity-268863.out TresPerNode=gres/gpu:nvidia_a100_80gb_pcie:1 TresPerTask=cpu=8 \n",
+      "action": "pending job cancelled",
+      "command": [
+        "/usr/local/slurm/current/bin/scancel",
+        "--state=PENDING",
+        "268863"
+      ],
+      "stderr": ""
+    },
+    {
+      "job_id": 268864,
+      "disposition": "retire, not resubmit: failed old cost/test chain superseded by completed deterministic replacement292376/292392/292397/292398/292401",
+      "controller_before": "JobId=268864 JobName=cg512-commonW0-audit UserId=yx789(1858878) GroupId=pug-yx789(1859347) MCS_label=N/A Priority=13930 Nice=0 Account=kim QOS=normal WCKey=* JobState=PENDING Reason=Dependency Dependency=afterok:268862(unfulfilled),afterok:268863(unfulfilled) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=01:00:00 TimeMin=N/A SubmitTime=2026-10-14T15:04:55 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-14T15:04:55 Scheduler=Main Partition=kim AllocNode:Sid=en-cc-unicorn-login-01:1901477 ReqNodeList=kim-compute-05 ExcNodeList=(null) NodeList= NumNodes=1 NumCPUs=8 NumTasks=1 CPUs/Task=8 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=8,mem=128G,node=1,billing=8,gres/gpu=1,gres/gpu:nvidia_a100_80gb_pcie=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=8 MinMemoryNode=128G MinTmpDiskNode=0 Features=a100 DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/home/yx789/nqs-cg-conditioning-20261014/projects/clebsch_tree_nqs/remote/schur_capacity_a100.sbatch WorkDir=/home/yx789/nqs-cg-conditioning-20261014 StdErr=/home/yx789/nqs-cg-conditioning-20261014/logs/cg-capacity-268864.err StdIn=/dev/null StdOut=/home/yx789/nqs-cg-conditioning-20261014/logs/cg-capacity-268864.out TresPerNode=gres/gpu:nvidia_a100_80gb_pcie:1 TresPerTask=cpu=8 \n",
+      "action": "pending job cancelled",
+      "command": [
+        "/usr/local/slurm/current/bin/scancel",
+        "--state=PENDING",
+        "268864"
+      ],
+      "stderr": ""
+    },
+    {
+      "job_id": 331947,
+      "disposition": "retire old audit24/merge: no actual complete24 endpoint; superseded by later audited12x12 branches",
+      "controller_before": "JobId=331947 ArrayJobId=331947 ArrayTaskId=0-1 JobName=tri-transfer-audit24 UserId=yx789(1858878) GroupId=pug-yx789(1859347) MCS_label=N/A Priority=13922 Nice=0 Account=kim QOS=normal WCKey=* JobState=PENDING Reason=DependencyNeverSatisfied Dependency=afterok:331946(failed) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=00:20:00 TimeMin=N/A SubmitTime=2026-10-16T17:23:51 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-16T17:23:51 Scheduler=Main Partition=kim AllocNode:Sid=en-cc-unicorn-login-01:2556128 ReqNodeList=(null) ExcNodeList=(null) NodeList= NumNodes=1 NumCPUs=8 NumTasks=1 CPUs/Task=8 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=8,mem=96G,node=1,billing=8,gres/gpu=1,gres/gpu:nvidia_a100_80gb_pcie=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=8 MinMemoryNode=96G MinTmpDiskNode=0 Features=a100 DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/home/yx789/nqs-spatial-large-resume-20261016/projects/clebsch_tree_nqs/remote/spatial_vit_training_plan_a100.sbatch WorkDir=/home/yx789/nqs-spatial-large-resume-20261016 StdErr=/home/yx789/nqs-spatial-large-resume-20261016/logs/large-331947.err StdIn=/dev/null StdOut=/home/yx789/nqs-spatial-large-resume-20261016/logs/large-331947.out TresPerNode=gres/gpu:nvidia_a100_80gb_pcie:1 TresPerTask=cpu=8 \n",
+      "action": "pending job cancelled",
+      "command": [
+        "/usr/local/slurm/current/bin/scancel",
+        "--state=PENDING",
+        "331947"
+      ],
+      "stderr": ""
+    },
+    {
+      "job_id": 331948,
+      "disposition": "retire old audit24/merge: no actual complete24 endpoint; superseded by later audited12x12 branches",
+      "controller_before": "JobId=331948 JobName=tri-transfer-merge24 UserId=yx789(1858878) GroupId=pug-yx789(1859347) MCS_label=N/A Priority=13585 Nice=0 Account=kim QOS=normal WCKey=* JobState=PENDING Reason=Dependency Dependency=afterok:331947_*(unfulfilled) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=00:10:00 TimeMin=N/A SubmitTime=2026-10-16T17:23:51 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-16T17:23:51 Scheduler=Main Partition=kim AllocNode:Sid=en-cc-unicorn-login-01:2556128 ReqNodeList=(null) ExcNodeList=(null) NodeList= NumNodes=1 NumCPUs=2 NumTasks=1 CPUs/Task=2 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=2,mem=8G,node=1,billing=2 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=2 MinMemoryNode=8G MinTmpDiskNode=0 Features=(null) DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=(null) WorkDir=/home/yx789/nqs-spatial-large-resume-20261016 StdErr=/home/yx789/nqs-spatial-large-resume-20261016/logs/merge-331948.err StdIn=/dev/null StdOut=/home/yx789/nqs-spatial-large-resume-20261016/logs/merge-331948.out TresPerTask=cpu=2 \n",
+      "action": "pending job cancelled",
+      "command": [
+        "/usr/local/slurm/current/bin/scancel",
+        "--state=PENDING",
+        "331948"
+      ],
+      "stderr": ""
+    },
+    {
+      "job_id": 278583,
+      "disposition": "retire dead admin-held Adam1000/audit chain; active directSR4096 writer357776 is retained",
+      "controller_before": "JobId=278583 JobName=CT8-J05-accuracy1000 UserId=yx789(1858878) GroupId=pug-yx789(1859347) MCS_label=N/A Priority=0 Nice=0 Account=kim QOS=normal WCKey=* JobState=PENDING Reason=DependencyNeverSatisfied Dependency=afterok:280669(failed) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=2-00:00:00 TimeMin=N/A SubmitTime=2026-10-14T22:42:27 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-14T22:42:27 Scheduler=Main Partition=kim AllocNode:Sid=en-cc-unicorn-login-01:3858619 ReqNodeList=kim-compute-04 ExcNodeList=(null) NodeList= NumNodes=1 NumCPUs=8 NumTasks=1 CPUs/Task=8 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=8,mem=96G,node=1,billing=8,gres/gpu=1,gres/gpu:nvidia_a100_80gb_pcie=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=8 MinMemoryNode=96G MinTmpDiskNode=0 Features=a100 DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/home/yx789/nqs-clebsch-tree-accuracy-20261014/projects/clebsch_tree_nqs/remote/clebsch_tree_training_a100.sbatch WorkDir=/home/yx789/nqs-clebsch-tree-accuracy-20261014 StdErr=/home/yx789/nqs-clebsch-tree-accuracy-20261014/logs/ct-training-278583.err StdIn=/dev/null StdOut=/home/yx789/nqs-clebsch-tree-accuracy-20261014/logs/ct-training-278583.out TresPerNode=gres/gpu:nvidia_a100_80gb_pcie:1 TresPerTask=cpu=8 \n",
+      "action": "pending job cancelled",
+      "command": [
+        "/usr/local/slurm/current/bin/scancel",
+        "--state=PENDING",
+        "278583"
+      ],
+      "stderr": ""
+    },
+    {
+      "job_id": 278585,
+      "disposition": "retire dead admin-held Adam1000/audit chain; active directSR4096 writer357776 is retained",
+      "controller_before": "JobId=278585 JobName=CT8-J05-audit1000 UserId=yx789(1858878) GroupId=pug-yx789(1859347) MCS_label=N/A Priority=13922 Nice=0 Account=kim QOS=normal WCKey=* JobState=PENDING Reason=Dependency Dependency=afterok:278583(unfulfilled) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=03:00:00 TimeMin=N/A SubmitTime=2026-10-14T22:42:27 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-14T22:42:27 Scheduler=Main Partition=kim AllocNode:Sid=en-cc-unicorn-login-01:3858619 ReqNodeList=(null) ExcNodeList=(null) NodeList= NumNodes=1 NumCPUs=8 NumTasks=1 CPUs/Task=8 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=8,mem=96G,node=1,billing=8,gres/gpu=1,gres/gpu:nvidia_a100_80gb_pcie=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=8 MinMemoryNode=96G MinTmpDiskNode=0 Features=a100 DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/home/yx789/nqs-clebsch-tree-accuracy-20261014/projects/clebsch_tree_nqs/remote/clebsch_tree_audit_a100.sbatch WorkDir=/home/yx789/nqs-clebsch-tree-accuracy-20261014 StdErr=/home/yx789/nqs-clebsch-tree-accuracy-20261014/logs/ct-audit-278585.err StdIn=/dev/null StdOut=/home/yx789/nqs-clebsch-tree-accuracy-20261014/logs/ct-audit-278585.out TresPerNode=gres/gpu:nvidia_a100_80gb_pcie:1 TresPerTask=cpu=8 \n",
+      "action": "pending job cancelled",
+      "command": [
+        "/usr/local/slurm/current/bin/scancel",
+        "--state=PENDING",
+        "278585"
+      ],
+      "stderr": ""
+    },
+    {
+      "job_id": 362064,
+      "disposition": "replace same frozen protocols/budgets after explicitCUDA launch fix; never cancel their running original104-step parents",
+      "controller_before": "JobId=362064 JobName=tq17_clebsch_j0_ternary_joint_stage0 UserId=yx789(1858878) GroupId=pug-yx789(1859347) MCS_label=N/A Priority=12904 Nice=1000 Account=kim QOS=normal WCKey=* JobState=PENDING Reason=Dependency Dependency=afterok:357764(unfulfilled) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=08:00:00 TimeMin=N/A SubmitTime=2026-10-17T15:06:03 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-17T15:06:03 Scheduler=Main Partition=kim AllocNode:Sid=en-cc-unicorn-login-01:1932041 ReqNodeList=(null) ExcNodeList=(null) NodeList= NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=4,mem=64G,node=1,billing=4,gres/gpu=1,gres/gpu:nvidia_a100_80gb_pcie=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=4 MinMemoryNode=64G MinTmpDiskNode=0 Features=a100 DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/home/yx789/nqs-triangle-quality-20261017/projects/clebsch_tree_nqs/configs/remote/triangle_quality_20261017/run.sbatch WorkDir=/home/yx789/nqs-triangle-quality-20261017 StdErr=/home/yx789/nqs-triangle-quality-20261017/logs/clebsch_j0_ternary_joint_stage0_362064_4294967294.err StdIn=/dev/null StdOut=/home/yx789/nqs-triangle-quality-20261017/logs/clebsch_j0_ternary_joint_stage0_362064_4294967294.out KillOInInvalidDependent=Yes TresPerNode=gres/gpu:nvidia_a100_80gb_pcie:1 TresPerTask=cpu=4 \n",
+      "action": "pending job cancelled",
+      "command": [
+        "/usr/local/slurm/current/bin/scancel",
+        "--state=PENDING",
+        "362064"
+      ],
+      "stderr": ""
+    },
+    {
+      "job_id": 362065,
+      "disposition": "replace same frozen protocols/budgets after explicitCUDA launch fix; never cancel their running original104-step parents",
+      "controller_before": "JobId=362065 JobName=tq17_clebsch_j0_ternary_joint_stage1 UserId=yx789(1858878) GroupId=pug-yx789(1859347) MCS_label=N/A Priority=12904 Nice=1000 Account=kim QOS=normal WCKey=* JobState=PENDING Reason=Dependency Dependency=afterok:362064(unfulfilled) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=08:00:00 TimeMin=N/A SubmitTime=2026-10-17T15:06:04 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-17T15:06:04 Scheduler=Main Partition=kim AllocNode:Sid=en-cc-unicorn-login-01:1932041 ReqNodeList=(null) ExcNodeList=(null) NodeList= NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=4,mem=64G,node=1,billing=4,gres/gpu=1,gres/gpu:nvidia_a100_80gb_pcie=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=4 MinMemoryNode=64G MinTmpDiskNode=0 Features=a100 DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/home/yx789/nqs-triangle-quality-20261017/projects/clebsch_tree_nqs/configs/remote/triangle_quality_20261017/run.sbatch WorkDir=/home/yx789/nqs-triangle-quality-20261017 StdErr=/home/yx789/nqs-triangle-quality-20261017/logs/clebsch_j0_ternary_joint_stage1_362065_4294967294.err StdIn=/dev/null StdOut=/home/yx789/nqs-triangle-quality-20261017/logs/clebsch_j0_ternary_joint_stage1_362065_4294967294.out KillOInInvalidDependent=Yes TresPerNode=gres/gpu:nvidia_a100_80gb_pcie:1 TresPerTask=cpu=4 \n",
+      "action": "pending job cancelled",
+      "command": [
+        "/usr/local/slurm/current/bin/scancel",
+        "--state=PENDING",
+        "362065"
+      ],
+      "stderr": ""
+    },
+    {
+      "job_id": 362066,
+      "disposition": "replace same frozen protocols/budgets after explicitCUDA launch fix; never cancel their running original104-step parents",
+      "controller_before": "JobId=362066 JobName=tq17_clebsch_j0125_binary_truncated_stage0 UserId=yx789(1858878) GroupId=pug-yx789(1859347) MCS_label=N/A Priority=12904 Nice=1000 Account=kim QOS=normal WCKey=* JobState=PENDING Reason=Dependency Dependency=afterok:357765(unfulfilled) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=14:00:00 TimeMin=N/A SubmitTime=2026-10-17T15:06:04 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-17T15:06:04 Scheduler=Main Partition=kim AllocNode:Sid=en-cc-unicorn-login-01:1932041 ReqNodeList=(null) ExcNodeList=(null) NodeList= NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=4,mem=64G,node=1,billing=4,gres/gpu=1,gres/gpu:nvidia_a100_80gb_pcie=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=4 MinMemoryNode=64G MinTmpDiskNode=0 Features=a100 DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/home/yx789/nqs-triangle-quality-20261017/projects/clebsch_tree_nqs/configs/remote/triangle_quality_20261017/run.sbatch WorkDir=/home/yx789/nqs-triangle-quality-20261017 StdErr=/home/yx789/nqs-triangle-quality-20261017/logs/clebsch_j0125_binary_truncated_stage0_362066_4294967294.err StdIn=/dev/null StdOut=/home/yx789/nqs-triangle-quality-20261017/logs/clebsch_j0125_binary_truncated_stage0_362066_4294967294.out KillOInInvalidDependent=Yes TresPerNode=gres/gpu:nvidia_a100_80gb_pcie:1 TresPerTask=cpu=4 \n",
+      "action": "pending job cancelled",
+      "command": [
+        "/usr/local/slurm/current/bin/scancel",
+        "--state=PENDING",
+        "362066"
+      ],
+      "stderr": ""
+    },
+    {
+      "job_id": 362067,
+      "disposition": "replace same frozen protocols/budgets after explicitCUDA launch fix; never cancel their running original104-step parents",
+      "controller_before": "JobId=362067 JobName=tq17_clebsch_j0125_binary_truncated_stage1 UserId=yx789(1858878) GroupId=pug-yx789(1859347) MCS_label=N/A Priority=12904 Nice=1000 Account=kim QOS=normal WCKey=* JobState=PENDING Reason=Dependency Dependency=afterok:362066(unfulfilled) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=14:00:00 TimeMin=N/A SubmitTime=2026-10-17T15:06:04 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-17T15:06:04 Scheduler=Main Partition=kim AllocNode:Sid=en-cc-unicorn-login-01:1932041 ReqNodeList=(null) ExcNodeList=(null) NodeList= NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=4,mem=64G,node=1,billing=4,gres/gpu=1,gres/gpu:nvidia_a100_80gb_pcie=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=4 MinMemoryNode=64G MinTmpDiskNode=0 Features=a100 DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/home/yx789/nqs-triangle-quality-20261017/projects/clebsch_tree_nqs/configs/remote/triangle_quality_20261017/run.sbatch WorkDir=/home/yx789/nqs-triangle-quality-20261017 StdErr=/home/yx789/nqs-triangle-quality-20261017/logs/clebsch_j0125_binary_truncated_stage1_362067_4294967294.err StdIn=/dev/null StdOut=/home/yx789/nqs-triangle-quality-20261017/logs/clebsch_j0125_binary_truncated_stage1_362067_4294967294.out KillOInInvalidDependent=Yes TresPerNode=gres/gpu:nvidia_a100_80gb_pcie:1 TresPerTask=cpu=4 \n",
+      "action": "pending job cancelled",
+      "command": [
+        "/usr/local/slurm/current/bin/scancel",
+        "--state=PENDING",
+        "362067"
+      ],
+      "stderr": ""
+    },
+    {
+      "job_id": 362068,
+      "disposition": "replace same frozen protocols/budgets after explicitCUDA launch fix; never cancel their running original104-step parents",
+      "controller_before": "JobId=362068 JobName=tq17_clebsch_j0125_ternary_joint_stage0 UserId=yx789(1858878) GroupId=pug-yx789(1859347) MCS_label=N/A Priority=12904 Nice=1000 Account=kim QOS=normal WCKey=* JobState=PENDING Reason=Dependency Dependency=afterok:357766(unfulfilled) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=14:00:00 TimeMin=N/A SubmitTime=2026-10-17T15:06:04 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-17T15:06:04 Scheduler=Main Partition=kim AllocNode:Sid=en-cc-unicorn-login-01:1932041 ReqNodeList=(null) ExcNodeList=(null) NodeList= NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=4,mem=64G,node=1,billing=4,gres/gpu=1,gres/gpu:nvidia_a100_80gb_pcie=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=4 MinMemoryNode=64G MinTmpDiskNode=0 Features=a100 DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/home/yx789/nqs-triangle-quality-20261017/projects/clebsch_tree_nqs/configs/remote/triangle_quality_20261017/run.sbatch WorkDir=/home/yx789/nqs-triangle-quality-20261017 StdErr=/home/yx789/nqs-triangle-quality-20261017/logs/clebsch_j0125_ternary_joint_stage0_362068_4294967294.err StdIn=/dev/null StdOut=/home/yx789/nqs-triangle-quality-20261017/logs/clebsch_j0125_ternary_joint_stage0_362068_4294967294.out KillOInInvalidDependent=Yes TresPerNode=gres/gpu:nvidia_a100_80gb_pcie:1 TresPerTask=cpu=4 \n",
+      "action": "pending job cancelled",
+      "command": [
+        "/usr/local/slurm/current/bin/scancel",
+        "--state=PENDING",
+        "362068"
+      ],
+      "stderr": ""
+    },
+    {
+      "job_id": 362069,
+      "disposition": "replace same frozen protocols/budgets after explicitCUDA launch fix; never cancel their running original104-step parents",
+      "controller_before": "JobId=362069 JobName=tq17_clebsch_j0125_ternary_joint_stage1 UserId=yx789(1858878) GroupId=pug-yx789(1859347) MCS_label=N/A Priority=12904 Nice=1000 Account=kim QOS=normal WCKey=* JobState=PENDING Reason=Dependency Dependency=afterok:362068(unfulfilled) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=14:00:00 TimeMin=N/A SubmitTime=2026-10-17T15:06:04 EligibleTime=Unknown AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-17T15:06:04 Scheduler=Main Partition=kim AllocNode:Sid=en-cc-unicorn-login-01:1932041 ReqNodeList=(null) ExcNodeList=(null) NodeList= NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=4,mem=64G,node=1,billing=4,gres/gpu=1,gres/gpu:nvidia_a100_80gb_pcie=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=4 MinMemoryNode=64G MinTmpDiskNode=0 Features=a100 DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/home/yx789/nqs-triangle-quality-20261017/projects/clebsch_tree_nqs/configs/remote/triangle_quality_20261017/run.sbatch WorkDir=/home/yx789/nqs-triangle-quality-20261017 StdErr=/home/yx789/nqs-triangle-quality-20261017/logs/clebsch_j0125_ternary_joint_stage1_362069_4294967294.err StdIn=/dev/null StdOut=/home/yx789/nqs-triangle-quality-20261017/logs/clebsch_j0125_ternary_joint_stage1_362069_4294967294.out KillOInInvalidDependent=Yes TresPerNode=gres/gpu:nvidia_a100_80gb_pcie:1 TresPerTask=cpu=4 \n",
+      "action": "pending job cancelled",
+      "command": [
+        "/usr/local/slurm/current/bin/scancel",
+        "--state=PENDING",
+        "362069"
+      ],
+      "stderr": ""
+    }
+  ]
+}

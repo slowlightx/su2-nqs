@@ -1,0 +1,89 @@
+{
+  "purpose": "Known NN-RVB SET-family finite calibration and exact non-QSL controls; conditional virtual-boundary mechanism is separate; no triangular phase classification.",
+  "output": "projects/clebsch_tree_nqs/results/qsl_symmetry_calibration_20261013_v1",
+  "display_timezone": "America/New_York",
+  "seconds_cap": 600,
+  "angle_points": 257,
+  "kagome_geometries": [
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "physical_regions": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  ],
+  "local_algebra_regions": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  ],
+  "boundary_lengths": [
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256
+  ],
+  "vacuum_weight": 0.65,
+  "spin_references": [
+    {
+      "label": "DMRG8192_sweep30",
+      "chi": 8192,
+      "energy_per_site": -0.51508700273065,
+      "checkpoint_sha256": "3c751cbab44f624a34183dac22a94edaaeafa5657be2594bfcc59a6376fe7896",
+      "arrays": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/dmrg/chi8192_sweep30_spin_env_v3/regions/spin/rdm.npz",
+      "report": "projects/clebsch_tree_nqs/results/spin_resonance_response_quality_20261011/inputs/dmrg/chi8192_sweep30_spin_env_v3/regions/spin/readout.json",
+      "arrays_sha256": "e1704e0c9ac331c2afcca127e11a9679b6cbd8f4621d7bdeb3f7ccaa7ee62432",
+      "report_sha256": "eb6df1cf936ade84a94979d0fcba21c41d0d22ee1d687568fb14f381ea212624"
+    },
+    {
+      "label": "DMRG10240_sweep32",
+      "chi": 10240,
+      "energy_per_site": -0.51524989588835,
+      "checkpoint_sha256": "80e0671ccfa69159ecbd800ff7749087cc6b704b4e1593c03a01269cef2839a3",
+      "arrays": "projects/clebsch_tree_nqs/results/coupling_quality_review_20261012/latest_inputs/dmrg/readouts/chi10240_sweep32_spin_env_v1/regions/spin/rdm.npz",
+      "report": "projects/clebsch_tree_nqs/results/coupling_quality_review_20261012/latest_inputs/dmrg/readouts/chi10240_sweep32_spin_env_v1/regions/spin/readout.json",
+      "arrays_sha256": "d6982d188da7e2fb8bf7e2d371efdee4cd0601189c55b63f930ca21d44efc5d3",
+      "report_sha256": "7a684d7eddf954670448f3f20e9f1e1198c73a2d471c9420f5ba6618ebbb4bab"
+    }
+  ],
+  "render_figure": true,
+  "decision_rules": [
+    "Published kagome NN-RVB is a known positive FAMILY, not a finite 12/18-site QSL or cusp certificate.",
+    "Keep single covering and SU2-restored magnetic singlet false positives on exactly the same physical sites.",
+    "Actual AKLT tensors demonstrate a non-QSL SPT can carry the same virtual SO3 sign; not a triangle Hamiltonian competitor.",
+    "Use actual nonsingular Gram whitening and all16 transition RDMs; no orthogonality by winding-label assumption.",
+    "Analytic even-charge boundary model has no independently established 2D bulk and is not the positive QSL reference.",
+    "Existing DMRG static oscillator functional is derived from supplied two-body correlations, not a measured excitation gap.",
+    "All original cached states/producer sources remain immutable; no new neural samples, H or amplitude queries."
+  ]
+}

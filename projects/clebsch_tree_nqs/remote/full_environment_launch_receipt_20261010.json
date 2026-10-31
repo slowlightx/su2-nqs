@@ -1,0 +1,90 @@
+{
+  "submitted_at_utc": "2026-10-10T04:49:32.543004+00:00",
+  "workspace": "/home/yx789/nqs-physics-envfix-20261010",
+  "manifest": "projects/clebsch_tree_nqs/remote/full_environment_sync_manifest_20261010.json",
+  "verified_files": 99,
+  "remote_exact_tests": "......                                                                   [100%]\n=============================== warnings summary ===============================\ntests/test_tensor_network_readout.py::test_tenpy_mpo_matches_independent_bit_hamiltonian_and_mps_readout\ntests/test_tensor_network_readout.py::test_tenpy_fixed_actual_sweep_budget_uses_strict_stop_convention\ntests/test_tensor_network_readout.py::test_global_symmetrized_dimers_keep_overlap_order_and_match_dense_oracle\ntests/test_tensor_network_readout.py::test_full_environments_measure_stale_canonical_forms_without_parent_repair\n  /home/yx789/miniconda3/envs/tenpy/lib/python3.12/site-packages/tenpy/networks/mps.py:1629: UserWarning: unit_cell_width is a new argument for MPS and similar classes. It is optional for now, but will become mandatory in a future release. The default value (unit_cell_width=len(sites)) is correct, iff the lattice is a Chain. For other lattices, it is incorrect. It is used for dipolar charges and correlation_function2.\n    super().__init__(sites, bc, unit_cell_width)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n6 passed, 4 warnings in 3.59s\n",
+  "old_queued_ids_cancelled": [
+    155166,
+    155167
+  ],
+  "old_completed_records_retained": true,
+  "parent_optimizer_and_wavefunction_untouched": true,
+  "exact_cached_one_bond_closure_error": 3.89e-16,
+  "jobs": [
+    {
+      "label": "dmrg5120-spin-env",
+      "id": 155812,
+      "dependency": null,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-envfix-20261010",
+        "--job-name=dmrg5120-spin-env",
+        "--kill-on-invalid-dep=yes",
+        "--cpus-per-task=8",
+        "--mem=96G",
+        "--time=02:00:00",
+        "projects/clebsch_tree_nqs/remote/physics_readout_kim.sbatch",
+        "dmrg",
+        "projects/clebsch_tree_nqs/configs/remote/spin_dmrg_chi5120_spin_env.json"
+      ]
+    },
+    {
+      "label": "dmrg5120-dimers-env",
+      "id": 155813,
+      "dependency": null,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-envfix-20261010",
+        "--job-name=dmrg5120-dimers-env",
+        "--kill-on-invalid-dep=yes",
+        "--cpus-per-task=8",
+        "--mem=96G",
+        "--time=02:00:00",
+        "projects/clebsch_tree_nqs/remote/physics_readout_kim.sbatch",
+        "dmrg",
+        "projects/clebsch_tree_nqs/configs/remote/spin_dmrg_chi5120_dimers_env.json"
+      ]
+    },
+    {
+      "label": "dmrg8192-spin-env",
+      "id": 155814,
+      "dependency": "152796",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-envfix-20261010",
+        "--job-name=dmrg8192-spin-env",
+        "--kill-on-invalid-dep=yes",
+        "--cpus-per-task=8",
+        "--mem=96G",
+        "--time=02:00:00",
+        "--dependency=afterok:152796",
+        "projects/clebsch_tree_nqs/remote/physics_readout_kim.sbatch",
+        "dmrg",
+        "projects/clebsch_tree_nqs/configs/remote/spin_dmrg_chi8192_spin_env_plan.json"
+      ]
+    },
+    {
+      "label": "dmrg8192-dimers-env",
+      "id": 155815,
+      "dependency": "152796",
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--chdir=/home/yx789/nqs-physics-envfix-20261010",
+        "--job-name=dmrg8192-dimers-env",
+        "--kill-on-invalid-dep=yes",
+        "--cpus-per-task=8",
+        "--mem=96G",
+        "--time=02:00:00",
+        "--dependency=afterok:152796",
+        "projects/clebsch_tree_nqs/remote/physics_readout_kim.sbatch",
+        "dmrg",
+        "projects/clebsch_tree_nqs/configs/remote/spin_dmrg_chi8192_dimers_env_plan.json"
+      ]
+    }
+  ]
+}

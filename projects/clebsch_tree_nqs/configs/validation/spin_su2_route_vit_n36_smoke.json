@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "exact_su2_route_vit_n36_local_smoke",
+  "seed": 20260917,
+  "case": {
+    "case_id": "triangular_6x6_j2_0p125_su2_route_vit_smoke",
+    "geometry": "triangular",
+    "rows": 6,
+    "columns": 6,
+    "j2_over_j1": 0.125,
+    "reference_route": "row_dimers"
+  },
+  "model": {
+    "feature_dim": 2,
+    "maximum_intermediate_q": 10,
+    "initialization_scale": 0.2,
+    "embedding_dim": 8,
+    "head_count": 2,
+    "depth": 1,
+    "mlp_ratio": 2,
+    "modulation_rank": 1,
+    "modulation_scale": 0.1,
+    "support_floor_head_scale": 0.05,
+    "backbone_support_floor": 0.1,
+    "translation_orbit_chunk_size": 6
+  },
+  "sampler": {
+    "chains": 8,
+    "burn_sweeps": 72,
+    "snapshots": 8,
+    "sweeps_between": 18,
+    "reference_dimer_proposal_probability": 0.8
+  }
+}

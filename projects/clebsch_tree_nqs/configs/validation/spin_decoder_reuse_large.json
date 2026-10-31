@@ -1,0 +1,18 @@
+{
+  "task": "N36_same_state_exact_reuse_single_large_tile_followup",
+  "output": "projects/clebsch_tree_nqs/results/spin_decoder_reuse_v2",
+  "parent": "projects/clebsch_tree_nqs/results/spin_decoder_cost_v1",
+  "cases": [{"geometry":"triangular","j2_over_j1":0.125},{"geometry":"square","j2_over_j1":0.5}],
+  "chunk_size": 1024,
+  "batch": 8,
+  "timing_repeats": 3,
+  "proposal_counts": [1,16],
+  "sampler_seed": 2026093004,
+  "wall_limit_seconds_per_process": 1800,
+  "peak_rss_limit_gib": 8,
+  "motivation": "Preserve v1 even if slower. Its triangular chunk64 end-to-end H is7.016s versus old1.793s, while planning is only0.052s and amplitude replay passes. One preregistered followup increases only execution tile to1024 (16x). No further tile/width/architecture sweep in this task, no selected energy data, same sealed parent states/parameters and source implementation. Report both attempts including negative v1.",
+  "contract": "Identical parent parameters, all q, width2, complete 432/288 A1 images and same eight frozen centers. Exact uint64 bit-string deduplication across centers, nonzero connectors and spatial images; retain every multiplicity and diagonal term. No coset, cutoff, architecture, training or energy-selection change. JAX device-only plan and forward H action; independent chunked/rematerialized full A1 amplitude for score gradients.",
+  "measurements": "Same isolated CPU workflow as v1, including remeasured old H, dynamic plan, cached/end-to-end H, full covariance force, and1/16 exchange proposals with refresh. Three synchronized warm calls; separate lowering/compile/first-call memory. Same keys; no equilibrium or energy claim.",
+  "checks": "Replay against old H and saved parent; finite-difference force; identical-key sampler endpoints and counters; immutable parameters; every failure retained, no node filtering.",
+  "caps": "1800s per geometry wall alarm,8GiB cumulative RSS checked between stages. Stop on cap/failure, do not enlarge budget. No remote/GPU/optimization."
+}

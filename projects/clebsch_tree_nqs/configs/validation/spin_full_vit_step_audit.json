@@ -1,0 +1,25 @@
+{
+  "task": "fixed_parent_single_step_generalization_audit",
+  "recheck_directory": "projects/clebsch_tree_nqs/results/spin_full_vit_recheck_v1",
+  "recheck_registration_sha256": "99d93ad0e6df35d14f1379360f6d891b3eb14ce1176bbe5bc024b9350330bce3",
+  "training_seeds": [2026100301,2026100302],
+  "training_chains": 64,
+  "training_burn_proposals": 4608,
+  "arms": [
+    {"id":"adam","base":"adam","overrides":{}},
+    {"id":"sr_original","base":"ridge_sr","overrides":{}},
+    {"id":"sr_small_step","base":"ridge_sr","overrides":{"step_size":0.003}},
+    {"id":"sr_damped","base":"ridge_sr","overrides":{"damping":1.0}}
+  ],
+  "validation": {
+    "streams":[{"kernel":"ordinary","seed":2026100311},{"kernel":"tempered","seed":2026100312}],
+    "chains":32,"snapshots":16,"ordinary_burn_proposals":4608,"ordinary_thin_proposals":96,
+    "betas":[0.0,0.1,0.25,0.5,0.75,1.0],"swap_every":8
+  },
+  "bootstrap":{"seed":2026100399,"replicates":4000,"family_tests":16},
+  "reference_flags":{"held_out_fs":0.05,"held_out_ess":0.8,"probe_log_weight_shift":0.6931471805599453},
+  "evaluation_chunk_size":32,
+  "scope":"Same frozen square 6x6 J2/J1=0.5 step-1064 parent; same 4032-parameter fixed-Sz exact-A1 architecture. Each candidate is exactly ONE optimizer update from that parent, never from another candidate. Retain inherited Adam moments. No long training, candidate selection, remote task or ED. Independent validation samples the parent, not the candidate; reweighted results are conditional correlated-sampling diagnostics, not certified candidate equilibrium energies. All results reported, no tuning or extensions.",
+  "probes":"Reuse all 24 fixed reference-check states from the sealed recheck, plus unique configurations reached by one nonzero Hamiltonian bond exchange. Separate uniform/low/high centers and neighbors. Deliberately selected, NOT a Born or energy-audit ensemble. Report gauge-invariant high-minus-low changes and outside-training centered log-weight tails, not basin probabilities.",
+  "budget":"Two 64-state parent training batches +1024 parent validation centers +8 candidates x(64 train+1024 validation) =9856 full-H centers. Exact probe amplitudes only; no H calls on biased probes. Two new sampling streams from uniform fixed-M starts, distinct kernels but same stationary target. No additional candidate chains. Fixed eight candidates; local CPU, expected 5-10 min plus tests, no adaptive continuation. Checkpoint each candidate and each validation snapshot; resume preserves pools, no new candidates."
+}

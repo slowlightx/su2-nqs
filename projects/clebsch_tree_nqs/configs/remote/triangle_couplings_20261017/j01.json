@@ -1,0 +1,67 @@
+{
+  "task": "bounded_strict_SU2_triangle_coupling_sequence",
+  "model": {
+    "length": 6,
+    "multiplicity_cap": 16,
+    "maximum_q": 10
+  },
+  "cost_parent": "/home/yx789/nqs-wavefunctions/nqs/triangle_decoder_20261015/cost",
+  "cost_checkpoint_sha256": {
+    "binary_free": "277c33183dd391b804738c3e25a157b7d8d848f8f0901f1b42b242f80ac509b7",
+    "ternary_free": "8b734c7e55bb0dcd0e27d73325b4a48a4006ccd56e76aee8cc7e8fae0319b63b",
+    "ternary_c3": "52e3c1c321123c00a5810bde4437b6de0618ede2d24b30b8a134307b52f13472"
+  },
+  "arity_comparison": {
+    "binary_rank": 8,
+    "maximum_parameter_mismatch_fraction": 0.01,
+    "maximum_local_parameter_mismatch_fraction": 0.01
+  },
+  "projection_chunk": 4,
+  "additional_steps": 40,
+  "samples": 512,
+  "chains": 64,
+  "burn_proposals": 720,
+  "spacing_proposals": 36,
+  "damping": 0.05,
+  "learning_rate": 0.0001,
+  "maximum_FS_sine": 0.025,
+  "training_seed": 2026103030,
+  "initial_audit_seed": 2026103031,
+  "audit_samples": 4096,
+  "initial_audit_samples": 512,
+  "audit_chains": 64,
+  "audit_burn_proposals": 720,
+  "audit_spacing_proposals": 36,
+  "require_gpu": true,
+  "arm": "binary_truncated",
+  "j2_over_j1": 0.1,
+  "steps": 40,
+  "endpoint_protocol": "new_H_common_binary_state",
+  "arity_endpoint_parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/triangle_capacity_20261017/j0125/binary_truncated",
+    "registration_sha256": "a165981e71581b8c1e192decd94bcb55e8ca72fac7c12b31d9b1afdbc5f0e9c7",
+    "checkpoint_sha256": "745697f0ff1e4de58ad861dfc21e0b0c82e3c45a5d46815276882329bb2630d2",
+    "params_sha256": "f3b7089c12de214949cc8cc68e7cf9537ca19f894f1b31535a0e2c701b7ecf1d",
+    "completed_steps": 40,
+    "audit_sha256": "8adfbee876ee420a9adc6610e486f3d529706a7f296ffea314227823a2d7c30a"
+  },
+  "terminal_audit_seed": 2026103032,
+  "output": "/home/yx789/nqs-wavefunctions/nqs/triangle_couplings_20261017/j01/binary_truncated",
+  "interpretation": "Same audited binary physical parent for BOTH arity arms at each target; J0 parent for J=.025/.05 and J=.125 parent for the other four targets. Exact SU2 S0 and coherent full lattice A1. Joint tensor is independent, not factorized into two truncated binary maps. Preserve learned physical coefficients and lift binary to joint exactly; explicitly reset optimizer, RNG and chains on H change. Source-H audit is never a target-H result. Each target requires its own independent Sz-connectivity/full-projection H oracle and fresh initial audit. Registered total40 steps/512 samples plus4096 independent terminal audit; current release is ONLY the bounded two-step pilot. No preselected arity winner or QSL claim.",
+  "hamiltonian_transfer": {
+    "source_j2": 0.125,
+    "target_j2": 0.1
+  },
+  "arm_overrides": {
+    "binary_truncated": {
+      "arm": "binary_truncated",
+      "terminal_audit_seed": 2026103032,
+      "output": "/home/yx789/nqs-wavefunctions/nqs/triangle_couplings_20261017/j01/binary_truncated"
+    },
+    "ternary_joint": {
+      "arm": "ternary_joint",
+      "terminal_audit_seed": 2026103033,
+      "output": "/home/yx789/nqs-wavefunctions/nqs/triangle_couplings_20261017/j01/ternary_joint"
+    }
+  }
+}

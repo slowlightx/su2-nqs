@@ -1,0 +1,22 @@
+{
+  "output": "projects/clebsch_tree_nqs/results/spin_tensor_network_chi2048_nots_v1",
+  "initial_checkpoint": "projects/clebsch_tree_nqs/results/spin_tensor_network_chi1024_probe_v1/dimer/chi1024.h5",
+  "rows": 6,
+  "columns": 6,
+  "j2": 0.125,
+  "chi": 2048,
+  "sweeps": 8,
+  "tenpy_version": "1.1.0",
+  "mixer_params": {"amplitude": 1e-5, "decay": 2.0, "disable_after": 6},
+  "chunk_seconds": 79200,
+  "reserve_seconds": 900,
+  "initial_sweep_seconds_bound": 10800,
+  "total_seconds_cap": 259200,
+  "memory_cap_gib": 85,
+  "regions": {
+    "compact4": [14, 15, 20, 21],
+    "compact6": [12, 13, 14, 18, 19, 20],
+    "winding6": [12, 13, 14, 15, 16, 17]
+  },
+  "protocol": "ONE fixed eight-sweep reference trajectory from the lower-energy local chi1024 endpoint. Initial path is finalized only after both local arms are frozen; no readout-based parent choice. CPU-only 96GiB/23h allocation, <=22h compute chunks with 900s checkpoint reserve. All discarded partial work counts toward a 72h total wall cap. No automatic resubmission, chi3072 expansion, physical symmetry repair, phase claim or new many-body ED. Full high-chi H-squared variance is not silently approximated."
+}

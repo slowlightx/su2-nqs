@@ -1,0 +1,121 @@
+{
+  "task": "native_triangle_evidence_guarded_regularized_SR_v8",
+  "case": "j0125_binary_truncated",
+  "stage": "j0125_w28_regularized32",
+  "model": {
+    "length": 6,
+    "multiplicity_cap": 28,
+    "maximum_q": 10
+  },
+  "arity": "binary_truncated",
+  "binary_rank": 8,
+  "j2_over_j1": 0.125,
+  "parent": {
+    "kind": "continuation",
+    "model": {
+      "length": 6,
+      "multiplicity_cap": 28,
+      "maximum_q": 10
+    },
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/ct6_wide_production_v2_20261023/j0125/w28",
+    "plan_path": "projects/clebsch_tree_nqs/configs/remote/ct6_wide_production_20261023/j0125_w28.json",
+    "expected_identity": {
+      "case": "j0125_binary_truncated",
+      "stage": "j0125_w28_production128",
+      "arity": "binary_truncated",
+      "model": {
+        "length": 6,
+        "multiplicity_cap": 28,
+        "maximum_q": 10
+      },
+      "j2_over_j1": 0.125,
+      "binary_rank": 8
+    },
+    "absolute_completed_steps": 444,
+    "sealed_files": {
+      "registration.json": "e249929f15be1c315d6107e5d1b9ab990f75767b930c237e9f4682bc12426919",
+      "results.json": "4329ffaa2460e02ec32331e56ac21fc1676039e3e8ae17bc21fa2990529cee10",
+      "terminal_audit.json": "e377ba814d13614ac856e97b1b9eb0134e8ad7e7dc54218dad4da19163bb13a8",
+      "checkpoint.pkl": "2e46a4b7c410ebfea83ae94913d4e8a5a3d84c45157c8671126213ac0a7b9c54",
+      "process_replay.json": "8b2b623c4b9f0b692b2785bbc4de43b912699e2a32d7f94fde2a33b0aa0afd2e"
+    }
+  },
+  "pilot_steps": 0,
+  "training": {
+    "steps": 32,
+    "samples": 4096,
+    "chains": 256,
+    "initial_burn_proposals": 1440,
+    "refresh_proposals": 36,
+    "spacing_proposals": 36
+  },
+  "calibration": {
+    "samples": 2048,
+    "chains": 128,
+    "initial_burn_proposals": 1440,
+    "refresh_proposals": 144,
+    "spacing_proposals": 36,
+    "target_fs_sine": 0.001,
+    "relative_tolerance": 0.02,
+    "max_factor": 2,
+    "bracket_steps": 8,
+    "bisection_steps": 12,
+    "minimum_ess_fraction": 0.98
+  },
+  "audit": {
+    "samples": 16384,
+    "chains": 128,
+    "refresh_proposals": 1440,
+    "spacing_proposals": 36
+  },
+  "seeds": {
+    "calibration": 2610267201,
+    "expansion": 2610267202,
+    "audit": 2610267203,
+    "training": 2610267204,
+    "direction": 2610267205
+  },
+  "learning_rate": 0.03,
+  "damping": 0.5,
+  "maximum_fs_sine": 0.005,
+  "minimum_ess_fraction": 0.98,
+  "halvings": 12,
+  "new_feature_scale": 0.2,
+  "projection_chunk": 4,
+  "action_chunk": 4,
+  "score_chunk": 2,
+  "tolerance": 2e-11,
+  "require_gpu": true,
+  "budget": {
+    "pilot_seconds": 14400,
+    "replay_seconds": 7200,
+    "train_seconds": 68400,
+    "maximum_peak_device_bytes": 75161927680
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/ct6_regularized_update_20261026/j0125",
+  "interpretation": "Continue final w28 parameters/optimizer, full432 coherent A1/full H, directSR ridge0.5, 4096/256 independent training chains; fixed physical calibration. v7 artifacts remain failed and unchanged. New registered slope diagnostic classifies confirmed_descent, unresolved, resolved_ascent. With finite/FS/ESS/reference/numerical/cost/memory checks satisfied, unresolved may release fixed32 updates, explicitly not evidence of descent. Resolved ascent or unsafe state update rejects this direction. Separate process replay and fresh16384/128-chain fixed terminal audit; endpoint statistics determine actual improvement. All parameters/optimizer/RNG saved each step; no automatic next block, width/qmax/head/attention changes.",
+  "sr_solver": "dual_force",
+  "continuation_profile": "inherit_parameters_optimizer_explicit_resampled_chains",
+  "runtime_contract": {
+    "policy": "pin_first_pilot_numerical_runtime",
+    "node": "kim-compute-05"
+  },
+  "optimization_control": "frozen_parent_regularized_SR_evidence_guarded_endpoint",
+  "sr_use_adam": false,
+  "sr_tangent_fs_radius": 0.003,
+  "parameter_chunk_size": 8192,
+  "reset_optimizer": false,
+  "campaign_deadline_utc": "2026-10-28T20:44:00+00:00",
+  "direction_check": {
+    "samples": 2048,
+    "chains": 128,
+    "refresh_proposals": 1440,
+    "spacing_proposals": 36,
+    "minimum_fs_sine": 1e-12,
+    "maximum_fs_sine": 0.005,
+    "minimum_ess_fraction": 0.98,
+    "slope_standard_errors": 2,
+    "parent_energy_consistency_standard_errors": 3,
+    "release_policy": "reject_resolved_ascent_allow_unresolved"
+  }
+}

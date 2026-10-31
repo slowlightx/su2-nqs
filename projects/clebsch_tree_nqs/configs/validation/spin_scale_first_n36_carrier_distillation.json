@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_scale_first_n36_carrier_distillation",
+  "source_preflight": "spin_scale_first_three_arm_preflight.json",
+  "controls": {
+    "initialization_seed": 2026092481,
+    "teacher_seed": 2026092487,
+    "distillation_seed": 2026092491,
+    "held_out_seed": 2026092497,
+    "native_seed": 2026092507,
+    "sector_seed": 2026092509,
+    "direct_phase_initialization_scale": 0.0,
+    "pool_size": 16384,
+    "held_out_size": 4096,
+    "steps": 600,
+    "batch_size": 512,
+    "audit_batch_size": 512,
+    "learning_rate": 0.002,
+    "phase_weight": 2.0,
+    "record_every": 100,
+    "native_sample_count": 16,
+    "sector_audit_sample_count": 4096,
+    "su2_connected_capacity": 8192,
+    "su2_amplitude_tile_size": 256
+  },
+  "gates": {
+    "minimum_phase_coherence": 0.999,
+    "minimum_m0_sector_weight": 0.9,
+    "maximum_energy_per_site": -0.3,
+    "maximum_variance_per_site": 1.0,
+    "maximum_energy_imaginary_abs": 0.05
+  },
+  "claim_boundary": "Analytic-carrier initialization and small native-H N36 canary only. Passing permits one bounded remote seed; it is not a variational, scaling, or phase-diagram claim."
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_entanglement_channel_audit",
+  "geometry": "triangular_4x4_periodic",
+  "purpose": "physics_mechanism_diagnosis",
+  "state_bundle": "projects/clebsch_tree_nqs/results/spin_carrier_cell_scalar_circuit_v1/states.npz",
+  "state_bundle_sha256": "c9d1fee5f53112c97f721b5b6ccad005f021fab143467401ea8a9ff46d1f9264",
+  "source_results": "projects/clebsch_tree_nqs/results/spin_carrier_cell_scalar_circuit_v1/results.json",
+  "couplings": [0.0, 0.125],
+  "exact_energy_per_site": {
+    "0": -0.5347196823447661,
+    "0.125": -0.5345819429505472
+  },
+  "cuts": {
+    "two_by_two_plaquette": [0, 1, 4, 5],
+    "vertical_half_torus": [0, 1, 4, 5, 8, 9, 12, 13],
+    "horizontal_half_torus": [0, 1, 2, 3, 4, 5, 6, 7]
+  },
+  "candidates": {
+    "carrier": "carrier_a1",
+    "two_lanczos": "two_lanczos_a1",
+    "physical_cell_circuit": "physical_overlapping_cell_circuit_best_a1",
+    "scrambled_cell_circuit": "isospectral_scrambled_cell_circuit_best_a1"
+  },
+  "claim_boundary": "Mechanism diagnosis on previously sealed exact-small states; no thermodynamic or QSL claim is licensed by this audit alone."
+}

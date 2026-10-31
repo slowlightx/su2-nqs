@@ -1,0 +1,13 @@
+{
+  "source_readout": "/home/yx789/nqs-wavefunctions/readouts/spin_response_moments_20261014_j0125_s200_v2",
+  "source_registration_sha256": "efe2c0f146fb0c80fc93d92f944aa23ecd4f045483fde6a914d4210907cfa27b",
+  "output": "/home/yx789/nqs-wavefunctions/readouts/response_krylov_20261014_j0125_s200",
+  "records_per_chain": 4,
+  "record_stride": 8,
+  "records": 512,
+  "query_batch": 64,
+  "centers_per_chunk": 8,
+  "backend": "gpu",
+  "seconds_cap": 1680,
+  "scope": "Reused frozen Q1 records, complete original A1 parent and K/M sources; m0 through m3; no m4/Ritz residual; no new Born sampling or source optimization."
+}

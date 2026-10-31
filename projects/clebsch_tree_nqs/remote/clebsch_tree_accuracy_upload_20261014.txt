@@ -1,0 +1,10 @@
+projects/clebsch_tree_nqs/workflows/spin_clebsch_tree_training.py
+projects/clebsch_tree_nqs/workflows/spin_clebsch_tree_audit.py
+projects/clebsch_tree_nqs/remote/clebsch_tree_training_a100.sbatch
+projects/clebsch_tree_nqs/remote/clebsch_tree_audit_a100.sbatch
+projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/vieijra_nys_square8_accuracy.json
+projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/vieijra_nys_square8_accuracy_audit100.json
+projects/clebsch_tree_nqs/configs/remote/scale_capacity_20261014/vieijra_nys_square8_accuracy_audit1000.json
+tests/test_clebsch_tree_training.py
+tests/test_physical_sr_adam.py
+tests/test_literature_clebsch_tree.py

@@ -1,0 +1,29 @@
+{
+  "n_sites": 36,
+  "dtype": "float64",
+  "limits": {
+    "memory_gib": 480,
+    "wall_seconds": 5400,
+    "threads": 32
+  },
+  "regions": [
+    {
+      "name": "local_hexagon6",
+      "sites": [
+        20,
+        21,
+        15,
+        8,
+        7,
+        13
+      ],
+      "dense_estimate_override": true
+    }
+  ],
+  "stop_on_failure": true,
+  "chi_upper_bound": 5120,
+  "checkpoint": "/scratch/yx51/nqs_reference_dmrg/inputs/b1f8abd6ecce2f9fde31be7b08d8444673e6fdc4612af79a3d4ab5e6a0f2b239/checkpoint.h5",
+  "checkpoint_sha256": "b1f8abd6ecce2f9fde31be7b08d8444673e6fdc4612af79a3d4ab5e6a0f2b239",
+  "output": "/scratch/yx51/nqs_reference_dmrg/projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/region_probes/chi5120_sweep26_hexagon6_v1",
+  "purpose": "Fixed-parent raw RDM of the contractible J1-shell hexagon, with six J2 chords in the actual Hamiltonian. No optimization/canonical-form change/new H call. Readonly checkpoint is copied from verified WORK archive to scratch. Explicit dense-estimate override relies on existing U1 block sparsity, not assumed free memory; per-process memory/wall limits remain enforced. Compare chi4096 and5120 own-quality drift before seven/eight-site RDM acquisition."
+}

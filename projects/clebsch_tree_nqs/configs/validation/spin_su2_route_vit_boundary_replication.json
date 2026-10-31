@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "exact_su2_route_vit_causal_coupling_scan",
+  "model": {
+    "base_feature_dim": 4,
+    "matched_feature_dim": 6,
+    "maximum_intermediate_q": 8,
+    "initialization_scale": 1.0,
+    "embedding_dim": 12,
+    "head_count": 3,
+    "depth": 1,
+    "mlp_ratio": 2,
+    "modulation_rank": 2,
+    "modulation_scale": 0.15
+  },
+  "optimization": {
+    "warmup_steps": 100,
+    "comparison_steps": 120,
+    "learning_rate": 0.005,
+    "route_learning_rate": 0.003,
+    "record_every": 10,
+    "seeds": [32, 33]
+  },
+  "cases": [
+    {
+      "case_id": "triangular_4x4_j2_0p075_boundary_replication",
+      "geometry": "triangular", "rows": 4, "columns": 4,
+      "j2_over_j1": 0.075, "projection": "translation",
+      "exact_energy_anchor": -8.535019890644346,
+      "anchor_provenance": "one-time local fixed-M0 eigsh; residual 2.33e-13",
+      "phase_context": "reported 120-degree-AFM/QSL boundary region"
+    },
+    {
+      "case_id": "square_4x4_j2_0p4_boundary_replication",
+      "geometry": "square", "rows": 4, "columns": 4,
+      "j2_over_j1": 0.4, "projection": "translation",
+      "exact_energy_anchor": -8.818364363210577,
+      "anchor_provenance": "one-time local fixed-M0 eigsh; residual 5.83e-13",
+      "phase_context": "Neel/intermediate boundary region"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "mode": "saved_symmetry_defect",
+  "output": "projects/clebsch_tree_nqs/results/spin_symmetry_defect_quality_v1",
+  "sealed_protocols": [
+    {"method": "finite_dmrg", "path": "projects/clebsch_tree_nqs/results/spin_tensor_network_continuation_v2/su2_protocol_v4"},
+    {"method": "full_vit_vap", "path": "projects/clebsch_tree_nqs/results/spin_full_vit_vap_v1/su2_protocol_v2"}
+  ],
+  "ordinary_vit_audits": [
+    {"family": "warm_full_network_quality", "path": "projects/clebsch_tree_nqs/results/spin_spatial_vit_quality_v2/stable_sr", "steps": [128, 256, 512, 768, 942]}
+  ],
+  "protocol": "Bounded zero-new-state audit on existing raw coherent RDMs. Quantify actual rotation defects, magnetic-axis anisotropy, invariant scalar exact invariance and finite-matrix continuity bounds; use whole-chain cross-products to distinguish N36 finite-sample noise from detectable symmetry defect. No input replacement, twirl-state, positivity repair, fake SU2 spectrum, new training/sampling/ED/MPS contraction/amplitude/H query. Use all declared cuts/quality nodes, retain negative quadratic estimates. The ordinary N36 cache is the old 4032-parameter step942 parent, NOT the separate current Kim GPU network. No cross-size or translated-cut phase comparison. Self-normalized ratio bias, Born mixing bias and finite-chi ground-state bias remain."
+}

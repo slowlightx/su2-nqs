@@ -1,0 +1,14 @@
+{
+  "primary_source": "https://arxiv.org/html/2104.14869",
+  "primary_sections": ["II.1 equations (3)-(4), Figure 1", "IV.2", "IV.3", "Appendix A Table 1", "Appendix B"],
+  "capacity": {"multiplicity_cap_j_le_2": 16, "multiplicity_cap_j_gt_2": 8, "j_max": 4, "doubled_maximum_q": 8, "native_real_parameters": 227958},
+  "width_definition": "tau_j^t is the reduced multiplicity width for one total-spin j, not sum_j(2j+1)tau_j and not a total bond dimension. Same-layer nodes share W. The root has a final linear readout.",
+  "model": "Physical Sz-configuration input; alternating horizontal/vertical binary CG merges; magnetic indices fixed, shared real W learned. Exact S=0 plus coherent translation/reflection/rotation projection.",
+  "appendix_B_optimizer": {"warm_records": 256, "warm_SR_uniform_ridge": 0.01, "warm_SR_then_Adam_learning_rate": 0.005, "Adam_records": 4096, "Adam_learning_rate": 0.001, "Adam_gradient_norm_clip": 0.001, "Adam_betas": [0.9, 0.999]},
+  "paper_does_not_specify": ["exact number of SR warm steps", "exact final benchmark update count"],
+  "separate_hyperparameter_scan": {"records": 1024, "updates": 1000, "learning_rate": 0.005},
+  "paper_total_energy_8x8": {"j0": [-43.0964, 0.0032], "j05": [-31.9085, 0.0042]},
+  "initialization": "Paper: uniform W, sequential layer activation-std calibration on 1000 random configurations. This continuation preserves existing native optimized parameters instead; it does not redo this initializer.",
+  "author_code_search": {"date": "2026-10-20", "paper_dedicated_repository_link": null, "github_api_ClebschTree_repository_search_count": 0, "jwnys_public_repository_listing_has_ClebschTree": false, "claim": "No verified public paper-specific implementation found; NetKet is acknowledged but is not the missing author architecture code."},
+  "interpretation": "Exact paper-capacity architecture reproduction attempt, not a claim of author-identical training or achieved paper accuracy. From each saved same-H state, explicitly reset optimizer moments for a registered 16-step paper-like SR+Adam reentry, then 112 clipped-Adam steps. Parameters, physical state, chains, RNG and historical work remain traceable. No new head, attention or increased width."
+}

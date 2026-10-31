@@ -1,0 +1,71 @@
+{
+  "output": "projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v2/triangle_pair5_v1",
+  "source_config": "projects/clebsch_tree_nqs/configs/validation/spin_screening_information_20261013.json",
+  "seconds_cap": 3600,
+  "solver_seconds": 20,
+  "six_individual_solver_seconds": 30,
+  "family_alpha": 0.05,
+  "primary_family_size": 32,
+  "training_endpoints": [
+    "triangular_0_500",
+    "triangular_0.125_8600"
+  ],
+  "training_chains": "0..63; only 64..127 audit those same endpoints; all chains at later endpoints",
+  "statistical_scope": "Secondary, geometrically motivated after calibrating the published Kagome bowtie. Two triangular two-triangle regions have extra J1/J2 chords; never call them the Kagome bowtie. All detectors fitted before evaluating quality histories.",
+  "cases": [
+    {
+      "name": "triangle_pair5_upper",
+      "parent": "compact6",
+      "keep": [
+        0,
+        1,
+        2,
+        4,
+        5
+      ],
+      "parties": [
+        [
+          0,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "triangle_pair5_lower",
+      "parent": "compact6",
+      "keep": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "parties": [
+        [
+          0,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          4
+        ]
+      ]
+    }
+  ],
+  "moment_test_cases": [],
+  "moment_test_parent": "DMRG_10240_32",
+  "biseparable_iterations": 25,
+  "biseparable_moment_tolerance": 1e-7,
+  "notes": "GME of declared parties, no universal QSL label. Local channels retain charge flags. Maximum entropy uses only declared scalar pair/two-bond/p(q) constraints. A PPT mixture is not a biseparable certificate. Full single-spin fits are bounded lower-bound searches, zero is inconclusive. No new quantum states, training, MPS contractions, or amplitude/H queries.",
+  "solver_repair": "Identical physical comparisons; capped HiGHS interior point replaces stalled native simplex. v1 partial outputs retained."
+}

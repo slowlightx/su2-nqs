@@ -1,0 +1,68 @@
+{
+  "mode": "full_state_continuation",
+  "parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/continuation_20261019/vit12/j0125_continue/seed1",
+    "completed_steps": 160,
+    "audit_file": "energy.json",
+    "registration_sha256": "5005b7593f39026f2998a3d17205903fe9184e8d1cbd76edc27ba1abc97509ae"
+  },
+  "continuation": {
+    "additional_steps": 64,
+    "time_budget_extension_seconds": 50400
+  },
+  "child_overrides": {
+    "output": "/home/yx789/nqs-wavefunctions/nqs/vit_relaunch_20261022/vit12_j0125/seed1",
+    "stages": [
+      {
+        "projection": "gamma_a1",
+        "steps": 32
+      },
+      {
+        "projection": "gamma_a1",
+        "steps": 64
+      },
+      {
+        "projection": "gamma_a1",
+        "steps": 64
+      },
+      {
+        "projection": "gamma_a1",
+        "steps": 64
+      }
+    ],
+    "quality_milestones": [
+      0,
+      2,
+      16,
+      32,
+      34,
+      36,
+      64,
+      96,
+      98,
+      100,
+      128,
+      160,
+      162,
+      164,
+      168,
+      224
+    ],
+    "maximum_training_seconds": 165600,
+    "audit": {
+      "seeds": [
+        2610227410,
+        2610227411
+      ],
+      "chains": 32,
+      "snapshots": 128,
+      "proposals_between_snapshots": 576,
+      "burn_proposals": 11520,
+      "query_batch": 2,
+      "bootstrap_seed": 2610227412,
+      "bootstrap_replicates": 2000
+    }
+  },
+  "generated_config": "/home/yx789/nqs-vit-relaunch-20261022/projects/clebsch_tree_nqs/configs/remote/vit_relaunch_20261022/vit12_j0125.json",
+  "rationale": "Preserve verified160 endpoint of improving J.125 route. Append64full-state updates, no architecture/SR/sampling changes.2/4process boundaries and fresh8192-record independentterminalaudit. ~18.5A100h warm for64updates, startup/audit extra."
+}

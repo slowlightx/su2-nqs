@@ -1,0 +1,39 @@
+{
+  "task": "manual_staged_Kim_CT6_restart_20261022",
+  "workspace": "/home/yx789/nqs-ct6-relaunch-20261022",
+  "output": "/home/yx789/nqs-wavefunctions/nqs/ct6_relaunch_20261022",
+  "campaign_path": "/home/yx789/nqs-ct6-relaunch-20261022/projects/clebsch_tree_nqs/configs/remote/ct6_relaunch_20261022/campaign.json",
+  "runner": "/home/yx789/nqs-ct6-relaunch-20261022/projects/clebsch_tree_nqs/configs/remote/ct6_relaunch_20261022/run.sbatch",
+  "created_utc": "2026-10-22T23:40:20.894597+00:00",
+  "deadline_utc": "2026-10-28T20:44:00+00:00",
+  "node": "kim-compute-05",
+  "cases": [
+    {
+      "case": "j0_ridge005",
+      "config": "/home/yx789/nqs-ct6-relaunch-20261022/projects/clebsch_tree_nqs/configs/remote/ct6_relaunch_20261022/j0_ridge005.json",
+      "coupling": "j0"
+    },
+    {
+      "case": "j0_ridge050",
+      "config": "/home/yx789/nqs-ct6-relaunch-20261022/projects/clebsch_tree_nqs/configs/remote/ct6_relaunch_20261022/j0_ridge050.json",
+      "coupling": "j0"
+    },
+    {
+      "case": "j0125_ridge005",
+      "config": "/home/yx789/nqs-ct6-relaunch-20261022/projects/clebsch_tree_nqs/configs/remote/ct6_relaunch_20261022/j0125_ridge005.json",
+      "coupling": "j0125"
+    },
+    {
+      "case": "j0125_ridge050",
+      "config": "/home/yx789/nqs-ct6-relaunch-20261022/projects/clebsch_tree_nqs/configs/remote/ct6_relaunch_20261022/j0125_ridge050.json",
+      "coupling": "j0125"
+    }
+  ],
+  "automatic_production_submission": false,
+  "initial_stage_steps": 16,
+  "initial_stage_requested_A100_hours": 48,
+  "CT6_total_budget_A100_hours": 240,
+  "earlier_failed_pilots_A100_hours": 0.012777777777777779,
+  "maximum_simultaneous_CT6_GPUs": 2,
+  "policy": "CPUtest+CPUparentseal ->2actualGPUupdates -> separateprocessreplay -> remaining14+32768freshaudit. NoautomaticCPUadvancejob, longtraining,widthchange,head orB200migration. Alloldstateandfailedworkspacespreserved. PrioritizeCT6withinKim."
+}

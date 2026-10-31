@@ -1,0 +1,11 @@
+{
+  "primary_directory":"projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v2",
+  "output":"projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v2/triangle_pair5_full_rdm_v1",
+  "six_site_labels":[],"fork_directories":[],
+  "derived_cases":[
+    {"name":"triangle_pair5_upper","parent":"compact6","keep":[0,1,2,4,5],"parties":[[0,3],[1],[2,4]],"labels":["DMRG_8192_30","DMRG_10240_32"]},
+    {"name":"triangle_pair5_lower","parent":"compact6","keep":[0,1,3,4,5],"parties":[[0,2],[3],[1,4]],"labels":["DMRG_8192_30","DMRG_10240_32"]}
+  ],
+  "inflation":1.02,"iterations":80,"moment_tolerance":1e-9,"seconds_cap":300,
+  "purpose":"Check actual three-party biseparability for the fixed two-triangle regions. Full original RDM residual must close; if confirmed, local measurements preserving those parties cannot generate GME, avoiding redundant negative-state scans. No physical-state repair."
+}

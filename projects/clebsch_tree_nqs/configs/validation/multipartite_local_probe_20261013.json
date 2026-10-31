@@ -1,0 +1,27 @@
+{
+  "primary_directory": "projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v2",
+  "output": "projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v2/local_probe_v1",
+  "positive_calibration_directory": "projects/clebsch_tree_nqs/results/qsl_symmetry_calibration_20261013_v1",
+  "training_endpoints": ["triangular_0_500", "triangular_0.125_8600"],
+  "seconds_cap": 3600,
+  "baseline_solver_seconds": 12,
+  "child_solver_seconds": 4,
+  "real_physical_witnesses": true,
+  "measured_sites": [0,1,2,3,4,5],
+  "measurement_axes": ["z","x"],
+  "family_alpha": 0.05,
+  "comparison_family_size": 304,
+  "cases": [
+    {"name":"compact6_coarse", "parent":"compact6", "parties":[[0,3],[1,4],[2,5]], "baseline_key":"compact6_coarse__triangular_0.125_8600"},
+    {"name":"compact6_individual", "parent":"compact6", "parties":[[0],[1],[2],[3],[4],[5]], "baseline_key":"compact6_individual__triangular_0.125_8600"},
+    {"name":"hexagon6_coarse", "parent":"local_hexagon6", "parties":[[0,1],[2,3],[4,5]], "baseline_key":"hexagon6_coarse__triangular_0.125_8600"},
+    {"name":"hexagon6_individual", "parent":"local_hexagon6", "parties":[[0],[1],[2],[3],[4],[5]], "baseline_key":"hexagon6_individual__triangular_0.125_8600"},
+    {"name":"winding6_coarse", "parent":"winding6", "parties":[[0,1],[2,3],[4,5]], "baseline_key":"winding6_coarse__triangular_0.125_8600"},
+    {"name":"winding6_individual", "parent":"winding6", "parties":[[0],[1],[2],[3],[4],[5]], "baseline_key":"winding6_individual__triangular_0.125_8600"},
+    {"name":"hexagon6_shifted_pairs", "parent":"local_hexagon6", "parties":[[1,2],[3,4],[5,0]]},
+    {"name":"hexagon6_opposite_pairs", "parent":"local_hexagon6", "parties":[[0,3],[1,4],[2,5]]}
+  ],
+  "missing_geometries": [{"name":"fork4", "sites":[14,20,15,7], "reason":"Cannot be obtained by tracing cached six-site regions. Separate bounded local chi5120 MPS probe; not included in the matched J0/.125 family. A J1 tree becomes chorded at nonzero J2."}],
+  "comparison_scope": "304 =8 fixed partitions x19 contexts (baseline, six losses, six x and six z measurements)x coupling/cross-method contrasts. Pooled witnesses fitted only on first64 early chains; audit complementary64 or later128 chains. All outcomes retained. Entire study retrospective; normal family threshold plus own quality ranges is descriptive, not a certified equilibrium/bias bound.",
+  "priority": "Geometry and local survival before any new distant-correlation estimator. Stable differences and control specificity must support escalation. Existing scalar geometry figures reused rather than repeating old fitting."
+}

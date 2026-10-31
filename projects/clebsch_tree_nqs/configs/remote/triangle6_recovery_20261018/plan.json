@@ -1,0 +1,52 @@
+{
+  "task": "Repair J0 triangular6 same-state continuation provenance, not physics",
+  "helper_sha256": "b044beb91bff38cf78d717d827d9c87d12726cb9911419f873e6aace72d93a79",
+  "base_plans": {
+    "binary_truncated": {
+      "path": "projects/clebsch_tree_nqs/configs/remote/triangle_quality_20261017/clebsch_j0_binary_truncated.json",
+      "sha256": "5bcfbe4d22c62604660895fd77476eeb2e9ef96ef653bbd5adbf5a3bd2bcd366"
+    },
+    "ternary_joint": {
+      "path": "projects/clebsch_tree_nqs/configs/remote/triangle_quality_20261017/clebsch_j0_ternary_joint.json",
+      "sha256": "aee0f807235bca909d2349cbf8d36f438612f26f4da232b166ffcb1ef7f33964"
+    }
+  },
+  "output_root": "/home/yx789/nqs-wavefunctions/nqs/triangle6_recovery_20261018/j0",
+  "training_session_seconds": 27000,
+  "audit_seeds": {
+    "binary_truncated": [2026101810, 2026101811],
+    "ternary_joint": [2026101820, 2026101821]
+  },
+  "budget": {
+    "same_scientific_updates_as_failed_plan": true,
+    "additional_updates_per_arm": 96,
+    "endpoints": [152, 200],
+    "samples_per_update": 1024,
+    "independent_audit_records": [8192, 16384],
+    "jobs": 4,
+    "A100s_per_job": 1,
+    "wall_hours_per_job": 10,
+    "new_J0_requested_GPU_hours": 40,
+    "superseded_failed_J0_requested_GPU_hours": 32,
+    "additional_walltime_margin_over_superseded_J0_GPU_hours": 8,
+    "unchanged_existing_J0125_requested_GPU_hours": 56,
+    "revised_J0_plus_J0125_requested_GPU_hour_ceiling": 96,
+    "expected_actual_J0_GPU_hours": [26, 30],
+    "automatic_extension_beyond200": false
+  },
+  "invariants": {
+    "core_source_edits": false,
+    "certificate_guard_weakened": false,
+    "original_parent_or_preflight_overwritten": false,
+    "fresh_actual_parent_full_H_oracle": true,
+    "complete_coherent_Gamma_A1_images": 432,
+    "target_total_spin": 0,
+    "multiplicity_cap": 16,
+    "maximum_doubled_q": 10,
+    "optimizer_sampler_RNG_restored": true,
+    "checkpoint_every_update": true,
+    "later_stage_requires_independent_parent_audit": true,
+    "ordinary_spatial_ViT_untouched": true,
+    "triangle12_and_square_and_attention_untouched": true
+  }
+}

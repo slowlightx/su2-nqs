@@ -1,0 +1,89 @@
+{
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 2026102601,
+  "compute_seconds": 1800,
+  "materialized_config": "/home/yx789/nqs-wavefunctions/readouts/configs/square_j05_continue_step01000_regional.json",
+  "output": "/home/yx789/nqs-wavefunctions/readouts/square_j05_continue_step01000_regional",
+  "parent": "/home/yx789/nqs-wavefunctions/nqs/square_j05_repair_v6_continue_1000/seed1",
+  "problem": {
+    "boundary": "PBC_both_physical",
+    "columns": 6,
+    "geometry": "square",
+    "j2": 0.5,
+    "left_sites": {
+      "compact6": [
+        0,
+        1,
+        2
+      ],
+      "winding6": [
+        0,
+        1,
+        2
+      ]
+    },
+    "regions": {
+      "compact6": [
+        12,
+        13,
+        14,
+        18,
+        19,
+        20
+      ],
+      "winding6": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    "rows": 6
+  },
+  "purpose": "Explicit immutable registered milestone; requires completed independent full-A1 audit, not latest mutable training state. Same predeclared geometry/ALL weights, raw coherent invariant readout, whole-chain errors; no new samples, H, optimization, strict SU2 ES, or phase claim. Square geometry only; no triangular ring or cross-lattice QSL identification.",
+  "query_batch": 64,
+  "regions": {
+    "compact6": {
+      "left": [
+        0,
+        1,
+        2
+      ],
+      "sites": [
+        12,
+        13,
+        14,
+        18,
+        19,
+        20
+      ]
+    },
+    "winding6": {
+      "left": [
+        0,
+        1,
+        2
+      ],
+      "sites": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    }
+  },
+  "require_gpu": false,
+  "snapshot_indices": [
+    0,
+    32,
+    64,
+    96
+  ],
+  "step": 1000,
+  "timing_records": 16,
+  "allow_registered_milestone": true
+}

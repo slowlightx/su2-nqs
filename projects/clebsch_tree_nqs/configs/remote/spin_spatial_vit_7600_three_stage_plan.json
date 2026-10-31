@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "preregistered_before_training": true,
+  "selection": "Fixed 3x1000 full-A1 stages. No energy-based seed, endpoint or architecture selection. Stop on numerical/source/checkpoint failure; independent audits never feed training.",
+  "parent": {
+    "directory": "/share/kim/yx789/nqs-vit-quality/results/spin_spatial_vit_gpu_continuation_7600_v1/seed1",
+    "registration_sha256": "ebd5dd74788e61c118c8b38537f2d8c22873a11f78222a785c358ccfe6b14651",
+    "progress_sha256": "eb85799b68bf44fa9df6eaaac7b0c7eb48445686141e2f0e0e89f3041fa4dc1a",
+    "checkpoint_sha256": "a0ad0407d2ac717be87a334e29efcc1f94f020de2e394726167ed2a65a703878"
+  },
+  "stages": [
+    {
+      "config": "projects/clebsch_tree_nqs/configs/remote/generated/spin_spatial_vit_8600_n36.json",
+      "output": "/share/kim/yx789/nqs-vit-quality/results/spin_spatial_vit_gpu_continuation_8600_v1/seed1",
+      "additional_steps": 1000,
+      "time_extension_seconds": 43200,
+      "audit_seeds": [
+        2026101011,
+        2026101012
+      ],
+      "bootstrap_seed": 2026101013
+    },
+    {
+      "config": "projects/clebsch_tree_nqs/configs/remote/generated/spin_spatial_vit_9600_n36.json",
+      "output": "/share/kim/yx789/nqs-vit-quality/results/spin_spatial_vit_gpu_continuation_9600_v1/seed1",
+      "additional_steps": 1000,
+      "time_extension_seconds": 43200,
+      "audit_seeds": [
+        2026101021,
+        2026101022
+      ],
+      "bootstrap_seed": 2026101023
+    },
+    {
+      "config": "projects/clebsch_tree_nqs/configs/remote/generated/spin_spatial_vit_10600_n36.json",
+      "output": "/share/kim/yx789/nqs-vit-quality/results/spin_spatial_vit_gpu_continuation_10600_v1/seed1",
+      "additional_steps": 1000,
+      "time_extension_seconds": 43200,
+      "audit_seeds": [
+        2026101031,
+        2026101032
+      ],
+      "bootstrap_seed": 2026101033
+    }
+  ]
+}

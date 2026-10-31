@@ -1,0 +1,79 @@
+{
+  "task": "spin_spatial_vit_quality",
+  "preregistered_before_training": true,
+  "output": "projects/clebsch_tree_nqs/results/spin_spatial_vit_quality_v2",
+  "j2_over_j1": 0.125,
+  "initialization_seed": 34801011,
+  "training_seed": 34801012,
+  "coordinate_convention": "legacy_checkpoint",
+  "initial_checkpoint": {
+    "checkpoint": "projects/clebsch_tree_nqs/results/spin_full_vit_optimization_v1/triangular/ridge_sr/checkpoint.pkl",
+    "checkpoint_sha256": "a98f678d7b03a434fd70ec9b7db386031012edfc6e620ae1b20e7b693e5d98dd",
+    "result": "projects/clebsch_tree_nqs/results/spin_full_vit_optimization_v1/triangular/results.json",
+    "result_sha256": "9f06465978a387fc3d60462a28db2ea6466458f9943781f30cc1483406a6ec84",
+    "training_result": "projects/clebsch_tree_nqs/results/spin_full_vit_optimization_v1/triangular/ridge_sr/training.json",
+    "training_result_sha256": "f102a73f7608475b50a02a9a207ea91f90ad698103c40d0f32438e711606ced8",
+    "params_sha256": "2d22b1e267df1fdd495fb1026e9d755eb664b4cc1e6790536bb6814ec70ee02c",
+    "normalization_unchanged": true,
+    "coordinate_map_unchanged": true,
+    "historical_nominal_updates": 1192
+  },
+  "model": {
+    "geometry": "triangular", "rows": 6, "columns": 6,
+    "patch_rows": 2, "patch_columns": 2,
+    "embedding_dim": 16, "head_count": 4, "depth": 2, "mlp_ratio": 2,
+    "target_m2": 0, "initialization_scale": 0.1,
+    "initial_distance_decay": 1.0, "use_distance_envelope": true
+  },
+  "stages": [
+    {"projection": "gamma_a1", "steps": 256, "sr": {"damping": 0.1}},
+    {"projection": "gamma_a1", "steps": 512, "sr": {"damping": 0.03}},
+    {"projection": "gamma_a1", "steps": 232, "sr": {"damping": 0.01}}
+  ],
+  "quality_milestones": [0, 128, 256, 512, 768, 1000],
+  "maximum_training_seconds": 14400,
+  "maximum_audit_seconds_per_checkpoint": 1800,
+  "maximum_total_audit_seconds": 3600,
+  "sampling": {
+    "chains": 64, "snapshots_per_update": 8,
+    "proposals_between_snapshots": 72, "burn_proposals": 1440
+  },
+  "sr": {
+    "damping": 0.1, "step_size": 0.03,
+    "fisher_trust_radius": 0.05, "maximum_overlap_distance": 0.05,
+    "minimum_ess_fraction": 0.8, "backtracking_steps": 6, "score_chunk_size": 8
+  },
+  "audit": {
+    "seeds": [34801021, 34801022], "chains": 32, "snapshots": 16,
+    "proposals_between_snapshots": 144, "burn_proposals": 1440,
+    "query_batch": 8, "bootstrap_seed": 34801030, "bootstrap_replicates": 2000
+  },
+  "momenta": {
+    "Gamma": [0, 0], "K": [0.3333333333333333, 0.3333333333333333],
+    "minus_K": [-0.3333333333333333, -0.3333333333333333],
+    "M1": [0.5, 0], "M2": [0, 0.5], "M3": [0.5, 0.5]
+  },
+  "regions": {
+    "compact4": {"sites": [0, 1, 6, 7], "left": [0, 1]},
+    "compact6": {"sites": [0, 1, 2, 6, 7, 8], "left": [0, 1, 2]},
+    "winding6": {"sites": [0, 1, 2, 3, 4, 5], "left": [0, 1, 2]}
+  },
+  "interpretation": {
+    "cpu_calibration_not_literature_production": true,
+    "strict_su2": false,
+    "phase_or_variational_win_claim": false,
+    "dmrg_is_independent_calibration_not_training_prerequisite": true,
+    "published_method_reference": "https://arxiv.org/html/2602.02665v1#S5.SS2",
+    "gcnn_reference": {
+      "source": "https://arxiv.org/html/2211.07749#S4.T3",
+      "same_size_gcnn_energy_per_site": -0.515386,
+      "gcnn_reported_energy_error": 0.000009,
+      "exact_energy_per_site": -0.515564,
+      "samples_per_update": 4096,
+      "approximate_updates": 1500
+    },
+    "preflight": "projects/clebsch_tree_nqs/results/spin_spatial_vit_training_preflight.json",
+    "expected_training_hours_from_512_record_preflight": 3.73,
+    "notes": "Warm continuation of the stronger COMPLETE 4032-parameter neural checkpoint, no reinitialization/head/carrier. Full Gamma-A1 throughout. 1000 fixed updates OR 4 active CPU hours; nominal budget is NOT convergence. Damping schedule fixed before training; audits never choose the endpoint. M=512 is eightfold below GCNN, explicitly not a production-accuracy reproduction. Final and parent audited first; all saved quality milestones remain available."
+  }
+}

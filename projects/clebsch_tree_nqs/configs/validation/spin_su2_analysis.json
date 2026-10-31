@@ -1,0 +1,26 @@
+{
+  "output": "projects/clebsch_tree_nqs/results/spin_tensor_network_reference_audit_v2/su2_protocol_v1",
+  "regions": {
+    "compact4": [14, 15, 20, 21],
+    "compact6": [12, 13, 14, 18, 19, 20],
+    "winding6": [12, 13, 14, 15, 16, 17]
+  },
+  "left_sites": {"compact4": [0, 1], "compact6": [0, 1, 2], "winding6": [0, 1, 2]},
+  "artifacts": [
+    {"family": "dimer", "kind": "finite_dmrg", "path": "projects/clebsch_tree_nqs/results/spin_tensor_network_reference_v1/dimer"},
+    {"family": "dimer", "kind": "finite_dmrg", "path": "projects/clebsch_tree_nqs/results/spin_tensor_network_reference_v2/dimer"},
+    {"family": "dimer", "kind": "finite_dmrg", "path": "projects/clebsch_tree_nqs/results/spin_tensor_network_chi1024_probe_v1/dimer"},
+    {"family": "dimer", "kind": "finite_dmrg", "path": "projects/clebsch_tree_nqs/results/spin_tensor_network_chi2048_nots_v1"},
+    {"family": "stripe", "kind": "finite_dmrg", "path": "projects/clebsch_tree_nqs/results/spin_tensor_network_reference_v1/stripe"},
+    {"family": "stripe", "kind": "finite_dmrg", "path": "projects/clebsch_tree_nqs/results/spin_tensor_network_reference_v2/stripe"},
+    {"family": "stripe", "kind": "finite_dmrg", "path": "projects/clebsch_tree_nqs/results/spin_tensor_network_chi1024_probe_v1/stripe"},
+    {"family": "D5_control", "kind": "infinite_ipeps_control", "path": "projects/clebsch_tree_nqs/results/spin_tensor_network_reference_v1/ipeps_D5_j0125"},
+    {"family": "D5_control", "kind": "infinite_ipeps_control", "path": "projects/clebsch_tree_nqs/results/spin_tensor_network_reference_v1/ipeps_D5_j0125_chi50"}
+  ],
+  "global_audits": [
+    "projects/clebsch_tree_nqs/results/spin_tensor_network_reference_audit_v2/results.json",
+    "projects/clebsch_tree_nqs/results/spin_tensor_network_chi1024_probe_v1/audit/results.json"
+  ],
+  "initialization_comparison_chis": [512, 1024],
+  "protocol": "Frozen coherent RDMs only. Fixed physical regions/bipartitions. No MPS query, Monte Carlo, training, ED, twirl or eigenvalue repair. Doubled q=2S. Partial magnetic traces are legal invariant-operator data for arbitrary states, but strict entanglement levels are emitted only after actual SU2 invariance checks. D5 is an infinite ordered control, not a same-H finite candidate. Initialization comparisons are not phase comparisons. Refinement drifts are not certified error bars."
+}

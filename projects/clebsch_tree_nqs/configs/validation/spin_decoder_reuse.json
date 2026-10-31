@@ -1,0 +1,17 @@
+{
+  "task": "N36_same_state_exact_connection_image_reuse_and_training_component_cost",
+  "output": "projects/clebsch_tree_nqs/results/spin_decoder_reuse_v1",
+  "parent": "projects/clebsch_tree_nqs/results/spin_decoder_cost_v1",
+  "cases": [{"geometry":"triangular","j2_over_j1":0.125},{"geometry":"square","j2_over_j1":0.5}],
+  "chunk_size": 64,
+  "batch": 8,
+  "timing_repeats": 3,
+  "proposal_counts": [1,16],
+  "sampler_seed": 2026093004,
+  "wall_limit_seconds_per_process": 1800,
+  "peak_rss_limit_gib": 8,
+  "contract": "Identical parent parameters, all q, width2, complete 432/288 A1 images and same eight frozen centers. Exact uint64 bit-string deduplication across centers, nonzero connectors and spatial images; retain every multiplicity and diagonal term. No coset, cutoff, architecture, training or energy-selection change. JAX device-only plan and forward H action; independent chunked/rematerialized full A1 amplitude for score gradients.",
+  "measurements": "Separate fresh CPU process per geometry. Synchronized three-repeat timing after separate lowering/compile/first call. Remeasure old projected H in same process before new end-to-end H, including rebuilding the dedup plan. Measure plan-only, cached-plan evaluation, full A1 amplitude, full real-parameter VMC covariance force on frozen parent local energies, and 1/16-proposal fixed-Sz exchange blocks including current-amplitude refresh. No gradient through local energy. Sampler blocks start from same probes/key on every repeat and are not equilibrium energy samples. Measure finite-difference force replay and identical-key old/new sampler decisions.",
+  "checks": "Independent small dense H, complex amplitudes, stabilizers, repeated bonds, 36-bit keys, non-invariant H, amplitude/force derivatives, and exact detailed balance before N36. Compare all eight N36 H ratios and amplitudes to sealed parent and freshly executed old kernel. Preserve undefined nodes/nonfinite failures; no filtering. Check parameters remain unchanged. Save force and sampler endpoints/counts; no optimization or physical-energy claims.",
+  "caps": "1800s per geometry wall alarm, cumulative CPU RSS checked between stages <=8GiB (not hard mid-compile enforcement). No automatic retries, batch/architecture sweep, GPU or remote job. Report failures/negative speedups as outcomes. No production budget inferred from CPU measurements."
+}

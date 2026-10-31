@@ -1,0 +1,91 @@
+{
+  "primary_directory": "projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v2/triangle_pair5_v1",
+  "output": "projects/clebsch_tree_nqs/results/multipartite_geometry_20261013_v2/triangle_pair5_local_probe_v1",
+  "positive_calibration_directory": "projects/clebsch_tree_nqs/results/qsl_symmetry_calibration_20261013_v1",
+  "training_endpoints": [
+    "triangular_0_500"
+  ],
+  "seconds_cap": 600,
+  "baseline_solver_seconds": 12,
+  "child_solver_seconds": 4,
+  "real_physical_witnesses": true,
+  "measured_sites": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "measurement_axes": [
+    "z",
+    "x"
+  ],
+  "family_alpha": 0.05,
+  "comparison_family_size": 64,
+  "cases": [
+    {
+      "name": "triangle_pair5_upper",
+      "parent": "compact6",
+      "keep": [
+        0,
+        1,
+        2,
+        4,
+        5
+      ],
+      "parties": [
+        [
+          0,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "baseline_key": "triangle_pair5_upper__triangular_0_500"
+    },
+    {
+      "name": "triangle_pair5_lower",
+      "parent": "compact6",
+      "keep": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "parties": [
+        [
+          0,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "baseline_key": "triangle_pair5_lower__triangular_0_500"
+    }
+  ],
+  "missing_geometries": [
+    {
+      "name": "fork4",
+      "sites": [
+        14,
+        20,
+        15,
+        7
+      ],
+      "reason": "Cannot be obtained by tracing cached six-site regions. Separate bounded local chi5120 MPS probe; not included in the matched J0/.125 family. A J1 tree becomes chorded at nonzero J2."
+    }
+  ],
+  "comparison_scope": "Secondary geometrically motivated calibrated five-site study: 64=2 shapes x16 baseline/loss/x/z contexts x2 contrasts. First64 J0/500 chains fit, complementary/later chains audit; no fitting on frustrated endpoints. Measurement of the one-spin central party leaves bipartite entanglement, explicitly not retained tripartite GME.",
+  "priority": "Geometry and local survival before any new distant-correlation estimator. Stable differences and control specificity must support escalation. Existing scalar geometry figures reused rather than repeating old fitting."
+}

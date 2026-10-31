@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "exact_su2_route_vit_n36_basin_gate",
+  "seed": 20260919,
+  "case": {
+    "case_id": "triangular_6x6_j2_0p125_su2_route_vit_basin_gate_global",
+    "geometry": "triangular",
+    "rows": 6,
+    "columns": 6,
+    "j2_over_j1": 0.125
+  },
+  "model": {
+    "feature_dim": 2,
+    "maximum_intermediate_q": 10,
+    "initialization_scale": 0.2,
+    "embedding_dim": 8,
+    "head_count": 2,
+    "depth": 1,
+    "mlp_ratio": 2,
+    "modulation_rank": 1,
+    "modulation_scale": 0.1,
+    "support_floor_head_scale": 0.05,
+    "backbone_support_floor": 0.1,
+    "translation_orbit_chunk_size": 6
+  },
+  "sampler": {
+    "chains_per_stratum": 8,
+    "burn_sweeps": 384,
+    "snapshots": 96,
+    "sweeps_between": 18,
+    "full_h_snapshots": 1,
+    "kernel_weights": [0.65, 0.15, 0.20],
+    "bond_proposal_probability": 0.90,
+    "uniform_floor": 0.03
+  },
+  "gates": {
+    "split_rhat_maximum": 1.05,
+    "stratum_ess_fraction_minimum": 0.10
+  }
+}

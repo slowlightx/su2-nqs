@@ -1,0 +1,156 @@
+{
+  "utc": "2026-10-12T04:13:33.207057+00:00",
+  "jobs": {
+    "square05-cont-pilot502": {
+      "job_id": 215494,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-coupling-continuation-20261012",
+        "--job-name=square05-cont-pilot502",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--time=02:00:00",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261012/square_j05_continue1000.json,NQS_PREFLIGHT_ENDPOINT=502",
+        "/home/yx789/nqs-coupling-continuation-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "preflight"
+      ],
+      "afterok": [],
+      "submitted_at_utc": "2026-10-12T04:13:33.815566+00:00"
+    },
+    "square05-cont-resume504": {
+      "job_id": 215495,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-coupling-continuation-20261012",
+        "--job-name=square05-cont-resume504",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--time=01:00:00",
+        "--dependency=afterok:215494",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261012/square_j05_continue1000.json,NQS_UNTIL_STEP=504,NQS_SESSION_SECONDS=3000",
+        "/home/yx789/nqs-coupling-continuation-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ],
+      "afterok": [
+        215494
+      ],
+      "submitted_at_utc": "2026-10-12T04:13:34.039300+00:00"
+    },
+    "square05-cont-replay502-504": {
+      "job_id": 215496,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-coupling-continuation-20261012",
+        "--job-name=square05-cont-replay502-504",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--time=01:15:00",
+        "--dependency=afterok:215495",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261012/square_j05_continue1000.json,NQS_PROBE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/square_j05_repair_v6_continue_1000/seed1/quality/step00502.pkl,NQS_COMPARE_CHECKPOINT=/home/yx789/nqs-wavefunctions/nqs/square_j05_repair_v6_continue_1000/seed1/quality/step00504.pkl,NQS_PROBE_STEPS=2,NQS_PROBE_SECONDS=2700,NQS_PROBE_OUTPUT=/home/yx789/nqs-wavefunctions/readouts/square_j05_cont502_504_replay.json",
+        "/home/yx789/nqs-coupling-continuation-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "jump-probe"
+      ],
+      "afterok": [
+        215495
+      ],
+      "submitted_at_utc": "2026-10-12T04:13:34.482727+00:00"
+    },
+    "square05-cont-train1000": {
+      "job_id": 215497,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-coupling-continuation-20261012",
+        "--job-name=square05-cont-train1000",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--time=12:00:00",
+        "--dependency=afterok:215496",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261012/square_j05_continue1000.json,NQS_UNTIL_STEP=1000,NQS_SESSION_SECONDS=36000",
+        "/home/yx789/nqs-coupling-continuation-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "production"
+      ],
+      "afterok": [
+        215496
+      ],
+      "submitted_at_utc": "2026-10-12T04:13:34.692447+00:00"
+    },
+    "square05-cont-audit750": {
+      "job_id": 215498,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-coupling-continuation-20261012",
+        "--job-name=square05-cont-audit750",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--time=03:15:00",
+        "--dependency=afterok:215497",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261012/square_j05_continue1000.json,NQS_AUDIT_STEP=750",
+        "/home/yx789/nqs-coupling-continuation-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "milestone-audit"
+      ],
+      "afterok": [
+        215497
+      ],
+      "submitted_at_utc": "2026-10-12T04:13:34.932967+00:00"
+    },
+    "square05-cont-audit1000": {
+      "job_id": 215499,
+      "command": [
+        "/usr/local/slurm/current/bin/sbatch",
+        "--parsable",
+        "--partition=kim",
+        "--account=kim",
+        "--chdir=/home/yx789/nqs-coupling-continuation-20261012",
+        "--job-name=square05-cont-audit1000",
+        "--constraint=a100",
+        "--gres=gpu:nvidia_a100_80gb_pcie:1",
+        "--cpus-per-task=8",
+        "--mem=64G",
+        "--time=03:15:00",
+        "--dependency=afterok:215497",
+        "--kill-on-invalid-dep=yes",
+        "--export=ALL,NQS_CONFIG=projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261012/square_j05_continue1000.json,NQS_AUDIT_STEP=1000",
+        "/home/yx789/nqs-coupling-continuation-20261012/projects/clebsch_tree_nqs/remote/spatial_vit_recovery_a100.sbatch",
+        "milestone-audit"
+      ],
+      "afterok": [
+        215497
+      ],
+      "submitted_at_utc": "2026-10-12T04:13:35.162901+00:00"
+    }
+  },
+  "model_unchanged": true,
+  "additional_steps": 500,
+  "additional_training_H_calls": 2048000,
+  "field_reoptimization_released": false,
+  "release_reason": "same original damping external normalized slope ~2.53SE, unnormalized ~1.82SE: plausible bounded continuation, NOT energy/variance certificate"
+}

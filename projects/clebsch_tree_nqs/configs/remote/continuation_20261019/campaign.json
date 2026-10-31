@@ -1,0 +1,55 @@
+{
+  "task": "triangular_free_ClebschTree_and_Spatial_ViT_continuation",
+  "remote_workspace": "/home/yx789/nqs-triangle-continuation-20261019",
+  "wavefunction_root": "/home/yx789/nqs-wavefunctions/nqs/continuation_20261019",
+  "no_new_head_or_attention": true,
+  "maximum_requested_A100_hours": 141,
+  "routes": {
+    "ct6": {
+      "j2": [0, 0.125],
+      "arities": ["binary_truncated", "ternary_joint"],
+      "widths": [16, 18, 20],
+      "new_updates_at_each_width": [32, 16, 16],
+      "training_records": 2048,
+      "training_chains": 64,
+      "independent_audit_records_each_endpoint": 16384,
+      "pilot_steps_included_in_endpoint": 2,
+      "phase_minutes": {"pilot": 60, "replay": 60, "train": 240},
+      "maximum_requested_A100_hours": 72,
+      "width18_requires_all_four_width16_endpoints": true,
+      "width20_requires_all_four_width18_endpoints": true,
+      "j0125_same_width_parent_jobs": {"binary_truncated": 410417, "ternary_joint": 410419},
+      "optimizer_policy": "Prespecified SR+Adam; do not energy-select a winner from the existing optimizer comparison. Same-width preserves moments. Width change preserves the physical state/chains/RNG but explicitly resets optimizer dimensions. Independent physical guards shrink only, never amplify directions."
+    },
+    "ct12": {
+      "j2": [0, 0.125],
+      "arities": ["binary_truncated", "ternary_joint"],
+      "width": 16,
+      "new_updates_each": 8,
+      "training_records": 128,
+      "independent_audit_records": 512,
+      "phase_minutes": {"pilot": 120, "replay": 60, "train": 300},
+      "maximum_requested_A100_hours": 32,
+      "interpretation": "Bounded quality-improvement probes from native two-step N144 parents, not competitive states or thermodynamic evidence."
+    },
+    "vit12": {
+      "j0": {"parent_audited_step": 164, "protocol": "explicit optimization-condition repair using warm physical weights", "fixed_new_updates": 32, "training_devices": 1},
+      "j0125": {"parent_audited_step": 96, "protocol": "full optimizer/sampler/RNG continuation", "fixed_new_updates": 64, "training_devices": 2},
+      "training_records": 4096,
+      "independent_audit_records_each_endpoint": 8192,
+      "maximum_requested_A100_hours": 37,
+      "phase_details": "vit12/resources.json"
+    }
+  },
+  "release_conditions": [
+    "Two actual nonzero pilot updates, finite physical FS and ESS within the frozen guards",
+    "CT complete-transition isolated replay, or ViT fresh-process continuation and saved-state identity checks",
+    "Complete coherent A1 and all Hamiltonian bonds, no clipping or silent CPU fallback",
+    "Measured forecast and GPU-memory limits before the remaining fixed endpoint",
+    "Exact amplitude/H inclusion and non-gauge new-channel tangent before widened CT6 training",
+    "Untouched fixed-endpoint audits, no audit-selected favorable endpoint or stream"
+  ],
+  "scheduler": {"partition": "kim", "account": "kim", "constraint": "a100", "gpu_type": "nvidia_a100_80gb_pcie", "nice": 20000, "kill_on_invalid_dep": true},
+  "requested_hours_are_ceiling_not_actual_consumption": true,
+  "previous_parent_jobs_and_wavefunctions_are_not_cancelled_or_overwritten": true
+}

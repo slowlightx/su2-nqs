@@ -1,0 +1,84 @@
+{
+  "task": "native_triangle_sameH_stable_width_continuation_v2",
+  "case": "j0125_binary_truncated",
+  "stage": "w18_control",
+  "model": {
+    "length": 6,
+    "multiplicity_cap": 18,
+    "maximum_q": 10
+  },
+  "arity": "binary_truncated",
+  "binary_rank": 8,
+  "j2_over_j1": 0.125,
+  "parent": {
+    "kind": "continuation",
+    "model": {
+      "length": 6,
+      "multiplicity_cap": 18,
+      "maximum_q": 10
+    },
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/ct6_width_20261020/j0125_binary_truncated/w18_repair",
+    "plan_path": "projects/clebsch_tree_nqs/configs/remote/ct6_width_20261020/j0125_binary_truncated_w18_repair.json",
+    "expected_identity": {
+      "case": "j0125_binary_truncated",
+      "stage": "w18_repair",
+      "arity": "binary_truncated",
+      "model": {
+        "length": 6,
+        "multiplicity_cap": 18,
+        "maximum_q": 10
+      },
+      "j2_over_j1": 0.125,
+      "binary_rank": 8
+    },
+    "absolute_completed_steps": 268
+  },
+  "pilot_steps": 2,
+  "training": {
+    "steps": 16,
+    "samples": 2048,
+    "chains": 64,
+    "refresh_proposals": 36,
+    "spacing_proposals": 36
+  },
+  "calibration": {
+    "samples": 512,
+    "chains": 64,
+    "initial_burn_proposals": 1440,
+    "refresh_proposals": 144,
+    "spacing_proposals": 36
+  },
+  "audit": {
+    "samples": 16384,
+    "chains": 128,
+    "refresh_proposals": 1440,
+    "spacing_proposals": 36
+  },
+  "seeds": {
+    "calibration": 2610207401,
+    "audit": 2610207402,
+    "expansion": 2610207403
+  },
+  "learning_rate": 0.0001,
+  "damping": 0.05,
+  "maximum_fs_sine": 0.005,
+  "minimum_ess_fraction": 0.98,
+  "halvings": 12,
+  "new_feature_scale": 0.2,
+  "projection_chunk": 4,
+  "action_chunk": 4,
+  "score_chunk": 2,
+  "tolerance": 2e-11,
+  "require_gpu": true,
+  "budget": {
+    "pilot_seconds": 3600,
+    "replay_seconds": 3600,
+    "train_seconds": 14400,
+    "maximum_peak_device_bytes": 75161927680
+  },
+  "output": "/home/yx789/nqs-wavefunctions/nqs/ct6_width_20261020/j0125_binary_truncated/w18_control",
+  "interpretation": "Matched capacity control, no width change: exactly the same width18 physical parent, inherited identical chains/RNG, explicit Adam reset matching width20 expansion, same16 updates/2048 training samples/512 physical guard/16384 untouched audit. Controls extra optimization vs increased capacity; binary and joint both retained. No significance claim from one seed.",
+  "sr_solver": "dual_force",
+  "optimization_control": "same_parent_same_width_Adam_reset",
+  "matched_wider_arm": "projects/clebsch_tree_nqs/configs/remote/ct6_width_20261020/j0125_binary_truncated_w20.json"
+}

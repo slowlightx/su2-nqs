@@ -1,0 +1,37 @@
+{
+  "model": {
+    "hidden_dim": 16,
+    "size_scale": 64
+  },
+  "sizes": [
+    16,
+    24,
+    32
+  ],
+  "train_fields": [
+    0.975,
+    1,
+    1.025
+  ],
+  "test_fields": [
+    0.9875,
+    1.0125
+  ],
+  "seeds": [
+    17
+  ],
+  "steps": 3,
+  "learning_rate": 0.5,
+  "mode": "vmc",
+  "optimizer": "sr",
+  "sr_shift": 0.001,
+  "samples_per_task": 64,
+  "audit_samples": 128,
+  "tasks_per_step": 3,
+  "sr_solver": "cg",
+  "sr_tolerance": 1e-7,
+  "sr_maxiter": 2000,
+  "sr_max_step_norm": 0.5,
+  "sr_backtracking": false,
+  "warm_start_checkpoint": "fnqs/results/phase0_full_ensemble_refinement_v3/seed_17.npz"
+}

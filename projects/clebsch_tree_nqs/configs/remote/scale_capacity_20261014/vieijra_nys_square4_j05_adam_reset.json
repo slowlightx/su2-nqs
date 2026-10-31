@@ -1,0 +1,35 @@
+{
+  "geometry": "square",
+  "rows": 4,
+  "columns": 4,
+  "j2_over_j1": 0.5,
+  "multiplicity_cap": 8,
+  "maximum_q": 8,
+  "seed": 2026101420,
+  "calibration_seed": 2026101421,
+  "expectation": "exact_full_support",
+  "steps": 900,
+  "sr_warm_steps": 0,
+  "sr_samples": 256,
+  "sr_damping": 0.01,
+  "sr_adam_learning_rate": 0.005,
+  "adam_learning_rate": 0.001,
+  "gradient_clip": 0.001,
+  "milestones": [
+    25,
+    100,
+    250,
+    500,
+    900
+  ],
+  "exact_energy_anchor": -8.457923351394845,
+  "output": "projects/clebsch_tree_nqs/results/vieijra_nys_reproduction_20261014/square4_j05_adam_reset",
+  "interpretation": "Physical-spin ClebschTree, real independent layer-shared reduced W, reachable per-q widths, empirical 1000-row layer standardization, full coherent A1. Exact expectations isolate architecture/optimizer quality; not yet paper's sampled 8x8 accuracy reproduction. No new ED. Controlled optimizer-moment reset from the SAME100-step physical state;900 post-warm steps, matching original total1000 state updates. No new parameters or head.",
+  "parameters_from": {
+    "directory": "projects/clebsch_tree_nqs/results/vieijra_nys_reproduction_20261014/square4_j05",
+    "checkpoint_path": "quality/step00100.pkl",
+    "checkpoint_sha256": "3cd020b66b6bbf9a307005100f1e8a96d3a0a42130c824bedef5047d7cda3e6e",
+    "registration_sha256": "c869b4c999f4253c8a0a97395957fbbd3d34a5595855d73dd995e9a1698ade59",
+    "params_sha256": "6620fdfb02d32e48c4f287f3a0ecbb24a43a49883495cb0de5d97b7b310ad0ca"
+  }
+}

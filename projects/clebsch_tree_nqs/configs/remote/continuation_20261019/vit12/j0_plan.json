@@ -1,0 +1,68 @@
+{
+  "mode": "parameter_repair",
+  "parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/benchmark_guided_20261017/spatial/j0_serial_fullstate/seed1",
+    "completed_steps": 164,
+    "audit_file": "energy.json",
+    "registration_sha256": "b00260be9af98f54bdcbf68bc3005f359c75385321e6bddff2a9fa52ba708f42"
+  },
+  "child_overrides": {
+    "output": "/home/yx789/nqs-wavefunctions/nqs/continuation_20261019/vit12/j0_repair/seed1",
+    "initialization_seed": 2026199000,
+    "training_seed": 2026199001,
+    "stages": [{"projection": "gamma_a1", "steps": 32}],
+    "quality_milestones": [0, 2, 4, 16, 32],
+    "maximum_training_seconds": 36000,
+    "maximum_audit_seconds_per_checkpoint": 10800,
+    "maximum_total_audit_seconds": 21600,
+    "sampling": {
+      "chains": 128,
+      "snapshots_per_update": 32,
+      "burn_proposals": 11520,
+      "proposals_between_snapshots": 576
+    },
+    "netket": {
+      "version": "3.22.3",
+      "chunk_size": 32,
+      "chunk_size_bwd": 8,
+      "exchange_kernel": "uniform_all_pairs",
+      "expected_device_count": 1,
+      "initialization": "balanced_spin_half",
+      "momentum": null,
+      "on_the_fly": false,
+      "replicate_initial_params": true,
+      "sampled_trust": {
+        "halvings": 8,
+        "maximum_fs_sine": 0.0125,
+        "minimum_ess_fraction": 0.97
+      }
+    },
+    "sr": {"damping": 0.005, "step_size": 0.00125},
+    "audit": {
+      "seeds": [2026199010, 2026199011],
+      "chains": 32,
+      "snapshots": 128,
+      "proposals_between_snapshots": 576,
+      "burn_proposals": 11520,
+      "query_batch": 2,
+      "bootstrap_seed": 2026199012,
+      "bootstrap_replicates": 2000
+    },
+    "budget_release": {
+      "pilot_endpoint": 2,
+      "restart_endpoint": 4,
+      "fixed_terminal_endpoint": 32,
+      "new_training_full_H_calls": 131072,
+      "new_audit_full_H_calls": 8192,
+      "model_unchanged": true,
+      "automatic_architecture_change": false
+    },
+    "interpretation": {
+      "new_head": false,
+      "strict_su2": false,
+      "protocol": "New bounded optimization-condition repair, NOT exact full-state continuation. Preserve the independently audited stable J0 step164 physical weights; do not continue tail-sensitive step228. Same100288-parameter Spatial-ViT and full coherent A1. Reset optimizer/sampler/RNG/work explicitly, use128 chains x32 snapshots (4096 records), twice previous burn/proposal spacing, lower SR rate.00125 and stronger damping.005, FS cap.0125/ESS.97. These bundled changes test a safer optimization condition, not causal single-factor superiority. Two actual updates then fresh-process two-update restart before32-step terminal release. Fresh untouched8192-record terminal audit, no favorable endpoint/stream selection."
+    }
+  },
+  "generated_config": "/home/yx789/nqs-triangle-continuation-20261019/projects/clebsch_tree_nqs/configs/remote/continuation_20261019/vit12/j0.json",
+  "rationale": "Step228 has variance.1598 with a.024/.295 two-stream discrepancy and is not a demonstrated improvement over stable164. Restore stable audited164 weights and test safer sampling/update conditions without changing architecture or Hamiltonian. Preserve both old states and all optimizer histories."
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 2,
+  "domain": "spin",
+  "status": "preregistered_local_translation_pareto_with_a1_saturation_control",
+  "model": {
+    "feature_dim": 4,
+    "maximum_intermediate_q": 8,
+    "initialization_scale": 1.0
+  },
+  "parameter_bracket_maximum_width": 24,
+  "optimization": {
+    "steps": 300,
+    "learning_rate": 0.005,
+    "record_every": 10,
+    "seeds": [21, 22, 23, 24, 25, 26, 27, 28],
+    "energy_error_per_site_targets": [0.01, 0.001, 0.0001, 0.00001]
+  },
+  "arms": [
+    {"arm_id": "u1_D2_translation", "backbone": "u1", "projection": "translation", "model": {"feature_dim": 2}},
+    {"arm_id": "su2_D2_translation", "backbone": "su2", "projection": "translation", "model": {"feature_dim": 2}},
+    {"arm_id": "u1_D3_translation", "backbone": "u1", "projection": "translation", "model": {"feature_dim": 3}},
+    {"arm_id": "su2_D3_translation", "backbone": "su2", "projection": "translation", "model": {"feature_dim": 3}},
+    {"arm_id": "u1_D4_none", "backbone": "u1", "projection": "none", "model": {"feature_dim": 4}},
+    {"arm_id": "su2_D4_none", "backbone": "su2", "projection": "none", "model": {"feature_dim": 4}},
+    {"arm_id": "u1_D4_translation", "backbone": "u1", "projection": "translation", "model": {"feature_dim": 4}},
+    {"arm_id": "su2_D4_translation", "backbone": "su2", "projection": "translation", "model": {"feature_dim": 4}},
+    {"arm_id": "u1_D4_gamma_a1", "backbone": "u1", "projection": "gamma_a1", "model": {"feature_dim": 4}},
+    {"arm_id": "su2_D4_gamma_a1", "backbone": "su2", "projection": "gamma_a1", "model": {"feature_dim": 4}},
+    {"arm_id": "u1_D5_translation", "backbone": "u1", "projection": "translation", "model": {"feature_dim": 5}},
+    {"arm_id": "su2_D5_translation", "backbone": "su2", "projection": "translation", "model": {"feature_dim": 5}},
+    {"arm_id": "u1_D6_translation", "backbone": "u1", "projection": "translation", "model": {"feature_dim": 6}},
+    {"arm_id": "su2_D6_translation", "backbone": "su2", "projection": "translation", "model": {"feature_dim": 6}}
+  ],
+  "cases": [
+    {
+      "case_id": "square_4x4_j2_0p5_prl_pareto",
+      "geometry": "square",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.5,
+      "support": "fixed_m0",
+      "exact_energy_anchor": -8.457923351394845,
+      "anchor_provenance": "stored physical-M0 exact reference; no eigensolve in runner",
+      "arm_ids": ["u1_D2_translation", "su2_D2_translation", "u1_D3_translation", "su2_D3_translation", "u1_D4_none", "su2_D4_none", "u1_D4_translation", "su2_D4_translation", "u1_D4_gamma_a1", "su2_D4_gamma_a1", "u1_D5_translation", "su2_D5_translation", "u1_D6_translation", "su2_D6_translation"]
+    },
+    {
+      "case_id": "square_4x4_j2_0p55_heldout",
+      "geometry": "square",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.55,
+      "support": "fixed_m0",
+      "exact_energy_anchor": -8.377513082233335,
+      "anchor_provenance": "new small-system physical-M0 scipy eigsh calibration on 2026-09-16; runner performs no eigensolve",
+      "arm_ids": ["u1_D2_translation", "su2_D2_translation", "u1_D3_translation", "su2_D3_translation", "u1_D4_translation", "su2_D4_translation", "u1_D5_translation", "su2_D5_translation", "u1_D6_translation", "su2_D6_translation"]
+    },
+    {
+      "case_id": "triangular_4x4_j2_0p125_prl_pareto",
+      "geometry": "triangular",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.125,
+      "support": "fixed_m0",
+      "exact_energy_anchor": -8.553311087209,
+      "anchor_provenance": "stored physical-M0 exact reference; no eigensolve in runner",
+      "arm_ids": ["u1_D2_translation", "su2_D2_translation", "u1_D3_translation", "su2_D3_translation", "u1_D4_none", "su2_D4_none", "u1_D4_translation", "su2_D4_translation", "u1_D4_gamma_a1", "su2_D4_gamma_a1", "u1_D5_translation", "su2_D5_translation", "u1_D6_translation", "su2_D6_translation"]
+    },
+    {
+      "case_id": "triangular_4x4_j2_0p175_heldout",
+      "geometry": "triangular",
+      "rows": 4,
+      "columns": 4,
+      "j2_over_j1": 0.175,
+      "support": "fixed_m0",
+      "exact_energy_anchor": -8.5973889713934,
+      "anchor_provenance": "new small-system physical-M0 scipy eigsh calibration on 2026-09-16; runner performs no eigensolve",
+      "arm_ids": ["u1_D2_translation", "su2_D2_translation", "u1_D3_translation", "su2_D3_translation", "u1_D4_translation", "su2_D4_translation", "u1_D5_translation", "su2_D5_translation", "u1_D6_translation", "su2_D6_translation"]
+    }
+  ],
+  "analysis_contract": {
+    "primary_sector": "translation",
+    "primary_estimands": [
+      "held-out-seed distribution of log10 energy-error ratio U1/SU2",
+      "held-out-seed distribution of variance ratio U1/SU2",
+      "lower envelope of energy error versus raw parameters",
+      "lower envelope of energy error versus measured training seconds"
+    ],
+    "secondary_control": "D4 none/translation/Gamma.A1 separates symmetry attribution and diagnoses A1 small-sector saturation",
+    "promotion_gate": "No efficiency claim unless SU2 improves the translation-sector matched-time or parameter Pareto on both geometries and at least one held-out coupling; A1-only or equal-update-only wins do not pass."
+  },
+  "claim_boundary": "Exact-support N=16 capacity/work audit with eight held-out seed labels. Seed labels are matched but initial functions are not identical across U1 and SU2. The run can falsify a local efficiency claim; it cannot establish 6x6 scaling, a QSL phase, or thermodynamic order."
+}

@@ -1,0 +1,197 @@
+{
+  "task": "CT12_same_parent_full_W_direction_gate_v1",
+  "execution_authorized": true,
+  "kind": "ct12",
+  "device": "A100",
+  "j2": 0.125,
+  "model": {
+    "length": 12,
+    "multiplicity_cap": 20,
+    "maximum_q": 10
+  },
+  "active_profile": [
+    {
+      "0": 16,
+      "2": 16,
+      "4": 16,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 12,
+      "2": 14,
+      "4": 12,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 8,
+      "2": 8,
+      "4": 8,
+      "6": 8,
+      "8": 8,
+      "10": 8
+    },
+    {
+      "0": 1
+    }
+  ],
+  "active_real_parameters": 1495080,
+  "parent_directory": "/home/yx789/nqs-wavefunctions/nqs/ct12_production32_20261028/j0125/run01",
+  "parent_global_step": 37,
+  "parent_seals": {
+    "checkpoint.pkl": "4be943c0503ab1493265c9017335bebbf661636e012740902fd3fe62c194543d",
+    "registration.json": "bbeea7614b8d14f796b9fbd7a4fdec57301a19ec477edff0b23362235a0ad062",
+    "endpoint_frozen.json": "c1d3ded9fc8cdeb5bbd2da50434dd104aa2c39191d3cd3265a60d49994306c31",
+    "audit_result.json": "b2cc7a2ab2b5966ea2c267eecca4d5b4e2f951c8a4850cd3e9942cf0715920b6",
+    "terminal_audit/audit.json": "e2d40d0f3bd2fbd3d6917754541a4d5cd949c97e6b7fd8c434d5505541bbf25f",
+    "terminal_audit/untouched_products.npz": "fab8c5b498f2537a0109762c58b1b27918ef86ee5bc2afa081ae500542b292a9"
+  },
+  "parent_parameter_sha256": "382fe5fe76a35a675434ed36d5336bce0f0562586568b63f639b520ac595238e",
+  "damping": 0.5,
+  "learning_rate": 0.03,
+  "epsilon": 0.125,
+  "target_FS": 0.003,
+  "maximum_FS": 0.003,
+  "fit_records": 1024,
+  "calibration_records": 1024,
+  "calibration_split": 512,
+  "bilateral_records": 512,
+  "bilateral_groups": 32,
+  "confirmation_records": 1024,
+  "confirmation_groups": 32,
+  "audit_records": 4096,
+  "audit_groups": 64,
+  "steps": 8,
+  "projection_chunk": 16,
+  "action_chunk": 4,
+  "score_chunk": 1,
+  "H_chunk": 8,
+  "gate_wall_cap_seconds": 36000,
+  "pilot_wall_cap_seconds": 64800,
+  "maximum_peak_device_bytes": 75161927680,
+  "seeds": {
+    "gate_stream": 3930295001,
+    "bilateral": 3930295002,
+    "confirmation": 3930295003,
+    "confirmation_statistics": 3930295004,
+    "audit": 3930295005,
+    "audit_statistics": 3930295006
+  },
+  "physical_state": "unchanged strict-SU2 singlet, complete coherent Gamma-A1 and full physical H",
+  "no_requeue": true,
+  "automatic_next_allocation": false,
+  "authorization_note": "User2026-10-29 explicitly requests corrected CT12 time-budget/query-batch resubmission. Same global37 parent, active widths, optimizer/RNG, fullA1/H, scientific record counts and passed-certificate requirement. At most10A100h gate plus18A100h conditional eight-step pilot; no B200 production or CT6 mutation.",
+  "gate_candidate_committed": false,
+  "adaptation": "fixed gate-validated controls; not a fully adaptive production experiment",
+  "failure_policy": "preserve evidence and refuse pilot; no resampling to force passage",
+  "runtime_budget_profile": "runtime_budget_retry_v1",
+  "budget_retry_evidence": {
+    "zero_fit_records_consumed": true,
+    "previous_gate_job_id": 797344,
+    "previous_preflight_sha256": "dca17a5a2b1a0429c3a71195eaee05dc00db88b28209288541b5b8d72de374fc",
+    "previous_gate_result_sha256": "9e817bbb1a36feb41fb68ecd3abcfe8ad07cafd988d8f00398c5a2a85315a955",
+    "previous_replay_sha256": "34b1450004bad6b3ad2651fc491a8bc7f74548c411b3791c44957b6caa218c85",
+    "same_unconsumed_role_streams_retained": true
+  },
+  "runtime_batch_basis": {
+    "A100_reference": "projects/clebsch_tree_nqs/results/remote_status_20261027_2024/ct12_j0125",
+    "same_active_profile": true,
+    "projection_chunk": 16,
+    "H_chunk": 8,
+    "fit_records_in_reference": 512,
+    "measured_reference_warm_H_seconds_per_center": 1.0288537955281163,
+    "measured_reference_peak_device_bytes": 6320002304,
+    "reference_is_not_a_new1024row_or_JVP_memory_certificate": true
+  }
+}

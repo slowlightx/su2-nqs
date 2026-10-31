@@ -1,0 +1,44 @@
+{
+  "purpose": "Bounded actual-N36 diagnosis; immutable parents, no production checkpoint writes",
+  "workspace": "/home/yx789/nqs-jump-20261011",
+  "remote_results": "/home/yx789/nqs-wavefunctions/diagnostics/jump_20261011",
+  "safe_stop": {
+    "job": "168193",
+    "signal": "USR1 to full job; native checkpoint at completed step",
+    "completed_steps": 591,
+    "checkpoint_sha256": "50064c162fa0ffa57a2869e8f2dcc211332db7d94025c7dc39b94bebc963249e",
+    "good_parent_and_step20_preserved": true
+  },
+  "cpu_gate": {
+    "job": "185393",
+    "state": "COMPLETED",
+    "tests_passed": 2,
+    "test_seconds": 23.78,
+    "maximum_H_error": 2.220446049250313e-16,
+    "maximum_parameter_install_error": 2.710505431213761e-20
+  },
+  "diagnostics": [
+    {"job": "185412", "case": "square J2=.5, step20, two update steps", "A100s": 2, "wall_minutes": 30, "output": "square_j05_update.json"},
+    {"job": "185432", "case": "same square parent, two frozen-parameter sampling rounds", "A100s": 1, "wall_minutes": 20, "output": "square_j05_frozen_1gpu.json"},
+    {"job": "185433", "case": "triangular J2=0, unchanged initial parent, no update", "A100s": 1, "wall_minutes": 20, "output": "tri_j0_initial_1gpu.json"},
+    {"job": "185469", "case": "square J2=.5, step20, two update steps", "A100s": 1, "wall_minutes": 25, "output": "square_j05_update_1gpu.json"},
+    {"job": "185677", "case": "same triangular J2=0 initial parent, zero updates, two GPUs", "A100s": 2, "wall_minutes": 15, "dependency": "afterok:185412", "output": "tri_j0_initial_2gpu.json"}
+  ],
+  "non_physical_attempts": [
+    {"job": "185345", "reason": "Inherited advance signal equalled short time limit; terminated before test results"},
+    {"jobs": ["185360", "185361", "185362"], "reason": "Cancelled dependencies before GPU execution"},
+    {"job": "185373", "reason": "Diagnostic required NetKet LocalEstimators.data, not np.asarray(wrapper); no production changes"},
+    {"jobs": ["185413", "185414"], "reason": "Cancelled while pending and replaced by clearly labelled single-GPU controls to use an available GPU"}
+  ],
+  "dmrg_quality_pair": {
+    "job": "185481",
+    "dependency": "afterok:167834",
+    "config": "projects/clebsch_tree_nqs/configs/remote/spin_dmrg_chi8192_sweep30_hexagon6_20261011.json",
+    "config_sha256": "8169e26c7b0392ea5837ba203484ea76bfce5e01555fe6c618d26f8d9e377d11",
+    "cpus": 16,
+    "memory_gib": 512,
+    "process_wall_seconds": 5400,
+    "process_memory_gib": 480,
+    "note": "New fixed-state readout only, same geometric region as sweep28; no extra DMRG optimization"
+  }
+}

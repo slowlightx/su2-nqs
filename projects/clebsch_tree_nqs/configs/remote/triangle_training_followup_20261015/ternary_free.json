@@ -1,0 +1,28 @@
+{
+  "task": "triangle_ClebschTree_common_trained_parent_SR_conditions",
+  "model": {"length": 6, "multiplicity_cap": 16, "maximum_q": 10},
+  "arm": "ternary_free",
+  "cost_checkpoint_sha256": {"binary_free":"277c33183dd391b804738c3e25a157b7d8d848f8f0901f1b42b242f80ac509b7","ternary_free":"8b734c7e55bb0dcd0e27d73325b4a48a4006ccd56e76aee8cc7e8fae0319b63b","ternary_c3":"52e3c1c321123c00a5810bde4437b6de0618ede2d24b30b8a134307b52f13472"},
+  "j2_over_j1": 0.125,
+  "projection_chunk": 4,
+  "initialization_beta": 1,
+  "cost_parent": "/home/yx789/nqs-wavefunctions/nqs/triangle_decoder_20261015/cost",
+  "trained_parent": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/triangle_decoder_20261015/train20/ternary_c3",
+    "registration_sha256": "2ae0aa43ec8423205fd1c76237be0c3227a241118cf820511296a95d8b9045ae",
+    "checkpoint_sha256": "80c97960f9657dee9a06223d884617b1a1fd3cbe633f0b1bd76b0411db56a8af",
+    "params_sha256": "7b991c4b7a6cda9864a305bf2d3885d6cf5ba9a4cd91c003cf63f993c4a702e9",
+    "completed_steps": 20,
+    "audit_sha256": "d778e12149b6ccd6d74780a7aa271ef6e365e4e281fa35f297c75aee0f31bc20"
+  },
+  "steps": 40, "samples": 256, "chains": 32,
+  "burn_proposals": 720, "spacing_proposals": 36,
+  "damping": 0.05, "learning_rate": 0.0001, "maximum_FS_sine": 0.025,
+  "training_seed": 2026101601, "initial_audit_seed": 2026101602,
+  "terminal_audit_seed": 2026102603,
+  "audit_samples": 1024, "audit_chains": 32,
+  "audit_burn_proposals": 720, "audit_spacing_proposals": 36,
+  "require_gpu": true,
+  "output": "/home/yx789/nqs-wavefunctions/nqs/triangle_training_followup_20261015/ternary_free",
+  "interpretation": "Strict SU2/full coherent A1 unchanged. Same sealed C3 step20 physical parent in constrained and free arms; explicit optimizer/RNG/chains reset, not identical tangent spaces or SR geometry. Original checkpoints untouched. Pilot2 then bounded40 attempted updates; final1024 untouched-chain full-H audit. No ViT/head or depth increase. Total requested two-arm budget<=6 A100-hours."
+}

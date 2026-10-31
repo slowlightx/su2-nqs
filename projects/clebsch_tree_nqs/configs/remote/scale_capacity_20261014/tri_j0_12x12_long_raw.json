@@ -1,0 +1,199 @@
+{
+  "task": "spin_spatial_vit_quality",
+  "preregistered_before_training": true,
+  "backend": "netket_ntk",
+  "require_gpu": true,
+  "model_family": "literature",
+  "coordinate_convention": "physical120",
+  "spin_inversion_even": true,
+  "output": "/home/yx789/nqs-wavefunctions/nqs/scale_long_raw_20261014/tri_j0_12x12/seed1",
+  "j2_over_j1": 0,
+  "initialization_seed": 2026102300,
+  "training_seed": 2026102301,
+  "model": {
+    "geometry": "triangular",
+    "rows": 12,
+    "columns": 12,
+    "patch_rows": 3,
+    "patch_columns": 3,
+    "embedding_dim": 48,
+    "head_count": 8,
+    "depth": 4,
+    "mlp_ratio": 4,
+    "target_m2": 0,
+    "initialization_scale": 1,
+    "initial_distance_decay": 3,
+    "use_distance_envelope": true,
+    "pooling": "authors",
+    "layer_norm_epsilon": 0.000001
+  },
+  "stages": [
+    {
+      "projection": "none",
+      "steps": 500
+    },
+    {
+      "projection": "translation",
+      "steps": 100,
+      "sr": {
+        "step_size": 0.0025
+      }
+    },
+    {
+      "projection": "gamma_a1",
+      "steps": 100,
+      "sr": {
+        "step_size": 0.00125
+      }
+    }
+  ],
+  "quality_milestones": [
+    0,
+    2,
+    100,
+    250,
+    500,
+    600,
+    700
+  ],
+  "maximum_training_seconds": 64800,
+  "maximum_audit_seconds_per_checkpoint": 14400,
+  "maximum_total_audit_seconds": 28800,
+  "sampling": {
+    "chains": 64,
+    "snapshots_per_update": 64,
+    "proposals_between_snapshots": 288,
+    "burn_proposals": 5760
+  },
+  "sr": {
+    "damping": 0.002,
+    "step_size": 0.005
+  },
+  "netket": {
+    "version": "3.22.3",
+    "on_the_fly": false,
+    "chunk_size": 32,
+    "chunk_size_bwd": 8,
+    "momentum": null,
+    "expected_device_count": 1,
+    "initialization": "balanced_spin_half",
+    "exchange_kernel": "uniform_all_pairs",
+    "replicate_initial_params": true,
+    "sampled_trust": {
+      "maximum_fs_sine": 0.05,
+      "minimum_ess_fraction": 0.95,
+      "halvings": 8
+    }
+  },
+  "audit": {
+    "seeds": [
+      2026102302,
+      2026102303
+    ],
+    "chains": 32,
+    "snapshots": 64,
+    "proposals_between_snapshots": 576,
+    "burn_proposals": 11520,
+    "query_batch": 2,
+    "bootstrap_seed": 2026102304,
+    "bootstrap_replicates": 2000
+  },
+  "momenta": {
+    "Gamma": [
+      0,
+      0
+    ],
+    "K": [
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "minus_K": [
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "M1": [
+      0.5,
+      0
+    ],
+    "M2": [
+      0,
+      0.5
+    ],
+    "M3": [
+      0.5,
+      0.5
+    ]
+  },
+  "regions": {
+    "compact4": {
+      "sites": [
+        0,
+        1,
+        12,
+        13
+      ],
+      "left": [
+        0,
+        1
+      ]
+    },
+    "compact6": {
+      "sites": [
+        0,
+        1,
+        2,
+        12,
+        13,
+        14
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ]
+    },
+    "hexagon6": {
+      "sites": [
+        1,
+        14,
+        26,
+        25,
+        12,
+        0
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "execution_gate": {
+    "authorized_initial_endpoint": 500,
+    "total_registered_steps": 700,
+    "automatic_release_beyond500": false,
+    "isolated_pilot_endpoint": 2,
+    "why": "Paper uses5000 raw updates before projection. Compare extra500 same-model raw updates from immutable raw500,4096 centers/update, then fresh fullA1 audit; future projected stages remain unreleased."
+  },
+  "interpretation": {
+    "model_unchanged": true,
+    "parent_parameter_step": 500,
+    "parent_training_projection": "none",
+    "fresh_optimizer_sampler_rng": true,
+    "first_released_phase": "500 additional unprojected updates only",
+    "samples_per_update": 4096,
+    "extra_training_full_H_calls": 2048000,
+    "full_A1_frozen_audit": true,
+    "no_SPRING_replication_claim": true,
+    "physical_distance_units": "site spacing",
+    "paper_budget_not_yet_matched": true
+  },
+  "repair_parameters_from": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/scale_staged_20261014/tri_j0_12x12/seed1",
+    "registration_sha256": "d89b0cbf99eb04a8202124acd31e208417a7047b3c0de3778efbd3bbbb10b23d",
+    "checkpoint_path": "quality/step00500.pkl",
+    "completed_steps": 500,
+    "checkpoint_sha256": "5626eaa681196823fd985b256e85a408a08217c31d0d052e693453b3173f9db1",
+    "params_sha256": "28dece50fe9ecdad2b8534aa0822bf748e89eb2aa6fd2ff7ab4019347624aac4"
+  }
+}

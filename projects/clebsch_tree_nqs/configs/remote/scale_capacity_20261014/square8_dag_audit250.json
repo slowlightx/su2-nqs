@@ -1,0 +1,23 @@
+{
+  "training_directory": "/home/yx789/nqs-wavefunctions/nqs/vieijra_nys_reproduction_20261014/square8_orbit_dag",
+  "output": "/home/yx789/nqs-wavefunctions/nqs/square_training_followup_20261015/audit_step250",
+  "endpoint_step": 250,
+  "quality_checkpoint": false,
+  "require_gpu": true,
+  "streams": 2,
+  "chains_per_stream": 16,
+  "snapshots_per_stream": 32,
+  "burn_proposals": 4096,
+  "proposals_between_snapshots": 256,
+  "audit_seeds": [
+    2036101701,
+    2036101702
+  ],
+  "bootstrap_seed": 2036101703,
+  "H_sample_chunk": 32,
+  "policy": "Frozen fixed endpoint250, untouched independent audit seeds; unchanged exactS0/coherentA1 physical amplitude. No optimizer update or best-state selection.",
+  "frozen_checkpoint_sha256": "a6945a48f1386faf3b240fca39ec34d97c2326be123caaf2bde032a2cd3eed12",
+  "frozen_registration_sha256": "81386a72a447891adf07d10832db1538fc43e41fa1fbb347fadebd5a9bb6dcd4",
+  "new_training_steps": 0,
+  "maximum_requested_GPU_hours": 0.5
+}

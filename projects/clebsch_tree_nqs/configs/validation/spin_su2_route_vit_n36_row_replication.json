@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "exact_su2_route_vit_n36_local_audit",
+  "seed": 20260917,
+  "case": {
+    "case_id": "triangular_6x6_j2_0p125_su2_route_vit_row_replication",
+    "geometry": "triangular",
+    "rows": 6,
+    "columns": 6,
+    "j2_over_j1": 0.125
+  },
+  "model": {
+    "feature_dim": 2,
+    "maximum_intermediate_q": 10,
+    "initialization_scale": 0.2,
+    "embedding_dim": 8,
+    "head_count": 2,
+    "depth": 1,
+    "mlp_ratio": 2,
+    "modulation_rank": 1,
+    "modulation_scale": 0.1,
+    "support_floor_head_scale": 0.05,
+    "backbone_support_floor": 0.1,
+    "translation_orbit_chunk_size": 6
+  },
+  "sampler": {
+    "chains": 8,
+    "burn_sweeps": 192,
+    "snapshots": 32,
+    "sweeps_between": 18,
+    "arms": [
+      {"arm_id": "row_replica_a", "edge_bank": "row", "proposal_probability": 0.8},
+      {"arm_id": "row_replica_b", "edge_bank": "row", "proposal_probability": 0.8},
+      {"arm_id": "row_replica_c", "edge_bank": "row", "proposal_probability": 0.8}
+    ]
+  },
+  "audit": {
+    "full_h_samples": 8,
+    "line_search_scales": [3.0, 10.0, 30.0]
+  }
+}

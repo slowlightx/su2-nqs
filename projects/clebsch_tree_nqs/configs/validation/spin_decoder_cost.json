@@ -1,0 +1,18 @@
+{
+  "task": "N36_strict_physical_decoder_cost_only",
+  "output": "projects/clebsch_tree_nqs/results/spin_decoder_cost_v1",
+  "probe_file": "projects/clebsch_tree_nqs/results/spin_full_vit_constraint_v1/ratio_preflight.npz",
+  "cases": [{"geometry":"triangular","j2_over_j1":0.125},{"geometry":"square","j2_over_j1":0.5}],
+  "width": 2,
+  "seed": 2026093003,
+  "batches": [1,8],
+  "timing_repeats": 3,
+  "wall_limit_seconds_per_process": 1200,
+  "peak_rss_limit_gib": 8,
+  "initialization": "Fresh deterministic real+i imag local-Schur/CG decoder. Width2 and all q channels unchanged. Nine-cell tree needs new size-shared maps; NO claim of N16 weight transfer or retained energy. Same seed/parameters for both geometries. Save/reload parameters before benchmarking.",
+  "probes": "Use first1/8 frozen N36 configurations from each geometry's sealed earlier ratio preflight. No resampling, filtering or energy selection; nonfinite ratios must be reported/fail validation, not replaced.",
+  "execution": "One fresh process per geometry, serial CPU runs. Existing raw CG amplitude and PhysicalSpatialProjector with complete A1 group, no quotient, existing full-H JAX ratios with batch4 connectors. Time offline CG preparation, lowering, compilation, first call and three blocked steady calls separately. Kernels use dynamic parameters. No gradients, optimizer, new ED, basis enumeration, MCMC or remote work.",
+  "checks": "First run ordered exact invariants plus independent N8 physical H/S2 and A1 orbit checks. N36 compare raw and projected H ratios for first center to host SzHeisenbergGraph connectivity contracted with separately evaluated amplitudes. Check raw S2 annihilation through all unlike-spin swaps, full-group projected amplitude covariance on fixed spatial images, checkpoint replay and raw amplitude dependence on all nine patch translations. Only identity is assumed invariant; no empirical evidence is used to remove group images.",
+  "memory": "Report cumulative process ru_maxrss high-water in bytes (darwin bytes, other Unix KiB converted), plus per-executable JAX memory_analysis fields where available. These are CPU resident memory/compiler estimates, not GPU VRAM. Check 8GiB cap between stages; a process wall alarm interrupts after1200s and leaves progress.json, no automatic budget extension.",
+  "decision": "Report forward inference and H-ratio cost, not a training energy, mixing test, gradient cost or GPU-hour production estimate. Do not infer variational benefit from frozen pointwise ratios. No N16 training or precision improvements. Full A1 image costs cannot be replaced by ViT translation cosets without proof. If too slow, diagnose observed compilation/projection cost before proposing a separate implementation change."
+}

@@ -1,0 +1,23 @@
+{
+  "task": "spin_readout_calibration",
+  "output": "projects/clebsch_tree_nqs/results/spin_readout_calibration_v1",
+  "source_directory": "/Users/slowlight/research/tn/excipeps/simulations/trgl/raw/J1J2_uncompressed_1site_D5",
+  "checkout": "/Users/slowlight/research/tn/tn-torch_dev",
+  "chis": [24, 32],
+  "seconds_per_new_tensor_cap": 600,
+  "new_ed": 0,
+  "new_training": 0,
+  "new_dmrg": 0,
+  "new_sampling": 0,
+  "new_gpu_jobs": 0,
+  "points": [
+    {"j2": 0.0, "state": "trglC_j11.0_D5_1SITE_C4X4_state.json"},
+    {"j2": 0.05, "state": "trglC_j11.0_j20.05_1SITE_C4X4_state.json"},
+    {"j2": 0.075, "state": "trglC_j11.0_j20.075_1SITE_C4X4_state.json"},
+    {"j2": 0.1, "state": "trglC_j11.0_j20.1_1SITE_C4X4_state.json"},
+    {"j2": 0.125, "state": "trglC_j11.0_j20.125_1SITE_C4X4_state.json", "reuse": "projects/clebsch_tree_nqs/results/spin_tensor_network_reference_v1/ipeps_D5_j0125"},
+    {"j2": 0.15, "state": "trglC_j11.0_j20.15_1SITE_C4X4_state.json"}
+  ],
+  "saved_n16": "projects/clebsch_tree_nqs/results/spin_competing_state_readout_v1",
+  "protocol": "Read-only fixed-D5 ordered-candidate coupling calibration, not a phase scan. Compare adjacent-coupling compact4 RDMs against EACH tensor's CTM24-to32 changes. These are empirical contraction scales, not certified finite-D errors. No strict multiplicity spectrum for broken symmetry. No automatic size release. External PRL LE/HE DMRG data is a later optional task."
+}

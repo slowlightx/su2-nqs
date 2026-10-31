@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "strict_schur_spatial_n16_smoke",
+  "status": "preregistered_runtime_smoke",
+  "seed": 20260917,
+  "case": {
+    "geometry": "square",
+    "rows": 4,
+    "columns": 4,
+    "j2_over_j1": 0.5,
+    "periodic": true,
+    "support": "fixed_m0",
+    "basis_size": 12870,
+    "ed": false
+  },
+  "model": {
+    "local_cells": "four_complete_2x2_plaquettes",
+    "level1_merges": "two_unshared_4_plus_4",
+    "root_merge": "8_plus_8_to_q0",
+    "reduced_width": 4,
+    "raw_real_trainable_scalar_count": 619,
+    "internal_gauge_nullity": 130,
+    "unprojected_generic_tangent_rank": 489,
+    "translation_invariant_singlet_codomain_dimension": 107,
+    "bias": false,
+    "extra_readout": false
+  },
+  "gates": {
+    "spin_raising_relative_norm_below": 1e-11,
+    "physical_leg_multi_affinity_defect_below": 5e-12,
+    "translation_projection_closure_below": 1e-11,
+    "hpsi_jvp_linearity_relative_error_below": 1e-11,
+    "jvp_central_difference_relative_error_below": 2e-8,
+    "translation_hpsi_commutator_relative_error_below": 1e-11,
+    "full_energy_vs_three_hz_abs_error_below": 1e-11,
+    "rayleigh_imaginary_abs_below": 1e-11
+  },
+  "claim_boundary": "Strict square-4x4 forward/JVP/Hpsi readiness only; no optimized energy, efficiency, scaling, phase, QSL, or PRL win."
+}

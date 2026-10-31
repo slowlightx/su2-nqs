@@ -1,0 +1,88 @@
+{
+  "status": "submitted",
+  "submitted": true,
+  "user_authorization": "Explicit approval of necessary source/config/checkpoint synchronization to unicorn:/home/yx789/nqs-su2-depth-comparison-20261012/ and two bounded A100 tests, total allocation <= approximately 2.17 GPU-hours.",
+  "historical_blocked_receipt": "projects/clebsch_tree_nqs/remote/reduced_vit_depth_comparison_launch_20261012.json",
+  "host": "unicorn",
+  "remote_workspace": "/home/yx789/nqs-su2-depth-comparison-20261012",
+  "resolved_environment": "/home/yx789/nqs-vit-quality/.conda-netket",
+  "sync_manifest": "projects/clebsch_tree_nqs/remote/reduced_vit_depth_comparison_sync_20261012.json",
+  "sync_file_list": "projects/clebsch_tree_nqs/remote/reduced_vit_depth_comparison_sync_20261012.files",
+  "payload_files": 45,
+  "payload_bytes": 564115,
+  "local_and_remote_all_payload_hashes_verified": true,
+  "parent_checkpoint_sha256": "775cb79d366de3cf460dcd91337d57f59808c54a0250f3e754ff9601b0a208fb",
+  "remote_CPU_config_validation": {
+    "passed": true,
+    "python": "3.14.7",
+    "jax": "0.11.1",
+    "GPU_allocation_used": false
+  },
+  "scheduler_verified_at": "2026-10-12T22:49:44-04:00",
+  "jobs": {
+    "depth4": {
+      "id": 239822,
+      "name": "su2-depth4-20261012",
+      "submitted_at": "2026-10-12T22:49:05-04:00",
+      "observed_state": "PENDING",
+      "observed_reason": "Resources",
+      "parameters": 17322,
+      "configuration": "projects/clebsch_tree_nqs/configs/remote/spin_reduced_vit_depth_comparison_d4_20261012.json",
+      "output": "/home/yx789/nqs-wavefunctions/reduced/depth_comparison_20261012_d4_v1"
+    },
+    "depth8": {
+      "id": 239830,
+      "name": "su2-depth8-20261012",
+      "submitted_at": "2026-10-12T22:49:19-04:00",
+      "observed_state": "PENDING",
+      "observed_reason": "Priority",
+      "parameters": 33770,
+      "configuration": "projects/clebsch_tree_nqs/configs/remote/spin_reduced_vit_depth_comparison_d8_20261012.json",
+      "output": "/home/yx789/nqs-wavefunctions/reduced/depth_comparison_20261012_d8_v1"
+    }
+  },
+  "resources_each": {
+    "partition": "kim",
+    "account": "kim",
+    "nodes": 1,
+    "A100_80GB_GPUs": 1,
+    "CPUs": 8,
+    "memory_GiB": 64,
+    "scheduler_seconds": 3900,
+    "scientific_subprocess_seconds": 3590,
+    "training_seconds": 3000,
+    "requeue": false
+  },
+  "total_scheduler_GPU_hours_cap": 2.1666666666666665,
+  "total_scientific_subprocess_GPU_hours_cap": 1.9944444444444445,
+  "protocol": {
+    "requested_steps_each": 50,
+    "training_native_IID_draws_per_step": 256,
+    "independent_geometry_draws_per_step": 128,
+    "untouched_child_audit_draws": 512,
+    "untouched_parent_audit_draws": 512,
+    "full_network_SR": true,
+    "checkpoint_optimizer_RNG_next_update_replay_required": true,
+    "exact_S0": true,
+    "full_A1": false,
+    "initial_physical_parent_preserved": true,
+    "budget_limited_steps_allowed": true,
+    "incomplete_audit_cannot_be_promoted": true
+  },
+  "existing_production_jobs_unchanged": true,
+  "later_read_only_observations": [
+    {
+      "recorded_at_UTC": "2026-10-13T03:28:18Z",
+      "depth4_state": "RUNNING",
+      "depth4_elapsed": "00:37:35",
+      "depth8_state": "RUNNING",
+      "depth8_elapsed": "00:37:09",
+      "node": "kim-compute-03",
+      "each_verified_allocation": "8 CPU,64G,1 nvidia_a100_80gb_pcie; time limit 01:05:00",
+      "logs": "Each stdout contains [CudaDevice(id=0)]; stderr empty at this read. No completed SR step or independent audit is yet printed.",
+      "scientific_claim": "Scheduler running and device initialization only; convergence, checkpoint/replay and audits not certified."
+    }
+  ],
+  "extra_or_retry_GPU_jobs_submitted": 0,
+  "claim_boundary": "Developmental native-S0 depth comparison only; no new trained result yet, no full-A1 claim, no matched-capacity causal or ordinary-ViT symmetry-advantage claim. Historical blocked receipt remains unchanged."
+}

@@ -1,0 +1,24 @@
+{
+  "utc": "2026-10-12T04:15:14.037706+00:00",
+  "job_id": 215526,
+  "command": [
+    "/usr/local/slurm/current/bin/sbatch",
+    "--parsable",
+    "--partition=kim",
+    "--account=kim",
+    "--chdir=/home/yx789/nqs-quality-sequence-20261011",
+    "--job-name=square05-cont-regional750-1000",
+    "--constraint=a100",
+    "--cpus-per-task=8",
+    "--mem=24G",
+    "--time=02:00:00",
+    "--dependency=afterok:215498:215499",
+    "--kill-on-invalid-dep=yes",
+    "/home/yx789/nqs-quality-sequence-20261011/projects/clebsch_tree_nqs/remote/physics_readout_kim.sbatch",
+    "nqs",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261012/square_j05_continue_step00750_regional.json",
+    "projects/clebsch_tree_nqs/configs/remote/coupling_quality_20261012/square_j05_continue_step01000_regional.json"
+  ],
+  "requests_GPU": false,
+  "scalar_magnetic_readout_from_full_audit": true
+}

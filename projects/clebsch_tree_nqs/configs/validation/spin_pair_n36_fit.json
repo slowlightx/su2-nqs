@@ -1,0 +1,28 @@
+{
+  "task": "spin_pair_n36_fit",
+  "n_sites": 36,
+  "j2_over_j1": 0.125,
+  "cost_source": "projects/clebsch_tree_nqs/results/spin_pair_n36_cost_v1",
+  "output": "projects/clebsch_tree_nqs/results/spin_pair_n36_fit_v1",
+  "parameterization": "full_real_symmetric_pairing_630",
+  "training_wall_seconds": 600,
+  "total_wall_seconds": 900,
+  "objective_call_cap": 12,
+  "iteration_cap": 8,
+  "entry_bound": 0.01,
+  "maximum_training_sine_FS": 0.02,
+  "positive_floor": 0.2,
+  "tile_size": 8,
+  "H_batch_size": 8,
+  "chains": 16,
+  "burn_sweeps": 256,
+  "decorrelation_sweeps": 16,
+  "training_blocks": 8,
+  "audit_blocks": 16,
+  "training_seed": 2026100622,
+  "audit_seed": 2026100623,
+  "regions": {
+    "compact6": {"sites": [12, 13, 14, 18, 19, 20], "left": [0, 1, 2]},
+    "winding6": {"sites": [12, 13, 14, 15, 16, 17], "left": [0, 2, 4]}
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "training_directory": "/home/yx789/nqs-wavefunctions/nqs/square_continuation_20261017/direct_SR",
+  "output": "/home/yx789/nqs-wavefunctions/nqs/square_continuation_20261017/direct_SR/audit_step322",
+  "endpoint_step": 322,
+  "require_gpu": true,
+  "streams": 2,
+  "chains_per_stream": 16,
+  "snapshots_per_stream": 64,
+  "burn_proposals": 4096,
+  "proposals_between_snapshots": 256,
+  "audit_seeds": [
+    2056101711,
+    2056101712
+  ],
+  "bootstrap_seed": 2056101713,
+  "H_sample_chunk": 32
+}

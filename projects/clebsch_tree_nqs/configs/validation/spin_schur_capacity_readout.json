@@ -1,0 +1,19 @@
+{
+  "task": "saved_raw_schur_canonical_capacity_readout",
+  "output": "projects/clebsch_tree_nqs/results/spin_schur_capacity_readout_v1",
+  "decoder_source": "projects/clebsch_tree_nqs/results/spin_finite_schur_protected_v1",
+  "decoder_config": "projects/clebsch_tree_nqs/configs/validation/spin_finite_schur_protected.json",
+  "raw_edge_index": 0,
+  "raw_physical_budget": 12,
+  "raw_baseline_copies": {"0": 1, "2": 2, "4": 1},
+  "cached_probe_count": 16,
+  "target_state": "projects/clebsch_tree_nqs/results/spin_full_vit_vap_v1/triangular_d16_l2_s2026092901_vap/states.npz",
+  "target_results": "projects/clebsch_tree_nqs/results/spin_full_vit_vap_v1/triangular_d16_l2_s2026092901_vap/results.json",
+  "target_vector": "projected_terminal",
+  "target_region": [0, 1, 2, 3, 4, 5, 6, 7],
+  "target_physical_budget": 18,
+  "target_baseline_copies": {"0": 2, "2": 2, "4": 2, "6": 0, "8": 0},
+  "timing_repeats": 3,
+  "wall_seconds": 1800,
+  "scope": "No new training, samples, head, ED or remote job. Canonical raw decoder spectrum is not the complete A1-projected/additive-carrier spectrum. SAME effective D12 neural/free comparison and same-D baseline compression, with unchanged padded storage. Saved trusted N16 physical eight-site RDM separately suggests SAME D18 target allocation and realizes the whole-multiplet projector; it does not infer missing global decoder modes or automatically select a new ansatz. No variational or speedup win claim."
+}

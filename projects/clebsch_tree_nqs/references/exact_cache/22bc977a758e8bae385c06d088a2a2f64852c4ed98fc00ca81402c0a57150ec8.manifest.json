@@ -1,0 +1,35 @@
+{
+  "cache_key": "22bc977a758e8bae385c06d088a2a2f64852c4ed98fc00ca81402c0a57150ec8",
+  "created_at_utc": "2026-09-18T16:20:45.035630+00:00",
+  "identity": {
+    "basis_sha256": "649bff9c04b9072705f67f71b94e536b30fc299dd238e4b1c6a7c35deff46918",
+    "hamiltonian_coo_sha256": "357f683942650c3deb80478426527014c34a15f054922024c29380ad14f68bf3",
+    "purpose": "triangular_4x4_j2_0p075_fixed_m0_ground",
+    "solver": "scipy.sparse.linalg.eigsh_SA_tol_1e-13_v1"
+  },
+  "identity_sha256": "6ed83bb7e3f2a0d13aef52a1955fd7ee56c857c496e0ee976b23cec8111af18d",
+  "payload": {
+    "arrays": {
+      "energy": {
+        "dtype": "<f8",
+        "sha256": "db796e086bc22931ae2744efa970336910f26a35686e05664584ee384f0492b5",
+        "shape": []
+      },
+      "residual_norm": {
+        "dtype": "<f8",
+        "sha256": "bc73776822db33f65e086f410ad388cb0697435d3f2d404c835f630cba2e950d",
+        "shape": []
+      },
+      "state": {
+        "dtype": "<c16",
+        "sha256": "3855721ad1dcb12616a697d3c7a094817eb5ded177d49c2082ead0072fc62f82",
+        "shape": [
+          12870
+        ]
+      }
+    },
+    "filename": "22bc977a758e8bae385c06d088a2a2f64852c4ed98fc00ca81402c0a57150ec8.npz",
+    "sha256": "047f5320f71a5ceecc659fa96ec7bcdf01e542d6147e20a776f45d153858b24e"
+  },
+  "schema_version": 1
+}

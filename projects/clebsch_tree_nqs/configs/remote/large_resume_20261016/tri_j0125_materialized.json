@@ -1,0 +1,199 @@
+{
+  "task": "spin_spatial_vit_quality",
+  "preregistered_before_training": true,
+  "backend": "netket_ntk",
+  "require_gpu": true,
+  "model_family": "literature",
+  "coordinate_convention": "physical120",
+  "spin_inversion_even": true,
+  "output": "/home/yx789/nqs-wavefunctions/nqs/large_resume_20261016/tri_j0125_12x12/seed1",
+  "j2_over_j1": 0.125,
+  "initialization_seed": 2026101470,
+  "training_seed": 2026101471,
+  "model": {
+    "geometry": "triangular",
+    "rows": 12,
+    "columns": 12,
+    "patch_rows": 3,
+    "patch_columns": 3,
+    "embedding_dim": 48,
+    "head_count": 8,
+    "depth": 4,
+    "mlp_ratio": 4,
+    "target_m2": 0,
+    "initialization_scale": 1,
+    "initial_distance_decay": 3,
+    "use_distance_envelope": true,
+    "pooling": "authors",
+    "layer_norm_epsilon": 1e-06
+  },
+  "stages": [
+    {
+      "projection": "gamma_a1",
+      "steps": 100
+    },
+    {
+      "projection": "gamma_a1",
+      "steps": 24
+    }
+  ],
+  "quality_milestones": [
+    0,
+    100,
+    102,
+    112,
+    124
+  ],
+  "maximum_training_seconds": 75600,
+  "maximum_audit_seconds_per_checkpoint": 14400,
+  "maximum_total_audit_seconds": 28800,
+  "sampling": {
+    "chains": 64,
+    "snapshots_per_update": 32,
+    "proposals_between_snapshots": 288,
+    "burn_proposals": 5760
+  },
+  "sr": {
+    "damping": 0.002,
+    "step_size": 0.005
+  },
+  "netket": {
+    "version": "3.22.3",
+    "on_the_fly": false,
+    "chunk_size": 32,
+    "chunk_size_bwd": 8,
+    "momentum": null,
+    "expected_device_count": 1,
+    "initialization": "balanced_spin_half",
+    "exchange_kernel": "uniform_all_pairs",
+    "replicate_initial_params": true,
+    "sampled_trust": {
+      "maximum_fs_sine": 0.05,
+      "minimum_ess_fraction": 0.95,
+      "halvings": 8
+    }
+  },
+  "audit": {
+    "seeds": [
+      2026102612,
+      2026102613
+    ],
+    "chains": 32,
+    "snapshots": 64,
+    "proposals_between_snapshots": 576,
+    "burn_proposals": 11520,
+    "query_batch": 2,
+    "bootstrap_seed": 2026102614,
+    "bootstrap_replicates": 2000
+  },
+  "momenta": {
+    "Gamma": [
+      0,
+      0
+    ],
+    "K": [
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "minus_K": [
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "M1": [
+      0.5,
+      0
+    ],
+    "M2": [
+      0,
+      0.5
+    ],
+    "M3": [
+      0.5,
+      0.5
+    ]
+  },
+  "regions": {
+    "compact4": {
+      "sites": [
+        0,
+        1,
+        12,
+        13
+      ],
+      "left": [
+        0,
+        1
+      ]
+    },
+    "compact6": {
+      "sites": [
+        0,
+        1,
+        2,
+        12,
+        13,
+        14
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ]
+    },
+    "hexagon6": {
+      "sites": [
+        1,
+        14,
+        26,
+        25,
+        12,
+        0
+      ],
+      "left": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "execution_gate": {
+    "authorized_initial_endpoint": 500,
+    "total_registered_steps": 700,
+    "automatic_release_beyond500": false,
+    "isolated_pilot_endpoint": 2,
+    "resume_endpoint": 4,
+    "actual_throughput_required": true,
+    "why_not_direct_full_A1": "Direct transfer full-A1 initial N144 training energies +.430(J0),+.445(.125), not competitive. Preserve original canary, do not spend100 tiny FS updates on it."
+  },
+  "interpretation": {
+    "strict_su2": false,
+    "new_head": false,
+    "protocol": "New same-model optimizer-condition experiment from the immutable complete-A1 step700 weights. Same2048 training samples/damping .002; full-A1 step size .005 versus .00125, equivalent forward/backward chunks32/8. Fresh sampler/optimizer/RNG. Fixed100 steps, no audit-driven selection. Actual frozen parent physical state replay required by unchanged loader."
+  },
+  "budget_release": {
+    "authorized_endpoint": 100,
+    "model_unchanged": true,
+    "not_PRL_production_release": true,
+    "after_complete_step700_and_its_audit": true,
+    "training_GPU_hours_cap": 18,
+    "audit_GPU_hours_cap": 4
+  },
+  "repair_parameters_from": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/scale_staged_20261014/tri_j0125_12x12/seed1",
+    "completed_steps": 700,
+    "checkpoint_path": "quality/step00700.pkl",
+    "checkpoint_sha256": "2b772f542d685114082d52324aa17a2f9cd324f1fb5f3d861e629c1241482f8c",
+    "registration_sha256": "e2d23c4bc13ea7d223a861872e229077d9a4c8f2b80fe4bd126e1e3b5cb1b558",
+    "params_sha256": "b76ef034e53a6b43095b9ac1aa8f6f218906b16610da5afcf4df2ce2c2513362"
+  },
+  "netket_continue_from": {
+    "directory": "/home/yx789/nqs-wavefunctions/nqs/scale_opt_20261014/tri_j0125_12x12/seed1",
+    "completed_steps": 100,
+    "checkpoint_path": "quality/step00100.pkl",
+    "checkpoint_sha256": "0b87c1fe7eb60dcc19ed544ae62e4174eb05fe97b6bca259e6e5f320b986ed5d",
+    "registration_sha256": "15845d2eb0ce4a81b202421831faeaf6b7dfb5fe7957a70c0bf91c0989f77c32",
+    "additional_steps": 24,
+    "time_budget_extension_seconds": 14400,
+    "progress_sha256": "b4e3e86e9d817683999c9d4d7792a5e6495a497c0608302f500c7b485b6f8dfa"
+  }
+}

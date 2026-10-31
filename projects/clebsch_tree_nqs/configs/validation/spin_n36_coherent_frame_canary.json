@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_n36_coherent_frame_canary",
+  "source_n36_support_gate": "../../results/spin_n36_coherent_frame_support_v1/results.json",
+  "controls": {
+    "development_seeds": {
+      "square_6x6_j2_0.5": 2026092531,
+      "triangular_6x6_j2_0.125": 2026092532
+    },
+    "untouched_audit_seeds": [2026092541, 2026092542, 2026092543, 2026092544],
+    "sample_count_per_seed": 512
+  },
+  "optimizer": {
+    "finite_difference_step": 0.002,
+    "learning_rate": 0.25,
+    "maximum_fubini_study_distance": 0.03,
+    "maximum_symmetric_kl": 0.002
+  },
+  "gates": {
+    "minimum_absolute_parameter_update": 1e-5,
+    "minimum_energy_z_score": 2.0,
+    "maximum_variance_z_score": 2.0
+  },
+  "remote_training_on_pass": false,
+  "claim_boundary": "A pass is a bounded local canary only: one development sample fixes one exact-SU2/Gamma-A1 response update, and four untouched sample streams must resolve an energy decrease without a resolved variance increase while respecting finite sampled Fubini-Study and symmetric-KL radii. It licenses preparation of a matched three-arm remote pilot, never production or a variational-win claim."
+}

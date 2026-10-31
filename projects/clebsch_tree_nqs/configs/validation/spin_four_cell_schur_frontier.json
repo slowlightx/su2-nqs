@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "domain": "spin",
+  "task": "spin_four_cell_schur_frontier",
+  "architecture": {
+    "basis": "complete_four_cell_local_Schur_multiplicity",
+    "local_cells": {
+      "triangular_n12": "four_disjoint_triangles",
+      "square_n16": "four_disjoint_2x2_plaquettes"
+    },
+    "embedding_dim": 12,
+    "head_count": 3,
+    "depth": 1,
+    "magnetic_indices_visible_to_vit": false,
+    "autoregressive_labels": ["local_q", "local_a", "intercell_q"],
+    "reachability_mask": "exact_before_every_softmax",
+    "ground_projection": "Gamma_A1_exact_Reynolds"
+  },
+  "optimization": {
+    "triangular_seeds": [0, 1, 2],
+    "square_seeds": [0, 1],
+    "triangular_steps": 1200,
+    "square_steps": 1000,
+    "learning_rate": 0.01
+  },
+  "cases": [
+    "triangular_n12_j2_0125",
+    "square_n16_j2_05"
+  ],
+  "response_heads": {
+    "triangular": ["Gamma_E2_bond", "Gamma_A2_chirality", "S1_K", "S1_M"],
+    "square": ["Neel", "columnar_dimer"],
+    "status": "exact_sector_response_operators_on_shared_A1_backbone"
+  },
+  "claim_boundary": {
+    "purpose": "complete_space_sector_tangent_and_response_gate",
+    "variational_frontier_win": false,
+    "reason": "complete small spaces and two-Lanczos controls do not replace matched fixed-Sz, symmetry-unaware, or published VMC/ViT baselines",
+    "promotion_condition": "held-out matched-work energy, variance, and response improvement before triangular 6x6 production"
+  }
+}

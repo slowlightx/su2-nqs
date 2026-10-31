@@ -1,0 +1,229 @@
+{
+  "workspace": "/home/yx789/nqs-vit6-gcnn-quality-20261021",
+  "cases": [
+    {
+      "case": "j0",
+      "config": "projects/clebsch_tree_nqs/configs/remote/vit6_gcnn_quality_20261021/j0.json",
+      "config_sha256": "a67188a48876dfa02d0fb974455888a3173c4c11b3355fd99c49a9aaa668cf74",
+      "parent_audit": {
+        "step": 600,
+        "registration_sha256": "2210c6088e6703eb45cee3d8494e33e6fe74a0f9015164e247d1ebc4640987ae",
+        "checkpoint_sha256": "21e9d220cade0af9bfefe1f01f681df30fa7a8192e516c4d872158aa5b7f390c",
+        "params_sha256": "08ec62bb414a86ea92d27b2bc90cc40c90e7b83a3db932a24a6f8a0cb8bcb3b9",
+        "audit_projection": "gamma_a1",
+        "image_count": 216,
+        "strict_su2": false,
+        "energy": {
+          "energy_per_site": -0.5600700168018083,
+          "energy_imaginary_per_site": 1.8699374067055355e-05,
+          "chain_mean_standard_error": 2.5534623448431776e-05,
+          "variance_per_site": 0.0021543247074829156,
+          "variance_chain_standard_error": 0.00013068754277376006,
+          "energy_chain_bootstrap_95": [
+            -0.5601229228422294,
+            -0.5600218571511737
+          ],
+          "variance_chain_bootstrap_95": [
+            0.0019273997850405068,
+            0.0024252304126126173
+          ],
+          "stream_energies_per_site": [
+            -0.5600524982235066,
+            -0.5600875353801099
+          ],
+          "stream_variances_per_site": [
+            0.0022118411777554744,
+            0.0020967853590438536
+          ],
+          "split_chain_energy_rhat": 1.0003854865346595,
+          "energy_lag1_descriptive": 0.003211663707345819,
+          "second_minus_first_half_per_site": -1.2250622201133897e-05,
+          "half_drift_chain_standard_error": 5.386609312558099e-05,
+          "top_one_percent_variance_share": 0.5683643048048447,
+          "samples": 65536,
+          "independent_chains": 256,
+          "mixing_certified": false
+        },
+        "streams": [
+          {
+            "seed": 2610803511,
+            "params_sha256": "08ec62bb414a86ea92d27b2bc90cc40c90e7b83a3db932a24a6f8a0cb8bcb3b9",
+            "registration_sha256": "2210c6088e6703eb45cee3d8494e33e6fe74a0f9015164e247d1ebc4640987ae",
+            "raw_sha256": "802d462ec34f9d233d669b54b5d85057fd25dacbc7fffe4e0ba320aeaffb306a",
+            "records": 32768,
+            "full_H_calls": 32768,
+            "result_sha256": "5c797598ca047faa456ff4e956be086c3c1a9f54409a27e50bc3bb18afd9f59e"
+          },
+          {
+            "seed": 2610803512,
+            "params_sha256": "08ec62bb414a86ea92d27b2bc90cc40c90e7b83a3db932a24a6f8a0cb8bcb3b9",
+            "registration_sha256": "2210c6088e6703eb45cee3d8494e33e6fe74a0f9015164e247d1ebc4640987ae",
+            "raw_sha256": "65c4a5b251295f06dfc42f5f2330b1279233979aa119dce6da3cb518877cecd1",
+            "records": 32768,
+            "full_H_calls": 32768,
+            "result_sha256": "36b2405ac1b0e3e2299d3d50dc4e01d334a048e26fa244303ba2e48d6f6de1cf"
+          }
+        ],
+        "full_H_calls": 65536,
+        "frozen_before_audit": true,
+        "audit_never_used_for_training": true,
+        "fixed_terminal_endpoint": true,
+        "seconds": 0.6903568962588906,
+        "physical_readouts_pending": true,
+        "competitive_accuracy_certified": false,
+        "physical_phase_claim": false,
+        "result_sha256": "0b8d6880f3b172f36e3b46a923d7aad630bb89d74be884a2aaf966e4454338f1"
+      },
+      "parameter_count": 323392,
+      "samples": 8192,
+      "devices": 2,
+      "steps": 300,
+      "phases": [
+        {
+          "phase": "pilot",
+          "minutes": 90,
+          "devices": 2,
+          "boundary": 2
+        },
+        {
+          "phase": "restore",
+          "minutes": 60,
+          "devices": 2,
+          "boundary": 4
+        },
+        {
+          "phase": "warm",
+          "minutes": 90,
+          "devices": 2,
+          "boundary": 8
+        },
+        {
+          "phase": "train1",
+          "minutes": 960,
+          "devices": 2,
+          "boundary": 150
+        },
+        {
+          "phase": "train2",
+          "minutes": 960,
+          "devices": 2,
+          "boundary": 300
+        }
+      ]
+    },
+    {
+      "case": "j0125",
+      "config": "projects/clebsch_tree_nqs/configs/remote/vit6_gcnn_quality_20261021/j0125.json",
+      "config_sha256": "2ee13196b5677fbfaa7ba6f2d9125aa6dce808253a000f4bdb4a7fb64c749bcb",
+      "parent_audit": {
+        "step": 600,
+        "registration_sha256": "55111dcc3abd2083a8312158f951042a09813cb29eaa9395c9649866ebdf3a96",
+        "checkpoint_sha256": "c076a5bcd50c441934ce785e5f5db875d3ae52dc9947062adb52ac77a9e597d1",
+        "params_sha256": "a4a612c4dff836de08e5f86fa8628e5ec1aab0a8e37aba5b0b73caab5d8a3387",
+        "audit_projection": "gamma_a1",
+        "image_count": 216,
+        "strict_su2": false,
+        "energy": {
+          "energy_per_site": -0.5144167433149167,
+          "energy_imaginary_per_site": -4.52207622188888e-05,
+          "chain_mean_standard_error": 4.796404597165683e-05,
+          "variance_per_site": 0.006780127628076072,
+          "variance_chain_standard_error": 0.0005684650350801347,
+          "energy_chain_bootstrap_95": [
+            -0.5145083976554583,
+            -0.5143217683763311
+          ],
+          "variance_chain_bootstrap_95": [
+            0.005727744679965597,
+            0.008047130873927463
+          ],
+          "stream_energies_per_site": [
+            -0.5144273190079924,
+            -0.514406167621841
+          ],
+          "stream_variances_per_site": [
+            0.006987109528978832,
+            0.006573130386572593
+          ],
+          "split_chain_energy_rhat": 1.0004389225191106,
+          "energy_lag1_descriptive": -0.0015163738264392106,
+          "second_minus_first_half_per_site": 4.012071268254788e-06,
+          "half_drift_chain_standard_error": 9.853053737393203e-05,
+          "top_one_percent_variance_share": 0.6806197175419146,
+          "samples": 65536,
+          "independent_chains": 256,
+          "mixing_certified": false
+        },
+        "streams": [
+          {
+            "seed": 2610803611,
+            "params_sha256": "a4a612c4dff836de08e5f86fa8628e5ec1aab0a8e37aba5b0b73caab5d8a3387",
+            "registration_sha256": "55111dcc3abd2083a8312158f951042a09813cb29eaa9395c9649866ebdf3a96",
+            "raw_sha256": "a572786f788d3ccb631cb06a3d04aaf8404686c726b62f875ebdab3bc55eebea",
+            "records": 32768,
+            "full_H_calls": 32768,
+            "result_sha256": "62ff3b4c9c0d2b267cec9858a3103619b8f1dfcf00d9f46621bb0d3b68165504"
+          },
+          {
+            "seed": 2610803612,
+            "params_sha256": "a4a612c4dff836de08e5f86fa8628e5ec1aab0a8e37aba5b0b73caab5d8a3387",
+            "registration_sha256": "55111dcc3abd2083a8312158f951042a09813cb29eaa9395c9649866ebdf3a96",
+            "raw_sha256": "a0ea1caf4f4a46ab2eafbc0a95b14cbe9a74b4065d5a86b2a6ed0ee04d51ed99",
+            "records": 32768,
+            "full_H_calls": 32768,
+            "result_sha256": "5753163c6ee179596afe9529ed6a60d539f3dd05a244d16f9d1f232621c30e74"
+          }
+        ],
+        "full_H_calls": 65536,
+        "frozen_before_audit": true,
+        "audit_never_used_for_training": true,
+        "fixed_terminal_endpoint": true,
+        "seconds": 0.6867171265184879,
+        "physical_readouts_pending": true,
+        "competitive_accuracy_certified": false,
+        "physical_phase_claim": false,
+        "result_sha256": "fd511b1b03a7a1eb0aaa63aaac7bffb22941b40c043e38da3528d1fbce58ff79"
+      },
+      "parameter_count": 323392,
+      "samples": 8192,
+      "devices": 2,
+      "steps": 300,
+      "phases": [
+        {
+          "phase": "pilot",
+          "minutes": 90,
+          "devices": 2,
+          "boundary": 2
+        },
+        {
+          "phase": "restore",
+          "minutes": 60,
+          "devices": 2,
+          "boundary": 4
+        },
+        {
+          "phase": "warm",
+          "minutes": 90,
+          "devices": 2,
+          "boundary": 8
+        },
+        {
+          "phase": "train1",
+          "minutes": 960,
+          "devices": 2,
+          "boundary": 150
+        },
+        {
+          "phase": "train2",
+          "minutes": 960,
+          "devices": 2,
+          "boundary": 300
+        }
+      ]
+    }
+  ],
+  "maximum_new_A100_hours": 148,
+  "allocation_per_case": "4h pilot/restore/warm and32h segmented training, all2GPU; plus2 singleGPU audit streams,74A100h upper bound",
+  "source_manifest_sha256": "6e5cf93b87042d3830a8dd2008b201bce266cde64e2c4c6f298e02d8b8b2bc3b",
+  "production": "only after actual2GPU full-network sample sharding/memory/support/physical-trust and measured warm-cost gate; old600checkpoints immutable"
+}

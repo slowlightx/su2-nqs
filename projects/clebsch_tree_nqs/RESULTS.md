@@ -6,7 +6,7 @@
 
 旧Var(H)/N=.08298654、N144给出初始线性斜率上限2sqrt(Var(H))/N≈.0480/site/radian。FS=.003的单步一阶降幅至多约1.44e−4/site，不能期望八步恢复.05。新试验预注册目标FS=.015、最大.02；由完整切向量归一，再用1024独立振幅记录（512选择／512只veto）冻结实际候选，不按H数据重选步长。512新full-H/JVP核对两个相干项，另1024新paired full-H一次确认，跨进程恢复一致后才可能短训。两臂实际guard FS未匹配时不称公平能量胜利。8步若开放则恢复原global45、优化器／下一RNG，终点4096新记录独审，不复用方向确认集。
 
-准备的上限为比较6 A100h、原配置确认／重放8h、宽28确认／重放18h；8CPU、宽缓存320GiB主存，任意兼容A10080，不绑节点。是否提交、作业ID与代码SHA以后续部署回执为准，该段不是提交或通过声明；短训未自动释放。[协议](../../configs/remote/ct12_actual1024_20261031/README.md)。
+19:34EDT实际提交：**871917** 比较6 A100h／320GiB；**871919** 原配置确认＋跨进程重放8h／128GiB；**871918** 宽28确认＋重放18h／320GiB，均8CPU、任意兼容A10080、不绑节点、no-requeue。总申请上限32A100h，不是已消费成本。比较PENDING(Priority)，两个确认PENDING(Dependency)。确认采用afterany:871917，但执行前严格核验目标臂的实际1024记录／proposal／SR／timing／source ready seal；宽臂失败不牵连已完成原臂，未ready则不抽新样／不查H，绝非以scheduler完成代替科学通过。代码固定**fe355965d5bac2e90c68baa0f94d63b883584446**，在Kim独立只读code-only release运行，五个输入SHA及global45参数／优化器／下一RNG实态验收通过。本地115测试、Kim81测试通过；全仓仍仅既有test_coordinate_sr重名collection阻断。没有新能量／GPU吞吐结论，8步短训未自动释放。[协议](../../configs/remote/ct12_actual1024_20261031/README.md)、[真实提交与资源回执](results/ct12_actual1024_20261031/deployment_receipt.json)。
 
 CT6保存进度19:18EDT：J0/global592（本段14/32）、J.125/global612（8/32），无第4段终审；Slurm查询超时不解释为作业失败。近三段32步配对降幅/site，J0=(33.28±6.40,7.49±3.23,1.58±2.11)e−6；J.125=(45.29±7.52,28.62±5.22,11.24±2.06)e−6。J0暂不盲加；J.125待当前终审仍明确降能、方差／覆盖通过，再考虑单独追加一次32步，约19–21A100h、硬帽24h；不是已授权／已提交的新预算，不能以递减斜率承诺闭合GCNN差距。没有新独审，不改能量图。[条件评估](results/ct6_continuation_assessment_20261031_1917/conditional_proposal.json)。
 

@@ -6,6 +6,33 @@
     "citation": "C. Roth, A. Szabo, and A. H. MacDonald, High-accuracy variational Monte Carlo for frustrated magnets with deep neural networks, arXiv:2211.07749",
     "url": "https://arxiv.org/abs/2211.07749",
     "method": "space-group GCNN; not exact SU(2)",
+    "spin_purity_audit_20261101": {
+      "primary_source": "https://arxiv.org/html/2211.07749v2",
+      "locations": "Section II.1 spin-flip parity, Table III ground-state total-spin diagnostics",
+      "reported_quantity": "Expectation of S_tot squared, not a definite nonzero total-spin quantum number",
+      "normalization": "Entire-system <(sum_i S_i)^2>, not divided by N or N squared. The per-spin unit in the table captions applies to energy only.",
+      "size_trend": "Section III.1 reports consistently higher S2 for larger measured square-lattice sizes and J2; triangular Table III likewise rises from N36 to N108. This motivates a large-size audit but is not a theorem of monotonicity at an unreported N144 or for different optimization qualities.",
+      "small_system_calibration_limit": "The archived N16 demonstration isolates sector versus within-sector errors. It does not establish harmless contamination in N108/N144 GCNN states or in the thermodynamic limit.",
+      "reported_values": [
+        {"n_sites": 36, "j2_over_j1": 0.0, "spin_squared": 0.0022, "SE": 0.0005},
+        {"n_sites": 36, "j2_over_j1": 0.125, "spin_squared": 0.0067, "SE": 0.0008},
+        {"n_sites": 108, "j2_over_j1": 0.0, "spin_squared": 0.131, "SE": 0.004},
+        {"n_sites": 108, "j2_over_j1": 0.125, "spin_squared": 0.208, "SE": 0.007},
+        {"n_sites": 144, "j2_over_j1": 0.125, "spin_squared": null, "SE": null, "status": "not reported; absence is not evidence of a measured nonzero value"}
+      ],
+      "derived_bound_not_a_claim_from_the_paper": {
+        "conditions": "Normalized fixed-M0 ground state with exact even spin-flip parity on these N divisible by4 clusters",
+        "allowed_doubled_q": "0,4,8,...",
+        "minimum_nonsinglet_q": 4,
+        "minimum_nonsinglet_spin_squared": 6,
+        "formula": "p(non-S0)<=min(1,<S_tot^2>/6); without this parity only /2 is guaranteed",
+        "N108_J0125_central_value_leakage_upper_bound": 0.034666666666666665,
+        "N108_J0125_using_two_SE_upper_value": 0.037,
+        "N36_J0125_central_value_leakage_upper_bound": 0.0011166666666666666,
+        "warning": "Upper bounds on non-S0 weight, not measured weights or fidelity to the exact ground state. Statistical uncertainty and within-singlet variational errors remain separate."
+      },
+      "interpretation": "Spin contamination warrants observable-specific and sector-resolved audits. It does not logically invalidate every scalar correlation or prove erroneous phase conclusions. Exact SU(2) alone does not certify state accuracy, magnetic order, or a QSL."
+    },
     "targets": [
       {"n_sites": 36, "j2_over_j1": 0.0, "method": "raw_GCNN", "energy_per_site": -0.560313, "uncertainty": 0.000003, "reference_energy_per_site": -0.5603734, "spin_squared": 0.0022},
       {"n_sites": 36, "j2_over_j1": 0.125, "method": "raw_GCNN", "energy_per_site": -0.515386, "uncertainty": 0.000009, "reference_energy_per_site": -0.515564, "spin_squared": 0.0067},

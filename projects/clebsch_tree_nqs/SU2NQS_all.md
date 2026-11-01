@@ -4,6 +4,14 @@
 
 ## 0. Dashboard and document entry points
 
+### 10-31 CT6/J₂=.125: one separately authorized, terminal-gated continuation
+
+The user authorizes **one** additional segment of at most32 attempts /24 A100 hours, conditional on the **current segment04/job763126** independently demonstrating continued energy reduction, no resolved variance harm and normal operational coverage. At22:20EDT the existing job is still RUNNING,13/32 accepted to global617; its terminal audit does not exist yet. No gate pass, new energy or notebook update is claimed.
+
+The new single-use profile must not expand the closed four-segment campaign. Before any new GPU sampling or H query, a CPU gate binds the fixed current registration and the frozen parameter/optimizer/next-RNG/controller identities, independently reconstructs the full-support proposal and all8192-record/128-group audit moments, and uses the larger paired IID/delete-group SE. Require ΔE+2SE<0, no2SE-resolved variance increase, and the existing norm/H²/residual concentration thresholds at both endpoints. Missing/failed evidence, a scientific adverse stop or ambiguous partially consumed RNG roles must refuse continuation. These finite-panel coverage checks are not guarantees about unseen tails.
+
+If passed, retain binaryw28, all native W, learned trust radius/damping/record count, moments and next RNG; archive the old monitoring history and reset only its window as in the existing protocol. Use fresh monitoring and a separate8192-record terminal audit. The permission audit is not a new terminal-precision sample. No J0/CT12 change, width expansion, node pin, requeue or successor chain is authorized here. [Numerical ledger and eventual deployment receipt](RESULTS.md).
+
 ### 10-31 CT12 development: reuse exact derivatives and calibrate a useful physical step
 
 The new opt-in comparison preserves the global45 physical parent and optimizer/next-RNG identities. It compares the original 1,495,080-coordinate cached-score implementation against the true 20,748,160-coordinate width28 bank on the same1024 physical records. The exact new backend stores the full amplitude Jacobian on the host and streams parameter blocks through a record-space solve, including a true native normal residual. It removes repeated AD without changing F, dropping columns, freezing tensor preparation, or reducing records. Raw storage is11.407/158.296GiB; wide streamed algebra arrays are estimated at.833GiB before AD/XLA workspace. Transfers, differentiation and each new parent's cache rebuild count toward cost; actual GPU speedup remains unmeasured. Independent nonlinear oracles match SR to1.33e−15. x64, weighted amplitude replay, cache identity/content and real fresh-process restoration are guarded.

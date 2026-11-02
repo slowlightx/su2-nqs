@@ -1,6 +1,0 @@
-su2_nqs/benchmarks/chirality_covariance.py
-projects/clebsch_tree_nqs/workflows/spin_chirality_covariance.py
-projects/clebsch_tree_nqs/configs/remote/ordinary_chirality_20261015/tri_j0_750.json
-projects/clebsch_tree_nqs/configs/remote/ordinary_chirality_20261015/tri_j0_1000.json
-projects/clebsch_tree_nqs/configs/remote/ordinary_chirality_20261015/tri_j0125_100.json
-projects/clebsch_tree_nqs/configs/remote/ordinary_chirality_20261015/tri_j0125_200.json

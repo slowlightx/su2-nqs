@@ -71,3 +71,15 @@ secrets*
 
 # Generated import receipts are audit artifacts, not self-referential source.
 /configs/git_import_20261031/generated/
+
+# Research material is local, never part of an active source branch.
+# Ignore rules do not untrack old files; the explicit cached-only migration
+# removes their old index entries while preserving every file on disk.
+/projects/
+/configs/
+/figures/
+**/configs/
+*.ipynb
+*.md
+!/AGENTS.md
+!/README.md

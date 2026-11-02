@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "su2-nqs"
+version = "0.1.0"
+description = "Core neural quantum states and exact SU(2) tensor tools"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["jax>=0.4.30", "numpy>=1.24"]
+
+[project.optional-dependencies]
+train = ["optax>=0.2.3"]
+offline = ["sympy>=1.12"]
+analysis = ["scipy>=1.11", "cvxpy>=1.7", "scs>=3.2"]
+test = ["pytest>=8", "sympy>=1.12"]
+
+[tool.setuptools.packages.find]
+include = ["su2_nqs*"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]

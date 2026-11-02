@@ -1,0 +1,603 @@
+"""Fail-closed helpers for the external XDiag N=36 exact anchor.
+
+The production diagonalization is deliberately kept outside the Python/JAX
+runtime.  This module owns the independently checkable parts of the interface:
+the pinned upstream identity, the exact triangular graph/site map, a generated
+small-system input, deterministic task identities, and conservative spin
+classification by subtracting the ``M=1`` spectrum from the ``M=0`` spectrum.
+
+An exact ``Gamma.A1`` table can anchor a variational state only after that
+state has independently demonstrated ``Gamma.A1`` purity.  In particular,
+these helpers never promote an unprojected ``q=0`` NQS or a folded-spectrum
+search from a ``Gamma.A1``-only table.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+import hashlib
+import json
+import math
+from pathlib import Path
+import tomllib
+from typing import Mapping, Sequence
+
+import numpy as np
+
+from ..lattices.triangular_hnf import (
+    hnf_point_group_permutations,
+    hnf_translation_permutations,
+    triangular_hnf_j1j2_bonds,
+)
+
+
+XDIAG_REPOSITORY = "https://github.com/awietek/xdiag.git"
+XDIAG_COMMIT = "b8ba4173ec1d232eabaf185b0fbbe55bedc177a6"
+XDIAG_N36_INPUT_RELATIVE = (
+    "benchmarks/heisenberg_triangular/"
+    "triangular.36.J1J2.sublattices.tsl.toml"
+)
+XDIAG_N36_INPUT_SHA256 = (
+    "5e32fce56d23e7d5fc436782277b15abe294d4d19e523780abc15011aef4a0fb"
+)
+XDIAG_PORTABILITY_PATCH_ID = "gcc-std-abs-beta-v1"
+XDIAG_PORTABILITY_PATCH_RELATIVE = (
+    "cluster/unicorn/xdiag_patches/0001-lanczos-pro-qualify-std-abs.patch"
+)
+XDIAG_PORTABILITY_PATCH_SHA256 = (
+    "07160dc333e577cbe9e32571fcd7f047ad4c1ddb5f4e05814937cef939af4729"
+)
+XDIAG_LANCZOS_PRO_HEADER_RELATIVE = "xdiag/linalg/lanczos/lanczos_pro.hpp"
+XDIAG_LANCZOS_PRO_HEADER_SHA256 = (
+    "42b8dd227350d85ca6a3e1f460350c4169ef5c1951761c6862101fba8c1530db"
+)
+XDIAG_PATCHED_LANCZOS_PRO_HEADER_SHA256 = (
+    "5388beae129e222fb44cc2291c25fa4bc5f3b778f54bf7636e867fb4683fd9ba"
+)
+
+
+@dataclass(frozen=True)
+class ExactAnchorTask:
+    """One independently restartable XDiag spectrum task."""
+
+    task_index: int
+    coupling: float
+    n_up: int
+    seed: int
+    requested_eigenpairs: int
+
+    @property
+    def task_id(self) -> str:
+        coupling = f"{self.coupling:.6f}".rstrip("0").rstrip(".")
+        coupling = coupling.replace(".", "p")
+        return f"g{coupling}_nup{self.n_up}_seed{self.seed}"
+
+    def as_dict(self) -> dict[str, object]:
+        return {
+            "task_index": self.task_index,
+            "task_id": self.task_id,
+            "coupling": self.coupling,
+            "n_up": self.n_up,
+            "seed": self.seed,
+            "requested_eigenpairs": self.requested_eigenpairs,
+        }
+
+
+def sha256_file(path: Path) -> str:
+    """Return the hexadecimal SHA-256 digest of ``path``."""
+
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _compose(
+    left: Sequence[int], right: Sequence[int]
+) -> tuple[int, ...]:
+    """Compose active maps as ``left o right``."""
+
+    if len(left) != len(right):
+        raise ValueError("permutations must have equal size")
+    result = tuple(int(left[int(right[site])]) for site in range(len(left)))
+    if sorted(result) != list(range(len(left))):
+        raise ValueError("composition is not a permutation")
+    return result
+
+
+def generated_gamma_a1_toml(linear_size: int = 4) -> str:
+    """Generate a deterministic rectangular triangular ``Gamma.D6.A1`` TOML.
+
+    The site order is this repository's 120-degree row-major order.  The file
+    contains only the fields consumed by XDiag's ``read_opsum`` and
+    ``read_representation``; coordinates and unused irreps are intentionally
+    omitted.
+    """
+
+    if isinstance(linear_size, bool) or not isinstance(linear_size, int):
+        raise TypeError("linear_size must be an integer")
+    if linear_size < 4:
+        raise ValueError("small-anchor torus must have linear_size >= 4")
+    supercell = ((linear_size, 0), (0, linear_size))
+    translations = hnf_translation_permutations(supercell)
+    points = hnf_point_group_permutations(supercell)
+    if len(points) != 12:
+        raise RuntimeError("rectangular small anchor did not retain full D6")
+
+    j1 = triangular_hnf_j1j2_bonds(supercell, j1=1.0, j2=0.0)
+    j2 = triangular_hnf_j1j2_bonds(supercell, j1=0.0, j2=1.0)
+    interactions = [
+        ("J1", int(first), int(second)) for first, second, _ in j1
+    ] + [("J2", int(first), int(second)) for first, second, _ in j2]
+
+    group = tuple(
+        _compose(point_image, translation_image)
+        for _, translation_image in translations
+        for _, _, point_image in points
+    )
+    expected_order = 12 * linear_size * linear_size
+    if len(group) != expected_order or len(set(group)) != expected_order:
+        raise RuntimeError("generated translation-by-D6 action is not faithful")
+
+    lines = ["# Generated by su2_nqs.benchmarks.xdiag_exact_anchor", ""]
+    lines.append("Interactions = [")
+    lines.extend(
+        f"  ['{label}', 'SdotS', {first}, {second}],"
+        for label, first, second in interactions
+    )
+    lines.extend(("]", "", "Symmetries = ["))
+    lines.extend(
+        "  [" + ", ".join(str(site) for site in image) + "],"
+        for image in group
+    )
+    lines.extend(("]", "", "[Gamma.D6.A1]", "characters = ["))
+    lines.extend("  [1.0, 0.0]," for _ in group)
+    lines.extend(
+        (
+            "]",
+            "allowed_symmetries = ["
+            + ", ".join(str(index) for index in range(len(group)))
+            + "]",
+            "",
+        )
+    )
+    return "\n".join(lines)
+
+
+def _site_map_60_to_repository(
+    coordinates: Sequence[Sequence[float]], linear_size: int
+) -> tuple[int, ...]:
+    """Map XDiag's 60-degree Cartesian sites to repository row-major sites."""
+
+    if len(coordinates) != linear_size * linear_size:
+        raise ValueError("coordinate count does not match the registered torus")
+    result: list[int] = []
+    tolerance = 2.0e-8
+    for raw in coordinates:
+        if len(raw) != 2:
+            raise ValueError("every coordinate must have two components")
+        cartesian_x, cartesian_y = (float(raw[0]), float(raw[1]))
+        oblique_y_float = 2.0 * cartesian_y / math.sqrt(3.0)
+        oblique_y = int(round(oblique_y_float))
+        oblique_x_float = cartesian_x - 0.5 * oblique_y
+        oblique_x = int(round(oblique_x_float))
+        if (
+            abs(oblique_y_float - oblique_y) > tolerance
+            or abs(oblique_x_float - oblique_x) > tolerance
+        ):
+            raise ValueError("XDiag coordinate is not on the triangular lattice")
+        row = oblique_y % linear_size
+        column = (oblique_x + oblique_y) % linear_size
+        result.append(row * linear_size + column)
+    if sorted(result) != list(range(linear_size * linear_size)):
+        raise ValueError("XDiag-to-repository site map is not bijective")
+    return tuple(result)
+
+
+def audit_official_n36_input(path: Path) -> dict[str, object]:
+    """Fail closed on the pinned official N=36 input and exact graph map."""
+
+    digest = sha256_file(path)
+    if digest != XDIAG_N36_INPUT_SHA256:
+        raise ValueError(
+            "official XDiag N36 input hash mismatch: "
+            f"expected {XDIAG_N36_INPUT_SHA256}, observed {digest}"
+        )
+    raw = tomllib.loads(path.read_text())
+    coordinates = raw.get("Coordinates")
+    interactions = raw.get("Interactions")
+    symmetries = raw.get("Symmetries")
+    representation = raw.get("Gamma", {}).get("D6", {}).get("A1")
+    if not isinstance(coordinates, list) or not isinstance(interactions, list):
+        raise ValueError("official XDiag input lacks coordinates/interactions")
+    if not isinstance(symmetries, list) or not isinstance(representation, dict):
+        raise ValueError("official XDiag input lacks Gamma.D6.A1 group data")
+
+    linear_size = 6
+    site_map = _site_map_60_to_repository(coordinates, linear_size)
+    observed: dict[str, set[tuple[int, int]]] = {"J1": set(), "J2": set()}
+    for term in interactions:
+        if not isinstance(term, list) or len(term) != 4:
+            raise ValueError("unexpected XDiag interaction record")
+        label, operator, first, second = term
+        if label not in observed or operator != "SdotS":
+            raise ValueError("N36 exact anchor contains an unregistered operator")
+        edge = tuple(sorted((site_map[int(first)], site_map[int(second)])))
+        if edge in observed[str(label)]:
+            raise ValueError("official input repeats a mapped shell edge")
+        observed[str(label)].add(edge)
+
+    supercell = ((6, 0), (0, 6))
+    expected = {
+        "J1": {
+            (first, second)
+            for first, second, _ in triangular_hnf_j1j2_bonds(
+                supercell, j1=1.0, j2=0.0
+            )
+        },
+        "J2": {
+            (first, second)
+            for first, second, _ in triangular_hnf_j1j2_bonds(
+                supercell, j1=0.0, j2=1.0
+            )
+        },
+    }
+    if observed != expected:
+        raise ValueError("official XDiag N36 J1/J2 graph does not match repository")
+
+    if len(symmetries) != 432:
+        raise ValueError("official XDiag N36 space group must have order 432")
+    normalized_symmetries = tuple(tuple(int(x) for x in image) for image in symmetries)
+    if any(sorted(image) != list(range(36)) for image in normalized_symmetries):
+        raise ValueError("official XDiag symmetry entry is not a site permutation")
+    if len(set(normalized_symmetries)) != 432:
+        raise ValueError("official XDiag N36 space group contains duplicates")
+    characters = representation.get("characters")
+    allowed = representation.get("allowed_symmetries")
+    if (
+        not isinstance(characters, list)
+        or len(characters) != 432
+        or any(
+            len(character) != 2
+            or abs(float(character[0]) - 1.0) > 1.0e-13
+            or abs(float(character[1])) > 1.0e-13
+            for character in characters
+        )
+    ):
+        raise ValueError("official Gamma.D6.A1 characters are not all +1")
+    if list(allowed or []) != list(range(432)):
+        raise ValueError("official Gamma.D6.A1 does not allow the full group")
+
+    return {
+        "input_sha256": digest,
+        "n_sites": 36,
+        "supercell_hnf": [[6, 0], [0, 6]],
+        "coordinate_map": "(row,column)=(y,x+y mod 6)",
+        "site_map_xdiag_to_repository": list(site_map),
+        "j1_edge_count": len(observed["J1"]),
+        "j2_edge_count": len(observed["J2"]),
+        "j1_symmetric_difference": 0,
+        "j2_symmetric_difference": 0,
+        "space_group_order": len(symmetries),
+        "representation": "Gamma.D6.A1",
+        "all_characters_plus_one": True,
+    }
+
+
+def task_table(config: Mapping[str, object]) -> tuple[ExactAnchorTask, ...]:
+    """Expand the frozen coupling/sector/seed product in canonical order."""
+
+    spectrum = config.get("spectrum_tasks")
+    if not isinstance(spectrum, Mapping):
+        raise ValueError("config lacks spectrum_tasks")
+    couplings = spectrum.get("couplings")
+    n_up_values = spectrum.get("n_up_values")
+    seeds = spectrum.get("seeds")
+    requested = spectrum.get("requested_eigenpairs")
+    if (
+        not isinstance(couplings, list)
+        or not isinstance(n_up_values, list)
+        or not isinstance(seeds, list)
+        or not isinstance(requested, int)
+    ):
+        raise ValueError("invalid XDiag task-product fields")
+    tasks: list[ExactAnchorTask] = []
+    for coupling in couplings:
+        for n_up in n_up_values:
+            for seed in seeds:
+                tasks.append(
+                    ExactAnchorTask(
+                        task_index=len(tasks),
+                        coupling=float(coupling),
+                        n_up=int(n_up),
+                        seed=int(seed),
+                        requested_eigenpairs=int(requested),
+                    )
+                )
+    return tuple(tasks)
+
+
+def load_and_validate_config(path: Path) -> dict[str, object]:
+    """Load the prospective exact-anchor contract and enforce fixed invariants."""
+
+    raw = json.loads(path.read_text())
+    if not isinstance(raw, dict) or raw.get("schema_version") != 1:
+        raise ValueError("invalid XDiag exact-anchor config")
+    if raw.get("stage") != "P9v2-D1-N36-XDiag-exact-anchor-v1":
+        raise ValueError("unexpected XDiag exact-anchor stage")
+    upstream = raw.get("xdiag")
+    geometry = raw.get("geometry")
+    tasks = raw.get("spectrum_tasks")
+    exact_small = raw.get("exact_small_gate")
+    classification = raw.get("spin_classification")
+    canary = raw.get("canary_gate")
+    checkpoint = raw.get("checkpoint_contract")
+    exclusion = raw.get("full_q0_exclusion_inventory")
+    if not all(
+        isinstance(block, dict)
+        for block in (
+            upstream,
+            geometry,
+            tasks,
+            exact_small,
+            classification,
+            canary,
+            checkpoint,
+            exclusion,
+        )
+    ):
+        raise ValueError("XDiag exact-anchor config blocks must be objects")
+    assert isinstance(upstream, dict)
+    assert isinstance(geometry, dict)
+    assert isinstance(tasks, dict)
+    assert isinstance(exact_small, dict)
+    assert isinstance(classification, dict)
+    assert isinstance(canary, dict)
+    assert isinstance(checkpoint, dict)
+    assert isinstance(exclusion, dict)
+    if (
+        upstream.get("repository") != XDIAG_REPOSITORY
+        or upstream.get("commit") != XDIAG_COMMIT
+        or upstream.get("n36_input_relative_path") != XDIAG_N36_INPUT_RELATIVE
+        or upstream.get("n36_input_sha256") != XDIAG_N36_INPUT_SHA256
+        or upstream.get("openmp_enabled") is not True
+        or upstream.get("optimize_for_native") is not False
+        or upstream.get("distributed_lattice_symmetry") is not False
+    ):
+        raise ValueError("XDiag source/input identity changed")
+    patch = upstream.get("portability_patch")
+    if not isinstance(patch, dict) or patch != {
+        "id": XDIAG_PORTABILITY_PATCH_ID,
+        "path": XDIAG_PORTABILITY_PATCH_RELATIVE,
+        "sha256": XDIAG_PORTABILITY_PATCH_SHA256,
+        "upstream_header_relative_path": XDIAG_LANCZOS_PRO_HEADER_RELATIVE,
+        "upstream_header_sha256": XDIAG_LANCZOS_PRO_HEADER_SHA256,
+        "patched_header_sha256": XDIAG_PATCHED_LANCZOS_PRO_HEADER_SHA256,
+        "semantic_change": (
+            "Qualify abs(beta) as std::abs(beta) so GCC cannot select the "
+            "integer overload and report false Lanczos deflation when "
+            "0 < beta < 1."
+        ),
+    }:
+        raise ValueError("XDiag portability patch identity changed")
+    if geometry != {
+        "n_sites": 36,
+        "supercell_hnf": [[6, 0], [0, 6]],
+        "j1_edge_count": 108,
+        "j2_edge_count": 108,
+        "space_group_order": 432,
+        "irrep": "Gamma.D6.A1",
+        "xdiag_nup18_dimension": 21029820,
+        "xdiag_nup19_dimension": 19920162,
+        "singlet_multiplicity_difference": 1109658,
+    }:
+        raise ValueError("registered N36 geometry/dimensions changed")
+    if (
+        tasks.get("couplings") != [0.09, 0.125]
+        or tasks.get("n_up_values") != [18, 19]
+        or tasks.get("seeds") != [42017, 78193]
+        or tasks.get("requested_eigenpairs") != 32
+        or tasks.get("analysis_prefix") != 24
+        or tasks.get("solver")
+        != "xdiag_lanczos_pro_fixed_cap_direct_residual"
+        or tasks.get("stopping_policy")
+        != "fixed_krylov_cap_postvalidated_by_direct_residual"
+        or tasks.get("allowed_criteria") != ["maxiterations"]
+        or tasks.get("reseed_comparison_eigenpairs") != 32
+        or tasks.get("max_iterations") != 512
+        or tasks.get("orthogonality_level") != 1e-12
+    ):
+        raise ValueError("registered N36 spectrum task product changed")
+    if (
+        exact_small.get("expected_iterations") != {"8": 96, "9": 82}
+        or exact_small.get("stopping_policy")
+        != "early_stop_disabled_exact_deflation_required"
+        or exact_small.get("allowed_criteria") != ["deflation"]
+        or exact_small.get("reseed_comparison_eigenpairs") != 24
+    ):
+        raise ValueError("registered N16 fixed-cap stopping contract changed")
+    memory = tasks.get("memory_model")
+    resources = raw.get("remote_resources")
+    if not isinstance(memory, dict) or not isinstance(resources, dict):
+        raise ValueError("retained-basis memory contract is missing")
+    expected_basis_gib = 21029820 * 512 * 8 / (1024**3)
+    if (
+        abs(float(memory.get("nup18_krylov_basis_gib", -1)) - expected_basis_gib)
+        > 5e-5
+        or int(memory.get("minimum_slurm_memory_gib", 0)) < 256
+        or resources.get("memory") != "256G"
+        or int(resources.get("array_concurrency", 99)) > 2
+    ):
+        raise ValueError("retained-basis memory request is unsafe")
+    if len(task_table(raw)) != 8:
+        raise ValueError("formal anchor requires exactly eight primary tasks")
+    if (
+        classification.get("method") != "M0_minus_M1_multiset"
+        or int(classification.get("minimum_certified_singlets", 0)) < 4
+    ):
+        raise ValueError("invalid singlet-classification contract")
+    if canary != {
+        "task_index": 0,
+        "task_id": "g0p09_nup18_seed42017",
+        "purpose": (
+            "Measure actual N36 PRO wall time and peak memory before authorizing "
+            "the remaining seven cells."
+        ),
+        "numerical_marker": "CANARY_NUMERICAL_PASS.json",
+        "resource_review_environment": "NQS_CANARY_RESOURCE_REVIEWED",
+        "resource_review_value": "YES",
+        "tasks_1_to_7_fail_closed_without_marker_and_review": True,
+        "required_operator_review": [
+            "Slurm State is COMPLETED",
+            "Elapsed leaves margin before USR1 at 05:45:00",
+            "MaxRSS leaves material margin below 256 GiB",
+            "RESULT and DONE hashes pass",
+            (
+                "direct residual, Gram, projected-H Hermiticity and "
+                "Ritz-Rayleigh gates pass"
+            ),
+        ],
+    }:
+        raise ValueError("registered task-0 canary gate changed")
+    if (
+        checkpoint.get("granularity") != "completed_coupling_sector_seed_task"
+        or checkpoint.get("iteration_level_lanczos_restart") is not False
+        or checkpoint.get("interrupted_task_policy") != "rerun_same_task_from_seed"
+    ):
+        raise ValueError("checkpoint contract overclaims XDiag restart support")
+    if exclusion.get("global_q0_complement_scanned") is not False:
+        raise ValueError("v1 must not claim a global q0 complement scan")
+    if exclusion.get("unprojected_folded_route_unlocked") is not False:
+        raise ValueError("Gamma-only ED cannot unlock an unprojected folded route")
+    return raw
+
+
+def _matched_indices(
+    first: np.ndarray,
+    second: np.ndarray,
+    *,
+    absolute_tolerance: float,
+) -> tuple[tuple[int, int], ...]:
+    """Return a deterministic maximum-cardinality ordered spectral matching."""
+
+    # The M=1 spectrum is an ordered subsequence of M=0 in exact arithmetic.
+    # Dynamic programming avoids greedy failures inside near-degenerate groups.
+    n_first, n_second = len(first), len(second)
+    score = np.zeros((n_first + 1, n_second + 1), dtype=np.int64)
+    for i in range(n_first - 1, -1, -1):
+        for j in range(n_second - 1, -1, -1):
+            best = max(score[i + 1, j], score[i, j + 1])
+            if abs(float(first[i] - second[j])) <= absolute_tolerance:
+                best = max(best, 1 + score[i + 1, j + 1])
+            score[i, j] = best
+    pairs: list[tuple[int, int]] = []
+    i = j = 0
+    while i < n_first and j < n_second:
+        if (
+            abs(float(first[i] - second[j])) <= absolute_tolerance
+            and score[i, j] == 1 + score[i + 1, j + 1]
+        ):
+            pairs.append((i, j))
+            i += 1
+            j += 1
+        elif score[i + 1, j] >= score[i, j + 1]:
+            i += 1
+        else:
+            j += 1
+    return tuple(pairs)
+
+
+def classify_singlets_from_magnetization_sectors(
+    m0_energies: Sequence[float],
+    m1_energies: Sequence[float],
+    *,
+    residual_m0: Sequence[float] | None = None,
+    residual_m1: Sequence[float] | None = None,
+    absolute_tolerance: float,
+    analysis_prefix: int,
+) -> dict[str, object]:
+    """Classify ``S=0`` levels by conservative M=0/M=1 multiset subtraction.
+
+    A level is promoted as a singlet only when it is unmatched in the full
+    registered prefix and is not within the matching tolerance of any M=1
+    level.  Ambiguous near-degeneracies fail closed and are reported instead.
+    """
+
+    first = np.asarray(m0_energies, dtype=np.float64)
+    second = np.asarray(m1_energies, dtype=np.float64)
+    if first.ndim != 1 or second.ndim != 1 or min(len(first), len(second)) == 0:
+        raise ValueError("both magnetization spectra must be non-empty vectors")
+    if np.any(np.diff(first) < -1.0e-12) or np.any(np.diff(second) < -1.0e-12):
+        raise ValueError("magnetization spectra must be sorted")
+    if not 1 <= analysis_prefix <= len(first):
+        raise ValueError("analysis_prefix is outside the M=0 spectrum")
+    if absolute_tolerance <= 0.0:
+        raise ValueError("absolute_tolerance must be positive")
+
+    if residual_m0 is not None:
+        r0 = np.asarray(residual_m0, dtype=np.float64)
+        if r0.shape != first.shape:
+            raise ValueError("M=0 residual shape mismatch")
+    else:
+        r0 = np.zeros_like(first)
+    if residual_m1 is not None:
+        r1 = np.asarray(residual_m1, dtype=np.float64)
+        if r1.shape != second.shape:
+            raise ValueError("M=1 residual shape mismatch")
+    else:
+        r1 = np.zeros_like(second)
+
+    # Incorporate direct Ritz errors into one preregistered comparison radius.
+    comparison_tolerance = max(
+        absolute_tolerance,
+        3.0 * float(max(np.max(r0), np.max(r1))),
+    )
+    pairs = _matched_indices(
+        first,
+        second,
+        absolute_tolerance=comparison_tolerance,
+    )
+    matched_first = {i for i, _ in pairs}
+    candidates: list[dict[str, object]] = []
+    ambiguous: list[dict[str, object]] = []
+    for index in range(analysis_prefix):
+        if index in matched_first:
+            continue
+        nearest = float(np.min(np.abs(second - first[index])))
+        row = {
+            "m0_index": index,
+            "energy": float(first[index]),
+            "direct_residual": float(r0[index]),
+            "nearest_m1_distance": nearest,
+        }
+        if nearest <= comparison_tolerance:
+            ambiguous.append(row)
+        else:
+            candidates.append(row)
+
+    boundary_safe = bool(
+        len(second) > analysis_prefix
+        and second[-1] > first[analysis_prefix - 1] + comparison_tolerance
+    )
+    return {
+        "method": "M0_minus_M1_multiset",
+        "analysis_prefix": analysis_prefix,
+        "comparison_tolerance": comparison_tolerance,
+        "matched_pairs": [list(pair) for pair in pairs],
+        "certified_singlets": candidates,
+        "ambiguous_unmatched_levels": ambiguous,
+        "boundary_guard_safe": boundary_safe,
+        "classification_passed": boundary_safe and not ambiguous,
+    }
+
+
+__all__ = [
+    "ExactAnchorTask",
+    "XDIAG_COMMIT",
+    "XDIAG_N36_INPUT_RELATIVE",
+    "XDIAG_N36_INPUT_SHA256",
+    "XDIAG_REPOSITORY",
+    "audit_official_n36_input",
+    "classify_singlets_from_magnetization_sectors",
+    "generated_gamma_a1_toml",
+    "load_and_validate_config",
+    "sha256_file",
+    "task_table",
+]

@@ -1,8 +1,0 @@
-{
-  "output": "projects/clebsch_tree_nqs/results/spin_partition_coupling_readout_v1",
-  "candidate_archive": "projects/clebsch_tree_nqs/results/spin_candidate_state_screen_v1",
-  "trusted_archive": "projects/clebsch_tree_nqs/results/spin_competing_state_readout_v1",
-  "cuts": {"strip_4": [0, 2], "strip_6": [0, 2, 4], "strip_8": [0, 2, 4, 6]},
-  "wall_seconds_cap": 600,
-  "protocol": "Measure commuting Casimir weights p(q_L,q_R,q_total) on the actual saved N16 physical RDMs. Compare total-spin marginal with joint weights, cross-block spin correlation and each candidate's OWN saved quality refinement. Different-coupling references are calibration, not same-H competition. No filter extension, new ED, training, DMRG, sampling, symmetry repair or phase labels."
-}

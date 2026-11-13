@@ -7,14 +7,44 @@ and reuses unchanged subtrees over every H bond. No single-image ratio is taken.
 from __future__ import annotations
 
 from collections.abc import Callable, Mapping, Sequence
+from typing import Literal
 
 import jax
 import jax.numpy as jnp
 import numpy as np
 
 from ..models.triangular_clebsch_exchange_cache import make_feature_lut_exchange_queries
+from ..models.triangular_clebsch_lca_exchange import make_lca_exchange_queries
 from ..models.triangular_mixed_clebsch import MixedClebschConfig
 from .exchange_bridge_importance import make_coherent_exchange_bridge_products
+
+ExchangeKernel = Literal['auto', 'legacy', 'lca']
+
+
+def _exchange_queries(config: MixedClebschConfig, edges,
+                      active_top_widths: Sequence[Mapping[int, int]] | None,
+                      exchange_kernel: ExchangeKernel) -> Callable:
+    """Select the raw exchange-query kernel; all choices return identical values.
+
+    ``'lca'`` reuses one reverse-pass environment per image and recomputes
+    only up to each bond's lowest common ancestor (exact; 1.45-1.7x faster
+    at N144 on CPU). ``'legacy'`` recomputes every swapped path up to the
+    root, as in releases before 2026-11-12. ``'auto'`` (default) uses LCA,
+    and legacy only for active upper widths, which LCA does not support.
+    """
+    _validate_kernel(active_top_widths, exchange_kernel)
+    if exchange_kernel == 'auto':
+        exchange_kernel = 'legacy' if active_top_widths is not None else 'lca'
+    if exchange_kernel == 'lca':
+        return make_lca_exchange_queries(config, edges)
+    return make_feature_lut_exchange_queries(config, edges, active_top_widths=active_top_widths)
+
+
+def _validate_kernel(active_top_widths, exchange_kernel) -> None:
+    if exchange_kernel not in ('auto', 'legacy', 'lca'):
+        raise ValueError("exchange_kernel must be 'auto', 'legacy' or 'lca'")
+    if exchange_kernel == 'lca' and active_top_widths is not None:
+        raise ValueError('the LCA exchange kernel does not support active upper widths')
 
 
 def make_cached_projected_heisenberg_bridge(
@@ -22,6 +52,7 @@ def make_cached_projected_heisenberg_bridge(
     bonds: Sequence[tuple[int, int, float]], probabilities: Sequence[float], *,
     projection_chunk: int = 4,
     active_top_widths: Sequence[Mapping[int, int]] | None = None,
+    exchange_kernel: ExchangeKernel = 'auto',
 ) -> tuple[Callable, dict]:
     """One full-A1 connection sweep returns psi, Hpsi, and bridge density.
 
@@ -33,13 +64,13 @@ def make_cached_projected_heisenberg_bridge(
     approximation. Repeated/null bond labels retain their specified weights.
 
     Active upper widths require exact fixed-bank closure/repacking as in the
-    original action. The unchanged legacy full-H factory below remains the
-    default for production; this optional path adds coherent connection
+    original action. This optional path adds coherent connection
     storage/reindexing whose actual cost must be measured.
     """
+    _validate_kernel(active_top_widths, exchange_kernel)
+
     def factory(edges):
-        return make_feature_lut_exchange_queries(config, edges,
-                                                 active_top_widths=active_top_widths)
+        return _exchange_queries(config, edges, active_top_widths, exchange_kernel)
     return make_coherent_exchange_bridge_products(factory, images, bonds,
         probabilities, n_sites=config.length**2, projection_chunk=projection_chunk)
 
@@ -48,6 +79,7 @@ def make_cached_projected_heisenberg_action(
     config: MixedClebschConfig, images: np.ndarray,
     bonds: Sequence[tuple[int, int, float]], *, projection_chunk: int = 4,
     active_top_widths: Sequence[Mapping[int, int]] | None = None,
+    exchange_kernel: ExchangeKernel = 'auto',
 ) -> Callable:
     """Return action(prepared_bank,batch_bits)->(P_A1 psi,H P_A1 psi).
 
@@ -59,6 +91,8 @@ def make_cached_projected_heisenberg_action(
     Optional active upper widths are an exact fixed-bank execution reduction,
     after ``repack_active_clebsch_bank`` verifies inactive-path closure. They
     must not be substituted for full native channel-opening gradients.
+    ``exchange_kernel`` selects the exact query kernel (default ``'auto'``:
+    lowest-common-ancestor reuse unless active widths are given).
     """
     n = config.length**2
     maps = np.asarray(images)
@@ -70,7 +104,7 @@ def make_cached_projected_heisenberg_action(
         raise ValueError('physical permutations and a positive dividing chunk required')
     edges = np.asarray([(a, b) for a, b, _ in bonds])
     coefficients = np.asarray([c for _, _, c in bonds], np.float64)
-    query = make_feature_lut_exchange_queries(config, edges, active_top_widths=active_top_widths)
+    query = _exchange_queries(config, edges, active_top_widths, exchange_kernel)
     if not np.isfinite(coefficients).all():
         raise ValueError('finite real Heisenberg couplings required')
     weights = {}

@@ -1,7 +1,7 @@
 """Exact reusable real-amplitude derivatives with bounded device memory.
 
-This optional backend does not change the SR metric, native parameter
-coordinates, sampling measure, or the existing LSQR solver.  It evaluates a
+The original cached solver does not change the SR metric, native parameter
+coordinates, sampling measure, or the existing LSQR solver. It evaluates a
 full amplitude Jacobian once at a frozen parent, retaining all records and
 columns on the host (optionally in a new ``.npy`` memory-mapped file).
 Subsequent SR algebra streams parameter blocks instead of differentiating
@@ -11,6 +11,8 @@ Only real float64 amplitudes/parameters are supported here.  Complex-source
 problems must use the separate complex-amplitude implementation, not discard
 their imaginary derivatives.  The host cache is O(NP), not a compressed or
 matrix-free approximation.  Its explicit byte budget is therefore essential.
+The separate opt-in node-block solver changes update geometry explicitly;
+it does not claim to solve the coupled global Fisher system.
 """
 from __future__ import annotations
 
@@ -452,7 +454,164 @@ def solve_cached_projected_sr(
         finite_quadrature_is_not_independent_direction_or_finite_step_confirmation=True)
 
 
+def solve_cached_node_block_sr(
+    cache: CachedAmplitudeJacobian, psi: Any, hpsi: Any, density: Any, *,
+    blocks: list[tuple[str, int, int]], relative_damping: float = .5,
+    ridge_floor_relative: float = 1e-12, parameter_chunk_size: int = 16384,
+    maximum_device_bytes: int, maximum_host_bytes: int,
+    progress: Progress | None = None,
+) -> tuple[jax.Array, jax.Array, dict[str, Any]]:
+    """All-column node-block SR with a sample-eigenvalue damping scale.
+
+    Each explicit contiguous block solves ``(F_bb+lambda_b I)d_b=g_b``;
+    ``lambda_b=relative_damping*trace(F_bb)/(records-1)`` with a disclosed
+    relative numerical floor. This is a block-diagonal *update geometry*,
+    not the exact global Fisher solve. All records and native columns remain.
+    The combined physical tangent includes cross-node terms and is computed
+    using the complete cached Jacobian. No derivatives or H queries are made.
+    Real amplitudes imply the phase tangent is identically orthogonal; global
+    normalization is projected over the complete panel, never per row chunk.
+    """
+    _require_x64()
+    if cache.jacobian.dtype != np.dtype('float64'):
+        raise ValueError('node-block SR requires real float64 cached derivatives')
+    count, parameters = cache.jacobian.shape
+    if (isinstance(relative_damping, bool) or isinstance(ridge_floor_relative, bool)
+            or count < 2 or not blocks or not np.isfinite((relative_damping, ridge_floor_relative)).all()
+            or relative_damping <= 0 or ridge_floor_relative <= 0):
+        raise ValueError("positive damping/floor and at least two records required")
+    cursor = 0; labels = set()
+    for label, first, final in blocks:
+        if (not isinstance(label, str) or not label or label in labels
+                or isinstance(first, bool) or isinstance(final, bool)
+                or not isinstance(first, int) or not isinstance(final, int)
+                or first != cursor or not first < final <= parameters):
+            raise ValueError("named contiguous blocks must partition every native column exactly once")
+        labels.add(label); cursor = final
+    if cursor != parameters:
+        raise ValueError("blocks must retain all native columns")
+    _positive_int(parameter_chunk_size, "parameter_chunk_size")
+    _positive_int(maximum_host_bytes, "maximum_host_bytes")
+    _positive_int(maximum_device_bytes, "maximum_device_bytes")
+    width = min(parameters, parameter_chunk_size)
+    plan = cached_derivative_memory_plan(count, parameters, parameter_chunk_size=width)
+    host_extra = (len(blocks)*count*count+len(blocks)*count)*8
+    if plan['host_solve_array_bound_bytes']+host_extra > maximum_host_bytes:
+        raise MemoryError("node Gram storage exceeds registered host array budget")
+    if plan['streamed_solve_device_array_bound_bytes'] > maximum_device_bytes:
+        raise MemoryError("node-block algebra exceeds registered device array budget")
+    scale, unit, force, energy, norm = _physical_data(cache, psi, density, hpsi)
+    direction, gradient = np.zeros(parameters), np.zeros(parameters)
+    node_tangents = np.zeros((len(blocks), count))
+    grams = []; notes = []; timings = []
+
+    @jax.jit
+    def horizontal(raw):
+        z = raw*scale[:, None]
+        return z-unit[:, None]*(unit@z)[None, :]
+
+    @jax.jit
+    def add_gram(gram, raw):
+        a = horizontal(raw)
+        return gram+a@a.T
+
+    @jax.jit
+    def vectors(raw, coefficients):
+        a = horizontal(raw)
+        d, g = a.T@coefficients, a.T@force
+        return d, g, a@d
+
+    @jax.jit
+    def errors(raw, local_tangent, total_tangent, d, g, damping):
+        a = horizontal(raw)
+        local = a.T@local_tangent+damping*d-g
+        coupled = a.T@total_tangent+damping*d-g
+        return jnp.vdot(local, local).real, jnp.vdot(coupled, coupled).real
+
+    def chunks(first, final):
+        for start in range(first, final, width):
+            stop = min(start+width, final)
+            raw = np.ascontiguousarray(cache.jacobian[:, start:stop])
+            if not np.isfinite(raw).all():
+                raise FloatingPointError("nonfinite node derivative block")
+            if stop-start != width:
+                raw = np.pad(raw, ((0, 0), (0, width-(stop-start))))
+            yield start, stop, jnp.asarray(raw)
+
+    def update(stage, tick, **extra):
+        note = dict(stage=stage, seconds=perf_counter()-tick, **extra)
+        timings.append(note)
+        if progress is not None:
+            progress(note)
+
+    for label, first, final in blocks:
+        tick = perf_counter()
+        gram = jnp.zeros((count, count), jnp.float64)
+        for _, _, raw in chunks(first, final):
+            gram = add_gram(gram, raw); gram.block_until_ready()
+        matrix = np.asarray(gram)
+        trace = float(np.trace(matrix))
+        if not np.isfinite(matrix).all() or not np.isfinite(trace) or trace < 0:
+            raise ArithmeticError("nonfinite/nonpositive node Fisher Gram")
+        grams.append(matrix)
+        notes.append(dict(label=label, first=first, final=final, parameters=final-first,
+                          Fisher_trace=trace, sample_eigenvalue_scale=trace/(count-1)))
+        update('node_Gram_cached', tick, label=label, completed_nodes=len(grams))
+    reference = max(x['sample_eigenvalue_scale'] for x in notes)
+    if reference <= 0:
+        raise ArithmeticError("all native blocks have zero physical metric")
+    floor = ridge_floor_relative*reference
+    for index, (label, first, final) in enumerate(blocks):
+        tick = perf_counter()
+        ridge = max(relative_damping*notes[index]['sample_eigenvalue_scale'], floor)
+        matrix = jnp.asarray(grams[index])
+        coefficients = jax.scipy.linalg.solve(matrix+ridge*jnp.eye(count), force, assume_a='pos')
+        coefficients.block_until_ready()
+        tangent = jnp.zeros(count, jnp.float64)
+        for start, stop, raw in chunks(first, final):
+            d, g, image = vectors(raw, coefficients)
+            direction[start:stop] = np.asarray(d)[:stop-start]
+            gradient[start:stop] = np.asarray(g)[:stop-start]
+            tangent = tangent+image; tangent.block_until_ready()
+        node_tangents[index] = np.asarray(tangent)
+        notes[index]['ridge'] = ridge
+        update('node_native_direction', tick, label=label, completed_nodes=index+1)
+    combined = node_tangents.sum(axis=0)
+    coupled_squared = 0.; block_squared = 0.
+    for index, (label, first, final) in enumerate(blocks):
+        tick = perf_counter(); local_squared = jnp.asarray(0., jnp.float64)
+        coupled = jnp.asarray(0., jnp.float64)
+        for start, stop, raw in chunks(first, final):
+            d = np.pad(direction[start:stop], (0, width-(stop-start)))
+            g = np.pad(gradient[start:stop], (0, width-(stop-start)))
+            a, b = errors(raw, jnp.asarray(node_tangents[index]), jnp.asarray(combined),
+                         jnp.asarray(d), jnp.asarray(g), notes[index]['ridge'])
+            local_squared += a; coupled += b; local_squared.block_until_ready()
+        block_squared += float(local_squared); coupled_squared += float(coupled)
+        rhs = float(np.linalg.norm(gradient[first:final]))
+        notes[index]['relative_block_linear_residual'] = float(np.sqrt(float(local_squared)))/max(rhs,np.finfo(float).tiny)
+        update('true_node_normal_residual', tick, label=label, completed_nodes=index+1)
+    rhs = float(np.linalg.norm(gradient))
+    residual = np.sqrt(block_squared)/max(rhs,np.finfo(float).tiny)
+    if not np.isfinite(direction).all() or not np.isfinite(residual):
+        raise FloatingPointError("nonfinite node-block SR result")
+    return jnp.asarray(direction), jnp.asarray(gradient), dict(
+        numerically_valid=True, relative_linear_residual=float(residual),
+        full_global_Fisher_solved=False, update_geometry='explicit_node_block_diagonal_Fisher',
+        global_cross_node_normal_residual=float(np.sqrt(coupled_squared)/max(rhs,np.finfo(float).tiny)),
+        relative_damping=float(relative_damping), ridge_floor_relative=float(ridge_floor_relative),
+        numerical_ridge_floor=float(floor), ridge_scale='trace(F_node)/(records-1), not trace/P',
+        all_native_columns_retained=True, all_records_retained=True,
+        raw_fisher_norm=float(np.linalg.norm(combined)), chosen_direction_tangent=combined,
+        node_tangent_Gram=node_tangents@node_tangents.T, blocks=notes,
+        gradient_norm=rhs, sampled_parent_norm=norm/count, sampled_energy_total=energy,
+        exact_Jacobian_passes=3, no_AD_recomputed_in_solve=True,
+        raw_J_storage_bytes=int(cache.jacobian.nbytes), additional_node_Gram_bytes=host_extra,
+        memory_plan=plan, timings=timings,
+        direction_and_finite_energy_require_new_independent_confirmation=True)
+
+
 __all__ = ["CachedAmplitudeJacobian", "amplitude_cache_identity",
            "cached_derivative_memory_plan", "build_cached_amplitude_jacobian",
            "load_cached_amplitude_jacobian", "cached_projected_operators",
-           "solve_cached_projected_sr"]
+           "solve_cached_projected_sr", "solve_cached_node_block_sr"]

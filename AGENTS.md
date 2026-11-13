@@ -50,3 +50,28 @@ Optax; optional integrations remain optional.
 Research configurations, job scripts, notebooks, result artifacts and private
 credentials are outside this core repository. Never publish them by widening
 the source allowlist or by copying an entire research workspace.
+
+## Git publication and staging (applies to every agent: Codex, Claude, ...)
+
+The published repositories (GitHub `origin` and the Kim mirror `kim`) hold
+ONLY the core library: `.gitignore`, `README.md`, `pyproject.toml`,
+`AGENTS.md`, `su2_nqs/`, and a small `tests/` set of self-contained exact
+tests of `su2_nqs` code. Never commit research tests, results, logs, configs,
+notebooks, checkpoints, workflows, explorations, job scripts or other
+experiment material (`projects/`, `fnqs/`, `peps-vmc/`, `archive/`, `data/`,
+environment files, research `tests/test_*`).
+
+The local workspace deliberately keeps hundreds of UNTRACKED research files
+(including about 500 research tests under `tests/`). Keep them on disk; do
+not delete them and do not track them.
+
+- Never use `git add -A`, `git add .`, `git add tests/`, `git add -u` on
+  directories you did not change, or `git commit -a`. Stage explicit file
+  paths only, then check `git diff --cached --stat` before committing.
+- Publish a new test file only if it tests core `su2_nqs` code, imports
+  nothing from `projects/` or other research packages, and needs no external
+  artifact or checkpoint. Run it in a clean checkout of the published tree.
+- The local `.gitignore` may differ from the committed allowlist; do not rely
+  on it to block research files, and never commit a widened allowlist.
+- Keep `kim` and `origin` on the same branch commit. Push fast-forward only;
+  never force-push or rewrite published history without explicit user approval.

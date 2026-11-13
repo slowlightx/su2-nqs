@@ -71,7 +71,9 @@ not delete them and do not track them.
 - Publish a new test file only if it tests core `su2_nqs` code, imports
   nothing from `projects/` or other research packages, and needs no external
   artifact or checkpoint. Run it in a clean checkout of the published tree.
-- The local `.gitignore` may differ from the committed allowlist; do not rely
-  on it to block research files, and never commit a widened allowlist.
+- `.gitignore` is default-deny: only the root metadata files, `su2_nqs/` and
+  explicitly listed `tests/` files are visible to git. To publish a new core
+  test, add its own `!/tests/<file>.py` line after review; never widen the
+  allowlist to whole directories or research paths.
 - Keep `kim` and `origin` on the same branch commit. Push fast-forward only;
   never force-push or rewrite published history without explicit user approval.

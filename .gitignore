@@ -1,4 +1,7 @@
-# Default-deny source publication. Add new code only after explicit review.
+# Default-deny: git tracks and publishes ONLY the core library (GitHub origin
+# and the Kim mirror). Everything else in this folder (projects/, fnqs/,
+# peps-vmc/, data/, archive/, notebooks, research tests, ...) is local-only.
+# Add a path here only after explicit review; see AGENTS.md.
 /*
 !/.gitignore
 !/README.md
@@ -6,6 +9,35 @@
 !/AGENTS.md
 !/su2_nqs/
 !/tests/
+
+# tests/: only explicitly listed, self-contained exact tests of su2_nqs.
+# The local folder keeps ~500 research tests that must never be published.
+/tests/*
+!/tests/test_cached_amplitude_operators.py
+!/tests/test_cached_amplitude_operators_independent.py
+!/tests/test_cached_node_sr.py
+!/tests/test_complex_importance_amplitude_sr.py
+!/tests/test_coupled_basis.py
+!/tests/test_delayed_acceptance.py
+!/tests/test_finite_candidate_calibration.py
+!/tests/test_fusion_paths.py
+!/tests/test_heisenberg.py
+!/tests/test_image_subsampled_local_energy.py
+!/tests/test_importance_amplitude_sr.py
+!/tests/test_models.py
+!/tests/test_node_scaled_joint_sr.py
+!/tests/test_node_tangent_subspace.py
+!/tests/test_recoupling.py
+!/tests/test_su2_reduced_sector_merge.py
+!/tests/test_su2_sector_merge.py
+!/tests/test_triangular_clebsch_active_layout.py
+!/tests/test_triangular_clebsch_exchange_cache.py
+!/tests/test_triangular_clebsch_feature_lut.py
+!/tests/test_triangular_clebsch_lca_exchange.py
+!/tests/test_triangular_compact_transfer.py
+!/tests/test_triangular_mixed_clebsch.py
+!/tests/test_variance_balanced_sr_core.py
+!/tests/test_vmc.py
 
 __pycache__/
 *.py[cod]
@@ -43,3 +75,4 @@ id_rsa*
 id_ed25519*
 credentials*
 secrets*
+.DS_Store
